@@ -110,14 +110,6 @@ with models.DAG(
         'EXPORT_MAX_WORKERS': export_max_workers
     }
 
-    # TODO: Add timeouts
-
-    export_blocks_and_transactions = get_boolean_env_variable('EXPORT_BLOCKS_AND_TRANSACTIONS', True)
-    export_receipts_and_logs = get_boolean_env_variable('EXPORT_RECEIPTS_AND_LOGS', True)
-    export_contracts = get_boolean_env_variable('EXPORT_CONTRACTS', True)
-    export_tokens = get_boolean_env_variable('EXPORT_TOKENS', True)
-    extract_token_transfers = get_boolean_env_variable('EXTRACT_TOKEN_TRANSFERS', True)
-
 
     def add_export_task(toggle, task_id, bash_command, dependencies=None):
         if toggle:
@@ -135,6 +127,12 @@ with models.DAG(
         else:
             return None
 
+
+    export_blocks_and_transactions = get_boolean_env_variable('EXPORT_BLOCKS_AND_TRANSACTIONS', True)
+    export_receipts_and_logs = get_boolean_env_variable('EXPORT_RECEIPTS_AND_LOGS', True)
+    export_contracts = get_boolean_env_variable('EXPORT_CONTRACTS', True)
+    export_tokens = get_boolean_env_variable('EXPORT_TOKENS', True)
+    extract_token_transfers = get_boolean_env_variable('EXTRACT_TOKEN_TRANSFERS', True)
 
     export_blocks_and_transactions_operator = add_export_task(
         export_blocks_and_transactions, 'export_blocks_and_transactions', export_blocks_and_transactions_command)
