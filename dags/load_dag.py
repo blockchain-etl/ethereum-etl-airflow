@@ -186,21 +186,21 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
     return enrich_operator
 
 
-def add_validate_tasks(task, dependencies=None):
-    # The queries in validate/sqls will fail when the condition is not met
+def add_verify_tasks(task, dependencies=None):
+    # The queries in verify/sqls will fail when the condition is not met
     # Have to use this trick since the Python 2 version of BigQueryCheckOperator doesn't support standard SQL
     # and legacy SQL can't be used to query partitioned tables.
-    sql_path = os.path.join(dags_folder, 'resources/stages/validate/sqls/{task}.sql'.format(task=task))
+    sql_path = os.path.join(dags_folder, 'resources/stages/verify/sqls/{task}.sql'.format(task=task))
     sql = read_file(sql_path)
-    validate_task = BigQueryOperator(
-        task_id='validate_{task}'.format(task=task),
+    verify_task = BigQueryOperator(
+        task_id='verify_{task}'.format(task=task),
         bql=sql,
         use_legacy_sql=False,
         dag=dag)
     if dependencies is not None and len(dependencies) > 0:
         for dependency in dependencies:
-            dependency >> validate_task
-    return validate_task
+            dependency >> verify_task
+    return verify_task
 
 
 load_blocks_task = add_load_tasks('blocks', 'csv')
@@ -224,9 +224,9 @@ enrich_tokens_task = add_enrich_tasks(
 enrich_token_transfers_task = add_enrich_tasks(
     'token_transfers', dependencies=[load_blocks_task, load_token_transfers_task])
 
-add_validate_tasks('blocks_count', [enrich_blocks_task])
-add_validate_tasks('blocks_have_latest', [enrich_blocks_task])
-add_validate_tasks('transactions_count', [enrich_blocks_task, enrich_transactions_task])
-add_validate_tasks('transactions_have_latest', [enrich_transactions_task])
-add_validate_tasks('logs_have_latest', [enrich_logs_task])
-add_validate_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
+add_verify_tasks('blocks_count', [enrich_blocks_task])
+add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
+add_verify_tasks('transactions_count', [enrich_blocks_task, enrich_transactions_task])
+add_verify_tasks('transactions_have_latest', [enrich_transactions_task])
+add_verify_tasks('logs_have_latest', [enrich_logs_task])
+add_verify_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
