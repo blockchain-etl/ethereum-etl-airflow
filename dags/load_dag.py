@@ -49,6 +49,7 @@ def submit_bigquery_job(job, configuration):
         logging.info('Creating a job: ' + json.dumps(configuration.to_api_repr()))
         result = job.result()
         logging.info(result)
+        assert job.errors is None or len(job.errors) == 0
         return result
     except Exception:
         logging.info(job.errors)
@@ -148,7 +149,7 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
         table = client.create_table(table)
         assert table.table_id == temp_table_name
 
-        # Query
+        # Query from raw to temporary table
         query_job_config = bigquery.QueryJobConfig()
         # Finishes faster, query limit for concurrent interactive queries is 50
         query_job_config.priority = bigquery.QueryPriority.INTERACTIVE
@@ -159,7 +160,7 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
         submit_bigquery_job(query_job, query_job_config)
         assert query_job.state == 'DONE'
 
-        # Copy
+        # Copy temporary table to destination
         copy_job_config = bigquery.CopyJobConfig()
         copy_job_config.write_disposition = 'WRITE_TRUNCATE'
 
