@@ -9,13 +9,10 @@ default_dag_args = {
     'start_date': airflow.utils.dates.days_ago(0)
 }
 
-
 dag = DAG(
     'liveness_dag',
     default_args=default_dag_args,
     description='liveness monitoring dag',
     schedule_interval=timedelta(minutes=10))
 
-
-t1 = BashOperator(
-    task_id='echo', bash_command='echo test', dag=dag, depends_on_past=False)
+BashOperator(task_id='echo', bash_command='echo test', dag=dag, depends_on_past=False)
