@@ -2,6 +2,7 @@
     {
         "name": "token_address",
         "type": "STRING",
+        "mode": "REQUIRED",
         "description": "ERC20 token address"
     },
     {
