@@ -1,6 +1,6 @@
 # Ethereum ETL Airflow
 
-Refer to https://github.com/medvedev1088/ethereum-etl for exporting the data.
+Read this article: https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-how-we-built-dataset
 
 To upload CSVs to BigQuery:
 
