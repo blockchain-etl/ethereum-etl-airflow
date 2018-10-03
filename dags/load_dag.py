@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 from airflow import models
 from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
+from airflow.operators.email_operator import EmailOperator
 from airflow.operators.python_operator import PythonOperator
 from google.cloud import bigquery
 from google.cloud.bigquery import TimePartitioning
@@ -225,9 +226,24 @@ enrich_tokens_task = add_enrich_tasks(
 enrich_token_transfers_task = add_enrich_tasks(
     'token_transfers', dependencies=[load_blocks_task, load_token_transfers_task])
 
-add_verify_tasks('blocks_count', [enrich_blocks_task])
-add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
-add_verify_tasks('transactions_count', [enrich_blocks_task, enrich_transactions_task])
-add_verify_tasks('transactions_have_latest', [enrich_transactions_task])
-add_verify_tasks('logs_have_latest', [enrich_logs_task])
-add_verify_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
+verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
+verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
+verify_transactions_count_task = add_verify_tasks('transactions_count', [enrich_blocks_task, enrich_transactions_task])
+verify_transactions_have_latest_task = add_verify_tasks('transactions_have_latest', [enrich_transactions_task])
+verify_logs_have_latest_task = add_verify_tasks('logs_have_latest', [enrich_logs_task])
+verify_token_transfers_have_latest_task = add_verify_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
+
+if notification_emails and len(notification_emails) > 0:
+    send_email_task = EmailOperator(
+        task_id='send_email',
+        to=[email.strip() for email in notification_emails.split(',')],
+        subject='Ethereum ETL Airflow Load DAG Succeeded',
+        html_content='Ethereum ETL Airflow Load DAG Succeeded',
+        dag=dag
+    )
+    verify_blocks_count_task >> send_email_task
+    verify_blocks_have_latest_task >> send_email_task
+    verify_transactions_count_task >> send_email_task
+    verify_transactions_have_latest_task >> send_email_task
+    verify_logs_have_latest_task >> send_email_task
+    verify_token_transfers_have_latest_task >> send_email_task
