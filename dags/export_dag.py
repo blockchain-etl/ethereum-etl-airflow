@@ -45,6 +45,8 @@ setup_command = \
     'set -o xtrace && set -o pipefail && ' + install_python3_command + \
     ' && ' \
     'git clone --branch $ETHEREUMETL_REPO_BRANCH http://github.com/medvedev1088/ethereum-etl && cd ethereum-etl && ' \
+    'export LC_ALL=C.UTF-8 && ' \
+    'export LANG=C.UTF-8 && ' \
     'BLOCK_RANGE=$($PYTHON3 get_block_range_for_date.py -d $EXECUTION_DATE -p $WEB3_PROVIDER_URI) && ' \
     'BLOCK_RANGE_ARRAY=(${BLOCK_RANGE//,/ }) && START_BLOCK=${BLOCK_RANGE_ARRAY[0]} && END_BLOCK=${BLOCK_RANGE_ARRAY[1]} && ' \
     'EXPORT_LOCATION_URI=gs://$OUTPUT_BUCKET/export && ' \
@@ -91,10 +93,18 @@ extract_token_transfers_command = \
     '$PYTHON3 extract_token_transfers.py -w $EXPORT_MAX_WORKERS --logs logs.json --output token_transfers.csv && ' \
     'gsutil cp token_transfers.csv $EXPORT_LOCATION_URI/token_transfers/block_date=$EXECUTION_DATE/token_transfers.csv '
 
+export_traces_command = \
+    setup_command + ' && ' + \
+    'sleep $(( ( RANDOM % 300 ) + 1 )) && ' \
+    '$PYTHON3 export_traces.py -w $EXPORT_MAX_WORKERS -b 10 -s $START_BLOCK -e $END_BLOCK ' \
+    '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv && ' \
+    'gsutil cp traces.csv $EXPORT_LOCATION_URI/traces/block_date=$EXECUTION_DATE/traces.csv '
+
 output_bucket = os.environ.get('OUTPUT_BUCKET')
 if output_bucket is None:
     raise ValueError('You must set OUTPUT_BUCKET environment variable')
 web3_provider_uri = os.environ.get('WEB3_PROVIDER_URI', 'https://mainnet.infura.io/')
+web3_provider_uri_archival = os.environ.get('WEB3_PROVIDER_URI_ARCHIVAL', web3_provider_uri)
 ethereumetl_repo_branch = os.environ.get('ETHEREUMETL_REPO_BRANCH', 'master')
 dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 export_max_workers = os.environ.get('EXPORT_MAX_WORKERS', '5')
@@ -105,6 +115,7 @@ environment = {
     'EXECUTION_DATE': '{{ ds }}',
     'ETHEREUMETL_REPO_BRANCH': ethereumetl_repo_branch,
     'WEB3_PROVIDER_URI': web3_provider_uri,
+    'WEB3_PROVIDER_URI_ARCHIVAL': web3_provider_uri_archival,
     'OUTPUT_BUCKET': output_bucket,
     'DAGS_FOLDER': dags_folder,
     'EXPORT_MAX_WORKERS': export_max_workers
@@ -134,6 +145,7 @@ export_receipts_and_logs = get_boolean_env_variable('EXPORT_RECEIPTS_AND_LOGS', 
 export_contracts = get_boolean_env_variable('EXPORT_CONTRACTS', True)
 export_tokens = get_boolean_env_variable('EXPORT_TOKENS', True)
 extract_token_transfers = get_boolean_env_variable('EXTRACT_TOKEN_TRANSFERS', True)
+extract_traces = get_boolean_env_variable('EXTRACT_TRACES', True)
 
 export_blocks_and_transactions_operator = add_export_task(
     export_blocks_and_transactions, 'export_blocks_and_transactions', export_blocks_and_transactions_command)
@@ -153,3 +165,6 @@ export_tokens_operator = add_export_task(
 extract_token_transfers_operator = add_export_task(
     extract_token_transfers, 'extract_token_transfers', extract_token_transfers_command,
     dependencies=[export_receipts_and_logs_operator])
+
+extract_traces = add_export_task(
+    extract_traces, 'export_traces', export_traces_command)
