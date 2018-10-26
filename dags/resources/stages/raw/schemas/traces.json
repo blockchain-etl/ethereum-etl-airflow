@@ -1,0 +1,69 @@
+[
+    {
+        "name": "block_number",
+        "type": "INT64",
+        "mode": "REQUIRED",
+        "description": "Block number where this trace was in"
+    },
+    {
+        "name": "transaction_hash",
+        "type": "STRING",
+        "description": "Transaction hash where this trace was in"
+    },
+    {
+        "name": "from_address",
+        "type": "STRING",
+        "description": "Address of the sender"
+    },
+    {
+        "name": "to_address",
+        "type": "STRING",
+        "description": "Address of the receiver"
+    },
+    {
+        "name": "value",
+        "type": "NUMERIC",
+        "description": "Value transferred in Wei"
+    },
+    {
+        "name": "contract_address",
+        "type": "STRING",
+        "description": "Address of the contract if message call is of type CREATE"
+    },
+    {
+        "name": "input",
+        "type": "STRING",
+        "description": "The data sent along with the message call"
+    },
+    {
+        "name": "trace_type",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "One of call, create, suicide, reward"
+    },
+    {
+        "name": "gas",
+        "type": "INT64",
+        "description": "Gas provided with the message call"
+    },
+    {
+        "name": "gas_used",
+        "type": "INT64",
+        "description": "Gas used by the message call"
+    },
+    {
+        "name": "subtraces",
+        "type": "INT64",
+        "description": "Number of subtraces"
+    },
+    {
+        "name": "trace_address",
+        "type": "STRING",
+        "description": "Comma separated list of trace address in call tree"
+    },
+    {
+        "name": "error",
+        "type": "STRING",
+        "description": "Error if message call failed"
+    }
+]
