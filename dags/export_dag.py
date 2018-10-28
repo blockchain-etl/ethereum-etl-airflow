@@ -93,6 +93,7 @@ extract_token_transfers_command = \
     '$PYTHON3 extract_token_transfers.py -w $EXPORT_MAX_WORKERS --logs logs.json --output token_transfers.csv && ' \
     'gsutil cp token_transfers.csv $EXPORT_LOCATION_URI/token_transfers/block_date=$EXECUTION_DATE/token_transfers.csv '
 
+# TODO: Test that command will fail if there are no blocks for the requested range.
 export_traces_command = \
     setup_command + ' && ' + \
     'sleep $(( ( RANDOM % 300 ) + 1 )) && ' \
