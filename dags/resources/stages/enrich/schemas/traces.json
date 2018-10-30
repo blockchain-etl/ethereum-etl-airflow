@@ -41,6 +41,16 @@
         "description": "One of call, create, suicide, reward"
     },
     {
+        "name": "call_type",
+        "type": "STRING",
+        "description": "One of call, callcode, delegatecall, staticcall"
+    },
+    {
+        "name": "reward_type",
+        "type": "STRING",
+        "description": "One of block, uncle"
+    },
+    {
         "name": "gas",
         "type": "INT64",
         "description": "Gas provided with the message call"

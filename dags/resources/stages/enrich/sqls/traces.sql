@@ -7,6 +7,8 @@ SELECT
     traces.input,
     traces.output,
     traces.trace_type,
+    traces.call_type,
+    traces.reward_type,
     traces.gas,
     traces.gas_used,
     traces.subtraces,
