@@ -207,8 +207,7 @@ def add_verify_tasks(task, dependencies=None):
 
 load_traces_task = add_load_tasks('traces', 'csv')
 enrich_traces_task = add_enrich_tasks('traces', dependencies=[load_traces_task])
-
-# verify_traces_have_latest_task = add_verify_tasks('traces_have_latest', [enrich_blocks_task])
+verify_traces_blocks_count_task = add_verify_tasks('traces_blocks_count', [enrich_traces_task])
 
 if notification_emails and len(notification_emails) > 0:
     send_email_task = EmailOperator(
@@ -218,5 +217,4 @@ if notification_emails and len(notification_emails) > 0:
         html_content='Ethereum ETL Airflow Load Traces DAG Succeeded',
         dag=dag
     )
-    enrich_traces_task >> send_email_task
-
+    verify_traces_blocks_count_task >> send_email_task
