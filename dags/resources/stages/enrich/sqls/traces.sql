@@ -1,5 +1,6 @@
 SELECT
     traces.transaction_hash,
+    traces.transaction_index,
     traces.from_address,
     traces.to_address,
     traces.value,

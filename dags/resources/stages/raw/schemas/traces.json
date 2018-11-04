@@ -11,6 +11,11 @@
         "description": "Transaction hash where this trace was in"
     },
     {
+        "name": "transaction_index",
+        "type": "INT64",
+        "description": "Integer of the transactions index position in the block"
+    },
+    {
         "name": "from_address",
         "type": "STRING",
         "description": "Address of the sender"
