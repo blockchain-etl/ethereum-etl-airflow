@@ -208,6 +208,7 @@ def add_verify_tasks(task, dependencies=None):
 load_traces_task = add_load_tasks('traces', 'csv')
 enrich_traces_task = add_enrich_tasks('traces', dependencies=[load_traces_task])
 verify_traces_blocks_count_task = add_verify_tasks('traces_blocks_count', [enrich_traces_task])
+verify_traces_transactions_count_task = add_verify_tasks('traces_transactions_count', [enrich_traces_task])
 
 if notification_emails and len(notification_emails) > 0:
     send_email_task = EmailOperator(
@@ -218,3 +219,4 @@ if notification_emails and len(notification_emails) > 0:
         dag=dag
     )
     verify_traces_blocks_count_task >> send_email_task
+    verify_traces_transactions_count_task >> send_email_task
