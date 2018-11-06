@@ -17,17 +17,12 @@
     {
         "name": "to_address",
         "type": "STRING",
-        "description": "Address of the receiver"
+        "description": "Address of the receiver if trace_type is call, address of new contract or null if trace_type is create, beneficiary address if trace_type is suicide, miner address if trace_type is reward"
     },
     {
         "name": "value",
         "type": "NUMERIC",
         "description": "Value transferred in Wei"
-    },
-    {
-        "name": "contract_address",
-        "type": "STRING",
-        "description": "Address of the contract if message call is of type CREATE"
     },
     {
         "name": "input",

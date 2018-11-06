@@ -4,7 +4,6 @@ SELECT
     traces.from_address,
     traces.to_address,
     traces.value,
-    traces.contract_address,
     traces.input,
     traces.output,
     traces.trace_type,
