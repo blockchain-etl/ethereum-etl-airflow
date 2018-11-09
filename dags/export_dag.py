@@ -83,7 +83,7 @@ export_tokens_command = \
     'gsutil cp $EXPORT_LOCATION_URI/contracts/block_date=$EXECUTION_DATE/contracts.json contracts.json && ' \
     '$PYTHON3 filter_items.py -i contracts.json -p "item[\'is_erc20\'] or item[\'is_erc721\']" | ' \
     '$PYTHON3 extract_field.py -f address -o token_addresses.txt && ' \
-    '$PYTHON3 export_tokens.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --token-addresses token_addresses.txt ' \
+    '$PYTHON3 export_tokens.py -w $EXPORT_MAX_WORKERS --token-addresses token_addresses.txt ' \
     '-p $WEB3_PROVIDER_URI --output tokens.csv && ' \
     'gsutil cp tokens.csv $EXPORT_LOCATION_URI/tokens/block_date=$EXECUTION_DATE/tokens.csv '
 
