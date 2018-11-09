@@ -1,13 +1,16 @@
 with nested_failed_traces as (
+    -- Find all nested traces of failed traces
     select child.transaction_hash, child.trace_address, parent.error
     from ethereum_blockchain.traces parent
     join ethereum_blockchain.traces child
-    on starts_with(child.trace_address, concat(parent.trace_address, ','))
+    on (parent.trace_address is null or starts_with(child.trace_address, concat(parent.trace_address, ',')))
     and child.transaction_hash = parent.transaction_hash
-    where parent.error is not null
+    where parent.trace_type in ('call', 'create')
+    and parent.error is not null
 ),
 full_traces as (
-    select *, if((traces.error is not null or nested_failed_traces.error is not null), true, false) as is_error
+    -- is_error also accounts for whether the parent trace failed
+    select traces.*, (traces.error is not null or nested_failed_traces.error is not null) as is_error
     from `ethereum_blockchain.traces` as traces
     left join nested_failed_traces on nested_failed_traces.transaction_hash = traces.transaction_hash
     and nested_failed_traces.trace_address = traces.trace_address
@@ -18,7 +21,7 @@ double_entry_book as (
     select to_address as address, value as value, block_timestamp
     from full_traces
     where to_address is not null
-    and is_error
+    and not is_error
     and (call_type not in ('delegatecall', 'callcode', 'staticcall') or call_type is null)
     union all
     -- credits
