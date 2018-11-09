@@ -55,7 +55,7 @@ setup_command = \
 export_blocks_and_transactions_command = \
     setup_command + ' && ' + \
     'echo $BLOCK_RANGE > blocks_meta.txt && ' \
-    '$PYTHON3 export_blocks_and_transactions.py -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
+    '$PYTHON3 export_blocks_and_transactions.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
     '-p $WEB3_PROVIDER_URI --blocks-output blocks.csv --transactions-output transactions.csv && ' \
     'gsutil cp blocks.csv $EXPORT_LOCATION_URI/blocks/block_date=$EXECUTION_DATE/blocks.csv && ' \
     'gsutil cp transactions.csv $EXPORT_LOCATION_URI/transactions/block_date=$EXECUTION_DATE/transactions.csv && ' \
@@ -65,7 +65,7 @@ export_receipts_and_logs_command = \
     setup_command + ' && ' + \
     'gsutil cp $EXPORT_LOCATION_URI/transactions/block_date=$EXECUTION_DATE/transactions.csv transactions.csv && ' \
     '$PYTHON3 extract_csv_column.py -i transactions.csv -o transaction_hashes.txt -c hash && ' \
-    '$PYTHON3 export_receipts_and_logs.py -w $EXPORT_MAX_WORKERS --transaction-hashes transaction_hashes.txt ' \
+    '$PYTHON3 export_receipts_and_logs.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --transaction-hashes transaction_hashes.txt ' \
     '-p $WEB3_PROVIDER_URI --receipts-output receipts.csv --logs-output logs.json && ' \
     'gsutil cp receipts.csv $EXPORT_LOCATION_URI/receipts/block_date=$EXECUTION_DATE/receipts.csv && ' \
     'gsutil cp logs.json $EXPORT_LOCATION_URI/logs/block_date=$EXECUTION_DATE/logs.json '
@@ -74,7 +74,7 @@ export_contracts_command = \
     setup_command + ' && ' + \
     'gsutil cp $EXPORT_LOCATION_URI/receipts/block_date=$EXECUTION_DATE/receipts.csv receipts.csv && ' \
     '$PYTHON3 extract_csv_column.py -i receipts.csv -o contract_addresses.txt -c contract_address && ' \
-    '$PYTHON3 export_contracts.py -w $EXPORT_MAX_WORKERS --contract-addresses contract_addresses.txt ' \
+    '$PYTHON3 export_contracts.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --contract-addresses contract_addresses.txt ' \
     '-p $WEB3_PROVIDER_URI --output contracts.json && ' \
     'gsutil cp contracts.json $EXPORT_LOCATION_URI/contracts/block_date=$EXECUTION_DATE/contracts.json '
 
@@ -83,21 +83,21 @@ export_tokens_command = \
     'gsutil cp $EXPORT_LOCATION_URI/contracts/block_date=$EXECUTION_DATE/contracts.json contracts.json && ' \
     '$PYTHON3 filter_items.py -i contracts.json -p "item[\'is_erc20\'] or item[\'is_erc721\']" | ' \
     '$PYTHON3 extract_field.py -f address -o token_addresses.txt && ' \
-    '$PYTHON3 export_tokens.py -w $EXPORT_MAX_WORKERS --token-addresses token_addresses.txt ' \
+    '$PYTHON3 export_tokens.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --token-addresses token_addresses.txt ' \
     '-p $WEB3_PROVIDER_URI --output tokens.csv && ' \
     'gsutil cp tokens.csv $EXPORT_LOCATION_URI/tokens/block_date=$EXECUTION_DATE/tokens.csv '
 
 extract_token_transfers_command = \
     setup_command + ' && ' + \
     'gsutil cp $EXPORT_LOCATION_URI/logs/block_date=$EXECUTION_DATE/logs.json logs.json && ' \
-    '$PYTHON3 extract_token_transfers.py -w $EXPORT_MAX_WORKERS --logs logs.json --output token_transfers.csv && ' \
+    '$PYTHON3 extract_token_transfers.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --logs logs.json --output token_transfers.csv && ' \
     'gsutil cp token_transfers.csv $EXPORT_LOCATION_URI/token_transfers/block_date=$EXECUTION_DATE/token_transfers.csv '
 
 # TODO: Test that command will fail if there are no blocks for the requested range.
 export_traces_command = \
     setup_command + ' && ' + \
     'sleep $(( ( RANDOM % 300 ) + 1 )) && ' \
-    '$PYTHON3 export_traces.py -w $EXPORT_MAX_WORKERS -b 10 -s $START_BLOCK -e $END_BLOCK ' \
+    '$PYTHON3 export_traces.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
     '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv && ' \
     'gsutil cp traces.csv $EXPORT_LOCATION_URI/traces/block_date=$EXECUTION_DATE/traces.csv '
 
@@ -109,6 +109,7 @@ web3_provider_uri_archival = os.environ.get('WEB3_PROVIDER_URI_ARCHIVAL', web3_p
 ethereumetl_repo_branch = os.environ.get('ETHEREUMETL_REPO_BRANCH', 'master')
 dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 export_max_workers = os.environ.get('EXPORT_MAX_WORKERS', '5')
+export_batch_size = os.environ.get('EXPORT_BATCH_SIZE', '10')
 
 # ds is 1 day behind the date on which the run is scheduled, e.g. if the dag is scheduled to run at
 # 1am on January 2, ds will be January 1.
@@ -119,7 +120,8 @@ environment = {
     'WEB3_PROVIDER_URI_ARCHIVAL': web3_provider_uri_archival,
     'OUTPUT_BUCKET': output_bucket,
     'DAGS_FOLDER': dags_folder,
-    'EXPORT_MAX_WORKERS': export_max_workers
+    'EXPORT_MAX_WORKERS': export_max_workers,
+    'EXPORT_BATCH_SIZE': export_batch_size
 }
 
 
@@ -146,7 +148,7 @@ export_receipts_and_logs = get_boolean_env_variable('EXPORT_RECEIPTS_AND_LOGS', 
 export_contracts = get_boolean_env_variable('EXPORT_CONTRACTS', True)
 export_tokens = get_boolean_env_variable('EXPORT_TOKENS', True)
 extract_token_transfers = get_boolean_env_variable('EXTRACT_TOKEN_TRANSFERS', True)
-extract_traces = get_boolean_env_variable('EXTRACT_TRACES', True)
+export_traces = get_boolean_env_variable('EXPORT_TRACES', True)
 
 export_blocks_and_transactions_operator = add_export_task(
     export_blocks_and_transactions, 'export_blocks_and_transactions', export_blocks_and_transactions_command)
@@ -167,5 +169,5 @@ extract_token_transfers_operator = add_export_task(
     extract_token_transfers, 'extract_token_transfers', extract_token_transfers_command,
     dependencies=[export_receipts_and_logs_operator])
 
-extract_traces = add_export_task(
-    extract_traces, 'export_traces', export_traces_command)
+export_traces_operator = add_export_task(
+    export_traces, 'export_traces', export_traces_command)
