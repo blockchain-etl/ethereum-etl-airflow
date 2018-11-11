@@ -13,7 +13,7 @@ WITH traces_with_status AS (
     FROM ethereum_blockchain_raw.traces AS traces
     LEFT JOIN nested_failed_traces ON nested_failed_traces.transaction_hash = traces.transaction_hash
     AND nested_failed_traces.trace_address = traces.trace_address
-),
+)
 SELECT
     traces.transaction_hash,
     traces.transaction_index,
@@ -34,7 +34,7 @@ SELECT
     TIMESTAMP_SECONDS(blocks.timestamp) AS block_timestamp,
     blocks.number AS block_number,
     blocks.hash AS block_hash
-FROM `ethereum-etl-dev.ethereum_blockchain_raw.blocks` AS blocks
+FROM ethereum_blockchain_raw.blocks AS blocks
     JOIN traces_with_status AS traces ON blocks.number = traces.block_number
 
 
