@@ -212,6 +212,7 @@ load_logs_task = add_load_tasks('logs', 'json')
 load_contracts_task = add_load_tasks('contracts', 'json')
 load_tokens_task = add_load_tasks('tokens', 'csv', allow_quoted_newlines=True)
 load_token_transfers_task = add_load_tasks('token_transfers', 'csv')
+load_traces_task = add_load_tasks('traces', 'csv')
 
 enrich_blocks_task = add_enrich_tasks(
     'blocks', time_partitioning_field='timestamp', dependencies=[load_blocks_task])
@@ -225,6 +226,8 @@ enrich_tokens_task = add_enrich_tasks(
     'tokens', time_partitioning_field=None, dependencies=[load_tokens_task])
 enrich_token_transfers_task = add_enrich_tasks(
     'token_transfers', dependencies=[load_blocks_task, load_token_transfers_task])
+enrich_traces_task = add_enrich_tasks(
+    'traces', dependencies=[load_blocks_task, load_traces_task])
 
 verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
 verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
@@ -232,6 +235,8 @@ verify_transactions_count_task = add_verify_tasks('transactions_count', [enrich_
 verify_transactions_have_latest_task = add_verify_tasks('transactions_have_latest', [enrich_transactions_task])
 verify_logs_have_latest_task = add_verify_tasks('logs_have_latest', [enrich_logs_task])
 verify_token_transfers_have_latest_task = add_verify_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
+verify_traces_blocks_count_task = add_verify_tasks('traces_blocks_count', [enrich_traces_task])
+verify_traces_transactions_count_task = add_verify_tasks('traces_transactions_count', [enrich_traces_task])
 
 if notification_emails and len(notification_emails) > 0:
     send_email_task = EmailOperator(
@@ -247,3 +252,5 @@ if notification_emails and len(notification_emails) > 0:
     verify_transactions_have_latest_task >> send_email_task
     verify_logs_have_latest_task >> send_email_task
     verify_token_transfers_have_latest_task >> send_email_task
+    verify_traces_blocks_count_task >> send_email_task
+    verify_traces_transactions_count_task >> send_email_task
