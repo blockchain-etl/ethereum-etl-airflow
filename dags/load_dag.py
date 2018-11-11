@@ -178,7 +178,7 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
     enrich_operator = PythonOperator(
         task_id='enrich_{task}'.format(task=task),
         python_callable=enrich_task,
-        execution_timeout=timedelta(minutes=40),
+        execution_timeout=timedelta(minutes=60),
         dag=dag
     )
 
