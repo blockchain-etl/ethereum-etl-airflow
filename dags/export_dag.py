@@ -98,7 +98,8 @@ export_traces_command = \
     setup_command + ' && ' + \
     'sleep $(( ( RANDOM % 300 ) + 1 )) && ' \
     '$PYTHON3 export_traces.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
-    '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv && ' \
+    '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv ' \
+    '--genesis-traces --daofork-traces && ' \
     'gsutil cp traces.csv $EXPORT_LOCATION_URI/traces/block_date=$EXECUTION_DATE/traces.csv '
 
 output_bucket = os.environ.get('OUTPUT_BUCKET')
