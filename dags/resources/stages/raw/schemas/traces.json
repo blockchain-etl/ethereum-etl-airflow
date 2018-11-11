@@ -23,7 +23,7 @@
     {
         "name": "to_address",
         "type": "STRING",
-        "description": "Address of the receiver if trace_type is call, address of new contract or null if trace_type is create, beneficiary address if trace_type is suicide, miner address if trace_type is reward"
+        "description": "Address of the receiver if trace_type is call, address of new contract or null if trace_type is create, beneficiary address if trace_type is suicide, miner address if trace_type is reward, shareholder address if trace_type is genesis, WithdrawDAO address if trace_type is daofork"
     },
     {
         "name": "value",
@@ -44,7 +44,7 @@
         "name": "trace_type",
         "type": "STRING",
         "mode": "REQUIRED",
-        "description": "One of call, create, suicide, reward"
+        "description": "One of call, create, suicide, reward, genesis, daofork"
     },
     {
         "name": "call_type",
