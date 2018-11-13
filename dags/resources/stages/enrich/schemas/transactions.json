@@ -73,7 +73,7 @@
         "type": "INT64",
         "description": "Either 1 (success) or 0 (failure) (post Byzantium)"
     },
-        {
+    {
         "name": "block_timestamp",
         "type": "TIMESTAMP",
         "mode": "REQUIRED",
