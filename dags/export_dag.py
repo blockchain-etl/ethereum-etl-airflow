@@ -96,7 +96,6 @@ extract_token_transfers_command = \
 # TODO: Test that command will fail if there are no blocks for the requested range.
 export_traces_command = \
     setup_command + ' && ' + \
-    'sleep $(( ( RANDOM % 300 ) + 1 )) && ' \
     '$PYTHON3 export_traces.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
     '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv ' \
     '--genesis-traces --daofork-traces && ' \
