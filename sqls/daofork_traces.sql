@@ -1,28 +1,28 @@
 with double_entry_book as (
     -- debits
-    select to_address as address, value as value, block_timestamp, block_number
-    from ethereum_blockchain.traces
+    select to_address as address, value as value, block_number
+    from `bigquery-public-data.ethereum_blockchain.traces`
     where to_address is not null
     and status = 1
     and (call_type not in ('delegatecall', 'callcode', 'staticcall') or call_type is null)
     union all
     -- credits
-    select from_address as address, -value as value, block_timestamp, block_number
-    from ethereum_blockchain.traces
+    select from_address as address, -value as value, block_number
+    from `bigquery-public-data.ethereum_blockchain.traces`
     where from_address is not null
     and status = 1
     and (call_type not in ('delegatecall', 'callcode', 'staticcall') or call_type is null)
     union all
     -- transaction fees debits
     select miner as address, sum(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value,
-        block_timestamp, block_number
+        block_number
     from `bigquery-public-data.ethereum_blockchain.transactions` as transactions
     join `bigquery-public-data.ethereum_blockchain.blocks` as blocks on blocks.number = transactions.block_number
-    group by block_timestamp, block_number, blocks.miner
+    group by block_number, blocks.miner
     union all
     -- transaction fees credits
     select from_address as address, -(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value,
-        block_timestamp, block_number
+        block_number
     from `bigquery-public-data.ethereum_blockchain.transactions`
 )
 select address, sum(value) as balance
