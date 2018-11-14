@@ -32,7 +32,7 @@
     {
         "name": "output",
         "type": "STRING",
-        "description": "The output of the message call"
+        "description": "The output of the message call, bytecode of contract when trace_type is create"
     },
     {
         "name": "trace_type",
