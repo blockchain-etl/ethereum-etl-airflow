@@ -18,7 +18,7 @@
     {
         "name": "from_address",
         "type": "STRING",
-        "description": "Address of the sender"
+        "description": "Address of the sender, null when trace_type is genesis or reward"
     },
     {
         "name": "to_address",
