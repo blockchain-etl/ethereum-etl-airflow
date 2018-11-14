@@ -235,9 +235,12 @@ verify_transactions_count_task = add_verify_tasks('transactions_count', [enrich_
 verify_transactions_have_latest_task = add_verify_tasks('transactions_have_latest', [enrich_transactions_task])
 verify_logs_have_latest_task = add_verify_tasks('logs_have_latest', [enrich_logs_task])
 verify_token_transfers_have_latest_task = add_verify_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
-verify_traces_blocks_count_task = add_verify_tasks('traces_blocks_count', [enrich_traces_task])
-verify_traces_transactions_count_task = add_verify_tasks('traces_transactions_count', [enrich_traces_task])
-verify_traces_contracts_count_task = add_verify_tasks('traces_contracts_count', [enrich_traces_task])
+verify_traces_blocks_count_task = add_verify_tasks(
+    'traces_blocks_count', [enrich_blocks_task, enrich_traces_task])
+verify_traces_transactions_count_task = add_verify_tasks(
+    'traces_transactions_count', [enrich_transactions_task, enrich_traces_task])
+verify_traces_contracts_count_task = add_verify_tasks(
+    'traces_contracts_count', [enrich_transactions_task, enrich_traces_task])
 
 if notification_emails and len(notification_emails) > 0:
     send_email_task = EmailOperator(
