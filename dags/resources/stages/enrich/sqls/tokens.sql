@@ -7,7 +7,7 @@ WITH tokens_grouped AS (
         total_supply,
         ROW_NUMBER() OVER (PARTITION BY address) AS rank
     FROM
-        ethereum_blockchain_raw.tokens)
+        blockchain_raw.tokens)
 SELECT
     address,
     symbol,

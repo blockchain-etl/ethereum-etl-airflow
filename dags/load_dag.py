@@ -25,6 +25,32 @@ logging.getLogger().setLevel(logging.DEBUG)
 # Environment variable OUTPUT_BUCKET must be set and point to the GCS bucket
 # where files exported by export_dag.py are located
 
+dataset_name = os.environ.get('DATASET_NAME', 'ethereum_blockchain')
+
+sql_files = [
+    'resources/stages/verify/sqls/blocks_have_latest.sql',
+    'resources/stages/verify/sqls/traces_transactions_count.sql',
+    'resources/stages/verify/sqls/traces_contracts_count.sql',
+    'resources/stages/verify/sqls/logs_have_latest.sql',
+    'resources/stages/verify/sqls/transactions_have_latest.sql',
+    'resources/stages/verify/sqls/token_transfers_have_latest.sql',
+    'resources/stages/verify/sqls/traces_blocks_count.sql',
+    'resources/stages/verify/sqls/transactions_count.sql',
+    'resources/stages/enrich/sqls/token_transfers.sql'
+    'resources/stages/enrich/sqls/contracts.sql'
+    'resources/stages/enrich/sqls/blocks.sql'
+    'resources/stages/enrich/sqls/traces.sql'
+    'resources/stages/enrich/sqls/transactions.sql'
+    'resources/stages/enrich/sqls/blocks_count.sql'
+    'resources/stages/enrich/sqls/tokens.sql'
+    'resources/stages/enrich/sqls/logs.sql'
+]
+
+for sql_file in sql_files:
+    with open(sql_file, 'U') as f:
+        new_sql = f.read().replace('blockchain', dataset_name)
+    with open(sql_file, 'w') as f:
+        f.write(new_sql)
 
 def read_bigquery_schema_from_file(filepath):
     result = []
@@ -110,7 +136,7 @@ def add_load_tasks(task, file_format, allow_quoted_newlines=False):
         export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
         uri = '{export_location_uri}/{task}/*.{file_format}'.format(
             export_location_uri=export_location_uri, task=task, file_format=file_format)
-        table_ref = client.dataset('ethereum_blockchain_raw').table(task)
+        table_ref = client.dataset(f'{dataset_name}_raw').table(task)
         load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
         submit_bigquery_job(load_job, job_config)
         assert load_job.state == 'DONE'
@@ -135,7 +161,7 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
 
         # Create a temporary table
         temp_table_name = '{task}_{milliseconds}'.format(task=task, milliseconds=int(round(time.time() * 1000)))
-        temp_table_ref = client.dataset('ethereum_blockchain_temp').table(temp_table_name)
+        temp_table_ref = client.dataset(f'{dataset_name}_temp').table(temp_table_name)
 
         schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/{task}.json'.format(task=task))
         schema = read_bigquery_schema_from_file(schema_path)
@@ -167,7 +193,7 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
 
         dest_table_name = '{task}'.format(task=task)
         project = os.environ.get('DESTINATION_DATASET_PROJECT_ID', None)
-        dest_table_ref = client.dataset('ethereum_blockchain', project=project).table(dest_table_name)
+        dest_table_ref = client.dataset(dataset_name, project=project).table(dest_table_name)
         copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
         submit_bigquery_job(copy_job, copy_job_config)
         assert copy_job.state == 'DONE'

@@ -16,6 +16,6 @@ SELECT
     TIMESTAMP_SECONDS(blocks.timestamp) AS block_timestamp,
     blocks.number AS block_number,
     blocks.hash AS block_hash
-FROM ethereum_blockchain_raw.blocks AS blocks
-    JOIN ethereum_blockchain_raw.transactions AS transactions ON blocks.number = transactions.block_number
-    JOIN ethereum_blockchain_raw.receipts AS receipts ON transactions.hash = receipts.transaction_hash
+FROM blockchain_raw.blocks AS blocks
+    JOIN blockchain_raw.transactions AS transactions ON blocks.number = transactions.block_number
+    JOIN blockchain_raw.receipts AS receipts ON transactions.hash = receipts.transaction_hash

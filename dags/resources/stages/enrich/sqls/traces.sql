@@ -2,15 +2,15 @@ WITH traces_with_status AS (
     -- Find all nested traces of failed traces
     WITH nested_failed_traces AS (
         SELECT distinct child.transaction_hash, child.trace_address
-        FROM ethereum_blockchain_raw.traces parent
-        JOIN ethereum_blockchain_raw.traces child
+        FROM blockchain_raw.traces parent
+        JOIN blockchain_raw.traces child
         ON (parent.trace_address IS NULL OR starts_with(child.trace_address, concat(parent.trace_address, ',')))
         AND child.transaction_hash = parent.transaction_hash
         where parent.trace_type IN ('call', 'create')
         AND parent.error IS NOT NULL
     )
     SELECT traces.*, if((traces.error IS NOT NULL or nested_failed_traces.trace_address IS NOT NULL), 0, 1) AS status
-    FROM ethereum_blockchain_raw.traces AS traces
+    FROM blockchain_raw.traces AS traces
     LEFT JOIN nested_failed_traces ON nested_failed_traces.transaction_hash = traces.transaction_hash
     AND nested_failed_traces.trace_address = traces.trace_address
 )
@@ -34,7 +34,7 @@ SELECT
     TIMESTAMP_SECONDS(blocks.timestamp) AS block_timestamp,
     blocks.number AS block_number,
     blocks.hash AS block_hash
-FROM ethereum_blockchain_raw.blocks AS blocks
+FROM blockchain_raw.blocks AS blocks
     JOIN traces_with_status AS traces ON blocks.number = traces.block_number
 
 
