@@ -36,13 +36,13 @@ sql_files = [
     'resources/stages/verify/sqls/token_transfers_have_latest.sql',
     'resources/stages/verify/sqls/traces_blocks_count.sql',
     'resources/stages/verify/sqls/transactions_count.sql',
-    'resources/stages/enrich/sqls/token_transfers.sql'
-    'resources/stages/enrich/sqls/contracts.sql'
-    'resources/stages/enrich/sqls/blocks.sql'
-    'resources/stages/enrich/sqls/traces.sql'
-    'resources/stages/enrich/sqls/transactions.sql'
-    'resources/stages/enrich/sqls/blocks_count.sql'
-    'resources/stages/enrich/sqls/tokens.sql'
+    'resources/stages/verify/sqls/blocks_count.sql',
+    'resources/stages/enrich/sqls/token_transfers.sql',
+    'resources/stages/enrich/sqls/contracts.sql',
+    'resources/stages/enrich/sqls/blocks.sql',
+    'resources/stages/enrich/sqls/traces.sql',
+    'resources/stages/enrich/sqls/transactions.sql',
+    'resources/stages/enrich/sqls/tokens.sql',
     'resources/stages/enrich/sqls/logs.sql'
 ]
 
