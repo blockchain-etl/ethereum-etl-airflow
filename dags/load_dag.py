@@ -57,7 +57,7 @@ def read_file(filepath):
     with open(filepath) as file_handle:
         content = file_handle.read()
         for key, value in environment.items():
-            content.replace(f'{{{key}}}', value)
+            content.replace('{{{key}}}'.format(key=key), value)
         return content
 
 
@@ -126,7 +126,7 @@ def add_load_tasks(task, file_format, allow_quoted_newlines=False):
         export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
         uri = '{export_location_uri}/{task}/*.{file_format}'.format(
             export_location_uri=export_location_uri, task=task, file_format=file_format)
-        table_ref = client.dataset(f'{dataset_name}_raw').table(task)
+        table_ref = client.dataset(dataset_name_raw).table(task)
         load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
         submit_bigquery_job(load_job, job_config)
         assert load_job.state == 'DONE'
