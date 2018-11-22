@@ -7,7 +7,7 @@ WITH tokens_grouped AS (
         total_supply,
         ROW_NUMBER() OVER (PARTITION BY address) AS rank
     FROM
-        blockchain_raw.tokens)
+        {{DATASET_NAME_RAW}}.tokens)
 SELECT
     address,
     symbol,

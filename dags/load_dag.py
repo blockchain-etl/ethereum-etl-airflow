@@ -26,31 +26,18 @@ logging.getLogger().setLevel(logging.DEBUG)
 # where files exported by export_dag.py are located
 
 dataset_name = os.environ.get('DATASET_NAME', 'ethereum_blockchain')
+dataset_name_raw = os.environ.get('DATASET_NAME_RAW', 'ethereum_blockchain_raw')
+dataset_name_temp = os.environ.get('DATASET_NAME_TEMP', 'ethereum_blockchain_temp')
+destination_dataset_project_id = os.environ.get('DESTINATION_DATASET_PROJECT_ID')
+if not destination_dataset_project_id:
+    raise ValueError('DESTINATION_DATASET_PROJECT_ID is required')
 
-sql_files = [
-    'resources/stages/verify/sqls/blocks_have_latest.sql',
-    'resources/stages/verify/sqls/traces_transactions_count.sql',
-    'resources/stages/verify/sqls/traces_contracts_count.sql',
-    'resources/stages/verify/sqls/logs_have_latest.sql',
-    'resources/stages/verify/sqls/transactions_have_latest.sql',
-    'resources/stages/verify/sqls/token_transfers_have_latest.sql',
-    'resources/stages/verify/sqls/traces_blocks_count.sql',
-    'resources/stages/verify/sqls/transactions_count.sql',
-    'resources/stages/verify/sqls/blocks_count.sql',
-    'resources/stages/enrich/sqls/token_transfers.sql',
-    'resources/stages/enrich/sqls/contracts.sql',
-    'resources/stages/enrich/sqls/blocks.sql',
-    'resources/stages/enrich/sqls/traces.sql',
-    'resources/stages/enrich/sqls/transactions.sql',
-    'resources/stages/enrich/sqls/tokens.sql',
-    'resources/stages/enrich/sqls/logs.sql'
-]
-
-for sql_file in sql_files:
-    with open(sql_file, 'U') as f:
-        new_sql = f.read().replace('blockchain', dataset_name)
-    with open(sql_file, 'w') as f:
-        f.write(new_sql)
+environment = {
+    'DATASET_NAME': dataset_name,
+    'DATASET_NAME_RAW': dataset_name_raw,
+    'DATASET_NAME_TEMP': dataset_name_temp,
+    'DESTINATION_DATASET_PROJECT_ID': destination_dataset_project_id
+}
 
 def read_bigquery_schema_from_file(filepath):
     result = []
@@ -68,7 +55,10 @@ def read_bigquery_schema_from_file(filepath):
 
 def read_file(filepath):
     with open(filepath) as file_handle:
-        return file_handle.read()
+        content = file_handle.read()
+        for key, value in environment.items():
+            content.replace(f'{{{key}}}', value)
+        return content
 
 
 def submit_bigquery_job(job, configuration):
@@ -161,7 +151,7 @@ def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependenci
 
         # Create a temporary table
         temp_table_name = '{task}_{milliseconds}'.format(task=task, milliseconds=int(round(time.time() * 1000)))
-        temp_table_ref = client.dataset(f'{dataset_name}_temp').table(temp_table_name)
+        temp_table_ref = client.dataset(dataset_name_temp).table(temp_table_name)
 
         schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/{task}.json'.format(task=task))
         schema = read_bigquery_schema_from_file(schema_path)
