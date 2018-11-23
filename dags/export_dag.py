@@ -98,7 +98,7 @@ export_traces_command = \
     setup_command + ' && ' + \
     '$PYTHON3 export_traces.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
     '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv ' \
-    '--genesis-traces --daofork-traces && ' \
+    '$EXPORT_DAOFORK_TRACES $EXPORT_GENESIS_TRACES && ' \
     'gsutil cp traces.csv $EXPORT_LOCATION_URI/traces/block_date=$EXECUTION_DATE/traces.csv '
 
 output_bucket = os.environ.get('OUTPUT_BUCKET')
@@ -110,6 +110,11 @@ ethereumetl_repo_branch = os.environ.get('ETHEREUMETL_REPO_BRANCH', 'master')
 dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 export_max_workers = os.environ.get('EXPORT_MAX_WORKERS', '5')
 export_batch_size = os.environ.get('EXPORT_BATCH_SIZE', '10')
+export_daofork_traces = os.environ.get('EXPORT_DAOFORK_TRACES', True)
+export_genesis_traces = os.environ.get('EXPORT_GENESIS_TRACES', True)
+export_traces_extra_params = '{} {}'.format(
+        '--daofork-traces' if export_daofork_traces else '', 
+        '--genesis-traces' if export_genesis_traces else '')
 
 # ds is 1 day behind the date on which the run is scheduled, e.g. if the dag is scheduled to run at
 # 1am on January 2, ds will be January 1.
@@ -121,9 +126,9 @@ environment = {
     'OUTPUT_BUCKET': output_bucket,
     'DAGS_FOLDER': dags_folder,
     'EXPORT_MAX_WORKERS': export_max_workers,
-    'EXPORT_BATCH_SIZE': export_batch_size
+    'EXPORT_BATCH_SIZE': export_batch_size,
+    'EXPORT_TRACES_EXTRA_PARAMS': export_traces_extra_params,
 }
-
 
 def add_export_task(toggle, task_id, bash_command, dependencies=None):
     if toggle:

@@ -17,4 +17,4 @@ SELECT
     blocks.gas_limit,
     blocks.gas_used,
     blocks.transaction_count
-FROM ethereum_blockchain_raw.blocks AS blocks
+FROM {{DATASET_NAME_RAW}}.blocks AS blocks
