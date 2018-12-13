@@ -1,4 +1,5 @@
 import os
+from tempfile import TemporaryDirectory
 from datetime import datetime, timedelta
 
 from airflow import models
@@ -79,38 +80,36 @@ export_traces_toggle = get_boolean_env_variable("EXPORT_TRACES", True)
 # Export
 
 
-def temporary_file(filename):
-    return "/tmp/{filename}".format(filename=filename)
-
-
-def export_path(folder, date):
-    # TODO: use export folder
-    return "export-dev/{folder}/block_date={block_date}/".format(
-        folder=folder, block_date=date.strftime("%Y-%m-%d")
+def export_path(directory, date):
+    # TODO: use export directory
+    return "export-dev/{directory}/block_date={block_date}/".format(
+        directory=directory, block_date=date.strftime("%Y-%m-%d")
     )
 
 
 cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
 
 
-def temporary_to_export_location(filename, export_path):
+def copy_to_export_path(file_path, export_path):
+    filename = os.path.basename(file_path)
     cloud_storage_hook.upload(
-        bucket=output_bucket, object=export_path + filename, filename=temporary_file(filename)
+        bucket=output_bucket, object=export_path + filename, filename=file_path
     )
 
 
-def temporary_from_export_location(export_path, filename):
+def copy_from_export_path(export_path, file_path):
+    filename = os.path.basename(file_path)
     cloud_storage_hook.download(
-        bucket=output_bucket, object=export_path + filename, filename=temporary_file(filename)
+        bucket=output_bucket, object=export_path + filename, filename=file_path
     )
 
 
-def get_block_range(date):
+def get_block_range(tempdir, date):
     get_block_range_for_date.callback(
-        provider_uri=web3_provider_uri, date=date, output=temporary_file("blocks_meta.txt")
+        provider_uri=web3_provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
     )
 
-    with open(temporary_file("blocks_meta.txt")) as block_range_file:
+    with open(os.path.join(tempdir, "blocks_meta.txt")) as block_range_file:
         block_range = block_range_file.read()
         start_block, end_block = block_range.split(",")
 
@@ -118,120 +117,149 @@ def get_block_range(date):
 
 
 def export_blocks_and_transactions_command(execution_date, **kwargs):
-    start_block, end_block = get_block_range(execution_date)
+    with TemporaryDirectory() as tempdir:
+        start_block, end_block = get_block_range(tempdir, execution_date)
 
-    export_blocks_and_transactions.callback(
-        start_block=start_block,
-        end_block=end_block,
-        batch_size=export_batch_size,
-        provider_uri=web3_provider_uri,
-        max_workers=export_max_workers,
-        blocks_output=temporary_file("blocks.csv"),
-        transactions_output=temporary_file("transactions.csv"),
-    )
+        export_blocks_and_transactions.callback(
+            start_block=start_block,
+            end_block=end_block,
+            batch_size=export_batch_size,
+            provider_uri=web3_provider_uri,
+            max_workers=export_max_workers,
+            blocks_output=os.path.join(tempdir, "blocks.csv"),
+            transactions_output=os.path.join(tempdir, "transactions.csv"),
+        )
 
-    temporary_to_export_location("blocks_meta.txt", export_path("blocks_meta", execution_date))
-    temporary_to_export_location("blocks.csv", export_path("blocks", execution_date))
-    temporary_to_export_location("transactions.csv", export_path("transactions", execution_date))
+        copy_to_export_path(
+            os.path.join(tempdir, "blocks_meta.txt"), export_path("blocks_meta", execution_date)
+        )
+        copy_to_export_path(
+            os.path.join(tempdir, "blocks.csv"), export_path("blocks", execution_date)
+        )
+        copy_to_export_path(
+            os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
+        )
 
 
 def export_receipts_and_logs_command(execution_date, **kwargs):
-    temporary_from_export_location(export_path("transactions", execution_date), "transactions.csv")
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("transactions", execution_date), os.path.join(tempdir, "transactions.csv")
+        )
 
-    extract_csv_column.callback(
-        input=temporary_file("transactions.csv"),
-        output=temporary_file("transaction_hashes.txt"),
-        column="hash",
-    )
+        extract_csv_column.callback(
+            input=os.path.join(tempdir, "transactions.csv"),
+            output=os.path.join(tempdir, "transaction_hashes.txt"),
+            column="hash",
+        )
 
-    export_receipts_and_logs.callback(
-        batch_size=export_batch_size,
-        transaction_hashes=temporary_file("transaction_hashes.txt"),
-        provider_uri=web3_provider_uri,
-        max_workers=export_max_workers,
-        receipts_output=temporary_file("receipts.csv"),
-        logs_output=temporary_file("logs.json"),
-    )
+        export_receipts_and_logs.callback(
+            batch_size=export_batch_size,
+            transaction_hashes=os.path.join(tempdir, "transaction_hashes.txt"),
+            provider_uri=web3_provider_uri,
+            max_workers=export_max_workers,
+            receipts_output=os.path.join(tempdir, "receipts.csv"),
+            logs_output=os.path.join(tempdir, "logs.json"),
+        )
 
-    temporary_to_export_location("receipts.csv", export_path("receipts", execution_date))
-    temporary_to_export_location("logs.json", export_path("logs", execution_date))
+        copy_to_export_path(
+            os.path.join(tempdir, "receipts.csv"), export_path("receipts", execution_date)
+        )
+        copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", execution_date))
 
 
 def export_contracts_command(execution_date, **kwargs):
-    temporary_from_export_location(export_path("receipts", execution_date), "receipts.csv")
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("receipts", execution_date), os.path.join(tempdir, "receipts.csv")
+        )
 
-    extract_csv_column.callback(
-        input=temporary_file("receipts.csv"),
-        output=temporary_file("contract_addresses.txt"),
-        column="contract_address",
-    )
+        extract_csv_column.callback(
+            input=os.path.join(tempdir, "receipts.csv"),
+            output=os.path.join(tempdir, "contract_addresses.txt"),
+            column="contract_address",
+        )
 
-    export_contracts.callback(
-        batch_size=export_batch_size,
-        contract_addresses=temporary_file("contract_addresses.txt"),
-        output=temporary_file("contracts.json"),
-        max_workers=export_max_workers,
-        provider_uri=web3_provider_uri,
-    )
+        export_contracts.callback(
+            batch_size=export_batch_size,
+            contract_addresses=os.path.join(tempdir, "contract_addresses.txt"),
+            output=os.path.join(tempdir, "contracts.json"),
+            max_workers=export_max_workers,
+            provider_uri=web3_provider_uri,
+        )
 
-    temporary_to_export_location("contracts.json", export_path("contracts", execution_date))
+        copy_to_export_path(
+            os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
+        )
 
 
 def export_tokens_command(execution_date, **kwargs):
-    temporary_from_export_location(export_path("contracts", execution_date), "contracts.json")
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
+        )
 
-    filter_items.callback(
-        input=temporary_file("contracts.json"),
-        output=temporary_file("token_contracts.json"),
-        predicate="item['is_erc20'] or item['is_erc721']",
-    )
+        filter_items.callback(
+            input=os.path.join(tempdir, "contracts.json"),
+            output=os.path.join(tempdir, "token_contracts.json"),
+            predicate="item['is_erc20'] or item['is_erc721']",
+        )
 
-    extract_field.callback(
-        input=temporary_file("token_contracts.json"),
-        output=temporary_file("token_addresses.txt"),
-        field="address",
-    )
+        extract_field.callback(
+            input=os.path.join(tempdir, "token_contracts.json"),
+            output=os.path.join(tempdir, "token_addresses.txt"),
+            field="address",
+        )
 
-    export_tokens.callback(
-        token_addresses=temporary_file("token_addresses.txt"),
-        output=temporary_file("tokens.csv"),
-        max_workers=export_max_workers,
-        provider_uri=web3_provider_uri,
-    )
+        export_tokens.callback(
+            token_addresses=os.path.join(tempdir, "token_addresses.txt"),
+            output=os.path.join(tempdir, "tokens.csv"),
+            max_workers=export_max_workers,
+            provider_uri=web3_provider_uri,
+        )
 
-    temporary_to_export_location("tokens.csv", export_path("tokens", execution_date))
+        copy_to_export_path(
+            os.path.join(tempdir, "tokens.csv"), export_path("tokens", execution_date)
+        )
 
 
 def extract_token_transfers_command(execution_date, **kwargs):
-    temporary_from_export_location(export_path("logs", execution_date), "logs.json")
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
+        )
 
-    extract_token_transfers.callback(
-        logs=temporary_file("logs.json"),
-        batch_size=export_batch_size,
-        output=temporary_file("token_transfers.csv"),
-        max_workers=export_max_workers,
-    )
+        extract_token_transfers.callback(
+            logs=os.path.join(tempdir, "logs.json"),
+            batch_size=export_batch_size,
+            output=os.path.join(tempdir, "token_transfers.csv"),
+            max_workers=export_max_workers,
+        )
 
-    temporary_to_export_location(
-        "token_transfers.csv", export_path("token_transfers", execution_date)
-    )
+        copy_to_export_path(
+            os.path.join(tempdir, "token_transfers.csv"),
+            export_path("token_transfers", execution_date),
+        )
 
 
 def export_traces_command(execution_date, **kwargs):
-    start_block, end_block = get_block_range(execution_date)
+    with TemporaryDirectory() as tempdir:
+        start_block, end_block = get_block_range(tempdir, execution_date)
 
-    export_traces.callback(
-        start_block=start_block,
-        end_block=end_block,
-        batch_size=export_batch_size,
-        output=temporary_file("traces.csv"),
-        max_workers=export_max_workers,
-        provider_uri=web3_provider_uri_archival,
-        genesis_traces=export_genesis_traces_option,
-        daofork_traces=export_daofork_traces_option,
-    )
+        export_traces.callback(
+            start_block=start_block,
+            end_block=end_block,
+            batch_size=export_batch_size,
+            output=os.path.join(tempdir, "traces.csv"),
+            max_workers=export_max_workers,
+            provider_uri=web3_provider_uri_archival,
+            genesis_traces=export_genesis_traces_option,
+            daofork_traces=export_daofork_traces_option,
+        )
 
-    temporary_to_export_location("traces.csv", export_path("traces", execution_date))
+        copy_to_export_path(
+            os.path.join(tempdir, "traces.csv"), export_path("traces", execution_date)
+        )
 
 
 def add_export_task(toggle, task_id, python_callable, dependencies=None):
