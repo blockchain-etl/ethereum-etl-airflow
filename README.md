@@ -92,9 +92,8 @@ Enrich `tokens`:
 
 Create environment here, https://console.cloud.google.com/composer, use Python version 3, set up environment variables:
 
-+--------------------------------+-----------------------------------------+
 | Variable                       | Description                             |
-+--------------------------------+-----------------------------------------+
+|--------------------------------|-----------------------------------------|
 | OUTPUT_BUCKET                  | GCS bucket to store exported files      |
 | EXPORT_BLOCKS_AND_TRANSACTIONS | True or False                           |
 | EXPORT_RECEIPTS_AND_LOGS       | True or False                           |
@@ -108,9 +107,8 @@ Create environment here, https://console.cloud.google.com/composer, use Python v
 | EXPORT_BATCH_SIZE              | batch size for export (10 recommended)  |
 | WEB3_PROVIDER_URI_BACKUP       | URI for backup node                     |
 | DESTINATION_DATASET_PROJECT_ID | Project ID of BigQuery datasets         |
-+--------------------------------+-----------------------------------------+
 
-### Upload dags
+### Upload DAGs
 
 ```bash
 > ./upload_dags.sh <airflow_bucket>
