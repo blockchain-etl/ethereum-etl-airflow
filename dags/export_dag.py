@@ -23,8 +23,7 @@ from ethereumetl.cli import (
 
 default_dag_args = {
     "depends_on_past": False,
-    # TODO: restore start date
-    "start_date": datetime(2016, 7, 30),
+    "start_date": datetime(2015, 7, 30),
     "email_on_failure": True,
     "email_on_retry": True,
     "retries": 5,
@@ -39,8 +38,7 @@ if notification_emails and len(notification_emails) > 0:
 dag = models.DAG(
     "ethereumetl_export_dag",
     # Daily at 1am
-    # TODO: change back to daily
-    schedule_interval="0 1 1 1 *",
+    schedule_interval="0 1 * * *",
     default_args=default_dag_args,
 )
 
@@ -81,8 +79,7 @@ export_traces_toggle = get_boolean_env_variable("EXPORT_TRACES", True)
 
 
 def export_path(directory, date):
-    # TODO: use export directory
-    return "export-dev/{directory}/block_date={block_date}/".format(
+    return "export/{directory}/block_date={block_date}/".format(
         directory=directory, block_date=date.strftime("%Y-%m-%d")
     )
 
