@@ -76,3 +76,42 @@ Enrich `tokens`:
 > bq mk --table --description "$(cat ./enrich/descriptions/tokens.txt | tr '\n' ' ')" ethereum_blockchain.tokens ./enrich/schemas/tokens.json
 > bq --location=US query --destination_table ethereum_blockchain.tokens --use_legacy_sql=false "$(cat ./enrich/sqls/tokens.sql | tr '\n' ' ')"
 ```
+
+## Setting up Airflow DAGs using Google Cloud Composer
+
+### Create BigQuery Datasets
+
+- Sign in to BigQuery https://bigquery.cloud.google.com/
+- Create a new datasets called `ethereum_blockchain`, `ethereum_blockchain_raw`, `ethereum_blockchain_temp`
+
+### Create Google Cloud Storage bucket
+
+- Create a new Google Storage bucket to store exported files https://console.cloud.google.com/storage/browser
+
+### Create Google Cloud Composer environment
+
+Create environment here, https://console.cloud.google.com/composer, use Python version 3, set up environment variables:
+
++--------------------------------+-----------------------------------------+
+| Variable                       | Description                             |
++--------------------------------+-----------------------------------------+
+| OUTPUT_BUCKET                  | GCS bucket to store exported files      |
+| EXPORT_BLOCKS_AND_TRANSACTIONS | True or False                           |
+| EXPORT_RECEIPTS_AND_LOGS       | True or False                           |
+| EXTRACT_TOKEN_TRANSFERS        | True or False                           |
+| EXPORT_CONTRACTS               | True or False                           |
+| EXPORT_TOKENS                  | True or False                           |
+| EXPORT_TRACES                  | True or False                           |
+| WEB3_PROVIDER_URI_ARCHIVAL     | URI of archival Parity node for traces  |
+| NOTIFICATION_EMAILS            | email for notifications                 |
+| EXPORT_MAX_WORKERS             | max workers for export (10 recommended) |
+| EXPORT_BATCH_SIZE              | batch size for export (10 recommended)  |
+| WEB3_PROVIDER_URI_BACKUP       | URI for backup node                     |
+| DESTINATION_DATASET_PROJECT_ID | Project ID of BigQuery datasets         |
++--------------------------------+-----------------------------------------+
+
+### Upload dags
+
+```bash
+> ./upload_dags.sh <airflow_bucket>
+```
