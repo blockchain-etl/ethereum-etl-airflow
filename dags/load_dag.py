@@ -57,7 +57,9 @@ def read_file(filepath):
     with open(filepath) as file_handle:
         content = file_handle.read()
         for key, value in environment.items():
-            content.replace('{{{key}}}'.format(key=key), value)
+            # each bracket should be doubled to be escaped
+            # we need two escaped and one unescaped
+            content = content.replace('{{{{{key}}}}}'.format(key=key), value)
         return content
 
 

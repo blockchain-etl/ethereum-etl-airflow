@@ -1,10 +1,48 @@
-from __future__ import print_function
-
 import os
+from tempfile import TemporaryDirectory
 from datetime import datetime, timedelta
 
 from airflow import models
-from airflow.operators import bash_operator
+from airflow.operators import python_operator
+from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
+
+from ethereumetl.cli import (
+    get_block_range_for_date,
+    extract_csv_column,
+    filter_items,
+    extract_field,
+    export_blocks_and_transactions,
+    export_receipts_and_logs,
+    export_contracts,
+    export_tokens,
+    extract_token_transfers,
+    export_traces,
+)
+
+# DAG configuration
+
+default_dag_args = {
+    "depends_on_past": False,
+    "start_date": datetime(2015, 7, 30),
+    "email_on_failure": True,
+    "email_on_retry": True,
+    "retries": 5,
+    "retry_delay": timedelta(minutes=5),
+}
+
+notification_emails = os.environ.get("NOTIFICATION_EMAILS")
+if notification_emails and len(notification_emails) > 0:
+    default_dag_args["email"] = [email.strip() for email in notification_emails.split(",")]
+
+# Define a DAG (directed acyclic graph) of tasks.
+dag = models.DAG(
+    "ethereumetl_export_dag",
+    # Daily at 1am
+    schedule_interval="0 1 * * *",
+    default_args=default_dag_args,
+)
+
+# Environment configuration
 
 
 def get_boolean_env_variable(env_variable_name, default=True):
@@ -12,132 +50,223 @@ def get_boolean_env_variable(env_variable_name, default=True):
     if raw_env is None or len(raw_env) == 0:
         return default
     else:
-        return raw_env.lower() in ['true', 'yes']
+        return raw_env.lower() in ["true", "yes"]
 
 
-default_dag_args = {
-    'depends_on_past': False,
-    'start_date': datetime(2015, 7, 30),
-    'email_on_failure': True,
-    'email_on_retry': True,
-    'retries': 5,
-    'retry_delay': timedelta(minutes=5)
-}
-
-notification_emails = os.environ.get('NOTIFICATION_EMAILS')
-if notification_emails and len(notification_emails) > 0:
-    default_dag_args['email'] = [email.strip() for email in notification_emails.split(',')]
-
-# Define a DAG (directed acyclic graph) of tasks.
-dag = models.DAG(
-    'ethereumetl_export_dag',
-    # Daily at 1am
-    schedule_interval='0 1 * * *',
-    default_args=default_dag_args)
-# miniconda.tar contains Python home directory with ethereum-etl dependencies install via pip
-# Will get rid of this once Google Cloud Composer supports Python 3
-install_python3_command = \
-    'cp $DAGS_FOLDER/resources/miniconda.tar . && ' \
-    'tar xvf miniconda.tar > untar_miniconda.log && ' \
-    'PYTHON3=$PWD/miniconda/bin/python3'
-
-setup_command = \
-    'set -o xtrace && set -o pipefail && ' + install_python3_command + \
-    ' && ' \
-    'git clone --branch $ETHEREUMETL_REPO_BRANCH http://github.com/medvedev1088/ethereum-etl && cd ethereum-etl && ' \
-    'export LC_ALL=C.UTF-8 && ' \
-    'export LANG=C.UTF-8 && ' \
-    'BLOCK_RANGE=$($PYTHON3 get_block_range_for_date.py -d $EXECUTION_DATE -p $WEB3_PROVIDER_URI) && ' \
-    'BLOCK_RANGE_ARRAY=(${BLOCK_RANGE//,/ }) && START_BLOCK=${BLOCK_RANGE_ARRAY[0]} && END_BLOCK=${BLOCK_RANGE_ARRAY[1]} && ' \
-    'EXPORT_LOCATION_URI=gs://$OUTPUT_BUCKET/export && ' \
-    'export CLOUDSDK_PYTHON=/usr/local/bin/python'
-
-export_blocks_and_transactions_command = \
-    setup_command + ' && ' + \
-    'echo $BLOCK_RANGE > blocks_meta.txt && ' \
-    '$PYTHON3 export_blocks_and_transactions.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
-    '-p $WEB3_PROVIDER_URI --blocks-output blocks.csv --transactions-output transactions.csv && ' \
-    'gsutil cp blocks.csv $EXPORT_LOCATION_URI/blocks/block_date=$EXECUTION_DATE/blocks.csv && ' \
-    'gsutil cp transactions.csv $EXPORT_LOCATION_URI/transactions/block_date=$EXECUTION_DATE/transactions.csv && ' \
-    'gsutil cp blocks_meta.txt $EXPORT_LOCATION_URI/blocks_meta/block_date=$EXECUTION_DATE/blocks_meta.txt '
-
-export_receipts_and_logs_command = \
-    setup_command + ' && ' + \
-    'gsutil cp $EXPORT_LOCATION_URI/transactions/block_date=$EXECUTION_DATE/transactions.csv transactions.csv && ' \
-    '$PYTHON3 extract_csv_column.py -i transactions.csv -o transaction_hashes.txt -c hash && ' \
-    '$PYTHON3 export_receipts_and_logs.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --transaction-hashes transaction_hashes.txt ' \
-    '-p $WEB3_PROVIDER_URI --receipts-output receipts.csv --logs-output logs.json && ' \
-    'gsutil cp receipts.csv $EXPORT_LOCATION_URI/receipts/block_date=$EXECUTION_DATE/receipts.csv && ' \
-    'gsutil cp logs.json $EXPORT_LOCATION_URI/logs/block_date=$EXECUTION_DATE/logs.json '
-
-export_contracts_command = \
-    setup_command + ' && ' + \
-    'gsutil cp $EXPORT_LOCATION_URI/receipts/block_date=$EXECUTION_DATE/receipts.csv receipts.csv && ' \
-    '$PYTHON3 extract_csv_column.py -i receipts.csv -o contract_addresses.txt -c contract_address && ' \
-    '$PYTHON3 export_contracts.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --contract-addresses contract_addresses.txt ' \
-    '-p $WEB3_PROVIDER_URI --output contracts.json && ' \
-    'gsutil cp contracts.json $EXPORT_LOCATION_URI/contracts/block_date=$EXECUTION_DATE/contracts.json '
-
-export_tokens_command = \
-    setup_command + ' && ' + \
-    'gsutil cp $EXPORT_LOCATION_URI/contracts/block_date=$EXECUTION_DATE/contracts.json contracts.json && ' \
-    '$PYTHON3 filter_items.py -i contracts.json -p "item[\'is_erc20\'] or item[\'is_erc721\']" | ' \
-    '$PYTHON3 extract_field.py -f address -o token_addresses.txt && ' \
-    '$PYTHON3 export_tokens.py -w $EXPORT_MAX_WORKERS --token-addresses token_addresses.txt ' \
-    '-p $WEB3_PROVIDER_URI --output tokens.csv && ' \
-    'gsutil cp tokens.csv $EXPORT_LOCATION_URI/tokens/block_date=$EXECUTION_DATE/tokens.csv '
-
-extract_token_transfers_command = \
-    setup_command + ' && ' + \
-    'gsutil cp $EXPORT_LOCATION_URI/logs/block_date=$EXECUTION_DATE/logs.json logs.json && ' \
-    '$PYTHON3 extract_token_transfers.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS --logs logs.json --output token_transfers.csv && ' \
-    'gsutil cp token_transfers.csv $EXPORT_LOCATION_URI/token_transfers/block_date=$EXECUTION_DATE/token_transfers.csv '
-
-# TODO: Test that command will fail if there are no blocks for the requested range.
-export_traces_command = \
-    setup_command + ' && ' + \
-    '$PYTHON3 export_traces.py -b $EXPORT_BATCH_SIZE -w $EXPORT_MAX_WORKERS -s $START_BLOCK -e $END_BLOCK ' \
-    '-p $WEB3_PROVIDER_URI_ARCHIVAL -o traces.csv ' \
-    '$EXPORT_DAOFORK_TRACES_OPTION $EXPORT_GENESIS_TRACES_OPTION && ' \
-    'gsutil cp traces.csv $EXPORT_LOCATION_URI/traces/block_date=$EXECUTION_DATE/traces.csv '
-
-output_bucket = os.environ.get('OUTPUT_BUCKET')
+output_bucket = os.environ.get("OUTPUT_BUCKET")
 if output_bucket is None:
-    raise ValueError('You must set OUTPUT_BUCKET environment variable')
-web3_provider_uri = os.environ.get('WEB3_PROVIDER_URI', 'https://mainnet.infura.io/')
-web3_provider_uri_archival = os.environ.get('WEB3_PROVIDER_URI_ARCHIVAL', web3_provider_uri)
-ethereumetl_repo_branch = os.environ.get('ETHEREUMETL_REPO_BRANCH', 'master')
-dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
-export_max_workers = os.environ.get('EXPORT_MAX_WORKERS', '5')
-export_batch_size = os.environ.get('EXPORT_BATCH_SIZE', '10')
-# --daofork-traces/--no-daofork-traces
-export_daofork_traces_option = os.environ.get('EXPORT_DAOFORK_TRACES_OPTION', '--daofork-traces')
-# --genesis-traces/--no-genesis-traces
-export_genesis_traces_option = os.environ.get('EXPORT_GENESIS_TRACES_OPTION', '--genesis-traces')
+    raise ValueError("You must set OUTPUT_BUCKET environment variable")
 
-# ds is 1 day behind the date on which the run is scheduled, e.g. if the dag is scheduled to run at
-# 1am on January 2, ds will be January 1.
-environment = {
-    'EXECUTION_DATE': '{{ ds }}',
-    'ETHEREUMETL_REPO_BRANCH': ethereumetl_repo_branch,
-    'WEB3_PROVIDER_URI': web3_provider_uri,
-    'WEB3_PROVIDER_URI_ARCHIVAL': web3_provider_uri_archival,
-    'OUTPUT_BUCKET': output_bucket,
-    'DAGS_FOLDER': dags_folder,
-    'EXPORT_MAX_WORKERS': export_max_workers,
-    'EXPORT_BATCH_SIZE': export_batch_size,
-    'EXPORT_DAOFORK_TRACES_OPTION': export_daofork_traces_option,
-    'EXPORT_GENESIS_TRACES_OPTION': export_genesis_traces_option
-}
+web3_provider_uri = os.environ.get("WEB3_PROVIDER_URI", "https://mainnet.infura.io/")
+web3_provider_uri_archival = os.environ.get("WEB3_PROVIDER_URI_ARCHIVAL", web3_provider_uri)
 
-def add_export_task(toggle, task_id, bash_command, dependencies=None):
+export_max_workers = int(os.environ.get("EXPORT_MAX_WORKERS", 5))
+export_batch_size = int(os.environ.get("EXPORT_BATCH_SIZE", 10))
+
+export_daofork_traces_option = get_boolean_env_variable("EXPORT_DAOFORK_TRACES_OPTION")
+export_genesis_traces_option = get_boolean_env_variable("EXPORT_GENESIS_TRACES_OPTION")
+
+export_blocks_and_transactions_toggle = get_boolean_env_variable(
+    "EXPORT_BLOCKS_AND_TRANSACTIONS", True
+)
+export_receipts_and_logs_toggle = get_boolean_env_variable("EXPORT_RECEIPTS_AND_LOGS", True)
+export_contracts_toggle = get_boolean_env_variable("EXPORT_CONTRACTS", True)
+export_tokens_toggle = get_boolean_env_variable("EXPORT_TOKENS", True)
+extract_token_transfers_toggle = get_boolean_env_variable("EXTRACT_TOKEN_TRANSFERS", True)
+export_traces_toggle = get_boolean_env_variable("EXPORT_TRACES", True)
+
+# Export
+
+
+def export_path(directory, date):
+    return "export/{directory}/block_date={block_date}/".format(
+        directory=directory, block_date=date.strftime("%Y-%m-%d")
+    )
+
+
+cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
+
+
+def copy_to_export_path(file_path, export_path):
+    filename = os.path.basename(file_path)
+    cloud_storage_hook.upload(
+        bucket=output_bucket, object=export_path + filename, filename=file_path
+    )
+
+
+def copy_from_export_path(export_path, file_path):
+    filename = os.path.basename(file_path)
+    cloud_storage_hook.download(
+        bucket=output_bucket, object=export_path + filename, filename=file_path
+    )
+
+
+def get_block_range(tempdir, date):
+    get_block_range_for_date.callback(
+        provider_uri=web3_provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
+    )
+
+    with open(os.path.join(tempdir, "blocks_meta.txt")) as block_range_file:
+        block_range = block_range_file.read()
+        start_block, end_block = block_range.split(",")
+
+    return int(start_block), int(end_block)
+
+
+def export_blocks_and_transactions_command(execution_date, **kwargs):
+    with TemporaryDirectory() as tempdir:
+        start_block, end_block = get_block_range(tempdir, execution_date)
+
+        export_blocks_and_transactions.callback(
+            start_block=start_block,
+            end_block=end_block,
+            batch_size=export_batch_size,
+            provider_uri=web3_provider_uri,
+            max_workers=export_max_workers,
+            blocks_output=os.path.join(tempdir, "blocks.csv"),
+            transactions_output=os.path.join(tempdir, "transactions.csv"),
+        )
+
+        copy_to_export_path(
+            os.path.join(tempdir, "blocks_meta.txt"), export_path("blocks_meta", execution_date)
+        )
+        copy_to_export_path(
+            os.path.join(tempdir, "blocks.csv"), export_path("blocks", execution_date)
+        )
+        copy_to_export_path(
+            os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
+        )
+
+
+def export_receipts_and_logs_command(execution_date, **kwargs):
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("transactions", execution_date), os.path.join(tempdir, "transactions.csv")
+        )
+
+        extract_csv_column.callback(
+            input=os.path.join(tempdir, "transactions.csv"),
+            output=os.path.join(tempdir, "transaction_hashes.txt"),
+            column="hash",
+        )
+
+        export_receipts_and_logs.callback(
+            batch_size=export_batch_size,
+            transaction_hashes=os.path.join(tempdir, "transaction_hashes.txt"),
+            provider_uri=web3_provider_uri,
+            max_workers=export_max_workers,
+            receipts_output=os.path.join(tempdir, "receipts.csv"),
+            logs_output=os.path.join(tempdir, "logs.json"),
+        )
+
+        copy_to_export_path(
+            os.path.join(tempdir, "receipts.csv"), export_path("receipts", execution_date)
+        )
+        copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", execution_date))
+
+
+def export_contracts_command(execution_date, **kwargs):
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("receipts", execution_date), os.path.join(tempdir, "receipts.csv")
+        )
+
+        extract_csv_column.callback(
+            input=os.path.join(tempdir, "receipts.csv"),
+            output=os.path.join(tempdir, "contract_addresses.txt"),
+            column="contract_address",
+        )
+
+        export_contracts.callback(
+            batch_size=export_batch_size,
+            contract_addresses=os.path.join(tempdir, "contract_addresses.txt"),
+            output=os.path.join(tempdir, "contracts.json"),
+            max_workers=export_max_workers,
+            provider_uri=web3_provider_uri,
+        )
+
+        copy_to_export_path(
+            os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
+        )
+
+
+def export_tokens_command(execution_date, **kwargs):
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
+        )
+
+        filter_items.callback(
+            input=os.path.join(tempdir, "contracts.json"),
+            output=os.path.join(tempdir, "token_contracts.json"),
+            predicate="item['is_erc20'] or item['is_erc721']",
+        )
+
+        extract_field.callback(
+            input=os.path.join(tempdir, "token_contracts.json"),
+            output=os.path.join(tempdir, "token_addresses.txt"),
+            field="address",
+        )
+
+        export_tokens.callback(
+            token_addresses=os.path.join(tempdir, "token_addresses.txt"),
+            output=os.path.join(tempdir, "tokens.csv"),
+            max_workers=export_max_workers,
+            provider_uri=web3_provider_uri,
+        )
+
+        copy_to_export_path(
+            os.path.join(tempdir, "tokens.csv"), export_path("tokens", execution_date)
+        )
+
+
+def extract_token_transfers_command(execution_date, **kwargs):
+    with TemporaryDirectory() as tempdir:
+        copy_from_export_path(
+            export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
+        )
+
+        extract_token_transfers.callback(
+            logs=os.path.join(tempdir, "logs.json"),
+            batch_size=export_batch_size,
+            output=os.path.join(tempdir, "token_transfers.csv"),
+            max_workers=export_max_workers,
+        )
+
+        copy_to_export_path(
+            os.path.join(tempdir, "token_transfers.csv"),
+            export_path("token_transfers", execution_date),
+        )
+
+
+def export_traces_command(execution_date, **kwargs):
+    with TemporaryDirectory() as tempdir:
+        start_block, end_block = get_block_range(tempdir, execution_date)
+
+        export_traces.callback(
+            start_block=start_block,
+            end_block=end_block,
+            batch_size=export_batch_size,
+            output=os.path.join(tempdir, "traces.csv"),
+            max_workers=export_max_workers,
+            provider_uri=web3_provider_uri_archival,
+            genesis_traces=export_genesis_traces_option,
+            daofork_traces=export_daofork_traces_option,
+        )
+
+        copy_to_export_path(
+            os.path.join(tempdir, "traces.csv"), export_path("traces", execution_date)
+        )
+
+
+def add_export_task(toggle, task_id, python_callable, dependencies=None):
     if toggle:
-        operator = bash_operator.BashOperator(
+        operator = python_operator.PythonOperator(
             task_id=task_id,
-            bash_command=bash_command,
+            python_callable=python_callable,
+            provide_context=True,
             execution_timeout=timedelta(hours=15),
-            env=environment,
-            dag=dag
+            dag=dag,
         )
         if dependencies is not None and len(dependencies) > 0:
             for dependency in dependencies:
@@ -148,31 +277,42 @@ def add_export_task(toggle, task_id, bash_command, dependencies=None):
         return None
 
 
-export_blocks_and_transactions = get_boolean_env_variable('EXPORT_BLOCKS_AND_TRANSACTIONS', True)
-export_receipts_and_logs = get_boolean_env_variable('EXPORT_RECEIPTS_AND_LOGS', True)
-export_contracts = get_boolean_env_variable('EXPORT_CONTRACTS', True)
-export_tokens = get_boolean_env_variable('EXPORT_TOKENS', True)
-extract_token_transfers = get_boolean_env_variable('EXTRACT_TOKEN_TRANSFERS', True)
-export_traces = get_boolean_env_variable('EXPORT_TRACES', True)
+# Operators
 
 export_blocks_and_transactions_operator = add_export_task(
-    export_blocks_and_transactions, 'export_blocks_and_transactions', export_blocks_and_transactions_command)
+    export_blocks_and_transactions_toggle,
+    "export_blocks_and_transactions",
+    export_blocks_and_transactions_command,
+)
 
 export_receipts_and_logs_operator = add_export_task(
-    export_receipts_and_logs, 'export_receipts_and_logs', export_receipts_and_logs_command,
-    dependencies=[export_blocks_and_transactions_operator])
+    export_receipts_and_logs_toggle,
+    "export_receipts_and_logs",
+    export_receipts_and_logs_command,
+    dependencies=[export_blocks_and_transactions_operator],
+)
 
 export_contracts_operator = add_export_task(
-    export_contracts, 'export_contracts', export_contracts_command,
-    dependencies=[export_receipts_and_logs_operator])
+    export_contracts_toggle,
+    "export_contracts",
+    export_contracts_command,
+    dependencies=[export_receipts_and_logs_operator],
+)
 
 export_tokens_operator = add_export_task(
-    export_tokens, 'export_tokens', export_tokens_command,
-    dependencies=[export_contracts_operator])
+    export_tokens_toggle,
+    "export_tokens",
+    export_tokens_command,
+    dependencies=[export_contracts_operator],
+)
 
 extract_token_transfers_operator = add_export_task(
-    extract_token_transfers, 'extract_token_transfers', extract_token_transfers_command,
-    dependencies=[export_receipts_and_logs_operator])
+    extract_token_transfers_toggle,
+    "extract_token_transfers",
+    extract_token_transfers_command,
+    dependencies=[export_receipts_and_logs_operator],
+)
 
 export_traces_operator = add_export_task(
-    export_traces, 'export_traces', export_traces_command)
+    export_traces_toggle, "export_traces", export_traces_command
+)
