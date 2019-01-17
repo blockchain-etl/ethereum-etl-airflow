@@ -308,26 +308,40 @@ def add_export_task(toggle, task_id, python_callable, dependencies=None):
         return None
 
 
+MEGABYTE = 1024 * 1024
+
+
 # Helps avoid OverflowError: https://stackoverflow.com/questions/47610283/cant-upload-2gb-to-google-cloud-storage
 # https://developers.google.com/api-client-library/python/guide/media_upload#resumable-media-chunked-upload
-def upload_to_gcs(gcs_hook, bucket, object, filename):
+def upload_to_gcs(gcs_hook, bucket, object, filename, mime_type='application/octet-stream'):
     service = gcs_hook.get_conn()
 
-    media = MediaFileUpload(filename, 'application/octet-stream', resumable=True)
+    if os.path.getsize(filename) > 10 * MEGABYTE:
+        media = MediaFileUpload(filename, mime_type, resumable=True)
 
-    try:
-        request = service.objects().insert(bucket=bucket, name=object, media_body=media)
-        response = None
-        while response is None:
-            status, response = request.next_chunk()
-            if status:
-                logging.info("Uploaded %d%%." % int(status.progress() * 100))
+        try:
+            request = service.objects().insert(bucket=bucket, name=object, media_body=media)
+            response = None
+            while response is None:
+                status, response = request.next_chunk()
+                if status:
+                    logging.info("Uploaded %d%%." % int(status.progress() * 100))
 
-        return True
-    except errors.HttpError as ex:
-        if ex.resp['status'] == '404':
-            return False
-        raise
+            return True
+        except errors.HttpError as ex:
+            if ex.resp['status'] == '404':
+                return False
+            raise
+    else:
+        media = MediaFileUpload(filename, mime_type)
+
+        try:
+            service.objects().insert(bucket=bucket, name=object, media_body=media).execute()
+            return True
+        except errors.HttpError as ex:
+            if ex.resp['status'] == '404':
+                return False
+            raise
 
 
 # Operators
