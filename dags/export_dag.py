@@ -1,3 +1,4 @@
+import logging
 import os
 from tempfile import TemporaryDirectory
 from datetime import datetime, timedelta
@@ -20,6 +21,8 @@ from ethereumetl.cli import (
 )
 
 # DAG configuration
+from apiclient.http import MediaFileUpload
+from googleapiclient import errors
 
 default_dag_args = {
     "depends_on_past": False,
@@ -41,6 +44,7 @@ dag = models.DAG(
     schedule_interval="0 1 * * *",
     default_args=default_dag_args,
 )
+
 
 # Environment configuration
 
@@ -75,6 +79,7 @@ export_tokens_toggle = get_boolean_env_variable("EXPORT_TOKENS", True)
 extract_token_transfers_toggle = get_boolean_env_variable("EXTRACT_TOKEN_TRANSFERS", True)
 export_traces_toggle = get_boolean_env_variable("EXPORT_TRACES", True)
 
+
 # Export
 
 
@@ -88,13 +93,17 @@ cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google
 
 
 def copy_to_export_path(file_path, export_path):
+    logging.info('Calling copy_to_export_path({}, {})'.format(file_path, export_path))
     filename = os.path.basename(file_path)
-    cloud_storage_hook.upload(
-        bucket=output_bucket, object=export_path + filename, filename=file_path
-    )
+    upload_to_gcs(
+        gcs_hook=cloud_storage_hook,
+        bucket=output_bucket,
+        object=export_path + filename,
+        filename=file_path)
 
 
 def copy_from_export_path(export_path, file_path):
+    logging.info('Calling copy_from_export_path({}, {})'.format(export_path, file_path))
     filename = os.path.basename(file_path)
     cloud_storage_hook.download(
         bucket=output_bucket, object=export_path + filename, filename=file_path
@@ -102,6 +111,7 @@ def copy_from_export_path(export_path, file_path):
 
 
 def get_block_range(tempdir, date):
+    logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(web3_provider_uri, date))
     get_block_range_for_date.callback(
         provider_uri=web3_provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
     )
@@ -117,6 +127,8 @@ def export_blocks_and_transactions_command(execution_date, **kwargs):
     with TemporaryDirectory() as tempdir:
         start_block, end_block = get_block_range(tempdir, execution_date)
 
+        logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
+            start_block, end_block, export_batch_size, web3_provider_uri, export_max_workers))
         export_blocks_and_transactions.callback(
             start_block=start_block,
             end_block=end_block,
@@ -144,12 +156,15 @@ def export_receipts_and_logs_command(execution_date, **kwargs):
             export_path("transactions", execution_date), os.path.join(tempdir, "transactions.csv")
         )
 
+        logging.info('Calling extract_csv_column(...)')
         extract_csv_column.callback(
             input=os.path.join(tempdir, "transactions.csv"),
             output=os.path.join(tempdir, "transaction_hashes.txt"),
             column="hash",
         )
 
+        logging.info('Calling export_receipts_and_logs({}, ..., {}, {}, ...)'.format(
+            export_batch_size, web3_provider_uri, export_max_workers))
         export_receipts_and_logs.callback(
             batch_size=export_batch_size,
             transaction_hashes=os.path.join(tempdir, "transaction_hashes.txt"),
@@ -171,12 +186,16 @@ def export_contracts_command(execution_date, **kwargs):
             export_path("receipts", execution_date), os.path.join(tempdir, "receipts.csv")
         )
 
+        logging.info('Calling extract_csv_column(...)')
         extract_csv_column.callback(
             input=os.path.join(tempdir, "receipts.csv"),
             output=os.path.join(tempdir, "contract_addresses.txt"),
             column="contract_address",
         )
 
+        logging.info('Calling export_contracts({}, ..., {}, {})'.format(
+            export_batch_size, export_max_workers, web3_provider_uri
+        ))
         export_contracts.callback(
             batch_size=export_batch_size,
             contract_addresses=os.path.join(tempdir, "contract_addresses.txt"),
@@ -196,18 +215,23 @@ def export_tokens_command(execution_date, **kwargs):
             export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
         )
 
+        logging.info('Calling filter_items(...)')
         filter_items.callback(
             input=os.path.join(tempdir, "contracts.json"),
             output=os.path.join(tempdir, "token_contracts.json"),
             predicate="item['is_erc20'] or item['is_erc721']",
         )
 
+        logging.info('Calling extract_field(...)')
         extract_field.callback(
             input=os.path.join(tempdir, "token_contracts.json"),
             output=os.path.join(tempdir, "token_addresses.txt"),
             field="address",
         )
 
+        logging.info('Calling export_tokens(..., {}, {})'.format(
+            export_max_workers, web3_provider_uri
+        ))
         export_tokens.callback(
             token_addresses=os.path.join(tempdir, "token_addresses.txt"),
             output=os.path.join(tempdir, "tokens.csv"),
@@ -226,6 +250,9 @@ def extract_token_transfers_command(execution_date, **kwargs):
             export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
         )
 
+        logging.info('Calling extract_token_transfers(..., {}, ..., {})'.format(
+            export_batch_size, export_max_workers
+        ))
         extract_token_transfers.callback(
             logs=os.path.join(tempdir, "logs.json"),
             batch_size=export_batch_size,
@@ -243,6 +270,10 @@ def export_traces_command(execution_date, **kwargs):
     with TemporaryDirectory() as tempdir:
         start_block, end_block = get_block_range(tempdir, execution_date)
 
+        logging.info('Calling export_traces({}, {}, {}, ...,{}, {}, {}, {})'.format(
+            start_block, end_block, export_batch_size, export_max_workers, web3_provider_uri_archival,
+            export_genesis_traces_option, export_daofork_traces_option
+        ))
         export_traces.callback(
             start_block=start_block,
             end_block=end_block,
@@ -275,6 +306,28 @@ def add_export_task(toggle, task_id, python_callable, dependencies=None):
         return operator
     else:
         return None
+
+
+# Helps avoid OverflowError: https://stackoverflow.com/questions/47610283/cant-upload-2gb-to-google-cloud-storage
+# https://developers.google.com/api-client-library/python/guide/media_upload#resumable-media-chunked-upload
+def upload_to_gcs(gcs_hook, bucket, object, filename):
+    service = gcs_hook.get_conn()
+
+    media = MediaFileUpload(filename, 'application/octet-stream', resumable=True)
+
+    try:
+        request = service.objects().insert(bucket=bucket, name=object, media_body=media)
+        response = None
+        while response is None:
+            status, response = request.next_chunk()
+            if status:
+                logging.info("Uploaded %d%%." % int(status.progress() * 100))
+
+        return True
+    except errors.HttpError as ex:
+        if ex.resp['status'] == '404':
+            return False
+        raise
 
 
 # Operators
