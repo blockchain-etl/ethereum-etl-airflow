@@ -17,4 +17,3 @@ DAG = build_load_dag(
     notification_emails=Variable.get('notification_emails', ''),
     schedule_interval='30 8 * * *'
 )
-

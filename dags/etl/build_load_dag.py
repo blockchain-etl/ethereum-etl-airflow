@@ -18,7 +18,6 @@ logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
 
 
-
 def build_load_dag(
     dag_id,
     output_bucket,
@@ -39,7 +38,7 @@ def build_load_dag(
     dataset_name = f'{chain}_blockchain'
     dataset_name_raw = f'{chain}_blockchain_raw'
     dataset_name_temp = f'{chain}_blockchain_temp'
-    #destination_dataset_project_id = os.environ.get('DESTINATION_DATASET_PROJECT_ID')
+
     if not destination_dataset_project_id:
         raise ValueError('DESTINATION_DATASET_PROJECT_ID is required')
 
@@ -52,14 +51,13 @@ def build_load_dag(
 
     default_dag_args = {
         'depends_on_past': False,
-        'start_date': datetime(2018, 7, 1),
+        'start_date': start_date,
         'email_on_failure': True,
         'email_on_retry': True,
         'retries': 5,
         'retry_delay': timedelta(minutes=5)
     }
 
-    notification_emails = os.environ.get('NOTIFICATION_EMAILS')
     if notification_emails and len(notification_emails) > 0:
         default_dag_args['email'] = [email.strip() for email in notification_emails.split(',')]
 
@@ -106,7 +104,6 @@ def build_load_dag(
             raise   
 
     def add_load_tasks(task, file_format, allow_quoted_newlines=False):
-        #output_bucket = os.environ.get('OUTPUT_BUCKET')
         if output_bucket is None:
             raise ValueError('You must set OUTPUT_BUCKET environment variable')
 

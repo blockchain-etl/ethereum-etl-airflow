@@ -4,7 +4,7 @@ import os
 from datetime import datetime, timedelta
 from tempfile import TemporaryDirectory
 
-from airflow.models import DAG
+from airflow import DAG
 from airflow.operators import bash_operator
 from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
 
@@ -13,12 +13,6 @@ from ethereumetl.cli import (
     extract_csv_column,
     filter_items,
     extract_field,
-    export_blocks_and_transactions,
-    export_receipts_and_logs,
-    export_contracts,
-    export_tokens,
-    extract_token_transfers,
-    export_traces,
 )
 
 # DAG configuration
@@ -29,15 +23,15 @@ from googleapiclient import errors
 def build_export_dag(
     dag_id,
     provider_uri,
+    provider_uri_archival,
     output_bucket,
     start_date,
     chain='ethereum',
     notification_emails=None,
     schedule_interval='0 0 * * *',
-    ethereumetl_repo_branch='master',
     export_max_workers=10,
     export_batch_size=10,
-    max_active_runs=15
+    **kwargs
 ):
 
     default_dag_args = {
@@ -52,36 +46,16 @@ def build_export_dag(
     if notification_emails and len(notification_emails) > 0:
         default_dag_args['email'] = [email.strip() for email in notification_emails.split(',')]
 
-    dag = models.DAG(
+    dag = DAG(
         dag_id,
         # Daily at 1am
-        schedule_interval="0 1 * * *",
+        schedule_interval=schedule_interval,
         default_args=default_dag_args,
     )
-
-    output_bucket = os.environ.get("OUTPUT_BUCKET")
+ 
     if output_bucket is None:
         raise ValueError("You must set OUTPUT_BUCKET environment variable")
-
-    web3_provider_uri = os.environ.get("WEB3_PROVIDER_URI", "https://mainnet.infura.io/")
-    web3_provider_uri_archival = os.environ.get("WEB3_PROVIDER_URI_ARCHIVAL", web3_provider_uri)
-
-    export_max_workers = int(os.environ.get("EXPORT_MAX_WORKERS", 5))
-    export_batch_size = int(os.environ.get("EXPORT_BATCH_SIZE", 10))
-
-    export_daofork_traces_option = get_boolean_env_variable("EXPORT_DAOFORK_TRACES_OPTION")
-    if chain == 'classic':
-        export_daofork_traces_option = False
-    export_genesis_traces_option = get_boolean_env_variable("EXPORT_GENESIS_TRACES_OPTION")
-
-    export_blocks_and_transactions_toggle = get_boolean_env_variable(
-        "EXPORT_BLOCKS_AND_TRANSACTIONS", True
-    )
-    export_receipts_and_logs_toggle = get_boolean_env_variable("EXPORT_RECEIPTS_AND_LOGS", True)
-    export_contracts_toggle = get_boolean_env_variable("EXPORT_CONTRACTS", True)
-    export_tokens_toggle = get_boolean_env_variable("EXPORT_TOKENS", True)
-    extract_token_transfers_toggle = get_boolean_env_variable("EXTRACT_TOKEN_TRANSFERS", True)
-    export_traces_toggle = get_boolean_env_variable("EXPORT_TRACES", True)
+    
 
 	# Export
 
@@ -99,10 +73,10 @@ def build_export_dag(
     	logging.info('Calling copy_to_export_path({}, {})'.format(file_path, export_path))
     	filename = os.path.basename(file_path)
     	upload_to_gcs(
-        gcs_hook=cloud_storage_hook,
-        bucket=output_bucket,
-        object=export_path + filename,
-        filename=file_path)
+            gcs_hook=cloud_storage_hook,
+            bucket=output_bucket,
+            object=export_path + filename,
+            filename=file_path)
 
 
 	def copy_from_export_path(export_path, file_path):
