@@ -40,7 +40,7 @@ def build_export_dag(
         "email_on_failure": True,
         "email_on_retry": True,
         "retries": 5,
-        "retry_delay": timedelta(minutes=5),
+        "retry_delay": timedelta(minutes=5)
     }
 
     if notification_emails and len(notification_emails) > 0:

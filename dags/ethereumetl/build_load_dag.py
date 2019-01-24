@@ -24,7 +24,7 @@ def build_load_dag(
     destination_dataset_project_id,
     chain='ethereum',
     notification_emails=None,
-    start_date=start_date,
+    start_date=datetime(2018, 7, 1),
     schedule_interval='0 0 * * *'                
 ):
 

@@ -4,7 +4,7 @@ import logging
 
 from airflow.models import Variable
 
-from etl.build_load_dag import build_load_dag
+from ethereumetl.build_load_dag import build_load_dag
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
