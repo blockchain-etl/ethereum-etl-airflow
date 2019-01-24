@@ -25,7 +25,7 @@ def build_load_dag(
     chain='ethereum',
     notification_emails=None,
     start_date=datetime(2018, 7, 1),
-    schedule_interval='0 0 * * *'                
+    schedule_interval='0 0 * * *'
 ):
 
     # The following datasets must be created in BigQuery:
@@ -34,7 +34,7 @@ def build_load_dag(
     # - {chain}_blockchain
     # Environment variable OUTPUT_BUCKET must be set and point to the GCS bucket
     # where files exported by export_dag.py are located
-    
+
     dataset_name = f'{chain}_blockchain'
     dataset_name_raw = f'{chain}_blockchain_raw'
     dataset_name_temp = f'{chain}_blockchain_temp'
@@ -101,7 +101,7 @@ def build_load_dag(
             return result
         except Exception:
             logging.info(job.errors)
-            raise   
+            raise
 
     def add_load_tasks(task, file_format, allow_quoted_newlines=False):
         if output_bucket is None:

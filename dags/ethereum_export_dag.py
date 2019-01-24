@@ -4,7 +4,7 @@ from datetime import datetime
 
 from airflow.models import Variable
 
-from ethereumetl.build_export_dag import build_export_dag
+from build_export_dag import build_export_dag
 
 start_date = Variable.get('ethereum_export_start_date', '2015-07-30')
 options_args = {
