@@ -20,8 +20,8 @@ options_args = {
 
 DAG = build_export_dag(
     dag_id='ethereum_export_dag',
-    provider_uri=Variable.get('ethereum_provider_uri'),
-    provider_uri_archival=Variable.get('ethereum_provider_uri_archival'),
+    web3_provider_uri=Variable.get('ethereum_provider_uri'),
+    web3_provider_uri_archival=Variable.get('ethereum_provider_uri_archival'),
     output_bucket=Variable.get('ethereum_output_bucket'),
     start_date=datetime.strptime(start_date, '%Y-%m-%d'),
     chain='ethereum',

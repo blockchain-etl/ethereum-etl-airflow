@@ -14,6 +14,12 @@ from ethereumetl.cli import (
     extract_csv_column,
     filter_items,
     extract_field,
+    export_blocks_and_transactions,
+    export_receipts_and_logs,
+    export_contracts,
+    export_tokens,
+    extract_token_transfers,
+    export_traces,
 )
 
 # DAG configuration
@@ -24,7 +30,7 @@ from googleapiclient import errors
 def build_export_dag(
     dag_id,
     web3_provider_uri,
-    wbe3_provider_uri_archival,
+    web3_provider_uri_archival,
     output_bucket,
     start_date,
     chain='ethereum',
