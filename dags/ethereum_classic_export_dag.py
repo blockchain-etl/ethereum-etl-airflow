@@ -23,6 +23,7 @@ DAG = build_export_dag(
     web3_provider_uri=Variable.get('ethereum_classic_provider_uri'),
     web3_provider_uri_archival=Variable.get('ethereum_classic_provider_uri_archival'),
     output_bucket=Variable.get('ethereum_classic_output_bucket'),
+    cloud_provider=Variable.get('cloud_provider', 'gcp'),
     start_date=datetime.strptime(start_date, '%Y-%m-%d'),
     chain='classic',
     notifications_emails=Variable.get('notification_emails', ''),

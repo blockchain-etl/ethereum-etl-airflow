@@ -8,6 +8,8 @@ from tempfile import TemporaryDirectory
 from airflow import DAG
 from airflow.operators import python_operator
 from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
+from airflow.hooks.S3_hook import S3Hook
+
 
 from ethereumetl.cli import (
     get_block_range_for_date,
@@ -32,6 +34,7 @@ def build_export_dag(
     web3_provider_uri,
     web3_provider_uri_archival,
     output_bucket,
+    cloud_provider,
     start_date,
     chain='ethereum',
     notification_emails=None,
@@ -73,6 +76,12 @@ def build_export_dag(
         raise ValueError("You must set OUTPUT_BUCKET environment variable")
 
 
+    if cloud_provider == 'aws':
+        cloud_storage_hook = S3Hook(aws_conn_id="aws_default")
+    else:
+        cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
+
+
     # Export
     def export_path(directory, date):
         return "export/{directory}/block_date={block_date}/".format(
@@ -80,25 +89,42 @@ def build_export_dag(
         )
 
 
-    cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
-
-
     def copy_to_export_path(file_path, export_path):
         logging.info('Calling copy_to_export_path({}, {})'.format(file_path, export_path))
         filename = os.path.basename(file_path)
-        upload_to_gcs(
-            gcs_hook=cloud_storage_hook,
-            bucket=output_bucket,
-            object=export_path + filename,
-            filename=file_path)
+
+        if cloud_provider == 'aws':
+            cloud_storage_hook.load_file(
+                filename=file_path,
+                bucket_name=output_bucket,
+                key=export_path + filename,
+                replace=True,
+                encrypt=False
+            )
+        else:
+            upload_to_gcs(
+                gcs_hook=cloud_storage_hook,
+                bucket=output_bucket,
+                object=export_path + filename,
+                filename=file_path)
 
 
     def copy_from_export_path(export_path, file_path):
         logging.info('Calling copy_from_export_path({}, {})'.format(export_path, file_path))
         filename = os.path.basename(file_path)
-        cloud_storage_hook.download(
-            bucket=output_bucket, object=export_path + filename, filename=file_path
-        )
+        if cloud_provider == 'aws':
+            # boto3.s3.Object
+            s3_object = cloud_storage_hook.get_key(
+                bucket_name=output_bucket,
+                key=export_path + filename
+            )
+            s3_object.download_file(file_path)
+        else:
+            cloud_storage_hook.download(
+                bucket=output_bucket,
+                object=export_path + filename,
+                filename=file_path
+            )
 
 
     def get_block_range(tempdir, date):
