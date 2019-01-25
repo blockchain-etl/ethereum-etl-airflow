@@ -120,6 +120,7 @@ def build_export_dag(
 
             logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
                 start_block, end_block, export_batch_size, web3_provider_uri, export_max_workers))
+
             export_blocks_and_transactions.callback(
                 start_block=start_block,
                 end_block=end_block,
@@ -130,15 +131,17 @@ def build_export_dag(
                 transactions_output=os.path.join(tempdir, "transactions.csv"),
             )
 
-        copy_to_export_path(
-            os.path.join(tempdir, "blocks_meta.txt"), export_path("blocks_meta", execution_date)
-        )
-        copy_to_export_path(
-            os.path.join(tempdir, "blocks.csv"), export_path("blocks", execution_date)
-        )
-        copy_to_export_path(
-            os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
-        )
+            copy_to_export_path(
+                os.path.join(tempdir, "blocks_meta.txt"), export_path("blocks_meta", execution_date)
+            )
+
+            copy_to_export_path(
+                os.path.join(tempdir, "blocks.csv"), export_path("blocks", execution_date)
+            )
+
+            copy_to_export_path(
+                os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
+            )
 
 
     def export_receipts_and_logs_command(execution_date, **kwargs):
