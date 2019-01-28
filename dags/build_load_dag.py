@@ -279,4 +279,6 @@ def build_load_dag(
         verify_traces_transactions_count_task >> send_email_task
         verify_traces_contracts_count_task >> send_email_task
 
-    return dag
+        return dag
+    else:
+        raise Exception('No emails found. You must pass a notification_emails value for the Airflow Variable.')
