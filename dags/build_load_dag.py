@@ -49,28 +49,6 @@ def build_load_dag(
         'DESTINATION_DATASET_PROJECT_ID': destination_dataset_project_id
     }
 
-    default_dag_args = {
-        'depends_on_past': False,
-        'start_date': start_date,
-        'email_on_failure': True,
-        'email_on_retry': True,
-        'retries': 5,
-        'retry_delay': timedelta(minutes=5)
-    }
-
-    if notification_emails and len(notification_emails) > 0:
-        default_dag_args['email'] = [email.strip() for email in notification_emails.split(',')]
-
-    # Define a DAG (directed acyclic graph) of tasks.
-    dag = models.DAG(
-        dag_id,
-        catchup=False,
-        # Daily at 1:30am
-        schedule_interval=schedule_interval,
-        default_args=default_dag_args)
-
-    dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
-
     def read_bigquery_schema_from_file(filepath):
         result = []
         file_content = read_file(filepath)
@@ -103,6 +81,30 @@ def build_load_dag(
             logging.info(job.errors)
             raise
 
+
+    default_dag_args = {
+        'depends_on_past': False,
+        'start_date': start_date,
+        'email_on_failure': True,
+        'email_on_retry': True,
+        'retries': 5,
+        'retry_delay': timedelta(minutes=5)
+    }
+
+    if notification_emails and len(notification_emails) > 0:
+        default_dag_args['email'] = [email.strip() for email in notification_emails.split(',')]
+
+    # Define a DAG (directed acyclic graph) of tasks.
+    dag = models.DAG(
+        dag_id,
+        catchup=False,
+        # Daily at 1:30am
+        schedule_interval=schedule_interval,
+        default_args=default_dag_args)
+
+    dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
+
+    
     def add_load_tasks(task, file_format, allow_quoted_newlines=False):
         if output_bucket is None:
             raise ValueError('You must set OUTPUT_BUCKET environment variable')
