@@ -19,5 +19,5 @@ DAG = build_load_dag(
     chain='classic',
     notification_emails=Variable.get('notification_emails', ''),
     start_date=datetime.strptime(start_date, '%Y-%m-%d'),
-    schedule_interval='30 8 * * *'
+    schedule_interval='30 2 * * *'
 )

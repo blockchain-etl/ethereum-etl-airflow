@@ -17,5 +17,5 @@ DAG = build_load_dag(
     chain='ethereum',
     notification_emails=Variable.get('notification_emails', ''),
     start_date=datetime.strptime(start_date, '%Y-%m-%d'),
-    schedule_interval='30 8 * * *'
+    schedule_interval='30 1 * * *'
 )

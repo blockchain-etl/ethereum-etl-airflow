@@ -29,19 +29,17 @@ from googleapiclient import errors
 
 
 def build_export_dag(
-    dag_id,
-    web3_provider_uri,
-    web3_provider_uri_archival,
-    output_bucket,
-    start_date,
-    chain='ethereum',
-    notification_emails=None,
-    schedule_interval='0 0 * * *',
-    export_max_workers=10,
-    export_batch_size=10,
-    **kwargs
+        dag_id,
+        web3_provider_uri,
+        web3_provider_uri_archival,
+        output_bucket,
+        start_date,
+        notification_emails=None,
+        schedule_interval='0 0 * * *',
+        export_max_workers=10,
+        export_batch_size=10,
+        **kwargs
 ):
-
     default_dag_args = {
         "depends_on_past": False,
         "start_date": start_date,
@@ -65,14 +63,9 @@ def build_export_dag(
 
     dag = DAG(
         dag_id,
-        # Daily at 1am
         schedule_interval=schedule_interval,
         default_args=default_dag_args,
     )
-
-    if output_bucket is None:
-        raise ValueError("You must set OUTPUT_BUCKET environment variable")
-
 
     # Export
     def export_path(directory, date):
@@ -80,9 +73,7 @@ def build_export_dag(
             directory=directory, block_date=date.strftime("%Y-%m-%d")
         )
 
-
     cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
-
 
     def copy_to_export_path(file_path, export_path):
         logging.info('Calling copy_to_export_path({}, {})'.format(file_path, export_path))
@@ -92,7 +83,6 @@ def build_export_dag(
             bucket=output_bucket,
             object=export_path + filename,
             filename=file_path)
-
 
     def copy_from_export_path(export_path, file_path):
         logging.info('Calling copy_from_export_path({}, {})'.format(export_path, file_path))
@@ -110,7 +100,6 @@ def build_export_dag(
             start_block, end_block = block_range.split(",")
 
         return int(start_block), int(end_block)
-
 
     def export_blocks_and_transactions_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
@@ -140,7 +129,6 @@ def build_export_dag(
             copy_to_export_path(
                 os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
             )
-
 
     def export_receipts_and_logs_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
@@ -206,7 +194,6 @@ def build_export_dag(
                 os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
             )
 
-
     def export_tokens_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
@@ -239,7 +226,6 @@ def build_export_dag(
                 os.path.join(tempdir, "tokens.csv"), export_path("tokens", execution_date)
             )
 
-
     def extract_token_transfers_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
@@ -260,7 +246,6 @@ def build_export_dag(
                 os.path.join(tempdir, "token_transfers.csv"),
                 export_path("token_transfers", execution_date),
             )
-
 
     def export_traces_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
@@ -285,7 +270,6 @@ def build_export_dag(
                 os.path.join(tempdir, "traces.csv"), export_path("traces", execution_date)
             )
 
-
     def add_export_task(toggle, task_id, python_callable, dependencies=None):
         if toggle:
             operator = python_operator.PythonOperator(
@@ -302,49 +286,6 @@ def build_export_dag(
             return operator
         else:
             return None
-
-    MEGABYTE = 1024 * 1024
-
-    # Helps avoid OverflowError: https://stackoverflow.com/questions/47610283/cant-upload-2gb-to-google-cloud-storage
-    # https://developers.google.com/api-client-library/python/guide/media_upload#resumable-media-chunked-upload
-    def upload_to_gcs(gcs_hook, bucket, object, filename, mime_type='application/octet-stream'):
-        service = gcs_hook.get_conn()
-
-        if os.path.getsize(filename) > 10 * MEGABYTE:
-            media = MediaFileUpload(filename, mime_type, resumable=True)
-
-            try:
-                request = service.objects().insert(bucket=bucket, name=object, media_body=media)
-                response = None
-                while response is None:
-                    status, response = request.next_chunk()
-                    if status:
-                        logging.info("Uploaded %d%%." % int(status.progress() * 100))
-
-                return True
-            except errors.HttpError as ex:
-                if ex.resp['status'] == '404':
-                    return False
-                raise
-        else:
-            media = MediaFileUpload(filename, mime_type)
-
-            try:
-                service.objects().insert(bucket=bucket, name=object, media_body=media).execute()
-                return True
-            except errors.HttpError as ex:
-                if ex.resp['status'] == '404':
-                    return False
-                raise
-
-    # Can download big files unlike gcs_hook.download which saves files in memory first
-    def download_from_gcs(bucket, object, filename):
-        storage_client = storage.Client()
-
-        bucket = storage_client.get_bucket(bucket)
-        blob = bucket.blob(object, chunk_size=10 * MEGABYTE)
-
-        blob.download_to_filename(filename)
 
     # Operators
 
@@ -387,3 +328,49 @@ def build_export_dag(
     )
 
     return dag
+
+
+MEGABYTE = 1024 * 1024
+
+
+# Helps avoid OverflowError: https://stackoverflow.com/questions/47610283/cant-upload-2gb-to-google-cloud-storage
+# https://developers.google.com/api-client-library/python/guide/media_upload#resumable-media-chunked-upload
+def upload_to_gcs(gcs_hook, bucket, object, filename, mime_type='application/octet-stream'):
+    service = gcs_hook.get_conn()
+
+    if os.path.getsize(filename) > 10 * MEGABYTE:
+        media = MediaFileUpload(filename, mime_type, resumable=True)
+
+        try:
+            request = service.objects().insert(bucket=bucket, name=object, media_body=media)
+            response = None
+            while response is None:
+                status, response = request.next_chunk()
+                if status:
+                    logging.info("Uploaded %d%%." % int(status.progress() * 100))
+
+            return True
+        except errors.HttpError as ex:
+            if ex.resp['status'] == '404':
+                return False
+            raise
+    else:
+        media = MediaFileUpload(filename, mime_type)
+
+        try:
+            service.objects().insert(bucket=bucket, name=object, media_body=media).execute()
+            return True
+        except errors.HttpError as ex:
+            if ex.resp['status'] == '404':
+                return False
+            raise
+
+
+# Can download big files unlike gcs_hook.download which saves files in memory first
+def download_from_gcs(bucket, object, filename):
+    storage_client = storage.Client()
+
+    bucket = storage_client.get_bucket(bucket)
+    blob = bucket.blob(object, chunk_size=10 * MEGABYTE)
+
+    blob.download_to_filename(filename)

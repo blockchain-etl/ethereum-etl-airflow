@@ -18,15 +18,17 @@ options_args = {
     'export_traces_toggle': Variable.get('ethereum_export_traces_toggle', True)
 }
 
+provider_uri = Variable.get('ethereum_provider_uri')
+provider_uri_archival = Variable.get('ethereum_provider_uri_archival', provider_uri)
+
 DAG = build_export_dag(
     dag_id='ethereum_export_dag',
-    web3_provider_uri=Variable.get('ethereum_provider_uri'),
-    web3_provider_uri_archival=Variable.get('ethereum_provider_uri_archival'),
+    web3_provider_uri=provider_uri,
+    web3_provider_uri_archival=provider_uri_archival,
     output_bucket=Variable.get('ethereum_output_bucket'),
     start_date=datetime.strptime(start_date, '%Y-%m-%d'),
-    chain='ethereum',
     notifications_emails=Variable.get('notification_emails', ''),
-    schedule_interval='0 8 * * *',
+    schedule_interval='0 1 * * *',
     export_max_workers=10,
     export_batch_size=10,
     **options_args
