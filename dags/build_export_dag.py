@@ -374,3 +374,10 @@ def download_from_gcs(bucket, object, filename):
     blob = bucket.blob(object, chunk_size=10 * MEGABYTE)
 
     blob.download_to_filename(filename)
+
+
+def parse_bool(bool_string, default=True):
+    if bool_string is None or len(bool_string) == 0:
+        return default
+    else:
+        return bool_string.lower() in ["true", "yes"]

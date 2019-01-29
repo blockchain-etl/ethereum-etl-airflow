@@ -4,18 +4,18 @@ from datetime import datetime
 
 from airflow.models import Variable
 
-from build_export_dag import build_export_dag
+from build_export_dag import build_export_dag, parse_bool
 
 start_date = Variable.get('ethereum_export_start_date', '2015-07-30')
 options_args = {
-    'export_daofork_traces_option': Variable.get('ethereum_export_daofork_traces_option', True),
-    'export_genesis_traces_option': Variable.get('ethereum_export_genesis_traces_option', True),
-    'export_blocks_and_transactions_toggle': Variable.get('ethereum_export_blocks_and_transactions_toggle', True),
-    'export_receipts_and_logs_toggle': Variable.get('ethereum_export_receipts_and_logs_toggle', True),
-    'export_contracts_toggle': Variable.get('ethereum_export_contracts_toggle', True),
-    'export_tokens_toggle': Variable.get('ethereum_export_tokens_toggle', True),
-    'extract_token_transfers_toggle': Variable.get('ethereum_extract_token_transfers_toggle', True),
-    'export_traces_toggle': Variable.get('ethereum_export_traces_toggle', True)
+    'export_daofork_traces_option': parse_bool(Variable.get('ethereum_export_daofork_traces_option', 'True')),
+    'export_genesis_traces_option': parse_bool(Variable.get('ethereum_export_genesis_traces_option', 'True')),
+    'export_blocks_and_transactions_toggle': parse_bool(Variable.get('ethereum_export_blocks_and_transactions_toggle', 'True')),
+    'export_receipts_and_logs_toggle': parse_bool(Variable.get('ethereum_export_receipts_and_logs_toggle', 'True')),
+    'export_contracts_toggle': parse_bool(Variable.get('ethereum_export_contracts_toggle', 'True')),
+    'export_tokens_toggle': parse_bool(Variable.get('ethereum_export_tokens_toggle', 'True')),
+    'extract_token_transfers_toggle': parse_bool(Variable.get('ethereum_extract_token_transfers_toggle', 'True')),
+    'export_traces_toggle': parse_bool(Variable.get('ethereum_export_traces_toggle', 'True'))
 }
 
 provider_uri = Variable.get('ethereum_provider_uri')
