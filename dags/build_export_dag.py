@@ -24,6 +24,7 @@ from ethereumetl.cli import (
 
 # DAG configuration
 from apiclient.http import MediaFileUpload
+from google.cloud import storage
 from googleapiclient import errors
 
 
@@ -96,10 +97,7 @@ def build_export_dag(
     def copy_from_export_path(export_path, file_path):
         logging.info('Calling copy_from_export_path({}, {})'.format(export_path, file_path))
         filename = os.path.basename(file_path)
-        cloud_storage_hook.download(
-            bucket=output_bucket, object=export_path + filename, filename=file_path
-        )
-
+        download_from_gcs(bucket=output_bucket, object=export_path + filename, filename=file_path)
 
     def get_block_range(tempdir, date):
         logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(web3_provider_uri, date))
@@ -173,18 +171,24 @@ def build_export_dag(
             )
             copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", execution_date))
 
-
     def export_contracts_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
-                export_path("receipts", execution_date), os.path.join(tempdir, "receipts.csv")
+                export_path("traces", execution_date), os.path.join(tempdir, "traces.csv")
             )
 
-            logging.info('Calling extract_csv_column(...)')
-            extract_csv_column.callback(
-                input=os.path.join(tempdir, "receipts.csv"),
+            logging.info('Calling filter_items(...)')
+            filter_items.callback(
+                input=os.path.join(tempdir, "traces.csv"),
+                output=os.path.join(tempdir, "traces_type_create.csv"),
+                predicate="item['trace_type']=='create' and item['to_address'] is not None and len(item['to_address']) > 0",
+            )
+
+            logging.info('Calling extract_field(...)')
+            extract_field.callback(
+                input=os.path.join(tempdir, "traces_type_create.csv"),
                 output=os.path.join(tempdir, "contract_addresses.txt"),
-                column="contract_address",
+                field="to_address",
             )
 
             logging.info('Calling export_contracts({}, ..., {}, {})'.format(
@@ -223,9 +227,7 @@ def build_export_dag(
                 field="address",
             )
 
-            logging.info('Calling export_tokens(..., {}, {})'.format(
-                export_max_workers, web3_provider_uri
-            ))
+            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, web3_provider_uri))
             export_tokens.callback(
                 token_addresses=os.path.join(tempdir, "token_addresses.txt"),
                 output=os.path.join(tempdir, "tokens.csv"),
@@ -335,7 +337,17 @@ def build_export_dag(
                     return False
                 raise
 
+    # Can download big files unlike gcs_hook.download which saves files in memory first
+    def download_from_gcs(bucket, object, filename):
+        storage_client = storage.Client()
+
+        bucket = storage_client.get_bucket(bucket)
+        blob = bucket.blob(object, chunk_size=10 * MEGABYTE)
+
+        blob.download_to_filename(filename)
+
     # Operators
+
     export_blocks_and_transactions_operator = add_export_task(
         export_blocks_and_transactions_toggle,
         "export_blocks_and_transactions",
@@ -349,20 +361,6 @@ def build_export_dag(
         dependencies=[export_blocks_and_transactions_operator],
     )
 
-    export_contracts_operator = add_export_task(
-        export_contracts_toggle,
-        "export_contracts",
-        export_contracts_command,
-        dependencies=[export_receipts_and_logs_operator],
-    )
-
-    export_tokens_operator = add_export_task(
-        export_tokens_toggle,
-        "export_tokens",
-        export_tokens_command,
-        dependencies=[export_contracts_operator],
-    )
-
     extract_token_transfers_operator = add_export_task(
         extract_token_transfers_toggle,
         "extract_token_transfers",
@@ -374,11 +372,18 @@ def build_export_dag(
         export_traces_toggle, "export_traces", export_traces_command
     )
 
-    def get_boolean_env_variable(env_variable_name, default=True):
-        raw_env = os.environ.get(env_variable_name)
-        if raw_env is None or len(raw_env) == 0:
-            return default
-        else:
-            return raw_env.lower() in ["true", "yes"]
+    export_contracts_operator = add_export_task(
+        export_contracts_toggle,
+        "export_contracts",
+        export_contracts_command,
+        dependencies=[export_traces_operator],
+    )
+
+    export_tokens_operator = add_export_task(
+        export_tokens_toggle,
+        "export_tokens",
+        export_tokens_command,
+        dependencies=[export_contracts_operator],
+    )
 
     return dag
