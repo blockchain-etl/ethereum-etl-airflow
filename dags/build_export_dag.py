@@ -30,20 +30,20 @@ from googleapiclient import errors
 
 def build_export_dag(
         dag_id,
-        web3_provider_uri,
-        web3_provider_uri_archival,
+        provider_uri,
+        provider_uri_archival,
         output_bucket,
-        start_date,
+        export_start_date,
         notification_emails=None,
-        schedule_interval='0 0 * * *',
+        export_schedule_interval='0 0 * * *',
         export_max_workers=10,
         export_batch_size=10,
-        max_active_runs=None,
+        export_max_active_runs=None,
         **kwargs
 ):
     default_dag_args = {
         "depends_on_past": False,
-        "start_date": start_date,
+        "start_date": export_start_date,
         "email_on_failure": True,
         "email_on_retry": True,
         "retries": 5,
@@ -62,13 +62,13 @@ def build_export_dag(
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
 
-    if max_active_runs is None:
-        max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
+    if export_max_active_runs is None:
+        export_max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
     dag = DAG(
         dag_id,
-        schedule_interval=schedule_interval,
+        schedule_interval=export_schedule_interval,
         default_args=default_dag_args,
-        max_active_runs=max_active_runs
+        max_active_runs=export_max_active_runs
     )
 
     # Export
@@ -94,9 +94,9 @@ def build_export_dag(
         download_from_gcs(bucket=output_bucket, object=export_path + filename, filename=file_path)
 
     def get_block_range(tempdir, date):
-        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(web3_provider_uri, date))
+        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(provider_uri, date))
         get_block_range_for_date.callback(
-            provider_uri=web3_provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
+            provider_uri=provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
         )
 
         with open(os.path.join(tempdir, "blocks_meta.txt")) as block_range_file:
@@ -110,13 +110,13 @@ def build_export_dag(
             start_block, end_block = get_block_range(tempdir, execution_date)
 
             logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
-                start_block, end_block, export_batch_size, web3_provider_uri, export_max_workers))
+                start_block, end_block, export_batch_size, provider_uri, export_max_workers))
 
             export_blocks_and_transactions.callback(
                 start_block=start_block,
                 end_block=end_block,
                 batch_size=export_batch_size,
-                provider_uri=web3_provider_uri,
+                provider_uri=provider_uri,
                 max_workers=export_max_workers,
                 blocks_output=os.path.join(tempdir, "blocks.csv"),
                 transactions_output=os.path.join(tempdir, "transactions.csv"),
@@ -148,11 +148,11 @@ def build_export_dag(
             )
 
             logging.info('Calling export_receipts_and_logs({}, ..., {}, {}, ...)'.format(
-                export_batch_size, web3_provider_uri, export_max_workers))
+                export_batch_size, provider_uri, export_max_workers))
             export_receipts_and_logs.callback(
                 batch_size=export_batch_size,
                 transaction_hashes=os.path.join(tempdir, "transaction_hashes.txt"),
-                provider_uri=web3_provider_uri,
+                provider_uri=provider_uri,
                 max_workers=export_max_workers,
                 receipts_output=os.path.join(tempdir, "receipts.csv"),
                 logs_output=os.path.join(tempdir, "logs.json"),
@@ -190,14 +190,14 @@ def build_export_dag(
             os.remove(os.path.join(tempdir, "traces_type_create.csv"))
 
             logging.info('Calling export_contracts({}, ..., {}, {})'.format(
-                export_batch_size, export_max_workers, web3_provider_uri
+                export_batch_size, export_max_workers, provider_uri
             ))
             export_contracts.callback(
                 batch_size=export_batch_size,
                 contract_addresses=os.path.join(tempdir, "contract_addresses.txt"),
                 output=os.path.join(tempdir, "contracts.json"),
                 max_workers=export_max_workers,
-                provider_uri=web3_provider_uri,
+                provider_uri=provider_uri,
             )
 
             copy_to_export_path(
@@ -230,12 +230,12 @@ def build_export_dag(
             logging.info('Removing unneeded file token_contracts.json')
             os.remove(os.path.join(tempdir, "token_contracts.json"))
 
-            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, web3_provider_uri))
+            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
             export_tokens.callback(
                 token_addresses=os.path.join(tempdir, "token_addresses.txt"),
                 output=os.path.join(tempdir, "tokens.csv"),
                 max_workers=export_max_workers,
-                provider_uri=web3_provider_uri,
+                provider_uri=provider_uri,
             )
 
             copy_to_export_path(
@@ -268,7 +268,7 @@ def build_export_dag(
             start_block, end_block = get_block_range(tempdir, execution_date)
 
             logging.info('Calling export_traces({}, {}, {}, ...,{}, {}, {}, {})'.format(
-                start_block, end_block, export_batch_size, export_max_workers, web3_provider_uri_archival,
+                start_block, end_block, export_batch_size, export_max_workers, provider_uri_archival,
                 export_genesis_traces_option, export_daofork_traces_option
             ))
             export_traces.callback(
@@ -277,7 +277,7 @@ def build_export_dag(
                 batch_size=export_batch_size,
                 output=os.path.join(tempdir, "traces.csv"),
                 max_workers=export_max_workers,
-                provider_uri=web3_provider_uri_archival,
+                provider_uri=provider_uri_archival,
                 genesis_traces=export_genesis_traces_option,
                 daofork_traces=export_daofork_traces_option,
             )
@@ -396,9 +396,3 @@ def download_from_gcs(bucket, object, filename):
 
     blob.download_to_filename(filename)
 
-
-def parse_bool(bool_string, default=True):
-    if bool_string is None or len(bool_string) == 0:
-        return default
-    else:
-        return bool_string.lower() in ["true", "yes"]
