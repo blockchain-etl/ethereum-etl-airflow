@@ -3,7 +3,7 @@ from __future__ import print_function
 import logging
 
 from build_load_dag import build_load_dag
-from common import read_load_dag_vars
+from variables import read_load_dag_vars
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)

@@ -25,7 +25,7 @@ create variables in Airflow (**Admin > Variables** in the UI):
 | ethereum_destination_dataset_project_id | Project ID of BigQuery datasets         |
 | notification_emails                     | email for notifications                 |
 
-Check other variables in `dags/common.py`.
+Check other variables in `dags/variables.py`.
 
 ### Upload DAGs
 

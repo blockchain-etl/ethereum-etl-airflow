@@ -389,7 +389,7 @@ def download_from_gcs(bucket, object, filename):
     bucket = storage_client.get_bucket(bucket)
     blob_meta = bucket.get_blob(object)
 
-    if blob_meta.size > 0:
+    if blob_meta.size > 10 * MEGABYTE:
         blob = bucket.blob(object, chunk_size=10 * MEGABYTE)
     else:
         blob = bucket.blob(object)
