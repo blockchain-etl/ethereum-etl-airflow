@@ -2,10 +2,10 @@ from __future__ import print_function
 
 import os
 import logging
-from datetime import datetime, timedelta
+from datetime import timedelta
 from tempfile import TemporaryDirectory
 
-from airflow import DAG
+from airflow import DAG, configuration
 from airflow.operators import python_operator
 from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
 
@@ -38,6 +38,7 @@ def build_export_dag(
         schedule_interval='0 0 * * *',
         export_max_workers=10,
         export_batch_size=10,
+        max_active_runs=None,
         **kwargs
 ):
     default_dag_args = {
@@ -61,10 +62,13 @@ def build_export_dag(
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
 
+    if max_active_runs is None:
+        max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
     dag = DAG(
         dag_id,
         schedule_interval=schedule_interval,
         default_args=default_dag_args,
+        max_active_runs=max_active_runs
     )
 
     # Export

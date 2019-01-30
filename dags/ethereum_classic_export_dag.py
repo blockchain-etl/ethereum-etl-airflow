@@ -20,6 +20,8 @@ options_args = {
 
 provider_uri = Variable.get('ethereum_classic_provider_uri')
 provider_uri_archival = Variable.get('ethereum_classic_provider_uri_archival', provider_uri)
+max_active_runs = Variable.get('ethereum_classic_export_max_active_runs', '')
+max_active_runs = int(max_active_runs) if max_active_runs != '' else None
 
 DAG = build_export_dag(
     dag_id='ethereum_classic_export_dag',
@@ -31,5 +33,6 @@ DAG = build_export_dag(
     schedule_interval='0 2 * * *',
     export_max_workers=10,
     export_batch_size=10,
+    max_active_runs=max_active_runs,
     **options_args
 )
