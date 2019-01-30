@@ -73,7 +73,7 @@ CREATE TABLE ethereum.receipts (
   cumulative_gas_used BIGINT         NOT NULL,     -- The total amount of gas used when this transaction was executed in the block
   gas_used            BIGINT         NOT NULL,     -- The amount of gas used by this specific transaction alone
   contract_address    VARCHAR(65535) DEFAULT NULL, -- The contract address created, if the transaction was a contract creation, otherwise null
-  root                VARCHAR(65535) NOT NULL,     -- 32 bytes of post-transaction stateroot (pre Byzantium)
+  root                VARCHAR(65535) DEFAULT NULL, -- 32 bytes of post-transaction stateroot (pre Byzantium)
   status              BIGINT         DEFAULT NULL, -- Either 1 (success) or 0 (failure) (post Byzantium)
   PRIMARY KEY (transaction_hash)
 )
@@ -102,11 +102,11 @@ SORTKEY (log_index);
 DROP TABLE IF EXISTS ethereum.tokens;
 
 CREATE TABLE ethereum.tokens (
-  address      VARCHAR(65535) NOT NULL, -- The address of the ERC20 token
-  symbol       VARCHAR(65535) NOT NULL, -- The symbol of the ERC20 token
-  name         VARCHAR(65535) NOT NULL, -- The name of the ERC20 token
-  decimals     VARCHAR(65535) NOT NULL, -- The number of decimals the token uses.  Cast to NUMERIC or FLOAT8
-  total_supply VARCHAR(65535) NOT NULL, -- The total token supply. Cast to NUMERIC or FLOAT8
+  address      VARCHAR(65535) NOT NULL,     -- The address of the ERC20 token
+  symbol       VARCHAR(65535) DEFAULT NULL, -- The symbol of the ERC20 token
+  name         VARCHAR(65535) DEFAULT NULL, -- The name of the ERC20 token
+  decimals     VARCHAR(65535) DEFAULT NULL, -- The number of decimals the token uses.  Cast to NUMERIC or FLOAT8
+  total_supply VARCHAR(65535) NOT NULL,     -- The total token supply. Cast to NUMERIC or FLOAT8
   PRIMARY KEY (address)
 )
 DISTKEY (address)
