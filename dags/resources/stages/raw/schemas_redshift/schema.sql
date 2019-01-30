@@ -66,15 +66,15 @@ SORTKEY (log_index);
 DROP TABLE IF EXISTS ethereum.receipts;
 
 CREATE TABLE ethereum.receipts (
-  transaction_hash    VARCHAR(65535) NOT NULL, -- Hash of the transaction
-  transaction_index   BIGINT         NOT NULL, -- Integer of the transactions index position in the block
-  block_hash          VARCHAR(65535) NOT NULL, -- Hash of the block where this transaction was in
-  block_number        BIGINT         NOT NULL, -- Block number where this transaction was in
-  cumulative_gas_used BIGINT         NOT NULL, -- The total amount of gas used when this transaction was executed in the block
-  gas_used            BIGINT         NOT NULL, -- The amount of gas used by this specific transaction alone
-  contract_address    VARCHAR(65535) NOT NULL, -- The contract address created, if the transaction was a contract creation, otherwise null
-  root                VARCHAR(65535) NOT NULL, -- 32 bytes of post-transaction stateroot (pre Byzantium)
-  status              BIGINT         NOT NULL, -- Either 1 (success) or 0 (failure) (post Byzantium)
+  transaction_hash    VARCHAR(65535) NOT NULL,     -- Hash of the transaction
+  transaction_index   BIGINT         NOT NULL,     -- Integer of the transactions index position in the block
+  block_hash          VARCHAR(65535) NOT NULL,     -- Hash of the block where this transaction was in
+  block_number        BIGINT         NOT NULL,     -- Block number where this transaction was in
+  cumulative_gas_used BIGINT         NOT NULL,     -- The total amount of gas used when this transaction was executed in the block
+  gas_used            BIGINT         NOT NULL,     -- The amount of gas used by this specific transaction alone
+  contract_address    VARCHAR(65535) DEFAULT NULL, -- The contract address created, if the transaction was a contract creation, otherwise null
+  root                VARCHAR(65535) NOT NULL,     -- 32 bytes of post-transaction stateroot (pre Byzantium)
+  status              BIGINT         DEFAULT NULL, -- Either 1 (success) or 0 (failure) (post Byzantium)
   PRIMARY KEY (transaction_hash)
 )
 DISTKEY (block_number)
@@ -142,17 +142,17 @@ SORTKEY (transaction_index);
 DROP TABLE IF EXISTS ethereum.transactions;
 
 CREATE TABLE ethereum.transactions (
-  hash              VARCHAR(65535) NOT NULL, -- Hash of the transaction
-  nonce             BIGINT         NOT NULL, -- The number of transactions made by the sender prior to this one
-  block_hash        VARCHAR(65535) NOT NULL, -- Hash of the block where this transaction was in
-  block_number      BIGINT         NOT NULL, -- Block number where this transaction was in
-  transaction_index BIGINT         NOT NULL, -- Integer of the transactions index position in the block
-  from_address      VARCHAR(65535) NOT NULL, -- Address of the sender
-  to_address        VARCHAR(65535) NOT NULL, -- Address of the receiver. null when its a contract creation transaction"
-  value             NUMERIC(38, 0) NOT NULL, -- Value transferred in Wei
-  gas               BIGINT         NOT NULL, -- Gas provided by the sender
-  gas_price         BIGINT         NOT NULL, -- Gas price provided by the sender in Wei
-  input             VARCHAR(65535) NOT NULL, -- The data sent along with the transaction
+  hash              VARCHAR(65535) NOT NULL,     -- Hash of the transaction
+  nonce             BIGINT         NOT NULL,     -- The number of transactions made by the sender prior to this one
+  block_hash        VARCHAR(65535) NOT NULL,     -- Hash of the block where this transaction was in
+  block_number      BIGINT         NOT NULL,     -- Block number where this transaction was in
+  transaction_index BIGINT         NOT NULL,     -- Integer of the transactions index position in the block
+  from_address      VARCHAR(65535) NOT NULL,     -- Address of the sender
+  to_address        VARCHAR(65535) DEFAULT NULL, -- Address of the receiver. null when its a contract creation transaction
+  value             NUMERIC(38, 0) NOT NULL,     -- Value transferred in Wei
+  gas               BIGINT         NOT NULL,     -- Gas provided by the sender
+  gas_price         BIGINT         NOT NULL,     -- Gas price provided by the sender in Wei
+  input             VARCHAR(65535) NOT NULL,     -- The data sent along with the transaction
   PRIMARY KEY (hash)
 )
 DISTKEY (block_number)
