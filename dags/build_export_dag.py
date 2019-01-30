@@ -172,12 +172,18 @@ def build_export_dag(
                 predicate="item['trace_type']=='create' and item['to_address'] is not None and len(item['to_address']) > 0",
             )
 
+            logging.info('Removing unneeded file traces.csv')
+            os.remove(os.path.join(tempdir, "traces.csv"))
+
             logging.info('Calling extract_field(...)')
             extract_field.callback(
                 input=os.path.join(tempdir, "traces_type_create.csv"),
                 output=os.path.join(tempdir, "contract_addresses.txt"),
                 field="to_address",
             )
+
+            logging.info('Removing unneeded file traces_type_create.csv')
+            os.remove(os.path.join(tempdir, "traces_type_create.csv"))
 
             logging.info('Calling export_contracts({}, ..., {}, {})'.format(
                 export_batch_size, export_max_workers, web3_provider_uri
@@ -207,12 +213,18 @@ def build_export_dag(
                 predicate="item['is_erc20'] or item['is_erc721']",
             )
 
+            logging.info('Removing unneeded file contracts.json')
+            os.remove(os.path.join(tempdir, "contracts.json"))
+
             logging.info('Calling extract_field(...)')
             extract_field.callback(
                 input=os.path.join(tempdir, "token_contracts.json"),
                 output=os.path.join(tempdir, "token_addresses.txt"),
                 field="address",
             )
+
+            logging.info('Removing unneeded file token_contracts.json')
+            os.remove(os.path.join(tempdir, "token_contracts.json"))
 
             logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, web3_provider_uri))
             export_tokens.callback(
