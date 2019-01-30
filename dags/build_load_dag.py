@@ -22,24 +22,26 @@ def build_load_dag(
         dag_id,
         output_bucket,
         destination_dataset_project_id,
+        copy_dataset_project_id=None,
+        copy_dataset_name=None,
         chain='ethereum',
         notification_emails=None,
         start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *'
 ):
     # The following datasets must be created in BigQuery:
-    # - {chain}_blockchain_raw
-    # - {chain}_blockchain_temp
-    # - {chain}_blockchain
+    # - crypto_{chain}_raw
+    # - crypto_{chain}_temp
+    # - crypto_{chain}
     # Environment variable OUTPUT_BUCKET must be set and point to the GCS bucket
     # where files exported by export_dag.py are located
 
-    dataset_name = f'{chain}_blockchain'
-    dataset_name_raw = f'{chain}_blockchain_raw'
-    dataset_name_temp = f'{chain}_blockchain_temp'
+    dataset_name = f'crypto_{chain}'
+    dataset_name_raw = f'crypto_{chain}_raw'
+    dataset_name_temp = f'crypto_{chain}_temp'
 
     if not destination_dataset_project_id:
-        raise ValueError('DESTINATION_DATASET_PROJECT_ID is required')
+        raise ValueError('destination_dataset_project_id is required')
 
     environment = {
         'DATASET_NAME': dataset_name,
@@ -180,12 +182,17 @@ def build_load_dag(
             copy_job_config = bigquery.CopyJobConfig()
             copy_job_config.write_disposition = 'WRITE_TRUNCATE'
 
-            dest_table_name = '{task}'.format(task=task)
-            project = os.environ.get('DESTINATION_DATASET_PROJECT_ID', None)
-            dest_table_ref = client.dataset(dataset_name, project=project).table(dest_table_name)
-            copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
-            submit_bigquery_job(copy_job, copy_job_config)
-            assert copy_job.state == 'DONE'
+            all_destination_projects = [(destination_dataset_project_id, dataset_name)]
+            if copy_dataset_project_id is not None and len(copy_dataset_project_id) > 0 \
+                    and copy_dataset_name is not None and len(copy_dataset_name) > 0:
+                all_destination_projects.append((copy_dataset_project_id, copy_dataset_name))
+
+            for dest_project, dest_dataset_name in all_destination_projects:
+                dest_table_name = '{task}'.format(task=task)
+                dest_table_ref = client.dataset(dest_dataset_name, project=dest_project).table(dest_table_name)
+                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                submit_bigquery_job(copy_job, copy_job_config)
+                assert copy_job.state == 'DONE'
 
             # Delete temp table
             client.delete_table(temp_table_ref)
