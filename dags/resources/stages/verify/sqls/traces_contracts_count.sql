@@ -7,7 +7,7 @@ FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.transactions` AS trans
 WHERE receipt_contract_address IS NOT NULL) AND
 (SELECT COUNT(1)
 FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.traces` as traces
-WHERE trace_type = 'create' AND to_address IS NOT NULL) =
+WHERE trace_type = 'create' AND to_address IS NOT NULL AND status = 1) =
 (SELECT COUNT(*)
 FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.contracts` AS contracts
 ), 1,

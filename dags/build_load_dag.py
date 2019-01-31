@@ -240,14 +240,14 @@ def build_load_dag(
         'transactions', dependencies=[load_blocks_task, load_transactions_task, load_receipts_task])
     enrich_logs_task = add_enrich_tasks(
         'logs', dependencies=[load_blocks_task, load_logs_task])
-    enrich_contracts_task = add_enrich_tasks(
-        'contracts', dependencies=[load_blocks_task, load_contracts_task, load_traces_task])
     enrich_tokens_task = add_enrich_tasks(
         'tokens', time_partitioning_field=None, dependencies=[load_tokens_task])
     enrich_token_transfers_task = add_enrich_tasks(
         'token_transfers', dependencies=[load_blocks_task, load_token_transfers_task])
     enrich_traces_task = add_enrich_tasks(
         'traces', dependencies=[load_blocks_task, load_traces_task])
+    enrich_contracts_task = add_enrich_tasks(
+        'contracts', dependencies=[load_contracts_task, enrich_traces_task])
 
     verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
     verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
