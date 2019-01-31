@@ -241,7 +241,7 @@ def build_load_dag(
     enrich_logs_task = add_enrich_tasks(
         'logs', dependencies=[load_blocks_task, load_logs_task])
     enrich_contracts_task = add_enrich_tasks(
-        'contracts', dependencies=[load_blocks_task, load_contracts_task])
+        'contracts', dependencies=[load_blocks_task, load_contracts_task, load_traces_task])
     enrich_tokens_task = add_enrich_tasks(
         'tokens', time_partitioning_field=None, dependencies=[load_tokens_task])
     enrich_token_transfers_task = add_enrich_tasks(
@@ -261,7 +261,7 @@ def build_load_dag(
     verify_traces_transactions_count_task = add_verify_tasks(
         'traces_transactions_count', [enrich_transactions_task, enrich_traces_task])
     verify_traces_contracts_count_task = add_verify_tasks(
-        'traces_contracts_count', [enrich_transactions_task, enrich_traces_task])
+        'traces_contracts_count', [enrich_transactions_task, enrich_traces_task, enrich_contracts_task])
 
     if notification_emails and len(notification_emails) > 0:
         send_email_task = EmailOperator(
@@ -280,5 +280,6 @@ def build_load_dag(
         verify_traces_blocks_count_task >> send_email_task
         verify_traces_transactions_count_task >> send_email_task
         verify_traces_contracts_count_task >> send_email_task
+        enrich_tokens_task >> send_email_task
 
         return dag
