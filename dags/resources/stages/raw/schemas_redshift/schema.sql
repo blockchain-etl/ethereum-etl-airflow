@@ -23,10 +23,8 @@ CREATE TABLE ethereum.blocks (
   transaction_count BIGINT         NOT NULL,     -- The number of transactions in the block
   PRIMARY KEY (number)
 )
-  DISTKEY (number
-)
-SORTKEY (timestamp
-);
+DISTKEY (number)
+SORTKEY (timestamp);
 
 --
 
