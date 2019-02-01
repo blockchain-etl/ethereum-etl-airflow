@@ -17,6 +17,6 @@ SELECT
     traces.block_number,
     traces.block_hash
 FROM contracts_grouped AS contracts
-    JOIN {{DATASET_NAME}}.traces AS traces ON traces.to_address = contracts.address
+    JOIN `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.traces` AS traces ON traces.to_address = contracts.address
         AND traces.trace_type = 'create' AND traces.status = 1
 WHERE contracts.rank = 1
