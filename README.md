@@ -7,7 +7,7 @@ Read this article: https://cloud.google.com/blog/products/data-analytics/ethereu
 ### Create BigQuery Datasets
 
 - Sign in to BigQuery https://bigquery.cloud.google.com/
-- Create a new datasets called `ethereum_blockchain`, `ethereum_blockchain_raw`, `ethereum_blockchain_temp`
+- Create a new datasets called `crypto_ethereum`, `crypto_ethereum_raw`, `crypto_ethereum_temp`
 
 ### Create Google Cloud Storage bucket
 
