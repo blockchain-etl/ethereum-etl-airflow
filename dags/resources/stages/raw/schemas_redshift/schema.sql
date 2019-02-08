@@ -154,4 +154,4 @@ CREATE TABLE ethereum.transactions (
   PRIMARY KEY (hash)
 )
 DISTKEY (block_number)
-SORTKEY (transaction_index);
+SORTKEY (block_number);
