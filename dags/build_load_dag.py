@@ -26,7 +26,7 @@ def build_load_dag(
         copy_dataset_name=None,
         chain='ethereum',
         notification_emails=None,
-        start_date=datetime(2018, 7, 1),
+        load_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *'
 ):
     # The following datasets must be created in BigQuery:
@@ -84,7 +84,7 @@ def build_load_dag(
 
     default_dag_args = {
         'depends_on_past': False,
-        'start_date': start_date,
+        'start_date': load_start_date,
         'email_on_failure': True,
         'email_on_retry': True,
         'retries': 5,
