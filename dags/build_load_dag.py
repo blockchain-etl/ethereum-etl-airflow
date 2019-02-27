@@ -282,4 +282,4 @@ def build_load_dag(
         verify_traces_contracts_count_task >> send_email_task
         enrich_tokens_task >> send_email_task
 
-        return dag
+    return dag
