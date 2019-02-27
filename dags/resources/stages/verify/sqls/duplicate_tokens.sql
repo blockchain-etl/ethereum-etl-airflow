@@ -1,0 +1,8 @@
+SELECT IF(
+(SELECT COUNT(1)
+FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.tokens`
+) =
+(SELECT COUNT(DISTINCT address)
+FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.tokens`
+), 1,
+CAST((SELECT 'There are duplicate addresses in tokens table') AS INT64))
