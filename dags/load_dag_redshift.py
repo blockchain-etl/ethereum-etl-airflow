@@ -55,17 +55,35 @@ def load_task(ds, **kwargs):
     task = kwargs.get('task')
     pg_hook = PostgresHook(conn_id)
 
+    table_partition_keys = {
+	'blocks': 'number',
+	'contracts': 'address',
+	'logs': 'block_number',
+	'receipts': 'block_number',
+	'token_transfers': 'block_number',
+	'tokens': 'address',
+	'traces': 'block_number',
+	'transactions': 'block_number'
+    }
+
+    sql = """
+	DROP TABLE IF EXISTS {schema}.{table}_copy_tmp;
+
+	CREATE TABLE {schema}.{table}_copy_tmp
+	(LIKE {schema}.{table});
+    """
+
     if file_format == 'csv':
-	sql = """
-	    COPY {schema}.{table}
+	sql += """
+	    COPY {schema}.{table}_copy_tmp
 	    FROM 's3://{output_bucket}/export/{table}/block_date={date}/{table}.{file_format}'
 	    WITH CREDENTIALS
 	    'aws_access_key_id={aws_access_key_id};aws_secret_access_key={aws_secret_access_key}'
 	    TRUNCATECOLUMNS BLANKSASNULL EMPTYASNULL IGNOREHEADER 1 CSV;
 	"""
     elif file_format == 'json':
-	sql = """
-	    COPY {schema}.{table}
+	sql += """
+	    COPY {schema}.{table}_copy_tmp
 	    FROM 's3://{output_bucket}/export/{table}/block_date={date}/{table}.{file_format}'
 	    WITH CREDENTIALS
 	    'aws_access_key_id={aws_access_key_id};aws_secret_access_key={aws_secret_access_key}'
@@ -74,9 +92,26 @@ def load_task(ds, **kwargs):
     else:
 	raise ValueError('Only json and csv file formats are supported.')
 
+    sql += """
+	BEGIN TRANSACTION;
+
+	DELETE FROM {schema}.{table}
+	USING {schema}.{table}_copy_tmp
+	WHERE
+	  {schema}.{table}.{partition_key} = {schema}.{table}_copy_tmp.{partition_key};
+
+	INSERT INTO {schema}.{table}
+	SELECT * FROM {schema}.{table}_copy_tmp;
+
+	END TRANSACTION;
+
+	DROP TABLE {schema}.{table}_copy_tmp;
+    """
+
     formatted_sql = sql.format(
 	schema='ethereum',
 	table=task,
+	partition_key=table_partition_keys[task],
 	output_bucket=output_bucket,
 	date=ds,
 	file_format=file_format,
@@ -86,7 +121,7 @@ def load_task(ds, **kwargs):
     pg_hook.run(formatted_sql)
 
 
-def add_load_tasks(task, file_format, allow_quoted_newlines=False):
+def add_load_tasks(task, file_format):
 
     load_operator = PythonOperator(
 	task_id='s3_to_redshift_{task}'.format(task=task),
@@ -108,5 +143,5 @@ load_transactions_task = add_load_tasks('transactions', 'csv')
 load_receipts_task = add_load_tasks('receipts', 'csv')
 load_logs_task = add_load_tasks('logs', 'json')
 load_contracts_task = add_load_tasks('contracts', 'json')
-load_tokens_task = add_load_tasks('tokens', 'csv', allow_quoted_newlines=True)
+load_tokens_task = add_load_tasks('tokens', 'csv')
 load_token_transfers_task = add_load_tasks('token_transfers', 'csv')
