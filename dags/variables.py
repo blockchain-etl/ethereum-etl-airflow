@@ -57,7 +57,7 @@ def read_load_dag_vars(var_prefix, **kwargs):
     load_start_date = read_var('load_start_date', var_prefix, False, **kwargs)
     if load_start_date is not None:
         load_start_date = datetime.strptime(load_start_date, '%Y-%m-%d')
-        var_prefix['load_start_date'] = load_start_date
+        vars['load_start_date'] = load_start_date
 
     return vars
 
