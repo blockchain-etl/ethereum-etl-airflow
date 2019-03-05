@@ -22,25 +22,26 @@ def build_load_dag(
     dag_id,
     output_bucket,
     destination_dataset_project_id,
+    copy_dataset_project_id=None,
+    copy_dataset_name=None,
     chain='ethereum',
     notification_emails=None,
-    start_date=datetime(2018, 7, 1),
+    load_start_date=datetime(2018, 7, 1),
     schedule_interval='0 0 * * *'
 ):
-
     # The following datasets must be created in BigQuery:
-    # - {chain}_blockchain_raw
-    # - {chain}_blockchain_temp
-    # - {chain}_blockchain
+    # - crypto_{chain}_raw
+    # - crypto_{chain}_temp
+    # - crypto_{chain}
     # Environment variable OUTPUT_BUCKET must be set and point to the GCS bucket
     # where files exported by export_dag.py are located
 
-    dataset_name = f'{chain}_blockchain'
-    dataset_name_raw = f'{chain}_blockchain_raw'
-    dataset_name_temp = f'{chain}_blockchain_temp'
+    dataset_name = f'crypto_{chain}'
+    dataset_name_raw = f'crypto_{chain}_raw'
+    dataset_name_temp = f'crypto_{chain}_temp'
 
     if not destination_dataset_project_id:
-        raise ValueError('DESTINATION_DATASET_PROJECT_ID is required')
+        raise ValueError('destination_dataset_project_id is required')
 
     environment = {
         'DATASET_NAME': dataset_name,
@@ -81,10 +82,9 @@ def build_load_dag(
             logging.info(job.errors)
             raise
 
-
     default_dag_args = {
         'depends_on_past': False,
-        'start_date': start_date,
+        'start_date': load_start_date,
         'email_on_failure': True,
         'email_on_retry': True,
         'retries': 5,
@@ -98,17 +98,12 @@ def build_load_dag(
     dag = models.DAG(
         dag_id,
         catchup=False,
-        # Daily at 1:30am
         schedule_interval=schedule_interval,
         default_args=default_dag_args)
 
     dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
-    
     def add_load_tasks(task, file_format, allow_quoted_newlines=False):
-        if output_bucket is None:
-            raise ValueError('You must set OUTPUT_BUCKET environment variable')
-
         wait_sensor = GoogleCloudStorageObjectSensor(
             task_id='wait_latest_{task}'.format(task=task),
             timeout=60 * 60,
@@ -187,12 +182,17 @@ def build_load_dag(
             copy_job_config = bigquery.CopyJobConfig()
             copy_job_config.write_disposition = 'WRITE_TRUNCATE'
 
-            dest_table_name = '{task}'.format(task=task)
-            project = os.environ.get('DESTINATION_DATASET_PROJECT_ID', None)
-            dest_table_ref = client.dataset(dataset_name, project=project).table(dest_table_name)
-            copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
-            submit_bigquery_job(copy_job, copy_job_config)
-            assert copy_job.state == 'DONE'
+            all_destination_projects = [(destination_dataset_project_id, dataset_name)]
+            if copy_dataset_project_id is not None and len(copy_dataset_project_id) > 0 \
+                    and copy_dataset_name is not None and len(copy_dataset_name) > 0:
+                all_destination_projects.append((copy_dataset_project_id, copy_dataset_name))
+
+            for dest_project, dest_dataset_name in all_destination_projects:
+                dest_table_name = '{task}'.format(task=task)
+                dest_table_ref = client.dataset(dest_dataset_name, project=dest_project).table(dest_table_name)
+                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                submit_bigquery_job(copy_job, copy_job_config)
+                assert copy_job.state == 'DONE'
 
             # Delete temp table
             client.delete_table(temp_table_ref)
@@ -225,7 +225,6 @@ def build_load_dag(
                 dependency >> verify_task
         return verify_task
 
-
     load_blocks_task = add_load_tasks('blocks', 'csv')
     load_transactions_task = add_load_tasks('transactions', 'csv')
     load_receipts_task = add_load_tasks('receipts', 'csv')
@@ -241,34 +240,35 @@ def build_load_dag(
         'transactions', dependencies=[load_blocks_task, load_transactions_task, load_receipts_task])
     enrich_logs_task = add_enrich_tasks(
         'logs', dependencies=[load_blocks_task, load_logs_task])
-    enrich_contracts_task = add_enrich_tasks(
-        'contracts', dependencies=[load_blocks_task, load_contracts_task])
     enrich_tokens_task = add_enrich_tasks(
         'tokens', time_partitioning_field=None, dependencies=[load_tokens_task])
     enrich_token_transfers_task = add_enrich_tasks(
         'token_transfers', dependencies=[load_blocks_task, load_token_transfers_task])
     enrich_traces_task = add_enrich_tasks(
         'traces', dependencies=[load_blocks_task, load_traces_task])
+    enrich_contracts_task = add_enrich_tasks(
+        'contracts', dependencies=[load_contracts_task, enrich_traces_task])
 
     verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
     verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
-    verify_transactions_count_task = add_verify_tasks('transactions_count', [enrich_blocks_task, enrich_transactions_task])
+    verify_transactions_count_task = add_verify_tasks('transactions_count',
+                                                      [enrich_blocks_task, enrich_transactions_task])
     verify_transactions_have_latest_task = add_verify_tasks('transactions_have_latest', [enrich_transactions_task])
     verify_logs_have_latest_task = add_verify_tasks('logs_have_latest', [enrich_logs_task])
-    verify_token_transfers_have_latest_task = add_verify_tasks('token_transfers_have_latest', [enrich_token_transfers_task])
-    verify_traces_blocks_count_task = add_verify_tasks(
-        'traces_blocks_count', [enrich_blocks_task, enrich_traces_task])
+    verify_token_transfers_have_latest_task = add_verify_tasks('token_transfers_have_latest',
+                                                               [enrich_token_transfers_task])
+    verify_traces_blocks_count_task = add_verify_tasks('traces_blocks_count', [enrich_blocks_task, enrich_traces_task])
     verify_traces_transactions_count_task = add_verify_tasks(
         'traces_transactions_count', [enrich_transactions_task, enrich_traces_task])
     verify_traces_contracts_count_task = add_verify_tasks(
-        'traces_contracts_count', [enrich_transactions_task, enrich_traces_task])
+        'traces_contracts_count', [enrich_transactions_task, enrich_traces_task, enrich_contracts_task])
 
     if notification_emails and len(notification_emails) > 0:
         send_email_task = EmailOperator(
             task_id='send_email',
             to=[email.strip() for email in notification_emails.split(',')],
             subject='Ethereum ETL Airflow Load DAG Succeeded',
-            html_content='Ethereum ETL Airflow Load DAG Succeeded',
+            html_content='Ethereum ETL Airflow Load DAG Succeeded - {}'.format(chain),
             dag=dag
         )
         verify_blocks_count_task >> send_email_task
@@ -280,7 +280,6 @@ def build_load_dag(
         verify_traces_blocks_count_task >> send_email_task
         verify_traces_transactions_count_task >> send_email_task
         verify_traces_contracts_count_task >> send_email_task
+        enrich_tokens_task >> send_email_task
 
-        return dag
-    else:
-        raise Exception('No emails found. You must pass a notification_emails value for the Airflow Variable.')
+    return dag
