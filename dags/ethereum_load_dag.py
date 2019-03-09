@@ -15,6 +15,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 cloud_provider = read_var('cloud_provider', var_prefix=None, required=False, cloud_provider='gcp')
 
 if cloud_provider == 'gcp':
+    # airflow DAG
     DAG = build_load_dag(
         dag_id='ethereum_load_dag',
         chain='ethereum',
@@ -24,6 +25,7 @@ if cloud_provider == 'gcp':
         )
     )
 elif cloud_provider == 'aws':
+    # airflow DAG
     DAG = build_load_dag_redshift(
         dag_id='ethereum_load_dag',
         chain='ethereum',
