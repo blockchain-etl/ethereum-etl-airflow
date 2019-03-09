@@ -7,9 +7,6 @@ from tempfile import TemporaryDirectory
 
 from airflow import DAG, configuration
 from airflow.operators import python_operator
-from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
-from airflow.hooks.S3_hook import S3Hook
-
 
 from ethereumetl.cli import (
     get_block_range_for_date,
@@ -23,11 +20,6 @@ from ethereumetl.cli import (
     extract_token_transfers,
     export_traces,
 )
-
-# DAG configuration
-from apiclient.http import MediaFileUpload
-from google.cloud import storage
-from googleapiclient import errors
 
 
 def build_export_dag(
@@ -67,6 +59,7 @@ def build_export_dag(
 
     if export_max_active_runs is None:
         export_max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
+
     dag = DAG(
         dag_id,
         schedule_interval=export_schedule_interval,
@@ -75,8 +68,10 @@ def build_export_dag(
     )
 
     if cloud_provider == 'aws':
+        from airflow.hooks.S3_hook import S3Hook
         cloud_storage_hook = S3Hook(aws_conn_id="aws_default")
     else:
+        from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
         cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
 
     # Export
@@ -376,6 +371,9 @@ MEGABYTE = 1024 * 1024
 # Helps avoid OverflowError: https://stackoverflow.com/questions/47610283/cant-upload-2gb-to-google-cloud-storage
 # https://developers.google.com/api-client-library/python/guide/media_upload#resumable-media-chunked-upload
 def upload_to_gcs(gcs_hook, bucket, object, filename, mime_type='application/octet-stream'):
+    from apiclient.http import MediaFileUpload
+    from googleapiclient import errors
+
     service = gcs_hook.get_conn()
 
     if os.path.getsize(filename) > 10 * MEGABYTE:
@@ -408,6 +406,8 @@ def upload_to_gcs(gcs_hook, bucket, object, filename, mime_type='application/oct
 
 # Can download big files unlike gcs_hook.download which saves files in memory first
 def download_from_gcs(bucket, object, filename):
+    from google.cloud import storage
+
     storage_client = storage.Client()
 
     bucket = storage_client.get_bucket(bucket)
