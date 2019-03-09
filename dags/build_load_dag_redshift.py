@@ -142,3 +142,5 @@ def build_load_dag_redshift(
     load_tokens_task = add_load_tasks('tokens', 'csv')
     load_token_transfers_task = add_load_tasks('token_transfers', 'csv')
     load_traces_task = add_load_tasks('traces', 'csv')
+
+    return dag
