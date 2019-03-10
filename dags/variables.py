@@ -11,7 +11,7 @@ def read_export_dag_vars(var_prefix, **kwargs):
     provider_uri_archival = read_var('provider_uri_archival', var_prefix, False, **kwargs)
     if provider_uri_archival is None:
         provider_uri_archival = provider_uri
-    cloud_provider = read_var('output_bucket', var_prefix, False, **kwargs)
+    cloud_provider = read_var('cloud_provider', var_prefix, False, **kwargs)
     if cloud_provider is None:
         cloud_provider = 'gcp'
 
