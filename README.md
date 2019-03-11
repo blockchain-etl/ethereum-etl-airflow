@@ -16,7 +16,9 @@ Read this article: https://cloud.google.com/blog/products/data-analytics/ethereu
 ### Create Google Cloud Composer environment
 
 Create environment here, https://console.cloud.google.com/composer, use Python version 3, 
-create variables in Airflow (**Admin > Variables** in the UI):
+In PYPI Packages tab add ethereum-etl==1.2.3.
+
+Create variables in Airflow (**Admin > Variables** in the UI):
 
 | Variable                                | Description                             |
 |-----------------------------------------|-----------------------------------------|
