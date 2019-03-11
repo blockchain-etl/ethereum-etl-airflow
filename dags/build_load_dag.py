@@ -19,15 +19,15 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 
 def build_load_dag(
-        dag_id,
-        output_bucket,
-        destination_dataset_project_id,
-        copy_dataset_project_id=None,
-        copy_dataset_name=None,
-        chain='ethereum',
-        notification_emails=None,
-        load_start_date=datetime(2018, 7, 1),
-        schedule_interval='0 0 * * *'
+    dag_id,
+    output_bucket,
+    destination_dataset_project_id,
+    copy_dataset_project_id=None,
+    copy_dataset_name=None,
+    chain='ethereum',
+    notification_emails=None,
+    load_start_date=datetime(2018, 7, 1),
+    schedule_interval='0 0 * * *'
 ):
     # The following datasets must be created in BigQuery:
     # - crypto_{chain}_raw

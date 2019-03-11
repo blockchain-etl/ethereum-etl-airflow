@@ -11,9 +11,13 @@ def read_export_dag_vars(var_prefix, **kwargs):
     provider_uri_archival = read_var('provider_uri_archival', var_prefix, False, **kwargs)
     if provider_uri_archival is None:
         provider_uri_archival = provider_uri
+    cloud_provider = read_var('cloud_provider', var_prefix, False, **kwargs)
+    if cloud_provider is None:
+        cloud_provider = 'gcp'
 
     vars = {
         'output_bucket': read_var('output_bucket', var_prefix, True, **kwargs),
+        'cloud_provider': cloud_provider,
         'export_start_date': export_start_date,
         'export_schedule_interval': read_var('export_schedule_interval', var_prefix, True, **kwargs),
         'provider_uri': provider_uri,
@@ -54,7 +58,24 @@ def read_load_dag_vars(var_prefix, **kwargs):
         'copy_dataset_name': read_var('copy_dataset_name', var_prefix, False, **kwargs),
     }
 
-    load_start_date = read_var('load_start_date', var_prefix, False, **kwargs)
+    load_start_date = read_var('load_start_date', vars, False, **kwargs)
+    if load_start_date is not None:
+        load_start_date = datetime.strptime(load_start_date, '%Y-%m-%d')
+        vars['load_start_date'] = load_start_date
+
+    return vars
+
+
+def read_load_dag_redshift_vars(var_prefix, **kwargs):
+    vars = {
+        'output_bucket': read_var('output_bucket', var_prefix, True, **kwargs),
+        'aws_access_key_id':  read_var('aws_access_key_id', var_prefix, True, **kwargs),
+        'aws_secret_access_key': read_var('aws_secret_access_key', var_prefix, True, **kwargs),
+        'notification_emails': read_var('notification_emails', None, False, **kwargs),
+        'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
+    }
+
+    load_start_date = read_var('load_start_date', vars, False, **kwargs)
     if load_start_date is not None:
         load_start_date = datetime.strptime(load_start_date, '%Y-%m-%d')
         vars['load_start_date'] = load_start_date
