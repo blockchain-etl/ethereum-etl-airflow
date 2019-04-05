@@ -2,11 +2,11 @@ from __future__ import print_function
 
 import logging
 
-from build_load_dag import build_load_dag
-from build_load_dag_redshift import build_load_dag_redshift
-from variables import read_load_dag_vars
-from variables import read_load_dag_redshift_vars
-from variables import read_var
+from ethereumetl_airflow.build_load_dag import build_load_dag
+from ethereumetl_airflow.build_load_dag_redshift import build_load_dag_redshift
+from ethereumetl_airflow.variables import read_load_dag_vars
+from ethereumetl_airflow.variables import read_load_dag_redshift_vars
+from ethereumetl_airflow.variables import read_var
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
