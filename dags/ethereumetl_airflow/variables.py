@@ -35,8 +35,8 @@ def read_export_dag_vars(var_prefix, **kwargs):
             read_var('export_blocks_and_transactions_toggle', var_prefix, False, **kwargs)),
         'export_receipts_and_logs_toggle': parse_bool(
             read_var('export_receipts_and_logs_toggle', var_prefix, False, **kwargs)),
-        'export_contracts_toggle': parse_bool(
-            read_var('export_contracts_toggle', var_prefix, False, **kwargs)),
+        'extract_contracts_toggle': parse_bool(
+            read_var('extract_contracts_toggle', var_prefix, False, **kwargs)),
         'export_tokens_toggle': parse_bool(
             read_var('export_tokens_toggle', var_prefix, False, **kwargs)),
         'extract_token_transfers_toggle': parse_bool(

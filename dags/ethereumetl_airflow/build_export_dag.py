@@ -15,7 +15,7 @@ from ethereumetl.cli import (
     extract_field,
     export_blocks_and_transactions,
     export_receipts_and_logs,
-    export_contracts,
+    extract_contracts,
     export_tokens,
     extract_token_transfers,
     export_traces,
@@ -52,7 +52,7 @@ def build_export_dag(
     export_genesis_traces_option = kwargs.get('export_genesis_traces_option')
     export_blocks_and_transactions_toggle = kwargs.get('export_blocks_and_transactions_toggle')
     export_receipts_and_logs_toggle = kwargs.get('export_receipts_and_logs_toggle')
-    export_contracts_toggle = kwargs.get('export_contracts_toggle')
+    extract_contracts_toggle = kwargs.get('extract_contracts_toggle')
     export_tokens_toggle = kwargs.get('export_tokens_toggle')
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
@@ -182,41 +182,20 @@ def build_export_dag(
             )
             copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", execution_date))
 
-    def export_contracts_command(execution_date, **kwargs):
+    def extract_contracts_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("traces", execution_date), os.path.join(tempdir, "traces.csv")
             )
 
-            logging.info('Calling filter_items(...)')
-            filter_items.callback(
-                input=os.path.join(tempdir, "traces.csv"),
-                output=os.path.join(tempdir, "traces_type_create.csv"),
-                predicate="item['trace_type']=='create' and item['to_address'] is not None and len(item['to_address']) > 0",
-            )
-
-            logging.info('Removing unneeded file traces.csv')
-            os.remove(os.path.join(tempdir, "traces.csv"))
-
-            logging.info('Calling extract_field(...)')
-            extract_field.callback(
-                input=os.path.join(tempdir, "traces_type_create.csv"),
-                output=os.path.join(tempdir, "contract_addresses.txt"),
-                field="to_address",
-            )
-
-            logging.info('Removing unneeded file traces_type_create.csv')
-            os.remove(os.path.join(tempdir, "traces_type_create.csv"))
-
-            logging.info('Calling export_contracts({}, ..., {}, {})'.format(
-                export_batch_size, export_max_workers, provider_uri
+            logging.info('Calling extract_contracts(..., {}, {})'.format(
+                export_batch_size, export_max_workers
             ))
-            export_contracts.callback(
-                batch_size=export_batch_size,
-                contract_addresses=os.path.join(tempdir, "contract_addresses.txt"),
+            extract_contracts.callback(
+                traces=os.path.join(tempdir, "traces.csv"),
                 output=os.path.join(tempdir, "contracts.json"),
+                batch_size=export_batch_size,
                 max_workers=export_max_workers,
-                provider_uri=provider_uri,
             )
 
             copy_to_export_path(
@@ -348,10 +327,10 @@ def build_export_dag(
         export_traces_toggle, "export_traces", export_traces_command
     )
 
-    export_contracts_operator = add_export_task(
-        export_contracts_toggle,
-        "export_contracts",
-        export_contracts_command,
+    extract_contracts_operator = add_export_task(
+        extract_contracts_toggle,
+        "extract_contracts",
+        extract_contracts_command,
         dependencies=[export_traces_operator],
     )
 
@@ -359,7 +338,7 @@ def build_export_dag(
         export_tokens_toggle,
         "export_tokens",
         export_tokens_command,
-        dependencies=[export_contracts_operator],
+        dependencies=[extract_contracts_operator],
     )
 
     return dag
