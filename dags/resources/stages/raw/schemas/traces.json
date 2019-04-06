@@ -80,5 +80,10 @@
         "name": "error",
         "type": "STRING",
         "description": "Error if message call failed"
+    },
+    {
+        "name": "status",
+        "type": "INT64",
+        "description": "Either 1 (success) or 0 (failure, due to any operation that can cause the call itself or any top-level call to revert)"
     }
 ]
