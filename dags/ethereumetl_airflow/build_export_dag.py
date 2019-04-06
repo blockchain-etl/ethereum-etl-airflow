@@ -11,12 +11,10 @@ from airflow.operators import python_operator
 from ethereumetl.cli import (
     get_block_range_for_date,
     extract_csv_column,
-    filter_items,
-    extract_field,
     export_blocks_and_transactions,
     export_receipts_and_logs,
     extract_contracts,
-    export_tokens,
+    extract_tokens,
     extract_token_transfers,
     export_traces,
 )
@@ -53,7 +51,7 @@ def build_export_dag(
     export_blocks_and_transactions_toggle = kwargs.get('export_blocks_and_transactions_toggle')
     export_receipts_and_logs_toggle = kwargs.get('export_receipts_and_logs_toggle')
     extract_contracts_toggle = kwargs.get('extract_contracts_toggle')
-    export_tokens_toggle = kwargs.get('export_tokens_toggle')
+    extract_tokens_toggle = kwargs.get('extract_tokens_toggle')
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
 
@@ -202,35 +200,15 @@ def build_export_dag(
                 os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
             )
 
-    def export_tokens_command(execution_date, **kwargs):
+    def extract_tokens_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
             )
 
-            logging.info('Calling filter_items(...)')
-            filter_items.callback(
-                input=os.path.join(tempdir, "contracts.json"),
-                output=os.path.join(tempdir, "token_contracts.json"),
-                predicate="item['is_erc20'] or item['is_erc721']",
-            )
-
-            logging.info('Removing unneeded file contracts.json')
-            os.remove(os.path.join(tempdir, "contracts.json"))
-
-            logging.info('Calling extract_field(...)')
-            extract_field.callback(
-                input=os.path.join(tempdir, "token_contracts.json"),
-                output=os.path.join(tempdir, "token_addresses.txt"),
-                field="address",
-            )
-
-            logging.info('Removing unneeded file token_contracts.json')
-            os.remove(os.path.join(tempdir, "token_contracts.json"))
-
-            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
-            export_tokens.callback(
-                token_addresses=os.path.join(tempdir, "token_addresses.txt"),
+            logging.info('Calling extract_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
+            extract_tokens.callback(
+                contracts=os.path.join(tempdir, "contracts.json"),
                 output=os.path.join(tempdir, "tokens.csv"),
                 max_workers=export_max_workers,
                 provider_uri=provider_uri,
@@ -334,10 +312,10 @@ def build_export_dag(
         dependencies=[export_traces_operator],
     )
 
-    export_tokens_operator = add_export_task(
-        export_tokens_toggle,
-        "export_tokens",
-        export_tokens_command,
+    extract_tokens_operator = add_export_task(
+        extract_tokens_toggle,
+        "extract_tokens",
+        extract_tokens_command,
         dependencies=[extract_contracts_operator],
     )
 
