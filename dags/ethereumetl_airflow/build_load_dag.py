@@ -27,7 +27,8 @@ def build_load_dag(
     chain='ethereum',
     notification_emails=None,
     load_start_date=datetime(2018, 7, 1),
-    schedule_interval='0 0 * * *'
+    schedule_interval='0 0 * * *',
+    load_all_partitions=True
 ):
     # The following datasets must be created in BigQuery:
     # - crypto_{chain}_raw
@@ -44,10 +45,11 @@ def build_load_dag(
         raise ValueError('destination_dataset_project_id is required')
 
     environment = {
-        'DATASET_NAME': dataset_name,
-        'DATASET_NAME_RAW': dataset_name_raw,
-        'DATASET_NAME_TEMP': dataset_name_temp,
-        'DESTINATION_DATASET_PROJECT_ID': destination_dataset_project_id
+        'dataset_name': dataset_name,
+        'dataset_name_raw': dataset_name_raw,
+        'dataset_name_temp': dataset_name_temp,
+        'destination_dataset_project_id': destination_dataset_project_id,
+        'load_all_partitions': load_all_partitions
     }
 
     def read_bigquery_schema_from_file(filepath):
@@ -65,10 +67,6 @@ def build_load_dag(
     def read_file(filepath):
         with open(filepath) as file_handle:
             content = file_handle.read()
-            for key, value in environment.items():
-                # each bracket should be doubled to be escaped
-                # we need two escaped and one unescaped
-                content = content.replace('{{{{{key}}}}}'.format(key=key), value)
             return content
 
     def submit_bigquery_job(job, configuration):
@@ -144,7 +142,11 @@ def build_load_dag(
         return load_operator
 
     def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependencies=None):
-        def enrich_task():
+        def enrich_task(ds, **kwargs):
+            template_context = kwargs.copy()
+            template_context['ds'] = ds
+            template_context['params'] = environment
+
             client = bigquery.Client()
 
             # Need to use a temporary table because bq query sets field modes to NULLABLE and descriptions to null
@@ -172,27 +174,54 @@ def build_load_dag(
             # Finishes faster, query limit for concurrent interactive queries is 50
             query_job_config.priority = bigquery.QueryPriority.INTERACTIVE
             query_job_config.destination = temp_table_ref
+
             sql_path = os.path.join(dags_folder, 'resources/stages/enrich/sqls/{task}.sql'.format(task=task))
-            sql = read_file(sql_path)
+            sql_template = read_file(sql_path)
+            sql = kwargs['task'].render_template('', sql_template, template_context)
+            print('Enrichment sql:')
+            print(sql)
+
             query_job = client.query(sql, location='US', job_config=query_job_config)
             submit_bigquery_job(query_job, query_job_config)
             assert query_job.state == 'DONE'
-
-            # Copy temporary table to destination
-            copy_job_config = bigquery.CopyJobConfig()
-            copy_job_config.write_disposition = 'WRITE_TRUNCATE'
 
             all_destination_projects = [(destination_dataset_project_id, dataset_name)]
             if copy_dataset_project_id is not None and len(copy_dataset_project_id) > 0 \
                     and copy_dataset_name is not None and len(copy_dataset_name) > 0:
                 all_destination_projects.append((copy_dataset_project_id, copy_dataset_name))
 
-            for dest_project, dest_dataset_name in all_destination_projects:
-                dest_table_name = '{task}'.format(task=task)
-                dest_table_ref = client.dataset(dest_dataset_name, project=dest_project).table(dest_table_name)
-                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
-                submit_bigquery_job(copy_job, copy_job_config)
-                assert copy_job.state == 'DONE'
+            if load_all_partitions:
+                for dest_project, dest_dataset_name in all_destination_projects:
+                    # Copy temporary table to destination
+                    copy_job_config = bigquery.CopyJobConfig()
+                    copy_job_config.write_disposition = 'WRITE_TRUNCATE'
+                    dest_table_name = '{task}'.format(task=task)
+                    dest_table_ref = client.dataset(dest_dataset_name, project=dest_project).table(dest_table_name)
+                    copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                    submit_bigquery_job(copy_job, copy_job_config)
+                    assert copy_job.state == 'DONE'
+            else:
+                for dest_project, dest_dataset_name in all_destination_projects:
+                    # Merge
+                    # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
+                    merge_job_config = bigquery.QueryJobConfig()
+                    # Finishes faster, query limit for concurrent interactive queries is 50
+                    merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
+
+                    merge_sql_path = os.path.join(
+                        dags_folder, 'resources/stages/enrich/sqls/merge/merge_{task}.sql'.format(task=task))
+                    merge_sql_template = read_file(merge_sql_path)
+
+                    merge_template_context = template_context.copy()
+                    merge_template_context['params']['source_table'] = temp_table_name
+                    merge_template_context['params']['destination_dataset_project_id'] = dest_project
+                    merge_template_context['params']['destination_dataset_name'] = dest_dataset_name
+                    merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
+                    print('Merge sql:')
+                    print(merge_sql)
+                    merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
+                    submit_bigquery_job(merge_job, merge_job_config)
+                    assert merge_job.state == 'DONE'
 
             # Delete temp table
             client.delete_table(temp_table_ref)
@@ -200,6 +229,7 @@ def build_load_dag(
         enrich_operator = PythonOperator(
             task_id='enrich_{task}'.format(task=task),
             python_callable=enrich_task,
+            provide_context=True,
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )
@@ -218,6 +248,7 @@ def build_load_dag(
         verify_task = BigQueryOperator(
             task_id='verify_{task}'.format(task=task),
             bql=sql,
+            params=environment,
             use_legacy_sql=False,
             dag=dag)
         if dependencies is not None and len(dependencies) > 0:

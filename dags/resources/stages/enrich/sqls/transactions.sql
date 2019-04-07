@@ -16,6 +16,10 @@ SELECT
     TIMESTAMP_SECONDS(blocks.timestamp) AS block_timestamp,
     blocks.number AS block_number,
     blocks.hash AS block_hash
-FROM {{DATASET_NAME_RAW}}.blocks AS blocks
-    JOIN {{DATASET_NAME_RAW}}.transactions AS transactions ON blocks.number = transactions.block_number
-    JOIN {{DATASET_NAME_RAW}}.receipts AS receipts ON transactions.hash = receipts.transaction_hash
+FROM {{params.dataset_name_raw}}.blocks AS blocks
+    JOIN {{params.dataset_name_raw}}.transactions AS transactions ON blocks.number = transactions.block_number
+    JOIN {{params.dataset_name_raw}}.receipts AS receipts ON transactions.hash = receipts.transaction_hash
+where true
+    {% if not params.load_all_partitions %}
+    and date(timestamp_seconds(blocks.timestamp)) = '{{ds}}'
+    {% endif %}
