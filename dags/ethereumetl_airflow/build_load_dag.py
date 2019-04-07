@@ -247,7 +247,7 @@ def build_load_dag(
     enrich_contracts_task = add_enrich_tasks(
         'contracts', dependencies=[load_blocks_task, load_contracts_task])
     enrich_tokens_task = add_enrich_tasks(
-        'tokens', time_partitioning_field=None, dependencies=[load_tokens_task])
+        'tokens', dependencies=[load_blocks_task, load_tokens_task])
 
     verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
     verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
