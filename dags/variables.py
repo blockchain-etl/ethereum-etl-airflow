@@ -6,8 +6,9 @@ from airflow.models import Variable
 def read_export_dag_vars(var_prefix, **kwargs):
     export_start_date = read_var('export_start_date', var_prefix, True, **kwargs)
     export_start_date = datetime.strptime(export_start_date, '%Y-%m-%d')
-
+    
     provider_uri = read_var('provider_uri', var_prefix, True, **kwargs)
+    backup_provider_uri_list = read_var('backup_provider_uri_list', var_prefix, True, **kwargs)
     provider_uri_archival = read_var('provider_uri_archival', var_prefix, False, **kwargs)
     if provider_uri_archival is None:
         provider_uri_archival = provider_uri
@@ -21,6 +22,7 @@ def read_export_dag_vars(var_prefix, **kwargs):
         'export_start_date': export_start_date,
         'export_schedule_interval': read_var('export_schedule_interval', var_prefix, True, **kwargs),
         'provider_uri': provider_uri,
+        'backup_provider_uri_list':backup_provider_uri_list,
         'provider_uri_archival': provider_uri_archival,
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
         'export_max_active_runs': read_var('export_max_active_runs', var_prefix, False, **kwargs),
