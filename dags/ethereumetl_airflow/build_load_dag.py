@@ -122,6 +122,7 @@ def build_load_dag(
                 job_config.skip_leading_rows = 1
             job_config.write_disposition = 'WRITE_TRUNCATE'
             job_config.allow_quoted_newlines = allow_quoted_newlines
+            job_config.ignore_unknown_values = True
 
             export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
             uri = '{export_location_uri}/{task}/*.{file_format}'.format(
