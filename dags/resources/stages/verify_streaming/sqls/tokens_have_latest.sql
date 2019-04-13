@@ -6,5 +6,5 @@ select timestamp_diff(
   from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.tokens` as tokens
   where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)),
   MINUTE)
-) < {{params.max_lag_in_minutes}} * 2, 1,
-cast((select 'Tokens are lagging by more than {{params.max_lag_in_minutes}} minutes') as INT64))
+) < 120, 1,
+cast((select 'Tokens are lagging by more than 120 minutes') as INT64))
