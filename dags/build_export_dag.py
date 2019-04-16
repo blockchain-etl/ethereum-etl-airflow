@@ -21,15 +21,10 @@ from ethereumetl.cli import (
     export_traces,
 )
 
-from web3 import Web3
-from ethereumetl.providers.auto import get_provider_from_uri
-from ethereumetl.service.eth_service import BlockTimestampGraph
-
 
 def build_export_dag(
     dag_id,
-    provider_uri,
-    backup_provider_uri_list,
+    provider_uris,
     provider_uri_archival,
     output_bucket,
     cloud_provider,
@@ -62,6 +57,10 @@ def build_export_dag(
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
 
+    # Converting the comma seperated provider_uris variable to a list
+    provider_uris = [uri.strip() for uri in provider_uris.split(',')]
+
+
     if export_max_active_runs is None:
         export_max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
 
@@ -89,7 +88,6 @@ def build_export_dag(
         logging.info('Calling copy_to_export_path({}, {})'.format(file_path, export_path))
         filename = os.path.basename(file_path)
 
-        
         if cloud_provider == 'aws':
             cloud_storage_hook.load_file(
                 filename=file_path,
@@ -108,7 +106,6 @@ def build_export_dag(
     def copy_from_export_path(export_path, file_path):
         logging.info('Calling copy_from_export_path({}, {})'.format(export_path, file_path))
         filename = os.path.basename(file_path)
-        
         if cloud_provider == 'aws':
             # boto3.s3.Object
             s3_object = cloud_storage_hook.get_key(
@@ -119,46 +116,10 @@ def build_export_dag(
         else:
             download_from_gcs(bucket=output_bucket, object=export_path + filename, filename=file_path)
 
-
-    def node_watch_command(**kwargs):
-        """
-        This functions checks if the provider_uri is connected or not.
-        input: kwargs
-        returns: xcom_push either provider_uri or one of the uris from backup_provider_uri_list 
-        to the dependencies. 
-        Xcoms table in database needs to be cleaned up time by time
-        """
-        def connection_check_recursice(uri,backup_uri_list):
-            """
-            This function recursively check the connection of the backup uris.
-            input: backup_uri_list is backup_provider_uri_list variable. needs to be comma
-                seperated uris.
-            returns: a live uri
-            """
-            if not backup_uri_list: 
-                raise ConnectionError("No ethereum node is responding") 
-            backup_provider_uri = backup_uri_list.pop()
-            provider = get_provider_from_uri(uri)
-            web3 = Web3(provider)
-            block_timesstamp_graph = BlockTimestampGraph(web3)
-            try:
-                block_timesstamp_graph.get_first_point()
-                return uri
-            except:
-                return connection_check_recursice(backup_provider_uri,backup_uri_list)
-                
-        task_instance = kwargs['ti']
-        backup_uri_list = [uri.strip() for uri in backup_provider_uri_list.split(',')]
-        uri = connection_check_recursice(provider_uri,backup_uri_list)
-        
-        return task_instance.xcom_push(key='live_uri',value=uri)
-
-
-
-    def get_block_range(tempdir, date,provider_uri=provider_uri):
-        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(provider_uri, date))
+    def get_block_range(tempdir, date, live_uri):
+        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(live_uri, date))
         get_block_range_for_date.callback(
-            provider_uri=provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
+            provider_uri=live_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
         )
 
         with open(os.path.join(tempdir, "blocks_meta.txt")) as block_range_file:
@@ -167,20 +128,18 @@ def build_export_dag(
 
         return int(start_block), int(end_block)
 
-    def export_blocks_and_transactions_command(execution_date, **kwargs):
-        task_instance = kwargs['ti']
-        live_uri = task_instance.xcom_pull(key='live_uri',task_ids='node_watch')
+    def export_blocks_and_transactions_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
-            start_block, end_block = get_block_range(tempdir, execution_date,provider_uri=live_uri)
+            start_block, end_block = get_block_range(tempdir, execution_date, provider_uri)
 
             logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
-                start_block, end_block, export_batch_size, live_uri, export_max_workers))
+                start_block, end_block, export_batch_size, provider_uri, export_max_workers))
 
             export_blocks_and_transactions.callback(
                 start_block=start_block,
                 end_block=end_block,
                 batch_size=export_batch_size,
-                provider_uri=live_uri,
+                provider_uri=provider_uri,
                 max_workers=export_max_workers,
                 blocks_output=os.path.join(tempdir, "blocks.csv"),
                 transactions_output=os.path.join(tempdir, "transactions.csv"),
@@ -198,9 +157,7 @@ def build_export_dag(
                 os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
             )
 
-    def export_receipts_and_logs_command(execution_date, **kwargs):
-        task_instance = kwargs['ti']
-        live_uri = task_instance.xcom_pull(key='live_uri',task_ids='node_watch')
+    def export_receipts_and_logs_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("transactions", execution_date), os.path.join(tempdir, "transactions.csv")
@@ -214,11 +171,11 @@ def build_export_dag(
             )
 
             logging.info('Calling export_receipts_and_logs({}, ..., {}, {}, ...)'.format(
-                export_batch_size, live_uri, export_max_workers))
+                export_batch_size, provider_uri, export_max_workers))
             export_receipts_and_logs.callback(
                 batch_size=export_batch_size,
                 transaction_hashes=os.path.join(tempdir, "transaction_hashes.txt"),
-                provider_uri=live_uri,
+                provider_uri=provider_uri,
                 max_workers=export_max_workers,
                 receipts_output=os.path.join(tempdir, "receipts.csv"),
                 logs_output=os.path.join(tempdir, "logs.json"),
@@ -229,9 +186,7 @@ def build_export_dag(
             )
             copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", execution_date))
 
-    def export_contracts_command(execution_date, **kwargs):
-        task_instance = kwargs['ti']
-        live_uri = task_instance.xcom_pull(key='live_uri',task_ids='node_watch')
+    def export_contracts_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("traces", execution_date), os.path.join(tempdir, "traces.csv")
@@ -258,23 +213,21 @@ def build_export_dag(
             os.remove(os.path.join(tempdir, "traces_type_create.csv"))
 
             logging.info('Calling export_contracts({}, ..., {}, {})'.format(
-                export_batch_size, export_max_workers, live_uri
+                export_batch_size, export_max_workers, provider_uri
             ))
             export_contracts.callback(
                 batch_size=export_batch_size,
                 contract_addresses=os.path.join(tempdir, "contract_addresses.txt"),
                 output=os.path.join(tempdir, "contracts.json"),
                 max_workers=export_max_workers,
-                provider_uri=live_uri,
+                provider_uri=provider_uri,
             )
 
             copy_to_export_path(
                 os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
             )
 
-    def export_tokens_command(execution_date, **kwargs):
-        task_instance = kwargs['ti']
-        live_uri = task_instance.xcom_pull(key='live_uri',task_ids='node_watch')
+    def export_tokens_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
@@ -300,19 +253,19 @@ def build_export_dag(
             logging.info('Removing unneeded file token_contracts.json')
             os.remove(os.path.join(tempdir, "token_contracts.json"))
 
-            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, live_uri))
+            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
             export_tokens.callback(
                 token_addresses=os.path.join(tempdir, "token_addresses.txt"),
                 output=os.path.join(tempdir, "tokens.csv"),
                 max_workers=export_max_workers,
-                provider_uri=live_uri,
+                provider_uri=provider_uri,
             )
 
             copy_to_export_path(
                 os.path.join(tempdir, "tokens.csv"), export_path("tokens", execution_date)
             )
 
-    def extract_token_transfers_command(execution_date, **kwargs):
+    def extract_token_transfers_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
@@ -333,13 +286,12 @@ def build_export_dag(
                 export_path("token_transfers", execution_date),
             )
 
-    def export_traces_command(execution_date, **kwargs):
-        task_instance = kwargs['ti']
-        live_uri = task_instance.xcom_pull(key='live_uri',task_ids='node_watch')
+    def export_traces_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
-            start_block, end_block = get_block_range(tempdir, execution_date,provider_uri=live_uri)
+            start_block, end_block = get_block_range(tempdir, execution_date)
+
             logging.info('Calling export_traces({}, {}, {}, ...,{}, {}, {}, {})'.format(
-                start_block, end_block, export_batch_size, export_max_workers, live_uri,
+                start_block, end_block, export_batch_size, export_max_workers, provider_uri_archival,
                 export_genesis_traces_option, export_daofork_traces_option
             ))
             export_traces.callback(
@@ -348,7 +300,7 @@ def build_export_dag(
                 batch_size=export_batch_size,
                 output=os.path.join(tempdir, "traces.csv"),
                 max_workers=export_max_workers,
-                provider_uri=live_uri,
+                provider_uri=provider_uri_archival,
                 genesis_traces=export_genesis_traces_option,
                 daofork_traces=export_daofork_traces_option,
             )
@@ -357,12 +309,23 @@ def build_export_dag(
                 os.path.join(tempdir, "traces.csv"), export_path("traces", execution_date)
             )
 
-
     def add_export_task(toggle, task_id, python_callable, dependencies=None):
         if toggle:
+            def python_callable_with_fallback(**kwargs):
+                for index, provider_uri in enumerate(provider_uris):
+                    kwargs['provider_uri'] = provider_uri
+                    try:
+                        python_callable(**kwargs)
+                        break
+                    except Exception as e:
+                        if  index < (len(provider_uris) - 1):
+                            logging.exception('An exception occurred. Trying another uri')
+                        else:
+                            raise e    
+
             operator = python_operator.PythonOperator(
                 task_id=task_id,
-                python_callable=python_callable,
+                python_callable=python_callable_with_fallback,
                 provide_context=True,
                 execution_timeout=timedelta(hours=15),
                 dag=dag,
@@ -375,18 +338,12 @@ def build_export_dag(
         else:
             return None
 
-
-    node_watch_operator = add_export_task(
-        True,
-        "node_watch",
-        node_watch_command,
-    )
+    # Operators
 
     export_blocks_and_transactions_operator = add_export_task(
         export_blocks_and_transactions_toggle,
         "export_blocks_and_transactions",
         export_blocks_and_transactions_command,
-        dependencies=[node_watch_operator]
     )
 
     export_receipts_and_logs_operator = add_export_task(
@@ -404,10 +361,7 @@ def build_export_dag(
     )
 
     export_traces_operator = add_export_task(
-        export_traces_toggle, 
-        "export_traces", 
-        export_traces_command,
-        dependencies=[node_watch_operator]
+        export_traces_toggle, "export_traces", export_traces_command
     )
 
     export_contracts_operator = add_export_task(
@@ -415,14 +369,6 @@ def build_export_dag(
         "export_contracts",
         export_contracts_command,
         dependencies=[export_traces_operator],
-    )
-
-
-    export_contracts_operator = add_export_task(
-        export_contracts_toggle,
-        "export_contracts",
-        export_contracts_command,
-        dependencies=[export_receipts_and_logs_operator],
     )
 
     export_tokens_operator = add_export_task(
@@ -489,4 +435,3 @@ def download_from_gcs(bucket, object, filename):
         blob = bucket.blob(object)
 
     blob.download_to_filename(filename)
-
