@@ -20,5 +20,10 @@ SELECT
     blocks.hash AS block_hash
 FROM {{params.dataset_name_raw}}.blocks AS blocks
     JOIN {{params.dataset_name_raw}}.traces AS traces ON blocks.number = traces.block_number
+where true
+    {% if not params.load_all_partitions %}
+    and date(timestamp_seconds(blocks.timestamp)) = '{{ds}}'
+    {% endif %}
+
 
 
