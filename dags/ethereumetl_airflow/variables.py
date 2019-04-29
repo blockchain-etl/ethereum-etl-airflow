@@ -8,9 +8,14 @@ def read_export_dag_vars(var_prefix, **kwargs):
     export_start_date = datetime.strptime(export_start_date, '%Y-%m-%d')
     
     provider_uris = read_var('provider_uris', var_prefix, True, **kwargs)
-    provider_uri_archival = read_var('provider_uri_archival', var_prefix, False, **kwargs)
-    if provider_uri_archival is None:
-        provider_uri_archival = provider_uris
+    provider_uris = [uri.strip() for uri in provider_uris.split(',')]
+
+    provider_uris_archival = read_var('provider_uris_archival', var_prefix, False, **kwargs)
+    if provider_uris_archival is None:
+        provider_uris_archival = provider_uris
+    else:
+        provider_uris_archival = [uri.strip() for uri in provider_uris_archival.split(',')]
+
     cloud_provider = read_var('cloud_provider', var_prefix, False, **kwargs)
     if cloud_provider is None:
         cloud_provider = 'gcp'
@@ -21,7 +26,7 @@ def read_export_dag_vars(var_prefix, **kwargs):
         'export_start_date': export_start_date,
         'export_schedule_interval': read_var('export_schedule_interval', var_prefix, True, **kwargs),
         'provider_uris': provider_uris,
-        'provider_uri_archival': provider_uri_archival,
+        'provider_uris_archival': provider_uris_archival,
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
         'export_max_active_runs': read_var('export_max_active_runs', var_prefix, False, **kwargs),
         'export_max_workers': int(read_var('export_max_workers', var_prefix, True, **kwargs)),
