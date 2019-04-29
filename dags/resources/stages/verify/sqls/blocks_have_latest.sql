@@ -1,3 +1,6 @@
-SELECT IF(
-(SELECT COUNT(*) FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.blocks` WHERE DATE(timestamp) = '{{ds}}') > 0, 1,
-CAST((SELECT 'There are no blocks on {{ds}}') AS INT64))
+select if(
+(
+select count(*) from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.blocks`
+where date(timestamp) = '{{ds}}'
+) > 0, 1,
+cast((select 'There are no blocks on {{ds}}') as int64))

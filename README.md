@@ -16,18 +16,18 @@ Read this article: https://cloud.google.com/blog/products/data-analytics/ethereu
 ### Create Google Cloud Composer environment
 
 Create environment here, https://console.cloud.google.com/composer, use Python version 3, 
-In PYPI Packages tab add ethereum-etl==1.2.3.
+In PYPI Packages tab add ethereum-etl==1.3.0.
 
 Create variables in Airflow (**Admin > Variables** in the UI):
 
 | Variable                                | Description                             |
 |-----------------------------------------|-----------------------------------------|
 | ethereum_output_bucket                  | GCS bucket to store exported files      |
-| ethereum_provider_uri                   | URI of Ethereum node                    |
+| ethereum_provider_uris                  | Comma separated URIs of Ethereum nodes  |
 | ethereum_destination_dataset_project_id | Project ID of BigQuery datasets         |
 | notification_emails                     | email for notifications                 |
 
-Check other variables in `dags/variables.py`.
+Check other variables in `dags/ethereumetl_airflow/variables.py`.
 
 ### Upload DAGs
 

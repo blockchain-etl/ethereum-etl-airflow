@@ -11,30 +11,28 @@ from airflow.operators import python_operator
 from ethereumetl.cli import (
     get_block_range_for_date,
     extract_csv_column,
-    filter_items,
-    extract_field,
     export_blocks_and_transactions,
     export_receipts_and_logs,
     extract_contracts,
-    export_tokens,
+    extract_tokens,
     extract_token_transfers,
     export_traces,
 )
 
 
 def build_export_dag(
-    dag_id,
-    provider_uris,
-    provider_uri_archival,
-    output_bucket,
-    cloud_provider,
-    export_start_date,
-    notification_emails=None,
-    export_schedule_interval='0 0 * * *',
-    export_max_workers=10,
-    export_batch_size=10,
-    export_max_active_runs=None,
-    **kwargs
+        dag_id,
+        provider_uris,
+        provider_uris_archival,
+        output_bucket,
+        cloud_provider,
+        export_start_date,
+        notification_emails=None,
+        export_schedule_interval='0 0 * * *',
+        export_max_workers=10,
+        export_batch_size=10,
+        export_max_active_runs=None,
+        **kwargs
 ):
     default_dag_args = {
         "depends_on_past": False,
@@ -53,13 +51,9 @@ def build_export_dag(
     export_blocks_and_transactions_toggle = kwargs.get('export_blocks_and_transactions_toggle')
     export_receipts_and_logs_toggle = kwargs.get('export_receipts_and_logs_toggle')
     extract_contracts_toggle = kwargs.get('extract_contracts_toggle')
-    export_tokens_toggle = kwargs.get('export_tokens_toggle')
+    extract_tokens_toggle = kwargs.get('extract_tokens_toggle')
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
-
-    # Converting the comma seperated provider_uris variable to a list
-    provider_uris = [uri.strip() for uri in provider_uris.split(',')]
-
 
     if export_max_active_runs is None:
         export_max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
@@ -116,10 +110,10 @@ def build_export_dag(
         else:
             download_from_gcs(bucket=output_bucket, object=export_path + filename, filename=file_path)
 
-    def get_block_range(tempdir, date, live_uri):
-        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(live_uri, date))
+    def get_block_range(tempdir, date, provider_uri):
+        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(provider_uri, date))
         get_block_range_for_date.callback(
-            provider_uri=live_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
+            provider_uri=provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
         )
 
         with open(os.path.join(tempdir, "blocks_meta.txt")) as block_range_file:
@@ -206,35 +200,15 @@ def build_export_dag(
                 os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
             )
 
-    def export_tokens_command(execution_date, provider_uri, **kwargs):
+    def extract_tokens_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
             )
 
-            logging.info('Calling filter_items(...)')
-            filter_items.callback(
-                input=os.path.join(tempdir, "contracts.json"),
-                output=os.path.join(tempdir, "token_contracts.json"),
-                predicate="item['is_erc20'] or item['is_erc721']",
-            )
-
-            logging.info('Removing unneeded file contracts.json')
-            os.remove(os.path.join(tempdir, "contracts.json"))
-
-            logging.info('Calling extract_field(...)')
-            extract_field.callback(
-                input=os.path.join(tempdir, "token_contracts.json"),
-                output=os.path.join(tempdir, "token_addresses.txt"),
-                field="address",
-            )
-
-            logging.info('Removing unneeded file token_contracts.json')
-            os.remove(os.path.join(tempdir, "token_contracts.json"))
-
-            logging.info('Calling export_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
-            export_tokens.callback(
-                token_addresses=os.path.join(tempdir, "token_addresses.txt"),
+            logging.info('Calling extract_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
+            extract_tokens.callback(
+                contracts=os.path.join(tempdir, "contracts.json"),
                 output=os.path.join(tempdir, "tokens.csv"),
                 max_workers=export_max_workers,
                 provider_uri=provider_uri,
@@ -244,7 +218,7 @@ def build_export_dag(
                 os.path.join(tempdir, "tokens.csv"), export_path("tokens", execution_date)
             )
 
-    def extract_token_transfers_command(execution_date, provider_uri, **kwargs):
+    def extract_token_transfers_command(execution_date, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
@@ -267,10 +241,10 @@ def build_export_dag(
 
     def export_traces_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
-            start_block, end_block = get_block_range(tempdir, execution_date)
+            start_block, end_block = get_block_range(tempdir, execution_date, provider_uri)
 
             logging.info('Calling export_traces({}, {}, {}, ...,{}, {}, {}, {})'.format(
-                start_block, end_block, export_batch_size, export_max_workers, provider_uri_archival,
+                start_block, end_block, export_batch_size, export_max_workers, provider_uri,
                 export_genesis_traces_option, export_daofork_traces_option
             ))
             export_traces.callback(
@@ -279,7 +253,7 @@ def build_export_dag(
                 batch_size=export_batch_size,
                 output=os.path.join(tempdir, "traces.csv"),
                 max_workers=export_max_workers,
-                provider_uri=provider_uri_archival,
+                provider_uri=provider_uri,
                 genesis_traces=export_genesis_traces_option,
                 daofork_traces=export_daofork_traces_option,
             )
@@ -290,21 +264,9 @@ def build_export_dag(
 
     def add_export_task(toggle, task_id, python_callable, dependencies=None):
         if toggle:
-            def python_callable_with_fallback(**kwargs):
-                for index, provider_uri in enumerate(provider_uris):
-                    kwargs['provider_uri'] = provider_uri
-                    try:
-                        python_callable(**kwargs)
-                        break
-                    except Exception as e:
-                        if  index < (len(provider_uris) - 1):
-                            logging.exception('An exception occurred. Trying another uri')
-                        else:
-                            raise e
-
             operator = python_operator.PythonOperator(
                 task_id=task_id,
-                python_callable=python_callable_with_fallback,
+                python_callable=python_callable,
                 provide_context=True,
                 execution_timeout=timedelta(hours=15),
                 dag=dag,
@@ -322,13 +284,13 @@ def build_export_dag(
     export_blocks_and_transactions_operator = add_export_task(
         export_blocks_and_transactions_toggle,
         "export_blocks_and_transactions",
-        export_blocks_and_transactions_command,
+        add_provider_uri_fallback_loop(export_blocks_and_transactions_command, provider_uris),
     )
 
     export_receipts_and_logs_operator = add_export_task(
         export_receipts_and_logs_toggle,
         "export_receipts_and_logs",
-        export_receipts_and_logs_command,
+        add_provider_uri_fallback_loop(export_receipts_and_logs_command, provider_uris),
         dependencies=[export_blocks_and_transactions_operator],
     )
 
@@ -340,7 +302,9 @@ def build_export_dag(
     )
 
     export_traces_operator = add_export_task(
-        export_traces_toggle, "export_traces", export_traces_command
+        export_traces_toggle,
+        "export_traces",
+        add_provider_uri_fallback_loop(export_traces_command, provider_uris_archival)
     )
 
     extract_contracts_operator = add_export_task(
@@ -350,14 +314,32 @@ def build_export_dag(
         dependencies=[export_traces_operator],
     )
 
-    export_tokens_operator = add_export_task(
-        export_tokens_toggle,
-        "export_tokens",
-        export_tokens_command,
+    extract_tokens_operator = add_export_task(
+        extract_tokens_toggle,
+        "extract_tokens",
+        add_provider_uri_fallback_loop(extract_tokens_command, provider_uris),
         dependencies=[extract_contracts_operator],
     )
 
     return dag
+
+
+def add_provider_uri_fallback_loop(python_callable, provider_uris):
+    """Tries each provider uri in provider_uris until the command succeeds"""
+
+    def python_callable_with_fallback(**kwargs):
+        for index, provider_uri in enumerate(provider_uris):
+            kwargs['provider_uri'] = provider_uri
+            try:
+                python_callable(**kwargs)
+                break
+            except Exception as e:
+                if index < (len(provider_uris) - 1):
+                    logging.exception('An exception occurred. Trying another uri')
+                else:
+                    raise e
+
+    return python_callable_with_fallback
 
 
 MEGABYTE = 1024 * 1024

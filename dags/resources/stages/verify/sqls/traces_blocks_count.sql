@@ -1,5 +1,13 @@
-SELECT IF(
-(SELECT COUNT(DISTINCT(block_number)) FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.traces`
-WHERE trace_type = 'reward' AND reward_type = 'block') =
-(SELECT COUNT(*) FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.blocks`) - 1, 1,
-CAST((SELECT 'Total number of unique blocks in traces is not equal to block count minus 1 on {{ds}}') AS INT64))
+select if(
+(
+select count(distinct(block_number))
+from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.traces`
+where trace_type = 'reward' and reward_type = 'block'
+    and date(block_timestamp) <= '{{ds}}'
+) =
+(
+select count(*)
+from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.blocks`
+where date(timestamp) <= '{{ds}}'
+) - 1, 1,
+cast((select 'Total number of unique blocks in traces is not equal to block count minus 1 on {{ds}}') as int64))

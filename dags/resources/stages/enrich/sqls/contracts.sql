@@ -1,22 +1,16 @@
-WITH contracts_grouped AS (
-    SELECT
-        contracts.address,
-        contracts.function_sighashes,
-        contracts.is_erc20,
-        contracts.is_erc721,
-        ROW_NUMBER() OVER (PARTITION BY address) AS rank
-    FROM {{DATASET_NAME_RAW}}.contracts AS contracts
-)
 SELECT
     contracts.address,
-    traces.output as bytecode,
+    contracts.bytecode,
     contracts.function_sighashes,
     contracts.is_erc20,
     contracts.is_erc721,
-    traces.block_timestamp,
-    traces.block_number,
-    traces.block_hash
-FROM contracts_grouped AS contracts
-    JOIN `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.traces` AS traces ON traces.to_address = contracts.address
-        AND traces.trace_type = 'create' AND traces.status = 1
-WHERE contracts.rank = 1
+    TIMESTAMP_SECONDS(blocks.timestamp) AS block_timestamp,
+    blocks.number AS block_number,
+    blocks.hash AS block_hash
+FROM {{params.dataset_name_raw}}.contracts AS contracts
+    JOIN {{params.dataset_name_raw}}.blocks AS blocks ON contracts.block_number = blocks.number
+where true
+    {% if not params.load_all_partitions %}
+    and date(timestamp_seconds(blocks.timestamp)) = '{{ds}}'
+    {% endif %}
+

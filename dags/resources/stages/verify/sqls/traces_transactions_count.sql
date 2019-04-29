@@ -1,5 +1,13 @@
-SELECT IF(
-(SELECT COUNT(transaction_hash) FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.traces`
-WHERE trace_address IS NULL AND transaction_hash IS NOT NULL) =
-(SELECT COUNT(*) FROM `{{DESTINATION_DATASET_PROJECT_ID}}.{{DATASET_NAME}}.transactions`), 1,
-CAST((SELECT 'Total number of traces with null address is not equal to transaction count on {{ds}}') AS INT64))
+select if(
+(
+select count(transaction_hash)
+from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.traces`
+where trace_address is null and transaction_hash is not null
+    and date(block_timestamp) <= '{{ds}}'
+) =
+(
+select count(*)
+from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.transactions`
+where date(block_timestamp) <= '{{ds}}'
+), 1,
+cast((select 'Total number of traces with null address is not equal to transaction count on {{ds}}') as int64))

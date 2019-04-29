@@ -25,5 +25,11 @@
         "name": "is_erc721",
         "type": "BOOLEAN",
         "description": "Whether this contract is an ERC721 contract"
+    },
+    {
+        "name": "block_number",
+        "type": "INT64",
+        "mode": "REQUIRED",
+        "description": "Block number where this contract was created"
     }
 ]
