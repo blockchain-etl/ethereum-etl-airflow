@@ -24,7 +24,7 @@ from ethereumetl.cli import (
 
 def build_export_dag(
     dag_id,
-    provider_uri,
+    provider_uris,
     provider_uri_archival,
     output_bucket,
     cloud_provider,
@@ -56,6 +56,10 @@ def build_export_dag(
     export_tokens_toggle = kwargs.get('export_tokens_toggle')
     extract_token_transfers_toggle = kwargs.get('extract_token_transfers_toggle')
     export_traces_toggle = kwargs.get('export_traces_toggle')
+
+    # Converting the comma seperated provider_uris variable to a list
+    provider_uris = [uri.strip() for uri in provider_uris.split(',')]
+
 
     if export_max_active_runs is None:
         export_max_active_runs = configuration.conf.getint('core', 'max_active_runs_per_dag')
@@ -112,10 +116,10 @@ def build_export_dag(
         else:
             download_from_gcs(bucket=output_bucket, object=export_path + filename, filename=file_path)
 
-    def get_block_range(tempdir, date):
-        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(provider_uri, date))
+    def get_block_range(tempdir, date, live_uri):
+        logging.info('Calling get_block_range_for_date({}, {}, ...)'.format(live_uri, date))
         get_block_range_for_date.callback(
-            provider_uri=provider_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
+            provider_uri=live_uri, date=date, output=os.path.join(tempdir, "blocks_meta.txt")
         )
 
         with open(os.path.join(tempdir, "blocks_meta.txt")) as block_range_file:
@@ -124,9 +128,9 @@ def build_export_dag(
 
         return int(start_block), int(end_block)
 
-    def export_blocks_and_transactions_command(execution_date, **kwargs):
+    def export_blocks_and_transactions_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
-            start_block, end_block = get_block_range(tempdir, execution_date)
+            start_block, end_block = get_block_range(tempdir, execution_date, provider_uri)
 
             logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
                 start_block, end_block, export_batch_size, provider_uri, export_max_workers))
@@ -153,7 +157,7 @@ def build_export_dag(
                 os.path.join(tempdir, "transactions.csv"), export_path("transactions", execution_date)
             )
 
-    def export_receipts_and_logs_command(execution_date, **kwargs):
+    def export_receipts_and_logs_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("transactions", execution_date), os.path.join(tempdir, "transactions.csv")
@@ -202,7 +206,7 @@ def build_export_dag(
                 os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
             )
 
-    def export_tokens_command(execution_date, **kwargs):
+    def export_tokens_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
@@ -240,7 +244,7 @@ def build_export_dag(
                 os.path.join(tempdir, "tokens.csv"), export_path("tokens", execution_date)
             )
 
-    def extract_token_transfers_command(execution_date, **kwargs):
+    def extract_token_transfers_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             copy_from_export_path(
                 export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
@@ -261,7 +265,7 @@ def build_export_dag(
                 export_path("token_transfers", execution_date),
             )
 
-    def export_traces_command(execution_date, **kwargs):
+    def export_traces_command(execution_date, provider_uri, **kwargs):
         with TemporaryDirectory() as tempdir:
             start_block, end_block = get_block_range(tempdir, execution_date)
 
@@ -286,9 +290,21 @@ def build_export_dag(
 
     def add_export_task(toggle, task_id, python_callable, dependencies=None):
         if toggle:
+            def python_callable_with_fallback(**kwargs):
+                for index, provider_uri in enumerate(provider_uris):
+                    kwargs['provider_uri'] = provider_uri
+                    try:
+                        python_callable(**kwargs)
+                        break
+                    except Exception as e:
+                        if  index < (len(provider_uris) - 1):
+                            logging.exception('An exception occurred. Trying another uri')
+                        else:
+                            raise e
+
             operator = python_operator.PythonOperator(
                 task_id=task_id,
-                python_callable=python_callable,
+                python_callable=python_callable_with_fallback,
                 provide_context=True,
                 execution_timeout=timedelta(hours=15),
                 dag=dag,
@@ -398,4 +414,3 @@ def download_from_gcs(bucket, object, filename):
         blob = bucket.blob(object)
 
     blob.download_to_filename(filename)
-
