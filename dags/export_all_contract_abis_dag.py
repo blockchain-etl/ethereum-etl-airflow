@@ -177,6 +177,6 @@ operator = python_operator.PythonOperator(
     task_id='scrape_abis',
     python_callable=scrape_contract_abis_command,
     provide_context=True,
-    execution_timeout=timedelta(hours=24),
+    execution_timeout=timedelta(hours=168),
     dag=dag,
 )
