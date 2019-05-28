@@ -123,7 +123,7 @@ SELECT
     traces.block_number,
     traces.block_hash,
     if (token_abis.abi is not null and traces.input is not null and length(traces.input) >= 10, DECODE_TRANSACTION_INPUT(token_abis.abi, traces.input), null) as method
-FROM crypto_ethereum.traces AS traces
+FROM `bigquery-public-data.crypto_ethereum.traces` AS traces
 left join graph_database_test.token_abis as token_abis on
     token_abis.address = traces.to_address
 where true
