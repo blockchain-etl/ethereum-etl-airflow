@@ -38,7 +38,7 @@ def build_export_dag(
         "depends_on_past": False,
         "start_date": export_start_date,
         "email_on_failure": True,
-        "email_on_retry": True,
+        "email_on_retry": False,
         "retries": 5,
         "retry_delay": timedelta(minutes=5)
     }
