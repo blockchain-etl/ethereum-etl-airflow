@@ -31,7 +31,7 @@ def build_verify_streaming_dag(
         'depends_on_past': False,
         'start_date': start_date,
         'email_on_failure': True,
-        'email_on_retry': True,
+        'email_on_retry': False,
         'retries': 5,
         'retry_delay': timedelta(minutes=5)
     }
