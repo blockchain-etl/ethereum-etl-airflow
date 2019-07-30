@@ -34,8 +34,6 @@ def build_load_dag(
     # - crypto_{chain}_raw
     # - crypto_{chain}_temp
     # - crypto_{chain}
-    # Environment variable OUTPUT_BUCKET must be set and point to the GCS bucket
-    # where files exported by export_dag.py are located
 
     dataset_name = f'crypto_{chain}'
     dataset_name_raw = f'crypto_{chain}_raw'
