@@ -32,6 +32,7 @@ def build_export_dag(
         export_max_workers=10,
         export_batch_size=10,
         export_max_active_runs=None,
+        export_retries=5,
         **kwargs
 ):
     default_dag_args = {
@@ -39,7 +40,7 @@ def build_export_dag(
         "start_date": export_start_date,
         "email_on_failure": True,
         "email_on_retry": False,
-        "retries": 5,
+        "retries": export_retries,
         "retry_delay": timedelta(minutes=5)
     }
 

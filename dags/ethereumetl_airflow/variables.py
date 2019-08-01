@@ -31,6 +31,7 @@ def read_export_dag_vars(var_prefix, **kwargs):
         'export_max_active_runs': read_var('export_max_active_runs', var_prefix, False, **kwargs),
         'export_max_workers': int(read_var('export_max_workers', var_prefix, True, **kwargs)),
         'export_batch_size': int(read_var('export_batch_size', var_prefix, True, **kwargs)),
+        'export_retries': int(read_var('export_retries', var_prefix, True, **kwargs)),
         # toggles
         'export_daofork_traces_option': parse_bool(
             read_var('export_daofork_traces_option', var_prefix, False, **kwargs)),
