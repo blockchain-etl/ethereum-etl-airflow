@@ -72,14 +72,15 @@ def build_parse_logs_dag(
             raise
 
     def get_parse_logs_sql_template():
-        filepath = dags_folder + 'resources/stages/parse/sqls/parse_logs.sql'
+        filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_logs.sql')
         with open(filepath) as file_handle:
             content = file_handle.read()
             return content
 
     def get_list_of_json_files():
-        folder = dags_folder + 'resources/stages/parse/table_definitions/'
-        print(folder)
+        folder = os.path.join(dags_folder, 'resources/stages/parse/table_definitions/')
+        logging.info('folder')
+        logging.info(folder)
         return [f for f in glob(folder + '*.json')]
 
     def read_json_file(filepath):
