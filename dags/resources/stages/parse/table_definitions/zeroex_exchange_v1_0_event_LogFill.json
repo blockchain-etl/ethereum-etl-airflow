@@ -1,0 +1,130 @@
+{
+  "table": {
+      "project_name": "blockchain-etl",
+      "dataset_name": "zeroex",
+      "table_name": "exchange_v1_0_event_LogFill",
+      "table_description": "Lorem ipsum.",
+      "schema": [
+          {
+              "name": "block_timestamp",
+              "description": "Lorem ipsum.",
+              "type": "TIMESTAMP"
+          },
+          {
+              "name": "maker",
+              "description": "Lorem ipsum.",
+              "type": "STRING"
+          },
+          {
+              "name": "taker",
+              "type": "STRING"
+          },
+          {
+              "name": "feeRecipient",
+              "type": "STRING"
+          },
+          {
+              "name": "makerToken",
+              "type": "STRING"
+          },
+          {
+              "name": "takerToken",
+              "type": "STRING"
+          },
+          {
+              "name": "filledMakerTokenAmount",
+              "type": "STRING"
+          },
+          {
+              "name": "filledTakerTokenAmount",
+              "type": "STRING"
+          },
+          {
+              "name": "paidMakerFee",
+              "type": "STRING"
+          },
+          {
+              "name": "paidTakerFee",
+              "type": "STRING"
+          },
+          {
+              "name": "tokens",
+              "type": "STRING"
+          },
+          {
+              "name": "orderHash",
+              "type": "STRING"
+          }
+      ]
+  },
+  "parser": {
+      "type": "log",
+      "contract_address": "0x12459c951127e0c374ff9105dda097662a027093",
+      "event_topic": "0x0d0b9391970d9a25552f37d436d2aae2925e2bfe1b2a923754bada030c498cb3",
+      "abi": {
+          "anonymous": false,
+          "inputs": [
+              {
+                  "indexed": true,
+                  "name": "maker",
+                  "type": "address"
+              },
+              {
+                  "indexed": false,
+                  "name": "taker",
+                  "type": "address"
+              },
+              {
+                  "indexed": true,
+                  "name": "feeRecipient",
+                  "type": "address"
+              },
+              {
+                  "indexed": false,
+                  "name": "makerToken",
+                  "type": "address"
+              },
+              {
+                  "indexed": false,
+                  "name": "takerToken",
+                  "type": "address"
+              },
+              {
+                  "indexed": false,
+                  "name": "filledMakerTokenAmount",
+                  "type": "uint256"
+              },
+              {
+                  "indexed": false,
+                  "name": "filledTakerTokenAmount",
+                  "type": "uint256"
+              },
+              {
+                  "indexed": false,
+                  "name": "paidMakerFee",
+                  "type": "uint256"
+              },
+              {
+                  "indexed": false,
+                  "name": "paidTakerFee",
+                  "type": "uint256"
+              },
+              {
+                  "indexed": true,
+                  "name": "tokens",
+                  "type": "bytes32"
+              },
+              {
+                  "indexed": false,
+                  "name": "orderHash",
+                  "type": "bytes32"
+              }
+          ],
+          "name": "LogFill",
+          "type": "event"
+      },
+      "field_mapping": {
+          "TODO": "if necessary define rules for mapping abi fields to BigQuery table columns"
+      }
+  }
+}
