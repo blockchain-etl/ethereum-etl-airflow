@@ -24,19 +24,19 @@
           },
           {
               "name": "makerAssetFilledAmount",
-              "type": "INT64"
+              "type": "STRING"
           },
           {
               "name": "takerAssetFilledAmount",
-              "type": "INT64"
+              "type": "STRING"
           },
           {
               "name": "makerFeePaid",
-              "type": "INT64"
+              "type": "STRING"
           },
           {
               "name": "takerFeePaid",
-              "type": "INT64"
+              "type": "STRING"
           },
           {
               "name": "orderHash",
