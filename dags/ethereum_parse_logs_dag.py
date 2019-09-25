@@ -10,6 +10,6 @@ DAG = build_parse_logs_dag(
     dag_id='ethereum_parse_logs_dag',
     **read_parse_logs_dag_vars(
         var_prefix='ethereum_',
-        schedule_interval='30 14 * * *' # TODO: verify what a good start date is
+        schedule_interval='30 12 * * *' # TODO: verify what a good start date is
     )
 )

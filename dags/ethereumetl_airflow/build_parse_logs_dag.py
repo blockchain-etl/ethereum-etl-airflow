@@ -11,6 +11,7 @@ from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
 from airflow.operators.email_operator import EmailOperator
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.sensors import ExternalTaskSensor
 from google.cloud import bigquery
 from google.cloud.bigquery import TimePartitioning
 from glob import glob
@@ -152,9 +153,17 @@ def build_parse_logs_dag(
 
     files = get_list_of_json_files()
     print(files)
+
+    wait_for_ethereum_load_dag_task = ExternalTaskSensor(
+        task_id='wait_for_ethereum_load_dag',
+        external_dag_id='ethereum_load_dag',
+        external_task_id='verify_logs_have_latest',
+        dag=dag)
+
     for f in files:
         task_config = read_json_file(f)
         task = create_task_and_add_to_dag(task_config)
+        wait_for_ethereum_load_dag_task >> task
     return dag
 
 # TODO: remove, only here for testing
