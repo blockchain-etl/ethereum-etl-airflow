@@ -131,7 +131,8 @@ def build_parse_logs_dag(
             job_config.schema = read_bigquery_schema_from_dict(schema)
             sql_template = get_parse_logs_sql_template()
             sql = kwargs['task'].render_template('', sql_template, template_context)
-            print(sql)
+            logging.info('sql')
+            logging.info(sql)
             query_job = client.query(sql, location='US', job_config=job_config)
             submit_bigquery_job(query_job, job_config)
             assert query_job.state == 'DONE'
@@ -151,14 +152,15 @@ def build_parse_logs_dag(
         )
         return parsing_operator
 
-    files = get_list_of_json_files()
-    print(files)
-
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
         task_id='wait_for_ethereum_load_dag',
         external_dag_id='ethereum_load_dag',
         external_task_id='verify_logs_have_latest',
         dag=dag)
+
+    files = get_list_of_json_files()
+    logging.info('files')
+    logging.info(files)
 
     for f in files:
         task_config = read_json_file(f)
