@@ -13,11 +13,15 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.sensors import ExternalTaskSensor
 from google.api_core.exceptions import Conflict
 from google.cloud import bigquery
+from eth_utils import event_abi_to_log_topic
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
 
 dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
+
+def abi_to_event_topic(abi):
+    return '0x' + event_abi_to_log_topic(abi).hex()
 
 def build_parse_logs_dag(
     dag_id,
@@ -112,6 +116,7 @@ def build_parse_logs_dag(
             template_context['columns'] = columns
             template_context['parser'] = parser
             template_context['abi'] = abi
+            template_context['event_topic'] = abi_to_log_topic(abi)
             template_context['struct_fields'] = create_struct_string_from_schema(schema)
             client = bigquery.Client()
             dataset = client.dataset(dataset_name)

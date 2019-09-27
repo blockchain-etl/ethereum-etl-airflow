@@ -14,7 +14,7 @@ WITH parsed_logs AS
     ,PARSE_LOG(logs.data, logs.topics) AS parsed
 FROM {{params.source_dataset_name}}.logs AS logs
 WHERE address = '{{parser.contract_address}}'
-  AND topics[SAFE_OFFSET(0)] = '{{parser.event_topic}}')
+  AND topics[SAFE_OFFSET(0)] = '{{event_topic}}')
 SELECT
      block_timestamp{% for column in columns %}
     ,parsed.{{ column }} AS {{ column }}{% endfor %}

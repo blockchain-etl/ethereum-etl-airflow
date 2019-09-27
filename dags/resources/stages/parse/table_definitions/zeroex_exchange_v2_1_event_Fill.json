@@ -55,7 +55,6 @@
   "parser": {
       "type": "log",
       "contract_address": "0x080bf510fcbf18b91105470639e9561022937712",
-      "event_topic": "0x0bcc4c97732e47d9946f229edb95f5b6323f601300e4690de719993f3c371129",
       "abi": {
         "anonymous": false,
         "inputs": [
