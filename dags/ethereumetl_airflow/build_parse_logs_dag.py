@@ -120,10 +120,12 @@ def build_parse_logs_dag(
             template_context['struct_fields'] = create_struct_string_from_schema(schema)
             client = bigquery.Client()
             dataset = client.dataset(dataset_name)
-            #try:
-                #dataset = client.create_dataset(dataset)
-            #except Conflict as error:
-                #print('Dataset already exists')
+            try:
+                logging.info('Creating new dataset ...')
+                dataset = client.create_dataset(dataset)
+                logging.info('New dataset created: ' + dataset_name)
+            except Conflict as error:
+                logging.info('Dataset already exists')
             table_ref = dataset.table(table_name)
             job_config = bigquery.QueryJobConfig()
             job_config.priority = bigquery.QueryPriority.INTERACTIVE
