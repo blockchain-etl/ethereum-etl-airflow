@@ -80,7 +80,7 @@ def build_parse_logs_dag(
 
     def get_list_of_json_files():
         folder = os.path.join(dags_folder, 'resources/stages/parse/table_definitions/')
-        return [f for f in glob(folder + '*.json')]
+        return [f for f in glob(folder + '*/*.json')]
 
     def read_json_file(filepath):
         with open(filepath) as file_handle:

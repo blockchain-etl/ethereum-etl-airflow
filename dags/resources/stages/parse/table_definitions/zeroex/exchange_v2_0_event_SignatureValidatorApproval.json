@@ -1,0 +1,57 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x4f833a24e1f95d70f028921e27040ca56e09ab0b",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "signerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "validatorAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "SignatureValidatorApproval",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "zeroex",
+        "table_name": "exchange_v2_0_event_SignatureValidatorApproval",
+        "table_description": "Lorem ipsum.",
+        "schema": [
+            {
+                "name": "block_timestamp",
+                "description": "Timestamp of the block in which the event was emitted.",
+                "type": "TIMESTAMP"
+            },
+            {
+                "name": "signerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "validatorAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "approved",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

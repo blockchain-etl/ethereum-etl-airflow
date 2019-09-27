@@ -1,0 +1,47 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x12459c951127e0c374ff9105dda097662a027093",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "errorId",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": true,
+                    "name": "orderHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogError",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "zeroex",
+        "table_name": "exchange_v1_0_event_LogError",
+        "table_description": "Lorem ipsum.",
+        "schema": [
+            {
+                "name": "block_timestamp",
+                "description": "Timestamp of the block in which the event was emitted.",
+                "type": "TIMESTAMP"
+            },
+            {
+                "name": "errorId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
