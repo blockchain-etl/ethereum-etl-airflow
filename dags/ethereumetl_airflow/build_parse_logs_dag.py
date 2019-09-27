@@ -116,7 +116,7 @@ def build_parse_logs_dag(
             template_context['columns'] = columns
             template_context['parser'] = parser
             template_context['abi'] = abi
-            template_context['event_topic'] = abi_to_log_topic(abi)
+            template_context['event_topic'] = abi_to_event_topic(abi)
             template_context['struct_fields'] = create_struct_string_from_schema(schema)
             client = bigquery.Client()
             dataset = client.dataset(dataset_name)
