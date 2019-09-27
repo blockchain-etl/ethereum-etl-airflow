@@ -1,0 +1,47 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x314159265dd8dbb310642f98f50c066173c1259b",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "ttl",
+                    "type": "uint64"
+                }
+            ],
+            "name": "NewTTL",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "ens_event_NewTTL",
+        "table_description": "Lorem ipsum.",
+        "schema": [
+            {
+                "name": "block_timestamp",
+                "description": "Timestamp of the block in which the event was emitted.",
+                "type": "TIMESTAMP"
+            },
+            {
+                "name": "node",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "ttl",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
