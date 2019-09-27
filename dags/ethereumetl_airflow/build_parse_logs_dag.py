@@ -20,7 +20,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
-def abi_inputs_to_event_topic(abi_inputs):
+def abi_to_event_topic(abi):
     return '0x' + event_abi_to_log_topic(abi).hex()
 
 def build_parse_logs_dag(
@@ -116,7 +116,7 @@ def build_parse_logs_dag(
             template_context['columns'] = columns
             template_context['parser'] = parser
             template_context['abi'] = abi
-            template_context['event_topic'] = abi_inputs_to_event_topic(abi['inputs'])
+            template_context['event_topic'] = abi_to_event_topic(parser['abi'])
             template_context['struct_fields'] = create_struct_string_from_schema(schema)
             client = bigquery.Client()
             dataset = client.dataset(dataset_name)
