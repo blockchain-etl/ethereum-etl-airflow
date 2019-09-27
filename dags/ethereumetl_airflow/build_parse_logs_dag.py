@@ -5,17 +5,14 @@ import logging
 import os
 import time
 from datetime import datetime, timedelta
+from glob import glob
 
 from airflow import models
 from airflow.contrib.operators.bigquery_operator import BigQueryOperator
-from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
-from airflow.operators.email_operator import EmailOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.sensors import ExternalTaskSensor
-from google.cloud import bigquery
-from google.cloud.bigquery import TimePartitioning
-from glob import glob
 from google.api_core.exceptions import Conflict
+from google.cloud import bigquery
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -79,8 +76,6 @@ def build_parse_logs_dag(
 
     def get_list_of_json_files():
         folder = os.path.join(dags_folder, 'resources/stages/parse/table_definitions/')
-        logging.info('folder')
-        logging.info(folder)
         return [f for f in glob(folder + '*.json')]
 
     def read_json_file(filepath):
@@ -134,14 +129,10 @@ def build_parse_logs_dag(
             job_config.schema = read_bigquery_schema_from_dict(schema)
             sql_template = get_parse_logs_sql_template()
             sql = kwargs['task'].render_template('', sql_template, template_context)
-            logging.info('sql')
             logging.info(sql)
             query_job = client.query(sql, location='US', job_config=job_config)
             submit_bigquery_job(query_job, job_config)
             assert query_job.state == 'DONE'
-        
-        # TODO: remove - only here for testing
-        #parse_task('2019-10-01', **{'task': PythonOperator(python_callable=print, task_id='dummy', dag=dag)})
         
         parsing_operator = PythonOperator(
             task_id='parse_logs_{dataset_name}_{table_name}'.format(
@@ -170,6 +161,3 @@ def build_parse_logs_dag(
         task = create_task_and_add_to_dag(task_config)
         wait_for_ethereum_load_dag_task >> task
     return dag
-
-# TODO: remove, only here for testing
-#build_parse_logs_dag('ethereum_parse_logs_dag', '42')
