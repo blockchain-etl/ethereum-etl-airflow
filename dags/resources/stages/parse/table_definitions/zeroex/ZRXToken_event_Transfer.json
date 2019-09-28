@@ -1,0 +1,56 @@
+{
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "zeroex",
+        "table_name": "ZRXToken_event_Transfer",
+        "table_description": "Lorem ipsum.",
+        "schema": [
+            {
+                "name": "block_timestamp",
+                "description": "Lorem ipsum.",
+                "type": "TIMESTAMP"
+            },
+            {
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "name": "_to",
+                "type": "STRING"
+            },
+            {
+                "name": "_value",
+                "type": "STRING"
+            }
+        ]
+    },
+    "parser": {
+        "type": "log",
+        "contract_address": "0xe41d2489571d322189246dafa5ebde1f4699f498",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_value",
+                    "type": "uint"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "field_mapping": {
+            "TODO": "if necessary define rules for mapping abi fields to BigQuery table columns"
+        }
+    }
+}

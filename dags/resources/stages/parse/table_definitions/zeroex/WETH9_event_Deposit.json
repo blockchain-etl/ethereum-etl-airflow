@@ -1,0 +1,47 @@
+{
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "zeroex",
+        "table_name": "WETH9_event_Deposit",
+        "table_description": "Lorem ipsum.",
+        "schema": [
+            {
+                "name": "block_timestamp",
+                "description": "Lorem ipsum.",
+                "type": "TIMESTAMP"
+            },
+            {
+                "name": "_owner",
+                "type": "STRING"
+            },
+            {
+                "name": "_value",
+                "type": "STRING"
+            }
+        ]
+    },
+    "parser": {
+        "type": "log",
+        "contract_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_value",
+                    "type": "uint"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        "field_mapping": {
+            "TODO": "if necessary define rules for mapping abi fields to BigQuery table columns"
+        }
+    }
+}
