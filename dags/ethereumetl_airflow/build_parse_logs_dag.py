@@ -151,7 +151,11 @@ def build_parse_logs_dag(
             query_job = client.query(sql, location='US', job_config=job_config)
             submit_bigquery_job(query_job, job_config)
             assert query_job.state == 'DONE'
-        
+            table = client.get_table(table_ref)
+            table.description = table_description
+            table = client.update_table(table, ["description"])
+            assert table.description == table_description
+
         parsing_operator = PythonOperator(
             task_id=table_name,
             python_callable=parse_task,
