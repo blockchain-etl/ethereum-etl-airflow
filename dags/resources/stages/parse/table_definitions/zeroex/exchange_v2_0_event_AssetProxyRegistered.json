@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x4f833a24e1f95d70f028921e27040ca56e09ab0b",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "id",
+                    "type": "bytes4"
+                },
+                {
+                    "indexed": false,
+                    "name": "assetProxy",
+                    "type": "address"
+                }
+            ],
+            "name": "AssetProxyRegistered",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "zeroex",
+        "table_name": "exchange_v2_0_event_AssetProxyRegistered",
+        "table_description": "Whenever an AssetProxy is registered the Exchange contract, an AssetProxyRegistered is emitted.",
+        "schema": [
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "assetProxy",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

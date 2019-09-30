@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x314159265dd8dbb310642f98f50c066173c1259b",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "resolver",
+                    "type": "address"
+                }
+            ],
+            "name": "NewResolver",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "ens_event_NewResolver",
+        "table_description": "A NewResolver event is emitted when the specified node's resolver is set.",
+        "schema": [
+            {
+                "name": "node",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "resolver",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

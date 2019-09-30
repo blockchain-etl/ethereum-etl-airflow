@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x314159265dd8dbb310642f98f50c066173c1259b",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "ens_event_Transfer",
+        "table_description": "A Transfer event is emitted when a node is transferred to a new address.",
+        "schema": [
+            {
+                "name": "node",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

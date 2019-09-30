@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x4f833a24e1f95d70f028921e27040ca56e09ab0b",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "makerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "senderAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "orderEpoch",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CancelUpTo",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "zeroex",
+        "table_name": "exchange_v2_0_event_CancelUpTo",
+        "table_description": "A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
+        "schema": [
+            {
+                "name": "makerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "senderAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderEpoch",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
