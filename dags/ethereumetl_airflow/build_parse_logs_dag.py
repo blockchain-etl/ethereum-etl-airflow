@@ -25,25 +25,14 @@ def abi_to_event_topic(abi):
 
 def build_parse_logs_dag(
     dag_id,
-    destination_dataset_project_id,
-    copy_dataset_project_id=None,
-    copy_dataset_name=None,
-    chain='ethereum',
-    notification_emails=None,
     load_start_date=datetime(2018, 7, 1),
-    schedule_interval='0 0 * * *',
-    load_all_partitions=True
+    schedule_interval='0 0 * * *'
 ):
 
-    source_dataset_name = f'crypto_{chain}'
-
-    if not destination_dataset_project_id:
-        raise ValueError('destination_dataset_project_id is required')
+    SOURCE_DATASET_NAME = 'crypto_ethereum'
 
     environment = {
-        'source_dataset_name': source_dataset_name,
-        'destination_dataset_project_id': destination_dataset_project_id,
-        'load_all_partitions': load_all_partitions
+        'source_dataset_name': SOURCE_DATASET_NAME
     }
 
     default_dag_args = {
