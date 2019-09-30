@@ -45,7 +45,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_1_event_Cancel",
-        "table_description": "Lorem ipsum.",
+        "table_description": "A Cancel event is emitted whenever an individual order is cancelled.",
         "schema": [
             {
                 "name": "makerAddress",

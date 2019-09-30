@@ -25,7 +25,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_0_event_AssetProxyRegistered",
-        "table_description": "Lorem ipsum.",
+        "table_description": "Whenever an AssetProxy is registered the Exchange contract, an AssetProxyRegistered is emitted.",
         "schema": [
             {
                 "name": "id",

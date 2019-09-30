@@ -70,7 +70,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v1_0_event_LogFill",
-        "table_description": "Lorem ipsum.",
+        "table_description": "A LogFill event is emitted when an order is filled.",
         "schema": [
             {
                 "name": "maker",

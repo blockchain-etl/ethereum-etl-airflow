@@ -30,7 +30,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_0_event_SignatureValidatorApproval",
-        "table_description": "Lorem ipsum.",
+        "table_description": "A SignatureValidatorApproval event is emitted whenever a Validator contract is approved or disapproved to verify signatures created by a signer via setSignatureValidatorApproval.",
         "schema": [
             {
                 "name": "signerAddress",

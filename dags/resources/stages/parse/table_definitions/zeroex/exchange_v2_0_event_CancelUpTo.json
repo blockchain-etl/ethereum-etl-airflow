@@ -30,7 +30,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_0_event_CancelUpTo",
-        "table_description": "Lorem ipsum.",
+        "table_description": "A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
         "schema": [
             {
                 "name": "makerAddress",

@@ -55,7 +55,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v1_0_event_LogCancel",
-        "table_description": "Lorem ipsum.",
+        "table_description": "A LogCancel event is emitted whenever an individual order is cancelled.",
         "schema": [
             {
                 "name": "maker",
