@@ -25,6 +25,7 @@ def abi_to_event_topic(abi):
 
 def build_parse_logs_dag(
     dag_id,
+    dataset_folder,
     load_start_date=datetime(2018, 7, 1),
     schedule_interval='0 0 * * *'
 ):
@@ -68,8 +69,10 @@ def build_parse_logs_dag(
             return content
 
     def get_list_of_json_files():
-        folder = os.path.join(dags_folder, 'resources/stages/parse/table_definitions/')
-        return [f for f in glob(folder + '*/*.json')]
+        logging.info('get_list_of_json_files')
+        logging.info(dataset_folder)
+        logging.info(os.path.join(dataset_folder, '*.json'))
+        return [f for f in glob(os.path.join(dataset_folder, '*.json'))]
 
     def read_json_file(filepath):
         with open(filepath) as file_handle:
@@ -150,10 +153,7 @@ def build_parse_logs_dag(
             assert query_job.state == 'DONE'
         
         parsing_operator = PythonOperator(
-            task_id='parse_logs_{dataset_name}_{table_name}'.format(
-                dataset_name=dataset_name,
-                table_name=table_name
-                ),
+            task_id=table_name,
             python_callable=parse_task,
             provide_context=True,
             execution_timeout=timedelta(minutes=60),
