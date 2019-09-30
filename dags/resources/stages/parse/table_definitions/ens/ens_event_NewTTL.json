@@ -25,7 +25,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "ens_event_NewTTL",
-        "table_description": "Lorem ipsum.",
+        "table_description": "A NewTTL event is emitted when a node's TTL (time-to-live) is updated.",
         "schema": [
             {
                 "name": "node",
