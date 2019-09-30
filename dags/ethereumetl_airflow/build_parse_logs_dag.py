@@ -80,7 +80,28 @@ def build_parse_logs_dag(
         return ', '.join([f.get('name') + ' ' + f.get('type') for f in schema])
 
     def read_bigquery_schema_from_dict(schema):
-        result = []
+        result = [
+            bigquery.SchemaField(
+                name='block_timestamp',
+                field_type='TIMESTAMP',
+                mode='REQUIRED',
+                description='Timestamp of the block where this event was emitted'),
+            bigquery.SchemaField(
+                name='block_number',
+                field_type='INTEGER',
+                mode='REQUIRED',
+                description='The block number where this event was emitted'),
+            bigquery.SchemaField(
+                name='transaction_hash',
+                field_type='STRING',
+                mode='REQUIRED',
+                description='Hash of the transactions in which this event was emitted'),
+            bigquery.SchemaField(
+                name='log_index',
+                field_type='INTEGER',
+                mode='REQUIRED',
+                description='Integer of the log index position in the block of this event')
+        ]
         for field in schema:
             result.append(bigquery.SchemaField(
                 name=field.get('name'),
@@ -90,7 +111,7 @@ def build_parse_logs_dag(
         return result
 
     def create_task_and_add_to_dag(task_config):
-        dataset_name = task_config['table']['dataset_name']
+        dataset_name = 'ethereum_' + task_config['table']['dataset_name']
         table_name = task_config['table']['table_name']
         table_description = task_config['table']['table_description']
         schema = task_config['table']['schema']

@@ -28,11 +28,6 @@
         "table_description": "Lorem ipsum.",
         "schema": [
             {
-                "name": "block_timestamp",
-                "description": "Timestamp of the block in which the event was emitted.",
-                "type": "TIMESTAMP"
-            },
-            {
                 "name": "id",
                 "description": "",
                 "type": "STRING"
