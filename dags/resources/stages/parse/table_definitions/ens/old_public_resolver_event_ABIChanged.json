@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x1da022710df5002339274aadee8d58218e9d6ab5",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "contentType",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ABIChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "old_public_resolver_event_ABIChanged",
+        "table_description": "An ABIChanged event is emitted when an ABI associated with and ENS node is set.",
+        "schema": [
+            {
+                "name": "node",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "contentType",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

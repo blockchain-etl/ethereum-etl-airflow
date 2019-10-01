@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf0ad5cad05e10572efceb849f6ff0c68f9700455",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "eth_registrar_controller_event_OwnershipTransferred",
+        "table_description": "An OwnershipTransferred event is emitted when ownership of contract is transferred or renounced, and when the contract is created.",
+        "schema": [
+            {
+                "name": "previousOwner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newOwner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

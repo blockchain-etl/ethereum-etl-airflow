@@ -23,5 +23,5 @@ SELECT
      ,block_number
      ,transaction_hash
      ,log_index{% for column in columns %}
-    ,parsed.{{ column }} AS {{ column }}{% endfor %}
+    ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
 FROM parsed_logs
