@@ -32,7 +32,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "old_registrar_event_HashRegistered",
         "table_description": "A HashRegistered event is emitted when an auction is finalized.",

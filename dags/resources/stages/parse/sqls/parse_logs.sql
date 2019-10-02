@@ -1,8 +1,8 @@
 CREATE TEMP FUNCTION
   PARSE_LOG(data STRING, topics ARRAY<STRING>)
-  RETURNS STRUCT<{{struct_fields}}>
+  RETURNS STRUCT<{{params.struct_fields}}>
   LANGUAGE js AS """
-    var parsedEvent = {{abi}}
+    var parsedEvent = {{params.abi}}
     return abi.decodeEvent(parsedEvent, data, topics, false);
 """
 OPTIONS
@@ -15,13 +15,21 @@ WITH parsed_logs AS
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
     ,PARSE_LOG(logs.data, logs.topics) AS parsed
-FROM {{params.source_dataset_name}}.logs AS logs
-WHERE address = '{{parser.contract_address}}'
-  AND topics[SAFE_OFFSET(0)] = '{{event_topic}}')
+FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.logs` AS logs
+WHERE address = '{{params.parser.contract_address}}'
+  AND topics[SAFE_OFFSET(0)] = '{{params.event_topic}}'
+  {% if not params.parse_all_partitions %}
+  AND DATE(block_timestamp) = '{{ds}}'
+  {% endif %}
+  )
 SELECT
      block_timestamp
      ,block_number
      ,transaction_hash
-     ,log_index{% for column in columns %}
+     ,log_index{% for column in params.columns %}
     ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
 FROM parsed_logs
+WHERE true
+    {% if not params.parse_all_partitions %}
+    AND DATE(parsed_logs.block_timestamp) = '{{ds}}'
+    {% endif %}

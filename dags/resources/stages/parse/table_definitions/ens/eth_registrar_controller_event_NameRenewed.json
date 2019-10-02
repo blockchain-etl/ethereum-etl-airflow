@@ -32,7 +32,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "eth_registrar_controller_event_NameRenewed",
         "table_description": "A NameRenewed event is emitted when a name is renewed.",

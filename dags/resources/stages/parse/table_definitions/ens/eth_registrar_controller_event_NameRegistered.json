@@ -37,7 +37,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "eth_registrar_controller_event_NameRegistered",
         "table_description": "A NameRegistered event is emitted when a name is registered.",
