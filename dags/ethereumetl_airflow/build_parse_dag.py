@@ -37,9 +37,11 @@ def build_parse_dag(
 
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
 
+    SOURCE_PROJECT_ID = 'bigquery-public-data'
     SOURCE_DATASET_NAME = 'crypto_ethereum'
 
     environment = {
+        'source_project_id': SOURCE_PROJECT_ID,
         'source_dataset_name': SOURCE_DATASET_NAME
     }
 

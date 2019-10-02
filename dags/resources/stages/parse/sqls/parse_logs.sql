@@ -15,7 +15,7 @@ WITH parsed_logs AS
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
     ,PARSE_LOG(logs.data, logs.topics) AS parsed
-FROM {{params.source_dataset_name}}.logs AS logs
+FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.logs` AS logs
 WHERE address = '{{params.parser.contract_address}}'
   AND topics[SAFE_OFFSET(0)] = '{{params.event_topic}}'
   {% if not params.parse_all_partitions %}
