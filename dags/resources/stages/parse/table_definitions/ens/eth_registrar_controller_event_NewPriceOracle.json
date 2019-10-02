@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf0ad5cad05e10572efceb849f6ff0c68f9700455",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oracle",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPriceOracle",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "eth_registrar_controller_event_NewPriceOracle",
+        "table_description": "A NewPriceOracle event is emitted when a price oracle is set.",
+        "schema": [
+            {
+                "name": "oracle",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

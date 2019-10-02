@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "hash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "status",
+                    "type": "uint8"
+                }
+            ],
+            "name": "BidRevealed",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "project_name": "blockchain-etl",
+        "dataset_name": "ens",
+        "table_name": "old_registrar_event_BidRevealed",
+        "table_description": "A BidRevealed event is emitted when a bid is unsealed or cancelled.",
+        "schema": [
+            {
+                "name": "hash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "value",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "status",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

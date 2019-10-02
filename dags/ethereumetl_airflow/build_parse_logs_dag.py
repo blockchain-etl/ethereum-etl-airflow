@@ -80,7 +80,7 @@ def build_parse_logs_dag(
             return json.loads(content)
 
     def create_struct_string_from_schema(schema):
-        return ', '.join([f.get('name') + ' ' + f.get('type') for f in schema])
+        return ', '.join(['`' + f.get('name') + '` ' + f.get('type') for f in schema])
 
     def read_bigquery_schema_from_dict(schema):
         result = [
