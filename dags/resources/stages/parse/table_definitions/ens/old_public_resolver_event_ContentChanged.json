@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "old_public_resolver_event_ContentChanged",
         "table_description": "A ContentChanged event is emitted when the content hash associated with an ENS node is set.",

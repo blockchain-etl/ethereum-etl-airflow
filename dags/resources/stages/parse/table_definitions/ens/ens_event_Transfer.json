@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "ens_event_Transfer",
         "table_description": "A Transfer event is emitted when a node is transferred to a new address.",

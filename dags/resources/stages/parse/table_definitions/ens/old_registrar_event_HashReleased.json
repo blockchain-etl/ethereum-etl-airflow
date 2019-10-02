@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "old_registrar_event_HashReleased",
         "table_description": "A HashReleased event is emitted when a deed is released.",

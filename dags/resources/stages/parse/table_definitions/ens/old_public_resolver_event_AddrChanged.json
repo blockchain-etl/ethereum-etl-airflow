@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "old_public_resolver_event_AddrChanged",
         "table_description": "An AddrChanged event is emitted when the address associated with an ENS node is set.",

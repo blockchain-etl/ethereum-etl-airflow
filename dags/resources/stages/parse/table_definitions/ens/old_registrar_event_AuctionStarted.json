@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "old_registrar_event_AuctionStarted",
         "table_description": "An AuctionStarted event is emitted when an auction starts.",

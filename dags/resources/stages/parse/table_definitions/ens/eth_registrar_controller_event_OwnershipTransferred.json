@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "eth_registrar_controller_event_OwnershipTransferred",
         "table_description": "An OwnershipTransferred event is emitted when ownership of contract is transferred or renounced, and when the contract is created.",

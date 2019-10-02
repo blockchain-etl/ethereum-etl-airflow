@@ -27,7 +27,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "ens_event_NewOwner",
         "table_description": "A NewOwner event is emitted when a subnode is transferred to a new address.",

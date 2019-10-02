@@ -14,6 +14,7 @@ from airflow.operators.sensors import ExternalTaskSensor
 from google.api_core.exceptions import Conflict
 from google.cloud import bigquery
 from eth_utils import event_abi_to_log_topic
+from google.cloud.bigquery import TimePartitioning
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -24,9 +25,18 @@ dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 def build_parse_dag(
         dag_id,
         dataset_folder,
+        parse_destination_dataset_project_id,
         load_start_date=datetime(2018, 7, 1),
-        schedule_interval='0 0 * * *'
+        schedule_interval='0 0 * * *',
+        enabled=True,
+        parse_all_partitions=True
 ):
+    if not enabled:
+        logging.info('enabled is False, the DAG will not be built.')
+        return None
+
+    logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
+
     SOURCE_DATASET_NAME = 'crypto_ethereum'
 
     environment = {
@@ -61,35 +71,76 @@ def build_parse_dag(
             template_context = kwargs.copy()
             template_context['ds'] = ds
             template_context['params'] = environment
-            template_context['columns'] = columns
-            template_context['parser'] = parser
-            template_context['abi'] = abi
-            template_context['event_topic'] = abi_to_event_topic(parser['abi'])
-            template_context['struct_fields'] = create_struct_string_from_schema(schema)
+            template_context['params']['table_name'] = table_name
+            template_context['params']['columns'] = columns
+            template_context['params']['parser'] = parser
+            template_context['params']['abi'] = abi
+            template_context['params']['event_topic'] = abi_to_event_topic(parser['abi'])
+            template_context['params']['struct_fields'] = create_struct_string_from_schema(schema)
+            template_context['params']['parse_all_partitions'] = parse_all_partitions
             client = bigquery.Client()
-            dataset = client.dataset(dataset_name)
-            try:
-                logging.info('Creating new dataset ...')
-                dataset = client.create_dataset(dataset)
-                logging.info('New dataset created: ' + dataset_name)
-            except Conflict as error:
-                logging.info('Dataset already exists')
-            table_ref = dataset.table(table_name)
+
+            # # # Create a temporary table
+
+            dataset_name_temp = 'parse_temp'
+            create_dataset(client, dataset_name_temp)
+            temp_table_name = 'temp_{table_name}_{milliseconds}'\
+                .format(table_name=table_name, milliseconds=int(round(time.time() * 1000)))
+            temp_table_ref = client.dataset(dataset_name_temp).table(temp_table_name)
+
+            temp_table = bigquery.Table(temp_table_ref, schema=read_bigquery_schema_from_dict(schema))
+
+            temp_table.description = table_description
+            temp_table.time_partitioning = TimePartitioning(field='block_timestamp')
+            logging.info('Creating table: ' + json.dumps(temp_table.to_api_repr()))
+            temp_table = client.create_table(temp_table)
+            assert temp_table.table_id == temp_table_name
+
+            # # # Query to temporary table
+
             job_config = bigquery.QueryJobConfig()
             job_config.priority = bigquery.QueryPriority.INTERACTIVE
-            job_config.destination = table_ref
-            job_config.write_disposition = 'WRITE_TRUNCATE'
-            job_config.schema = read_bigquery_schema_from_dict(schema)
+            job_config.destination = temp_table_ref
             sql_template = get_parse_logs_sql_template()
             sql = kwargs['task'].render_template('', sql_template, template_context)
             logging.info(sql)
             query_job = client.query(sql, location='US', job_config=job_config)
             submit_bigquery_job(query_job, job_config)
             assert query_job.state == 'DONE'
-            table = client.get_table(table_ref)
-            table.description = table_description
-            table = client.update_table(table, ["description"])
-            assert table.description == table_description
+
+            # # # Copy / merge to destination
+
+            if parse_all_partitions:
+                # Copy temporary table to destination
+                copy_job_config = bigquery.CopyJobConfig()
+                copy_job_config.write_disposition = 'WRITE_TRUNCATE'
+                dest_table_ref = client.dataset(dataset_name, project=parse_destination_dataset_project_id).table(table_name)
+                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                submit_bigquery_job(copy_job, copy_job_config)
+                assert copy_job.state == 'DONE'
+            else:
+                # Merge
+                # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
+                merge_job_config = bigquery.QueryJobConfig()
+                # Finishes faster, query limit for concurrent interactive queries is 50
+                merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
+
+                merge_sql_template = get_merge_parsed_logs_sql_template()
+                merge_template_context = template_context.copy()
+                merge_template_context['params']['source_table'] = temp_table_name
+                merge_template_context['params']['destination_dataset_project_id'] = parse_destination_dataset_project_id
+                merge_template_context['params']['destination_dataset_name'] = dataset_name
+                merge_template_context['params']['dataset_name_temp'] = dataset_name_temp
+                merge_template_context['params']['columns'] = columns
+                merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
+                print('Merge sql:')
+                print(merge_sql)
+                merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
+                submit_bigquery_job(merge_job, merge_job_config)
+                assert merge_job.state == 'DONE'
+
+            # Delete temp table
+            client.delete_table(temp_table_ref)
 
         parsing_operator = PythonOperator(
             task_id=table_name,
@@ -130,6 +181,13 @@ def get_list_of_json_files(dataset_folder):
 
 def get_parse_logs_sql_template():
     filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_logs.sql')
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
+
+
+def get_merge_parsed_logs_sql_template():
+    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/merge_parsed_logs.sql')
     with open(filepath) as file_handle:
         content = file_handle.read()
         return content
@@ -187,3 +245,15 @@ def submit_bigquery_job(job, configuration):
     except Exception:
         logging.info(job.errors)
         raise
+
+
+def create_dataset(client, dataset_name):
+    dataset = client.dataset(dataset_name)
+    try:
+        logging.info('Creating new dataset ...')
+        dataset = client.create_dataset(dataset)
+        logging.info('New dataset created: ' + dataset_name)
+    except Conflict as error:
+        logging.info('Dataset already exists')
+
+    return dataset

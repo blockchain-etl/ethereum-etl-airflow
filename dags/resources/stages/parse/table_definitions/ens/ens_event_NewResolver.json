@@ -22,7 +22,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "ens",
         "table_name": "ens_event_NewResolver",
         "table_description": "A NewResolver event is emitted when the specified node's resolver is set.",
