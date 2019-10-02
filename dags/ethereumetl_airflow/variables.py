@@ -73,7 +73,7 @@ def read_load_dag_vars(var_prefix, **kwargs):
     return vars
 
 
-def read_parse_logs_dag_vars(var_prefix, **kwargs):
+def read_parse_dag_vars(var_prefix, **kwargs):
     vars = {
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs)
     }

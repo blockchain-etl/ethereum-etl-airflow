@@ -20,16 +20,13 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
-def abi_to_event_topic(abi):
-    return '0x' + event_abi_to_log_topic(abi).hex()
 
-def build_parse_logs_dag(
-    dag_id,
-    dataset_folder,
-    load_start_date=datetime(2018, 7, 1),
-    schedule_interval='0 0 * * *'
+def build_parse_dag(
+        dag_id,
+        dataset_folder,
+        load_start_date=datetime(2018, 7, 1),
+        schedule_interval='0 0 * * *'
 ):
-
     SOURCE_DATASET_NAME = 'crypto_ethereum'
 
     environment = {
@@ -51,68 +48,6 @@ def build_parse_logs_dag(
         schedule_interval=schedule_interval,
         default_args=default_dag_args)
 
-    def submit_bigquery_job(job, configuration):
-        try:
-            logging.info('Creating a job: ' + json.dumps(configuration.to_api_repr()))
-            result = job.result()
-            logging.info(result)
-            assert job.errors is None or len(job.errors) == 0
-            return result
-        except Exception:
-            logging.info(job.errors)
-            raise
-
-    def get_parse_logs_sql_template():
-        filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_logs.sql')
-        with open(filepath) as file_handle:
-            content = file_handle.read()
-            return content
-
-    def get_list_of_json_files():
-        logging.info('get_list_of_json_files')
-        logging.info(dataset_folder)
-        logging.info(os.path.join(dataset_folder, '*.json'))
-        return [f for f in glob(os.path.join(dataset_folder, '*.json'))]
-
-    def read_json_file(filepath):
-        with open(filepath) as file_handle:
-            content = file_handle.read()
-            return json.loads(content)
-
-    def create_struct_string_from_schema(schema):
-        return ', '.join(['`' + f.get('name') + '` ' + f.get('type') for f in schema])
-
-    def read_bigquery_schema_from_dict(schema):
-        result = [
-            bigquery.SchemaField(
-                name='block_timestamp',
-                field_type='TIMESTAMP',
-                mode='REQUIRED',
-                description='Timestamp of the block where this event was emitted'),
-            bigquery.SchemaField(
-                name='block_number',
-                field_type='INTEGER',
-                mode='REQUIRED',
-                description='The block number where this event was emitted'),
-            bigquery.SchemaField(
-                name='transaction_hash',
-                field_type='STRING',
-                mode='REQUIRED',
-                description='Hash of the transactions in which this event was emitted'),
-            bigquery.SchemaField(
-                name='log_index',
-                field_type='INTEGER',
-                mode='REQUIRED',
-                description='Integer of the log index position in the block of this event')
-        ]
-        for field in schema:
-            result.append(bigquery.SchemaField(
-                name=field.get('name'),
-                field_type=field.get('type', 'STRING'),
-                mode=field.get('mode', 'NULLABLE'),
-                description=field.get('description')))
-        return result
-
     def create_task_and_add_to_dag(task_config):
         dataset_name = 'ethereum_' + task_config['table']['dataset_name']
         table_name = task_config['table']['table_name']
@@ -121,7 +56,7 @@ def build_parse_logs_dag(
         parser = task_config['parser']
         abi = json.dumps(parser['abi'])
         columns = [c.get('name') for c in schema if c.get('name') != 'block_timestamp']
-        
+
         def parse_task(ds, **kwargs):
             template_context = kwargs.copy()
             template_context['ds'] = ds
@@ -171,7 +106,7 @@ def build_parse_logs_dag(
         external_task_id='verify_logs_have_latest',
         dag=dag)
 
-    files = get_list_of_json_files()
+    files = get_list_of_json_files(dataset_folder)
     logging.info('files')
     logging.info(files)
 
@@ -180,3 +115,75 @@ def build_parse_logs_dag(
         task = create_task_and_add_to_dag(task_config)
         wait_for_ethereum_load_dag_task >> task
     return dag
+
+
+def abi_to_event_topic(abi):
+    return '0x' + event_abi_to_log_topic(abi).hex()
+
+
+def get_list_of_json_files(dataset_folder):
+    logging.info('get_list_of_json_files')
+    logging.info(dataset_folder)
+    logging.info(os.path.join(dataset_folder, '*.json'))
+    return [f for f in glob(os.path.join(dataset_folder, '*.json'))]
+
+
+def get_parse_logs_sql_template():
+    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_logs.sql')
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
+
+
+def read_json_file(filepath):
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return json.loads(content)
+
+
+def create_struct_string_from_schema(schema):
+    return ', '.join(['`' + f.get('name') + '` ' + f.get('type') for f in schema])
+
+
+def read_bigquery_schema_from_dict(schema):
+    result = [
+        bigquery.SchemaField(
+            name='block_timestamp',
+            field_type='TIMESTAMP',
+            mode='REQUIRED',
+            description='Timestamp of the block where this event was emitted'),
+        bigquery.SchemaField(
+            name='block_number',
+            field_type='INTEGER',
+            mode='REQUIRED',
+            description='The block number where this event was emitted'),
+        bigquery.SchemaField(
+            name='transaction_hash',
+            field_type='STRING',
+            mode='REQUIRED',
+            description='Hash of the transactions in which this event was emitted'),
+        bigquery.SchemaField(
+            name='log_index',
+            field_type='INTEGER',
+            mode='REQUIRED',
+            description='Integer of the log index position in the block of this event')
+    ]
+    for field in schema:
+        result.append(bigquery.SchemaField(
+            name=field.get('name'),
+            field_type=field.get('type', 'STRING'),
+            mode=field.get('mode', 'NULLABLE'),
+            description=field.get('description')))
+    return result
+
+
+def submit_bigquery_job(job, configuration):
+    try:
+        logging.info('Creating a job: ' + json.dumps(configuration.to_api_repr()))
+        result = job.result()
+        logging.info(result)
+        assert job.errors is None or len(job.errors) == 0
+        return result
+    except Exception:
+        logging.info(job.errors)
+        raise
