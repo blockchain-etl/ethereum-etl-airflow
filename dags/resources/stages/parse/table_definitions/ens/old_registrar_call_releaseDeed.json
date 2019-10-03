@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_hash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "releaseDeed",
+            "outputs": [],
+            "payable": false,
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "ens",
+        "table_name": "old_registrar_call_releaseDeed",
+        "table_description": "After some time, or if we're no longer the registrar, the owner can release the name and get their ether back.",
+        "schema": [
+            {
+                "name": "_hash",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

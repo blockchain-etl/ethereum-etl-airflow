@@ -6,7 +6,13 @@ insert (
     block_timestamp
     ,block_number
     ,transaction_hash
+
+    {% if params.parser.type == 'log' %}
     ,log_index
+    {% else %}
+    ,trace_address
+    {% endif %}
+
     {% for column in params.columns %}
     ,`{{ column }}`
     {% endfor %}
@@ -14,7 +20,13 @@ insert (
     block_timestamp
     ,block_number
     ,transaction_hash
+
+    {% if params.parser.type == 'log' %}
     ,log_index
+    {% else %}
+    ,trace_address
+    {% endif %}
+
     {% for column in params.columns %}
     ,`{{ column }}`
     {% endfor %}

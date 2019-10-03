@@ -13,7 +13,7 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.sensors import ExternalTaskSensor
 from google.api_core.exceptions import Conflict
 from google.cloud import bigquery
-from eth_utils import event_abi_to_log_topic
+from eth_utils import event_abi_to_log_topic, function_abi_to_4byte_selector
 from google.cloud.bigquery import TimePartitioning
 
 logging.basicConfig()
@@ -66,8 +66,9 @@ def build_parse_dag(
         table_description = task_config['table']['table_description']
         schema = task_config['table']['schema']
         parser = task_config['parser']
+        parser_type = parser.get('type', 'log')
         abi = json.dumps(parser['abi'])
-        columns = [c.get('name') for c in schema if c.get('name') != 'block_timestamp']
+        columns = [c.get('name') for c in schema]
 
         def parse_task(ds, **kwargs):
             template_context = kwargs.copy()
@@ -77,7 +78,10 @@ def build_parse_dag(
             template_context['params']['columns'] = columns
             template_context['params']['parser'] = parser
             template_context['params']['abi'] = abi
-            template_context['params']['event_topic'] = abi_to_event_topic(parser['abi'])
+            if parser_type == 'log':
+                template_context['params']['event_topic'] = abi_to_event_topic(parser['abi'])
+            elif parser_type == 'trace':
+                template_context['params']['method_selector'] = abi_to_method_selector(parser['abi'])
             template_context['params']['struct_fields'] = create_struct_string_from_schema(schema)
             template_context['params']['parse_all_partitions'] = parse_all_partitions
             client = bigquery.Client()
@@ -90,7 +94,7 @@ def build_parse_dag(
                 .format(table_name=table_name, milliseconds=int(round(time.time() * 1000)))
             temp_table_ref = client.dataset(dataset_name_temp).table(temp_table_name)
 
-            temp_table = bigquery.Table(temp_table_ref, schema=read_bigquery_schema_from_dict(schema))
+            temp_table = bigquery.Table(temp_table_ref, schema=read_bigquery_schema_from_dict(schema, parser_type))
 
             temp_table.description = table_description
             temp_table.time_partitioning = TimePartitioning(field='block_timestamp')
@@ -103,7 +107,7 @@ def build_parse_dag(
             job_config = bigquery.QueryJobConfig()
             job_config.priority = bigquery.QueryPriority.INTERACTIVE
             job_config.destination = temp_table_ref
-            sql_template = get_parse_logs_sql_template()
+            sql_template = get_parse_sql_template(parser_type)
             sql = kwargs['task'].render_template('', sql_template, template_context)
             logging.info(sql)
             query_job = client.query(sql, location='US', job_config=job_config)
@@ -127,7 +131,7 @@ def build_parse_dag(
                 # Finishes faster, query limit for concurrent interactive queries is 50
                 merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
 
-                merge_sql_template = get_merge_parsed_logs_sql_template()
+                merge_sql_template = get_merge_table_sql_template()
                 merge_template_context = template_context.copy()
                 merge_template_context['params']['source_table'] = temp_table_name
                 merge_template_context['params']['destination_dataset_project_id'] = parse_destination_dataset_project_id
@@ -174,11 +178,18 @@ def abi_to_event_topic(abi):
     return '0x' + event_abi_to_log_topic(abi).hex()
 
 
+def abi_to_method_selector(abi):
+    return '0x' + function_abi_to_4byte_selector(abi).hex()
+
 def get_list_of_json_files(dataset_folder):
     logging.info('get_list_of_json_files')
     logging.info(dataset_folder)
     logging.info(os.path.join(dataset_folder, '*.json'))
     return [f for f in glob(os.path.join(dataset_folder, '*.json'))]
+
+
+def get_parse_sql_template(parser_type):
+    return get_parse_logs_sql_template() if parser_type == 'log' else get_parse_traces_sql_template()
 
 
 def get_parse_logs_sql_template():
@@ -188,8 +199,15 @@ def get_parse_logs_sql_template():
         return content
 
 
-def get_merge_parsed_logs_sql_template():
-    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/merge_parsed_logs.sql')
+def get_parse_traces_sql_template():
+    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_traces.sql')
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
+
+
+def get_merge_table_sql_template():
+    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/merge_table.sql')
     with open(filepath) as file_handle:
         content = file_handle.read()
         return content
@@ -205,7 +223,7 @@ def create_struct_string_from_schema(schema):
     return ', '.join(['`' + f.get('name') + '` ' + f.get('type') for f in schema])
 
 
-def read_bigquery_schema_from_dict(schema):
+def read_bigquery_schema_from_dict(schema, parser_type):
     result = [
         bigquery.SchemaField(
             name='block_timestamp',
@@ -221,13 +239,19 @@ def read_bigquery_schema_from_dict(schema):
             name='transaction_hash',
             field_type='STRING',
             mode='REQUIRED',
-            description='Hash of the transactions in which this event was emitted'),
-        bigquery.SchemaField(
+            description='Hash of the transactions in which this event was emitted')
+    ]
+    if parser_type == 'log':
+        result.append(bigquery.SchemaField(
             name='log_index',
             field_type='INTEGER',
             mode='REQUIRED',
-            description='Integer of the log index position in the block of this event')
-    ]
+            description='Integer of the log index position in the block of this event'))
+    elif parser_type == 'trace':
+        result.append(bigquery.SchemaField(
+            name='trace_address',
+            field_type='STRING',
+            description='Comma separated list of trace address in call tree'))
     for field in schema:
         result.append(bigquery.SchemaField(
             name=field.get('name'),
