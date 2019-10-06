@@ -11,6 +11,7 @@ from airflow import models
 from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.sensors import ExternalTaskSensor
+from airflow.operators.email_operator import EmailOperator
 from google.api_core.exceptions import Conflict
 from google.cloud import bigquery
 from eth_utils import event_abi_to_log_topic, function_abi_to_4byte_selector
@@ -26,7 +27,8 @@ def build_parse_dag(
         dag_id,
         dataset_folder,
         parse_destination_dataset_project_id,
-        load_start_date=datetime(2018, 7, 1),
+        notification_emails=None,
+        parse_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *',
         enabled=True,
         parse_all_partitions=True
@@ -47,12 +49,15 @@ def build_parse_dag(
 
     default_dag_args = {
         'depends_on_past': False,
-        'start_date': load_start_date,
+        'start_date': parse_start_date,
         'email_on_failure': True,
         'email_on_retry': False,
         'retries': 5,
         'retry_delay': timedelta(minutes=5)
     }
+
+    if notification_emails and len(notification_emails) > 0:
+        default_dag_args['email'] = [email.strip() for email in notification_emails.split(',')]
 
     dag = models.DAG(
         dag_id,
@@ -167,10 +172,23 @@ def build_parse_dag(
     logging.info('files')
     logging.info(files)
 
+    all_parse_tasks = []
     for f in files:
         task_config = read_json_file(f)
         task = create_task_and_add_to_dag(task_config)
         wait_for_ethereum_load_dag_task >> task
+        all_parse_tasks.append(task)
+
+    if notification_emails and len(notification_emails) > 0:
+        send_email_task = EmailOperator(
+            task_id='send_email',
+            to=[email.strip() for email in notification_emails.split(',')],
+            subject='Ethereum ETL Airflow Parse DAG Succeeded',
+            html_content='Ethereum ETL Airflow Parse DAG Succeeded',
+            dag=dag
+        )
+        for task in all_parse_tasks:
+            task >> send_email_task
     return dag
 
 
