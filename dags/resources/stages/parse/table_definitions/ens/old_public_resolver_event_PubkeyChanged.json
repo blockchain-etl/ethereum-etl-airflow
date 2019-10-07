@@ -29,7 +29,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "old_public_resolver_event_PubkeyChanged",
-        "table_description": "A PubkeyChanged event is emitted when the SECP256k1 public key associated with an ENS node is set.",
+        "table_description": "This event is in contract 0x1da022710df5002339274aadee8d58218e9d6ab5. A PubkeyChanged event is emitted when the SECP256k1 public key associated with an ENS node is set.",
         "schema": [
             {
                 "name": "node",

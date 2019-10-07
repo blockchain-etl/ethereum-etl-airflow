@@ -30,7 +30,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_0_event_CancelUpTo",
-        "table_description": "A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
+        "table_description": "This event is in contract 0x4f833a24e1f95d70f028921e27040ca56e09ab0b. A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
         "schema": [
             {
                 "name": "makerAddress",

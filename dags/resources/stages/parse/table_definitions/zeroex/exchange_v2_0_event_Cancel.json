@@ -45,7 +45,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_0_event_Cancel",
-        "table_description": "A Cancel event is emitted whenever an individual order is cancelled.",
+        "table_description": "This event is in contract 0x4f833a24e1f95d70f028921e27040ca56e09ab0b. A Cancel event is emitted whenever an individual order is cancelled.",
         "schema": [
             {
                 "name": "makerAddress",

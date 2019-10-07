@@ -39,7 +39,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "eth_registrar_controller_event_NameRegistered",
-        "table_description": "A NameRegistered event is emitted when a name is registered.",
+        "table_description": "This event is in contract 0xf0ad5cad05e10572efceb849f6ff0c68f9700455. A NameRegistered event is emitted when a name is registered.",
         "schema": [
             {
                 "name": "name",

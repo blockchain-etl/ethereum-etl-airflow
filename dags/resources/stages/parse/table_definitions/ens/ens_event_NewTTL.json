@@ -24,7 +24,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "ens_event_NewTTL",
-        "table_description": "A NewTTL event is emitted when a node's TTL (time-to-live) is updated.",
+        "table_description": "This event is in contract 0x314159265dd8dbb310642f98f50c066173c1259b. A NewTTL event is emitted when a node's TTL (time-to-live) is updated.",
         "schema": [
             {
                 "name": "node",

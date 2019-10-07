@@ -24,7 +24,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "eth_registrar_controller_event_OwnershipTransferred",
-        "table_description": "An OwnershipTransferred event is emitted when ownership of contract is transferred or renounced, and when the contract is created.",
+        "table_description": "This event is in contract 0xf0ad5cad05e10572efceb849f6ff0c68f9700455. An OwnershipTransferred event is emitted when ownership of contract is transferred or renounced, and when the contract is created.",
         "schema": [
             {
                 "name": "previousOwner",

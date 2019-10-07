@@ -20,7 +20,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "old_registrar_call_releaseDeed",
-        "table_description": "After some time, or if we're no longer the registrar, the owner can release the name and get their ether back.",
+        "table_description": "This call is in contract 0x6090a6e47849629b7245dfa1ca21d94cd15878ef. After some time, or if the contract is no longer the registrar, the owner can release the name and get their ether back.",
         "schema": [
             {
                 "name": "_hash",

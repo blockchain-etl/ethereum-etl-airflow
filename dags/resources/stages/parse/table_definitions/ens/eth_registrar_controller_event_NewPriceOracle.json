@@ -19,7 +19,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "eth_registrar_controller_event_NewPriceOracle",
-        "table_description": "A NewPriceOracle event is emitted when a price oracle is set.",
+        "table_description": "This event is in contract 0xf0ad5cad05e10572efceb849f6ff0c68f9700455. A NewPriceOracle event is emitted when a price oracle is set.",
         "schema": [
             {
                 "name": "oracle",

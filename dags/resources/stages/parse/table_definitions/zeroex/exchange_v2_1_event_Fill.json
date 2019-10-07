@@ -70,7 +70,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v2_1_event_Fill",
-        "table_description": "A Fill event is emitted when an order is filled.",
+        "table_description": "This event is in contract 0x080bf510fcbf18b91105470639e9561022937712. A Fill event is emitted when an order is filled.",
         "schema": [
             {
                 "name": "makerAddress",

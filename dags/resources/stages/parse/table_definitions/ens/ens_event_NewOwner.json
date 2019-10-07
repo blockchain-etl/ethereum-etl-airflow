@@ -29,7 +29,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "ens_event_NewOwner",
-        "table_description": "A NewOwner event is emitted when a subnode is transferred to a new address.",
+        "table_description": "This event is in contract 0x314159265dd8dbb310642f98f50c066173c1259b. A NewOwner event is emitted when a subnode is transferred to a new address.",
         "schema": [
             {
                 "name": "node",
