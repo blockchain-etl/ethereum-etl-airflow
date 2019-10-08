@@ -129,6 +129,12 @@ def build_parse_dag(
                 copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
                 submit_bigquery_job(copy_job, copy_job_config)
                 assert copy_job.state == 'DONE'
+                # Need to do update description as copy above won't repect the description in case destination table
+                # already exists
+                table = client.get_table(dest_table_ref)
+                table.description = table_description
+                table = client.update_table(table, ["description"])
+                assert table.description == table_description
             else:
                 # Merge
                 # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
