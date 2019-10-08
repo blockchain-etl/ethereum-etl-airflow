@@ -39,7 +39,9 @@ WITH parsed_traces AS
 FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.traces` AS traces
 WHERE to_address = '{{params.parser.contract_address}}'
   AND STARTS_WITH(traces.input, '{{params.method_selector}}')
-  {% if not params.parse_all_partitions %}
+  {% if params.parse_all_partitions %}
+  AND DATE(block_timestamp) <= '{{ds}}'
+  {% else %}
   AND DATE(block_timestamp) = '{{ds}}'
   {% endif %}
   )
@@ -50,7 +52,3 @@ SELECT
      ,trace_address{% for column in params.columns %}
     ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
 FROM parsed_traces
-WHERE true
-    {% if not params.parse_all_partitions %}
-    AND DATE(parsed_traces.block_timestamp) = '{{ds}}'
-    {% endif %}

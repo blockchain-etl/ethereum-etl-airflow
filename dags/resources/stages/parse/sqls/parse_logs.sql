@@ -18,7 +18,9 @@ WITH parsed_logs AS
 FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.logs` AS logs
 WHERE address = '{{params.parser.contract_address}}'
   AND topics[SAFE_OFFSET(0)] = '{{params.event_topic}}'
-  {% if not params.parse_all_partitions %}
+  {% if params.parse_all_partitions %}
+  AND DATE(block_timestamp) <= '{{ds}}'
+  {% else %}
   AND DATE(block_timestamp) = '{{ds}}'
   {% endif %}
   )
@@ -29,7 +31,3 @@ SELECT
      ,log_index{% for column in params.columns %}
     ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
 FROM parsed_logs
-WHERE true
-    {% if not params.parse_all_partitions %}
-    AND DATE(parsed_logs.block_timestamp) = '{{ds}}'
-    {% endif %}
