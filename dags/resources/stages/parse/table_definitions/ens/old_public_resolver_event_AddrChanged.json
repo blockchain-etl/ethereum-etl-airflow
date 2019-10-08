@@ -24,7 +24,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "old_public_resolver_event_AddrChanged",
-        "table_description": "This event is in contract 0x1da022710df5002339274aadee8d58218e9d6ab5. An AddrChanged event is emitted when the address associated with an ENS node is set.",
+        "table_description": "Events in this table are emitted by contract with address 0x1da022710df5002339274aadee8d58218e9d6ab5. An AddrChanged event is emitted when the address associated with an ENS node is set.",
         "schema": [
             {
                 "name": "node",

@@ -24,7 +24,7 @@
     "table": {
         "dataset_name": "ens",
         "table_name": "old_registrar_event_HashReleased",
-        "table_description": "This event is in contract 0x6090a6e47849629b7245dfa1ca21d94cd15878ef. A HashReleased event is emitted when a deed is released.",
+        "table_description": "Events in this table are emitted by contract with address 0x6090a6e47849629b7245dfa1ca21d94cd15878ef. A HashReleased event is emitted when a deed is released.",
         "schema": [
             {
                 "name": "hash",

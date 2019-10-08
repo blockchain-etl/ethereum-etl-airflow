@@ -70,7 +70,7 @@
         "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
         "table_name": "exchange_v1_0_event_LogFill",
-        "table_description": "This event is in contract 0x12459c951127e0c374ff9105dda097662a027093. A LogFill event is emitted when an order is filled.",
+        "table_description": "Events in this table are emitted by contract with address 0x12459c951127e0c374ff9105dda097662a027093. A LogFill event is emitted when an order is filled.",
         "schema": [
             {
                 "name": "maker",
