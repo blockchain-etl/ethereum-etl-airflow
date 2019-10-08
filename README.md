@@ -35,6 +35,10 @@ Check other variables in `dags/ethereumetl_airflow/variables.py`.
 > ./upload_dags.sh <airflow_bucket>
 ```
 
+### Creating Table Definition Files for Parsing Events and Function Calls
+
+Read this article: https://medium.com/@medvedev1088/query-ens-and-0x-events-with-sql-in-google-bigquery-4d197206e644
+
 ### Miscellaneous
 
 To upload CSVs to BigQuery:
