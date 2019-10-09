@@ -32,7 +32,7 @@
     },
     "table": {
         "dataset_name": "zeroex",
-        "table_name": "Exchange_v2_1_call_executeTransaction.json",
+        "table_name": "Exchange_v2_1_call_executeTransaction",
         "table_description": "Function calls in this table are invoked on contract with address 0x080bf510fcbf18b91105470639e9561022937712.",
         "schema": [
             {
