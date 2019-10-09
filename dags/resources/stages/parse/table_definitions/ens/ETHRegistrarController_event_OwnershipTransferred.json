@@ -23,7 +23,7 @@
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "eth_registrar_controller_event_OwnershipTransferred",
+        "table_name": "ETHRegistrarController_event_OwnershipTransferred",
         "table_description": "Events in this table are emitted by contract with address 0xf0ad5cad05e10572efceb849f6ff0c68f9700455. An OwnershipTransferred event is emitted when ownership of contract is transferred or renounced, and when the contract is created.",
         "schema": [
             {

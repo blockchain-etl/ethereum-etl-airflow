@@ -1,49 +1,48 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x4f833a24e1f95d70f028921e27040ca56e09ab0b",
+        "contract_address": "0xfac7bea255a6990f749363002136af6556b31e04",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "makerAddress",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "senderAddress",
+                    "name": "to",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "name": "orderEpoch",
+                    "indexed": true,
+                    "name": "tokenId",
                     "type": "uint256"
                 }
             ],
-            "name": "CancelUpTo",
+            "name": "Transfer",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
-        "dataset_name": "zeroex",
-        "table_name": "exchange_v2_0_event_CancelUpTo",
-        "table_description": "Events in this table are emitted by contract with address 0x4f833a24e1f95d70f028921e27040ca56e09ab0b. A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
+        "dataset_name": "ens",
+        "table_name": "BaseRegistrarImplementation_event_Transfer",
+        "table_description": "Events in this table are emitted by contract with address 0xfac7bea255a6990f749363002136af6556b31e04. A Transfer event is emitted when a name is transferred.",
         "schema": [
             {
-                "name": "makerAddress",
+                "name": "from",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "senderAddress",
+                "name": "to",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "orderEpoch",
+                "name": "tokenId",
                 "description": "",
                 "type": "STRING"
             }

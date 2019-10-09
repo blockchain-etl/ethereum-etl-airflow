@@ -23,7 +23,7 @@
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "ens_event_NewResolver",
+        "table_name": "ENSRegistry_event_NewResolver",
         "table_description": "Events in this table are emitted by contract with address 0x314159265dd8dbb310642f98f50c066173c1259b. A NewResolver event is emitted when the specified node's resolver is set.",
         "schema": [
             {

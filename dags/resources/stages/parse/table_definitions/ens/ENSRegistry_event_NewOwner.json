@@ -11,20 +11,25 @@
                     "type": "bytes32"
                 },
                 {
+                    "indexed": true,
+                    "name": "label",
+                    "type": "bytes32"
+                },
+                {
                     "indexed": false,
-                    "name": "ttl",
-                    "type": "uint64"
+                    "name": "owner",
+                    "type": "address"
                 }
             ],
-            "name": "NewTTL",
+            "name": "NewOwner",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "ens_event_NewTTL",
-        "table_description": "Events in this table are emitted by contract with address 0x314159265dd8dbb310642f98f50c066173c1259b. A NewTTL event is emitted when a node's TTL (time-to-live) is updated.",
+        "table_name": "ENSRegistry_event_NewOwner",
+        "table_description": "Events in this table are emitted by contract with address 0x314159265dd8dbb310642f98f50c066173c1259b. A NewOwner event is emitted when a subnode is transferred to a new address.",
         "schema": [
             {
                 "name": "node",
@@ -32,7 +37,12 @@
                 "type": "STRING"
             },
             {
-                "name": "ttl",
+                "name": "label",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
                 "description": "",
                 "type": "STRING"
             }

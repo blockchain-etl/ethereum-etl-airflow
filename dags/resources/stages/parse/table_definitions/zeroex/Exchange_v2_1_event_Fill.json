@@ -1,129 +1,128 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x12459c951127e0c374ff9105dda097662a027093",
+        "contract_address": "0x080bf510fcbf18b91105470639e9561022937712",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "maker",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "taker",
+                    "name": "makerAddress",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "feeRecipient",
+                    "name": "feeRecipientAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "makerToken",
+                    "name": "takerAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "takerToken",
+                    "name": "senderAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "filledMakerTokenAmount",
+                    "name": "makerAssetFilledAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "filledTakerTokenAmount",
+                    "name": "takerAssetFilledAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "paidMakerFee",
+                    "name": "makerFeePaid",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "paidTakerFee",
+                    "name": "takerFeePaid",
                     "type": "uint256"
                 },
                 {
                     "indexed": true,
-                    "name": "tokens",
-                    "type": "bytes32"
-                },
-                {
-                    "indexed": false,
                     "name": "orderHash",
                     "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerAssetData",
+                    "type": "bytes"
                 }
             ],
-            "name": "LogFill",
+            "name": "Fill",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
-        "table_name": "exchange_v1_0_event_LogFill",
-        "table_description": "Events in this table are emitted by contract with address 0x12459c951127e0c374ff9105dda097662a027093. A LogFill event is emitted when an order is filled.",
+        "table_name": "Exchange_v2_1_event_Fill",
+        "table_description": "Events in this table are emitted by contract with address 0x080bf510fcbf18b91105470639e9561022937712. A Fill event is emitted when an order is filled.",
         "schema": [
             {
-                "name": "maker",
+                "name": "makerAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "taker",
+                "name": "feeRecipientAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "feeRecipient",
+                "name": "takerAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "makerToken",
+                "name": "senderAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "takerToken",
+                "name": "makerAssetFilledAmount",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "filledMakerTokenAmount",
+                "name": "takerAssetFilledAmount",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "filledTakerTokenAmount",
+                "name": "makerFeePaid",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "paidMakerFee",
-                "description": "",
-                "type": "STRING"
-            },
-            {
-                "name": "paidTakerFee",
-                "description": "",
-                "type": "STRING"
-            },
-            {
-                "name": "tokens",
+                "name": "takerFeePaid",
                 "description": "",
                 "type": "STRING"
             },
             {
                 "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAssetData",
                 "description": "",
                 "type": "STRING"
             }

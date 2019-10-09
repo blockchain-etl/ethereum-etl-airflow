@@ -1,0 +1,101 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x12459c951127e0c374ff9105dda097662a027093",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "cancelledMakerTokenAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "cancelledTakerTokenAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "tokens",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "orderHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogCancel",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v1_0_event_LogCancel",
+        "table_description": "Events in this table are emitted by contract with address 0x12459c951127e0c374ff9105dda097662a027093. A LogCancel event is emitted whenever an individual order is cancelled.",
+        "schema": [
+            {
+                "name": "maker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "feeRecipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "cancelledMakerTokenAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "cancelledTakerTokenAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tokens",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

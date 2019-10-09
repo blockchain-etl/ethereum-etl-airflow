@@ -7,43 +7,42 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "signerAddress",
+                    "name": "makerAddress",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "validatorAddress",
+                    "name": "senderAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "approved",
-                    "type": "bool"
+                    "name": "orderEpoch",
+                    "type": "uint256"
                 }
             ],
-            "name": "SignatureValidatorApproval",
+            "name": "CancelUpTo",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
-        "table_name": "exchange_v2_1_event_SignatureValidatorApproval",
-        "table_description": "Events in this table are emitted by contract with address 0x080bf510fcbf18b91105470639e9561022937712. A SignatureValidatorApproval event is emitted whenever a Validator contract is approved or disapproved to verify signatures created by a signer via setSignatureValidatorApproval.",
+        "table_name": "Exchange_v2_1_event_CancelUpTo",
+        "table_description": "Events in this table are emitted by contract with address 0x080bf510fcbf18b91105470639e9561022937712. A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
         "schema": [
             {
-                "name": "signerAddress",
+                "name": "makerAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "validatorAddress",
+                "name": "senderAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "approved",
+                "name": "orderEpoch",
                 "description": "",
                 "type": "STRING"
             }

@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xfac7bea255a6990f749363002136af6556b31e04",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "expires",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NameMigrated",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "ens",
+        "table_name": "BaseRegistrarImplementation_event_NameMigrated",
+        "table_description": "Events in this table are emitted by contract with address 0xfac7bea255a6990f749363002136af6556b31e04. A NameMigrated event is emitted when a registration is transferred from the initial registrar.",
+        "schema": [
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "expires",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

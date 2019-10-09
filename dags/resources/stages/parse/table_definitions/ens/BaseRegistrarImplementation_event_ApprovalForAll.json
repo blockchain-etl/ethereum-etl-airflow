@@ -1,48 +1,48 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x314159265dd8dbb310642f98f50c066173c1259b",
+        "contract_address": "0xfac7bea255a6990f749363002136af6556b31e04",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "node",
-                    "type": "bytes32"
+                    "name": "owner",
+                    "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "label",
-                    "type": "bytes32"
+                    "name": "operator",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "owner",
-                    "type": "address"
+                    "name": "approved",
+                    "type": "bool"
                 }
             ],
-            "name": "NewOwner",
+            "name": "ApprovalForAll",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "ens_event_NewOwner",
-        "table_description": "Events in this table are emitted by contract with address 0x314159265dd8dbb310642f98f50c066173c1259b. A NewOwner event is emitted when a subnode is transferred to a new address.",
+        "table_name": "BaseRegistrarImplementation_event_ApprovalForAll",
+        "table_description": "Events in this table are emitted by contract with address 0xfac7bea255a6990f749363002136af6556b31e04.",
         "schema": [
             {
-                "name": "node",
-                "description": "",
-                "type": "STRING"
-            },
-            {
-                "name": "label",
-                "description": "",
-                "type": "STRING"
-            },
-            {
                 "name": "owner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "operator",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "approved",
                 "description": "",
                 "type": "STRING"
             }

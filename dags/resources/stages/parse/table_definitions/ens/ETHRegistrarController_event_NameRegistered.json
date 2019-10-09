@@ -1,13 +1,18 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+        "contract_address": "0xf0ad5cad05e10572efceb849f6ff0c68f9700455",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
+                    "indexed": false,
+                    "name": "name",
+                    "type": "string"
+                },
+                {
                     "indexed": true,
-                    "name": "hash",
+                    "name": "label",
                     "type": "bytes32"
                 },
                 {
@@ -17,27 +22,32 @@
                 },
                 {
                     "indexed": false,
-                    "name": "value",
+                    "name": "cost",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "registrationDate",
+                    "name": "expires",
                     "type": "uint256"
                 }
             ],
-            "name": "HashRegistered",
+            "name": "NameRegistered",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "old_registrar_event_HashRegistered",
-        "table_description": "Events in this table are emitted by contract with address 0x6090a6e47849629b7245dfa1ca21d94cd15878ef. A HashRegistered event is emitted when an auction is finalized.",
+        "table_name": "ETHRegistrarController_event_NameRegistered",
+        "table_description": "Events in this table are emitted by contract with address 0xf0ad5cad05e10572efceb849f6ff0c68f9700455. A NameRegistered event is emitted when a name is registered.",
         "schema": [
             {
-                "name": "hash",
+                "name": "name",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "label",
                 "description": "",
                 "type": "STRING"
             },
@@ -47,12 +57,12 @@
                 "type": "STRING"
             },
             {
-                "name": "value",
+                "name": "cost",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "registrationDate",
+                "name": "expires",
                 "description": "",
                 "type": "STRING"
             }

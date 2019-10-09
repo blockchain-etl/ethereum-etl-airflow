@@ -33,7 +33,7 @@
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "eth_registrar_controller_event_NameRenewed",
+        "table_name": "ETHRegistrarController_event_NameRenewed",
         "table_description": "Events in this table are emitted by contract with address 0xf0ad5cad05e10572efceb849f6ff0c68f9700455. A NameRenewed event is emitted when a name is renewed.",
         "schema": [
             {

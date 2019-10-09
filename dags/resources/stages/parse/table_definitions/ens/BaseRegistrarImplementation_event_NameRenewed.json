@@ -1,38 +1,38 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+        "contract_address": "0xfac7bea255a6990f749363002136af6556b31e04",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "hash",
-                    "type": "bytes32"
+                    "name": "id",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "value",
+                    "name": "expires",
                     "type": "uint256"
                 }
             ],
-            "name": "HashReleased",
+            "name": "NameRenewed",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "ens",
-        "table_name": "old_registrar_event_HashReleased",
-        "table_description": "Events in this table are emitted by contract with address 0x6090a6e47849629b7245dfa1ca21d94cd15878ef. A HashReleased event is emitted when a deed is released.",
+        "table_name": "BaseRegistrarImplementation_event_NameRenewed",
+        "table_description": "Events in this table are emitted by contract with address 0xfac7bea255a6990f749363002136af6556b31e04. A NameRenewed event is emitted when a name is renewed.",
         "schema": [
             {
-                "name": "hash",
+                "name": "id",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "value",
+                "name": "expires",
                 "description": "",
                 "type": "STRING"
             }

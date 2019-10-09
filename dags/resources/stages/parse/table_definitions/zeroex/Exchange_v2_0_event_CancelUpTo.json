@@ -1,48 +1,48 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+        "contract_address": "0x4f833a24e1f95d70f028921e27040ca56e09ab0b",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "hash",
-                    "type": "bytes32"
+                    "name": "makerAddress",
+                    "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "bidder",
+                    "name": "senderAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "deposit",
+                    "name": "orderEpoch",
                     "type": "uint256"
                 }
             ],
-            "name": "NewBid",
+            "name": "CancelUpTo",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
-        "dataset_name": "ens",
-        "table_name": "old_registrar_event_NewBid",
-        "table_description": "Events in this table are emitted by contract with address 0x6090a6e47849629b7245dfa1ca21d94cd15878ef. A NewBid event is emitted when a new sealed bid on a desired hash in a blind auction is submitted.",
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v2_0_event_CancelUpTo",
+        "table_description": "Events in this table are emitted by contract with address 0x4f833a24e1f95d70f028921e27040ca56e09ab0b. A CancelUpTo event is emitted whenever a cancelOrdersUpTo call is successful.",
         "schema": [
             {
-                "name": "hash",
+                "name": "makerAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "bidder",
+                "name": "senderAddress",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "deposit",
+                "name": "orderEpoch",
                 "description": "",
                 "type": "STRING"
             }

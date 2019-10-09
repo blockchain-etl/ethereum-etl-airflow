@@ -17,8 +17,33 @@
                 },
                 {
                     "indexed": false,
+                    "name": "takerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
                     "name": "senderAddress",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerAssetFilledAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerAssetFilledAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerFeePaid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerFeePaid",
+                    "type": "uint256"
                 },
                 {
                     "indexed": true,
@@ -36,16 +61,15 @@
                     "type": "bytes"
                 }
             ],
-            "name": "Cancel",
+            "name": "Fill",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "zeroex",
-        "table_name": "exchange_v2_0_event_Cancel",
-        "table_description": "Events in this table are emitted by contract with address 0x4f833a24e1f95d70f028921e27040ca56e09ab0b. A Cancel event is emitted whenever an individual order is cancelled.",
+        "table_name": "Exchange_v2_0_event_Fill",
+        "table_description": "Events in this table are emitted by contract with address 0x4f833a24e1f95d70f028921e27040ca56e09ab0b. A Fill event is emitted when an order is filled.",
         "schema": [
             {
                 "name": "makerAddress",
@@ -58,7 +82,32 @@
                 "type": "STRING"
             },
             {
+                "name": "takerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
                 "name": "senderAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAssetFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAssetFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerFeePaid",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerFeePaid",
                 "description": "",
                 "type": "STRING"
             },

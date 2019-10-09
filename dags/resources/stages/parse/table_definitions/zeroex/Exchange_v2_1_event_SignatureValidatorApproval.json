@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x080bf510fcbf18b91105470639e9561022937712",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "signerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "validatorAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "SignatureValidatorApproval",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v2_1_event_SignatureValidatorApproval",
+        "table_description": "Events in this table are emitted by contract with address 0x080bf510fcbf18b91105470639e9561022937712. A SignatureValidatorApproval event is emitted whenever a Validator contract is approved or disapproved to verify signatures created by a signer via setSignatureValidatorApproval.",
+        "schema": [
+            {
+                "name": "signerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "validatorAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "approved",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
