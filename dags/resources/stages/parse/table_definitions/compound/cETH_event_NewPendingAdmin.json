@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldPendingAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newPendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingAdmin",
+            "type": "event",
+            "signature": "0xca4f2f25d0898edd99413412fb94012f9e54ec8142f9b093e7720646a95b16a9"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cETH_event_NewPendingAdmin",
+        "table_description": "cToken for ETH on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldPendingAdmin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newPendingAdmin",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

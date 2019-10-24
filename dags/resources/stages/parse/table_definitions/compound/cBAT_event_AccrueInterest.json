@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "interestAccumulated",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AccrueInterest",
+            "type": "event",
+            "signature": "0x875352fb3fadeb8c0be7cbbe8ff761b308fa7033470cd0287f02f3436fd76cb9"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cBAT_event_AccrueInterest",
+        "table_description": "cToken for BAT on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "interestAccumulated",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrowIndex",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "totalBorrows",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

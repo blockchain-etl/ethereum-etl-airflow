@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewAdmin",
+            "type": "event",
+            "signature": "0xf9ffabca9c8276e99321725bcb43fb076a6c66a54b7f21c4e8146d8519b417dc"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cUSDC_event_NewAdmin",
+        "table_description": "cToken for USDC on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldAdmin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newAdmin",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

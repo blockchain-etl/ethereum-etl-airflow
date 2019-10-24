@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x158079ee67fce2f58472a96584a73c7ab9ac95c1",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event",
+            "signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cREP_event_Transfer",
+        "table_description": "cToken for REP on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "from",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

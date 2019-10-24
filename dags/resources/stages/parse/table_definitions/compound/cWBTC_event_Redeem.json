@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xc11b1268c1a384e55c48c2391d8d480264a3a7f4",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "redeemer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "redeemAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "redeemTokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redeem",
+            "type": "event",
+            "signature": "0xe5b754fb1abb7f01b499791d0b820ae3b6af3424ac1c59768edb53f4ec31a929"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cWBTC_event_Redeem",
+        "table_description": "cToken for WBTC on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "redeemer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "redeemAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "redeemTokens",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

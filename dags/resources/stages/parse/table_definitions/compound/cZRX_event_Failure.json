@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "error",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "info",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "detail",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Failure",
+            "type": "event",
+            "signature": "0x45b96fe442630264581b197e84bbada861235052c5a1aadfff9ea4e40a969aa0"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cZRX_event_Failure",
+        "table_description": "cToken for ZRX on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "error",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "info",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "detail",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

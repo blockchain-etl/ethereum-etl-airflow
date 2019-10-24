@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x158079ee67fce2f58472a96584a73c7ab9ac95c1",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "payer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "repayAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "accountBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RepayBorrow",
+            "type": "event",
+            "signature": "0x1a2a22cb034d26d1854bdc6666a5b91fe25efbbb5dcad3b0355478d6f5c362a1"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cREP_event_RepayBorrow",
+        "table_description": "cToken for REP on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "payer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrower",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "repayAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "accountBorrows",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "totalBorrows",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xc11b1268c1a384e55c48c2391d8d480264a3a7f4",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "error",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "info",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "detail",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Failure",
+            "type": "event",
+            "signature": "0x45b96fe442630264581b197e84bbada861235052c5a1aadfff9ea4e40a969aa0"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cWBTC_event_Failure",
+        "table_description": "cToken for WBTC on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "error",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "info",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "detail",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

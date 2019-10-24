@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "accountBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Borrow",
+            "type": "event",
+            "signature": "0x13ed6866d4e1ee6da46f845c46d7e54120883d75c5ea9a2dacc1c4ca8984ab80"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cUSDC_event_Borrow",
+        "table_description": "cToken for USDC on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "borrower",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrowAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "accountBorrows",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "totalBorrows",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

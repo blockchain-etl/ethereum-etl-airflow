@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "accountBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Borrow",
+            "type": "event",
+            "signature": "0x13ed6866d4e1ee6da46f845c46d7e54120883d75c5ea9a2dacc1c4ca8984ab80"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cBAT_event_Borrow",
+        "table_description": "cToken for BAT on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "borrower",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrowAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "accountBorrows",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "totalBorrows",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

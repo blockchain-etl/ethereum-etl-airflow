@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x4ddc2d193948926d02f9b1fe9e1daa0718270ed5",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldInterestRateModel",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newInterestRateModel",
+                    "type": "address"
+                }
+            ],
+            "name": "NewMarketInterestRateModel",
+            "type": "event",
+            "signature": "0xedffc32e068c7c95dfd4bdfd5c4d939a084d6b11c4199eac8436ed234d72f926"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cETH_event_NewMarketInterestRateModel",
+        "table_description": "cToken for ETH on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldInterestRateModel",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newInterestRateModel",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

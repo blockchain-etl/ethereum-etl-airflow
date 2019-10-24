@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x39aa39c021dfbae8fac545936693ac917d5e7563",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "liquidator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "repayAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "cTokenCollateral",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "seizeTokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LiquidateBorrow",
+            "type": "event",
+            "signature": "0x298637f684da70674f26509b10f07ec2fbc77a335ab1e7d6215a4b2484d8bb52"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cUSDC_event_LiquidateBorrow",
+        "table_description": "cToken for USDC on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "liquidator",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrower",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "repayAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "cTokenCollateral",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "seizeTokens",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

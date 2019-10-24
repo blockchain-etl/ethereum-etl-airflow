@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldPendingAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newPendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingAdmin",
+            "type": "event",
+            "signature": "0xca4f2f25d0898edd99413412fb94012f9e54ec8142f9b093e7720646a95b16a9"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cBAT_event_NewPendingAdmin",
+        "table_description": "cToken for BAT on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldPendingAdmin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newPendingAdmin",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldReserveFactorMantissa",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newReserveFactorMantissa",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewReserveFactor",
+            "type": "event",
+            "signature": "0xaaa68312e2ea9d50e16af5068410ab56e1a1fd06037b1a35664812c30f821460"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cBAT_event_NewReserveFactor",
+        "table_description": "cToken for BAT on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldReserveFactorMantissa",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newReserveFactorMantissa",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

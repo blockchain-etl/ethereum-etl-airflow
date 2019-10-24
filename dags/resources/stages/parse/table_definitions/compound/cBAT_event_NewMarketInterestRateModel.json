@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6c8c6b02e7b2be14d4fa6022dfd6d75921d90e4e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldInterestRateModel",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newInterestRateModel",
+                    "type": "address"
+                }
+            ],
+            "name": "NewMarketInterestRateModel",
+            "type": "event",
+            "signature": "0xedffc32e068c7c95dfd4bdfd5c4d939a084d6b11c4199eac8436ed234d72f926"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cBAT_event_NewMarketInterestRateModel",
+        "table_description": "cToken for BAT on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldInterestRateModel",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newInterestRateModel",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

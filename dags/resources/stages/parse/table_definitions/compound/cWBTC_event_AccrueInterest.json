@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xc11b1268c1a384e55c48c2391d8d480264a3a7f4",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "interestAccumulated",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AccrueInterest",
+            "type": "event",
+            "signature": "0x875352fb3fadeb8c0be7cbbe8ff761b308fa7033470cd0287f02f3436fd76cb9"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cWBTC_event_AccrueInterest",
+        "table_description": "cToken for WBTC on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "interestAccumulated",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrowIndex",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "totalBorrows",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

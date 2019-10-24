@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xb3319f5d18bc0d84dd1b4825dcde5d5f7266d407",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldInterestRateModel",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newInterestRateModel",
+                    "type": "address"
+                }
+            ],
+            "name": "NewMarketInterestRateModel",
+            "type": "event",
+            "signature": "0xedffc32e068c7c95dfd4bdfd5c4d939a084d6b11c4199eac8436ed234d72f926"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cZRX_event_NewMarketInterestRateModel",
+        "table_description": "cToken for ZRX on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldInterestRateModel",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newInterestRateModel",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
