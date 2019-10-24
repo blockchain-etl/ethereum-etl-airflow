@@ -23,7 +23,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "compound",
         "table_name": "cUSDC_event_NewMarketInterestRateModel",
         "table_description": "cToken for USDC on the Compound Protocol.",

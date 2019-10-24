@@ -28,7 +28,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "compound",
         "table_name": "cZRX_event_Approval",
         "table_description": "cToken for ZRX on the Compound Protocol.",

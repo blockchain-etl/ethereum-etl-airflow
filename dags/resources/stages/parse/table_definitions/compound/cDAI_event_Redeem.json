@@ -28,7 +28,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "compound",
         "table_name": "cDAI_event_Redeem",
         "table_description": "cToken for DAI on the Compound Protocol.",

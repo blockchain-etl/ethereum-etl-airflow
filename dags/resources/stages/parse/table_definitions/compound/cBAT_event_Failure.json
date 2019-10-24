@@ -28,7 +28,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "compound",
         "table_name": "cBAT_event_Failure",
         "table_description": "cToken for BAT on the Compound Protocol.",

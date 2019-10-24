@@ -38,7 +38,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "compound",
         "table_name": "cWBTC_event_RepayBorrow",
         "table_description": "cToken for WBTC on the Compound Protocol.",

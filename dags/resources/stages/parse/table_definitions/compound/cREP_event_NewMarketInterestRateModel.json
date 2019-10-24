@@ -23,7 +23,6 @@
         "field_mapping": {}
     },
     "table": {
-        "project_name": "blockchain-etl",
         "dataset_name": "compound",
         "table_name": "cREP_event_NewMarketInterestRateModel",
         "table_description": "cToken for REP on the Compound Protocol.",
