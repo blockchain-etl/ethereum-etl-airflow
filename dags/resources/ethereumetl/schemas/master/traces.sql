@@ -1,26 +1,26 @@
 CREATE TABLE IF NOT EXISTS $CHAIN.traces (
-    created_date Date DEFAULT today(),
+    created_time UInt64 DEFAULT toUnixTimestamp(now()),
+    block_number UInt32,
     transaction_hash String,
-    transaction_index Int64,
+    transaction_index UInt32,
     from_address String,
     to_address String,
-    value Int32,
+    value UInt64,
     input String,
     output String,
     trace_type String,
     call_type String,
     reward_type String,
-    gas Int64,
-    gas_used Int64,
-    subtraces Int64,
+    gas UInt64,
+    gas_used UInt64,
+    subtraces UInt32,
     trace_address String,
     error String,
-    \"status\" Int64
-    block_number Int64,
+    \"status\" UInt8,
     block_hash String,
-    block_timestamp int32,
-    block_date Date,
+    block_timestamp UInt64,
+    block_date Date
 )
-ENGINE = MergeTree()
-PARTITION BY toYYYYMM(block_date)
-ORDER BY (block_number);
+ENGINE = ReplacingMergeTree()
+PARTITION BY block_date
+ORDER BY (block_number, transaction_hash, transaction_index, trace_address);

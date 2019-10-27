@@ -1,16 +1,18 @@
 CREATE TABLE IF NOT EXISTS $CHAIN.receipts (
-    created_date Date DEFAULT today(),
-    block_number Int64,
-    block_hash String,
+    created_time UInt64 DEFAULT toUnixTimestamp(now()),
     transaction_hash String,
-    transaction_index Int64,
-    cumulative_gas_used Int64,
-    gas_used Int64,
+    transaction_index UInt32,
+    block_hash String,
+    block_number UInt32,
+    cumulative_gas_used UInt64,
+    gas_used UInt64,
     contract_address String,
     root String,
-    \"status\" Int64
+    \"status\" UInt8,
+    block_timestamp UInt64,
+    block_date Date
 )
-ENGINE = MergeTree()
-PARTITION BY toYYYYMM(date)
-ORDER BY (transaction_hash);
+ENGINE = ReplacingMergeTree()
+PARTITION BY block_date
+ORDER BY (block_number, transaction_hash, transaction_index);
 

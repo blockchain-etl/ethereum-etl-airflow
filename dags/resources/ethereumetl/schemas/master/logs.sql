@@ -1,16 +1,16 @@
 CREATE TABLE IF NOT EXISTS $CHAIN.logs (
-    created_date Date DEFAULT today(),
-    log_index Int64,
-    block_date Date,
+    created_time UInt32 DEFAULT toUnixTimestamp(now()),
+    log_index UInt32,
     transaction_hash String,
-    transaction_index Int64,
+    transaction_index UInt32,
+    block_hash String,
+    block_number UInt32,
     address String,
     \"data\" String,
-    topics String,
-    block_number Int64,
-    block_hash String,
-    block_timestamp Int32
+    topics Array(String),
+    block_timestamp UInt64,
+    block_date Date
 )
-ENGINE = MergeTree()
-PARTITION BY toYYYYMM(block_date)
-ORDER BY (block_number);
+ENGINE = ReplacingMergeTree()
+PARTITION BY block_date
+ORDER BY (block_number, transaction_hash, log_index);

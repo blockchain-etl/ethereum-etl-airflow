@@ -13,12 +13,13 @@ def _build_clickhouse_http_command(parent_dir, resource, filename='-'):
     dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
     resource_dir = 'resources/ethereumetl/'
     CLICKHOUSE_URI = Variable.get('clickhouse_uri', '')
+
     query_path = os.path.join(dags_folder, resource_dir, parent_dir, f'{resource}.sql')
     query = read_file(query_path)
 
     if filename == '-':
         return f'echo "{query}" | if curl "{CLICKHOUSE_URI}" --data-binary @{filename} 2>&1| grep -E \"Failed|Exception\"; then exit -1; fi'
-    return f'eval \'if curl {CLICKHOUSE_URI}/?query={query} --data-binary @{filename} 2>&1| grep -E \"Failed|Exception\"; then exit -1; fi\''
+    return f'[ -s {filename} ] || exit 0 &&  eval \'if curl {CLICKHOUSE_URI}/?query={query} --data-binary @{filename} 2>&1| grep -E \"Failed|Exception\"; then exit -1; fi\''
 
 
 def _build_setup_table_operator(dag, env, table_type, resource):

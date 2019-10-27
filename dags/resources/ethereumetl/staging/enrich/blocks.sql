@@ -1,12 +1,9 @@
 CREATE VIEW $CHAIN.blocks_staged_$EXECUTION_DATE_NODASH AS
 SELECT
-    staged_blocks.created_date AS created_date,
-    staged_blocks.hash  AS hash,
+    toUnixTimestamp(now()) AS created_time,
     staged_blocks.number  AS number,
+    staged_blocks.hash  AS hash,
     staged_blocks.parent_hash AS parent_hash,
-    staged_blocks.timestamp  AS timestamp,
-    toDate(timestamp) AS \"date\",
-    toDateTime(timestamp) AS date_time,
     staged_blocks.nonce AS nonce,
     staged_blocks.sha3_uncles AS sha3_uncles,
     staged_blocks.logs_bloom AS logs_bloom,
@@ -20,6 +17,9 @@ SELECT
     staged_blocks.extra_data AS extra_data,
     staged_blocks.gas_limit AS gas_limit,
     staged_blocks.gas_used AS gas_used,
-    staged_blocks.transaction_count AS transaction_count
+    staged_blocks.timestamp  AS timestamp,
+    staged_blocks.transaction_count AS transaction_count,
+    toDate(staged_blocks.timestamp) AS \"date\",
+    toDateTime(staged_blocks.timestamp) AS date_time
 FROM
     $CHAIN.blocks_$EXECUTION_DATE_NODASH AS staged_blocks;

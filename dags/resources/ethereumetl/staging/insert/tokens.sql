@@ -1,6 +1,6 @@
 INSERT INTO $CHAIN.tokens
 SELECT
-      staged_tokens.created_date AS created_date,
+      staged_tokens.created_time AS created_time,
       staged_tokens.address AS address,
       staged_tokens.symbol AS symbol,
       staged_tokens.name AS name,

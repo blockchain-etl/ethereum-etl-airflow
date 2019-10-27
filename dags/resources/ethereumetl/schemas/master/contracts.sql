@@ -1,15 +1,15 @@
 CREATE TABLE IF NOT EXISTS $CHAIN.contracts (
-    created_date Date DEFAULT today(),
+    created_time UInt64 DEFAULT toUnixTimestamp(now()),
     address String,
     bytecode String,
-    function_sighashes String,
+    function_sighashes Array(String),
     is_erc20 UInt8,
     is_erc721 UInt8,
-    block_number Int64,
+    block_number UInt32,
     block_hash String,
-    block_timestamp Int32,
-    block_date Date,
+    block_timestamp UInt64,
+    block_date Date
 )
-ENGINE = MergeTree()
-PARTITION BY toYYYYMM(block_date)
-ORDER BY (block_number);
+ENGINE = ReplacingMergeTree()
+PARTITION BY block_date
+ORDER BY (block_number, address);

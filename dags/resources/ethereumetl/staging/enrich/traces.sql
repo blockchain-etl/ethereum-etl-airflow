@@ -1,6 +1,7 @@
 CREATE VIEW $CHAIN.traces_staged_$EXECUTION_DATE_NODASH AS
 SELECT
-    staged_traces.created_date AS created_date,
+    toUnixTimestamp(now())  AS created_time,
+    staged_traces.block_number AS block_number,
     staged_traces.transaction_hash AS transaction_hash,
     staged_traces.transaction_index AS transaction_index,
     staged_traces.from_address AS from_address,
@@ -17,10 +18,9 @@ SELECT
     staged_traces.trace_address AS trace_address,
     staged_traces.error AS error,
     staged_traces.status AS status,
-    blocks_master.block_number AS block_number,
-    blocks_master.block_hash AS block_hash,
-    blocks_master.block_timestamp AS block_timestamp,
-    toDate(blocks_master.block_timestamp) AS block_date
+    blocks_master.hash AS block_hash,
+    blocks_master.timestamp AS block_timestamp,
+    toDate(blocks_master.timestamp) AS block_date
 FROM
     $CHAIN.traces_$EXECUTION_DATE_NODASH AS staged_traces
 LEFT JOIN

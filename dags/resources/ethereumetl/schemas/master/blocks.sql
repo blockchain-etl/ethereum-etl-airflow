@@ -1,11 +1,8 @@
 CREATE TABLE IF NOT EXISTS $CHAIN.blocks (
-    created_date Date DEFAULT today(),
+    created_time UInt32 DEFAULT toUnixTimestamp(now()),
+    number UInt32,
     hash String,
-    number Int32,
     parent_hash String,
-    \"timestamp\" Int64,
-    \"date\" DATE,
-    date_time DATETIME,
     nonce String,
     sha3_uncles String,
     logs_bloom String,
@@ -13,14 +10,17 @@ CREATE TABLE IF NOT EXISTS $CHAIN.blocks (
     state_root String,
     receipts_root String,
     miner String,
-    difficulty Int32,
-    total_difficulty Int32,
-    size Int64,
+    difficulty UInt32,
+    total_difficulty UInt32,
+    size UInt64,
     extra_data String,
-    gas_limit Int64,
-    gas_used Int64,
-    transaction_count Int32
+    gas_limit UInt64,
+    gas_used UInt64,
+    \"timestamp\" UInt64,
+    transaction_count UInt32,
+    \"date\" DATE,
+    date_time DATETIME
 )
-ENGINE = MergeTree()
-PARTITION BY toYYYYMM(date)
+ENGINE = ReplacingMergeTree()
+PARTITION BY date
 ORDER BY (number);

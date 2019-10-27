@@ -38,8 +38,8 @@ def build_load_clickhouse_dag(
         'start_date': load_start_date,
         'email_on_failure': True,
         'email_on_retry': True,
-        'retries': 10,
-        'retry_delay': timedelta(minutes=5),
+        'retries': 20,
+        'retry_delay': timedelta(minutes=1),
     }
 
     env = {
@@ -59,26 +59,26 @@ def build_load_clickhouse_dag(
     dag = DAG(
         dag_id,
         schedule_interval=load_schedule_interval,
-        max_active_runs=load_max_active_runs,
-        concurrency=10,
-        default_args=default_dag_args,
+        concurrency=5,
+        default_args=default_dag_args
     )
 
     SETUP_COMMAND = \
-        'set -o xtrace && set -o pipefail && ' + \
+        'set -o xtrace && ' + \
         'export LC_ALL=C.UTF-8 && ' \
         'export LANG=C.UTF-8 && ' \
         'export CLOUDSDK_PYTHON=/usr/bin/python2'
 
     def _build_load_command(resource):
-        parent_dir = os.path.join(dags_folder, 'resources/ethereumetl/load')
-        file_path = f'"$CHAIN"_{resource}.json'
+        parent_dir = os.path.join(dags_folder, 'resources/ethereumetl/staging/load')
+        file_path = f'"$CHAIN"_{resource}'
+        resource_name = resource.split('.')[0]
 
-        CP_COMMAND = f'gsutil cp -Z gs://$GCS_BUCKET/export/{resource}/block_date=$EXECUTION_DATE.json "$CHAIN"_{resource}.json'
+        CP_COMMAND = f'gsutil cp -Z gs://$GCS_BUCKET/export/{resource_name}/block_date=$EXECUTION_DATE/{resource} "$CHAIN"_{resource}'
 
         LOAD_COMMAND = _build_clickhouse_http_command(
             parent_dir=parent_dir,
-            resource=resource,
+            resource=resource_name,
             filename=file_path
         )
 
@@ -108,22 +108,147 @@ def build_load_clickhouse_dag(
         return operator
 
     setup_blocks_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="blocks")
+    setup_contracts_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="contracts")
+    setup_logs_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="logs")
+    setup_receipts_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="receipts")
+    setup_tokens_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="tokens")
+    setup_token_transfers_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="token_transfers")
+    setup_traces_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="traces")
+    setup_transactions_operator = _build_setup_table_operator(dag=dag, env=env, table_type='staging', resource="transactions")
 
 
     load_blocks_operator = add_clickhouse_operator(
         dag=dag,
         env=env,
         task_id='load_blocks_operator',
-        bash_command=_build_load_command(resource="blocks"),
+        bash_command=_build_load_command(resource="blocks.csv"),
         dependencies=[setup_blocks_operator]
     )
 
-    add_clickhouse_operator(
+    load_contracts_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_contracts_operator',
+        bash_command=_build_load_command(resource="contracts.json"),
+        dependencies=[setup_contracts_operator]
+    )
+
+    load_logs_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_logs_operator',
+        bash_command=_build_load_command(resource="logs.json"),
+        dependencies=[setup_logs_operator]
+    )
+
+    load_receipts_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_receipts_operator',
+        bash_command=_build_load_command(resource="receipts.csv"),
+        dependencies=[setup_receipts_operator]
+    )
+
+
+    load_tokens_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_tokens_operator',
+        bash_command=_build_load_command(resource="tokens.csv"),
+        dependencies=[setup_tokens_operator]
+    )
+
+
+    load_token_transfers_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_token_transfers_operator',
+        bash_command=_build_load_command(resource="token_transfers.csv"),
+        dependencies=[setup_token_transfers_operator]
+    )
+
+
+    load_traces_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_traces_operator',
+        bash_command=_build_load_command(resource="traces.csv"),
+        dependencies=[setup_traces_operator]
+    )
+
+
+    load_transactions_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='load_transactions_operator',
+        bash_command=_build_load_command(resource="transactions.csv"),
+        dependencies=[setup_transactions_operator]
+    )
+
+    enrich_blocks_operator = add_clickhouse_operator(
         dag=dag,
         env=env,
         task_id='enrich_blocks_operator',
         bash_command=_build_enrich_command(resource="blocks", chain=ENRICH_QUERY_CHAIN),
         dependencies=[load_blocks_operator]
     )
+
+    add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_contracts_operator',
+        bash_command=_build_enrich_command(resource="contracts", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_contracts_operator, enrich_blocks_operator]
+    )
+
+    add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_logs_operator',
+        bash_command=_build_enrich_command(resource="logs", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_logs_operator, enrich_blocks_operator]
+    )
+
+    enrich_receipts_operator = add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_receipts_operator',
+        bash_command=_build_enrich_command(resource="receipts", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_receipts_operator, enrich_blocks_operator]
+    )
+
+    add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_tokens_operator',
+        bash_command=_build_enrich_command(resource="tokens", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_tokens_operator, enrich_blocks_operator]
+    )
+
+    add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_token_transfers_operator',
+        bash_command=_build_enrich_command(resource="token_transfers", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_token_transfers_operator, enrich_blocks_operator]
+    )
+
+    add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_traces_operator',
+        bash_command=_build_enrich_command(resource="traces", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_traces_operator, enrich_blocks_operator]
+    )
+
+    add_clickhouse_operator(
+        dag=dag,
+        env=env,
+        task_id='enrich_transactions_operator',
+        bash_command=_build_enrich_command(resource="transactions", chain=ENRICH_QUERY_CHAIN),
+        dependencies=[load_transactions_operator, enrich_blocks_operator, enrich_receipts_operator]
+    )
+
+
 
     return dag
