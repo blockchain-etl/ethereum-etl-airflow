@@ -1,0 +1,50 @@
+{
+  "parser": {
+    "type": "log",
+    "contract_address": "0x09cabec1ead1c0ba254b09efb3ee13841712be14",
+    "abi": {
+      "anonymous": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "provider",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "eth_amount",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "token_amount",
+          "indexed": true
+        }
+      ],
+      "name": "AddLiquidity",
+      "type": "event"
+    }
+  },
+  "table": {
+    "dataset_name": "uniswap_dai_exchange",
+    "table_name": "Uniswap_Dai_event_AddLiquidity",
+    "table_description": "This event is in contract 0x09cabec1ead1c0ba254b09efb3ee13841712be14. An AddLiquidity event is emitted when a user adds liquidity.",
+    "schema": [
+      {
+        "name": "provider",
+        "description": "",
+        "type": "STRING"
+      },
+      {
+        "name": "eth_amount",
+        "description": "",
+        "type": "STRING"
+      },
+      {
+        "name": "token_amount",
+        "description": "",
+        "type": "STRING"
+      }
+    ]
+  }
+}
