@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x818e6fecd516ecc3849daf6845e3ec868087b755",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sendTo",
+                    "type": "address"
+                }
+            ],
+            "name": "TokenWithdraw",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetworkProxy_event_TokenWithdraw",
+        "table_description": "Event for logging the withdrawal of a token received in a contract.",
+        "schema": [
+            {
+                "name": "token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "sendTo",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

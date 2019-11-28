@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x818e6fecd516ecc3849daf6845e3ec868087b755",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "newNetworkContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "oldNetworkContract",
+                    "type": "address"
+                }
+            ],
+            "name": "KyberNetworkSet",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetworkProxy_event_KyberNetworkSet",
+        "table_description": "Event for logging of updating the KyberNetwork contract.",
+        "schema": [
+            {
+                "name": "newNetworkContract",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "oldNetworkContract",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
