@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x9ae49c0d7f8f9ef4b864e004fe86ac8294e20950",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "newAlerter",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "isAdd",
+                    "type": "bool"
+                }
+            ],
+            "name": "AlerterAdded",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetwork_event_AlerterAdded",
+        "table_description": "Event for logging the addition of an address with alerter role.",
+        "schema": [
+            {
+                "name": "newAlerter",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "isAdd",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

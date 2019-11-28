@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x818e6fecd516ecc3849daf6845e3ec868087b755",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "src",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "dest",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "actualSrcAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "actualDestAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ExecuteTrade",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetworkProxy_event_ExecuteTrade",
+        "table_description": "Event for logging execution of trades.",
+        "schema": [
+            {
+                "name": "trader",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "src",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "dest",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "actualSrcAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "actualDestAmount",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

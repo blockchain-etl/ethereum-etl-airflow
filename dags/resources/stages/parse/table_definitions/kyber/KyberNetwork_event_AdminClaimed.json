@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x9ae49c0d7f8f9ef4b864e004fe86ac8294e20950",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "newAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "previousAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminClaimed",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetwork_event_AdminClaimed",
+        "table_description": "Event for logging of the change of admin address.",
+        "schema": [
+            {
+                "name": "newAdmin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "previousAdmin",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

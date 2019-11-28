@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x818e6fecd516ecc3849daf6845e3ec868087b755",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "pendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "TransferAdminPending",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetworkProxy_event_TransferAdminPending",
+        "table_description": "Event for logging for the transfer of the current admin address to the new address.",
+        "schema": [
+            {
+                "name": "pendingAdmin",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
