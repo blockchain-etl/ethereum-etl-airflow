@@ -1,0 +1,121 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "tokenBuy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountBuy",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokenSell",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountSell",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "expires",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "v",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "r",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "s",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "Order",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "idex",
+        "table_name": "idex_event_Order",
+        "table_description": "Place IDEX order.",
+        "schema": [
+            {
+                "name": "tokenBuy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amountBuy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tokenSell",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amountSell",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "expires",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "user",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "v",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "r",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "s",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "tokenBuy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountBuy",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokenSell",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountSell",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "get",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "give",
+                    "type": "address"
+                }
+            ],
+            "name": "Trade",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "idex",
+        "table_name": "idex_event_Trade",
+        "table_description": "Trade on IDEX.",
+        "schema": [
+            {
+                "name": "tokenBuy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amountBuy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tokenSell",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amountSell",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "get",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "give",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
