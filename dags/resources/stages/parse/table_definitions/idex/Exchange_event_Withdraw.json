@@ -26,15 +26,15 @@
                     "type": "uint256"
                 }
             ],
-            "name": "Deposit",
+            "name": "Withdraw",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "idex",
-        "table_name": "idex_event_Deposit",
-        "table_description": "Deposit funds to IDEX.",
+        "table_name": "Exchange_event_Withdraw",
+        "table_description": "Withdraw funds from IDEX.",
         "schema": [
             {
                 "name": "token",

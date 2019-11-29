@@ -56,15 +56,15 @@
                     "type": "bytes32"
                 }
             ],
-            "name": "Cancel",
+            "name": "Order",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "idex",
-        "table_name": "idex_event_Cancel",
-        "table_description": "Cancel IDEX order.",
+        "table_name": "Exchange_event_Order",
+        "table_description": "Place IDEX order.",
         "schema": [
             {
                 "name": "tokenBuy",

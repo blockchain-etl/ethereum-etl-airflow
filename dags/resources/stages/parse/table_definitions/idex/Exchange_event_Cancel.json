@@ -27,24 +27,44 @@
                 },
                 {
                     "indexed": false,
-                    "name": "get",
+                    "name": "expires",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "user",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "give",
-                    "type": "address"
+                    "name": "v",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "r",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "s",
+                    "type": "bytes32"
                 }
             ],
-            "name": "Trade",
+            "name": "Cancel",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "idex",
-        "table_name": "idex_event_Trade",
-        "table_description": "Trade on IDEX.",
+        "table_name": "Exchange_event_Cancel",
+        "table_description": "Cancel IDEX order.",
         "schema": [
             {
                 "name": "tokenBuy",
@@ -67,12 +87,32 @@
                 "type": "STRING"
             },
             {
-                "name": "get",
+                "name": "expires",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "give",
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "user",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "v",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "r",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "s",
                 "description": "",
                 "type": "STRING"
             }

@@ -23,7 +23,7 @@
     },
     "table": {
         "dataset_name": "idex",
-        "table_name": "idex_event_SetOwner",
+        "table_name": "Exchange_event_SetOwner",
         "table_description": "Set owner of IDEX contract.",
         "schema": [
             {
