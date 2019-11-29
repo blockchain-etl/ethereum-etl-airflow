@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "SetOwner",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "idex",
+        "table_name": "Exchange_event_SetOwner",
+        "table_description": "Set owner of IDEX contract.",
+        "schema": [
+            {
+                "name": "previousOwner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newOwner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
