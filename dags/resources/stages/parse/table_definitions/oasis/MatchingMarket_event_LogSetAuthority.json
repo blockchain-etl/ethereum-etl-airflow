@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x39755357759ce0d7f32dc8dc45414cca409ae24e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "authority",
+                    "type": "address"
+                }
+            ],
+            "name": "LogSetAuthority",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "oasis",
+        "table_name": "MatchingMarket_event_LogSetAuthority",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "authority",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
