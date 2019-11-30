@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x39755357759ce0d7f32dc8dc45414cca409ae24e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogItemUpdate",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "oasis",
+        "table_name": "MatchingMarket_event_LogItemUpdate",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

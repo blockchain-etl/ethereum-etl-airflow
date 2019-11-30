@@ -1,0 +1,111 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x39755357759ce0d7f32dc8dc45414cca409ae24e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "pair",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "pay_gem",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "buy_gem",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "take_amt",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "name": "give_amt",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "name": "timestamp",
+                    "type": "uint64"
+                }
+            ],
+            "name": "LogTake",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "oasis",
+        "table_name": "MatchingMarket_event_LogTake",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "pair",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "maker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "pay_gem",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "buy_gem",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "taker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "take_amt",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "give_amt",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "timestamp",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
