@@ -1,0 +1,101 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x8fd3121013a07c57f0d69646e86e7a4880b467b7",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "makerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "makerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "takerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "expiration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "nonce",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Filled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "",
+        "table_name": "AirSwapExchange_event_Filled",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "makerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "expiration",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
