@@ -1,50 +1,50 @@
 {
-  "parser": {
-    "type": "log",
-    "contract_address": "0x09cabec1ead1c0ba254b09efb3ee13841712be14",
-    "abi": {
-      "anonymous": false,
-      "inputs": [
-        {
-          "type": "address",
-          "name": "buyer",
-          "indexed": true
-        },
-        {
-          "type": "uint256",
-          "name": "eth_sold",
-          "indexed": true
-        },
-        {
-          "type": "uint256",
-          "name": "tokens_bought",
-          "indexed": true
+    "parser": {
+        "type": "log",
+        "contract_address": "0x09cabec1ead1c0ba254b09efb3ee13841712be14",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "type": "address",
+                    "name": "buyer",
+                    "indexed": true
+                },
+                {
+                    "type": "uint256",
+                    "name": "eth_sold",
+                    "indexed": true
+                },
+                {
+                    "type": "uint256",
+                    "name": "tokens_bought",
+                    "indexed": true
+                }
+            ],
+            "name": "TokenPurchase",
+            "type": "event"
         }
-      ],
-      "name": "TokenPurchase",
-      "type": "event"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "table_name": "Uniswap_Dai_event_TokenPurchase",
+        "table_description": "This event is in contract 0x09cabec1ead1c0ba254b09efb3ee13841712be14. A TokenPurchase event is emitted when swaps occur (token to token or eth to token)",
+        "schema": [
+            {
+                "name": "buyer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "eth_sold",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tokens_bought",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
     }
-  },
-  "table": {
-    "dataset_name": "uniswap_dai_exchange",
-    "table_name": "Uniswap_Dai_event_TokenPurchase",
-    "table_description": "This event is in contract 0x09cabec1ead1c0ba254b09efb3ee13841712be14. A TokenPurchase event is emitted when swaps occur (token to token or eth to token)",
-    "schema": [
-      {
-        "name": "buyer",
-        "description": "",
-        "type": "STRING"
-      },
-      {
-        "name": "eth_sold",
-        "description": "",
-        "type": "STRING"
-      },
-      {
-        "name": "tokens_bought",
-        "description": "",
-        "type": "STRING"
-      }
-    ]
-  }
 }
