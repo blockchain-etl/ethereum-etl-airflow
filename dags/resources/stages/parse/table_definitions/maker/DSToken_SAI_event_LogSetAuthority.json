@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "authority",
+                    "type": "address"
+                }
+            ],
+            "name": "LogSetAuthority",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "DSToken_SAI_event_LogSetAuthority",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "authority",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

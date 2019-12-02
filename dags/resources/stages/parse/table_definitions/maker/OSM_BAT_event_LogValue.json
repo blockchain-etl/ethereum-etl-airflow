@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xb4eb54af9cc7882df0121d26c5b97e802915abe6",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "val",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogValue",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "OSM_BAT_event_LogValue",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "val",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

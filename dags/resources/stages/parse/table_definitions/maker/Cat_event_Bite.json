@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x78f2c2af65126834c51822f56be0d7469d7a523e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "ilk",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "urn",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ink",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "art",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tab",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "flip",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Bite",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "Cat_event_Bite",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "ilk",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "urn",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "ink",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "art",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tab",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "flip",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

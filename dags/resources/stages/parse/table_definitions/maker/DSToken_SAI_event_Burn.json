@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "guy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "wad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Burn",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "DSToken_SAI_event_Burn",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "guy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "wad",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

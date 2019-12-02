@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x81fe72b5a8d1a857d176c3e7d5bd2679a9b85763",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "val",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogValue",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "OSM_ETH_event_LogValue",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "val",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

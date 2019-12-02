@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x9ef05f7f6deb616fd37ac3c959a2ddd25a54e4f5",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "slate",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "Etch",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "DSChief_event_Etch",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "slate",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
