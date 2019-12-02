@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldProtocolFeeCollector",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "updatedProtocolFeeCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "ProtocolFeeCollectorAddress",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v3_0_event_ProtocolFeeCollectorAddress",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "oldProtocolFeeCollector",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "updatedProtocolFeeCollector",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
