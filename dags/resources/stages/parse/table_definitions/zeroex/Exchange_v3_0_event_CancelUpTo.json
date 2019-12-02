@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "makerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "orderSenderAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "orderEpoch",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CancelUpTo",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v3_0_event_CancelUpTo",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "makerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderSenderAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderEpoch",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

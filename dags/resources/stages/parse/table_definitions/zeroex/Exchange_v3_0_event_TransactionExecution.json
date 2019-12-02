@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "transactionHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "TransactionExecution",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v3_0_event_TransactionExecution",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "transactionHash",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

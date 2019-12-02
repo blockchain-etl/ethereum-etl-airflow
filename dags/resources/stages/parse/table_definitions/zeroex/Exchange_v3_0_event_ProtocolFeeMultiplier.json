@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldProtocolFeeMultiplier",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "updatedProtocolFeeMultiplier",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProtocolFeeMultiplier",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v3_0_event_ProtocolFeeMultiplier",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "oldProtocolFeeMultiplier",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "updatedProtocolFeeMultiplier",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
