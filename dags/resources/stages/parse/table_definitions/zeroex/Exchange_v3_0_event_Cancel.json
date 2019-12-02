@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "makerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "feeRecipientAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "makerAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "takerAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "senderAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "Cancel",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v3_0_event_Cancel",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "makerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "feeRecipientAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "senderAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,175 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x61935cbdd02287b511119ddb11aeb42f1593b7ef",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "makerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "feeRecipientAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "makerAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "takerAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "makerFeeAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "takerFeeAssetData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "takerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "senderAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "makerAssetFilledAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "takerAssetFilledAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "makerFeePaid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "takerFeePaid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "protocolFeePaid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Fill",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v3_0_event_Fill",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "makerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "feeRecipientAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerFeeAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerFeeAssetData",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "senderAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAssetFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAssetFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerFeePaid",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerFeePaid",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "protocolFeePaid",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
