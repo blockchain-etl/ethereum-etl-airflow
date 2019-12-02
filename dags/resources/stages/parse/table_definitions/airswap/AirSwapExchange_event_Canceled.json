@@ -52,7 +52,7 @@
         "field_mapping": {}
     },
     "table": {
-        "dataset_name": "",
+        "dataset_name": "airswap",
         "table_name": "AirSwapExchange_event_Canceled",
         "table_description": "",
         "schema": [
