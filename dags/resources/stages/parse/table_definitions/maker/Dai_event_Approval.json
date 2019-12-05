@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "src",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "guy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Approval",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "Dai_event_Approval",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "src",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "guy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "wad",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

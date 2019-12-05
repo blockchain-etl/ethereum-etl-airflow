@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x54003dbf6ae6cba6ddae571ccdc34d834b44ab1e",
+        "abi": {
+            "anonymous": true,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes4",
+                    "name": "sig",
+                    "type": "bytes4"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "guy",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "foo",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "bar",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "fax",
+                    "type": "bytes"
+                }
+            ],
+            "name": "LogNote",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "DSValue_event_LogNote",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "sig",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "guy",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "foo",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "bar",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "wad",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fax",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

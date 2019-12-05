@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x448a5065aebb8e423f0896e6c5d525c040f59af3",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "LogSetOwner",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "SaiTub_event_LogSetOwner",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

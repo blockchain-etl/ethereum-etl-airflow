@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x5ef30b9986345249bc32d8928b7ee64de9435e39",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "own",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "cdp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewCdp",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "DssCdpManager_event_NewCdp",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "usr",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "own",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "cdp",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

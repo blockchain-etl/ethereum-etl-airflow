@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xdfe0fb1be2a52cdbf8fb962d5701d7fd0902db9f",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lot",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Kick",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "Flapper_event_Kick",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "lot",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "bid",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x315cbb88168396d12e1a255f9cb935408fe80710",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "src",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "dst",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "sig",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogPermit",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "DSGuard_event_LogPermit",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "src",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "dst",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "sig",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
