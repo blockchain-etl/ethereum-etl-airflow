@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x642ae78fafbb8032da552d619ad43f1d81e4dd7c",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "LogSetOwner",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "Redeemer_event_LogSetOwner",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

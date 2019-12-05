@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xaa745404d55f88c108a28c86abe7b5a1e7817c07",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lot",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tab",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "gal",
+                    "type": "address"
+                }
+            ],
+            "name": "Kick",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "Flipper_BAT_event_Kick",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "lot",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "bid",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tab",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "usr",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "gal",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x65c79fcb50ca1594b025960e539ed7a9a6d434a3",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "ilk",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "val",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "spot",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Poke",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "maker",
+        "table_name": "Spotter_event_Poke",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "ilk",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "val",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "spot",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
