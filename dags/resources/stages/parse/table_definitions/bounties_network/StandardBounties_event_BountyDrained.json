@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xa7135d0a62939501b5304a04bf00d1a9a22f6623",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_bountyId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_issuer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "BountyDrained",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "bounties_network",
+        "table_name": "StandardBounties_event_BountyDrained",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_bountyId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_issuer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_amounts",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
