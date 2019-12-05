@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xa7135d0a62939501b5304a04bf00d1a9a22f6623",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_bountyId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_changer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_deadline",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BountyDeadlineChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "bounties_network",
+        "table_name": "StandardBounties_event_BountyDeadlineChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_bountyId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_changer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_deadline",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

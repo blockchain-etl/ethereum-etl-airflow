@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xa7135d0a62939501b5304a04bf00d1a9a22f6623",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_bountyId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_fulfillmentId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_approver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_tokenAmounts",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "FulfillmentAccepted",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "bounties_network",
+        "table_name": "StandardBounties_event_FulfillmentAccepted",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_bountyId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_fulfillmentId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_approver",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_tokenAmounts",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
