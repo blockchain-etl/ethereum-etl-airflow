@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "label",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cost",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "expires",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NameRegistered",
+            "type": "event"
+        },
+        "contract_address": "0xb22c1c159d12461ea124b0deb4b5b93020e6ad16",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "label",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cost",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expires",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHRegistrarController2_event_NameRegistered"
+    }
+}
