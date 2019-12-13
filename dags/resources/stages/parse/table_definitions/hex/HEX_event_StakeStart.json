@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "data0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "stakerAddr",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint40",
+                    "name": "stakeId",
+                    "type": "uint40"
+                }
+            ],
+            "name": "StakeStart",
+            "type": "event"
+        },
+        "contract_address": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hex",
+        "schema": [
+            {
+                "description": "",
+                "name": "data0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakerAddr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakeId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "HEX_event_StakeStart"
+    }
+}
