@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "executeTxHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "userAddr",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "receiverAddr",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "filledAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "acutalMakerAssetAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FillOrder",
+            "type": "event"
+        },
+        "contract_address": "0xdc6c91b569c98f9f6f74d90f9beff99fdaf4248b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "tokenlon",
+        "schema": [
+            {
+                "description": "",
+                "name": "executeTxHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "userAddr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiverAddr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "filledAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "acutalMakerAssetAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TokenlonExchange_event_FillOrder"
+    }
+}
