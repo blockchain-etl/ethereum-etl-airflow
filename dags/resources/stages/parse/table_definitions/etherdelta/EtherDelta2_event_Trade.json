@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "tokenGet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountGet",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokenGive",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountGive",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "get",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "give",
+                    "type": "address"
+                }
+            ],
+            "name": "Trade",
+            "type": "event"
+        },
+        "contract_address": "0x8d12a197cb00d4747a1fe03395095ce2a5cc6819",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "etherdelta",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenGet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountGet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenGive",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountGive",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "get",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "give",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EtherDelta2_event_Trade"
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "fromToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "toToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "referrer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fromAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "referrerFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Swapped",
+            "type": "event"
+        },
+        "contract_address": "0x11111254369792b2ca5d084ab5eea397ca8fa48b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "oneinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "fromToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referrer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referrerFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OneInchExchange_event_Swapped"
+    }
+}
