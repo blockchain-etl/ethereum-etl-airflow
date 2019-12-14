@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_disputeID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "_arbitrable",
+                    "type": "address"
+                }
+            ],
+            "name": "AppealDecision",
+            "type": "event"
+        },
+        "contract_address": "0x988b3a538b618c7a603e1c11ab82cd16dbe28069",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kleros",
+        "schema": [
+            {
+                "description": "",
+                "name": "_disputeID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_arbitrable",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KlerosLiquid_event_AppealDecision"
+    }
+}
