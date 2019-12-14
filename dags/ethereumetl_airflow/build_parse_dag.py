@@ -185,7 +185,7 @@ def build_parse_dag(
             task_id='send_email',
             to=[email.strip() for email in notification_emails.split(',')],
             subject='Ethereum ETL Airflow Parse DAG Succeeded',
-            html_content='Ethereum ETL Airflow Parse DAG Succeeded',
+            html_content='Ethereum ETL Airflow Parse DAG Succeeded for {}'.format(dag_id),
             dag=dag
         )
         for task in all_parse_tasks:
