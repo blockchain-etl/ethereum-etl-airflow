@@ -76,7 +76,6 @@ def read_load_dag_vars(var_prefix, **kwargs):
 def read_parse_dag_vars(var_prefix, dataset, **kwargs):
     per_dataset_var_prefix = var_prefix + dataset + '_'
     vars = {
-        'enabled': parse_bool(read_var('enabled', per_dataset_var_prefix, False), default=False),
         'parse_destination_dataset_project_id': read_var('parse_destination_dataset_project_id', var_prefix, True, **kwargs),
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
         'parse_all_partitions': parse_bool(read_var('parse_all_partitions', per_dataset_var_prefix, False), default=True),

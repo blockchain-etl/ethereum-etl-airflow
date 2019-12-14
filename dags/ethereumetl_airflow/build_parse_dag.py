@@ -30,13 +30,8 @@ def build_parse_dag(
         notification_emails=None,
         parse_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *',
-        enabled=True,
         parse_all_partitions=True
 ):
-    if not enabled:
-        logging.info('enabled is False, the DAG will not be built.')
-        return None
-
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
 
     SOURCE_PROJECT_ID = 'bigquery-public-data'
