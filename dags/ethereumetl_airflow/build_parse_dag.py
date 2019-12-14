@@ -34,6 +34,9 @@ def build_parse_dag(
 ):
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
 
+    if parse_all_partitions:
+        dag_id = dag_id + '_FULL'
+
     SOURCE_PROJECT_ID = 'bigquery-public-data'
     SOURCE_DATASET_NAME = 'crypto_ethereum'
 
