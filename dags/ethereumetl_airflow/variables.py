@@ -99,7 +99,7 @@ def read_load_dag_redshift_vars(var_prefix, **kwargs):
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
     }
 
-    load_start_date = read_var('load_start_date', vars, False, **kwargs)
+    load_start_date = read_var('load_start_date', var_prefix, False, **kwargs)
     if load_start_date is not None:
         load_start_date = datetime.strptime(load_start_date, '%Y-%m-%d')
         vars['load_start_date'] = load_start_date
@@ -119,6 +119,25 @@ def read_verify_streaming_dag_vars(var_prefix, **kwargs):
 
     return vars
 
+
+def read_scrape_etherscan_contracts_dag_vars(var_prefix, **kwargs):
+    vars = {
+        'notification_emails': read_var('notification_emails', None, False, **kwargs),
+        'input_bucket': read_var('input_bucket', var_prefix, False, **kwargs),
+        'output_bucket': read_var('output_bucket', var_prefix, False, **kwargs),
+        'scrape_schedule_interval': read_var('scrape_schedule_interval', var_prefix, True, **kwargs),
+    }
+
+    scrape_start_date = read_var('scrape_start_date', var_prefix, False, **kwargs)
+    if scrape_start_date is not None:
+        scrape_start_date = datetime.strptime(scrape_start_date, '%Y-%m-%d')
+        vars['scrape_start_date'] = scrape_start_date
+
+    etherscan_api_tokens = read_var('etherscan_api_tokens', required=True)
+    etherscan_api_tokens = [token.strip() for token in etherscan_api_tokens.split(',')]
+    vars['etherscan_api_tokens'] = etherscan_api_tokens
+
+    return vars
 
 def read_var(var_name, var_prefix=None, required=False, **kwargs):
     full_var_name = f'{var_prefix}{var_name}' if var_prefix is not None else var_name
