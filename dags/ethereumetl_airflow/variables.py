@@ -82,7 +82,7 @@ def read_parse_dag_vars(var_prefix, dataset, **kwargs):
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
     }
 
-    parse_start_date = read_var('parse_start_date', vars, False, **kwargs)
+    parse_start_date = read_var('parse_start_date', var_prefix, False, **kwargs)
     if parse_start_date is not None:
         parse_start_date = datetime.strptime(parse_start_date, '%Y-%m-%d')
         vars['parse_start_date'] = parse_start_date
@@ -138,6 +138,23 @@ def read_scrape_etherscan_contracts_dag_vars(var_prefix, **kwargs):
     vars['etherscan_api_tokens'] = etherscan_api_tokens
 
     return vars
+
+
+def read_load_etherscan_contracts_dag_vars(var_prefix, **kwargs):
+    vars = {
+        'output_bucket': read_var('output_bucket', var_prefix, True, **kwargs),
+        'destination_dataset_project_id': read_var('destination_dataset_project_id', var_prefix, True, **kwargs),
+        'notification_emails': read_var('notification_emails', None, False, **kwargs),
+        'etherscan_load_all_partitions': parse_bool(read_var('etherscan_load_all_partitions', var_prefix, True, **kwargs))
+    }
+
+    etherscan_load_start_date = read_var('etherscan_load_start_date', var_prefix, False, **kwargs)
+    if etherscan_load_start_date is not None:
+        etherscan_load_start_date = datetime.strptime(etherscan_load_start_date, '%Y-%m-%d')
+        vars['etherscan_load_start_date'] = etherscan_load_start_date
+
+    return vars
+
 
 def read_var(var_name, var_prefix=None, required=False, **kwargs):
     full_var_name = f'{var_prefix}{var_name}' if var_prefix is not None else var_name

@@ -110,6 +110,8 @@ def build_scrape_etherscan_contracts_dag(
 
     wait_sensor >> scrape_contracts_operator
 
+    return dag
+
 
 def copy_from_export_path(bucket, export_path, file_path):
     logging.info('Calling copy_from_export_path({}, {})'.format(export_path, file_path))

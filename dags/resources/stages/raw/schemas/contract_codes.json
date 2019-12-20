@@ -1,0 +1,13 @@
+[
+    {
+        "name": "address",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "Address"
+    },
+    {
+        "name": "response",
+        "type": "STRING",
+        "description": "response"
+    }
+]
