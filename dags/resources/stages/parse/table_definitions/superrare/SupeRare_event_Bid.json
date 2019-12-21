@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_bidder",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "_tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Bid",
+            "type": "event"
+        },
+        "contract_address": "0x41a322b28d0ff354040e2cbc676f0320d8c8850d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "superrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "_bidder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SupeRare_event_Bid"
+    }
+}
