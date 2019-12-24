@@ -13,6 +13,6 @@ DAG = build_load_etherscan_contracts_dag(
     dag_id='ethereum_load_etherscan_contracts_dag',
     **read_load_etherscan_contracts_dag_vars(
         var_prefix='ethereum_',
-        schedule_interval='30 12 * * *'
+        schedule_interval='30 13 * * *'
     )
 )

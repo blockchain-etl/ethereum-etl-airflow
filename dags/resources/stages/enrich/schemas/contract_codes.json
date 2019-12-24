@@ -1,0 +1,23 @@
+[
+    {
+        "name": "address",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "address"
+    },
+    {
+        "name": "contract_name",
+        "type": "STRING",
+        "description": "contract_name"
+    },
+    {
+        "name": "abi",
+        "type": "STRING",
+        "description": "abi"
+    },
+    {
+        "name": "source_code",
+        "type": "STRING",
+        "description": "source_code"
+    }
+]

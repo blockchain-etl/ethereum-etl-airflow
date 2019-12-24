@@ -133,7 +133,78 @@ def build_load_etherscan_contracts_dag(
         wait_sensor >> load_operator
         return load_operator
 
+    def add_enrich_tasks(dependencies=None):
+        def enrich_task(ds, **kwargs):
+            template_context = kwargs.copy()
+            template_context['ds'] = ds
+            template_context['params'] = environment
+
+            client = bigquery.Client()
+
+            # Need to use a temporary table because bq query sets field modes to NULLABLE and descriptions to null
+            # when writeDisposition is WRITE_TRUNCATE
+
+            # Create a temporary table
+            temp_table_name = 'contract_codes_{milliseconds}'.format(milliseconds=int(round(time.time() * 1000)))
+            temp_table_ref = client.dataset(dataset_name_temp).table(temp_table_name)
+
+            schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/contract_codes.json')
+            schema = read_bigquery_schema_from_file(schema_path)
+            table = bigquery.Table(temp_table_ref, schema=schema)
+
+            description_path = os.path.join(
+                dags_folder, 'resources/stages/enrich/descriptions/contract_codes.txt')
+            table.description = read_file(description_path)
+            logging.info('Creating table: ' + json.dumps(table.to_api_repr()))
+            table = client.create_table(table)
+            assert table.table_id == temp_table_name
+
+            # Query from raw to temporary table
+            query_job_config = bigquery.QueryJobConfig()
+            # Finishes faster, query limit for concurrent interactive queries is 50
+            query_job_config.priority = bigquery.QueryPriority.INTERACTIVE
+            query_job_config.destination = temp_table_ref
+
+            sql_path = os.path.join(dags_folder, 'resources/stages/enrich/sqls/contract_codes.sql')
+            sql_template = read_file(sql_path)
+            sql = kwargs['task'].render_template('', sql_template, template_context)
+            print('Enrichment sql:')
+            print(sql)
+
+            query_job = client.query(sql, location='US', job_config=query_job_config)
+            submit_bigquery_job(query_job, query_job_config)
+            assert query_job.state == 'DONE'
+
+            if load_all_partitions:
+                # Copy temporary table to destination
+                copy_job_config = bigquery.CopyJobConfig()
+                copy_job_config.write_disposition = 'WRITE_TRUNCATE'
+                dest_table_name = 'contract_codes'
+                dest_table_ref = client.dataset(dataset_name, project=destination_dataset_project_id).table(dest_table_name)
+                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                submit_bigquery_job(copy_job, copy_job_config)
+                assert copy_job.state == 'DONE'
+            else:
+                pass
+                # TODO
+
+            # Delete temp table
+            client.delete_table(temp_table_ref)
+
+        enrich_operator = PythonOperator(
+            task_id='enrich_contract_codes',
+            python_callable=enrich_task,
+            provide_context=True,
+            execution_timeout=timedelta(minutes=60),
+            dag=dag
+        )
+
+        if dependencies is not None and len(dependencies) > 0:
+            for dependency in dependencies:
+                dependency >> enrich_operator
+        return enrich_operator
 
     load_contract_codes_task = add_load_tasks()
+    enrich_blocks_task = add_enrich_tasks(dependencies=[load_contract_codes_task])
 
     return dag
