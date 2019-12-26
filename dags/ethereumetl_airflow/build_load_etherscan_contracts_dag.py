@@ -95,7 +95,7 @@ def build_load_etherscan_contracts_dag(
 
     def add_load_tasks(allow_quoted_newlines=False):
         wait_sensor = GoogleCloudStorageObjectSensor(
-            task_id='wait_latest_contract_codes',
+            task_id='wait_latest_verified_contracts',
             timeout=60 * 60,
             poke_interval=60,
             bucket=output_bucket,
@@ -107,7 +107,7 @@ def build_load_etherscan_contracts_dag(
         def load_task():
             client = bigquery.Client()
             job_config = bigquery.LoadJobConfig()
-            schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/contract_codes.json')
+            schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/verified_contracts.json')
             job_config.schema = read_bigquery_schema_from_file(schema_path)
             job_config.source_format = bigquery.SourceFormat.CSV
             job_config.skip_leading_rows = 1
@@ -118,13 +118,13 @@ def build_load_etherscan_contracts_dag(
             export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
             uri = '{export_location_uri}/contract_codes/*.csv'.format(
                 export_location_uri=export_location_uri)
-            table_ref = client.dataset(dataset_name_raw).table('contract_codes')
+            table_ref = client.dataset(dataset_name_raw).table('verified_contracts')
             load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
             submit_bigquery_job(load_job, job_config)
             assert load_job.state == 'DONE'
 
         load_operator = PythonOperator(
-            task_id='load_contract_codes',
+            task_id='load_verified_contracts',
             python_callable=load_task,
             execution_timeout=timedelta(minutes=30),
             dag=dag
@@ -145,15 +145,15 @@ def build_load_etherscan_contracts_dag(
             # when writeDisposition is WRITE_TRUNCATE
 
             # Create a temporary table
-            temp_table_name = 'contract_codes_{milliseconds}'.format(milliseconds=int(round(time.time() * 1000)))
+            temp_table_name = 'verified_contracts_{milliseconds}'.format(milliseconds=int(round(time.time() * 1000)))
             temp_table_ref = client.dataset(dataset_name_temp).table(temp_table_name)
 
-            schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/contract_codes.json')
+            schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/verified_contracts.json')
             schema = read_bigquery_schema_from_file(schema_path)
             table = bigquery.Table(temp_table_ref, schema=schema)
 
             description_path = os.path.join(
-                dags_folder, 'resources/stages/enrich/descriptions/contract_codes.txt')
+                dags_folder, 'resources/stages/enrich/descriptions/verified_contracts.txt')
             table.description = read_file(description_path)
             logging.info('Creating table: ' + json.dumps(table.to_api_repr()))
             table = client.create_table(table)
@@ -165,7 +165,7 @@ def build_load_etherscan_contracts_dag(
             query_job_config.priority = bigquery.QueryPriority.INTERACTIVE
             query_job_config.destination = temp_table_ref
 
-            sql_path = os.path.join(dags_folder, 'resources/stages/enrich/sqls/contract_codes.sql')
+            sql_path = os.path.join(dags_folder, 'resources/stages/enrich/sqls/verified_contracts.sql')
             sql_template = read_file(sql_path)
             sql = kwargs['task'].render_template('', sql_template, template_context)
             print('Enrichment sql:')
@@ -179,7 +179,7 @@ def build_load_etherscan_contracts_dag(
                 # Copy temporary table to destination
                 copy_job_config = bigquery.CopyJobConfig()
                 copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-                dest_table_name = 'contract_codes'
+                dest_table_name = 'verified_contracts'
                 dest_table_ref = client.dataset(dataset_name, project=destination_dataset_project_id).table(dest_table_name)
                 copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
                 submit_bigquery_job(copy_job, copy_job_config)
@@ -192,7 +192,7 @@ def build_load_etherscan_contracts_dag(
             client.delete_table(temp_table_ref)
 
         enrich_operator = PythonOperator(
-            task_id='enrich_contract_codes',
+            task_id='enrich_verified_contracts',
             python_callable=enrich_task,
             provide_context=True,
             execution_timeout=timedelta(minutes=60),
@@ -204,7 +204,7 @@ def build_load_etherscan_contracts_dag(
                 dependency >> enrich_operator
         return enrich_operator
 
-    load_contract_codes_task = add_load_tasks()
-    enrich_blocks_task = add_enrich_tasks(dependencies=[load_contract_codes_task])
+    load_verified_contracts_task = add_load_tasks()
+    enrich_verified_contracts_task = add_enrich_tasks(dependencies=[load_verified_contracts_task])
 
     return dag
