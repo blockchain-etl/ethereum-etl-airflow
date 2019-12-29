@@ -1,0 +1,101 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_chestType",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "_chestAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "_tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_tokenAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_totalPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_lunaCashbackAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "ChestPurchased",
+            "type": "event"
+        },
+        "contract_address": "0x2299a91cc0bffd8c7f71349da8ab03527b79724f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_chestType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_chestAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_totalPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_lunaCashbackAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LandSale_v2_event_ChestPurchased"
+    }
+}

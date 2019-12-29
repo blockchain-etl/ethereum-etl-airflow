@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_quantity",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RewardedAxiesRedeemed",
+            "type": "event"
+        },
+        "contract_address": "0x3d5be9a472d6b5c8d45b4b3a3bffb80e0c52ef15",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_quantity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AxiePresaleExtended_event_RewardedAxiesRedeemed"
+    }
+}

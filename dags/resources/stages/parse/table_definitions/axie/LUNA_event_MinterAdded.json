@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_minter",
+                    "type": "address"
+                }
+            ],
+            "name": "MinterAdded",
+            "type": "event"
+        },
+        "contract_address": "0x92bf969865c80eda082fd5d8b4e28da4d58e1c3a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_minter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LUNA_event_MinterAdded"
+    }
+}

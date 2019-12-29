@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_sireId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "_matronId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_totalPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_winner",
+                    "type": "address"
+                }
+            ],
+            "name": "AuctionSuccessful",
+            "type": "event"
+        },
+        "contract_address": "0x60ce035dc589c3fd185b224a7ca03c598948973b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_sireId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_matronId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_totalPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_winner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AxieSiringClockAuction_event_AuctionSuccessful"
+    }
+}

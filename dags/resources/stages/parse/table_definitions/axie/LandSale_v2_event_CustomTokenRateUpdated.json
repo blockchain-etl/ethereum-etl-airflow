@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_quoteTokenAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_rate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CustomTokenRateUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x2299a91cc0bffd8c7f71349da8ab03527b79724f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_tokenAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_quoteTokenAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_rate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LandSale_v2_event_CustomTokenRateUpdated"
+    }
+}

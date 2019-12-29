@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Paused",
+            "type": "event"
+        },
+        "contract_address": "0x2299a91cc0bffd8c7f71349da8ab03527b79724f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LandSale_v2_event_Paused"
+    }
+}

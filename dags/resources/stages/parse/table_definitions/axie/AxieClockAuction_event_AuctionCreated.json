@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_nftAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_startingPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_endingPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_duration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_seller",
+                    "type": "address"
+                }
+            ],
+            "name": "AuctionCreated",
+            "type": "event"
+        },
+        "contract_address": "0xf4985070ce32b6b1994329df787d1acc9a2dd9e2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_nftAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_startingPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_endingPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_duration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_seller",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AxieClockAuction_event_AuctionCreated"
+    }
+}
