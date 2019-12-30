@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "adopter",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "clazz",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "quantity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "referrer",
+                    "type": "address"
+                }
+            ],
+            "name": "AxiesAdopted",
+            "type": "event"
+        },
+        "contract_address": "0xb28a3dd24036151c819c6d401f7a222d9aa3671b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "adopter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "clazz",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quantity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referrer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AxiePresale_event_AxiesAdopted"
+    }
+}

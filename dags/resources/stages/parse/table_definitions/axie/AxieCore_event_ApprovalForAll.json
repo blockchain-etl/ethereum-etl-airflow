@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "ApprovalForAll",
+            "type": "event"
+        },
+        "contract_address": "0xf5b0a3efb8e8e4c201e2a935f110eaaf3ffecb8d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_approved",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AxieCore_event_ApprovalForAll"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_oldAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0x92bf969865c80eda082fd5d8b4e28da4d58e1c3a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_oldAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LUNA_event_AdminChanged"
+    }
+}
