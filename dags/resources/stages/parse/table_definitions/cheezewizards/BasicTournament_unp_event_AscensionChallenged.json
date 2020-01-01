@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "ascendingWizardId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "challengingWizardId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "commitment",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "AscensionChallenged",
+            "type": "event"
+        },
+        "contract_address": "0xdd903896aacc543abeef0deea9b2a27496f762ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "ascendingWizardId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "challengingWizardId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "commitment",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BasicTournament_event_AscensionChallenged"
+    }
+}

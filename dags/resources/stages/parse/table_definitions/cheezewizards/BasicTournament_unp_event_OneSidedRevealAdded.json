@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "duelId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "committingWizardId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "otherWizardId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OneSidedRevealAdded",
+            "type": "event"
+        },
+        "contract_address": "0xdd903896aacc543abeef0deea9b2a27496f762ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "duelId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "committingWizardId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "otherWizardId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BasicTournament_event_OneSidedRevealAdded"
+    }
+}
