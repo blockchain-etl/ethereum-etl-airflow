@@ -26,6 +26,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "WizardGuild_event_SeriesClose"
+        "table_name": "WizardGuild_event_v1_SeriesClose"
     }
 }

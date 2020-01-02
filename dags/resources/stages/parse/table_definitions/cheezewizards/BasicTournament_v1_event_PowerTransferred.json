@@ -56,6 +56,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "BasicTournament_event_PowerTransferred"
+        "table_name": "BasicTournament_event_v1_PowerTransferred"
     }
 }

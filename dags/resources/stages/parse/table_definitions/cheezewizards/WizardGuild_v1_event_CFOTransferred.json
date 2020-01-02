@@ -36,6 +36,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "WizardGuild_event_CFOTransferred"
+        "table_name": "WizardGuild_event_v1_CFOTransferred"
     }
 }

@@ -36,6 +36,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "BasicTournament_event_PrizeClaimed"
+        "table_name": "BasicTournament_event_v1_PrizeClaimed"
     }
 }

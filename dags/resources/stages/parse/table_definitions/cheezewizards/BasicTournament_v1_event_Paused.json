@@ -26,6 +26,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "BasicTournament_event_Paused"
+        "table_name": "BasicTournament_event_v1_Paused"
     }
 }

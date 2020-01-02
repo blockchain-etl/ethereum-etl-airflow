@@ -36,6 +36,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "InauguralGateKeeper_event_CFOTransferred"
+        "table_name": "InauguralGateKeeper_v1_event_CFOTransferred"
     }
 }

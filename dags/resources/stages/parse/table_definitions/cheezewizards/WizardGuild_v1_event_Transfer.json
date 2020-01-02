@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "WizardGuild_event_Transfer"
+        "table_name": "WizardGuild_event_v1_Transfer"
     }
 }
