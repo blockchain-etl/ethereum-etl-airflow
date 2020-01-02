@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LandSale_event_CustomTokenRateUpdated"
+        "table_name": "LandSale_v3_event_CustomTokenRateUpdated"
     }
 }

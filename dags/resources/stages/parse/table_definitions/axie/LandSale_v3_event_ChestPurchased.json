@@ -96,6 +96,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LandSale_event_ChestPurchased"
+        "table_name": "LandSale_v3_event_ChestPurchased"
     }
 }

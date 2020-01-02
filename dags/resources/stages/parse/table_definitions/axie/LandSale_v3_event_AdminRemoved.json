@@ -26,6 +26,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LandSale_event_AdminRemoved"
+        "table_name": "LandSale_v3_event_AdminRemoved"
     }
 }

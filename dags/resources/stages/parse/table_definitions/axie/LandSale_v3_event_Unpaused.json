@@ -14,6 +14,6 @@
         "dataset_name": "axie",
         "schema": [],
         "table_description": "",
-        "table_name": "LandSale_event_Unpaused"
+        "table_name": "LandSale_v3_event_Unpaused"
     }
 }
