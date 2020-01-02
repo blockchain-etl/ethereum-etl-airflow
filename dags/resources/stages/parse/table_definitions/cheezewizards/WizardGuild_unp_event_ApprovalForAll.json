@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "ApprovalForAll",
+            "type": "event"
+        },
+        "contract_address": "0x35b7838dd7507ada69610397a85310ae0abd5034",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "approved",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WizardGuild_event_ApprovalForAll"
+    }
+}

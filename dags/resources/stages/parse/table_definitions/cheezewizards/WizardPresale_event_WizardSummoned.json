@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "element",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "power",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WizardSummoned",
+            "type": "event"
+        },
+        "contract_address": "0x2f4bdafb22bd92aa7b7552d270376de8edccbc1e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "element",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "power",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WizardPresale_event_WizardSummoned"
+    }
+}

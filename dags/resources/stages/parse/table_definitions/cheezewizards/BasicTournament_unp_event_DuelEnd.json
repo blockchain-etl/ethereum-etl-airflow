@@ -1,0 +1,91 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "duelId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "wizardId1",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "wizardId2",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "moveSet1",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "moveSet2",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "power1",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "power2",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DuelEnd",
+            "type": "event"
+        },
+        "contract_address": "0xdd903896aacc543abeef0deea9b2a27496f762ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "duelId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wizardId1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wizardId2",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "moveSet1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "moveSet2",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "power1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "power2",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BasicTournament_event_DuelEnd"
+    }
+}

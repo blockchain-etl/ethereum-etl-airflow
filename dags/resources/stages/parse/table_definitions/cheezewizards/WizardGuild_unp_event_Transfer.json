@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "contract_address": "0x35b7838dd7507ada69610397a85310ae0abd5034",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WizardGuild_event_Transfer"
+    }
+}
