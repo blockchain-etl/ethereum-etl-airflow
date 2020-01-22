@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "previousCoo",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newCoo",
+                    "type": "address"
+                }
+            ],
+            "name": "COOTransferred",
+            "type": "event"
+        },
+        "contract_address": "0x68132eb4bfd84b2d6a23ec4fb1b106f5c8574f2d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousCoo",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newCoo",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "InauguralGateKeeper_v1_event_COOTransferred"
+    }
+}

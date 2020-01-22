@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "sendingWizId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "receivingWizId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountTransferred",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "reason",
+                    "type": "uint8"
+                }
+            ],
+            "name": "PowerTransferred",
+            "type": "event"
+        },
+        "contract_address": "0xdd903896aacc543abeef0deea9b2a27496f762ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "sendingWizId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receivingWizId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountTransferred",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reason",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BasicTournament_event_PowerTransferred"
+    }
+}

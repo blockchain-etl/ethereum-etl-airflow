@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Unpause",
+            "type": "event"
+        },
+        "contract_address": "0xf4985070ce32b6b1994329df787d1acc9a2dd9e2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [],
+        "table_description": "",
+        "table_name": "AxieClockAuction_event_Unpause"
+    }
+}

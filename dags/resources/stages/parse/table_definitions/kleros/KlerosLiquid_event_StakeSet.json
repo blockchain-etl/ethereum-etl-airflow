@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_subcourtID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_stake",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "name": "_newTotalStake",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StakeSet",
+            "type": "event"
+        },
+        "contract_address": "0x988b3a538b618c7a603e1c11ab82cd16dbe28069",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kleros",
+        "schema": [
+            {
+                "description": "",
+                "name": "_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_subcourtID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_stake",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newTotalStake",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KlerosLiquid_event_StakeSet"
+    }
+}

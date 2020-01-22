@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_oldAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0x66536a95cc83ee672da58b6d3e57f7582184d5df",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_oldAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LandSale_v3_event_AdminChanged"
+    }
+}

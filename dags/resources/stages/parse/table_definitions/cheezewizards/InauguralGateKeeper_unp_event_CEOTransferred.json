@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "previousCeo",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newCeo",
+                    "type": "address"
+                }
+            ],
+            "name": "CEOTransferred",
+            "type": "event"
+        },
+        "contract_address": "0x673b537956a28e40aaa8d929fd1b6688c1583dda",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cheezewizards",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousCeo",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newCeo",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "InauguralGateKeeper_event_CEOTransferred"
+    }
+}

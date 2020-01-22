@@ -30,7 +30,8 @@ def build_parse_dag(
         notification_emails=None,
         parse_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *',
-        parse_all_partitions=True
+        parse_all_partitions=True,
+        send_success_email=False
 ):
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
 
@@ -170,6 +171,7 @@ def build_parse_dag(
         task_id='wait_for_ethereum_load_dag',
         external_dag_id='ethereum_load_dag',
         external_task_id='verify_logs_have_latest',
+        execution_delta=timedelta(hours=1),
         dag=dag)
 
     files = get_list_of_json_files(dataset_folder)
@@ -183,7 +185,7 @@ def build_parse_dag(
         wait_for_ethereum_load_dag_task >> task
         all_parse_tasks.append(task)
 
-    if notification_emails and len(notification_emails) > 0:
+    if notification_emails and len(notification_emails) > 0 and send_success_email:
         send_email_task = EmailOperator(
             task_id='send_email',
             to=[email.strip() for email in notification_emails.split(',')],

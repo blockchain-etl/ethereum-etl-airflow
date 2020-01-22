@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Pause",
+            "type": "event"
+        },
+        "contract_address": "0xb28a3dd24036151c819c6d401f7a222d9aa3671b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [],
+        "table_description": "",
+        "table_name": "AxiePresale_event_Pause"
+    }
+}
