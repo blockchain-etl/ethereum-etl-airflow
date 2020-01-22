@@ -138,7 +138,7 @@ def build_load_dag(
         wait_sensor >> load_operator
         return load_operator
 
-    def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependencies=None):
+    def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependencies=None, always_load_all_partitions=False):
         def enrich_task(ds, **kwargs):
             template_context = kwargs.copy()
             template_context['ds'] = ds
@@ -182,7 +182,7 @@ def build_load_dag(
             submit_bigquery_job(query_job, query_job_config)
             assert query_job.state == 'DONE'
 
-            if load_all_partitions:
+            if load_all_partitions or always_load_all_partitions:
                 # Copy temporary table to destination
                 copy_job_config = bigquery.CopyJobConfig()
                 copy_job_config.write_disposition = 'WRITE_TRUNCATE'
@@ -270,6 +270,10 @@ def build_load_dag(
     enrich_tokens_task = add_enrich_tasks(
         'tokens', dependencies=[load_blocks_task, load_tokens_task])
 
+    calculate_balances_task = add_enrich_tasks(
+        'balances', dependencies=[enrich_blocks_task, enrich_transactions_task, enrich_traces_task],
+        time_partitioning_field=None, always_load_all_partitions=True)
+
     verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
     verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
     verify_transactions_count_task = add_verify_tasks('transactions_count',
@@ -302,5 +306,6 @@ def build_load_dag(
         verify_traces_transactions_count_task >> send_email_task
         verify_traces_contracts_count_task >> send_email_task
         enrich_tokens_task >> send_email_task
+        calculate_balances_task >> send_email_task
 
     return dag

@@ -1,0 +1,13 @@
+[
+    {
+        "name": "address",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "Address"
+    },
+    {
+        "name": "eth_balance",
+        "type": "NUMERIC",
+        "description": "Ether balance"
+    }
+]
