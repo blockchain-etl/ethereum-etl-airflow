@@ -22,8 +22,6 @@ def build_load_dag(
     dag_id,
     output_bucket,
     destination_dataset_project_id,
-    copy_dataset_project_id=None,
-    copy_dataset_name=None,
     chain='ethereum',
     notification_emails=None,
     load_start_date=datetime(2018, 7, 1),
@@ -184,43 +182,36 @@ def build_load_dag(
             submit_bigquery_job(query_job, query_job_config)
             assert query_job.state == 'DONE'
 
-            all_destination_projects = [(destination_dataset_project_id, dataset_name)]
-            if copy_dataset_project_id is not None and len(copy_dataset_project_id) > 0 \
-                    and copy_dataset_name is not None and len(copy_dataset_name) > 0:
-                all_destination_projects.append((copy_dataset_project_id, copy_dataset_name))
-
             if load_all_partitions:
-                for dest_project, dest_dataset_name in all_destination_projects:
-                    # Copy temporary table to destination
-                    copy_job_config = bigquery.CopyJobConfig()
-                    copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-                    dest_table_name = '{task}'.format(task=task)
-                    dest_table_ref = client.dataset(dest_dataset_name, project=dest_project).table(dest_table_name)
-                    copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
-                    submit_bigquery_job(copy_job, copy_job_config)
-                    assert copy_job.state == 'DONE'
+                # Copy temporary table to destination
+                copy_job_config = bigquery.CopyJobConfig()
+                copy_job_config.write_disposition = 'WRITE_TRUNCATE'
+                dest_table_name = '{task}'.format(task=task)
+                dest_table_ref = client.dataset(dataset_name, project=destination_dataset_project_id).table(dest_table_name)
+                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                submit_bigquery_job(copy_job, copy_job_config)
+                assert copy_job.state == 'DONE'
             else:
-                for dest_project, dest_dataset_name in all_destination_projects:
-                    # Merge
-                    # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
-                    merge_job_config = bigquery.QueryJobConfig()
-                    # Finishes faster, query limit for concurrent interactive queries is 50
-                    merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
+                # Merge
+                # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
+                merge_job_config = bigquery.QueryJobConfig()
+                # Finishes faster, query limit for concurrent interactive queries is 50
+                merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
 
-                    merge_sql_path = os.path.join(
-                        dags_folder, 'resources/stages/enrich/sqls/merge/merge_{task}.sql'.format(task=task))
-                    merge_sql_template = read_file(merge_sql_path)
+                merge_sql_path = os.path.join(
+                    dags_folder, 'resources/stages/enrich/sqls/merge/merge_{task}.sql'.format(task=task))
+                merge_sql_template = read_file(merge_sql_path)
 
-                    merge_template_context = template_context.copy()
-                    merge_template_context['params']['source_table'] = temp_table_name
-                    merge_template_context['params']['destination_dataset_project_id'] = dest_project
-                    merge_template_context['params']['destination_dataset_name'] = dest_dataset_name
-                    merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
-                    print('Merge sql:')
-                    print(merge_sql)
-                    merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
-                    submit_bigquery_job(merge_job, merge_job_config)
-                    assert merge_job.state == 'DONE'
+                merge_template_context = template_context.copy()
+                merge_template_context['params']['source_table'] = temp_table_name
+                merge_template_context['params']['destination_dataset_project_id'] = destination_dataset_project_id
+                merge_template_context['params']['destination_dataset_name'] = dataset_name
+                merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
+                print('Merge sql:')
+                print(merge_sql)
+                merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
+                submit_bigquery_job(merge_job, merge_job_config)
+                assert merge_job.state == 'DONE'
 
             # Delete temp table
             client.delete_table(temp_table_ref)
