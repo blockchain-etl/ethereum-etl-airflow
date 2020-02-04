@@ -11,6 +11,7 @@ insert (
     ,log_index
     {% else %}
     ,trace_address
+    ,error
     {% endif %}
 
     {% for column in params.columns %}
@@ -25,6 +26,7 @@ insert (
     ,log_index
     {% else %}
     ,trace_address
+    ,error
     {% endif %}
 
     {% for column in params.columns %}

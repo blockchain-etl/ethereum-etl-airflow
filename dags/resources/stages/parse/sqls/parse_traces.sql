@@ -1,33 +1,36 @@
 CREATE TEMP FUNCTION
-  PARSE_TRACE(data STRING)
-  RETURNS STRUCT<{{params.struct_fields}}>
-  LANGUAGE js AS """
-    function getKeys(params, key) {
-        var result = [];
-        
-        for (var i = 0; i < params.length; i++) { 
-            var value = params[i][key];
-            if (!value) {
-                value = '';
+    PARSE_TRACE(data STRING)
+    RETURNS STRUCT<{{params.struct_fields}}, error STRING>
+    LANGUAGE js AS """
+    var abi = {{params.abi}};
+    var interface_instance = new ethers.utils.Interface([abi]);
+
+    var result = {};
+    try {
+        var parsedTransaction = interface_instance.parseTransaction({data: data});
+        var parsedArgs = parsedTransaction.args;
+
+        if (parsedArgs && parsedArgs.length >= abi.inputs.length) {
+            for (var i = 0; i < abi.inputs.length; i++) {
+                var paramName = abi.inputs[i].name;
+                var paramValue = parsedArgs[i];
+                if (abi.inputs[i].type === 'address' && typeof paramValue === 'string') {
+                    // For consistency all addresses are lowercase.
+                    paramValue = paramValue.toLowerCase();
+                }
+                result[paramName] = paramValue;
             }
-            result.push(value);
+        } else {
+            result['error'] = 'Parsed transaction args is empty or has too few values.';
         }
-    
-        return result;
+    } catch (e) {
+        result['error'] = e.message;
     }
 
-    function decodeInput(method, data) {
-        const outputNames = getKeys(method.inputs, 'name', true);
-        const outputTypes = getKeys(method.inputs, 'type');
-    
-        return abi.decodeParams(outputNames, outputTypes, data, false);
-    }
-
-    var methodAbi = {{params.abi}};
-    return decodeInput(methodAbi, data);
+    return result;
 """
 OPTIONS
-  ( library="https://storage.googleapis.com/ethlab-183014.appspot.com/ethjs-abi.js" );
+  ( library="gs://blockchain-etl-bigquery/ethers.js" );
 
 WITH parsed_traces AS
 (SELECT
@@ -49,6 +52,9 @@ SELECT
      block_timestamp
      ,block_number
      ,transaction_hash
-     ,trace_address{% for column in params.columns %}
-    ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
+     ,trace_address
+     ,parsed.error AS error
+     {% for column in params.columns %}
+    ,parsed.{{ column }} AS `{{ column }}`
+    {% endfor %}
 FROM parsed_traces

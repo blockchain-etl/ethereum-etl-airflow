@@ -205,6 +205,7 @@ def abi_to_event_topic(abi):
 def abi_to_method_selector(abi):
     return '0x' + function_abi_to_4byte_selector(abi).hex()
 
+
 def get_list_of_json_files(dataset_folder):
     logging.info('get_list_of_json_files')
     logging.info(dataset_folder)
@@ -276,6 +277,10 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             name='trace_address',
             field_type='STRING',
             description='Comma separated list of trace address in call tree'))
+        result.append(bigquery.SchemaField(
+            name='error',
+            field_type='STRING',
+            description='Error in case input parsing failed'))
     for field in schema:
         result.append(bigquery.SchemaField(
             name=field.get('name'),

@@ -1,0 +1,60 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x080bf510fcbf18b91105470639e9561022937712",
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "salt",
+                    "type": "uint256"
+                },
+                {
+                    "name": "signerAddress",
+                    "type": "address"
+                },
+                {
+                    "name": "data",
+                    "type": "bytes"
+                },
+                {
+                    "name": "signature",
+                    "type": "bytes"
+                }
+            ],
+            "name": "executeTransaction",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v2_1_call_executeTransaction",
+        "table_description": "Function calls in this table are invoked on contract with address 0x080bf510fcbf18b91105470639e9561022937712.",
+        "schema": [
+            {
+                "name": "salt",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "signerAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "data",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "signature",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
