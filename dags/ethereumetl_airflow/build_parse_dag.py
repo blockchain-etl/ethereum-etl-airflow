@@ -212,7 +212,7 @@ def build_parse_dag(
             html_content='Ethereum ETL Airflow Parse DAG Succeeded for {}'.format(dag_id),
             dag=dag
         )
-        for task in all_parse_tasks:
+        for task in all_parse_tasks.values():
             task >> send_email_task
     return dag
 
