@@ -14,6 +14,7 @@ WITH parsed_logs AS
     ,logs.block_number AS block_number
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
+    ,logs.address AS contract_address
     ,PARSE_LOG(logs.data, logs.topics) AS parsed
 FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.logs` AS logs
 WHERE address in (
@@ -34,6 +35,8 @@ SELECT
      block_timestamp
      ,block_number
      ,transaction_hash
-     ,log_index{% for column in params.columns %}
+     ,log_index
+     ,contract_address
+     {% for column in params.columns %}
     ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
 FROM parsed_logs

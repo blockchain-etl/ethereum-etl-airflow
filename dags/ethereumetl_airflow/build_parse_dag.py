@@ -291,6 +291,11 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             field_type='INTEGER',
             mode='REQUIRED',
             description='Integer of the log index position in the block of this event'))
+        result.append(bigquery.SchemaField(
+            name='contract_address',
+            field_type='STRING',
+            mode='REQUIRED',
+            description='Address of the contract that produced the log'))
     elif parser_type == 'trace':
         result.append(bigquery.SchemaField(
             name='trace_address',
