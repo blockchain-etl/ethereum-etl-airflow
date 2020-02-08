@@ -3,6 +3,7 @@ from __future__ import print_function
 import json
 import logging
 import os
+import re
 import time
 from datetime import datetime, timedelta
 from glob import glob
@@ -64,6 +65,8 @@ def build_parse_dag(
         schedule_interval=schedule_interval,
         default_args=default_dag_args)
 
+    ref_regex = re.compile("ref\(\'([^']+)\'\)")
+
     def create_task_and_add_to_dag(task_config):
         dataset_name = 'ethereum_' + task_config['table']['dataset_name']
         table_name = task_config['table']['table_name']
@@ -88,6 +91,12 @@ def build_parse_dag(
                 template_context['params']['method_selector'] = abi_to_method_selector(parser['abi'])
             template_context['params']['struct_fields'] = create_struct_string_from_schema(schema)
             template_context['params']['parse_all_partitions'] = parse_all_partitions
+
+            contract_address = parser['contract_address']
+            if not contract_address.startswith('0x'):
+                contract_address_sql = replace_refs(contract_address, ref_regex, parse_destination_dataset_project_id, dataset_name)
+                template_context['params']['parser']['contract_address_sql'] = contract_address_sql
+
             client = bigquery.Client()
 
             # # # Create a temporary table
@@ -165,7 +174,9 @@ def build_parse_dag(
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )
-        return parsing_operator
+
+        ref_dependencies = ref_regex.findall(parser['contract_address'])
+        return parsing_operator, ref_dependencies
 
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
         task_id='wait_for_ethereum_load_dag',
@@ -178,12 +189,20 @@ def build_parse_dag(
     logging.info('files')
     logging.info(files)
 
-    all_parse_tasks = []
+    all_parse_tasks = {}
+    task_dependencies = {}
     for f in files:
         task_config = read_json_file(f)
-        task = create_task_and_add_to_dag(task_config)
+        task, dependencies = create_task_and_add_to_dag(task_config)
         wait_for_ethereum_load_dag_task >> task
-        all_parse_tasks.append(task)
+        all_parse_tasks[task.task_id] = task
+        task_dependencies[task.task_id] = dependencies
+
+    for task, dependencies in task_dependencies.items():
+        for dependency in dependencies:
+            if dependency not in all_parse_tasks:
+                raise ValueError('Table {} is not found in the the dataset. Check your ref() in contract_address field.'.format(dependency))
+            all_parse_tasks[dependency] >> all_parse_tasks[task]
 
     if notification_emails and len(notification_emails) > 0 and send_success_email:
         send_email_task = EmailOperator(
@@ -193,7 +212,7 @@ def build_parse_dag(
             html_content='Ethereum ETL Airflow Parse DAG Succeeded for {}'.format(dag_id),
             dag=dag
         )
-        for task in all_parse_tasks:
+        for task in all_parse_tasks.values():
             task >> send_email_task
     return dag
 
@@ -272,6 +291,11 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             field_type='INTEGER',
             mode='REQUIRED',
             description='Integer of the log index position in the block of this event'))
+        result.append(bigquery.SchemaField(
+            name='contract_address',
+            field_type='STRING',
+            mode='REQUIRED',
+            description='Address of the contract that produced the log'))
     elif parser_type == 'trace':
         result.append(bigquery.SchemaField(
             name='trace_address',
@@ -312,3 +336,10 @@ def create_dataset(client, dataset_name):
         logging.info('Dataset already exists')
 
     return dataset
+
+
+def replace_refs(contract_address, ref_regex, project_id, dataset_name):
+    return ref_regex.sub(
+        "`{project_id}.{dataset_name}.\g<1>`".format(
+            project_id=project_id, dataset_name=dataset_name
+        ), contract_address)

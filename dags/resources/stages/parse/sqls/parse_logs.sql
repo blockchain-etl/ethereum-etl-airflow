@@ -14,9 +14,16 @@ WITH parsed_logs AS
     ,logs.block_number AS block_number
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
+    ,logs.address AS contract_address
     ,PARSE_LOG(logs.data, logs.topics) AS parsed
 FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.logs` AS logs
-WHERE address = '{{params.parser.contract_address}}'
+WHERE address in (
+    {% if params.parser.contract_address_sql %}
+    {{params.parser.contract_address_sql}}
+    {% else %}
+    '{{params.parser.contract_address}}'
+    {% endif %}
+  )
   AND topics[SAFE_OFFSET(0)] = '{{params.event_topic}}'
   {% if params.parse_all_partitions %}
   AND DATE(block_timestamp) <= '{{ds}}'
@@ -28,6 +35,8 @@ SELECT
      block_timestamp
      ,block_number
      ,transaction_hash
-     ,log_index{% for column in params.columns %}
+     ,log_index
+     ,contract_address
+     {% for column in params.columns %}
     ,parsed.{{ column }} AS `{{ column }}`{% endfor %}
 FROM parsed_logs

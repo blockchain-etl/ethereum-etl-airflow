@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "store",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "name": "symbol",
+                    "type": "string"
+                }
+            ],
+            "name": "StoreLaunch",
+            "type": "event"
+        },
+        "contract_address": "0x0e6541374e9d7dee2c53c15a1a00fbe41c7b7198",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "mintbase",
+        "schema": [
+            {
+                "description": "",
+                "name": "store",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ThingFactory_event_StoreLaunch"
+    }
+}
