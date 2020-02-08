@@ -9,6 +9,7 @@ insert (
 
     {% if params.parser.type == 'log' %}
     ,log_index
+    ,contract_address
     {% else %}
     ,trace_address
     ,error
@@ -24,6 +25,7 @@ insert (
 
     {% if params.parser.type == 'log' %}
     ,log_index
+    ,contract_address
     {% else %}
     ,trace_address
     ,error
