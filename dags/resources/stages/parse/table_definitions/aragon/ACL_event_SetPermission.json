@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "entity",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "app",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "role",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "allowed",
+                    "type": "bool"
+                }
+            ],
+            "name": "SetPermission",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0xe3262375f45a6e2026b7e7b18c2b807434f2508fe1a2a3dfb493c7df8f4aad6a'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "entity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "app",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "role",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allowed",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ACL_event_SetPermission"
+    }
+}

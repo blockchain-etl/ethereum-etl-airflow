@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "vestingId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "nonVestedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RevokeVesting",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0x6b20a3010614eeebf2138ccec99f028a61c811b3b1a3343b6ff635985c75c91f'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vestingId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonVestedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TokenManager_event_RevokeVesting"
+    }
+}

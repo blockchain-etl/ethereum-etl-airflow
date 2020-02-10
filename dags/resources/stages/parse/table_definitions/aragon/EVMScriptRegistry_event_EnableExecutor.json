@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "executorId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "executorAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "EnableExecutor",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0xddbcfd564f642ab5627cf68b9b7d374fb4f8a36e941a75d89c87998cef03bd61'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "executorId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "executorAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EVMScriptRegistry_event_EnableExecutor"
+    }
+}
