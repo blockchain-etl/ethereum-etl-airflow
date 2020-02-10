@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "voteId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "creator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "metadata",
+                    "type": "string"
+                }
+            ],
+            "name": "StartVote",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0x9fa3927f639745e587912d4b0fea7ef9013bf93fb907d29faeab57417ba6e1d4'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "voteId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "metadata",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Voting_event_StartVote"
+    }
+}
