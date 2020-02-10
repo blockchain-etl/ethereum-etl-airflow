@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "namespace",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "appId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "app",
+                    "type": "address"
+                }
+            ],
+            "name": "SetApp",
+            "type": "event"
+        },
+        "contract_address": "select dao from ref('DAOFactory_event_DeployDAO')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "namespace",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "appId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "app",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Kernel_event_SetApp"
+    }
+}
