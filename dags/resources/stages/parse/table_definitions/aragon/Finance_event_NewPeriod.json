@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "periodId",
+                    "type": "uint64"
+                },
+                {
+                    "indexed": false,
+                    "name": "periodStarts",
+                    "type": "uint64"
+                },
+                {
+                    "indexed": false,
+                    "name": "periodEnds",
+                    "type": "uint64"
+                }
+            ],
+            "name": "NewPeriod",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0xbf8491150dafc5dcaee5b861414dca922de09ccffa344964ae167212e8c673ae'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "periodId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "periodStarts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "periodEnds",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Finance_event_NewPeriod"
+    }
+}
