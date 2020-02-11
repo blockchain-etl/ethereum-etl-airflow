@@ -22,7 +22,7 @@
             "name": "TokenPurchase",
             "type": "event"
         },
-        "contract_address": "0x077d52b047735976dfda76fef74d4d988ac25196",
+        "contract_address": "SELECT exchange FROM ref('Vyper_contract_event_NewExchange')",
         "field_mapping": {},
         "type": "log"
     },
