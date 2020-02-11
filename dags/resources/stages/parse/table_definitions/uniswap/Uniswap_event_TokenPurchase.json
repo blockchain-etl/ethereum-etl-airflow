@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "eth_sold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "tokens_bought",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenPurchase",
+            "type": "event"
+        },
+        "contract_address": "SELECT exchange FROM ref('Vyper_contract_event_NewExchange')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "eth_sold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens_bought",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Uniswap_event_TokenPurchase"
+    }
+}
