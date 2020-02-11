@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "exchange",
+                    "type": "address"
+                }
+            ],
+            "name": "NewExchange",
+            "type": "event"
+        },
+        "contract_address": "0xc0a47dfe034b400b47bdad5fecda2621de6c4d95",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchange",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vyper_contract_event_NewExchange"
+    }
+}
