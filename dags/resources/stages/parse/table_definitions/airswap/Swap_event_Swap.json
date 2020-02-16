@@ -1,0 +1,175 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "signerWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "signerAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "signerId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "signerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "senderWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "senderAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "senderId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "senderToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "affiliateWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "affiliateAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "affiliateId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "affiliateToken",
+                    "type": "address"
+                }
+            ],
+            "name": "Swap",
+            "type": "event"
+        },
+        "contract_address": "0x4572f2554421bd64bef1c22c8a81840e8d496bea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "airswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Swap_event_Swap"
+    }
+}
