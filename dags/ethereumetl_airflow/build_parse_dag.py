@@ -268,7 +268,7 @@ def create_struct_string_from_schema(schema):
         if field.get('mode') == 'REPEATED':
             return 'ARRAY<{type}>'.format(type=field.get('type'))
         else:
-            field.get('type')
+            return field.get('type')
 
     def get_field_def(field):
         return '`' + field.get('name') + '` ' + get_type(field)
