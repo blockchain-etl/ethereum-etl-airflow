@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_ens",
+                    "type": "string"
+                }
+            ],
+            "name": "Registered",
+            "type": "event"
+        },
+        "contract_address": "0x30b406dd3cc461112bcd0dd2a2eaf0641c1a1d62",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_ens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ArgentENSManager_event_Registered"
+    }
+}

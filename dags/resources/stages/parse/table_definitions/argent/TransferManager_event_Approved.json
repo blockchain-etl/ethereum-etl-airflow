@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "wallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "spender",
+                    "type": "address"
+                }
+            ],
+            "name": "Approved",
+            "type": "event"
+        },
+        "contract_address": "0x2b6d87f12b106e1d3fa7137494751566329d1045",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "wallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "spender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TransferManager_event_Approved"
+    }
+}
