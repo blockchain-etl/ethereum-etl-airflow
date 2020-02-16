@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "wallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "success",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "name": "signedHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "TransactionExecuted",
+            "type": "event"
+        },
+        "contract_address": "0x2b6d87f12b106e1d3fa7137494751566329d1045",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "wallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "success",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signedHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TransferManager_event_TransactionExecuted"
+    }
+}

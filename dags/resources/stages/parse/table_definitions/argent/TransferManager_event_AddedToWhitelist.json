@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "wallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "whitelistAfter",
+                    "type": "uint64"
+                }
+            ],
+            "name": "AddedToWhitelist",
+            "type": "event"
+        },
+        "contract_address": "0x2b6d87f12b106e1d3fa7137494751566329d1045",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "wallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "whitelistAfter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TransferManager_event_AddedToWhitelist"
+    }
+}
