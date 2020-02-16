@@ -264,7 +264,17 @@ def read_json_file(filepath):
 
 
 def create_struct_string_from_schema(schema):
-    return ', '.join(['`' + f.get('name') + '` ' + f.get('type') for f in schema])
+    def get_type(field):
+        if field.get('mode') == 'REPEATED':
+            return 'ARRAY<{type}>'.format(type=field.get('type'))
+        else:
+            field.get('type')
+
+    def get_field_def(field):
+        return '`' + field.get('name') + '` ' + get_type(field)
+
+    fields = [get_field_def(field) for field in schema]
+    return ', '.join(fields)
 
 
 def read_bigquery_schema_from_dict(schema, parser_type):
