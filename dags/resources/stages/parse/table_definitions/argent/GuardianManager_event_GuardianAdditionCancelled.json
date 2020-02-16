@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "wallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "guardian",
+                    "type": "address"
+                }
+            ],
+            "name": "GuardianAdditionCancelled",
+            "type": "event"
+        },
+        "contract_address": "0xff5a7299ff6f0fbaad9b38906b77d08c0fbdc9a7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "wallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "guardian",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GuardianManager_event_GuardianAdditionCancelled"
+    }
+}
