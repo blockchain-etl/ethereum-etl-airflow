@@ -41,22 +41,22 @@
             {
                 "description": "",
                 "name": "tradeValues",
-                "type": "STRING"
+                "type": "ARRAY<STRING>"
             },
             {
                 "description": "",
                 "name": "tradeAddresses",
-                "type": "STRING"
+                "type": "ARRAY<STRING>"
             },
             {
                 "description": "",
                 "name": "v",
-                "type": "STRING"
+                "type": "ARRAY<STRING>"
             },
             {
                 "description": "",
                 "name": "rs",
-                "type": "STRING"
+                "type": "ARRAY<STRING>"
             }
         ],
         "table_description": "",
