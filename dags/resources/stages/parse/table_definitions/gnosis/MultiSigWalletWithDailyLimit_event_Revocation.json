@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "transactionId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Revocation",
+            "type": "event"
+        },
+        "contract_address": "SELECT instantiation FROM ref('MultiSigWalletWithDailyLimitFactory_event_ContractInstantiation')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gnosis",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transactionId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MultiSigWalletWithDailyLimit_event_Revocation"
+    }
+}
