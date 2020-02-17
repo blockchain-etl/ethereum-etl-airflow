@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "src",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "dst",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "rad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "move",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x35d1b3f3d7966a1dfe207aa4514c12a259a0492b",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "src",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dst",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rad",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vat_call_move"
+    }
+}
