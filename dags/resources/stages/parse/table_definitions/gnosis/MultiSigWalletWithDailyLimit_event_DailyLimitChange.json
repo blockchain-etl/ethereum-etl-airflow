@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "dailyLimit",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DailyLimitChange",
+            "type": "event"
+        },
+        "contract_address": "SELECT instantiation FROM ref('MultiSigWalletWithDailyLimitFactory_event_ContractInstantiation')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gnosis",
+        "schema": [
+            {
+                "description": "",
+                "name": "dailyLimit",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MultiSigWalletWithDailyLimit_event_DailyLimitChange"
+    }
+}
