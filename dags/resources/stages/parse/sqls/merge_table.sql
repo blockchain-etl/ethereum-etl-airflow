@@ -12,6 +12,7 @@ insert (
     ,contract_address
     {% else %}
     ,trace_address
+    ,status
     ,error
     {% endif %}
 
@@ -28,6 +29,7 @@ insert (
     ,contract_address
     {% else %}
     ,trace_address
+    ,status
     ,error
     {% endif %}
 

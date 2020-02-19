@@ -38,6 +38,7 @@ WITH parsed_traces AS
     ,traces.block_number AS block_number
     ,traces.transaction_hash AS transaction_hash
     ,traces.trace_address AS trace_address
+    ,traces.status AS status
     ,PARSE_TRACE(traces.input) AS parsed
 FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.traces` AS traces
 WHERE to_address = '{{params.parser.contract_address}}'
@@ -53,6 +54,7 @@ SELECT
      ,block_number
      ,transaction_hash
      ,trace_address
+     ,status
      ,parsed.error AS error
      {% for column in params.columns %}
     ,parsed.{{ column }} AS `{{ column }}`
