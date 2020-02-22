@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "total",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Staked",
+            "type": "event"
+        },
+        "contract_address": "0x0f7471c1df2021ff45f112878f755aabe7aa16bf",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "total",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "JurorsRegistry_event_Staked"
+    }
+}
