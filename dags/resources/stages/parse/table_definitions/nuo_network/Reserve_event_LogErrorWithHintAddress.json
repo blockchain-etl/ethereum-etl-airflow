@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "addressValue",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "methodSig",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "name": "errMsg",
+                    "type": "string"
+                }
+            ],
+            "name": "LogErrorWithHintAddress",
+            "type": "event"
+        },
+        "contract_address": "0x64d14595152b430cf6940da15c6e39545c7c5b7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "addressValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "methodSig",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "errMsg",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Reserve_event_LogErrorWithHintAddress"
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogTransferFromAccount",
+            "type": "event"
+        },
+        "contract_address": "0xaf38668f4719ecf9452dc0300be3f6c83cbf3721",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KernelEscrow_event_LogTransferFromAccount"
+    }
+}

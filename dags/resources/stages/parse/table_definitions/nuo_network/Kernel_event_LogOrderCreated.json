@@ -1,0 +1,121 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "principalToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "collateralToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "byUser",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "principalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "collateralAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "premium",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "expirationTimestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogOrderCreated",
+            "type": "event"
+        },
+        "contract_address": "0x0f99be6639b1ddfbedf319b4de67e558a41aa6ea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "principalToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "byUser",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "principalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "premium",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expirationTimestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Kernel_event_LogOrderCreated"
+    }
+}

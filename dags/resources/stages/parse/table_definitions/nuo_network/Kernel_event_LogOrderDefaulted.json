@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "reason",
+                    "type": "string"
+                }
+            ],
+            "name": "LogOrderDefaulted",
+            "type": "event"
+        },
+        "contract_address": "0x0f99be6639b1ddfbedf319b4de67e558a41aa6ea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reason",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Kernel_event_LogOrderDefaulted"
+    }
+}

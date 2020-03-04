@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": true,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "sig",
+                    "type": "bytes4"
+                },
+                {
+                    "indexed": true,
+                    "name": "guy",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "foo",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "bar",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "wad",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fax",
+                    "type": "bytes"
+                }
+            ],
+            "name": "LogNote",
+            "type": "event"
+        },
+        "contract_address": "0x64d14595152b430cf6940da15c6e39545c7c5b7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "sig",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "guy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "foo",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bar",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fax",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Reserve_event_LogNote"
+    }
+}
