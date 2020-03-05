@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "bytes32Value",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "methodSig",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "name": "errMsg",
+                    "type": "string"
+                }
+            ],
+            "name": "LogErrorWithHintBytes32",
+            "type": "event"
+        },
+        "contract_address": "0x64d14595152b430cf6940da15c6e39545c7c5b7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "bytes32Value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "methodSig",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "errMsg",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Reserve_event_LogErrorWithHintBytes32"
+    }
+}
