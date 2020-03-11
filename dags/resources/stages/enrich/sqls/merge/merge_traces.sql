@@ -19,6 +19,7 @@ insert (
     trace_address,
     error,
     status,
+    trace_id,
     block_timestamp,
     block_number,
     block_hash
@@ -39,6 +40,7 @@ insert (
     trace_address,
     error,
     status,
+    trace_id,
     block_timestamp,
     block_number,
     block_hash

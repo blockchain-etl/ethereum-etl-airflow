@@ -81,6 +81,11 @@
         "description": "Either 1 (success) or 0 (failure, due to any operation that can cause the call itself or any top-level call to revert)"
     },
     {
+        "name": "trace_id",
+        "type": "STRING",
+        "description": "Unique string that identifies the trace. For transaction_scoped traces it is {trace_type}_{transaction_hash}_{trace_address}. For block-scoped traces it is {trace_type}_{block_number}_{index_within_block}"
+    },
+    {
         "name": "block_timestamp",
         "type": "TIMESTAMP",
         "mode": "REQUIRED",
