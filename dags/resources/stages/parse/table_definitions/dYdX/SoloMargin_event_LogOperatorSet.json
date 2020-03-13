@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "trusted",
+                    "type": "bool"
+                }
+            ],
+            "name": "LogOperatorSet",
+            "type": "event"
+        },
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trusted",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SoloMargin_event_LogOperatorSet"
+    }
+}
