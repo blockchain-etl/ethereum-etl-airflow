@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "redeemer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redeemAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redeemTokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redeem",
+            "type": "event"
+        },
+        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "redeemer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "redeemAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "redeemTokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cDAI_event_Redeem"
+    }
+}

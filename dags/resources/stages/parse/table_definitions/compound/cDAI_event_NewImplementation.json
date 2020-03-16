@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldImplementation",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newImplementation",
+                    "type": "address"
+                }
+            ],
+            "name": "NewImplementation",
+            "type": "event"
+        },
+        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldImplementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newImplementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cDAI_event_NewImplementation"
+    }
+}
