@@ -39,8 +39,8 @@
     },
     "table": {
         "dataset_name": "compound",
-        "table_name": "cDAI_event_RepayBorrow",
-        "table_description": "cToken for DAI on the Compound Protocol.",
+        "table_name": "cSAI_event_RepayBorrow",
+        "table_description": "cToken for SAI on the Compound Protocol.",
         "schema": [
             {
                 "name": "payer",
