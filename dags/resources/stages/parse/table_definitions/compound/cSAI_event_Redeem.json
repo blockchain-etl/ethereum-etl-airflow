@@ -1,54 +1,52 @@
 {
     "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "address",
                     "name": "redeemer",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
                     "name": "redeemAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
                     "name": "redeemTokens",
                     "type": "uint256"
                 }
             ],
             "name": "Redeem",
-            "type": "event"
+            "type": "event",
+            "signature": "0xe5b754fb1abb7f01b499791d0b820ae3b6af3424ac1c59768edb53f4ec31a929"
         },
-        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
-        "field_mapping": {},
-        "type": "log"
+        "field_mapping": {}
     },
     "table": {
         "dataset_name": "compound",
+        "table_name": "cSAI_event_Redeem",
+        "table_description": "cToken for SAI on the Compound Protocol.",
         "schema": [
             {
-                "description": "",
                 "name": "redeemer",
+                "description": "",
                 "type": "STRING"
             },
             {
-                "description": "",
                 "name": "redeemAmount",
+                "description": "",
                 "type": "STRING"
             },
             {
-                "description": "",
                 "name": "redeemTokens",
+                "description": "",
                 "type": "STRING"
             }
-        ],
-        "table_description": "",
-        "table_name": "cDAI_event_Redeem"
+        ]
     }
 }

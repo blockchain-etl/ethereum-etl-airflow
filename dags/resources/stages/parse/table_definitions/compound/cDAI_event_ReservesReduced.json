@@ -1,52 +1,54 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
+                    "internalType": "address",
                     "name": "admin",
                     "type": "address"
                 },
                 {
                     "indexed": false,
+                    "internalType": "uint256",
                     "name": "reduceAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
+                    "internalType": "uint256",
                     "name": "newTotalReserves",
                     "type": "uint256"
                 }
             ],
             "name": "ReservesReduced",
-            "type": "event",
-            "signature": "0x3bad0c59cf2f06e7314077049f48a93578cd16f5ef92329f1dab1420a99c177e"
+            "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
         "dataset_name": "compound",
-        "table_name": "cDAI_event_ReservesReduced",
-        "table_description": "cToken for DAI on the Compound Protocol.",
         "schema": [
             {
+                "description": "",
                 "name": "admin",
-                "description": "",
                 "type": "STRING"
             },
             {
+                "description": "",
                 "name": "reduceAmount",
-                "description": "",
                 "type": "STRING"
             },
             {
-                "name": "newTotalReserves",
                 "description": "",
+                "name": "newTotalReserves",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "cDAI_event_ReservesReduced"
     }
 }

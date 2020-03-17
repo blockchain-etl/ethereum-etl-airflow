@@ -5,18 +5,18 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "contract InterestRateModel",
-                    "name": "oldInterestRateModel",
+                    "internalType": "address",
+                    "name": "oldImplementation",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "contract InterestRateModel",
-                    "name": "newInterestRateModel",
+                    "internalType": "address",
+                    "name": "newImplementation",
                     "type": "address"
                 }
             ],
-            "name": "NewMarketInterestRateModel",
+            "name": "NewImplementation",
             "type": "event"
         },
         "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "oldInterestRateModel",
+                "name": "oldImplementation",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newInterestRateModel",
+                "name": "newImplementation",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "cDAI_event_NewMarketInterestRateModel"
+        "table_name": "cDAI_event_NewImplementation"
     }
 }

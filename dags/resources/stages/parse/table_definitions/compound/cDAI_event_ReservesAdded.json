@@ -6,35 +6,23 @@
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "liquidator",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "borrower",
+                    "name": "benefactor",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "repayAmount",
+                    "name": "addAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "cTokenCollateral",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "seizeTokens",
+                    "name": "newTotalReserves",
                     "type": "uint256"
                 }
             ],
-            "name": "LiquidateBorrow",
+            "name": "ReservesAdded",
             "type": "event"
         },
         "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
@@ -46,31 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "liquidator",
+                "name": "benefactor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "borrower",
+                "name": "addAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "repayAmount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "cTokenCollateral",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "seizeTokens",
+                "name": "newTotalReserves",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "cDAI_event_LiquidateBorrow"
+        "table_name": "cDAI_event_ReservesAdded"
     }
 }

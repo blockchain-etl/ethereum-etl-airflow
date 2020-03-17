@@ -1,54 +1,52 @@
 {
     "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "redeemer",
+                    "name": "admin",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "redeemAmount",
+                    "name": "reduceAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "redeemTokens",
+                    "name": "newTotalReserves",
                     "type": "uint256"
                 }
             ],
-            "name": "Redeem",
-            "type": "event"
+            "name": "ReservesReduced",
+            "type": "event",
+            "signature": "0x3bad0c59cf2f06e7314077049f48a93578cd16f5ef92329f1dab1420a99c177e"
         },
-        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
-        "field_mapping": {},
-        "type": "log"
+        "field_mapping": {}
     },
     "table": {
         "dataset_name": "compound",
+        "table_name": "cSAI_event_ReservesReduced",
+        "table_description": "cToken for SAI on the Compound Protocol.",
         "schema": [
             {
+                "name": "admin",
                 "description": "",
-                "name": "redeemer",
                 "type": "STRING"
             },
             {
+                "name": "reduceAmount",
                 "description": "",
-                "name": "redeemAmount",
                 "type": "STRING"
             },
             {
+                "name": "newTotalReserves",
                 "description": "",
-                "name": "redeemTokens",
                 "type": "STRING"
             }
-        ],
-        "table_description": "",
-        "table_name": "cDAI_event_Redeem"
+        ]
     }
 }

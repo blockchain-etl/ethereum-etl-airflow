@@ -1,43 +1,42 @@
 {
     "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "oldPendingAdmin",
+                    "name": "oldComptroller",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "newPendingAdmin",
+                    "name": "newComptroller",
                     "type": "address"
                 }
             ],
-            "name": "NewPendingAdmin",
-            "type": "event"
+            "name": "NewComptroller",
+            "type": "event",
+            "signature": "0x7ac369dbd14fa5ea3f473ed67cc9d598964a77501540ba6751eb0b3decf5870d"
         },
-        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
-        "field_mapping": {},
-        "type": "log"
+        "field_mapping": {}
     },
     "table": {
         "dataset_name": "compound",
+        "table_name": "cSAI_event_NewComptroller",
+        "table_description": "cToken for SAI on the Compound Protocol.",
         "schema": [
             {
+                "name": "oldComptroller",
                 "description": "",
-                "name": "oldPendingAdmin",
                 "type": "STRING"
             },
             {
+                "name": "newComptroller",
                 "description": "",
-                "name": "newPendingAdmin",
                 "type": "STRING"
             }
-        ],
-        "table_description": "",
-        "table_name": "cDAI_event_NewPendingAdmin"
+        ]
     }
 }
