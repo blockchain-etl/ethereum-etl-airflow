@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "roundId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "startedBy",
+                    "type": "address"
+                }
+            ],
+            "name": "NewRound",
+            "type": "event"
+        },
+        "contract_address": "0x25fa978ea1a7dc9bdc33a2959b9053eae57169b5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "roundId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startedBy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_EUR_USD_event_NewRound"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "id",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "ChainlinkRequested",
+            "type": "event"
+        },
+        "contract_address": "0x25fa978ea1a7dc9bdc33a2959b9053eae57169b5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_EUR_USD_event_ChainlinkRequested"
+    }
+}

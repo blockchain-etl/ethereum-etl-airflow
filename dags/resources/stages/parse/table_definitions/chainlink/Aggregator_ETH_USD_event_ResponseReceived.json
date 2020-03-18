@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "response",
+                    "type": "int256"
+                },
+                {
+                    "indexed": true,
+                    "name": "answerId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "sender",
+                    "type": "address"
+                }
+            ],
+            "name": "ResponseReceived",
+            "type": "event"
+        },
+        "contract_address": "0x79febf6b9f76853edbcbc913e6aae8232cfb9de9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "response",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "answerId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_ETH_USD_event_ResponseReceived"
+    }
+}

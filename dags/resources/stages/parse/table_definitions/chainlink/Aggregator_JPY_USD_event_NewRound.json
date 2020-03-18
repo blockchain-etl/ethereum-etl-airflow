@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "roundId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "startedBy",
+                    "type": "address"
+                }
+            ],
+            "name": "NewRound",
+            "type": "event"
+        },
+        "contract_address": "0xe1407bfaa6b5965bad1c9f38316a3b655a09d8a6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "roundId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startedBy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_JPY_USD_event_NewRound"
+    }
+}
