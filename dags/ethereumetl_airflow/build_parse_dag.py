@@ -133,7 +133,7 @@ def build_parse_dag(
                 # Copy temporary table to destination
                 copy_job_config = bigquery.CopyJobConfig()
                 copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-                dataset = create_dataset(dataset_name, parse_destination_dataset_project_id)
+                dataset = create_dataset(client, dataset_name, parse_destination_dataset_project_id)
                 dest_table_ref = dataset.table(table_name)
                 copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
                 submit_bigquery_job(copy_job, copy_job_config)
