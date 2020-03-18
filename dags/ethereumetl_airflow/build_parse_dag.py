@@ -133,7 +133,8 @@ def build_parse_dag(
                 # Copy temporary table to destination
                 copy_job_config = bigquery.CopyJobConfig()
                 copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-                dest_table_ref = client.dataset(dataset_name, project=parse_destination_dataset_project_id).table(table_name)
+                dataset = create_dataset(dataset_name, parse_destination_dataset_project_id)
+                dest_table_ref = dataset.table(table_name)
                 copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
                 submit_bigquery_job(copy_job, copy_job_config)
                 assert copy_job.state == 'DONE'
@@ -341,8 +342,8 @@ def submit_bigquery_job(job, configuration):
         raise
 
 
-def create_dataset(client, dataset_name):
-    dataset = client.dataset(dataset_name)
+def create_dataset(client, dataset_name, project=None):
+    dataset = client.dataset(dataset_name, project=project)
     try:
         logging.info('Creating new dataset ...')
         dataset = client.create_dataset(dataset)
