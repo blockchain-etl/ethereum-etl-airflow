@@ -5,6 +5,13 @@ import re
 import time
 
 from eth_utils import event_abi_to_log_topic, function_abi_to_4byte_selector
+from google.cloud import bigquery
+
+from google.api_core.exceptions import Conflict
+
+from ethereumetl_airflow.common import submit_bigquery_job
+
+ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
 
 def create_or_update_table_from_table_definition(
@@ -117,14 +124,6 @@ def create_or_update_table_from_table_definition(
 
     # Delete temp table
     bigquery_client.delete_table(temp_table_ref)
-from google.cloud import bigquery
-
-from google.api_core.exceptions import Conflict
-
-from ethereumetl_airflow.common import submit_bigquery_job
-
-
-ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
 
 def abi_to_event_topic(abi):
@@ -156,9 +155,10 @@ def create_struct_string_from_schema(schema):
 
 def replace_refs(contract_address, ref_regex, project_id, dataset_name):
     return ref_regex.sub(
-        "`{project_id}.{dataset_name}.\g<1>`".format(
+        r"`{project_id}.{dataset_name}.\g<1>`".format(
             project_id=project_id, dataset_name=dataset_name
         ), contract_address)
+
 
 def create_dataset(client, dataset_name, project=None):
     dataset = client.dataset(dataset_name, project=project)
@@ -194,7 +194,8 @@ def get_merge_table_sql_template(sqls_folder):
 
 
 def get_parse_sql_template(parser_type, sqls_folder):
-    return get_parse_logs_sql_template(sqls_folder) if parser_type == 'log' else get_parse_traces_sql_template(sqls_folder)
+    return get_parse_logs_sql_template(sqls_folder) if parser_type == 'log' else get_parse_traces_sql_template(
+        sqls_folder)
 
 
 def read_bigquery_schema_from_dict(schema, parser_type):
