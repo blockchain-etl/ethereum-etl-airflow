@@ -187,8 +187,8 @@
         "field_mapping": {}
     },
     "table": {
-        "dataset_name": "airswap",
-        "table_name": "AirSwapExchange_event_Canceled",
+        "dataset_name": "dydx",
+        "table_name": "SoloMargin_event_LogTrade",
         "table_description": "",
         "schema": [
             {
