@@ -1,6 +1,5 @@
 from __future__ import print_function
 
-import json
 import logging
 import os
 from datetime import datetime, timedelta
@@ -70,7 +69,7 @@ def build_parse_dag(
                 source_project_id=SOURCE_PROJECT_ID,
                 source_dataset_name=SOURCE_DATASET_NAME,
                 destination_project_id=parse_destination_dataset_project_id,
-                dags_folder=dags_folder,
+                sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
                 parse_all_partitions=parse_all_partitions,
                 airflow_task=kwargs['task']
             )

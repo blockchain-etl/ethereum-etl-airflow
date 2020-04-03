@@ -14,7 +14,7 @@ def create_or_update_table_from_table_definition(
         source_project_id,
         source_dataset_name,
         destination_project_id,
-        dags_folder,
+        sqls_folder,
         parse_all_partitions,
         airflow_task
 ):
@@ -70,7 +70,7 @@ def create_or_update_table_from_table_definition(
     job_config = bigquery.QueryJobConfig()
     job_config.priority = bigquery.QueryPriority.INTERACTIVE
     job_config.destination = temp_table_ref
-    sql_template = get_parse_sql_template(parser_type, dags_folder)
+    sql_template = get_parse_sql_template(parser_type, sqls_folder)
     sql = airflow_task.render_template('', sql_template, template_context)
     logging.info(sql)
     query_job = bigquery_client.query(sql, location='US', job_config=job_config)
@@ -101,7 +101,7 @@ def create_or_update_table_from_table_definition(
         # Finishes faster, query limit for concurrent interactive queries is 50
         merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
 
-        merge_sql_template = get_merge_table_sql_template(dags_folder)
+        merge_sql_template = get_merge_table_sql_template(sqls_folder)
         merge_template_context = template_context.copy()
         merge_template_context['params']['source_table'] = temp_table_name
         merge_template_context['params']['destination_dataset_project_id'] = destination_project_id
@@ -167,29 +167,29 @@ def create_dataset(client, dataset_name, project=None):
     return dataset
 
 
-def get_parse_logs_sql_template(dags_folder):
-    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_logs.sql')
+def get_parse_logs_sql_template(sqls_folder):
+    filepath = os.path.join(sqls_folder, 'parse_logs.sql')
     with open(filepath) as file_handle:
         content = file_handle.read()
         return content
 
 
-def get_parse_traces_sql_template(dags_folder):
-    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/parse_traces.sql')
+def get_parse_traces_sql_template(sqls_folder):
+    filepath = os.path.join(sqls_folder, 'parse_traces.sql')
     with open(filepath) as file_handle:
         content = file_handle.read()
         return content
 
 
-def get_merge_table_sql_template(dags_folder):
-    filepath = os.path.join(dags_folder, 'resources/stages/parse/sqls/merge_table.sql')
+def get_merge_table_sql_template(sqls_folder):
+    filepath = os.path.join(sqls_folder, 'merge_table.sql')
     with open(filepath) as file_handle:
         content = file_handle.read()
         return content
 
 
-def get_parse_sql_template(parser_type, dags_folder):
-    return get_parse_logs_sql_template(dags_folder) if parser_type == 'log' else get_parse_traces_sql_template(dags_folder)
+def get_parse_sql_template(parser_type, sqls_folder):
+    return get_parse_logs_sql_template(sqls_folder) if parser_type == 'log' else get_parse_traces_sql_template(sqls_folder)
 
 
 def read_bigquery_schema_from_dict(schema, parser_type):

@@ -3,6 +3,7 @@ import os
 from datetime import timedelta
 
 import airflow
+import pytest
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 
@@ -11,13 +12,16 @@ from ethereumetl_airflow.parse import create_or_update_table_from_table_definiti
 from tests.ethereumetl_airflow.mock_bigquery_client import MockBigqueryClient
 
 
-DAGS_FOLDER = 'dags/'
-table_definitions_folder = os.path.join(DAGS_FOLDER, 'resources/stages/parse/table_definitions/')
+sqls_folder = 'dags/resources/stages/parse/sqls'
+table_definitions_folder = 'dags/resources/stages/parse/table_definitions'
 
-
-def test_create_or_update_table_from_table_definition_ens_Registrar0_event_NewBid():
+@pytest.mark.parametrize("table_definition_file", [
+    ('ens/Registrar0_event_NewBid.json'),
+    ('uniswap/Uniswap_event_AddLiquidity.json'),
+])
+def test_create_or_update_table_from_table_definition(table_definition_file):
     bigquery_client = MockBigqueryClient()
-    table_definition = read_json_file(table_definitions_folder + 'ens/Registrar0_event_NewBid.json')
+    table_definition = read_json_file(os.path.join(table_definitions_folder, table_definition_file))
 
     create_or_update_table_from_table_definition(
         bigquery_client=bigquery_client,
@@ -25,14 +29,19 @@ def test_create_or_update_table_from_table_definition_ens_Registrar0_event_NewBi
         ds='2020-01-01',
         source_project_id='bigquery-public-data',
         source_dataset_name='crypto_ethereum',
-        destination_project_id='my-project',
-        dags_folder=DAGS_FOLDER,
+        destination_project_id='blockchain-etl',
+        sqls_folder=sqls_folder,
         parse_all_partitions=True,
         airflow_task=create_dummy_airflow_task()
     )
 
     assert len(bigquery_client.queries) == 1
-    assert trim(bigquery_client.queries[0]) == trim(read_resource('expected_parse_log_ens_Registrar0_event_NewBid.sql'))
+    expected_filename = table_definition_file_to_expected_file(table_definition_file)
+    assert trim(bigquery_client.queries[0]) == trim(read_resource(expected_filename))
+
+
+def table_definition_file_to_expected_file(table_definition_file):
+    return 'expected_' + table_definition_file.replace('/', '_') + '.sql'
 
 
 def create_dummy_airflow_task():
