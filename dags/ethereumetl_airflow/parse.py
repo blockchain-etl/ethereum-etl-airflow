@@ -136,10 +136,15 @@ def abi_to_method_selector(abi):
 
 def create_struct_string_from_schema(schema):
     def get_type(field):
-        if field.get('mode') == 'REPEATED':
-            return 'ARRAY<{type}>'.format(type=field.get('type'))
+        if field.get('type') == 'RECORD':
+            type_str = 'STRUCT<{struct_string}>'.format(struct_string=create_struct_string_from_schema(field.get('fields')))
         else:
-            return field.get('type')
+            type_str = field.get('type')
+
+        if field.get('mode') == 'REPEATED':
+            type_str = 'ARRAY<{type}>'.format(type=type_str)
+
+        return type_str
 
     def get_field_def(field):
         return '`' + field.get('name') + '` ' + get_type(field)

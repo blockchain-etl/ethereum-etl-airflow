@@ -18,6 +18,8 @@ table_definitions_folder = 'dags/resources/stages/parse/table_definitions'
 @pytest.mark.parametrize("table_definition_file", [
     ('ens/Registrar0_event_NewBid.json'),
     ('uniswap/Uniswap_event_AddLiquidity.json'),
+    ('dydx/SoloMargin_event_LogTrade.json'),
+    ('idex/Exchange_call_trade.json'),
 ])
 def test_create_or_update_table_from_table_definition(table_definition_file):
     bigquery_client = MockBigqueryClient()
