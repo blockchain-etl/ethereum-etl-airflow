@@ -14,6 +14,8 @@ from airflow.operators.python_operator import PythonOperator
 from google.cloud import bigquery
 from google.cloud.bigquery import TimePartitioning
 
+from ethereumetl_airflow.bigquery_utils import submit_bigquery_job
+
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
 
@@ -64,17 +66,6 @@ def build_load_dag(
         with open(filepath) as file_handle:
             content = file_handle.read()
             return content
-
-    def submit_bigquery_job(job, configuration):
-        try:
-            logging.info('Creating a job: ' + json.dumps(configuration.to_api_repr()))
-            result = job.result()
-            logging.info(result)
-            assert job.errors is None or len(job.errors) == 0
-            return result
-        except Exception:
-            logging.info(job.errors)
-            raise
 
     default_dag_args = {
         'depends_on_past': False,
