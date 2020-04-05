@@ -9,7 +9,7 @@ from google.cloud import bigquery
 
 from google.api_core.exceptions import Conflict
 
-from ethereumetl_airflow.common import submit_bigquery_job
+from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, read_bigquery_schema_from_json_recursive
 
 ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
@@ -137,7 +137,8 @@ def abi_to_method_selector(abi):
 def create_struct_string_from_schema(schema):
     def get_type(field):
         if field.get('type') == 'RECORD':
-            type_str = 'STRUCT<{struct_string}>'.format(struct_string=create_struct_string_from_schema(field.get('fields')))
+            type_str = 'STRUCT<{struct_string}>'.format(
+                struct_string=create_struct_string_from_schema(field.get('fields')))
         else:
             type_str = field.get('type')
 
@@ -240,10 +241,7 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             name='error',
             field_type='STRING',
             description='Error in case input parsing failed'))
-    for field in schema:
-        result.append(bigquery.SchemaField(
-            name=field.get('name'),
-            field_type=field.get('type', 'STRING'),
-            mode=field.get('mode', 'NULLABLE'),
-            description=field.get('description')))
+
+    result.extend(read_bigquery_schema_from_json_recursive(schema))
+
     return result
