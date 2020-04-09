@@ -92,6 +92,9 @@ def build_parse_dag(
         external_task_id='verify_logs_have_latest',
         execution_delta=timedelta(hours=1),
         priority_weight=0,
+        mode='reschedule',
+        poke_interval=5 * 60,
+        timeout=60 * 60 * 12,
         dag=dag)
 
     files = get_list_of_json_files(dataset_folder)
