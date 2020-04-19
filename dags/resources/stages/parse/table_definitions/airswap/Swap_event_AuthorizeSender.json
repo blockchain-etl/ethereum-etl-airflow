@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "authorizerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "authorizedSender",
+                    "type": "address"
+                }
+            ],
+            "name": "AuthorizeSender",
+            "type": "event"
+        },
+        "contract_address": "0x4572f2554421bd64bef1c22c8a81840e8d496bea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "airswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "authorizerAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "authorizedSender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Swap_event_AuthorizeSender"
+    }
+}

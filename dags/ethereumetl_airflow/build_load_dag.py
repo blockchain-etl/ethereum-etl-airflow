@@ -14,6 +14,8 @@ from airflow.operators.python_operator import PythonOperator
 from google.cloud import bigquery
 from google.cloud.bigquery import TimePartitioning
 
+from ethereumetl_airflow.bigquery_utils import submit_bigquery_job
+
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
 
@@ -22,8 +24,6 @@ def build_load_dag(
     dag_id,
     output_bucket,
     destination_dataset_project_id,
-    copy_dataset_project_id=None,
-    copy_dataset_name=None,
     chain='ethereum',
     notification_emails=None,
     load_start_date=datetime(2018, 7, 1),
@@ -66,17 +66,6 @@ def build_load_dag(
         with open(filepath) as file_handle:
             content = file_handle.read()
             return content
-
-    def submit_bigquery_job(job, configuration):
-        try:
-            logging.info('Creating a job: ' + json.dumps(configuration.to_api_repr()))
-            result = job.result()
-            logging.info(result)
-            assert job.errors is None or len(job.errors) == 0
-            return result
-        except Exception:
-            logging.info(job.errors)
-            raise
 
     default_dag_args = {
         'depends_on_past': False,
@@ -140,7 +129,7 @@ def build_load_dag(
         wait_sensor >> load_operator
         return load_operator
 
-    def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependencies=None):
+    def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependencies=None, always_load_all_partitions=False):
         def enrich_task(ds, **kwargs):
             template_context = kwargs.copy()
             template_context['ds'] = ds
@@ -184,43 +173,36 @@ def build_load_dag(
             submit_bigquery_job(query_job, query_job_config)
             assert query_job.state == 'DONE'
 
-            all_destination_projects = [(destination_dataset_project_id, dataset_name)]
-            if copy_dataset_project_id is not None and len(copy_dataset_project_id) > 0 \
-                    and copy_dataset_name is not None and len(copy_dataset_name) > 0:
-                all_destination_projects.append((copy_dataset_project_id, copy_dataset_name))
-
-            if load_all_partitions:
-                for dest_project, dest_dataset_name in all_destination_projects:
-                    # Copy temporary table to destination
-                    copy_job_config = bigquery.CopyJobConfig()
-                    copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-                    dest_table_name = '{task}'.format(task=task)
-                    dest_table_ref = client.dataset(dest_dataset_name, project=dest_project).table(dest_table_name)
-                    copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
-                    submit_bigquery_job(copy_job, copy_job_config)
-                    assert copy_job.state == 'DONE'
+            if load_all_partitions or always_load_all_partitions:
+                # Copy temporary table to destination
+                copy_job_config = bigquery.CopyJobConfig()
+                copy_job_config.write_disposition = 'WRITE_TRUNCATE'
+                dest_table_name = '{task}'.format(task=task)
+                dest_table_ref = client.dataset(dataset_name, project=destination_dataset_project_id).table(dest_table_name)
+                copy_job = client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
+                submit_bigquery_job(copy_job, copy_job_config)
+                assert copy_job.state == 'DONE'
             else:
-                for dest_project, dest_dataset_name in all_destination_projects:
-                    # Merge
-                    # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
-                    merge_job_config = bigquery.QueryJobConfig()
-                    # Finishes faster, query limit for concurrent interactive queries is 50
-                    merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
+                # Merge
+                # https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement
+                merge_job_config = bigquery.QueryJobConfig()
+                # Finishes faster, query limit for concurrent interactive queries is 50
+                merge_job_config.priority = bigquery.QueryPriority.INTERACTIVE
 
-                    merge_sql_path = os.path.join(
-                        dags_folder, 'resources/stages/enrich/sqls/merge/merge_{task}.sql'.format(task=task))
-                    merge_sql_template = read_file(merge_sql_path)
+                merge_sql_path = os.path.join(
+                    dags_folder, 'resources/stages/enrich/sqls/merge/merge_{task}.sql'.format(task=task))
+                merge_sql_template = read_file(merge_sql_path)
 
-                    merge_template_context = template_context.copy()
-                    merge_template_context['params']['source_table'] = temp_table_name
-                    merge_template_context['params']['destination_dataset_project_id'] = dest_project
-                    merge_template_context['params']['destination_dataset_name'] = dest_dataset_name
-                    merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
-                    print('Merge sql:')
-                    print(merge_sql)
-                    merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
-                    submit_bigquery_job(merge_job, merge_job_config)
-                    assert merge_job.state == 'DONE'
+                merge_template_context = template_context.copy()
+                merge_template_context['params']['source_table'] = temp_table_name
+                merge_template_context['params']['destination_dataset_project_id'] = destination_dataset_project_id
+                merge_template_context['params']['destination_dataset_name'] = dataset_name
+                merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
+                print('Merge sql:')
+                print(merge_sql)
+                merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
+                submit_bigquery_job(merge_job, merge_job_config)
+                assert merge_job.state == 'DONE'
 
             # Delete temp table
             client.delete_table(temp_table_ref)
@@ -279,6 +261,10 @@ def build_load_dag(
     enrich_tokens_task = add_enrich_tasks(
         'tokens', dependencies=[load_blocks_task, load_tokens_task])
 
+    calculate_balances_task = add_enrich_tasks(
+        'balances', dependencies=[enrich_blocks_task, enrich_transactions_task, enrich_traces_task],
+        time_partitioning_field=None, always_load_all_partitions=True)
+
     verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
     verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
     verify_transactions_count_task = add_verify_tasks('transactions_count',
@@ -311,5 +297,6 @@ def build_load_dag(
         verify_traces_transactions_count_task >> send_email_task
         verify_traces_contracts_count_task >> send_email_task
         enrich_tokens_task >> send_email_task
+        calculate_balances_task >> send_email_task
 
     return dag

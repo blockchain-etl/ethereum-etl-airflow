@@ -15,6 +15,7 @@ SELECT
     traces.trace_address,
     traces.error,
     traces.status,
+    traces.trace_id,
     TIMESTAMP_SECONDS(blocks.timestamp) AS block_timestamp,
     blocks.number AS block_number,
     blocks.hash AS block_hash

@@ -1,0 +1,371 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "takerAccountOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerAccountNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "makerAccountOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerAccountNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "inputMarket",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "outputMarket",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "deltaWei",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "name": "newPar",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "takerInputUpdate",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "deltaWei",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "name": "newPar",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "takerOutputUpdate",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "deltaWei",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "name": "newPar",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "makerInputUpdate",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "deltaWei",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "name": "newPar",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "makerOutputUpdate",
+                    "type": "tuple"
+                },
+                {
+                    "indexed": false,
+                    "name": "autoTrader",
+                    "type": "address"
+                }
+            ],
+            "name": "LogTrade",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "table_name": "SoloMargin_event_LogTrade",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "takerAccountOwner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerAccountNumber",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAccountOwner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerAccountNumber",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "inputMarket",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "outputMarket",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerInputUpdate",
+                "description": "",
+                "type": "RECORD",
+                "fields": [
+                    {
+                        "name": "deltaWei",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "newPar",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "takerOutputUpdate",
+                "description": "",
+                "type": "RECORD",
+                "fields": [
+                    {
+                        "name": "deltaWei",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "newPar",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "makerInputUpdate",
+                "description": "",
+                "type": "RECORD",
+                "fields": [
+                    {
+                        "name": "deltaWei",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "newPar",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "makerOutputUpdate",
+                "description": "",
+                "type": "RECORD",
+                "fields": [
+                    {
+                        "name": "deltaWei",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "newPar",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "autoTrader",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

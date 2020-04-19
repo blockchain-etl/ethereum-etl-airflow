@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldPendingAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newPendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingAdmin",
+            "type": "event",
+            "signature": "0xca4f2f25d0898edd99413412fb94012f9e54ec8142f9b093e7720646a95b16a9"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cSAI_event_NewPendingAdmin",
+        "table_description": "cToken for SAI on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldPendingAdmin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newPendingAdmin",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

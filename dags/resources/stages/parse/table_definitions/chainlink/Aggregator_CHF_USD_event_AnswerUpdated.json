@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "current",
+                    "type": "int256"
+                },
+                {
+                    "indexed": true,
+                    "name": "roundId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AnswerUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x02d5c618dbc591544b19d0bf13543c0728a3c4ec",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "current",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "roundId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_CHF_USD_event_AnswerUpdated"
+    }
+}

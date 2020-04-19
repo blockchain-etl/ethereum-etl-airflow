@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "id",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "ChainlinkFulfilled",
+            "type": "event"
+        },
+        "contract_address": "0x02d5c618dbc591544b19d0bf13543c0728a3c4ec",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_CHF_USD_event_ChainlinkFulfilled"
+    }
+}

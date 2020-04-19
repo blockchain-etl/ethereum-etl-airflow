@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "instantiation",
+                    "type": "address"
+                }
+            ],
+            "name": "ContractInstantiation",
+            "type": "event"
+        },
+        "contract_address": "0x6e95c8e8557abc08b46f3c347ba06f8dc012763f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gnosis",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "instantiation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MultiSigWalletWithDailyLimitFactory_event_ContractInstantiation"
+    }
+}

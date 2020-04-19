@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x0eee3e3828a45f7601d5f54bf49bb01d1a9df5ea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lendfme",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MoneyMarket_event_NewAdmin"
+    }
+}

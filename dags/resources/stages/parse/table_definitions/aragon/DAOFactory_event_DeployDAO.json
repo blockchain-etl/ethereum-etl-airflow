@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "dao",
+                    "type": "address"
+                }
+            ],
+            "name": "DeployDAO",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x595b34c93aa2c2ba0a38daeede629a0dfbdcc559', '0xc29f0599df12eb4cbe1a34354c4bac6d944071d1', '0xb9da44c051c6cc9e04b7e0f95e95d69c6a6d8031'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "dao",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DAOFactory_event_DeployDAO"
+    }
+}

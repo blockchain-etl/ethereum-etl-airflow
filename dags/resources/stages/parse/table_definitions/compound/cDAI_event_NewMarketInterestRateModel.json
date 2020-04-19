@@ -1,42 +1,43 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
+                    "internalType": "contract InterestRateModel",
                     "name": "oldInterestRateModel",
                     "type": "address"
                 },
                 {
                     "indexed": false,
+                    "internalType": "contract InterestRateModel",
                     "name": "newInterestRateModel",
                     "type": "address"
                 }
             ],
             "name": "NewMarketInterestRateModel",
-            "type": "event",
-            "signature": "0xedffc32e068c7c95dfd4bdfd5c4d939a084d6b11c4199eac8436ed234d72f926"
+            "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
         "dataset_name": "compound",
-        "table_name": "cDAI_event_NewMarketInterestRateModel",
-        "table_description": "cToken for DAI on the Compound Protocol.",
         "schema": [
             {
-                "name": "oldInterestRateModel",
                 "description": "",
+                "name": "oldInterestRateModel",
                 "type": "STRING"
             },
             {
-                "name": "newInterestRateModel",
                 "description": "",
+                "name": "newInterestRateModel",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "cDAI_event_NewMarketInterestRateModel"
     }
 }

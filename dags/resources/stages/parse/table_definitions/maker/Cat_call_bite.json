@@ -1,0 +1,50 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "ilk",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "address",
+                    "name": "urn",
+                    "type": "address"
+                }
+            ],
+            "name": "bite",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x78f2c2af65126834c51822f56be0d7469d7a523e",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "ilk",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "urn",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Cat_call_bite"
+    }
+}

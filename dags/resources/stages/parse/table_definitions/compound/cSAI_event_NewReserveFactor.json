@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldReserveFactorMantissa",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newReserveFactorMantissa",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewReserveFactor",
+            "type": "event",
+            "signature": "0xaaa68312e2ea9d50e16af5068410ab56e1a1fd06037b1a35664812c30f821460"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cSAI_event_NewReserveFactor",
+        "table_description": "cToken for SAI on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldReserveFactorMantissa",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newReserveFactorMantissa",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

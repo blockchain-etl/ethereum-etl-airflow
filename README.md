@@ -15,8 +15,16 @@ Read this article: https://cloud.google.com/blog/products/data-analytics/ethereu
 
 ### Create Google Cloud Composer environment
 
-Create environment here, https://console.cloud.google.com/composer, use Python version 3, 
-In PYPI Packages tab add ethereum-etl==1.3.0.
+Create a new Cloud Composer environment:
+
+```bash
+export ENVIRONMENT_NAME=ethereum-etl-0
+gcloud composer environments create $ENVIRONMENT_NAME --location=us-central1 --zone=us-central1-a \
+    --disk-size=100GB --machine-type=n1-standard-4 --node-count=3 --python-version=3 --image-version=composer-1.8.3-airflow-1.10.3 \
+    --network=default --subnetwork=default
+
+gcloud composer environments update $ENVIRONMENT_NAME --location=us-central1 --update-pypi-package=ethereum-etl==1.4.1
+```
 
 Create variables in Airflow (**Admin > Variables** in the UI):
 
@@ -33,6 +41,14 @@ Check other variables in `dags/ethereumetl_airflow/variables.py`.
 
 ```bash
 > ./upload_dags.sh <airflow_bucket>
+```
+
+### Running Tests
+
+```bash
+pip install -r requirements.txt
+export PYTHONPATH='dags'
+pytest -vv -s
 ```
 
 ### Creating Table Definition Files for Parsing Events and Function Calls

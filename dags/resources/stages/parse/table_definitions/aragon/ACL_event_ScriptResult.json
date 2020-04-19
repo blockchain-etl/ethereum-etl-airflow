@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "executor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "script",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "input",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "returnData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "ScriptResult",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0xe3262375f45a6e2026b7e7b18c2b807434f2508fe1a2a3dfb493c7df8f4aad6a'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "executor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "script",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "input",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "returnData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ACL_event_ScriptResult"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "taxWallet",
+                    "type": "address"
+                }
+            ],
+            "name": "TaxWalletSet",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x8007aa43792a392b221dc091bdb2191e5ff626d1', '0x52166528fcc12681af996e409ee3a421a4e128a3', '0xed4f53268bfdff39b36e8786247ba3a02cf34b04', '0x07f6e905f2a1559cd9fd43cb92f8a1062a3ca706'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "schema": [
+            {
+                "description": "",
+                "name": "taxWallet",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FeeBurner_event_TaxWalletSet"
+    }
+}

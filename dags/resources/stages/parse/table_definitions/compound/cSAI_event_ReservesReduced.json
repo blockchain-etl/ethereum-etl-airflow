@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "reduceAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newTotalReserves",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReservesReduced",
+            "type": "event",
+            "signature": "0x3bad0c59cf2f06e7314077049f48a93578cd16f5ef92329f1dab1420a99c177e"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cSAI_event_ReservesReduced",
+        "table_description": "cToken for SAI on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "admin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "reduceAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newTotalReserves",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

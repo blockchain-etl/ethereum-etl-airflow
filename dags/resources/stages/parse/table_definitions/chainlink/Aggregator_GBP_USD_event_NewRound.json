@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "roundId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "startedBy",
+                    "type": "address"
+                }
+            ],
+            "name": "NewRound",
+            "type": "event"
+        },
+        "contract_address": "0x151445852b0cfdf6a4cc81440f2af99176e8ad08",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "roundId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startedBy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Aggregator_GBP_USD_event_NewRound"
+    }
+}

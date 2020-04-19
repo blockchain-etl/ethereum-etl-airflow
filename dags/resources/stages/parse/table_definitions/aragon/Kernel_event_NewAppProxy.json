@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "proxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "isUpgradeable",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "name": "appId",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "NewAppProxy",
+            "type": "event"
+        },
+        "contract_address": "select dao from ref('DAOFactory_event_DeployDAO')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "proxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isUpgradeable",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "appId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Kernel_event_NewAppProxy"
+    }
+}

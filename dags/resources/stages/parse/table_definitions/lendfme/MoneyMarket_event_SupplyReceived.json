@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "startingBalance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newBalance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SupplyReceived",
+            "type": "event"
+        },
+        "contract_address": "0x0eee3e3828a45f7601d5f54bf49bb01d1a9df5ea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lendfme",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startingBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MoneyMarket_event_SupplyReceived"
+    }
+}

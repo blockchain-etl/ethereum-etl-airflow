@@ -28,10 +28,10 @@ def read_export_dag_vars(var_prefix, **kwargs):
         'provider_uris': provider_uris,
         'provider_uris_archival': provider_uris_archival,
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
-        'export_max_active_runs': read_var('export_max_active_runs', var_prefix, False, **kwargs),
-        'export_max_workers': int(read_var('export_max_workers', var_prefix, True, **kwargs)),
-        'export_batch_size': int(read_var('export_batch_size', var_prefix, True, **kwargs)),
-        'export_retries': int(read_var('export_retries', var_prefix, True, **kwargs)),
+        'export_max_active_runs': parse_int(read_var('export_max_active_runs', var_prefix, False, **kwargs)),
+        'export_max_workers': parse_int(read_var('export_max_workers', var_prefix, True, **kwargs)),
+        'export_batch_size': parse_int(read_var('export_batch_size', var_prefix, True, **kwargs)),
+        'export_retries': parse_int(read_var('export_retries', var_prefix, True, **kwargs)),
         # toggles
         'export_daofork_traces_option': parse_bool(
             read_var('export_daofork_traces_option', var_prefix, False, **kwargs)),
@@ -60,8 +60,6 @@ def read_load_dag_vars(var_prefix, **kwargs):
         'destination_dataset_project_id': read_var('destination_dataset_project_id', var_prefix, True, **kwargs),
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
-        'copy_dataset_project_id': read_var('copy_dataset_project_id', var_prefix, False, **kwargs),
-        'copy_dataset_name': read_var('copy_dataset_name', var_prefix, False, **kwargs),
         'load_all_partitions': parse_bool(read_var('load_all_partitions', var_prefix, True, **kwargs))
     }
 
@@ -175,3 +173,9 @@ def parse_bool(bool_string, default=True):
         return default
     else:
         return bool_string.lower() in ["true", "yes"]
+
+
+def parse_int(val):
+    if val is None:
+        return None
+    return int(val)

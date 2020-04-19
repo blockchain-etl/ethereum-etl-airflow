@@ -9,8 +9,11 @@ insert (
 
     {% if params.parser.type == 'log' %}
     ,log_index
+    ,contract_address
     {% else %}
     ,trace_address
+    ,status
+    ,error
     {% endif %}
 
     {% for column in params.columns %}
@@ -23,8 +26,11 @@ insert (
 
     {% if params.parser.type == 'log' %}
     ,log_index
+    ,contract_address
     {% else %}
     ,trace_address
+    ,status
+    ,error
     {% endif %}
 
     {% for column in params.columns %}

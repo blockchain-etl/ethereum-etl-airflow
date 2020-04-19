@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "hash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "bidder",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "deposit",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewBid",
+            "type": "event"
+        },
+        "contract_address": "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "hash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bidder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deposit",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Registrar0_event_NewBid"
+    }
+}

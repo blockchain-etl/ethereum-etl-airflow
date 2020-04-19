@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "authority",
+                    "type": "address"
+                }
+            ],
+            "name": "LogSetAuthority",
+            "type": "event"
+        },
+        "contract_address": "0xaf38668f4719ecf9452dc0300be3f6c83cbf3721",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nuo_network",
+        "schema": [
+            {
+                "description": "",
+                "name": "authority",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KernelEscrow_event_LogSetAuthority"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldOriginationFeeMantissa",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newOriginationFeeMantissa",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewOriginationFee",
+            "type": "event"
+        },
+        "contract_address": "0x0eee3e3828a45f7601d5f54bf49bb01d1a9df5ea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lendfme",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldOriginationFeeMantissa",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newOriginationFeeMantissa",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MoneyMarket_event_NewOriginationFee"
+    }
+}

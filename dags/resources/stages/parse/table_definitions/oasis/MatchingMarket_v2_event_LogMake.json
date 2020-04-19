@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "pair",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract ERC20",
+                    "name": "pay_gem",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract ERC20",
+                    "name": "buy_gem",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "pay_amt",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "buy_amt",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "timestamp",
+                    "type": "uint64"
+                }
+            ],
+            "name": "LogMake",
+            "type": "event"
+        },
+        "contract_address": "0x794e6e91555438afc3ccf1c5076a74f42133d08d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "oasis",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pair",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pay_gem",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buy_gem",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pay_amt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buy_amt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MatchingMarket_v2_event_LogMake"
+    }
+}

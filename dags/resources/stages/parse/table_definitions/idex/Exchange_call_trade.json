@@ -1,0 +1,69 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "tradeValues",
+                    "type": "uint256[8]"
+                },
+                {
+                    "name": "tradeAddresses",
+                    "type": "address[4]"
+                },
+                {
+                    "name": "v",
+                    "type": "uint8[2]"
+                },
+                {
+                    "name": "rs",
+                    "type": "bytes32[4]"
+                }
+            ],
+            "name": "trade",
+            "outputs": [
+                {
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "idex",
+        "schema": [
+            {
+                "description": "",
+                "name": "tradeValues",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "tradeAddresses",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "v",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "rs",
+                "type": "STRING",
+                "mode": "REPEATED"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Exchange_call_trade"
+    }
+}

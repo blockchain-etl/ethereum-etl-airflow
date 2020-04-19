@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "beneficiary",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "time",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "VestingEntryCreated",
+            "type": "event"
+        },
+        "contract_address": "0xb671f2210b1f6621a2607ea63e6b2dc3e2464d1f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "synthetix",
+        "schema": [
+            {
+                "description": "",
+                "name": "beneficiary",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardEscrow_event_VestingEntryCreated"
+    }
+}

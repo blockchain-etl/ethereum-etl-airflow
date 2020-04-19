@@ -1,52 +1,54 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
+                    "internalType": "address",
                     "name": "owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
+                    "internalType": "address",
                     "name": "spender",
                     "type": "address"
                 },
                 {
                     "indexed": false,
+                    "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
                 }
             ],
             "name": "Approval",
-            "type": "event",
-            "signature": "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925"
+            "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
         "dataset_name": "compound",
-        "table_name": "cDAI_event_Approval",
-        "table_description": "cToken for DAI on the Compound Protocol.",
         "schema": [
             {
+                "description": "",
                 "name": "owner",
-                "description": "",
                 "type": "STRING"
             },
             {
+                "description": "",
                 "name": "spender",
-                "description": "",
                 "type": "STRING"
             },
             {
-                "name": "amount",
                 "description": "",
+                "name": "amount",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "cDAI_event_Approval"
     }
 }

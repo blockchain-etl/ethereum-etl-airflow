@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "module",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Invoked",
+            "type": "event"
+        },
+        "contract_address": "SELECT _wallet FROM ref('WalletFactory_event_WalletCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "module",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BaseWallet_event_Invoked"
+    }
+}

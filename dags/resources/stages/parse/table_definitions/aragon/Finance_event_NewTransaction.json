@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "transactionId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "incoming",
+                    "type": "bool"
+                },
+                {
+                    "indexed": true,
+                    "name": "entity",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "reference",
+                    "type": "string"
+                }
+            ],
+            "name": "NewTransaction",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('Kernel_event_NewAppProxy') WHERE appId = '0xbf8491150dafc5dcaee5b861414dca922de09ccffa344964ae167212e8c673ae'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aragon",
+        "schema": [
+            {
+                "description": "",
+                "name": "transactionId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "incoming",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "entity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reference",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Finance_event_NewTransaction"
+    }
+}

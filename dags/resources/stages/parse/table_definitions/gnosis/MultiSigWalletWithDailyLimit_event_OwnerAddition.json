@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnerAddition",
+            "type": "event"
+        },
+        "contract_address": "SELECT instantiation FROM ref('MultiSigWalletWithDailyLimitFactory_event_ContractInstantiation')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gnosis",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MultiSigWalletWithDailyLimit_event_OwnerAddition"
+    }
+}

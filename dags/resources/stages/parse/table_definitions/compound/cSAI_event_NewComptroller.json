@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "oldComptroller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "newComptroller",
+                    "type": "address"
+                }
+            ],
+            "name": "NewComptroller",
+            "type": "event",
+            "signature": "0x7ac369dbd14fa5ea3f473ed67cc9d598964a77501540ba6751eb0b3decf5870d"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "compound",
+        "table_name": "cSAI_event_NewComptroller",
+        "table_description": "cToken for SAI on the Compound Protocol.",
+        "schema": [
+            {
+                "name": "oldComptroller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newComptroller",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
