@@ -1,0 +1,141 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "targetAccount",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "assetBorrow",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowBalanceBefore",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowBalanceAccumulated",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountRepaid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "borrowBalanceAfter",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "liquidator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "assetCollateral",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "collateralBalanceBefore",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "collateralBalanceAccumulated",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountSeized",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "collateralBalanceAfter",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BorrowLiquidated",
+            "type": "event"
+        },
+        "contract_address": "0x0eee3e3828a45f7601d5f54bf49bb01d1a9df5ea",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lendfme",
+        "schema": [
+            {
+                "description": "",
+                "name": "targetAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assetBorrow",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowBalanceBefore",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowBalanceAccumulated",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountRepaid",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowBalanceAfter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assetCollateral",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralBalanceBefore",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralBalanceAccumulated",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountSeized",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralBalanceAfter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MoneyMarket_event_BorrowLiquidated"
+    }
+}
