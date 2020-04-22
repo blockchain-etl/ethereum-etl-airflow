@@ -3,15 +3,16 @@ using parse_temp.temp_Registrar0_event_NewBid_1587556654993 source
 on false
 when not matched and date(block_timestamp) = '2020-01-01' then
 insert (
-    block_timestamp
-    ,block_number
-    ,transaction_hash
 
+    `block_timestamp`
 
-    ,log_index
-    ,contract_address
+    ,`block_number`
 
+    ,`transaction_hash`
 
+    ,`log_index`
+
+    ,`contract_address`
 
     ,`hash`
 
@@ -20,15 +21,16 @@ insert (
     ,`deposit`
 
 ) values (
-    block_timestamp
-    ,block_number
-    ,transaction_hash
 
+    `block_timestamp`
 
-    ,log_index
-    ,contract_address
+    ,`block_number`
 
+    ,`transaction_hash`
 
+    ,`log_index`
+
+    ,`contract_address`
 
     ,`hash`
 

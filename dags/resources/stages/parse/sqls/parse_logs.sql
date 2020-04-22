@@ -5,7 +5,7 @@ WITH parsed_logs AS
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
-    ,`{{destination_project_id}}.{{internal_dataset_name}}.parse_{{table_name}}`(logs.data, logs.topics) AS parsed
+    ,`{{udf_project_id}}.{{udf_dataset_name}}.{{udf_name}}`(logs.data, logs.topics) AS parsed
 FROM `{{source_project_id}}.{{source_dataset_name}}.logs` AS logs
 WHERE address in (
     {% if parser.contract_address_sql %}
@@ -14,7 +14,7 @@ WHERE address in (
     '{{parser.contract_address}}'
     {% endif %}
   )
-  AND topics[SAFE_OFFSET(0)] = '{{event_topic}}'
+  AND topics[SAFE_OFFSET(0)] = '{{selector}}'
   {% if parse_all_partitions %}
   AND DATE(block_timestamp) <= '{{ds}}'
   {% else %}

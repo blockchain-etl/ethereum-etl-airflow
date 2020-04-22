@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION
-    `{{destination_project_id}}.{{internal_dataset_name}}.parse_{{table_name}}`(data STRING)
+    `{{destination_project_id}}.{{destination_dataset_name}}.{{udf_name}}`(data STRING)
     RETURNS STRUCT<{{struct_fields}}, error STRING>
     LANGUAGE js AS """
     var abi = {{abi}};

@@ -42,8 +42,9 @@ def read_bigquery_schema_from_json_recursive(json_schema):
     return result
 
 
-def query(bigquery_client, sql, priority=bigquery.QueryPriority.INTERACTIVE):
+def query(bigquery_client, sql, destination=None, priority=bigquery.QueryPriority.INTERACTIVE):
     job_config = bigquery.QueryJobConfig()
+    job_config.destination = destination
     job_config.priority = priority
     logging.info('Executing query: ' + sql)
     query_job = bigquery_client.query(sql, location='US', job_config=job_config)

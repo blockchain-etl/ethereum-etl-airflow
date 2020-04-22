@@ -5,10 +5,10 @@ WITH parsed_traces AS
     ,traces.transaction_hash AS transaction_hash
     ,traces.trace_address AS trace_address
     ,traces.status AS status
-    ,`{{destination_project_id}}.{{internal_dataset_name}}.parse_{{table_name}}`(traces.input) AS parsed
+    ,`{{udf_project_id}}.{{udf_dataset_name}}.{{udf_name}}`(traces.input) AS parsed
 FROM `{{source_project_id}}.{{source_dataset_name}}.traces` AS traces
 WHERE to_address = '{{parser.contract_address}}'
-  AND STARTS_WITH(traces.input, '{{method_selector}}')
+  AND STARTS_WITH(traces.input, '{{selector}}')
   {% if parse_all_partitions %}
   AND DATE(block_timestamp) <= '{{ds}}'
   {% else %}

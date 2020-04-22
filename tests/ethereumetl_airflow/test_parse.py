@@ -5,7 +5,7 @@ import os
 import pytest
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse import create_or_update_history_table
+from ethereumetl_airflow.parse.functions import create_or_update_history_table
 from tests.ethereumetl_airflow.mock_bigquery_client import MockBigqueryClient
 
 sqls_folder = 'dags/resources/stages/parse/sqls'

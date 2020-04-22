@@ -12,8 +12,8 @@ from airflow.operators.email_operator import EmailOperator
 from google.cloud import bigquery
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse import ref_regex, create_or_update_history_table, create_or_replace_stitch_view, \
-    create_or_replace_internal_view
+from ethereumetl_airflow.parse.functions import ref_regex, create_or_update_history_table, \
+    create_or_replace_stitch_view, create_or_replace_internal_view
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -60,7 +60,6 @@ def build_parse_dag(
     def create_task_and_add_to_dag(table_definition):
 
         def parse_task(ds, **kwargs):
-
             client = bigquery.Client()
 
             create_or_replace_internal_view(
@@ -132,7 +131,9 @@ def build_parse_dag(
     for task, dependencies in task_dependencies.items():
         for dependency in dependencies:
             if dependency not in all_parse_tasks:
-                raise ValueError('Table {} is not found in the the dataset. Check your ref() in contract_address field.'.format(dependency))
+                raise ValueError(
+                    'Table {} is not found in the the dataset. Check your ref() in contract_address field.'.format(
+                        dependency))
             all_parse_tasks[dependency] >> all_parse_tasks[task]
 
     if notification_emails and len(notification_emails) > 0 and send_success_email:
