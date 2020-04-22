@@ -1,8 +1,8 @@
 CREATE TEMP FUNCTION
     PARSE_TRACE(data STRING)
-    RETURNS STRUCT<{{params.struct_fields}}, error STRING>
+    RETURNS STRUCT<{{struct_fields}}, error STRING>
     LANGUAGE js AS """
-    var abi = {{params.abi}};
+    var abi = {{abi}};
     var interface_instance = new ethers.utils.Interface([abi]);
 
     var result = {};
@@ -40,10 +40,10 @@ WITH parsed_traces AS
     ,traces.trace_address AS trace_address
     ,traces.status AS status
     ,PARSE_TRACE(traces.input) AS parsed
-FROM `{{params.source_project_id}}.{{params.source_dataset_name}}.traces` AS traces
-WHERE to_address = '{{params.parser.contract_address}}'
-  AND STARTS_WITH(traces.input, '{{params.method_selector}}')
-  {% if params.parse_all_partitions %}
+FROM `{{source_project_id}}.{{source_dataset_name}}.traces` AS traces
+WHERE to_address = '{{parser.contract_address}}'
+  AND STARTS_WITH(traces.input, '{{method_selector}}')
+  {% if parse_all_partitions %}
   AND DATE(block_timestamp) <= '{{ds}}'
   {% else %}
   AND DATE(block_timestamp) = '{{ds}}'
@@ -56,7 +56,7 @@ SELECT
      ,trace_address
      ,status
      ,parsed.error AS error
-     {% for column in params.columns %}
-    ,parsed.{{ column }} AS `{{ column }}`
+     {% for column in table.schema %}
+    ,parsed.{{ column.name }} AS `{{ column.name }}`
     {% endfor %}
 FROM parsed_traces

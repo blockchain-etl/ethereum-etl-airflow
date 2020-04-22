@@ -23,49 +23,36 @@ def create_or_update_table_from_table_definition(
         source_dataset_name,
         destination_project_id,
         sqls_folder,
-        parse_all_partitions
+        parse_all_partitions,
+        time_func=time.time
 ):
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
     table_name = table_definition['table']['table_name']
-    table_description = table_definition['table']['table_description']
+
     schema = table_definition['table']['schema']
-    parser = table_definition['parser']
-    parser_type = parser.get('type', 'log')
-    abi = json.dumps(parser['abi'])
-    columns = [c.get('name') for c in schema]
+    parser_type = table_definition['parser'].get('type', 'log')
 
-    template_context = {}
-    template_context['ds'] = ds
-    template_context['params'] = {}
-    template_context['params']['source_project_id'] = source_project_id
-    template_context['params']['source_dataset_name'] = source_dataset_name
-    template_context['params']['table_name'] = table_name
-    template_context['params']['columns'] = columns
-    template_context['params']['parser'] = parser
-    template_context['params']['abi'] = abi
-    if parser_type == 'log':
-        template_context['params']['event_topic'] = abi_to_event_topic(parser['abi'])
-    elif parser_type == 'trace':
-        template_context['params']['method_selector'] = abi_to_method_selector(parser['abi'])
-    template_context['params']['struct_fields'] = create_struct_string_from_schema(schema)
-    template_context['params']['parse_all_partitions'] = parse_all_partitions
-
-    contract_address = parser['contract_address']
-    if not contract_address.startswith('0x'):
-        contract_address_sql = replace_refs(contract_address, ref_regex, destination_project_id,
-                                            dataset_name)
-        template_context['params']['parser']['contract_address_sql'] = contract_address_sql
+    template_context = create_template_context(
+        table_definition=table_definition,
+        dataset_name=dataset_name,
+        destination_project_id=destination_project_id,
+        ds=ds,
+        parse_all_partitions=parse_all_partitions,
+        source_dataset_name=source_dataset_name,
+        source_project_id=source_project_id
+    )
 
     # # # Create a temporary table
 
     dataset_name_temp = 'parse_temp'
     create_dataset(bigquery_client, dataset_name_temp)
     temp_table_name = 'temp_{table_name}_{milliseconds}' \
-        .format(table_name=table_name, milliseconds=int(round(time.time() * 1000)))
+        .format(table_name=table_name, milliseconds=int(round(time_func() * 1000)))
     temp_table_ref = bigquery_client.dataset(dataset_name_temp).table(temp_table_name)
 
     temp_table = bigquery.Table(temp_table_ref, schema=read_bigquery_schema_from_dict(schema, parser_type))
 
+    table_description = table_definition['table']['table_description']
     temp_table.description = table_description
     temp_table.time_partitioning = bigquery.TimePartitioning(field='block_timestamp')
     logging.info('Creating table: ' + json.dumps(temp_table.to_api_repr()))
@@ -110,11 +97,10 @@ def create_or_update_table_from_table_definition(
 
         merge_sql_template = get_merge_table_sql_template(sqls_folder)
         merge_template_context = template_context.copy()
-        merge_template_context['params']['source_table'] = temp_table_name
-        merge_template_context['params']['destination_dataset_project_id'] = destination_project_id
-        merge_template_context['params']['destination_dataset_name'] = dataset_name
-        merge_template_context['params']['dataset_name_temp'] = dataset_name_temp
-        merge_template_context['params']['columns'] = columns
+        merge_template_context['source_table'] = temp_table_name
+        merge_template_context['destination_dataset_project_id'] = destination_project_id
+        merge_template_context['destination_dataset_name'] = dataset_name
+        merge_template_context['dataset_name_temp'] = dataset_name_temp
         merge_sql = render_template(merge_sql_template, merge_template_context)
         print('Merge sql:')
         print(merge_sql)
@@ -124,6 +110,47 @@ def create_or_update_table_from_table_definition(
 
     # Delete temp table
     bigquery_client.delete_table(temp_table_ref)
+
+
+def create_template_context(
+        table_definition,
+        dataset_name,
+        destination_project_id,
+        ds,
+        parse_all_partitions,
+        source_dataset_name,
+        source_project_id):
+
+    table_name = table_definition['table']['table_name']
+    table = table_definition['table']
+    schema = table_definition['table']['schema']
+    parser = table_definition['parser']
+    parser_type = parser.get('type', 'log')
+    abi = json.dumps(parser['abi'])
+
+    template_context = {}
+    template_context['ds'] = ds
+    template_context['source_project_id'] = source_project_id
+    template_context['source_dataset_name'] = source_dataset_name
+    template_context['table_name'] = table_name
+    template_context['table'] = table
+    template_context['parser'] = parser
+    template_context['abi'] = abi
+    template_context['struct_fields'] = create_struct_string_from_schema(schema)
+    template_context['parse_all_partitions'] = parse_all_partitions
+    contract_address = parser['contract_address']
+
+    if parser_type == 'log':
+        template_context['event_topic'] = abi_to_event_topic(parser['abi'])
+    elif parser_type == 'trace':
+        template_context['method_selector'] = abi_to_method_selector(parser['abi'])
+
+    if not contract_address.startswith('0x'):
+        contract_address_sql = replace_refs(
+            contract_address, ref_regex, destination_project_id, dataset_name
+        )
+        template_context['parser']['contract_address_sql'] = contract_address_sql
+    return template_context
 
 
 def abi_to_event_topic(abi):

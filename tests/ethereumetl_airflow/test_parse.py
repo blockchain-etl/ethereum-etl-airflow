@@ -1,4 +1,5 @@
 import io
+import logging
 import os
 
 import pytest
@@ -10,14 +11,16 @@ from tests.ethereumetl_airflow.mock_bigquery_client import MockBigqueryClient
 sqls_folder = 'dags/resources/stages/parse/sqls'
 table_definitions_folder = 'dags/resources/stages/parse/table_definitions'
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s [%(levelname)s] - %(message)s')
 
-@pytest.mark.parametrize("table_definition_file", [
-    ('ens/Registrar0_event_NewBid.json'),
-    ('uniswap/Uniswap_event_AddLiquidity.json'),
-    ('dydx/SoloMargin_event_LogTrade.json'),
-    ('idex/Exchange_call_trade.json'),
+@pytest.mark.parametrize("table_definition_file,parse_all_partitions", [
+    ('ens/Registrar0_event_NewBid.json', True),
+    ('ens/Registrar0_event_NewBid.json', False),
+    ('uniswap/Uniswap_event_AddLiquidity.json', True),
+    ('dydx/SoloMargin_event_LogTrade.json', True),
+    ('idex/Exchange_call_trade.json', True),
 ])
-def test_create_or_update_table_from_table_definition(table_definition_file):
+def test_create_or_update_table_from_table_definition(table_definition_file, parse_all_partitions):
     bigquery_client = MockBigqueryClient()
     table_definition = read_json_file(os.path.join(table_definitions_folder, table_definition_file))
 
@@ -29,16 +32,23 @@ def test_create_or_update_table_from_table_definition(table_definition_file):
         source_dataset_name='crypto_ethereum',
         destination_project_id='blockchain-etl',
         sqls_folder=sqls_folder,
-        parse_all_partitions=True,
+        parse_all_partitions=parse_all_partitions,
+        time_func=lambda: 1587556654.993
     )
 
-    assert len(bigquery_client.queries) == 1
-    expected_filename = table_definition_file_to_expected_file(table_definition_file)
-    assert trim(bigquery_client.queries[0]) == trim(read_resource(expected_filename))
+    assert len(bigquery_client.queries) > 0
+
+    for ind, query in enumerate(bigquery_client.queries):
+        expected_filename = table_definition_file_to_expected_file(table_definition_file, parse_all_partitions, ind)
+        assert trim(query) == trim(read_resource(expected_filename))
 
 
-def table_definition_file_to_expected_file(table_definition_file):
-    return 'expected_' + table_definition_file.replace('/', '_') + '.sql'
+def table_definition_file_to_expected_file(table_definition_file, parse_all_partitions, ind):
+    return 'expected_{file}_{parse_all_partitions}_{ind}.sql'.format(
+        file=table_definition_file.replace('/', '_'),
+        parse_all_partitions=parse_all_partitions,
+        ind=ind,
+    )
 
 
 def read_resource(filename):
