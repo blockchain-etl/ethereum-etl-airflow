@@ -12,7 +12,8 @@ from airflow.operators.email_operator import EmailOperator
 from google.cloud import bigquery
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse import create_or_update_table_from_table_definition, ref_regex
+from ethereumetl_airflow.parse import ref_regex, create_or_update_history_table, create_or_replace_stitch_view, \
+    create_or_replace_internal_view
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -62,7 +63,7 @@ def build_parse_dag(
 
             client = bigquery.Client()
 
-            create_or_update_table_from_table_definition(
+            create_or_replace_internal_view(
                 bigquery_client=client,
                 table_definition=table_definition,
                 ds=ds,
@@ -71,6 +72,25 @@ def build_parse_dag(
                 destination_project_id=parse_destination_dataset_project_id,
                 sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
                 parse_all_partitions=parse_all_partitions
+            )
+
+            create_or_update_history_table(
+                bigquery_client=client,
+                table_definition=table_definition,
+                ds=ds,
+                source_project_id=SOURCE_PROJECT_ID,
+                source_dataset_name=SOURCE_DATASET_NAME,
+                destination_project_id=parse_destination_dataset_project_id,
+                sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
+                parse_all_partitions=parse_all_partitions
+            )
+
+            create_or_replace_stitch_view(
+                bigquery_client=client,
+                table_definition=table_definition,
+                ds=ds,
+                destination_project_id=parse_destination_dataset_project_id,
+                sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
             )
 
         table_name = table_definition['table']['table_name']

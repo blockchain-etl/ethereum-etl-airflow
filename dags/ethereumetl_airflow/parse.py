@@ -9,13 +9,56 @@ from google.cloud import bigquery
 
 from google.api_core.exceptions import Conflict
 
-from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, read_bigquery_schema_from_json_recursive
+from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, read_bigquery_schema_from_json_recursive, query, \
+    create_view
 from ethereumetl_airflow.utils.template_utils import render_template
 
 ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
 
-def create_or_update_table_from_table_definition(
+def create_or_replace_internal_view(
+        bigquery_client,
+        table_definition,
+        ds,
+        source_project_id,
+        source_dataset_name,
+        destination_project_id,
+        sqls_folder,
+        parse_all_partitions
+):
+    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
+    internal_dataset_name = dataset_name + '_internal'
+    table_name = table_definition['table']['table_name']
+
+    parser_type = table_definition['parser'].get('type', 'log')
+
+    template_context = create_template_context(
+        table_definition=table_definition,
+        dataset_name=dataset_name,
+        destination_project_id=destination_project_id,
+        ds=ds,
+        parse_all_partitions=parse_all_partitions,
+        source_dataset_name=source_dataset_name,
+        source_project_id=source_project_id
+    )
+
+    # # # Create UDF
+
+    sql_template = get_parse_udf_template(parser_type, sqls_folder)
+    sql = render_template(sql_template, template_context)
+    query(bigquery_client, sql)
+
+    # # # Create view
+
+    sql_template = get_parse_sql_template(parser_type, sqls_folder)
+    sql = render_template(sql_template, template_context)
+
+    dest_view_ref = bigquery_client.dataset(internal_dataset_name, project=destination_project_id).table(table_name)
+
+    create_view(bigquery_client, sql, dest_view_ref)
+
+
+def create_or_update_history_table(
         bigquery_client,
         table_definition,
         ds,
@@ -27,7 +70,9 @@ def create_or_update_table_from_table_definition(
         time_func=time.time
 ):
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
+    internal_dataset_name = dataset_name + '_internal'
     table_name = table_definition['table']['table_name']
+    history_table_name = table_name + '_history'
 
     schema = table_definition['table']['schema']
     parser_type = table_definition['parser'].get('type', 'log')
@@ -77,8 +122,8 @@ def create_or_update_table_from_table_definition(
         # Copy temporary table to destination
         copy_job_config = bigquery.CopyJobConfig()
         copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-        dataset = create_dataset(bigquery_client, dataset_name, destination_project_id)
-        dest_table_ref = dataset.table(table_name)
+        dataset = create_dataset(bigquery_client, internal_dataset_name, destination_project_id)
+        dest_table_ref = dataset.table(history_table_name)
         copy_job = bigquery_client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
         submit_bigquery_job(copy_job, copy_job_config)
         assert copy_job.state == 'DONE'
@@ -99,7 +144,8 @@ def create_or_update_table_from_table_definition(
         merge_template_context = template_context.copy()
         merge_template_context['source_table'] = temp_table_name
         merge_template_context['destination_dataset_project_id'] = destination_project_id
-        merge_template_context['destination_dataset_name'] = dataset_name
+        merge_template_context['destination_dataset_name'] = internal_dataset_name
+        merge_template_context['destination_table_name'] = history_table_name
         merge_template_context['dataset_name_temp'] = dataset_name_temp
         merge_sql = render_template(merge_sql_template, merge_template_context)
         print('Merge sql:')
@@ -110,6 +156,36 @@ def create_or_update_table_from_table_definition(
 
     # Delete temp table
     bigquery_client.delete_table(temp_table_ref)
+
+
+def create_or_replace_stitch_view(
+        bigquery_client,
+        table_definition,
+        ds,
+        destination_project_id,
+        sqls_folder
+):
+    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
+    internal_dataset_name = dataset_name + '_internal'
+    table_name = table_definition['table']['table_name']
+    history_table_name = table_name + '_history'
+
+    template_context = {}
+    template_context['ds'] = ds
+    template_context['destination_project_id'] = destination_project_id
+    template_context['dataset_name'] = dataset_name
+    template_context['internal_dataset_name'] = internal_dataset_name
+    template_context['table_name'] = table_name
+    template_context['history_table_name'] = history_table_name
+
+    # # # Create view
+
+    sql_template = get_stitch_view_template(sqls_folder)
+    sql = render_template(sql_template, template_context)
+
+    dest_view_ref = bigquery_client.dataset(dataset_name, project=destination_project_id).table(table_name)
+
+    create_view(bigquery_client, sql, dest_view_ref)
 
 
 def create_template_context(
@@ -138,6 +214,9 @@ def create_template_context(
     template_context['abi'] = abi
     template_context['struct_fields'] = create_struct_string_from_schema(schema)
     template_context['parse_all_partitions'] = parse_all_partitions
+    template_context['destination_project_id'] = destination_project_id
+    template_context['dataset_name'] = dataset_name
+    template_context['internal_dataset_name'] = dataset_name + '_internal'
     contract_address = parser['contract_address']
 
     if parser_type == 'log':
@@ -200,20 +279,6 @@ def create_dataset(client, dataset_name, project=None):
     return dataset
 
 
-def get_parse_logs_sql_template(sqls_folder):
-    filepath = os.path.join(sqls_folder, 'parse_logs.sql')
-    with open(filepath) as file_handle:
-        content = file_handle.read()
-        return content
-
-
-def get_parse_traces_sql_template(sqls_folder):
-    filepath = os.path.join(sqls_folder, 'parse_traces.sql')
-    with open(filepath) as file_handle:
-        content = file_handle.read()
-        return content
-
-
 def get_merge_table_sql_template(sqls_folder):
     filepath = os.path.join(sqls_folder, 'merge_table.sql')
     with open(filepath) as file_handle:
@@ -222,9 +287,36 @@ def get_merge_table_sql_template(sqls_folder):
 
 
 def get_parse_sql_template(parser_type, sqls_folder):
-    return get_parse_logs_sql_template(sqls_folder) if parser_type == 'log' else get_parse_traces_sql_template(
-        sqls_folder)
+    if parser_type == 'log':
+        filename = 'parse_logs.sql'
+    else:
+        filename = 'parse_traces.sql'
 
+    filepath = os.path.join(sqls_folder, filename)
+
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
+
+
+def get_parse_udf_template(parser_type, sqls_folder):
+    if parser_type == 'log':
+        filename = 'parse_logs_udf.sql'
+    else:
+        filename = 'parse_traces_udf.sql'
+
+    filepath = os.path.join(sqls_folder, filename)
+
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
+
+def get_stitch_view_template(sqls_folder):
+    filepath = os.path.join(sqls_folder, 'stitch_view.sql')
+
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
 
 def read_bigquery_schema_from_dict(schema, parser_type):
     result = [

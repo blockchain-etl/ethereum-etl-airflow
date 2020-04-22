@@ -5,7 +5,7 @@ import os
 import pytest
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse import create_or_update_table_from_table_definition
+from ethereumetl_airflow.parse import create_or_update_history_table
 from tests.ethereumetl_airflow.mock_bigquery_client import MockBigqueryClient
 
 sqls_folder = 'dags/resources/stages/parse/sqls'
@@ -24,7 +24,7 @@ def test_create_or_update_table_from_table_definition(table_definition_file, par
     bigquery_client = MockBigqueryClient()
     table_definition = read_json_file(os.path.join(table_definitions_folder, table_definition_file))
 
-    create_or_update_table_from_table_definition(
+    create_or_update_history_table(
         bigquery_client=bigquery_client,
         table_definition=table_definition,
         ds='2020-01-01',

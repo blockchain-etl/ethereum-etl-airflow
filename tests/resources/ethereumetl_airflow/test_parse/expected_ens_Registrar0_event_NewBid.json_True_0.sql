@@ -1,44 +1,3 @@
-CREATE TEMP FUNCTION
-    PARSE_LOG(data STRING, topics ARRAY<STRING>)
-    RETURNS STRUCT<`hash` STRING, `bidder` STRING, `deposit` STRING>
-    LANGUAGE js AS """
-    var abi = {"anonymous": false, "inputs": [{"indexed": true, "name": "hash", "type": "bytes32"}, {"indexed": true, "name": "bidder", "type": "address"}, {"indexed": false, "name": "deposit", "type": "uint256"}], "name": "NewBid", "type": "event"}
-
-    var interface_instance = new ethers.utils.Interface([abi]);
-
-    var parsedLog = interface_instance.parseLog({topics: topics, data: data});
-
-    var parsedValues = parsedLog.values;
-
-    var transformParams = function(params, abiInputs) {
-        var result = {};
-        if (params && params.length >= abiInputs.length) {
-            for (var i = 0; i < abiInputs.length; i++) {
-                var paramName = abiInputs[i].name;
-                var paramValue = params[i];
-                if (abiInputs[i].type === 'address' && typeof paramValue === 'string') {
-                    // For consistency all addresses are lower-cased.
-                    paramValue = paramValue.toLowerCase();
-                }
-                if (ethers.utils.Interface.isIndexed(paramValue)) {
-                    paramValue = paramValue.hash;
-                }
-                if (abiInputs[i].type === 'tuple' && 'components' in abiInputs[i]) {
-                    paramValue = transformParams(paramValue, abiInputs[i].components)
-                }
-                result[paramName] = paramValue;
-            }
-        }
-        return result;
-    };
-
-    var result = transformParams(parsedValues, abi.inputs);
-
-    return result;
-"""
-OPTIONS
-  ( library="gs://blockchain-etl-bigquery/ethers.js" );
-
 WITH parsed_logs AS
 (SELECT
     logs.block_timestamp AS block_timestamp
@@ -46,7 +5,7 @@ WITH parsed_logs AS
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
-    ,PARSE_LOG(logs.data, logs.topics) AS parsed
+    ,`blockchain-etl.ethereum_ens_internal.parse_Registrar0_event_NewBid`(logs.data, logs.topics) AS parsed
 FROM `bigquery-public-data.crypto_ethereum.logs` AS logs
 WHERE address in (
 
