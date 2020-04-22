@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oldOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        "contract_address": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "binance",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BUSDImplementation_event_OwnershipTransferred"
+    }
+}

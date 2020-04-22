@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oldWhitelister",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newWhitelister",
+                    "type": "address"
+                }
+            ],
+            "name": "BetaDelegateWhitelisterSet",
+            "type": "event"
+        },
+        "contract_address": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "binance",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldWhitelister",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newWhitelister",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BUSDImplementation_event_BetaDelegateWhitelisterSet"
+    }
+}
