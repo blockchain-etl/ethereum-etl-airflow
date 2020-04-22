@@ -70,8 +70,7 @@ def build_parse_dag(
                 source_dataset_name=SOURCE_DATASET_NAME,
                 destination_project_id=parse_destination_dataset_project_id,
                 sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
-                parse_all_partitions=parse_all_partitions,
-                airflow_task=kwargs['task']
+                parse_all_partitions=parse_all_partitions
             )
 
         table_name = table_definition['table']['table_name']

@@ -10,6 +10,7 @@ from google.cloud import bigquery
 from google.api_core.exceptions import Conflict
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, read_bigquery_schema_from_json_recursive
+from ethereumetl_airflow.utils.template_utils import render_template
 
 ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
@@ -22,8 +23,7 @@ def create_or_update_table_from_table_definition(
         source_dataset_name,
         destination_project_id,
         sqls_folder,
-        parse_all_partitions,
-        airflow_task
+        parse_all_partitions
 ):
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
     table_name = table_definition['table']['table_name']
@@ -78,7 +78,7 @@ def create_or_update_table_from_table_definition(
     job_config.priority = bigquery.QueryPriority.INTERACTIVE
     job_config.destination = temp_table_ref
     sql_template = get_parse_sql_template(parser_type, sqls_folder)
-    sql = airflow_task.render_template('', sql_template, template_context)
+    sql = render_template(sql_template, template_context)
     logging.info(sql)
     query_job = bigquery_client.query(sql, location='US', job_config=job_config)
     submit_bigquery_job(query_job, job_config)
@@ -115,7 +115,7 @@ def create_or_update_table_from_table_definition(
         merge_template_context['params']['destination_dataset_name'] = dataset_name
         merge_template_context['params']['dataset_name_temp'] = dataset_name_temp
         merge_template_context['params']['columns'] = columns
-        merge_sql = airflow_task.render_template('', merge_sql_template, merge_template_context)
+        merge_sql = render_template(merge_sql_template, merge_template_context)
         print('Merge sql:')
         print(merge_sql)
         merge_job = bigquery_client.query(merge_sql, location='US', job_config=merge_job_config)
