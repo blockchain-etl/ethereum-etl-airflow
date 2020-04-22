@@ -1,0 +1,44 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "mint",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Dai_event_mint"
+    }
+}
