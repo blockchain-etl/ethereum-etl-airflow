@@ -14,17 +14,17 @@ CREATE OR REPLACE FUNCTION
             for (var i = 0; i < abi.inputs.length; i++) {
                 var paramName = abi.inputs[i].name;
                 var paramValue = parsedArgs[i];
-                if (abi.inputs[i].type === ''address'' && typeof paramValue === ''string'') {
+                if (abi.inputs[i].type === 'address' && typeof paramValue === 'string') {
                     // For consistency all addresses are lowercase.
                     paramValue = paramValue.toLowerCase();
                 }
                 result[paramName] = paramValue;
             }
         } else {
-            result[''error''] = ''Parsed transaction args is empty or has too few values.'';
+            result['error'] = 'Parsed transaction args is empty or has too few values.';
         }
     } catch (e) {
-        result[''error''] = e.message;
+        result['error'] = e.message;
     }
 
     return result;

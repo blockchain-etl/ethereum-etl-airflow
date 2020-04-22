@@ -16,14 +16,14 @@ CREATE OR REPLACE FUNCTION
             for (var i = 0; i < abiInputs.length; i++) {
                 var paramName = abiInputs[i].name;
                 var paramValue = params[i];
-                if (abiInputs[i].type === ''address'' && typeof paramValue === ''string'') {
+                if (abiInputs[i].type === 'address' && typeof paramValue === 'string') {
                     // For consistency all addresses are lower-cased.
                     paramValue = paramValue.toLowerCase();
                 }
                 if (ethers.utils.Interface.isIndexed(paramValue)) {
                     paramValue = paramValue.hash;
                 }
-                if (abiInputs[i].type === ''tuple'' && ''components'' in abiInputs[i]) {
+                if (abiInputs[i].type === 'tuple' && 'components' in abiInputs[i]) {
                     paramValue = transformParams(paramValue, abiInputs[i].components)
                 }
                 result[paramName] = paramValue;
