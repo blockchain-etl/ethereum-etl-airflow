@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "transactionId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Submission",
+            "type": "event"
+        },
+        "contract_address": "SELECT instantiation FROM ref('GSNMultisigFactory_event_ContractInstantiation')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "multis",
+        "schema": [
+            {
+                "description": "",
+                "name": "transactionId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GSNMultiSigWalletWithDailyLimit_event_Submission"
+    }
+}

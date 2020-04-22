@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldRelayHub",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newRelayHub",
+                    "type": "address"
+                }
+            ],
+            "name": "RelayHubChanged",
+            "type": "event"
+        },
+        "contract_address": "0x16154f7e9de01e6b39dac3159805e9b1531ee3cf",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "multis",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldRelayHub",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newRelayHub",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GSNMultisigFactory_event_RelayHubChanged"
+    }
+}

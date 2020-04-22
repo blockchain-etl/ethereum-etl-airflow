@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "instantiation",
+                    "type": "address"
+                }
+            ],
+            "name": "ContractInstantiation",
+            "type": "event"
+        },
+        "contract_address": "0x16154f7e9de01e6b39dac3159805e9b1531ee3cf",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "multis",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "instantiation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GSNMultisigFactory_event_ContractInstantiation"
+    }
+}
