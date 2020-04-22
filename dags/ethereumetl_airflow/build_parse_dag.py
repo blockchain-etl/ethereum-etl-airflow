@@ -12,7 +12,7 @@ from airflow.operators.email_operator import EmailOperator
 from google.cloud import bigquery
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse.functions import ref_regex, create_or_update_history_table, \
+from ethereumetl_airflow.parse.parse_logic import ref_regex, create_or_update_history_table, \
     create_or_replace_stitch_view, create_or_replace_internal_view
 
 logging.basicConfig()

@@ -49,7 +49,7 @@ def render_parse_sql_template(
         'udf_name': udf_name,
         'parser': parser,
         'table': table,
-        'selector': abi_to_event_topic(parser['abi']) if parser_type == 'log' else abi_to_method_selector(parser['abi']),
+        'selector': abi_to_selector(parser_type, parser['abi']),
         'parse_all_partitions': parse_all_partitions,
         'ds': ds,
     })
@@ -116,13 +116,11 @@ def get_merge_table_sql_template(sqls_folder):
         return content
 
 
-def abi_to_event_topic(abi):
-    return '0x' + event_abi_to_log_topic(abi).hex()
-
-
-def abi_to_method_selector(abi):
-    return '0x' + function_abi_to_4byte_selector(abi).hex()
-
+def abi_to_selector(parser_type, abi):
+    if parser_type == 'log':
+        return '0x' + event_abi_to_log_topic(abi).hex()
+    else:
+        return '0x' + function_abi_to_4byte_selector(abi).hex()
 
 
 def replace_refs(contract_address, ref_regex, project_id, dataset_name):

@@ -63,4 +63,4 @@ def create_view(bigquery_client, sql, table_ref):
     except Conflict:
         # https://cloud.google.com/bigquery/docs/managing-views
         table = bigquery_client.update_table(table, ['view_query'])
-    assert table.table_id == table_ref.name
+    assert table.table_id == table_ref.table_id

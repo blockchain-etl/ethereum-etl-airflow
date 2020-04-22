@@ -5,7 +5,7 @@ import os
 import pytest
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse.functions import create_or_update_history_table
+from ethereumetl_airflow.parse.parse_logic import create_or_update_history_table, create_or_replace_internal_view
 from tests.ethereumetl_airflow.mock_bigquery_client import MockBigqueryClient
 
 sqls_folder = 'dags/resources/stages/parse/sqls'
@@ -23,6 +23,17 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s [%(leveln
 def test_create_or_update_table_from_table_definition(table_definition_file, parse_all_partitions):
     bigquery_client = MockBigqueryClient()
     table_definition = read_json_file(os.path.join(table_definitions_folder, table_definition_file))
+
+    create_or_replace_internal_view(
+        bigquery_client=bigquery_client,
+        table_definition=table_definition,
+        ds='2020-01-01',
+        source_project_id='bigquery-public-data',
+        source_dataset_name='crypto_ethereum',
+        destination_project_id='blockchain-etl',
+        sqls_folder=sqls_folder,
+        parse_all_partitions=parse_all_partitions
+    )
 
     create_or_update_history_table(
         bigquery_client=bigquery_client,
@@ -44,8 +55,8 @@ def test_create_or_update_table_from_table_definition(table_definition_file, par
 
 
 def table_definition_file_to_expected_file(table_definition_file, parse_all_partitions, ind):
-    return 'expected_{file}_{parse_all_partitions}_{ind}.sql'.format(
-        file=table_definition_file.replace('/', '_'),
+    return '{file}_{parse_all_partitions}_{ind}.sql'.format(
+        file=table_definition_file,
         parse_all_partitions=parse_all_partitions,
         ind=ind,
     )
