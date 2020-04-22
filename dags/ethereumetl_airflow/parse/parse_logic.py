@@ -43,7 +43,7 @@ def create_or_replace_internal_view(
         destination_dataset_name=internal_dataset_name,
         udf_name=udf_name,
         abi=json.dumps(table_definition['parser']['abi']),
-        return_struct_fields=create_struct_string_from_schema(table_definition['table']['schema'])
+        struct_fields=create_struct_string_from_schema(table_definition['table']['schema'])
     )
     query(bigquery_client, sql)
 

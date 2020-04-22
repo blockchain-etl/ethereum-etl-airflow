@@ -12,7 +12,7 @@ def render_parse_udf_template(
         destination_dataset_name,
         udf_name,
         abi,
-        return_struct_fields
+        struct_fields
 ):
     template = get_parse_udf_template(parser_type, sqls_folder)
     rendered_template = render_template(template, {
@@ -20,7 +20,7 @@ def render_parse_udf_template(
         'destination_dataset_name': destination_dataset_name,
         'udf_name': udf_name,
         'abi': abi,
-        'return_struct_fields': return_struct_fields
+        'struct_fields': struct_fields
     })
 
     return rendered_template

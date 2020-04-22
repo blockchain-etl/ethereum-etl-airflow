@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION
     `blockchain-etl.ethereum_idex_internal.parse_Exchange_call_trade`(data STRING)
-    RETURNS STRUCT<, error STRING>
+    RETURNS STRUCT<`tradeValues` ARRAY<STRING>, `tradeAddresses` ARRAY<STRING>, `v` ARRAY<STRING>, `rs` ARRAY<STRING>, error STRING>
     LANGUAGE js AS """
     var abi = {"constant": false, "inputs": [{"name": "tradeValues", "type": "uint256[8]"}, {"name": "tradeAddresses", "type": "address[4]"}, {"name": "v", "type": "uint8[2]"}, {"name": "rs", "type": "bytes32[4]"}], "name": "trade", "outputs": [{"name": "success", "type": "bool"}], "payable": false, "stateMutability": "nonpayable", "type": "function"};
     var interface_instance = new ethers.utils.Interface([abi]);

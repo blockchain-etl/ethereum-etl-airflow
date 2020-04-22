@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION
     `blockchain-etl.ethereum_uniswap_internal.parse_Uniswap_event_AddLiquidity`(data STRING, topics ARRAY<STRING>)
-    RETURNS STRUCT<>
+    RETURNS STRUCT<`provider` STRING, `eth_amount` STRING, `token_amount` STRING>
     LANGUAGE js AS """
     var abi = {"anonymous": false, "inputs": [{"indexed": true, "name": "provider", "type": "address"}, {"indexed": true, "name": "eth_amount", "type": "uint256"}, {"indexed": true, "name": "token_amount", "type": "uint256"}], "name": "AddLiquidity", "type": "event"}
 
