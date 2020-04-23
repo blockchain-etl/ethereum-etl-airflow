@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "newMin",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newMax",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetBurnBounds",
+            "type": "event"
+        },
+        "contract_address": "0x0000000000085d4780b73119b644ae5ecd22b376",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "trusttoken",
+        "schema": [
+            {
+                "description": "",
+                "name": "newMin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newMax",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueUSD_event_SetBurnBounds"
+    }
+}

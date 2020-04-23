@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "CoinFactoryAdminRoleRemoved",
+            "type": "event"
+        },
+        "contract_address": "0xdf574c24545e5ffecb9a659c229253d4111d87e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "husd",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "HUSDToken_event_CoinFactoryAdminRoleRemoved"
+    }
+}
