@@ -81,22 +81,26 @@
             {
                 "description": "",
                 "name": "targets",
-                "type": "STRING"
+                "type": "STRING",
+                "mode": "REPEATED"
             },
             {
                 "description": "",
                 "name": "values",
-                "type": "STRING"
+                "type": "STRING",
+                "mode": "REPEATED"
             },
             {
                 "description": "",
                 "name": "signatures",
-                "type": "STRING"
+                "type": "STRING",
+                "mode": "REPEATED"
             },
             {
                 "description": "",
                 "name": "calldatas",
-                "type": "STRING"
+                "type": "STRING",
+                "mode": "REPEATED"
             },
             {
                 "description": "",
