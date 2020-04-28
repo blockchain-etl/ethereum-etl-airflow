@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "eta",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProposalQueued",
+            "type": "event"
+        },
+        "contract_address": "0xc0da01a04c3f3e0be433606045bb7017a7323e38",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "eta",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GovernorAlpha_event_ProposalQueued"
+    }
+}

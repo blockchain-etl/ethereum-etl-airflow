@@ -1,0 +1,124 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "proposer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "targets",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "values",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string[]",
+                    "name": "signatures",
+                    "type": "string[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes[]",
+                    "name": "calldatas",
+                    "type": "bytes[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "endBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "description",
+                    "type": "string"
+                }
+            ],
+            "name": "ProposalCreated",
+            "type": "event"
+        },
+        "contract_address": "0xc0da01a04c3f3e0be433606045bb7017a7323e38",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "proposer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "targets",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "values",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "signatures",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "calldatas",
+                "type": "STRING",
+                "mode": "REPEATED"
+            },
+            {
+                "description": "",
+                "name": "startBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "endBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "description",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GovernorAlpha_event_ProposalCreated"
+    }
+}
