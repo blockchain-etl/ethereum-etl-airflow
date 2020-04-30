@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_blackListedUser",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_balance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DestroyedBlackFunds",
+            "type": "event"
+        },
+        "contract_address": "0x4922a015c4407f87432b179bb209e125432e4a2a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "tether",
+        "schema": [
+            {
+                "description": "",
+                "name": "_blackListedUser",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_balance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "XAUt_TetherToken_event_DestroyedBlackFunds"
+    }
+}
