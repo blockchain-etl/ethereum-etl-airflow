@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oldSupplyController",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newSupplyController",
+                    "type": "address"
+                }
+            ],
+            "name": "SupplyControllerSet",
+            "type": "event"
+        },
+        "contract_address": "0x45804880de22913dafe09f4980848ece6ecbaf78",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paxos",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldSupplyController",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newSupplyController",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PAXGImplementation_event_SupplyControllerSet"
+    }
+}
