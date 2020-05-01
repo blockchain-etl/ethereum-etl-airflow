@@ -1,0 +1,55 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "market",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "borrow",
+                            "type": "uint96"
+                        },
+                        {
+                            "name": "supply",
+                            "type": "uint96"
+                        },
+                        {
+                            "name": "lastUpdate",
+                            "type": "uint32"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "index",
+                    "type": "tuple"
+                }
+            ],
+            "name": "LogIndexUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x000",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SoloMargin_event_LogIndexUpdate"
+    }
+}
