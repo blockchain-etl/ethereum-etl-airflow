@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oldFeeController",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newFeeController",
+                    "type": "address"
+                }
+            ],
+            "name": "FeeControllerSet",
+            "type": "event"
+        },
+        "contract_address": "0x45804880de22913dafe09f4980848ece6ecbaf78",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paxos",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldFeeController",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFeeController",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PAXGImplementation_event_FeeControllerSet"
+    }
+}
