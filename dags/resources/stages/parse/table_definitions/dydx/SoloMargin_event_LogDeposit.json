@@ -62,7 +62,7 @@
             "name": "LogDeposit",
             "type": "event"
         },
-        "contract_address": "0x000",
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
         "field_mapping": {},
         "type": "log"
     },
