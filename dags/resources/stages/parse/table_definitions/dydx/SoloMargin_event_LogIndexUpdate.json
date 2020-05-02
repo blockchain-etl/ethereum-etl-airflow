@@ -45,8 +45,25 @@
             },
             {
                 "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "borrow",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supply",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "lastUpdate",
+                        "type": "STRING"
+                    }
+                ],
                 "name": "index",
-                "type": "STRING"
+                "type": "RECORD"
             }
         ],
         "table_description": "",
