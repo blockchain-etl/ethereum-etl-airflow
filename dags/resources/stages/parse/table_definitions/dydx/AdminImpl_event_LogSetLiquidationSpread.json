@@ -1,0 +1,37 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "name": "value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "liquidationSpread",
+                    "type": "tuple"
+                }
+            ],
+            "name": "LogSetLiquidationSpread",
+            "type": "event"
+        },
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "liquidationSpread",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdminImpl_event_LogSetLiquidationSpread"
+    }
+}

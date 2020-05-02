@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "marketId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "isClosing",
+                    "type": "bool"
+                }
+            ],
+            "name": "LogSetIsClosing",
+            "type": "event"
+        },
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "marketId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isClosing",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdminImpl_event_LogSetIsClosing"
+    }
+}
