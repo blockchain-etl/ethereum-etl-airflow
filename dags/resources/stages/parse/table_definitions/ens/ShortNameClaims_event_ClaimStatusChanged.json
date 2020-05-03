@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "claimId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "status",
+                    "type": "uint8"
+                }
+            ],
+            "name": "ClaimStatusChanged",
+            "type": "event"
+        },
+        "contract_address": "0xf7c83bd0c50e7a72b55a39fe0dabf5e3a330d749",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "claimId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "status",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ShortNameClaims_event_ClaimStatusChanged"
+    }
+}
