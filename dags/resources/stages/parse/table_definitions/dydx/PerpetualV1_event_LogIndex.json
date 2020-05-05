@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "index",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogIndex",
+            "type": "event"
+        },
+        "contract_address": "0x07abe965500a49370d331ecd613c7ac47dd6e547",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PerpetualV1_event_LogIndex"
+    }
+}

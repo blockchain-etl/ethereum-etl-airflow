@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "minCollateral",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogSetMinCollateral",
+            "type": "event"
+        },
+        "contract_address": "0x07abe965500a49370d331ecd613c7ac47dd6e547",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "minCollateral",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PerpetualV1_event_LogSetMinCollateral"
+    }
+}
