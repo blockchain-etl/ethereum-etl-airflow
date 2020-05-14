@@ -28,6 +28,8 @@ def parse(
         time_func=time.time
 ):
 
+    # Refer to this issue for more detail https://github.com/blockchain-etl/ethereum-etl-airflow/issues/80.
+
     internal_project_id = destination_project_id + '-internal'
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
 
