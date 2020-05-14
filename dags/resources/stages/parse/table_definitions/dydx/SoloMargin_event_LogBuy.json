@@ -1,0 +1,211 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "accountOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "accountNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerMarket",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerMarket",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "deltaWei",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "name": "newPar",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "takerUpdate",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "deltaWei",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "name": "sign",
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "value",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "name": "newPar",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "makerUpdate",
+                    "type": "tuple"
+                },
+                {
+                    "indexed": false,
+                    "name": "exchangeWrapper",
+                    "type": "address"
+                }
+            ],
+            "name": "LogBuy",
+            "type": "event"
+        },
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "accountOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "accountNumber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerMarket",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerMarket",
+                "type": "STRING"
+            },
+            {
+                "name": "takerUpdate",
+                "description": "",
+                "type": "RECORD",
+                "fields": [
+                    {
+                        "name": "deltaWei",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "newPar",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "makerUpdate",
+                "description": "",
+                "type": "RECORD",
+                "fields": [
+                    {
+                        "name": "deltaWei",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "newPar",
+                        "type": "RECORD",
+                        "fields": [
+                            {
+                                "name": "sign",
+                                "type": "STRING"
+                            },
+                            {
+                                "name": "value",
+                                "type": "STRING"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "description": "",
+                "name": "exchangeWrapper",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SoloMargin_event_LogBuy"
+    }
+}

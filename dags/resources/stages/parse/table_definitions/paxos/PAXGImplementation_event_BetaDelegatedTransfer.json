@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "seq",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "serviceFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BetaDelegatedTransfer",
+            "type": "event"
+        },
+        "contract_address": "0x45804880de22913dafe09f4980848ece6ecbaf78",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paxos",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seq",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "serviceFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PAXGImplementation_event_BetaDelegatedTransfer"
+    }
+}

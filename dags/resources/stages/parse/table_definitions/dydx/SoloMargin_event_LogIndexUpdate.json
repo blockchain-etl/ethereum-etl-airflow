@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "market",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "borrow",
+                            "type": "uint96"
+                        },
+                        {
+                            "name": "supply",
+                            "type": "uint96"
+                        },
+                        {
+                            "name": "lastUpdate",
+                            "type": "uint32"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "index",
+                    "type": "tuple"
+                }
+            ],
+            "name": "LogIndexUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "borrow",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supply",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "lastUpdate",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "index",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SoloMargin_event_LogIndexUpdate"
+    }
+}

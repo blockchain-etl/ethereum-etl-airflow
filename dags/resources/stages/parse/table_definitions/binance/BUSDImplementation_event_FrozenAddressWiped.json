@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "addr",
+                    "type": "address"
+                }
+            ],
+            "name": "FrozenAddressWiped",
+            "type": "event"
+        },
+        "contract_address": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "binance",
+        "schema": [
+            {
+                "description": "",
+                "name": "addr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BUSDImplementation_event_FrozenAddressWiped"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "label",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cost",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "expires",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NameRenewed",
+            "type": "event"
+        },
+        "contract_address": "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "label",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cost",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expires",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHRegistrarController3_event_NameRenewed"
+    }
+}
