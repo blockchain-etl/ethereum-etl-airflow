@@ -1,6 +1,5 @@
 import json
 import logging
-import os
 import re
 import time
 
@@ -12,8 +11,7 @@ from google.api_core.exceptions import Conflict
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, read_bigquery_schema_from_json_recursive, query, \
     create_view
 from ethereumetl_airflow.parse.templates import render_parse_udf_template, render_parse_sql_template, \
-    render_merge_template
-from ethereumetl_airflow.utils.template_utils import render_template
+    render_merge_template, render_stitch_view_template
 
 ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
@@ -222,17 +220,16 @@ def create_or_replace_stitch_view(
     table_name = table_definition['table']['table_name']
     history_table_name = table_name + '_history'
 
-    template_context = {}
-    template_context['ds'] = ds
-    template_context['internal_project_id'] = internal_project_id
-    template_context['dataset_name'] = dataset_name
-    template_context['table_name'] = table_name
-    template_context['history_table_name'] = history_table_name
-
     # # # Create view
 
-    sql_template = get_stitch_view_template(sqls_folder)
-    sql = render_template(sql_template, template_context)
+    sql = render_stitch_view_template(
+        sqls_folder=sqls_folder,
+        internal_project_id=internal_project_id,
+        dataset_name=dataset_name,
+        table_name=table_name,
+        history_table_name=history_table_name,
+        ds=ds
+    )
 
     print('Stitch view: ' + sql)
 
@@ -316,14 +313,6 @@ def create_dataset(client, dataset_name, project=None):
         logging.info('Dataset already exists')
 
     return dataset
-
-
-def get_stitch_view_template(sqls_folder):
-    filepath = os.path.join(sqls_folder, 'stitch_view.sql')
-
-    with open(filepath) as file_handle:
-        content = file_handle.read()
-        return content
 
 
 def read_bigquery_schema_from_dict(schema, parser_type):

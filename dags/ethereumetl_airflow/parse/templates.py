@@ -38,6 +38,16 @@ def render_merge_template(
     return rendered_template
 
 
+def render_stitch_view_template(
+        sqls_folder,
+        **kwargs
+):
+    template = get_stitch_view_template(sqls_folder)
+    rendered_template = render_template(template, kwargs)
+
+    return rendered_template
+
+
 def get_parse_udf_template(parser_type, sqls_folder):
     if parser_type == 'log':
         filename = 'parse_logs_udf.sql'
@@ -64,9 +74,15 @@ def get_parse_sql_template(parser_type, sqls_folder):
         return content
 
 
-
 def get_merge_table_sql_template(sqls_folder):
     filepath = os.path.join(sqls_folder, 'merge_table.sql')
+    with open(filepath) as file_handle:
+        content = file_handle.read()
+        return content
+
+
+def get_stitch_view_template(sqls_folder):
+    filepath = os.path.join(sqls_folder, 'stitch_view.sql')
     with open(filepath) as file_handle:
         content = file_handle.read()
         return content
