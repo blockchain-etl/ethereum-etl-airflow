@@ -9,7 +9,9 @@ WITH parsed_traces AS
 FROM `{{source_project_id}}.{{source_dataset_name}}.traces` AS traces
 WHERE to_address = '{{parser.contract_address}}'
   AND STARTS_WITH(traces.input, '{{selector}}')
-  {% if parse_all_partitions %}
+  {% if parse_all_partitions is none %}
+  -- pass
+  {% elif parse_all_partitions %}
   AND DATE(block_timestamp) <= '{{ds}}'
   {% else %}
   AND DATE(block_timestamp) = '{{ds}}'

@@ -9,7 +9,7 @@ from google.cloud import bigquery
 from google.api_core.exceptions import Conflict
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, read_bigquery_schema_from_json_recursive, query, \
-    create_view
+    create_view, does_table_exist
 from ethereumetl_airflow.parse.templates import render_parse_udf_template, render_parse_sql_template, \
     render_merge_template, render_stitch_view_template
 
@@ -29,21 +29,33 @@ def parse(
 ):
 
     internal_project_id = destination_project_id + '-internal'
+    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
 
     create_or_replace_internal_view(
         bigquery_client=bigquery_client,
+        dataset_name=dataset_name,
         table_definition=table_definition,
         ds=ds,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
-        sqls_folder=sqls_folder,
-        parse_all_partitions=parse_all_partitions
+        sqls_folder=sqls_folder
     )
+
+    dataset = create_dataset(bigquery_client, dataset_name, internal_project_id)
+    table_name = table_definition['table']['table_name']
+    history_table_name = table_name + '_history'
+    if parse_all_partitions is None:
+        history_table_ref = dataset.table(history_table_name)
+        history_table_exists = does_table_exist(bigquery_client, history_table_ref)
+        parse_all_partitions = not history_table_exists
+        logging.info('parse_all_partitions is set to {}'.format(str(parse_all_partitions)))
 
     create_or_update_history_table(
         bigquery_client=bigquery_client,
+        dataset_name=dataset_name,
+        history_table_name=history_table_name,
         table_definition=table_definition,
         ds=ds,
         source_project_id=source_project_id,
@@ -57,6 +69,7 @@ def parse(
 
     create_or_replace_stitch_view(
         bigquery_client=bigquery_client,
+        dataset_name=dataset_name,
         table_definition=table_definition,
         ds=ds,
         internal_project_id=internal_project_id,
@@ -67,21 +80,22 @@ def parse(
 
 def create_or_replace_internal_view(
         bigquery_client,
+        dataset_name,
         table_definition,
         ds,
         source_project_id,
         source_dataset_name,
         internal_project_id,
         destination_project_id,
-        sqls_folder,
-        parse_all_partitions
+        sqls_folder
 ):
-    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
     table_name = table_definition['table']['table_name']
 
     parser_type = table_definition['parser'].get('type', 'log')
 
     udf_name = 'parse_{}'.format(table_name)
+
+    dataset = create_dataset(bigquery_client, dataset_name, internal_project_id)
 
     # # # Create UDF
 
@@ -108,18 +122,18 @@ def create_or_replace_internal_view(
         dataset_name=dataset_name,
         udf_name=udf_name,
         table_definition=table_definition,
-        parse_all_partitions=parse_all_partitions,
+        parse_all_partitions=None,
         ds=ds
     )
 
-    dataset = create_dataset(bigquery_client, dataset_name, internal_project_id)
     dest_view_ref = dataset.table(table_name)
-
     create_view(bigquery_client, sql, dest_view_ref)
 
 
 def create_or_update_history_table(
         bigquery_client,
+        dataset_name,
+        history_table_name,
         table_definition,
         ds,
         source_project_id,
@@ -130,9 +144,7 @@ def create_or_update_history_table(
         parse_all_partitions,
         time_func=time.time
 ):
-    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
     table_name = table_definition['table']['table_name']
-    history_table_name = table_name + '_history'
 
     schema = table_definition['table']['schema']
     parser_type = table_definition['parser'].get('type', 'log')
@@ -210,13 +222,13 @@ def create_or_update_history_table(
 
 def create_or_replace_stitch_view(
         bigquery_client,
+        dataset_name,
         table_definition,
         ds,
         destination_project_id,
         internal_project_id,
         sqls_folder
 ):
-    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
     table_name = table_definition['table']['table_name']
     history_table_name = table_name + '_history'
 

@@ -2,7 +2,8 @@ import json
 import logging
 
 from google.cloud import bigquery
-from google.api_core.exceptions import Conflict
+from google.api_core.exceptions import Conflict, NotFound
+
 
 def submit_bigquery_job(job, configuration):
     try:
@@ -64,3 +65,11 @@ def create_view(bigquery_client, sql, table_ref):
         # https://cloud.google.com/bigquery/docs/managing-views
         table = bigquery_client.update_table(table, ['view_query'])
     assert table.table_id == table_ref.table_id
+
+
+def does_table_exist(bigquery_client, table_ref):
+    try:
+        table = bigquery_client.get_table(table_ref)
+    except NotFound:
+        return False
+    return True

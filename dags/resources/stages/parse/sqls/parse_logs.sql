@@ -15,7 +15,9 @@ WHERE address in (
     {% endif %}
   )
   AND topics[SAFE_OFFSET(0)] = '{{selector}}'
-  {% if parse_all_partitions %}
+  {% if parse_all_partitions is none %}
+  -- pass
+  {% elif parse_all_partitions %}
   AND DATE(block_timestamp) <= '{{ds}}'
   {% else %}
   AND DATE(block_timestamp) = '{{ds}}'

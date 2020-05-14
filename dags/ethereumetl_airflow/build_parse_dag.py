@@ -28,7 +28,7 @@ def build_parse_dag(
         notification_emails=None,
         parse_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *',
-        parse_all_partitions=True,
+        parse_all_partitions=None,
         send_success_email=False
 ):
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))

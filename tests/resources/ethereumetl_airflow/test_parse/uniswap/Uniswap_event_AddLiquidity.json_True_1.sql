@@ -14,7 +14,7 @@ WHERE address in (
   )
   AND topics[SAFE_OFFSET(0)] = '0x06239653922ac7bea6aa2b19dc486b9361821d37712eb796adfd38d81de278ca'
 
-  AND DATE(block_timestamp) <= '2020-01-01'
+  -- pass
 
   )
 SELECT
