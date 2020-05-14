@@ -38,8 +38,8 @@ def parse(
         ds=ds,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
-        destination_project_id=destination_project_id,
         internal_project_id=internal_project_id,
+        destination_project_id=destination_project_id,
         sqls_folder=sqls_folder,
         parse_all_partitions=parse_all_partitions
     )
@@ -50,8 +50,8 @@ def parse(
         ds=ds,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
-        destination_project_id=destination_project_id,
         internal_project_id=internal_project_id,
+        destination_project_id=destination_project_id,
         sqls_folder=sqls_folder,
         parse_all_partitions=parse_all_partitions,
         time_func=time_func
@@ -61,8 +61,8 @@ def parse(
         bigquery_client=bigquery_client,
         table_definition=table_definition,
         ds=ds,
-        destination_project_id=destination_project_id,
         internal_project_id=internal_project_id,
+        destination_project_id=destination_project_id,
         sqls_folder=sqls_folder,
     )
 
@@ -73,8 +73,8 @@ def create_or_replace_internal_view(
         ds,
         source_project_id,
         source_dataset_name,
-        destination_project_id,
         internal_project_id,
+        destination_project_id,
         sqls_folder,
         parse_all_partitions
 ):
@@ -114,7 +114,8 @@ def create_or_replace_internal_view(
         ds=ds
     )
 
-    dest_view_ref = bigquery_client.dataset(dataset_name, project=internal_project_id).table(table_name)
+    dataset = create_dataset(bigquery_client, dataset_name, internal_project_id)
+    dest_view_ref = dataset.table(table_name)
 
     create_view(bigquery_client, sql, dest_view_ref)
 
@@ -125,8 +126,8 @@ def create_or_update_history_table(
         ds,
         source_project_id,
         source_dataset_name,
-        destination_project_id,
         internal_project_id,
+        destination_project_id,
         sqls_folder,
         parse_all_partitions,
         time_func=time.time
@@ -209,6 +210,38 @@ def create_or_update_history_table(
     bigquery_client.delete_table(temp_table_ref)
 
 
+def create_or_replace_stitch_view(
+        bigquery_client,
+        table_definition,
+        ds,
+        destination_project_id,
+        internal_project_id,
+        sqls_folder
+):
+    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
+    table_name = table_definition['table']['table_name']
+    history_table_name = table_name + '_history'
+
+    template_context = {}
+    template_context['ds'] = ds
+    template_context['internal_project_id'] = internal_project_id
+    template_context['dataset_name'] = dataset_name
+    template_context['table_name'] = table_name
+    template_context['history_table_name'] = history_table_name
+
+    # # # Create view
+
+    sql_template = get_stitch_view_template(sqls_folder)
+    sql = render_template(sql_template, template_context)
+
+    print('Stitch view: ' + sql)
+
+    dataset = create_dataset(bigquery_client, dataset_name, destination_project_id)
+    dest_view_ref = dataset.table(table_name)
+
+    create_view(bigquery_client, sql, dest_view_ref)
+
+
 def generate_parse_sql_template(
         sqls_folder,
         parser_type,
@@ -244,37 +277,6 @@ def generate_parse_sql_template(
         ds=ds
     )
     return sql
-
-
-def create_or_replace_stitch_view(
-        bigquery_client,
-        table_definition,
-        ds,
-        destination_project_id,
-        internal_project_id,
-        sqls_folder
-):
-    dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
-    table_name = table_definition['table']['table_name']
-    history_table_name = table_name + '_history'
-
-    template_context = {}
-    template_context['ds'] = ds
-    template_context['internal_project_id'] = internal_project_id
-    template_context['dataset_name'] = dataset_name
-    template_context['table_name'] = table_name
-    template_context['history_table_name'] = history_table_name
-
-    # # # Create view
-
-    sql_template = get_stitch_view_template(sqls_folder)
-    sql = render_template(sql_template, template_context)
-
-    print('Stitch view: ' + sql)
-
-    dest_view_ref = bigquery_client.dataset(dataset_name, project=destination_project_id).table(table_name)
-
-    create_view(bigquery_client, sql, dest_view_ref)
 
 
 def create_struct_string_from_schema(schema):
