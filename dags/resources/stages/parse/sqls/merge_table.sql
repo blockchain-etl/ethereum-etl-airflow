@@ -1,4 +1,4 @@
-merge `{{destination_dataset_project_id}}.{{destination_dataset_name}}.{{destination_table_name}}` dest
+merge `{{internal_project_id}}.{{dataset_name}}.{{destination_table_name}}` dest
 using {{dataset_name_temp}}.{{source_table}} source
 on false
 when not matched and date(block_timestamp) = '{{ds}}' then

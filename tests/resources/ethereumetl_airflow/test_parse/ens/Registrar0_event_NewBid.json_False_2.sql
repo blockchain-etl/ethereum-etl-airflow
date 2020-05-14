@@ -5,7 +5,7 @@ WITH parsed_logs AS
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
-    ,`blockchain-etl.ethereum_ens_internal.parse_Registrar0_event_NewBid`(logs.data, logs.topics) AS parsed
+    ,`blockchain-etl-internal.ethereum_ens.parse_Registrar0_event_NewBid`(logs.data, logs.topics) AS parsed
 FROM `bigquery-public-data.crypto_ethereum.logs` AS logs
 WHERE address in (
     

@@ -5,7 +5,7 @@ WITH parsed_logs AS
     ,logs.transaction_hash AS transaction_hash
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
-    ,`{{udf_project_id}}.{{udf_dataset_name}}.{{udf_name}}`(logs.data, logs.topics) AS parsed
+    ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(logs.data, logs.topics) AS parsed
 FROM `{{source_project_id}}.{{source_dataset_name}}.logs` AS logs
 WHERE address in (
     {% if parser.contract_address_sql %}

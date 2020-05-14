@@ -4,6 +4,7 @@ import os
 import re
 import time
 
+from eth_utils import event_abi_to_log_topic, function_abi_to_4byte_selector
 from google.cloud import bigquery
 
 from google.api_core.exceptions import Conflict
@@ -28,6 +29,9 @@ def parse(
         parse_all_partitions,
         time_func=time.time
 ):
+
+    internal_project_id = destination_project_id + '-internal'
+
     create_or_replace_internal_view(
         bigquery_client=bigquery_client,
         table_definition=table_definition,
@@ -35,6 +39,7 @@ def parse(
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
         destination_project_id=destination_project_id,
+        internal_project_id=internal_project_id,
         sqls_folder=sqls_folder,
         parse_all_partitions=parse_all_partitions
     )
@@ -46,6 +51,7 @@ def parse(
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
         destination_project_id=destination_project_id,
+        internal_project_id=internal_project_id,
         sqls_folder=sqls_folder,
         parse_all_partitions=parse_all_partitions,
         time_func=time_func
@@ -56,6 +62,7 @@ def parse(
         table_definition=table_definition,
         ds=ds,
         destination_project_id=destination_project_id,
+        internal_project_id=internal_project_id,
         sqls_folder=sqls_folder,
     )
 
@@ -67,11 +74,11 @@ def create_or_replace_internal_view(
         source_project_id,
         source_dataset_name,
         destination_project_id,
+        internal_project_id,
         sqls_folder,
         parse_all_partitions
 ):
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
-    internal_dataset_name = dataset_name + '_internal'
     table_name = table_definition['table']['table_name']
 
     parser_type = table_definition['parser'].get('type', 'log')
@@ -83,8 +90,8 @@ def create_or_replace_internal_view(
     sql = render_parse_udf_template(
         sqls_folder,
         parser_type,
-        destination_project_id=destination_project_id,
-        destination_dataset_name=internal_dataset_name,
+        internal_project_id=internal_project_id,
+        dataset_name=dataset_name,
         udf_name=udf_name,
         abi=json.dumps(table_definition['parser']['abi']),
         struct_fields=create_struct_string_from_schema(table_definition['table']['schema'])
@@ -92,26 +99,22 @@ def create_or_replace_internal_view(
     query(bigquery_client, sql)
 
     # # # Create view
-    contract_address = table_definition['parser']['contract_address']
-    if not contract_address.startswith('0x'):
-        table_definition['parser']['contract_address_sql'] = replace_refs(
-            contract_address, ref_regex, destination_project_id, dataset_name
-        )
 
-    sql = render_parse_sql_template(
-        sqls_folder, parser_type,
+    sql = generate_parse_sql_template(
+        sqls_folder,
+        parser_type,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
-        udf_project_id=destination_project_id,
-        udf_dataset_name=internal_dataset_name,
+        internal_project_id=internal_project_id,
+        destination_project_id=destination_project_id,
+        dataset_name=dataset_name,
         udf_name=udf_name,
-        parser=table_definition['parser'],
-        table=table_definition['table'],
+        table_definition=table_definition,
         parse_all_partitions=parse_all_partitions,
         ds=ds
     )
 
-    dest_view_ref = bigquery_client.dataset(internal_dataset_name, project=destination_project_id).table(table_name)
+    dest_view_ref = bigquery_client.dataset(dataset_name, project=internal_project_id).table(table_name)
 
     create_view(bigquery_client, sql, dest_view_ref)
 
@@ -123,12 +126,12 @@ def create_or_update_history_table(
         source_project_id,
         source_dataset_name,
         destination_project_id,
+        internal_project_id,
         sqls_folder,
         parse_all_partitions,
         time_func=time.time
 ):
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
-    internal_dataset_name = dataset_name + '_internal'
     table_name = table_definition['table']['table_name']
     history_table_name = table_name + '_history'
 
@@ -155,21 +158,18 @@ def create_or_update_history_table(
     assert temp_table.table_id == temp_table_name
 
     # # # Query to temporary table
+
     udf_name = 'parse_{}'.format(table_name)
-    contract_address = table_definition['parser']['contract_address']
-    if not contract_address.startswith('0x'):
-        table_definition['parser']['contract_address_sql'] = replace_refs(
-            contract_address, ref_regex, destination_project_id, dataset_name
-        )
-    sql = render_parse_sql_template(
-        sqls_folder, parser_type,
+    sql = generate_parse_sql_template(
+        sqls_folder,
+        parser_type,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
-        udf_project_id=destination_project_id,
-        udf_dataset_name=internal_dataset_name,
+        internal_project_id=internal_project_id,
+        destination_project_id=destination_project_id,
+        dataset_name=dataset_name,
         udf_name=udf_name,
-        parser=table_definition['parser'],
-        table=table_definition['table'],
+        table_definition=table_definition,
         parse_all_partitions=parse_all_partitions,
         ds=ds
     )
@@ -181,7 +181,7 @@ def create_or_update_history_table(
         # Copy temporary table to destination
         copy_job_config = bigquery.CopyJobConfig()
         copy_job_config.write_disposition = 'WRITE_TRUNCATE'
-        dataset = create_dataset(bigquery_client, internal_dataset_name, destination_project_id)
+        dataset = create_dataset(bigquery_client, dataset_name, internal_project_id)
         dest_table_ref = dataset.table(history_table_name)
         copy_job = bigquery_client.copy_table(temp_table_ref, dest_table_ref, location='US', job_config=copy_job_config)
         submit_bigquery_job(copy_job, copy_job_config)
@@ -196,8 +196,8 @@ def create_or_update_history_table(
         merge_sql = render_merge_template(
             sqls_folder,
             table_schema=schema,
-            destination_dataset_project_id=destination_project_id,
-            destination_dataset_name=internal_dataset_name,
+            internal_project_id=internal_project_id,
+            dataset_name=dataset_name,
             destination_table_name=history_table_name,
             dataset_name_temp=dataset_name_temp,
             source_table=temp_table_name,
@@ -209,23 +209,59 @@ def create_or_update_history_table(
     bigquery_client.delete_table(temp_table_ref)
 
 
+def generate_parse_sql_template(
+        sqls_folder,
+        parser_type,
+        source_project_id,
+        source_dataset_name,
+        internal_project_id,
+        destination_project_id,
+        dataset_name,
+        udf_name,
+        table_definition,
+        parse_all_partitions,
+        ds):
+    contract_address = table_definition['parser']['contract_address']
+    if not contract_address.startswith('0x'):
+        table_definition['parser']['contract_address_sql'] = replace_refs(
+            contract_address, ref_regex, destination_project_id, dataset_name
+        )
+
+    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
+
+    sql = render_parse_sql_template(
+        sqls_folder,
+        parser_type,
+        source_project_id=source_project_id,
+        source_dataset_name=source_dataset_name,
+        internal_project_id=internal_project_id,
+        dataset_name=dataset_name,
+        udf_name=udf_name,
+        parser=table_definition['parser'],
+        table=table_definition['table'],
+        selector=selector,
+        parse_all_partitions=parse_all_partitions,
+        ds=ds
+    )
+    return sql
+
+
 def create_or_replace_stitch_view(
         bigquery_client,
         table_definition,
         ds,
         destination_project_id,
+        internal_project_id,
         sqls_folder
 ):
     dataset_name = 'ethereum_' + table_definition['table']['dataset_name']
-    internal_dataset_name = dataset_name + '_internal'
     table_name = table_definition['table']['table_name']
     history_table_name = table_name + '_history'
 
     template_context = {}
     template_context['ds'] = ds
-    template_context['destination_project_id'] = destination_project_id
+    template_context['internal_project_id'] = internal_project_id
     template_context['dataset_name'] = dataset_name
-    template_context['internal_dataset_name'] = internal_dataset_name
     template_context['table_name'] = table_name
     template_context['history_table_name'] = history_table_name
 
@@ -287,6 +323,7 @@ def get_stitch_view_template(sqls_folder):
         content = file_handle.read()
         return content
 
+
 def read_bigquery_schema_from_dict(schema, parser_type):
     result = [
         bigquery.SchemaField(
@@ -333,3 +370,11 @@ def read_bigquery_schema_from_dict(schema, parser_type):
     result.extend(read_bigquery_schema_from_json_recursive(schema))
 
     return result
+
+
+def abi_to_selector(parser_type, abi):
+    if parser_type == 'log':
+        return '0x' + event_abi_to_log_topic(abi).hex()
+    else:
+        return '0x' + function_abi_to_4byte_selector(abi).hex()
+

@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION
-    `blockchain-etl.ethereum_ens_internal.parse_Registrar0_event_NewBid`(data STRING, topics ARRAY<STRING>)
+    `blockchain-etl-internal.ethereum_ens.parse_Registrar0_event_NewBid`(data STRING, topics ARRAY<STRING>)
     RETURNS STRUCT<`hash` STRING, `bidder` STRING, `deposit` STRING>
     LANGUAGE js AS """
     var abi = {"anonymous": false, "inputs": [{"indexed": true, "name": "hash", "type": "bytes32"}, {"indexed": true, "name": "bidder", "type": "address"}, {"indexed": false, "name": "deposit", "type": "uint256"}], "name": "NewBid", "type": "event"}

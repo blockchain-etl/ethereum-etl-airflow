@@ -5,7 +5,7 @@ WITH parsed_traces AS
     ,traces.transaction_hash AS transaction_hash
     ,traces.trace_address AS trace_address
     ,traces.status AS status
-    ,`{{udf_project_id}}.{{udf_dataset_name}}.{{udf_name}}`(traces.input) AS parsed
+    ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(traces.input) AS parsed
 FROM `{{source_project_id}}.{{source_dataset_name}}.traces` AS traces
 WHERE to_address = '{{parser.contract_address}}'
   AND STARTS_WITH(traces.input, '{{selector}}')
