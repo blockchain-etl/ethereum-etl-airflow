@@ -17,6 +17,49 @@ from ethereumetl_airflow.utils.template_utils import render_template
 ref_regex = re.compile(r"ref\(\'([^']+)\'\)")
 
 
+def parse(
+        bigquery_client,
+        table_definition,
+        ds,
+        source_project_id,
+        source_dataset_name,
+        destination_project_id,
+        sqls_folder,
+        parse_all_partitions,
+        time_func=time.time
+):
+    create_or_replace_internal_view(
+        bigquery_client=bigquery_client,
+        table_definition=table_definition,
+        ds=ds,
+        source_project_id=source_project_id,
+        source_dataset_name=source_dataset_name,
+        destination_project_id=destination_project_id,
+        sqls_folder=sqls_folder,
+        parse_all_partitions=parse_all_partitions
+    )
+
+    create_or_update_history_table(
+        bigquery_client=bigquery_client,
+        table_definition=table_definition,
+        ds=ds,
+        source_project_id=source_project_id,
+        source_dataset_name=source_dataset_name,
+        destination_project_id=destination_project_id,
+        sqls_folder=sqls_folder,
+        parse_all_partitions=parse_all_partitions,
+        time_func=time_func
+    )
+
+    create_or_replace_stitch_view(
+        bigquery_client=bigquery_client,
+        table_definition=table_definition,
+        ds=ds,
+        destination_project_id=destination_project_id,
+        sqls_folder=sqls_folder,
+    )
+
+
 def create_or_replace_internal_view(
         bigquery_client,
         table_definition,
@@ -38,7 +81,8 @@ def create_or_replace_internal_view(
     # # # Create UDF
 
     sql = render_parse_udf_template(
-        sqls_folder, parser_type,
+        sqls_folder,
+        parser_type,
         destination_project_id=destination_project_id,
         destination_dataset_name=internal_dataset_name,
         udf_name=udf_name,
@@ -92,6 +136,7 @@ def create_or_update_history_table(
     parser_type = table_definition['parser'].get('type', 'log')
 
     schema = read_bigquery_schema_from_dict(schema, parser_type)
+
     # # # Create a temporary table
 
     dataset_name_temp = 'parse_temp'
@@ -188,6 +233,8 @@ def create_or_replace_stitch_view(
 
     sql_template = get_stitch_view_template(sqls_folder)
     sql = render_template(sql_template, template_context)
+
+    print('Stitch view: ' + sql)
 
     dest_view_ref = bigquery_client.dataset(dataset_name, project=destination_project_id).table(table_name)
 

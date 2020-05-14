@@ -8,20 +8,10 @@ from ethereumetl_airflow.utils.template_utils import render_template
 def render_parse_udf_template(
         sqls_folder,
         parser_type,
-        destination_project_id,
-        destination_dataset_name,
-        udf_name,
-        abi,
-        struct_fields
+        **kwargs
 ):
     template = get_parse_udf_template(parser_type, sqls_folder)
-    rendered_template = render_template(template, {
-        'destination_project_id': destination_project_id,
-        'destination_dataset_name': destination_dataset_name,
-        'udf_name': udf_name,
-        'abi': abi,
-        'struct_fields': struct_fields
-    })
+    rendered_template = render_template(template, kwargs)
 
     return rendered_template
 
@@ -29,55 +19,23 @@ def render_parse_udf_template(
 def render_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id,
-        source_dataset_name,
-        udf_project_id,
-        udf_dataset_name,
-        udf_name,
         parser,
-        table,
-        parse_all_partitions,
-        ds,
+        **kwargs
 ):
     template = get_parse_sql_template(parser_type, sqls_folder)
-
-    rendered_template = render_template(template, {
-        'source_project_id': source_project_id,
-        'source_dataset_name': source_dataset_name,
-        'udf_project_id': udf_project_id,
-        'udf_dataset_name': udf_dataset_name,
-        'udf_name': udf_name,
-        'parser': parser,
-        'table': table,
-        'selector': abi_to_selector(parser_type, parser['abi']),
-        'parse_all_partitions': parse_all_partitions,
-        'ds': ds,
-    })
+    selector = abi_to_selector(parser_type, parser['abi'])
+    rendered_template = render_template(template, dict(kwargs, parser=parser, selector=selector))
 
     return rendered_template
 
 
 def render_merge_template(
         sqls_folder,
-        table_schema,
-        destination_dataset_project_id,
-        destination_dataset_name,
-        destination_table_name,
-        dataset_name_temp,
-        source_table,
-        ds,
+        **kwargs
 ):
     template = get_merge_table_sql_template(sqls_folder)
 
-    rendered_template = render_template(template, {
-        'table_schema': table_schema,
-        'destination_dataset_project_id': destination_dataset_project_id,
-        'destination_dataset_name': destination_dataset_name,
-        'destination_table_name': destination_table_name,
-        'dataset_name_temp': dataset_name_temp,
-        'source_table': source_table,
-        'ds': ds,
-    })
+    rendered_template = render_template(template, kwargs)
 
     return rendered_template
 
