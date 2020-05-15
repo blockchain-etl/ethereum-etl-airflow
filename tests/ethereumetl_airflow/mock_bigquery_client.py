@@ -16,6 +16,8 @@ class MockBigqueryClient:
         return Dataset(dataset_ref)
 
     def create_table(self, table_ref):
+        if table_ref.view_query is not None:
+            self.queries.append(table_ref.view_query)
         return table_ref
 
     def copy_table(self, *args, **kwargs):

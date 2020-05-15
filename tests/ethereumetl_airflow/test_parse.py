@@ -1,31 +1,30 @@
 import io
+import logging
 import os
-from datetime import timedelta
 
-import airflow
 import pytest
-from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse import create_or_update_table_from_table_definition
+from ethereumetl_airflow.parse.parse_logic import create_or_update_history_table, create_or_replace_internal_view, parse
 from tests.ethereumetl_airflow.mock_bigquery_client import MockBigqueryClient
-
 
 sqls_folder = 'dags/resources/stages/parse/sqls'
 table_definitions_folder = 'dags/resources/stages/parse/table_definitions'
 
-@pytest.mark.parametrize("table_definition_file", [
-    ('ens/Registrar0_event_NewBid.json'),
-    ('uniswap/Uniswap_event_AddLiquidity.json'),
-    ('dydx/SoloMargin_event_LogTrade.json'),
-    ('idex/Exchange_call_trade.json'),
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s [%(levelname)s] - %(message)s')
+
+@pytest.mark.parametrize("table_definition_file,parse_all_partitions", [
+    ('ens/Registrar0_event_NewBid.json', True),
+    ('ens/Registrar0_event_NewBid.json', False),
+    ('uniswap/Uniswap_event_AddLiquidity.json', True),
+    ('dydx/SoloMargin_event_LogTrade.json', True),
+    ('idex/Exchange_call_trade.json', True),
 ])
-def test_create_or_update_table_from_table_definition(table_definition_file):
+def test_create_or_update_table_from_table_definition(table_definition_file, parse_all_partitions):
     bigquery_client = MockBigqueryClient()
     table_definition = read_json_file(os.path.join(table_definitions_folder, table_definition_file))
 
-    create_or_update_table_from_table_definition(
+    parse(
         bigquery_client=bigquery_client,
         table_definition=table_definition,
         ds='2020-01-01',
@@ -33,35 +32,23 @@ def test_create_or_update_table_from_table_definition(table_definition_file):
         source_dataset_name='crypto_ethereum',
         destination_project_id='blockchain-etl',
         sqls_folder=sqls_folder,
-        parse_all_partitions=True,
-        airflow_task=create_dummy_airflow_task()
+        parse_all_partitions=parse_all_partitions,
+        time_func=lambda: 1587556654.993
     )
 
-    assert len(bigquery_client.queries) == 1
-    expected_filename = table_definition_file_to_expected_file(table_definition_file)
-    assert trim(bigquery_client.queries[0]) == trim(read_resource(expected_filename))
+    assert len(bigquery_client.queries) > 0
+
+    for ind, query in enumerate(bigquery_client.queries):
+        expected_filename = table_definition_file_to_expected_file(table_definition_file, parse_all_partitions, ind)
+        assert trim(query) == trim(read_resource(expected_filename))
 
 
-def table_definition_file_to_expected_file(table_definition_file):
-    return 'expected_' + table_definition_file.replace('/', '_') + '.sql'
-
-
-def create_dummy_airflow_task():
-    default_dag_args = {
-        'retries': 1,
-        'retry_delay': timedelta(minutes=5),
-        'start_date': airflow.utils.dates.days_ago(0),
-        'email_on_failure': True,
-    }
-
-    dummy_dag = DAG(
-        'dummy_dag',
-        default_args=default_dag_args,
-        description='dummy_dag')
-
-    dummy_task = BashOperator(task_id='echo', bash_command='echo test', dag=dummy_dag, depends_on_past=False)
-
-    return dummy_task
+def table_definition_file_to_expected_file(table_definition_file, parse_all_partitions, ind):
+    return '{file}_{parse_all_partitions}_{ind}.sql'.format(
+        file=table_definition_file,
+        parse_all_partitions=parse_all_partitions,
+        ind=ind,
+    )
 
 
 def read_resource(filename):

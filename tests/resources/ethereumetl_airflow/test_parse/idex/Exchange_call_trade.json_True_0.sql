@@ -1,5 +1,5 @@
-CREATE TEMP FUNCTION
-    PARSE_TRACE(data STRING)
+CREATE OR REPLACE FUNCTION
+    `blockchain-etl-internal.ethereum_idex.parse_Exchange_call_trade`(data STRING)
     RETURNS STRUCT<`tradeValues` ARRAY<STRING>, `tradeAddresses` ARRAY<STRING>, `v` ARRAY<STRING>, `rs` ARRAY<STRING>, error STRING>
     LANGUAGE js AS """
     var abi = {"constant": false, "inputs": [{"name": "tradeValues", "type": "uint256[8]"}, {"name": "tradeAddresses", "type": "address[4]"}, {"name": "v", "type": "uint8[2]"}, {"name": "rs", "type": "bytes32[4]"}], "name": "trade", "outputs": [{"name": "success", "type": "bool"}], "payable": false, "stateMutability": "nonpayable", "type": "function"};
@@ -31,36 +31,3 @@ CREATE TEMP FUNCTION
 """
 OPTIONS
   ( library="gs://blockchain-etl-bigquery/ethers.js" );
-
-WITH parsed_traces AS
-(SELECT
-    traces.block_timestamp AS block_timestamp
-    ,traces.block_number AS block_number
-    ,traces.transaction_hash AS transaction_hash
-    ,traces.trace_address AS trace_address
-    ,traces.status AS status
-    ,PARSE_TRACE(traces.input) AS parsed
-FROM `bigquery-public-data.crypto_ethereum.traces` AS traces
-WHERE to_address = '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208'
-  AND STARTS_WITH(traces.input, '0xef343588')
-
-  AND DATE(block_timestamp) <= '2020-01-01'
-
-  )
-SELECT
-     block_timestamp
-     ,block_number
-     ,transaction_hash
-     ,trace_address
-     ,status
-     ,parsed.error AS error
-
-    ,parsed.tradeValues AS `tradeValues`
-
-    ,parsed.tradeAddresses AS `tradeAddresses`
-
-    ,parsed.v AS `v`
-
-    ,parsed.rs AS `rs`
-
-FROM parsed_traces
