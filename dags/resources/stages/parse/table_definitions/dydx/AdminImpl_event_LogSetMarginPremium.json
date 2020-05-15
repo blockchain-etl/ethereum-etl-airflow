@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "marketId",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "name": "value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "name": "marginPremium",
+                    "type": "tuple"
+                }
+            ],
+            "name": "LogSetMarginPremium",
+            "type": "event"
+        },
+        "contract_address": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "marketId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "value",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "marginPremium",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdminImpl_event_LogSetMarginPremium"
+    }
+}
