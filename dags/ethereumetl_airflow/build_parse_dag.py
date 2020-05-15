@@ -12,7 +12,8 @@ from airflow.operators.email_operator import EmailOperator
 from google.cloud import bigquery
 
 from ethereumetl_airflow.common import read_json_file
-from ethereumetl_airflow.parse import create_or_update_table_from_table_definition, ref_regex
+from ethereumetl_airflow.parse.parse_logic import ref_regex, create_or_update_history_table, \
+    create_or_replace_stitch_view, create_or_replace_internal_view, parse
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -27,7 +28,7 @@ def build_parse_dag(
         notification_emails=None,
         parse_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *',
-        parse_all_partitions=True,
+        parse_all_partitions=None,
         send_success_email=False
 ):
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
@@ -59,10 +60,9 @@ def build_parse_dag(
     def create_task_and_add_to_dag(table_definition):
 
         def parse_task(ds, **kwargs):
-
             client = bigquery.Client()
 
-            create_or_update_table_from_table_definition(
+            parse(
                 bigquery_client=client,
                 table_definition=table_definition,
                 ds=ds,
@@ -70,8 +70,7 @@ def build_parse_dag(
                 source_dataset_name=SOURCE_DATASET_NAME,
                 destination_project_id=parse_destination_dataset_project_id,
                 sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
-                parse_all_partitions=parse_all_partitions,
-                airflow_task=kwargs['task']
+                parse_all_partitions=parse_all_partitions
             )
 
         table_name = table_definition['table']['table_name']
@@ -113,7 +112,9 @@ def build_parse_dag(
     for task, dependencies in task_dependencies.items():
         for dependency in dependencies:
             if dependency not in all_parse_tasks:
-                raise ValueError('Table {} is not found in the the dataset. Check your ref() in contract_address field.'.format(dependency))
+                raise ValueError(
+                    'Table {} is not found in the the dataset. Check your ref() in contract_address field.'.format(
+                        dependency))
             all_parse_tasks[dependency] >> all_parse_tasks[task]
 
     if notification_emails and len(notification_emails) > 0 and send_success_email:

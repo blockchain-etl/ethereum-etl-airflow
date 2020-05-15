@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "marginAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "positionAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isBuy",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "makerBalance",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "takerBalance",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogTrade",
+            "type": "event"
+        },
+        "contract_address": "0x07abe965500a49370d331ecd613c7ac47dd6e547",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "marginAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "positionAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isBuy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PerpetualV1_event_LogTrade"
+    }
+}

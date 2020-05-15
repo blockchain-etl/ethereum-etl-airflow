@@ -1,0 +1,33 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "claimId",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "resolveClaim",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xf7c83bd0c50e7a72b55a39fe0dabf5e3a330d749",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "claimId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ShortNameClaims_event_resolveClaim"
+    }
+}
