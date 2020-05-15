@@ -37,8 +37,15 @@
             },
             {
                 "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "value",
+                        "type": "STRING"
+                    }
+                ],
                 "name": "marginPremium",
-                "type": "STRING"
+                "type": "RECORD"
             }
         ],
         "table_description": "",

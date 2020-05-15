@@ -27,8 +27,15 @@
         "schema": [
             {
                 "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "value",
+                        "type": "STRING"
+                    }
+                ],
                 "name": "minBorrowedValue",
-                "type": "STRING"
+                "type": "RECORD"
             }
         ],
         "table_description": "",

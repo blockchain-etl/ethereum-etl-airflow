@@ -27,8 +27,15 @@
         "schema": [
             {
                 "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "value",
+                        "type": "STRING"
+                    }
+                ],
                 "name": "marginRatio",
-                "type": "STRING"
+                "type": "RECORD"
             }
         ],
         "table_description": "",
