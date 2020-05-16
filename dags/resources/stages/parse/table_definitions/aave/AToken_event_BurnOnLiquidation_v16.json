@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_fromBalanceIncrease",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_fromIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BurnOnLiquidation",
+            "type": "event"
+        },
+        "contract_address": "0x6fb0855c404e09c47c3fbca25f08d4e41f9f062f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fromBalanceIncrease",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fromIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AToken_event_BurnOnLiquidation"
+    }
+}

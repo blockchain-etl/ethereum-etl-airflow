@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                }
+            ],
+            "name": "InterestRedirectionAllowanceChanged",
+            "type": "event"
+        },
+        "contract_address": "0xe1ba0fb44ccb0d11b80f92f4f8ed94ca3ff51d00",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_to",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AToken_event_InterestRedirectionAllowanceChanged"
+    }
+}
