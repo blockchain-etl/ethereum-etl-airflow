@@ -1,7 +1,7 @@
-select *
-from `blockchain-etl-internal.ethereum_ens.Registrar0_event_NewBid_history`
-where date(block_timestamp) <= '2020-01-01'
-union all
-select *
-from `blockchain-etl-internal.ethereum_ens.Registrar0_event_NewBid`
-where date(block_timestamp) > '2020-01-01'
+SELECT *
+FROM `blockchain-etl-internal.ethereum_ens.Registrar0_event_NewBid_history`
+WHERE DATE(block_timestamp) <= '2020-01-01'
+UNION ALL
+SELECT *
+FROM `blockchain-etl-internal.ethereum_ens.Registrar0_event_NewBid`
+WHERE DATE(block_timestamp) > '2020-01-01'
