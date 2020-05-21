@@ -5,19 +5,24 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newContract",
+                    "name": "token",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "currentContract",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sendTo",
                     "type": "address"
                 }
             ],
-            "name": "FeeBurnerContractSet",
+            "name": "TokenWithdraw",
             "type": "event"
         },
-        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
+        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
         "field_mapping": {},
         "type": "log"
     },
@@ -26,16 +31,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "newContract",
+                "name": "token",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "currentContract",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sendTo",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_FeeBurnerContractSet"
+        "table_name": "KyberNetwork_v2_event_TokenWithdraw"
     }
 }

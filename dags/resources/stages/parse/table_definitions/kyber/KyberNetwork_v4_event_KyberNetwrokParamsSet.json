@@ -5,19 +5,19 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newOperator",
-                    "type": "address"
+                    "name": "maxGasPrice",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "isAdd",
-                    "type": "bool"
+                    "name": "negligibleRateDiff",
+                    "type": "uint256"
                 }
             ],
-            "name": "OperatorAdded",
+            "name": "KyberNetwrokParamsSet",
             "type": "event"
         },
-        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
+        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
         "field_mapping": {},
         "type": "log"
     },
@@ -26,16 +26,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "newOperator",
+                "name": "maxGasPrice",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "isAdd",
+                "name": "negligibleRateDiff",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_OperatorAdded"
+        "table_name": "KyberNetwork_v4_event_KyberNetwrokParamsSet"
     }
 }

@@ -5,19 +5,19 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newContract",
+                    "name": "newOperator",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "currentContract",
-                    "type": "address"
+                    "name": "isAdd",
+                    "type": "bool"
                 }
             ],
-            "name": "ExpectedRateContractSet",
+            "name": "OperatorAdded",
             "type": "event"
         },
-        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
+        "contract_address": "0x964f35fae36d75b1e72770e244f6595b68508cf5",
         "field_mapping": {},
         "type": "log"
     },
@@ -26,16 +26,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "newContract",
+                "name": "newOperator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "currentContract",
+                "name": "isAdd",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_ExpectedRateContractSet"
+        "table_name": "KyberNetwork_v1_event_OperatorAdded"
     }
 }

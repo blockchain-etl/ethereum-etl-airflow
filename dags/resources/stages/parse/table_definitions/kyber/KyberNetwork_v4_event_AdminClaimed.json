@@ -1,41 +1,41 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "0x9ae49c0d7f8f9ef4b864e004fe86ac8294e20950",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newOperator",
+                    "name": "newAdmin",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "isAdd",
-                    "type": "bool"
+                    "name": "previousAdmin",
+                    "type": "address"
                 }
             ],
-            "name": "OperatorAdded",
+            "name": "AdminClaimed",
             "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_OperatorAdded",
-        "table_description": "Event for logging the addition of an address with operator role.",
         "schema": [
             {
-                "name": "newOperator",
                 "description": "",
+                "name": "newAdmin",
                 "type": "STRING"
             },
             {
-                "name": "isAdd",
                 "description": "",
+                "name": "previousAdmin",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "KyberNetwork_v4_event_AdminClaimed"
     }
 }

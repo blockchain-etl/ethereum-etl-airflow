@@ -1,41 +1,41 @@
 {
     "parser": {
+        "type": "log",
+        "contract_address": "0x9ae49c0d7f8f9ef4b864e004fe86ac8294e20950",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "name": "newOperator",
+                    "indexed": true,
+                    "name": "sender",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "isAdd",
-                    "type": "bool"
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "OperatorAdded",
+            "name": "EtherReceival",
             "type": "event"
         },
-        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
-        "field_mapping": {},
-        "type": "log"
+        "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
+        "table_name": "KyberNetwork_v3_event_EtherReceival",
+        "table_description": "Event for logging amount of ETH received from sender.",
         "schema": [
             {
+                "name": "sender",
                 "description": "",
-                "name": "newOperator",
                 "type": "STRING"
             },
             {
+                "name": "amount",
                 "description": "",
-                "name": "isAdd",
                 "type": "STRING"
             }
-        ],
-        "table_description": "",
-        "table_name": "KyberNetwork_v2_event_OperatorAdded"
+        ]
     }
 }

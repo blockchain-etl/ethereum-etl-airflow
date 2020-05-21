@@ -1,0 +1,121 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x9ae49c0d7f8f9ef4b864e004fe86ac8294e20950",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "src",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "dest",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "srcAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "dstAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "destAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "ethWeiValue",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "reserve1",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "reserve2",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "hint",
+                    "type": "bytes"
+                }
+            ],
+            "name": "KyberTrade",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "table_name": "KyberNetwork_v3_event_KyberTrade",
+        "table_description": "Event for logging execution of trades.",
+        "schema": [
+            {
+                "name": "trader",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "src",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "dest",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "srcAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "dstAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "destAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "ethWeiValue",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "reserve1",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "reserve2",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "hint",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

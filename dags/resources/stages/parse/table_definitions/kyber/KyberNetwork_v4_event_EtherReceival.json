@@ -4,12 +4,17 @@
             "anonymous": false,
             "inputs": [
                 {
+                    "indexed": true,
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
                     "indexed": false,
-                    "name": "isEnabled",
-                    "type": "bool"
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "KyberNetworkSetEnable",
+            "name": "EtherReceival",
             "type": "event"
         },
         "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
@@ -21,11 +26,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "isEnabled",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_KyberNetworkSetEnable"
+        "table_name": "KyberNetwork_v4_event_EtherReceival"
     }
 }

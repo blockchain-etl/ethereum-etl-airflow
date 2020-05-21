@@ -1,13 +1,11 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "0x9ae49c0d7f8f9ef4b864e004fe86ac8294e20950",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "reserve",
+                    "name": "sender",
                     "type": "address"
                 },
                 {
@@ -22,40 +20,52 @@
                 },
                 {
                     "indexed": false,
-                    "name": "add",
-                    "type": "bool"
+                    "name": "actualSrcAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "actualDestAmount",
+                    "type": "uint256"
                 }
             ],
-            "name": "ListReservePairs",
+            "name": "ExecuteTrade",
             "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0x964f35fae36d75b1e72770e244f6595b68508cf5",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_ListReservePairs",
-        "table_description": "Event for logging of listing of token pairs that a reserve is allowed to trade.",
         "schema": [
             {
-                "name": "reserve",
                 "description": "",
+                "name": "sender",
                 "type": "STRING"
             },
             {
+                "description": "",
                 "name": "src",
-                "description": "",
                 "type": "STRING"
             },
             {
+                "description": "",
                 "name": "dest",
-                "description": "",
                 "type": "STRING"
             },
             {
-                "name": "add",
                 "description": "",
+                "name": "actualSrcAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "actualDestAmount",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "KyberNetwork_v1_event_ExecuteTrade"
     }
 }

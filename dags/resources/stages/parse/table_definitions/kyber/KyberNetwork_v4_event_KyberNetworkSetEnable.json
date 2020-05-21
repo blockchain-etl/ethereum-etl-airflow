@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "isEnabled",
+                    "type": "bool"
+                }
+            ],
+            "name": "KyberNetworkSetEnable",
+            "type": "event"
+        },
+        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "schema": [
+            {
+                "description": "",
+                "name": "isEnabled",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KyberNetwork_v4_event_KyberNetworkSetEnable"
+    }
+}

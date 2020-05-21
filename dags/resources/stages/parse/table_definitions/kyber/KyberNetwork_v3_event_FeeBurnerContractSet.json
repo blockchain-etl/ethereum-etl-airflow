@@ -23,7 +23,7 @@
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_FeeBurnerContractSet",
+        "table_name": "KyberNetwork_v3_event_FeeBurnerContractSet",
         "table_description": "Event for logging of updates to the FeeBurner contract address.",
         "schema": [
             {

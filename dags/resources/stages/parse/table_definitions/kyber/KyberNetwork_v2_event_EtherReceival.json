@@ -17,7 +17,7 @@
             "name": "EtherReceival",
             "type": "event"
         },
-        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
+        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
         "field_mapping": {},
         "type": "log"
     },

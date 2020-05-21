@@ -5,16 +5,11 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newOperator",
+                    "name": "pendingAdmin",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "isAdd",
-                    "type": "bool"
                 }
             ],
-            "name": "OperatorAdded",
+            "name": "TransferAdminPending",
             "type": "event"
         },
         "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
@@ -26,16 +21,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "newOperator",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "isAdd",
+                "name": "pendingAdmin",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_OperatorAdded"
+        "table_name": "KyberNetwork_v2_event_TransferAdminPending"
     }
 }

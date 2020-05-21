@@ -7,22 +7,32 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "reserve",
+                    "name": "newAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "previousAdmin",
                     "type": "address"
                 }
             ],
-            "name": "RemoveReserveFromNetwork",
+            "name": "AdminClaimed",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_RemoveReserveFromNetwork",
-        "table_description": "Event for logging reserve removals from the network.",
+        "table_name": "KyberNetwork_v3_event_AdminClaimed",
+        "table_description": "Event for logging of the change of admin address.",
         "schema": [
             {
-                "name": "reserve",
+                "name": "newAdmin",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "previousAdmin",
                 "description": "",
                 "type": "STRING"
             }
