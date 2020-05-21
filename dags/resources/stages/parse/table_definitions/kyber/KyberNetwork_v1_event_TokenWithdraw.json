@@ -5,19 +5,24 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newOperator",
+                    "name": "token",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "isAdd",
-                    "type": "bool"
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sendTo",
+                    "type": "address"
                 }
             ],
-            "name": "OperatorAdded",
+            "name": "TokenWithdraw",
             "type": "event"
         },
-        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
+        "contract_address": "0x964f35fae36d75b1e72770e244f6595b68508cf5",
         "field_mapping": {},
         "type": "log"
     },
@@ -26,16 +31,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "newOperator",
+                "name": "token",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "isAdd",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sendTo",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_OperatorAdded"
+        "table_name": "KyberNetwork_v1_event_TokenWithdraw"
     }
 }

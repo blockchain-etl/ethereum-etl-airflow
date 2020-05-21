@@ -4,7 +4,7 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "name": "reserve",
                     "type": "address"
                 },
@@ -27,7 +27,7 @@
             "name": "ListReservePairs",
             "type": "event"
         },
-        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
+        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
         "field_mapping": {},
         "type": "log"
     },
@@ -56,6 +56,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_ListReservePairs"
+        "table_name": "KyberNetwork_v4_event_ListReservePairs"
     }
 }

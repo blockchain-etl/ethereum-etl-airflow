@@ -7,22 +7,22 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "isEnabled",
-                    "type": "bool"
+                    "name": "reserve",
+                    "type": "address"
                 }
             ],
-            "name": "KyberNetworkSetEnable",
+            "name": "RemoveReserveFromNetwork",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_KyberNetworkSetEnable",
-        "table_description": "Event for logging of enabling or disabling of the network.",
+        "table_name": "KyberNetwork_v3_event_RemoveReserveFromNetwork",
+        "table_description": "Event for logging reserve removals from the network.",
         "schema": [
             {
-                "name": "isEnabled",
+                "name": "reserve",
                 "description": "",
                 "type": "STRING"
             }

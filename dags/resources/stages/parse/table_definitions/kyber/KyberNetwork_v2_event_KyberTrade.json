@@ -4,18 +4,13 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "name": "trader",
+                    "indexed": false,
+                    "name": "srcAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "src",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "dest",
+                    "name": "srcToken",
                     "type": "address"
                 },
                 {
@@ -25,39 +20,24 @@
                 },
                 {
                     "indexed": false,
-                    "name": "dstAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
                     "name": "destAddress",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "ethWeiValue",
+                    "name": "destToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "destAmount",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "name": "reserve1",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "reserve2",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "hint",
-                    "type": "bytes"
                 }
             ],
             "name": "KyberTrade",
             "type": "event"
         },
-        "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
+        "contract_address": "0x91a502c678605fbce581eae053319747482276b9",
         "field_mapping": {},
         "type": "log"
     },
@@ -66,17 +46,12 @@
         "schema": [
             {
                 "description": "",
-                "name": "trader",
+                "name": "srcAddress",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "src",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "dest",
+                "name": "srcToken",
                 "type": "STRING"
             },
             {
@@ -86,32 +61,17 @@
             },
             {
                 "description": "",
-                "name": "dstAmount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
                 "name": "destAddress",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "ethWeiValue",
+                "name": "destToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "reserve1",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "reserve2",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "hint",
+                "name": "destAmount",
                 "type": "STRING"
             }
         ],

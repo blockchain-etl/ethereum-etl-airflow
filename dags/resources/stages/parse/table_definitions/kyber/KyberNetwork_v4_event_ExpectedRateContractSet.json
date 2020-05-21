@@ -5,11 +5,16 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "pendingAdmin",
+                    "name": "newContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "currentContract",
                     "type": "address"
                 }
             ],
-            "name": "TransferAdminPending",
+            "name": "ExpectedRateContractSet",
             "type": "event"
         },
         "contract_address": "0x65bf64ff5f51272f729bdcd7acfb00677ced86cd",
@@ -21,11 +26,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "pendingAdmin",
+                "name": "newContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currentContract",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "KyberNetwork_v2_event_TransferAdminPending"
+        "table_name": "KyberNetwork_v4_event_ExpectedRateContractSet"
     }
 }

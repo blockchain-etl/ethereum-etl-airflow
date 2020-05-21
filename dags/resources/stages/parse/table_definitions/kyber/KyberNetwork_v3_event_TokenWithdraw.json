@@ -7,32 +7,42 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "newContract",
+                    "name": "token",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "currentContract",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sendTo",
                     "type": "address"
                 }
             ],
-            "name": "ExpectedRateContractSet",
+            "name": "TokenWithdraw",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_ExpectedRateContractSet",
-        "table_description": "Event for logging of updates to the ExpectedRate contract address.",
+        "table_name": "KyberNetwork_v3_event_TokenWithdraw",
+        "table_description": "Event for logging the withdrawal of a token received in a contract.",
         "schema": [
             {
-                "name": "newContract",
+                "name": "token",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "currentContract",
+                "name": "amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "sendTo",
                 "description": "",
                 "type": "STRING"
             }

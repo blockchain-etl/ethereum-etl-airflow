@@ -7,32 +7,32 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "maxGasPrice",
-                    "type": "uint256"
+                    "name": "newContract",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "negligibleRateDiff",
-                    "type": "uint256"
+                    "name": "currentContract",
+                    "type": "address"
                 }
             ],
-            "name": "KyberNetwrokParamsSet",
+            "name": "ExpectedRateContractSet",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_KyberNetwrokParamsSet",
-        "table_description": "Event for logging of updates to the maxGasPrice and negligibleRateDiff parameters (sic).",
+        "table_name": "KyberNetwork_v3_event_ExpectedRateContractSet",
+        "table_description": "Event for logging of updates to the ExpectedRate contract address.",
         "schema": [
             {
-                "name": "maxGasPrice",
+                "name": "newContract",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "negligibleRateDiff",
+                "name": "currentContract",
                 "description": "",
                 "type": "STRING"
             }

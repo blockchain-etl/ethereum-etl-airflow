@@ -6,43 +6,43 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "name": "token",
+                    "indexed": true,
+                    "name": "reserve",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "amount",
-                    "type": "uint256"
+                    "name": "add",
+                    "type": "bool"
                 },
                 {
                     "indexed": false,
-                    "name": "sendTo",
-                    "type": "address"
+                    "name": "isPermissionless",
+                    "type": "bool"
                 }
             ],
-            "name": "TokenWithdraw",
+            "name": "AddReserveToNetwork",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_TokenWithdraw",
-        "table_description": "Event for logging the withdrawal of a token received in a contract.",
+        "table_name": "KyberNetwork_v3_event_AddReserveToNetwork",
+        "table_description": "Event for logging reserve additions to the network.",
         "schema": [
             {
-                "name": "token",
+                "name": "reserve",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "amount",
+                "name": "add",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "sendTo",
+                "name": "isPermissionless",
                 "description": "",
                 "type": "STRING"
             }

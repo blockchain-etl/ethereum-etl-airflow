@@ -6,33 +6,33 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "name": "sender",
+                    "indexed": false,
+                    "name": "proxy",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "amount",
-                    "type": "uint256"
+                    "name": "sender",
+                    "type": "address"
                 }
             ],
-            "name": "EtherReceival",
+            "name": "KyberProxySet",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "kyber",
-        "table_name": "KyberNetwork_event_EtherReceival",
-        "table_description": "Event for logging amount of ETH received from sender.",
+        "table_name": "KyberNetwork_v3_event_KyberProxySet",
+        "table_description": "Event for logging of updates to the KyberNetworkProxy.sol contract address.",
         "schema": [
             {
-                "name": "sender",
+                "name": "proxy",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "amount",
+                "name": "sender",
                 "description": "",
                 "type": "STRING"
             }
