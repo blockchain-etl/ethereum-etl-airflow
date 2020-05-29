@@ -31,7 +31,7 @@
             "name": "RedeemUnderlying",
             "type": "event"
         },
-        "contract_address": "0x398eC7346DcD622eDc5ae82352F02bE94C62d119",
+        "contract_address": "0x398ec7346dcd622edc5ae82352f02be94c62d119",
         "field_mapping": {},
         "type": "log"
     },
