@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tokenIn",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tokenOut",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenAmountIn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenAmountOut",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LOG_SWAP",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('BFactory_event_LOG_NEW_POOL')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenAmountIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenAmountOut",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BPool_event_LOG_SWAP"
+    }
+}
