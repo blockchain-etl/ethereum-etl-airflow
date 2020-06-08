@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "blabs",
+                    "type": "address"
+                }
+            ],
+            "name": "LOG_BLABS",
+            "type": "event"
+        },
+        "contract_address": "0x9424b1412450d0f8fc2255faf6046b98213b76bd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "blabs",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BFactory_event_LOG_BLABS"
+    }
+}
