@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "previousBalance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newBalance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DelegateVotesChanged",
+            "type": "event"
+        },
+        "contract_address": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "previousBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Comp_event_DelegateVotesChanged"
+    }
+}
