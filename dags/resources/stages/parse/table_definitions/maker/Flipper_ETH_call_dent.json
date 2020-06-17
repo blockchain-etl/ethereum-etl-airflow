@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "lot",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "bid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "dent",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xd8a04f5412223f513dc55f839574430f5ec15531",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bid",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Flipper_ETH_call_dent"
+    }
+}
