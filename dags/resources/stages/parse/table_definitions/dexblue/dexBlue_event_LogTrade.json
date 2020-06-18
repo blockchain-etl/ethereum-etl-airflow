@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "makerAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "makerAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "takerAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "takerAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogTrade",
+            "type": "event"
+        },
+        "contract_address": "0x000000000000541e251335090ac5b47176af4f7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dexblue",
+        "schema": [
+            {
+                "description": "",
+                "name": "makerAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "dexBlue_event_LogTrade"
+    }
+}

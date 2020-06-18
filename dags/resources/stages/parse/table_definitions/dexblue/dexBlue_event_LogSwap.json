@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "soldAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "soldAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "boughtAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "boughtAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogSwap",
+            "type": "event"
+        },
+        "contract_address": "0x000000000000541e251335090ac5b47176af4f7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dexblue",
+        "schema": [
+            {
+                "description": "",
+                "name": "soldAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "soldAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "boughtAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "boughtAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "dexBlue_event_LogSwap"
+    }
+}

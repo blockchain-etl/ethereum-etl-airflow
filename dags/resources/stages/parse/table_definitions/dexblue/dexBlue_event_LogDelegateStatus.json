@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "delegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "status",
+                    "type": "bool"
+                }
+            ],
+            "name": "LogDelegateStatus",
+            "type": "event"
+        },
+        "contract_address": "0x000000000000541e251335090ac5b47176af4f7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dexblue",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "status",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "dexBlue_event_LogDelegateStatus"
+    }
+}
