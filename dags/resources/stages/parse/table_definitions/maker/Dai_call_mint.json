@@ -39,6 +39,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Dai_event_mint"
+        "table_name": "Dai_call_mint"
     }
 }

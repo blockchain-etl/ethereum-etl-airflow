@@ -4,23 +4,28 @@
             "constant": false,
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "usr",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "wad",
+                    "name": "lot",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "bid",
                     "type": "uint256"
                 }
             ],
-            "name": "burn",
+            "name": "dent",
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "contract_address": "0xaa745404d55f88c108a28c86abe7b5a1e7817c07",
         "field_mapping": {},
         "type": "trace"
     },
@@ -29,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "usr",
+                "name": "id",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "wad",
+                "name": "lot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bid",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Dai_call_burn"
+        "table_name": "Flipper_BAT_call_dent"
     }
 }
