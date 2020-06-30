@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "amtCollateralToPay",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "vaultOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "liquidator",
+                    "type": "address"
+                }
+            ],
+            "name": "Liquidate",
+            "type": "event"
+        },
+        "contract_address": "SELECT addr FROM ref('OptionsFactory_event_OptionsContractCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opyn",
+        "schema": [
+            {
+                "description": "",
+                "name": "amtCollateralToPay",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vaultOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidator",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "oToken_event_Liquidate"
+    }
+}

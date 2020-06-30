@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "vaultOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "payer",
+                    "type": "address"
+                }
+            ],
+            "name": "ERC20CollateralAdded",
+            "type": "event"
+        },
+        "contract_address": "SELECT addr FROM ref('OptionsFactory_event_OptionsContractCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opyn",
+        "schema": [
+            {
+                "description": "",
+                "name": "vaultOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "oToken_event_ERC20CollateralAdded"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "asset",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "name": "addr",
+                    "type": "address"
+                }
+            ],
+            "name": "AssetAdded",
+            "type": "event"
+        },
+        "contract_address": "0xcc5d905b9c2c8c9329eb4e25dc086369d6c7777c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opyn",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "addr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OptionsFactory_event_AssetAdded"
+    }
+}
