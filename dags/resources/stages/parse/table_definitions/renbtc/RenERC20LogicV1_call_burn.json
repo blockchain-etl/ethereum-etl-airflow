@@ -25,7 +25,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "renbtc",
         "schema": [
             {
                 "description": "",
@@ -39,6 +39,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_burn"
+        "table_name": "RenERC20LogicV1_call_burn"
     }
 }
