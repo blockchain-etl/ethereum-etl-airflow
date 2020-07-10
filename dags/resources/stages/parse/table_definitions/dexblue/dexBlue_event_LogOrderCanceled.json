@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "hash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LogOrderCanceled",
+            "type": "event"
+        },
+        "contract_address": "0x000000000000541e251335090ac5b47176af4f7e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dexblue",
+        "schema": [
+            {
+                "description": "",
+                "name": "hash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "dexBlue_event_LogOrderCanceled"
+    }
+}
