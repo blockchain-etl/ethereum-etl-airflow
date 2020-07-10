@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "TaskType",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "class",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0x0316eb71485b0ab14103307bf65a021042c6d380",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hbtc",
+        "schema": [
+            {
+                "description": "",
+                "name": "TaskType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "class",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "HBTCToken_event_AdminChanged"
+    }
+}
