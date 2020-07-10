@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "tokenHolder",
+                    "type": "address"
+                }
+            ],
+            "name": "AuthorizedOperator",
+            "type": "event"
+        },
+        "contract_address": "0x3212b29e33587a00fb1c83346f5dbfa69a458923",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "imbtc",
+        "schema": [
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenHolder",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "IMBTC_event_AuthorizedOperator"
+    }
+}
