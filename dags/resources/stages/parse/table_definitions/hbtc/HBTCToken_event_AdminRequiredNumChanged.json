@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "TaskType",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "class",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "previousNum",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "requiredNum",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AdminRequiredNumChanged",
+            "type": "event"
+        },
+        "contract_address": "0x0316eb71485b0ab14103307bf65a021042c6d380",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hbtc",
+        "schema": [
+            {
+                "description": "",
+                "name": "TaskType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "class",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "previousNum",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "requiredNum",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "HBTCToken_event_AdminRequiredNumChanged"
+    }
+}
