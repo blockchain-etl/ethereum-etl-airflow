@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogBurn",
+            "type": "event"
+        },
+        "contract_address": "0x80fb784b7ed66730e8b1dbd9820afd29931aab03",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "LEND",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EthLendToken_event_LogBurn"
+    }
+}
