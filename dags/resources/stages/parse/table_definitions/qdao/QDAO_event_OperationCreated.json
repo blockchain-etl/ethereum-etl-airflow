@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "operation",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "howMany",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "ownersCount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "proposer",
+                    "type": "address"
+                }
+            ],
+            "name": "OperationCreated",
+            "type": "event"
+        },
+        "contract_address": "0x3166c570935a7d8554c8f4ea792ff965d2efe1f2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "qdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "operation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "howMany",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ownersCount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "proposer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "QDAO_event_OperationCreated"
+    }
+}
