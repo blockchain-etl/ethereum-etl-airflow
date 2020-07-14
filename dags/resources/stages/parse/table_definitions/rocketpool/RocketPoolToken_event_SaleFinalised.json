@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_agent",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SaleFinalised",
+            "type": "event"
+        },
+        "contract_address": "0xb4efd85c19999d84251304bda99e90b92300bd93",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rocketpool",
+        "schema": [
+            {
+                "description": "",
+                "name": "_agent",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RocketPoolToken_event_SaleFinalised"
+    }
+}
