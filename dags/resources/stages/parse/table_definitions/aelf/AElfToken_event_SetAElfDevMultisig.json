@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_old",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_new",
+                    "type": "address"
+                }
+            ],
+            "name": "SetAElfDevMultisig",
+            "type": "event"
+        },
+        "contract_address": "0xbf2179859fc6d5bee9bf9158632dc51678a4100e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Aelf",
+        "schema": [
+            {
+                "description": "",
+                "name": "_old",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_new",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AElfToken_event_SetAElfDevMultisig"
+    }
+}
