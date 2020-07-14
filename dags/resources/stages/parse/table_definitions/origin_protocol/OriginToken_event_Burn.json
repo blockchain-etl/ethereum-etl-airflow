@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "burner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Burn",
+            "type": "event"
+        },
+        "contract_address": "0x8207c1ffc5b6804f6024322ccf34f29c3541ae26",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "origin_protocol",
+        "schema": [
+            {
+                "description": "",
+                "name": "burner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OriginToken_event_Burn"
+    }
+}
