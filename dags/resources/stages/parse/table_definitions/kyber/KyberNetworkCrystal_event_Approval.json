@@ -27,7 +27,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "KyberNetworkCrystal",
+        "dataset_name": "kyber",
         "schema": [
             {
                 "description": "",
