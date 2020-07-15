@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_transferable",
+                    "type": "bool"
+                }
+            ],
+            "name": "SetTransferable",
+            "type": "event"
+        },
+        "contract_address": "0xbf2179859fc6d5bee9bf9158632dc51678a4100e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Aelf",
+        "schema": [
+            {
+                "description": "",
+                "name": "_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_transferable",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AElfToken_event_SetTransferable"
+    }
+}
