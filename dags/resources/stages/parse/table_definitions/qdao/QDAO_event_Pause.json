@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Pause",
+            "type": "event"
+        },
+        "contract_address": "0x3166c570935a7d8554c8f4ea792ff965d2efe1f2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "qdao",
+        "schema": [],
+        "table_description": "",
+        "table_name": "QDAO_event_Pause"
+    }
+}

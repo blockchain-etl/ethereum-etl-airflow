@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "operation",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "lastCanceller",
+                    "type": "address"
+                }
+            ],
+            "name": "OperationCancelled",
+            "type": "event"
+        },
+        "contract_address": "0x3166c570935a7d8554c8f4ea792ff965d2efe1f2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "qdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "operation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lastCanceller",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "QDAO_event_OperationCancelled"
+    }
+}
