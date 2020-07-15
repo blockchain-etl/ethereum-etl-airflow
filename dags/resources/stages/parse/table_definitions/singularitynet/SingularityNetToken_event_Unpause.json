@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Unpause",
+            "type": "event"
+        },
+        "contract_address": "0x8eb24319393716668d768dcec29356ae9cffe285",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "singularity_net",
+        "schema": [],
+        "table_description": "",
+        "table_name": "SingularityNetToken_event_Unpause"
+    }
+}
