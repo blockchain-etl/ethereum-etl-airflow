@@ -27,7 +27,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "Aelf",
+        "dataset_name": "aelf",
         "schema": [
             {
                 "description": "",

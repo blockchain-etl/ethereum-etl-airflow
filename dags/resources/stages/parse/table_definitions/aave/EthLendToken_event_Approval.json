@@ -27,7 +27,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "LEND",
+        "dataset_name": "lend",
         "schema": [
             {
                 "description": "",
