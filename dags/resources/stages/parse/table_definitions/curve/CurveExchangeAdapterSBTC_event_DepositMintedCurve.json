@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "curveAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[3]",
+                    "name": "amounts",
+                    "type": "uint256[3]"
+                }
+            ],
+            "name": "DepositMintedCurve",
+            "type": "event"
+        },
+        "contract_address": "0xaeade605d01fe9a8e9c4b3aa0130a90d62167029",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "mintedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "curveAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amounts",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveExchangeAdapterSBTC_event_DepositMintedCurve"
+    }
+}
