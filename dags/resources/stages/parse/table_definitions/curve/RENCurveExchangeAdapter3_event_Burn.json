@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "burnAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Burn",
+            "type": "event"
+        },
+        "contract_address": "0x73ab2bd10ad10f7174a1ad5afae3ce3d991c5047",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "burnAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RENCurveExchangeAdapter3_event_Burn"
+    }
+}
