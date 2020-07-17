@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_sold",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_bought",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount_sold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount_bought",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenExchange",
+            "type": "event"
+        },
+        "contract_address": "0x7002b727ef8f5571cb5f9d70d13dbeeb4dfae9d1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_sold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_bought",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount_sold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount_bought",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Registry_event_TokenExchange"
+    }
+}
