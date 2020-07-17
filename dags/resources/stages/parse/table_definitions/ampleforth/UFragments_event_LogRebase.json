@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "epoch",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalSupply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogRebase",
+            "type": "event"
+        },
+        "contract_address": "0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ampleforth",
+        "schema": [
+            {
+                "description": "",
+                "name": "epoch",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalSupply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UFragments_event_LogRebase"
+    }
+}
