@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x93054188d876f558f4a66b2ef1d97d16edf0895b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RENSwap_event_NewAdmin"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "renAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReceiveRen",
+            "type": "event"
+        },
+        "contract_address": "0x9fe350dfa5f66bc086243f21a8f0932514316627",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "renAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RENCurveExchangeAdapter_event_ReceiveRen"
+    }
+}

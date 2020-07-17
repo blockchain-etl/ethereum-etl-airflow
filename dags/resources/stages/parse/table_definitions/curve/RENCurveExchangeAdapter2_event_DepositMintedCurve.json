@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "curveAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DepositMintedCurve",
+            "type": "event"
+        },
+        "contract_address": "0x26d9980571e77ffb0349f9c801dd7ca9951fb656",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "mintedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "curveAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RENCurveExchangeAdapter2_event_DepositMintedCurve"
+    }
+}

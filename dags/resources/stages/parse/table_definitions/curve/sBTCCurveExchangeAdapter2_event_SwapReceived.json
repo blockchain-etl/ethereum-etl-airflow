@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc20BTCAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int128",
+                    "name": "j",
+                    "type": "int128"
+                }
+            ],
+            "name": "SwapReceived",
+            "type": "event"
+        },
+        "contract_address": "0x02b3f51ac9202aa19be63d61a8c681579d6e3a51",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "mintedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "erc20BTCAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "j",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "sBTCCurveExchangeAdapter2_event_SwapReceived"
+    }
+}

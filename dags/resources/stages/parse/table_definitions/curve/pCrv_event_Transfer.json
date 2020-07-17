@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "contract_address": "0xd905e2eaebe188fc92179b6350807d8bd91db0d8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "pCrv_event_Transfer"
+    }
+}

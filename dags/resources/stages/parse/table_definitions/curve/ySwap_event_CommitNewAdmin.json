@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "deadline",
+                    "type": "uint256",
+                    "unit": "sec"
+                },
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                }
+            ],
+            "name": "CommitNewAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x45f783cce6b7ff23b2ab2d70e416cdb7d6055f51",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ySwap_event_CommitNewAdmin"
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "old_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "new_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "initial_time",
+                    "type": "uint256",
+                    "unit": "sec"
+                },
+                {
+                    "indexed": false,
+                    "name": "future_time",
+                    "type": "uint256",
+                    "unit": "sec"
+                }
+            ],
+            "name": "RampA",
+            "type": "event"
+        },
+        "contract_address": "0x06364f10b501e868329afbc005b3492902d6c763",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "old_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initial_time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "future_time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PAXSwap_event_RampA"
+    }
+}

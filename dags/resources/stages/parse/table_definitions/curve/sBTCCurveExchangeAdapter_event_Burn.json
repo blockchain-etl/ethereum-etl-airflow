@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "burnAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Burn",
+            "type": "event"
+        },
+        "contract_address": "0x104c1e66c67c385e6095ffcc6227d75c761dc019",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "burnAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "sBTCCurveExchangeAdapter_event_Burn"
+    }
+}
