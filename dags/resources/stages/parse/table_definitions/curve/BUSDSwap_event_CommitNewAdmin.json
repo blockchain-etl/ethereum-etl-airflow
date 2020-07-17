@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "deadline",
+                    "type": "uint256",
+                    "unit": "sec"
+                },
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                }
+            ],
+            "name": "CommitNewAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x79a8c46dea5ada233abaffd40f3a0a2b1e5a4f27",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BUSDSwap_event_CommitNewAdmin"
+    }
+}
