@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "sold_id",
+                    "type": "int128"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokens_sold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "bought_id",
+                    "type": "int128"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokens_bought",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenExchangeUnderlying",
+            "type": "event"
+        },
+        "contract_address": "0x06364f10b501e868329afbc005b3492902d6c763",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sold_id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens_sold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bought_id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens_bought",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PAXSwap_event_TokenExchangeUnderlying"
+    }
+}
