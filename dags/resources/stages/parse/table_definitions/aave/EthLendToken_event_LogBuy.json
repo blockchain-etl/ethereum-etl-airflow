@@ -22,7 +22,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "lend",
+        "dataset_name": "aave",
         "schema": [
             {
                 "description": "",
