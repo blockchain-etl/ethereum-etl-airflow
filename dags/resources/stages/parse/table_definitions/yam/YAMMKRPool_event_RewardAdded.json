@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reward",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RewardAdded",
+            "type": "event"
+        },
+        "contract_address": "0xcfe1e539acb2d489a651ca011a6eb93d32f97e23",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "yam",
+        "schema": [
+            {
+                "description": "",
+                "name": "reward",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YAMMKRPool_event_RewardAdded"
+    }
+}
