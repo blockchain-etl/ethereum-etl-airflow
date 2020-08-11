@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldImplementation",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newImplementation",
+                    "type": "address"
+                }
+            ],
+            "name": "NewImplementation",
+            "type": "event"
+        },
+        "contract_address": "0x0e2298e3b3390e3b945a5456fbf59ecc3f55da16",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "yam",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldImplementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newImplementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YAMDelegator_event_NewImplementation"
+    }
+}
