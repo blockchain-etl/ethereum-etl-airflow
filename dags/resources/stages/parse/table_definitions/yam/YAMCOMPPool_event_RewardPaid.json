@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reward",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RewardPaid",
+            "type": "event"
+        },
+        "contract_address": "0x8538e5910c6f80419cd3170c26073ff238048c9e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "yam",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reward",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YAMCOMPPool_event_RewardPaid"
+    }
+}
