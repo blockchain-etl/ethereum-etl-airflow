@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Staked",
+            "type": "event"
+        },
+        "contract_address": "0xcfe1e539acb2d489a651ca011a6eb93d32f97e23",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "yam",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YAMMKRPool_event_Staked"
+    }
+}
