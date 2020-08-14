@@ -27,6 +27,7 @@ def build_load_dag(
     chain='ethereum',
     notification_emails=None,
     load_start_date=datetime(2018, 7, 1),
+    extract_bucket=None,
     schedule_interval='0 0 * * *',
     load_all_partitions=True
 ):
@@ -237,6 +238,20 @@ def build_load_dag(
                 dependency >> verify_task
         return verify_task
 
+    def add_extract_tasks(task, dependencies=None):
+        sql_path = os.path.join(dags_folder, 'resources/stages/extract/sqls/{task}.sql'.format(task=task))
+        sql = read_file(sql_path)
+        verify_task = BigQueryOperator(
+            task_id='verify_{task}'.format(task=task),
+            bql=sql,
+            params=environment,
+            use_legacy_sql=False,
+            dag=dag)
+        if dependencies is not None and len(dependencies) > 0:
+            for dependency in dependencies:
+                dependency >> verify_task
+        return verify_task
+
     load_blocks_task = add_load_tasks('blocks', 'csv')
     load_transactions_task = add_load_tasks('transactions', 'csv')
     load_receipts_task = add_load_tasks('receipts', 'csv')
@@ -278,6 +293,9 @@ def build_load_dag(
         'traces_transactions_count', [enrich_transactions_task, enrich_traces_task])
     verify_traces_contracts_count_task = add_verify_tasks(
         'traces_contracts_count', [enrich_transactions_task, enrich_traces_task, enrich_contracts_task])
+
+    if extract_bucket:
+
 
     if notification_emails and len(notification_emails) > 0:
         send_email_task = EmailOperator(
