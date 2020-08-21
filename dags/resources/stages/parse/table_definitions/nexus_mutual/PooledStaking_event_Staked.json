@@ -30,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "nexus-pooled-staking",
+        "dataset_name": "nexus_mutual",
         "schema": [
             {
                 "description": "",
