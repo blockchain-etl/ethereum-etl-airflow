@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "contractAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "staker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Unstaked",
+            "type": "event"
+        },
+        "contract_address": "0x84edffa16bb0b9ab1163abb0a13ff0744c11272f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nexus-pooled-staking",
+        "schema": [
+            {
+                "description": "",
+                "name": "contractAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "staker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "This is event is fired when an LP unstakes NXM from a pool to withdraw the insurance cover they had previously provided when staking for the contract specified in contractAddress",
+        "table_name": "PooledStaking_event_Unstaked"
+    }
+}
