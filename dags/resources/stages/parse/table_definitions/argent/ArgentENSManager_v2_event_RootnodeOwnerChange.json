@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_rootnode",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "_newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "RootnodeOwnerChange",
+            "type": "event"
+        },
+        "contract_address": "0xc4baabb5b7dff84aa8023183e3ca0ba3b2fee519",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "_rootnode",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ArgentENSManager_v2_event_RootnodeOwnerChange"
+    }
+}
