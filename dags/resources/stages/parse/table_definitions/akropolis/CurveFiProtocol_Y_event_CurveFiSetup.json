@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "swap",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "deposit",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "liquidityGauge",
+                    "type": "address"
+                }
+            ],
+            "name": "CurveFiSetup",
+            "type": "event"
+        },
+        "contract_address": "0x7967ada2a32a633d5c055e2e075a83023b632b4e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "akropolis",
+        "schema": [
+            {
+                "description": "",
+                "name": "swap",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deposit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityGauge",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveFiProtocol_Y_event_CurveFiSetup"
+    }
+}
