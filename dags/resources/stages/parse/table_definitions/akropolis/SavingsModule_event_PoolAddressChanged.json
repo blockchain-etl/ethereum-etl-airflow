@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPool",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolAddressChanged",
+            "type": "event"
+        },
+        "contract_address": "0x73fc3038b4cd8ffd07482b92a52ea806505e5748",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "akropolis",
+        "schema": [
+            {
+                "description": "",
+                "name": "newPool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SavingsModule_event_PoolAddressChanged"
+    }
+}
