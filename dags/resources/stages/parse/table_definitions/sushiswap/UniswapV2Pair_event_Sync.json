@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "uniswap",
+        "dataset_name": "sushiswap",
         "schema": [
             {
                 "description": "",
