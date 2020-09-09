@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token0",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token1",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "pair",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_uint",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PairCreated",
+            "type": "event"
+        },
+        "contract_address": "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sushiswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "token0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pair",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_uint",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapV2Factory_event_PairCreated"
+    }
+}
