@@ -26,7 +26,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 def build_load_dag(
     dag_id,
-    output_bucket,
+    checkpoint_bucket,
     destination_dataset_project_id,
     chain='ethereum',
     notification_emails=None,
@@ -92,46 +92,16 @@ def build_load_dag(
 
     dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
-    def add_load_tasks(task, file_format, allow_quoted_newlines=False):
+    def add_wait_checkpoint_tasks():
         wait_sensor = GoogleCloudStorageObjectSensor(
-            task_id='wait_latest_{task}'.format(task=task),
+            task_id='wait_checkpoint',
             timeout=60 * 60,
             poke_interval=60,
-            bucket=output_bucket,
-            object='export/{task}/block_date={datestamp}/{task}.{file_format}'.format(
-                task=task, datestamp='{{ds}}', file_format=file_format),
+            bucket=checkpoint_bucket,
+            object='checkpoint/block_date={datestamp}/load_complete_checkpoint.txt'.format(datestamp='{{ds}}'),
             dag=dag
         )
-
-        def load_task():
-            client = bigquery.Client()
-            job_config = bigquery.LoadJobConfig()
-            schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/{task}.json'.format(task=task))
-            job_config.schema = read_bigquery_schema_from_file(schema_path)
-            job_config.source_format = bigquery.SourceFormat.CSV if file_format == 'csv' else bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
-            if file_format == 'csv':
-                job_config.skip_leading_rows = 1
-            job_config.write_disposition = 'WRITE_TRUNCATE'
-            job_config.allow_quoted_newlines = allow_quoted_newlines
-            job_config.ignore_unknown_values = True
-
-            export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
-            uri = '{export_location_uri}/{task}/*.{file_format}'.format(
-                export_location_uri=export_location_uri, task=task, file_format=file_format)
-            table_ref = client.dataset(dataset_name_raw).table(task)
-            load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
-            submit_bigquery_job(load_job, job_config)
-            assert load_job.state == 'DONE'
-
-        load_operator = PythonOperator(
-            task_id='load_{task}'.format(task=task),
-            python_callable=load_task,
-            execution_timeout=timedelta(minutes=30),
-            dag=dag
-        )
-
-        wait_sensor >> load_operator
-        return load_operator
+        return wait_sensor
 
     def add_enrich_tasks(task, time_partitioning_field='block_timestamp', dependencies=None, always_load_all_partitions=False):
         def enrich_task(ds, **kwargs):
@@ -266,6 +236,14 @@ def build_load_dag(
             for dependency in dependencies:
                 dependency >> save_checkpoint_task
         return save_checkpoint_task
+
+    # Wait for checkpoint
+
+    wait_checkpoint_task = add_wait_checkpoint_tasks()
+
+    # query to temp BQ table
+
+    # extract to a GCS bucket
 
     # Load tasks #
 
