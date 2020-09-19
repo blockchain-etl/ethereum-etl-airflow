@@ -1,0 +1,22 @@
+0 events found in contract StrategyVaultUSDC:
+
+18 functions found in contract StrategyVaultUSDC:
+
+aave
+balanceOf
+balanceSavingsInToken
+controller
+debt
+deposit
+getAave
+getName
+governance
+have
+setController
+setGovernance
+skim
+skimmable
+vault
+want
+withdraw
+withdrawAll
