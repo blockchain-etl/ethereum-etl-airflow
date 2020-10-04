@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "fromDelegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "toDelegate",
+                    "type": "address"
+                }
+            ],
+            "name": "DelegateChanged",
+            "type": "event"
+        },
+        "contract_address": "0x0aacfbec6a24756c20d41914f2caba817c0d8521",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "yam",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromDelegate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toDelegate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YAMDelegate_v3_event_DelegateChanged"
+    }
+}
