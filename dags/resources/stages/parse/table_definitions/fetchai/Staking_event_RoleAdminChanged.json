@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "role",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "previousAdminRole",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "newAdminRole",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "RoleAdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0x351bac612b50e87b46e4b10a282f632d41397de2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "fetchai",
+        "schema": [
+            {
+                "description": "",
+                "name": "role",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "previousAdminRole",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdminRole",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Staking_event_RoleAdminChanged"
+    }
+}

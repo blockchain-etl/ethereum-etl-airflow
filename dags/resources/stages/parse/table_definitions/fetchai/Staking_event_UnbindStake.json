@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "stakerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "liquidSinceBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "principal",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "compoundInterest",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UnbindStake",
+            "type": "event"
+        },
+        "contract_address": "0x351bac612b50e87b46e4b10a282f632d41397de2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "fetchai",
+        "schema": [
+            {
+                "description": "",
+                "name": "stakerAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidSinceBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "principal",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "compoundInterest",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Staking_event_UnbindStake"
+    }
+}
