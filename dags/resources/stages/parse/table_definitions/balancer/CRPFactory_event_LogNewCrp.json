@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_balancer",
+        "dataset_name": "balancer",
         "schema": [
             {
                 "description": "",
