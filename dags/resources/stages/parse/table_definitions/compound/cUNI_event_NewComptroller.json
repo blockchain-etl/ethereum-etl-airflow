@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract ComptrollerInterface",
+                    "name": "oldComptroller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract ComptrollerInterface",
+                    "name": "newComptroller",
+                    "type": "address"
+                }
+            ],
+            "name": "NewComptroller",
+            "type": "event"
+        },
+        "contract_address": "0x35a18000230da775cac24873d00ff85bccded550",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldComptroller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newComptroller",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cUNI_event_NewComptroller"
+    }
+}

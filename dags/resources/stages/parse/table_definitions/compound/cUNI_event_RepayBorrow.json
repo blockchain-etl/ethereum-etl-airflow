@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "payer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "repayAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "accountBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RepayBorrow",
+            "type": "event"
+        },
+        "contract_address": "0x35a18000230da775cac24873d00ff85bccded550",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "payer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "repayAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "accountBorrows",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBorrows",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cUNI_event_RepayBorrow"
+    }
+}
