@@ -30,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "cuni",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "CErc20Delegator_event_Approval"
+        "table_name": "cUNI_event_Approval"
     }
 }
