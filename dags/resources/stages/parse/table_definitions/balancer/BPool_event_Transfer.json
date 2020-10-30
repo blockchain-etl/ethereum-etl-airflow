@@ -25,7 +25,7 @@
             "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT pool FROM ref('BFactory_event_LOG_NEW_POOL')",
+        "contract_address": "SELECT pool FROM ref('BFactory_event_LOG_NEW_POOL') UNION ALL SELECT pool FROM ref('CRPFactory_event_LogNewCrp')",
         "field_mapping": {},
         "type": "log"
     },
