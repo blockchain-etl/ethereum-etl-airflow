@@ -4,6 +4,7 @@ WITH parsed_traces AS
     ,traces.block_number AS block_number
     ,traces.transaction_hash AS transaction_hash
     ,traces.trace_address AS trace_address
+    ,traces.to_address AS to_address
     ,traces.status AS status
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(traces.input) AS parsed
 FROM `{{source_project_id}}.{{source_dataset_name}}.traces` AS traces
@@ -28,6 +29,7 @@ SELECT
      ,block_number
      ,transaction_hash
      ,trace_address
+     ,to_address
      ,status
      ,parsed.error AS error
      {% for column in table.schema %}

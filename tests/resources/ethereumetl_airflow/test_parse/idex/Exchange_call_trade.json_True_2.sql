@@ -4,6 +4,7 @@ WITH parsed_traces AS
     ,traces.block_number AS block_number
     ,traces.transaction_hash AS transaction_hash
     ,traces.trace_address AS trace_address
+    ,traces.to_address AS to_address
     ,traces.status AS status
     ,`blockchain-etl-internal.ethereum_idex.parse_Exchange_call_trade`(traces.input) AS parsed
 FROM `bigquery-public-data.crypto_ethereum.traces` AS traces
@@ -22,6 +23,7 @@ SELECT
      ,block_number
      ,transaction_hash
      ,trace_address
+     ,to_address
      ,status
      ,parsed.error AS error
 
