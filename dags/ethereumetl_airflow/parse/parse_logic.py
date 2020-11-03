@@ -364,6 +364,10 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             field_type='STRING',
             description='Comma separated list of trace address in call tree'))
         result.append(bigquery.SchemaField(
+            name='to_address',
+            field_type='STRING',
+            description='Address of the called contract'))
+        result.append(bigquery.SchemaField(
             name='status',
             field_type='INT64',
             description='Either 1 (success) or 0 (failure, due to any operation that can cause the call itself or any top-level call to revert)'))
