@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "proposalId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "abstainVotingPower",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "yesVotingPower",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "noVotingPower",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NoWins",
+            "type": "event"
+        },
+        "contract_address": "0x8a2efd9a790199f4c94c6effe210fce0b4724f52",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "proposalId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "abstainVotingPower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "yesVotingPower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "noVotingPower",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "See https://docs.aave.com/developers/developing-on-aave/the-protocol/governance",
+        "table_name": "AaveProtoGovernance_event_NoWins"
+    }
+}

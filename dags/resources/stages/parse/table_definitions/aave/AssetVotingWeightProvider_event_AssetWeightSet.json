@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "setter",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "weight",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AssetWeightSet",
+            "type": "event"
+        },
+        "contract_address": "0x5ac493b8c2cef1f02f117b9ba2797e7da95574aa",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "setter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "weight",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "See https://docs.aave.com/developers/developing-on-aave/the-protocol/governance",
+        "table_name": "AssetVotingWeightProvider_event_AssetWeightSet"
+    }
+}
