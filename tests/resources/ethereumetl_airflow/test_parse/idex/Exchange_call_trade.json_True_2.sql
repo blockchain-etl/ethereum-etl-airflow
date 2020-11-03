@@ -7,7 +7,11 @@ WITH parsed_traces AS
     ,traces.status AS status
     ,`blockchain-etl-internal.ethereum_idex.parse_Exchange_call_trade`(traces.input) AS parsed
 FROM `bigquery-public-data.crypto_ethereum.traces` AS traces
-WHERE to_address = '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208'
+WHERE to_address IN (
+
+    '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208'
+
+  )
   AND STARTS_WITH(traces.input, '0xef343588')
 
   AND DATE(block_timestamp) <= '2020-01-01'

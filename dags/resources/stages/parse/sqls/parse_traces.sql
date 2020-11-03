@@ -7,7 +7,13 @@ WITH parsed_traces AS
     ,traces.status AS status
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(traces.input) AS parsed
 FROM `{{source_project_id}}.{{source_dataset_name}}.traces` AS traces
-WHERE to_address = '{{parser.contract_address}}'
+WHERE to_address IN (
+    {% if parser.contract_address_sql %}
+    {{parser.contract_address_sql}}
+    {% else %}
+    '{{parser.contract_address}}'
+    {% endif %}
+  )
   AND STARTS_WITH(traces.input, '{{selector}}')
   {% if parse_all_partitions is none %}
   -- pass
