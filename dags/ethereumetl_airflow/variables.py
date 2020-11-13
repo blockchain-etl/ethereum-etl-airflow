@@ -108,6 +108,8 @@ def read_load_dag_redshift_vars(var_prefix, **kwargs):
 def read_verify_streaming_dag_vars(var_prefix, **kwargs):
     vars = {
         'destination_dataset_project_id': read_var('destination_dataset_project_id', var_prefix, True, **kwargs),
+        'parse_destination_dataset_project_id': read_var('parse_destination_dataset_project_id', var_prefix, True, **kwargs),
+        'verify_partitioned_tables': parse_bool(read_var('verify_partitioned_tables', var_prefix, False, **kwargs), default=False),
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
     }
 

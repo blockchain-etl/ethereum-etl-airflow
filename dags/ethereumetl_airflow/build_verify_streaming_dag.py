@@ -16,14 +16,19 @@ def build_verify_streaming_dag(
         destination_dataset_project_id,
         chain='ethereum',
         notification_emails=None,
+        verify_partitioned_tables=False,
+        parse_destination_dataset_project_id='',
         start_date=datetime(2018, 7, 1),
         schedule_interval='*/10 * * * *',
         max_lag_in_minutes=15):
     dataset_name = 'crypto_{}'.format(chain)
+    partitioned_dataset_name = 'crypto_{}_partitioned'.format(chain)
 
     environment = {
         'dataset_name': dataset_name,
         'destination_dataset_project_id': destination_dataset_project_id,
+        'internal_project_id': parse_destination_dataset_project_id + '-internal',
+        'partitioned_dataset_name': partitioned_dataset_name,
         'max_lag_in_minutes': max_lag_in_minutes,
     }
 
@@ -75,6 +80,10 @@ def build_verify_streaming_dag(
 
     add_verify_tasks('blocks_count')
     add_verify_tasks('transactions_count')
+
+    if verify_partitioned_tables:
+        add_verify_tasks('partitioned_logs_have_latest')
+        add_verify_tasks('partitioned_traces_have_latest')
 
     return dag
 
