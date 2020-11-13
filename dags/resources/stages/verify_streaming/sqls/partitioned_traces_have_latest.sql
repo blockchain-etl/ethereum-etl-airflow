@@ -1,9 +1,30 @@
+with top_partitioned_traces as (
+  select block_timestamp
+  from `{{params.internal_project_id}}.{{params.partitioned_dataset_name}}.traces_by_to_address_0x7f6`
+  where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)
+  union all
+  select block_timestamp
+  from `{{params.internal_project_id}}.{{params.partitioned_dataset_name}}.traces_by_to_address_0xdac`
+  where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)
+  union all
+  select block_timestamp
+  from `{{params.internal_project_id}}.{{params.partitioned_dataset_name}}.traces_by_to_address_0xc02`
+  where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)
+  union all
+  select block_timestamp
+  from `{{params.internal_project_id}}.{{params.partitioned_dataset_name}}.traces_by_to_address_0x000`
+  where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)
+  union all
+  select block_timestamp
+  from `{{params.internal_project_id}}.{{params.partitioned_dataset_name}}.traces_by_to_address_0xa3c`
+  where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)
+)
 select if(
 (
 select timestamp_diff(
   current_timestamp(),
   (select max(block_timestamp)
-  from `{{params.internal_project_id}}.{{params.partitioned_dataset_name}}.traces_by_to_address_0x7f6` as traces
+  from top_partitioned_traces as traces
   where date(block_timestamp) >= date_add('{{ds}}', INTERVAL -1 DAY)),
   MINUTE)
 ) < {{params.max_lag_in_minutes}}, 1,
