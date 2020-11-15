@@ -286,8 +286,10 @@ def get_source_table(parser_type, history_type, internal_project_id, public_proj
         table_suffix = selector[:5]
         if parser_type == 'log':
             table_prefix = 'logs_by_topic_'
-        else:
+        elif parser_type == 'trace':
             table_prefix = 'traces_by_input_'
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
         source_table_name = table_prefix + table_suffix
     else:
         raise ValueError(f'unknown history type {history_type}. Allowed values: history, live')
