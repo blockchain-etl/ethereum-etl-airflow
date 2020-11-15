@@ -266,7 +266,7 @@ def generate_parse_sql_template(
         parse_all_partitions,
         ds):
     contract_address = table_definition['parser']['contract_address']
-    if not contract_address.startswith('0x'):
+    if contract_address is not None and not contract_address.startswith('0x'):
         table_definition['parser']['contract_address_sql'] = replace_refs(
             contract_address, ref_regex, destination_project_id, dataset_name
         )

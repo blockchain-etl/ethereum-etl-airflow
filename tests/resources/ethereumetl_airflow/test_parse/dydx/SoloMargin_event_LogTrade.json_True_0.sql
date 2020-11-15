@@ -6,7 +6,14 @@ CREATE OR REPLACE FUNCTION
 
     var interface_instance = new ethers.utils.Interface([abi]);
 
-    var parsedLog = interface_instance.parseLog({topics: topics, data: data});
+    // A parsing error is possible for common abis that don't filter by contract address. Event signature is the same
+    // for ABIs that only differ by whether a field is indexed or not. E.g. if the ABI provided has an indexed field
+    // but the log entry has this field unindexed, parsing here will throw an exception.
+    try {
+      var parsedLog = interface_instance.parseLog({topics: topics, data: data});
+    } catch (e) {
+        return null;
+    }
 
     var parsedValues = parsedLog.values;
 
