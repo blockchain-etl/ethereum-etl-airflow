@@ -360,6 +360,10 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             description='Address of the contract that produced the log'))
     elif parser_type == 'trace':
         result.append(bigquery.SchemaField(
+            name='transaction_index',
+            field_type='INTEGER',
+            description='Integer of the transactions index position in the block'))
+        result.append(bigquery.SchemaField(
             name='trace_address',
             field_type='STRING',
             description='Comma separated list of trace address in call tree'))

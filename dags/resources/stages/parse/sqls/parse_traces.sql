@@ -3,6 +3,7 @@ WITH parsed_traces AS
     traces.block_timestamp AS block_timestamp
     ,traces.block_number AS block_number
     ,traces.transaction_hash AS transaction_hash
+    ,traces.transaction_index AS transaction_index
     ,traces.trace_address AS trace_address
     ,traces.to_address AS to_address
     ,traces.status AS status
@@ -28,6 +29,7 @@ SELECT
      block_timestamp
      ,block_number
      ,transaction_hash
+     ,transaction_index
      ,trace_address
      ,to_address
      ,status
