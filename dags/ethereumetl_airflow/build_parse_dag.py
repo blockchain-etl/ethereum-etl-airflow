@@ -83,7 +83,11 @@ def build_parse_dag(
             dag=dag
         )
 
-        ref_dependencies = ref_regex.findall(table_definition['parser']['contract_address'])
+        contract_address = table_definition['parser']['contract_address']
+        if contract_address is not None:
+            ref_dependencies = ref_regex.findall(table_definition['parser']['contract_address'])
+        else:
+            ref_dependencies = []
         return parsing_operator, ref_dependencies
 
     def create_add_view_task(dataset_name, view_name, sql):
