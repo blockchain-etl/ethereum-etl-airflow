@@ -38,8 +38,8 @@ def parse(
         dataset_name=dataset_name,
         table_definition=table_definition,
         ds=ds,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        public_project_id=source_project_id,
+        public_dataset_name=source_dataset_name,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         sqls_folder=sqls_folder
@@ -60,8 +60,8 @@ def parse(
         history_table_name=history_table_name,
         table_definition=table_definition,
         ds=ds,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        public_project_id=source_project_id,
+        public_dataset_name=source_dataset_name,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         sqls_folder=sqls_folder,
@@ -85,8 +85,8 @@ def create_or_replace_internal_view(
         dataset_name,
         table_definition,
         ds,
-        source_project_id,
-        source_dataset_name,
+        public_project_id,
+        public_dataset_name,
         internal_project_id,
         destination_project_id,
         sqls_folder
@@ -114,11 +114,19 @@ def create_or_replace_internal_view(
 
     # # # Create view
 
+    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
+
+    source_project_id, source_dataset_name, source_table_name = get_source_table(
+        parser_type, 'live', internal_project_id, public_project_id, public_dataset_name, selector
+    )
+
     sql = generate_parse_sql_template(
         sqls_folder,
         parser_type,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
+        source_table_name=source_table_name,
+        selector=selector,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         dataset_name=dataset_name,
@@ -138,8 +146,8 @@ def create_or_update_history_table(
         history_table_name,
         table_definition,
         ds,
-        source_project_id,
-        source_dataset_name,
+        public_project_id,
+        public_dataset_name,
         internal_project_id,
         destination_project_id,
         sqls_folder,
@@ -173,11 +181,20 @@ def create_or_update_history_table(
     # # # Query to temporary table
 
     udf_name = 'parse_{}'.format(table_name)
+
+    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
+
+    source_project_id, source_dataset_name, source_table_name = get_source_table(
+        parser_type, 'history', internal_project_id, public_project_id, public_dataset_name, selector
+    )
+
     sql = generate_parse_sql_template(
         sqls_folder,
         parser_type,
         source_project_id=source_project_id,
         source_dataset_name=source_dataset_name,
+        source_table_name=source_table_name,
+        selector=selector,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         dataset_name=dataset_name,
@@ -253,11 +270,40 @@ def create_or_replace_stitch_view(
     create_view(bigquery_client, sql, dest_view_ref)
 
 
+def get_source_table(parser_type, history_type, internal_project_id, public_project_id, public_dataset_name, selector):
+    if history_type == 'history':
+        source_project_id = public_project_id
+        source_dataset_name = public_dataset_name
+        if parser_type == 'log':
+            source_table_name = 'logs'
+        elif parser_type == 'trace':
+            source_table_name = 'traces'
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
+    elif history_type == 'live':
+        source_project_id = internal_project_id
+        source_dataset_name = 'crypto_ethereum_partitioned'
+        table_suffix = selector[:5]
+        if parser_type == 'log':
+            table_prefix = 'logs_by_topic_'
+        elif parser_type == 'trace':
+            table_prefix = 'traces_by_input_'
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
+        source_table_name = table_prefix + table_suffix
+    else:
+        raise ValueError(f'unknown history type {history_type}. Allowed values: history, live')
+
+    return source_project_id, source_dataset_name, source_table_name
+
+
 def generate_parse_sql_template(
         sqls_folder,
         parser_type,
         source_project_id,
         source_dataset_name,
+        source_table_name,
+        selector,
         internal_project_id,
         destination_project_id,
         dataset_name,
@@ -271,8 +317,6 @@ def generate_parse_sql_template(
             contract_address, ref_regex, destination_project_id, dataset_name
         )
 
-    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
-
     sql = render_parse_sql_template(
         sqls_folder,
         parser_type,
@@ -280,6 +324,7 @@ def generate_parse_sql_template(
         source_dataset_name=source_dataset_name,
         internal_project_id=internal_project_id,
         dataset_name=dataset_name,
+        source_table_name=source_table_name,
         udf_name=udf_name,
         parser=table_definition['parser'],
         table=table_definition['table'],

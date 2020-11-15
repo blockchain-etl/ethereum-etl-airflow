@@ -6,7 +6,7 @@ WITH parsed_logs AS
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(logs.data, logs.topics) AS parsed
-FROM `{{source_project_id}}.{{source_dataset_name}}.logs` AS logs
+FROM `{{source_project_id}}.{{source_dataset_name}}.{{source_table_name}}` AS logs
 WHERE
   {% if parser.contract_address_sql %}
   address in ({{parser.contract_address_sql}})
