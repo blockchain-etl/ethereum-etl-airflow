@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION
     `{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(data STRING)
-    RETURNS STRUCT<{{struct_fields}}, error STRING>
+    RETURNS STRUCT<{% if struct_fields %}{{struct_fields}}, {% endif %}error STRING>
     LANGUAGE js AS """
     var abi = {{abi}};
     var interface_instance = new ethers.utils.Interface([abi]);
