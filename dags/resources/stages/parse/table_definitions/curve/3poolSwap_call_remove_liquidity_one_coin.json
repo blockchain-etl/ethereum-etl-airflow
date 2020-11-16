@@ -1,0 +1,50 @@
+{
+    "parser": {
+        "abi": {
+            "gas": 4025523,
+            "inputs": [
+                {
+                    "name": "_token_amount",
+                    "type": "uint256"
+                },
+                {
+                    "name": "i",
+                    "type": "int128"
+                },
+                {
+                    "name": "min_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "remove_liquidity_one_coin",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xbebc44782c7db0a1a60cb6fe97d0b483032ff1c7",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_token_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "i",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "min_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "3poolSwap_call_remove_liquidity_one_coin"
+    }
+}
