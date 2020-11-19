@@ -43,4 +43,5 @@ running_balances as (
 )
 select token_address, address, block_number, balance
 from running_balances
-order by token_address, address, block_number
+-- remove AMPL because of rebasing. use view_token_balances_subset_AMPL
+where token_address not in ('0xd46ba6d942050d489dbd938a2c909a5d5039a161')
