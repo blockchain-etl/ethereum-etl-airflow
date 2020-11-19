@@ -10,17 +10,17 @@
 -- Limitations: 
 -- 1. values are approximate due to loss in numerical precision associated with casting values to FLOAT64 in SQL
 
-DECLARE DECIMALS DEFAULT 9;
-DECLARE INITIAL_FRAGMENTS_SUPPLY DEFAULT (50 * POW(10,6) * POW(10,DECIMALS));
-DECLARE TOTAL_GONS DEFAULT cast('115792089237316195423570985008687907853269984665640564039457550000000000000000' as float64);
+-- DECLARE DECIMALS DEFAULT 9;
+-- DECLARE INITIAL_FRAGMENTS_SUPPLY DEFAULT (50 * POW(10,6) * POW(10,DECIMALS));
+-- DECLARE TOTAL_GONS DEFAULT cast('115792089237316195423570985008687907853269984665640564039457550000000000000000' as float64);
 
 with events as (
   select block_number, log_index,
-  TOTAL_GONS/cast(totalSupply as float64) as gonsPerFragment 
+  cast('115792089237316195423570985008687907853269984665640564039457550000000000000000' as float64)/cast(totalSupply as float64) as gonsPerFragment 
   from `blockchain-etl.ethereum_ampleforth.UFragments_event_LogRebase`
   -- manually add a "ghost" event because initialization didn't emit a LogRebase event
   union all
-  select 1, 1,  TOTAL_GONS/INITIAL_FRAGMENTS_SUPPLY
+  select 1, 1,  cast('115792089237316195423570985008687907853269984665640564039457550000000000000000' as float64)/(50 * POW(10,6) * POW(10,9))
 ),
 gonsPerFragment_state_with_gaps as (
     select events.block_number, log_index,
@@ -93,5 +93,3 @@ running_fragments_balances as (
     on running_gons_balances.block_number = gonsPerFragment_running_state.block_number
 )
 select * from running_fragments_balances
--- where block_number = (select max(block_number) from calendar)
--- order by balance desc
