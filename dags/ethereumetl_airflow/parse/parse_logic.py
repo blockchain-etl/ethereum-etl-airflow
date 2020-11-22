@@ -271,9 +271,10 @@ def create_or_replace_stitch_view(
 
 
 def get_source_table(parser_type, dataset_name, history_type, internal_project_id, public_project_id, public_dataset_name, selector):
-    if history_type == 'history' or dataset_name not in ('ethereum_balancer', 'ethereum_ens', 'ethereum_curve',
+    if history_type == 'history' or dataset_name not in ('ethereum_common', 'ethereum_balancer', 'ethereum_ens', 'ethereum_curve',
                                                          'ethereum_airswap', 'ethereum_etherdelta', 'ethereum_idex',
-                                                         'ethereum_kyber', 'ethereum_oasis', 'ethereum_zeroex', 'ethereum_oneinch'):
+                                                         'ethereum_kyber', 'ethereum_oasis', 'ethereum_zeroex', 'ethereum_oneinch',
+                                                         'ethereum_uniswap'):
         source_project_id = public_project_id
         source_dataset_name = public_dataset_name
         if parser_type == 'log':
