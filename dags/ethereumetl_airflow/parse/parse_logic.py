@@ -117,7 +117,7 @@ def create_or_replace_internal_view(
     selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
 
     source_project_id, source_dataset_name, source_table_name = get_source_table(
-        parser_type, dataset_name, 'live', internal_project_id, public_project_id, public_dataset_name, selector
+        parser_type, 'live', internal_project_id, public_project_id, public_dataset_name, selector
     )
 
     sql = generate_parse_sql_template(
@@ -185,7 +185,7 @@ def create_or_update_history_table(
     selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
 
     source_project_id, source_dataset_name, source_table_name = get_source_table(
-        parser_type, dataset_name, 'history', internal_project_id, public_project_id, public_dataset_name, selector
+        parser_type, 'history', internal_project_id, public_project_id, public_dataset_name, selector
     )
 
     sql = generate_parse_sql_template(
@@ -270,11 +270,8 @@ def create_or_replace_stitch_view(
     create_view(bigquery_client, sql, dest_view_ref)
 
 
-def get_source_table(parser_type, dataset_name, history_type, internal_project_id, public_project_id, public_dataset_name, selector):
-    if history_type == 'history' or dataset_name not in ('ethereum_common', 'ethereum_balancer', 'ethereum_ens', 'ethereum_curve',
-                                                         'ethereum_airswap', 'ethereum_etherdelta', 'ethereum_idex',
-                                                         'ethereum_kyber', 'ethereum_oasis', 'ethereum_zeroex', 'ethereum_oneinch',
-                                                         'ethereum_uniswap'):
+def get_source_table(parser_type, history_type, internal_project_id, public_project_id, public_dataset_name, selector):
+    if history_type == 'history':
         source_project_id = public_project_id
         source_dataset_name = public_dataset_name
         if parser_type == 'log':
