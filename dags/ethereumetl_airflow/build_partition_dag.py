@@ -75,9 +75,11 @@ def build_partition_dag(
 
     partition_logs_task = add_partition_tasks('logs', SQL_TEMPLATE_LOGS)
     partition_traces_task = add_partition_tasks('traces', SQL_TEMPLATE_TRACES)
+    partition_balances_task = add_partition_tasks('balances', SQL_TEMPLATE_BALANCES)
 
     wait_for_ethereum_load_dag_task >> partition_logs_task
     wait_for_ethereum_load_dag_task >> partition_traces_task
+    wait_for_ethereum_load_dag_task >> partition_balances_task
 
     done_task = BashOperator(
         task_id='done',
@@ -87,6 +89,7 @@ def build_partition_dag(
 
     partition_logs_task >> done_task
     partition_traces_task >> done_task
+    partition_balances_task >> done_task
 
     return dag
 
@@ -123,4 +126,63 @@ SELECT
   *
 FROM `bigquery-public-data.crypto_ethereum.traces`
 WHERE date(block_timestamp) = '{ds}'
+'''
+
+SQL_TEMPLATE_BALANCES = '''
+CREATE OR REPLACE TABLE
+  `blockchain-etl-internal.common.ethereum_balances_{ds_with_underscores}`
+OPTIONS(
+  expiration_timestamp=TIMESTAMP_ADD(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)
+)
+AS
+
+SELECT *
+FROM `bigquery-public-data.crypto_ethereum.balances`;
+
+CREATE OR REPLACE VIEW
+  `blockchain-etl-internal.common.ethereum_balances_live`
+AS
+
+with latest_double_entry_book as (
+    -- debits
+    select to_address as address, value as value
+    from `bigquery-public-data.crypto_ethereum.traces`
+    where true
+    and date(block_timestamp) > '{ds}'
+    and to_address is not null
+    and status = 1
+    and (call_type not in ('delegatecall', 'callcode', 'staticcall') or call_type is null)
+    union all
+    -- credits
+    select from_address as address, -value as value
+    from `bigquery-public-data.crypto_ethereum.traces`
+    where true
+    and date(block_timestamp) > '{ds}'
+    and from_address is not null
+    and status = 1
+    and (call_type not in ('delegatecall', 'callcode', 'staticcall') or call_type is null)
+    union all
+    -- transaction fees debits
+    select miner as address, sum(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value
+    from `bigquery-public-data.crypto_ethereum.transactions` as transactions
+    join `bigquery-public-data.crypto_ethereum.blocks` as blocks on blocks.number = transactions.block_number
+    where true
+    and date(transactions.block_timestamp) > '{ds}'
+    group by blocks.miner
+    union all
+    -- transaction fees credits
+    select from_address as address, -(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value
+    from `bigquery-public-data.crypto_ethereum.transactions`
+    where true
+    and date(block_timestamp) > '{ds}'
+),
+latest_balance_changes as (
+  select address, sum(value) as eth_change
+  from latest_double_entry_book
+  group by address
+)
+select address, coalesce(sum(eth_balance), 0) + coalesce(sum(eth_change), 0) as eth_balance
+from `blockchain-etl-internal.common.ethereum_balances_{ds_with_underscores}` as historical_balances
+full outer join latest_balance_changes using(address)
+group by address;
 '''
