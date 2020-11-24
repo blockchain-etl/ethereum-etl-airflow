@@ -6,7 +6,7 @@ WITH parsed_logs AS
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(logs.data, logs.topics) AS parsed
-FROM `{{source_project_id}}.{{source_dataset_name}}.{{source_table_name}}` AS logs
+FROM `{{full_source_table_name}}` AS logs
 WHERE
   {% if parser.contract_address_sql %}
   address in ({{parser.contract_address_sql}})
@@ -16,13 +16,18 @@ WHERE
   address in ('{{parser.contract_address}}')
   {% endif %}
   AND topics[SAFE_OFFSET(0)] = '{{selector}}'
-  {% if parse_all_partitions is none %}
-  -- pass
-  {% elif parse_all_partitions %}
+
+  {% if parse_mode == 'live' %}
+  -- live
+  {% elif parse_mode == 'history_all_dates' %}
   AND DATE(block_timestamp) <= '{{ds}}'
-  {% else %}
+  {% elif parse_mode == 'history_single_date' %}
   AND DATE(block_timestamp) = '{{ds}}'
+  AND _topic_partition_index = MOD(ABS(FARM_FINGERPRINT('{{selector}}')), 3999)
+  {% else %}
+  UNCOMPILABLE SQL: unknown parse_mode {{parse_mode}}
   {% endif %}
+
   )
 SELECT
      block_timestamp

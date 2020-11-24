@@ -116,16 +116,22 @@ def create_or_replace_internal_view(
 
     selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
 
-    source_project_id, source_dataset_name, source_table_name = get_source_table(
-        parser_type, 'live', internal_project_id, public_project_id, public_dataset_name, selector
+    parse_mode = get_parse_mode(HistoryType.LIVE)
+    full_source_table_name = get_source_table(
+        parser_type=parser_type,
+        parse_mode=parse_mode,
+        ds=ds,
+        internal_project_id=internal_project_id,
+        public_project_id=public_project_id,
+        public_dataset_name=public_dataset_name,
+        selector=selector
     )
 
     sql = generate_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
-        source_table_name=source_table_name,
+        parse_mode,
+        full_source_table_name=full_source_table_name,
         selector=selector,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
@@ -184,16 +190,22 @@ def create_or_update_history_table(
 
     selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
 
-    source_project_id, source_dataset_name, source_table_name = get_source_table(
-        parser_type, 'history', internal_project_id, public_project_id, public_dataset_name, selector
+    parse_mode = get_parse_mode(HistoryType.HISTORY, parse_all_partitions=parse_all_partitions)
+    full_source_table_name = get_source_table(
+        parser_type=parser_type,
+        parse_mode=parse_mode,
+        ds=ds,
+        internal_project_id=internal_project_id,
+        public_project_id=public_project_id,
+        public_dataset_name=public_dataset_name,
+        selector=selector
     )
 
     sql = generate_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
-        source_table_name=source_table_name,
+        parse_mode,
+        full_source_table_name=full_source_table_name,
         selector=selector,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
@@ -270,8 +282,39 @@ def create_or_replace_stitch_view(
     create_view(bigquery_client, sql, dest_view_ref)
 
 
-def get_source_table(parser_type, history_type, internal_project_id, public_project_id, public_dataset_name, selector):
-    if history_type == 'history':
+def get_parse_mode(
+        history_type,
+        parse_all_partitions=None,
+):
+    if history_type == HistoryType.HISTORY:
+        if parse_all_partitions is None:
+            raise ValueError('If history_type is "history" parse_all_partitions must be set to True or False')
+        if parse_all_partitions:
+            parse_mode = ParseMode.HISTORY_ALL_DATES
+        else:
+            parse_mode = ParseMode.HISTORY_SINGLE_DATE
+    elif history_type == HistoryType.LIVE:
+        parse_mode = ParseMode.LIVE
+    else:
+        raise ValueError(f'unknown history type {history_type}. Allowed values: history, live')
+
+    assert parse_mode is not None
+
+    return parse_mode
+
+
+def get_source_table(
+        parser_type,
+        parse_mode,
+        ds,
+        internal_project_id,
+        public_project_id,
+        public_dataset_name,
+        selector
+):
+    partitioned_dataset_name = 'crypto_ethereum_partitioned'
+
+    if parse_mode == ParseMode.HISTORY_ALL_DATES:
         source_project_id = public_project_id
         source_dataset_name = public_dataset_name
         if parser_type == 'log':
@@ -280,9 +323,20 @@ def get_source_table(parser_type, history_type, internal_project_id, public_proj
             source_table_name = 'traces'
         else:
             raise ValueError(f'unknown parser type {parser_type}')
-    elif history_type == 'live':
+    elif parse_mode == ParseMode.HISTORY_SINGLE_DATE:
+        if ds is None:
+            raise ValueError('If history_type is "history" and parse_all_partitions is True ds must be provided')
         source_project_id = internal_project_id
-        source_dataset_name = 'crypto_ethereum_partitioned'
+        source_dataset_name = partitioned_dataset_name
+        if parser_type == 'log':
+            source_table_name = 'logs_by_date_' + ds.replace('-', '_')
+        elif parser_type == 'trace':
+            source_table_name = 'traces_by_date_' + ds.replace('-', '_')
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
+    elif parse_mode == ParseMode.LIVE:
+        source_project_id = internal_project_id
+        source_dataset_name = partitioned_dataset_name
         table_suffix = selector[:5]
         if parser_type == 'log':
             table_prefix = 'logs_by_topic_'
@@ -292,17 +346,16 @@ def get_source_table(parser_type, history_type, internal_project_id, public_proj
             raise ValueError(f'unknown parser type {parser_type}')
         source_table_name = table_prefix + table_suffix
     else:
-        raise ValueError(f'unknown history type {history_type}. Allowed values: history, live')
+        raise ValueError(f'unknown parse mode {parse_mode}. Allowed values: history_all_dates, history_single_date, live')
 
-    return source_project_id, source_dataset_name, source_table_name
+    return f'{source_project_id}.{source_dataset_name}.{source_table_name}'
 
 
 def generate_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id,
-        source_dataset_name,
-        source_table_name,
+        parse_mode,
+        full_source_table_name,
         selector,
         internal_project_id,
         destination_project_id,
@@ -320,11 +373,10 @@ def generate_parse_sql_template(
     sql = render_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        parse_mode=parse_mode,
+        full_source_table_name=full_source_table_name,
         internal_project_id=internal_project_id,
         dataset_name=dataset_name,
-        source_table_name=source_table_name,
         udf_name=udf_name,
         parser=table_definition['parser'],
         table=table_definition['table'],
@@ -436,3 +488,13 @@ def abi_to_selector(parser_type, abi):
     else:
         return '0x' + function_abi_to_4byte_selector(abi).hex()
 
+
+class HistoryType:
+    LIVE = 'live'
+    HISTORY = 'history'
+
+
+class ParseMode:
+    LIVE = 'live'
+    HISTORY_ALL_DATES = 'history_all_dates'
+    HISTORY_SINGLE_DATE = 'history_single_date'

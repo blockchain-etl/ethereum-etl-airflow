@@ -13,7 +13,9 @@ WHERE
 
   AND topics[SAFE_OFFSET(0)] = '0xb556ff269c1b6714f432c36431e2041d28436a73b6c3f19c021827bbdc6bfc29'
 
+
   AND DATE(block_timestamp) <= '2020-01-01'
+
 
   )
 SELECT
