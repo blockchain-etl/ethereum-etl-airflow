@@ -112,10 +112,10 @@ def build_parse_dag(
         return create_view_operator
 
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
-        task_id='wait_for_ethereum_load_dag',
-        external_dag_id='ethereum_load_dag',
-        external_task_id='verify_logs_have_latest',
-        execution_delta=timedelta(hours=1),
+        task_id='wait_for_ethereum_partition_dag',
+        external_dag_id='ethereum_partition_dag',
+        external_task_id='done',
+        execution_delta=timedelta(minutes=30),
         priority_weight=0,
         mode='reschedule',
         poke_interval=5 * 60,

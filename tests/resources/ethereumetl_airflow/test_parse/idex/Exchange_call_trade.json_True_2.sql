@@ -16,7 +16,9 @@ WHERE to_address IN (
   )
   AND STARTS_WITH(traces.input, '0xef343588')
 
+
   AND DATE(block_timestamp) <= '2020-01-01'
+
 
   )
 SELECT

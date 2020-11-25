@@ -8,7 +8,7 @@ WITH parsed_traces AS
     ,traces.to_address AS to_address
     ,traces.status AS status
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(traces.input) AS parsed
-FROM `{{source_project_id}}.{{source_dataset_name}}.{{source_table_name}}` AS traces
+FROM `{{full_source_table_name}}` AS traces
 WHERE to_address IN (
     {% if parser.contract_address_sql %}
     {{parser.contract_address_sql}}
@@ -17,13 +17,18 @@ WHERE to_address IN (
     {% endif %}
   )
   AND STARTS_WITH(traces.input, '{{selector}}')
-  {% if parse_all_partitions is none %}
-  -- pass
-  {% elif parse_all_partitions %}
+
+  {% if parse_mode == 'live' %}
+  -- live
+  {% elif parse_mode == 'history_all_dates' %}
   AND DATE(block_timestamp) <= '{{ds}}'
-  {% else %}
+  {% elif parse_mode == 'history_single_date' %}
   AND DATE(block_timestamp) = '{{ds}}'
+  AND _input_partition_index = MOD(ABS(FARM_FINGERPRINT('{{selector}}')), 3999)
+  {% else %}
+  UNCOMPILABLE SQL: unknown parse_mode {{parse_mode}}
   {% endif %}
+
   )
 SELECT
      block_timestamp

@@ -16,5 +16,5 @@ table_definitions_folder = os.path.join(DAGS_FOLDER, 'resources/stages/parse/tab
 DAG = build_clean_dag(
     dag_id='ethereum_clean_dag',
     table_definitions_folder=table_definitions_folder,
-    schedule_interval='30 23 * * *'
+    schedule_interval='0 23 * * *'
 )

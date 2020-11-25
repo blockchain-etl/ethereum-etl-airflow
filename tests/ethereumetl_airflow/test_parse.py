@@ -17,6 +17,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s [%(leveln
     ('ens/Registrar0_event_NewBid.json', True),
     ('ens/Registrar0_event_NewBid.json', False),
     ('uniswap/Uniswap_event_AddLiquidity.json', True),
+    ('uniswap/UniswapV2Pair_event_Swap.json', False),
     ('dydx/SoloMargin_event_LogTrade.json', True),
     ('idex/Exchange_call_trade.json', True),
 ])
@@ -40,6 +41,7 @@ def test_create_or_update_table_from_table_definition(table_definition_file, par
 
     for ind, query in enumerate(bigquery_client.queries):
         expected_filename = table_definition_file_to_expected_file(table_definition_file, parse_all_partitions, ind)
+        print(query)
         assert trim(query) == trim(read_resource(expected_filename))
 
 
