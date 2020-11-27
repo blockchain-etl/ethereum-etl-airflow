@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "candidate",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum Candidate.Vote",
+                    "name": "vote",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bonded",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Vote",
+            "type": "event"
+        },
+        "contract_address": "0x443d2f2755db5942601fa062cc248aaa153313d3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "esd",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "candidate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vote",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bonded",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Implementation_event_Vote"
+    }
+}

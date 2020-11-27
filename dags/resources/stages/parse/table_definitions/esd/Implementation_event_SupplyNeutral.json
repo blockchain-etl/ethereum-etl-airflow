@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "epoch",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SupplyNeutral",
+            "type": "event"
+        },
+        "contract_address": "0x443d2f2755db5942601fa062cc248aaa153313d3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "esd",
+        "schema": [
+            {
+                "description": "",
+                "name": "epoch",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Implementation_event_SupplyNeutral"
+    }
+}
