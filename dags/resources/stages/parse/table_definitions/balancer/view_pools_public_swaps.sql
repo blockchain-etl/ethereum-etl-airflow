@@ -51,4 +51,3 @@ running_state as (
 )
 select pool as address, block_number, public_
 from running_state
-order by pool, block_number
