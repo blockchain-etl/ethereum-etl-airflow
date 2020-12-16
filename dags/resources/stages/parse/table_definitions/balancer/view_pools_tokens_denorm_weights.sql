@@ -61,4 +61,3 @@ running_state as (
 )
 select pool as address, token as token_address, block_number, denorm
 from running_state
-order by pool, token, block_number
