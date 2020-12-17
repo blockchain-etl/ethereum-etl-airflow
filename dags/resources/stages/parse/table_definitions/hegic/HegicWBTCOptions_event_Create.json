@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "settlementFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Create",
+            "type": "event"
+        },
+        "contract_address": "0x3961245db602ed7c03eeccda33ea3846bd8723bd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hegic",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "settlementFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "HegicWBTCOptions_event_Create"
+    }
+}
