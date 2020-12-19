@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewInterestRate",
+            "type": "event"
+        },
+        "contract_address": "0x351bac612b50e87b46e4b10a282f632d41397de2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "fetchai",
+        "schema": [
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Staking_event_NewInterestRate"
+    }
+}
