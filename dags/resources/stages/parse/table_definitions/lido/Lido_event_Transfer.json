@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "contract_address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lido",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Lido_event_Transfer"
+    }
+}
