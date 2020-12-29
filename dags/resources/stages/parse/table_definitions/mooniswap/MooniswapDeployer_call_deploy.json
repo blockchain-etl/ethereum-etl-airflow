@@ -1,0 +1,78 @@
+{
+  "parser": {
+    "abi": {
+      "inputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "token1",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IERC20",
+          "name": "token2",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "poolOwner",
+          "type": "address"
+        }
+      ],
+      "name": "deploy",
+      "outputs": [
+        {
+          "internalType": "contract Mooniswap",
+          "name": "pool",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    "contract_address": "0xa31bb36c5164b165f9c36955ea4ccbab42b3b28e",
+    "field_mapping": {},
+    "type": "trace"
+  },
+  "table": {
+    "dataset_name": "mooniswap",
+    "schema": [
+      {
+        "description": "",
+        "name": "token1",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "token2",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "name",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "symbol",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "poolOwner",
+        "type": "STRING"
+      }
+    ],
+    "table_description": "",
+    "table_name": "MooniswapDeployer_call_deploy"
+  }
+}
