@@ -1,0 +1,120 @@
+{
+  "parser": {
+    "abi": {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "srcToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "dstToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "result",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "srcAdditionBalance",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "dstRemovalBalance",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "referral",
+          "type": "address"
+        }
+      ],
+      "name": "Swapped",
+      "type": "event"
+    },
+    "contract_address": "SELECT mooniswap FROM ref('MooniswapFactory_event_Deployed')",
+    "field_mapping": {},
+    "type": "log"
+  },
+  "table": {
+    "dataset_name": "mooniswap",
+    "schema": [
+      {
+        "description": "",
+        "name": "sender",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "receiver",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "srcToken",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "dstToken",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "amount",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "result",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "srcAdditionBalance",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "dstRemovalBalance",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "referral",
+        "type": "STRING"
+      }
+    ],
+    "table_description": "",
+    "table_name": "Mooniswap_v2_event_Swapped"
+  }
+}
