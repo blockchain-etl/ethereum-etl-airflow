@@ -72,7 +72,7 @@
     "type": "log"
   },
   "table": {
-    "dataset_name": "mooniswap",
+    "dataset_name": "oneinch_v2",
     "schema": [
       {
         "description": "",
