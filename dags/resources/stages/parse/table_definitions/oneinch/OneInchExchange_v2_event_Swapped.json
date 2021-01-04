@@ -72,7 +72,7 @@
     "type": "log"
   },
   "table": {
-    "dataset_name": "mooniswap",
+    "dataset_name": "oneinch",
     "schema": [
       {
         "description": "",
@@ -126,6 +126,6 @@
       }
     ],
     "table_description": "",
-    "table_name": "OneInchExchange_event_Swapped"
+    "table_name": "OneInchExchange_v2_event_Swapped"
   }
 }
