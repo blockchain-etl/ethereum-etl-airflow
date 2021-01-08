@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "executor",
+                    "type": "address"
+                }
+            ],
+            "name": "ExecutorAuthorized",
+            "type": "event"
+        },
+        "contract_address": "0xec568fffba86c094cf06b22134b23074dfe2252c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "executor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AaveGovernanceV2_event_ExecutorAuthorized"
+    }
+}

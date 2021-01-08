@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum IGovernancePowerDelegationToken.DelegationType",
+                    "name": "delegationType",
+                    "type": "uint8"
+                }
+            ],
+            "name": "DelegatedPowerChanged",
+            "type": "event"
+        },
+        "contract_address": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegationType",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AaveTokenV2_event_DelegatedPowerChanged"
+    }
+}

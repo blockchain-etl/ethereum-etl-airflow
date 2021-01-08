@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegatee",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum IGovernancePowerDelegationToken.DelegationType",
+                    "name": "delegationType",
+                    "type": "uint8"
+                }
+            ],
+            "name": "DelegateChanged",
+            "type": "event"
+        },
+        "contract_address": "0x4da27a545c0c5b758a6ba100e3a049001de870f5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegatee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegationType",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StakedTokenV2_event_DelegateChanged"
+    }
+}
