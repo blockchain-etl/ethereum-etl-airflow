@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolCollateralManager_event_ReserveUsedAsCollateralDisabled"
+        "table_name": "LendingPoolCollateralManager_v2_event_ReserveUsedAsCollateralDisabled"
     }
 }

@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolAddressesProvider_event_AddressSet"
+        "table_name": "LendingPoolAddressesProvider_v2_event_AddressSet"
     }
 }

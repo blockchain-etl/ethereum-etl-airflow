@@ -14,6 +14,6 @@
         "dataset_name": "aave",
         "schema": [],
         "table_description": "",
-        "table_name": "LendingPool_event_Unpaused"
+        "table_name": "LendingPool_v2_event_Unpaused"
     }
 }

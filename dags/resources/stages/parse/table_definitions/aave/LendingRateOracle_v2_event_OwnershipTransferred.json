@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingRateOracle_event_OwnershipTransferred"
+        "table_name": "LendingRateOracle_v2_event_OwnershipTransferred"
     }
 }

@@ -27,6 +27,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolAddressesProvider_event_PriceOracleUpdated"
+        "table_name": "LendingPoolAddressesProvider_v2_event_PriceOracleUpdated"
     }
 }

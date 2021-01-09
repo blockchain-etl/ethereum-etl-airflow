@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_event_ReserveUsedAsCollateralEnabled"
+        "table_name": "LendingPool_v2_event_ReserveUsedAsCollateralEnabled"
     }
 }

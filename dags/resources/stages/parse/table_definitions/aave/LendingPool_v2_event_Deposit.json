@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_event_Deposit"
+        "table_name": "LendingPool_v2_event_Deposit"
     }
 }

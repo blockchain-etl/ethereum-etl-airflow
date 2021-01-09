@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "VariableDebtToken_event_Mint"
+        "table_name": "VariableDebtToken_v2_event_Mint"
     }
 }

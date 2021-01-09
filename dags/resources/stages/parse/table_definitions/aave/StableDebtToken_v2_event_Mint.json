@@ -104,6 +104,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "StableDebtToken_event_Mint"
+        "table_name": "StableDebtToken_v2_event_Mint"
     }
 }

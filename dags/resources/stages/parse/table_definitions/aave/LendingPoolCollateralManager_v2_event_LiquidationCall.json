@@ -93,6 +93,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolCollateralManager_event_LiquidationCall"
+        "table_name": "LendingPoolCollateralManager_v2_event_LiquidationCall"
     }
 }

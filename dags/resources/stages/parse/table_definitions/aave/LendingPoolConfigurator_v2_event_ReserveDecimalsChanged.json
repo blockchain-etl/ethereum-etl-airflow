@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolConfigurator_event_ReserveDecimalsChanged"
+        "table_name": "LendingPoolConfigurator_v2_event_ReserveDecimalsChanged"
     }
 }

@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "AToken_event_Transfer"
+        "table_name": "AToken_v2_event_Transfer"
     }
 }

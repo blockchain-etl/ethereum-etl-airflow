@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "CErc20Delegator_event_ReservesAdded"
+        "table_name": "cCOMP_event_ReservesAdded"
     }
 }

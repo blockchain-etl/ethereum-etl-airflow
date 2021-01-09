@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_event_Withdraw"
+        "table_name": "LendingPool_v2_event_Withdraw"
     }
 }

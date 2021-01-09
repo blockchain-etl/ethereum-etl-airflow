@@ -82,6 +82,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "StableDebtToken_event_Burn"
+        "table_name": "StableDebtToken_v2_event_Burn"
     }
 }

@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "StableDebtToken_event_BorrowAllowanceDelegated"
+        "table_name": "StableDebtToken_v2_event_BorrowAllowanceDelegated"
     }
 }

@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import collections
 import logging
 import os
 from datetime import datetime, timedelta
@@ -32,6 +33,7 @@ def build_parse_dag(
         parse_all_partitions=None,
         send_success_email=False
 ):
+
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
 
     if parse_all_partitions:
@@ -57,6 +59,27 @@ def build_parse_dag(
         catchup=False,
         schedule_interval=schedule_interval,
         default_args=default_dag_args)
+
+    validation_error = None
+    try:
+        validate_definition_files(dataset_folder)
+    except ValueError as e:
+        validation_error = e
+
+    # This prevents failing all dags as they are constructed in a loop in ethereum_parse_dag.py
+    if validation_error is not None:
+        def raise_validation_error(ds, **kwargs):
+            raise validation_error
+
+        validation_error_operator = PythonOperator(
+            task_id='validation_error',
+            python_callable=raise_validation_error,
+            provide_context=True,
+            execution_timeout=timedelta(minutes=10),
+            dag=dag
+        )
+
+        return dag
 
     def create_parse_task(table_definition):
 
@@ -137,6 +160,7 @@ def build_parse_dag(
     checkpoint_task = BashOperator(
         task_id='parse_all_checkpoint',
         bash_command='echo parse_all_checkpoint',
+        priority_weight=1000,
         dag=dag
     )
 
@@ -184,3 +208,39 @@ def get_list_of_files(dataset_folder, filter='*.json'):
     logging.info(dataset_folder)
     logging.info(os.path.join(dataset_folder, filter))
     return [f for f in glob(os.path.join(dataset_folder, filter))]
+
+
+def validate_definition_files(dataset_folder):
+    json_files = get_list_of_files(dataset_folder, '*.json')
+    dataset_folder_name = dataset_folder.split('/')[-1]
+
+    all_lowercase_table_names = []
+    for json_file in json_files:
+        file_name = json_file.split('/')[-1].replace('.json', '')
+
+        table_definition = read_json_file(json_file)
+        table = table_definition.get('table')
+        if not table:
+            raise ValueError(f'table is empty in file {json_file}')
+
+        dataset_name = table.get('dataset_name')
+        if not dataset_name:
+            raise ValueError(f'dataset_name is empty in file {json_file}')
+        if dataset_folder_name != dataset_name:
+            raise ValueError(f'dataset_name {dataset_name} is not equal to dataset_folder_name {dataset_folder_name}')
+
+        table_name = table.get('table_name')
+        if not table_name:
+            raise ValueError(f'table_name is empty in file {json_file}')
+        if file_name != table_name:
+            raise ValueError(f'file_name {file_name} doest match the table_name {table_name}')
+        all_lowercase_table_names.append(table_name.lower())
+
+    table_name_counts = collections.defaultdict(lambda: 0)
+    for table_name in all_lowercase_table_names:
+        table_name_counts[table_name] += 1
+
+    non_unique_table_names = [name for name, count in table_name_counts.items() if count > 1]
+
+    if len(non_unique_table_names) > 0:
+        raise ValueError(f'The following table names are not unique {",".join(non_unique_table_names)}')

@@ -93,6 +93,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Executor_event_CancelledAction"
+        "table_name": "Executor_v2_event_CancelledAction"
     }
 }

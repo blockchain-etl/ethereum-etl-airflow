@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "VariableDebtToken_event_Approval"
+        "table_name": "VariableDebtToken_v2_event_Approval"
     }
 }

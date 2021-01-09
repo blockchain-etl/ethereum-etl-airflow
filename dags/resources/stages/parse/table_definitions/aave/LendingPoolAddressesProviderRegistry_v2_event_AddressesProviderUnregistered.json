@@ -27,6 +27,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolAddressesProviderRegistry_event_AddressesProviderUnregistered"
+        "table_name": "LendingPoolAddressesProviderRegistry_v2_event_AddressesProviderUnregistered"
     }
 }

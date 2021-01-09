@@ -27,6 +27,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolConfigurator_event_BorrowingDisabledOnReserve"
+        "table_name": "LendingPoolConfigurator_v2_event_BorrowingDisabledOnReserve"
     }
 }

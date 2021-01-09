@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolAddressesProviderRegistry_event_OwnershipTransferred"
+        "table_name": "LendingPoolAddressesProviderRegistry_v2_event_OwnershipTransferred"
     }
 }

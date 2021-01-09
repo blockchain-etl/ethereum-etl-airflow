@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "AaveOracle_event_OwnershipTransferred"
+        "table_name": "AaveOracle_v2_event_OwnershipTransferred"
     }
 }

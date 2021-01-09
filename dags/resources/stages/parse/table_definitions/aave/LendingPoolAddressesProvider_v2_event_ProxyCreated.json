@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPoolAddressesProvider_event_ProxyCreated"
+        "table_name": "LendingPoolAddressesProvider_v2_event_ProxyCreated"
     }
 }

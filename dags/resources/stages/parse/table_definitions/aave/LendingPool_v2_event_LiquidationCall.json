@@ -93,6 +93,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_event_LiquidationCall"
+        "table_name": "LendingPool_v2_event_LiquidationCall"
     }
 }

@@ -104,6 +104,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Executor_event_ExecutedAction"
+        "table_name": "Executor_v2_event_ExecutedAction"
     }
 }
