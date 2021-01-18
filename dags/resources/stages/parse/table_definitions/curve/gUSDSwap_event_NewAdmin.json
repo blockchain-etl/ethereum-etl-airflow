@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x4f062658eaaf2c1ccf8c8e36d6824cdf41167956",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "gUSDSwap_event_NewAdmin"
+    }
+}

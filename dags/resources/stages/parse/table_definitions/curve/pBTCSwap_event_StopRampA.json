@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "t",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StopRampA",
+            "type": "event"
+        },
+        "contract_address": "0x7f55dde206dbad629c080068923b36fe9d6bdbef",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "t",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "pBTCSwap_event_StopRampA"
+    }
+}

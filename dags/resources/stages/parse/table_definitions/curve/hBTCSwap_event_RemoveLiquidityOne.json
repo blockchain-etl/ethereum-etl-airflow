@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidityOne",
+            "type": "event"
+        },
+        "contract_address": "0x4ca9b3063ec5866a4b82e437059d2c43d1be596f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "hBTCSwap_event_RemoveLiquidityOne"
+    }
+}

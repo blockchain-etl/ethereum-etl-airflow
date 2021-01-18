@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "admin_fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewFee",
+            "type": "event"
+        },
+        "contract_address": "0xdc24316b9ae028f1497c275eb9192a3ea0f67022",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin_fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "stETHSwap_event_NewFee"
+    }
+}

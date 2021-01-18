@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "deadline",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                }
+            ],
+            "name": "CommitNewAdmin",
+            "type": "event"
+        },
+        "contract_address": "0xe7a24ef0c5e95ffb0f6684b813a78f2a3ad7d171",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LinkUSDSwap_event_CommitNewAdmin"
+    }
+}
