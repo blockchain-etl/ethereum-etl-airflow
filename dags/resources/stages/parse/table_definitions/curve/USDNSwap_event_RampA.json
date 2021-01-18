@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "old_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "new_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "initial_time",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "future_time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RampA",
+            "type": "event"
+        },
+        "contract_address": "0x0f9cb53ebe405d49a0bbdbd291a65ff571bc83e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "old_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initial_time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "future_time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "USDNSwap_event_RampA"
+    }
+}

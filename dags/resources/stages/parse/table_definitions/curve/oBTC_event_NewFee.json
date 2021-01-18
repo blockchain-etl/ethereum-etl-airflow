@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "admin_fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewFee",
+            "type": "event"
+        },
+        "contract_address": "0xd81da8d904b52208541bade1bd6595d8a251f8dd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin_fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "oBTC_event_NewFee"
+    }
+}

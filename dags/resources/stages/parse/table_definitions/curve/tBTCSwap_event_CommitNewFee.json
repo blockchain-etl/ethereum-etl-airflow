@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "deadline",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "admin_fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CommitNewFee",
+            "type": "event"
+        },
+        "contract_address": "0xc25099792e9349c7dd09759744ea681c7de2cb66",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin_fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "tBTCSwap_event_CommitNewFee"
+    }
+}
