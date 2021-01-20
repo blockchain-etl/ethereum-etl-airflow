@@ -65,7 +65,7 @@ def build_partition_dag(
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
         task_id='wait_for_ethereum_load_dag',
         external_dag_id='ethereum_load_dag',
-        external_task_id='verify_logs_have_latest',
+        external_task_id='send_email',
         execution_delta=timedelta(hours=1),
         priority_weight=0,
         mode='reschedule',

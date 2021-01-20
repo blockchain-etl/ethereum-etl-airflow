@@ -21,7 +21,7 @@ def build_extract_dag(
     bucket = 'ethereum-etl-bigquery'
     default_dag_args = {
         'depends_on_past': False,
-        'start_date': datetime.strptime('2015-07-30', '%Y-%m-%d'),
+        'start_date': datetime.strptime('2021-01-18', '%Y-%m-%d'),
         'email_on_failure': True,
         'email_on_retry': False,
         'retries': 5,
