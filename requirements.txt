@@ -1,4 +1,4 @@
 apache-airflow[gcp]==1.10.3
 ethereum-etl==1.4.1
-google-cloud-bigquery
+google-cloud-bigquery==1.8.1
 pytest==5.4.1
