@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_startingQueueIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_numQueueElements",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_totalElements",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SequencerBatchAppended",
+            "type": "event"
+        },
+        "contract_address": "0xed2701f7135eab0d7ca02e6ab634ad6cbe159ffb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "optimism",
+        "schema": [
+            {
+                "description": "",
+                "name": "_startingQueueIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_numQueueElements",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_totalElements",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OVM_CanonicalTransactionChain_event_SequencerBatchAppended"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "msgHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "RelayedMessage",
+            "type": "event"
+        },
+        "contract_address": "0xe8f1bd5e5629f4adac6fd63a39f4b4cb76c5e7b2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "optimism",
+        "schema": [
+            {
+                "description": "",
+                "name": "msgHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OVM_L1CrossDomainMessenger_event_RelayedMessage"
+    }
+}
