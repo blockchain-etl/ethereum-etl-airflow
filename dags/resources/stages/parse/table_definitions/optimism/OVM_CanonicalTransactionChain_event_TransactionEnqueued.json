@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_l1TxOrigin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_target",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_gasLimit",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "_data",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_queueIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TransactionEnqueued",
+            "type": "event"
+        },
+        "contract_address": "0xed2701f7135eab0d7ca02e6ab634ad6cbe159ffb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "optimism",
+        "schema": [
+            {
+                "description": "",
+                "name": "_l1TxOrigin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_gasLimit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_data",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_queueIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OVM_CanonicalTransactionChain_event_TransactionEnqueued"
+    }
+}

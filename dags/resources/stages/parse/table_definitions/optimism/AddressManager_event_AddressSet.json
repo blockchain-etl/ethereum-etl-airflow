@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "AddressSet",
+            "type": "event"
+        },
+        "contract_address": "0x1de8cfd4c1a486200286073ae91de6e8099519f1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "optimism",
+        "schema": [
+            {
+                "description": "",
+                "name": "_name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AddressManager_event_AddressSet"
+    }
+}
