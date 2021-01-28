@@ -1,0 +1,22 @@
+[
+    {
+        "name": "address",
+        "type": "STRING",
+        "description": "Token Address"
+    },
+    {
+        "name": "symbol",
+        "type": "STRING",
+        "description": "Token Symbol"
+    },
+    {
+        "name": "name",
+        "type": "STRING",
+        "description": "Token Name"
+    },
+    {
+        "name": "decimals",
+        "type": "STRING",
+        "description": "Token Decimals"
+    }
+]

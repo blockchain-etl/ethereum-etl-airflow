@@ -71,6 +71,15 @@ def read_load_dag_vars(var_prefix, **kwargs):
     return vars
 
 
+def read_amend_dag_vars(var_prefix, **kwargs):
+    vars = {
+        'destination_dataset_project_id': read_var('destination_dataset_project_id', var_prefix, True, **kwargs),
+        'notification_emails': read_var('notification_emails', None, False, **kwargs),
+        'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
+    }
+
+    return vars
+
 def read_parse_dag_vars(var_prefix, dataset, **kwargs):
     per_dataset_var_prefix = var_prefix + dataset + '_'
     vars = {

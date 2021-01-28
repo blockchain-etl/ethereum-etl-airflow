@@ -4,6 +4,8 @@ import logging
 from google.cloud import bigquery
 from google.api_core.exceptions import Conflict, NotFound
 
+from ethereumetl_airflow.common import read_file
+
 
 def submit_bigquery_job(job, configuration):
     try:
@@ -15,6 +17,13 @@ def submit_bigquery_job(job, configuration):
     except Exception:
         logging.info(job.errors)
         raise
+
+
+def read_bigquery_schema_from_file(filepath):
+    result = []
+    file_content = read_file(filepath)
+    json_content = json.loads(file_content)
+    return read_bigquery_schema_from_json_recursive(json_content)
 
 
 def read_bigquery_schema_from_json_recursive(json_schema):
@@ -53,9 +62,11 @@ def query(bigquery_client, sql, destination=None, priority=bigquery.QueryPriorit
     assert query_job.state == 'DONE'
 
 
-def create_view(bigquery_client, sql, table_ref):
+def create_view(bigquery_client, sql, table_ref, description=None):
     table = bigquery.Table(table_ref)
     table.view_query = sql
+    if description is not None:
+        table.description = description
 
     logging.info('Creating view: ' + json.dumps(table.to_api_repr()))
 
