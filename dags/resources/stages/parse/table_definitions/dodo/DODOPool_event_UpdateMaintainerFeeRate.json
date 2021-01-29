@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldMaintainerFeeRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newMaintainerFeeRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateMaintainerFeeRate",
+            "type": "event"
+        },
+        "contract_address": "SELECT newBorn FROM ref('DODOZoo_event_DODOBirth')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dodo",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldMaintainerFeeRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newMaintainerFeeRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DODOPool_event_UpdateMaintainerFeeRate"
+    }
+}
