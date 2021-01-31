@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "fromToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "toToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "exchanges",
+                    "type": "address[]"
+                }
+            ],
+            "name": "Trade",
+            "type": "event"
+        },
+        "contract_address": "0xd3bed3a8e3e6b24b740ead108ba776e0ad298588",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dex_ag",
+        "schema": [
+            {
+                "description": "",
+                "name": "fromToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchanges",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DexTrading_v1_event_Trade"
+    }
+}
