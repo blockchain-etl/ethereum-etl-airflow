@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "partnerShare",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "paraswapShare",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FeeTaken",
+            "type": "event"
+        },
+        "contract_address": "0x9509665d015bfe3c77aa5ad6ca20c8afa1d98989",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paraswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "partnerShare",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paraswapShare",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AugustusSwapper_v2_event_FeeTaken"
+    }
+}

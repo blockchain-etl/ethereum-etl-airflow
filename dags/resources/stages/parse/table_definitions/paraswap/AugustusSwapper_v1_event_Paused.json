@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Paused",
+            "type": "event"
+        },
+        "contract_address": "0x86969d29f5fd327e1009ba66072be22db6017cc6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paraswap",
+        "schema": [],
+        "table_description": "",
+        "table_name": "AugustusSwapper_v1_event_Paused"
+    }
+}
