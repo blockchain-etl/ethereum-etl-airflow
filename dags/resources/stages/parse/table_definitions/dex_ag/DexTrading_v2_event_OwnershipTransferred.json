@@ -5,13 +5,11 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "address",
                     "name": "previousOwner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "internalType": "address",
                     "name": "newOwner",
                     "type": "address"
                 }
@@ -19,7 +17,7 @@
             "name": "OwnershipTransferred",
             "type": "event"
         },
-        "contract_address": "0xa540fb50288cc31639305b1675c70763c334953b",
+        "contract_address": "0x932348df588923ba3f1fd50593b22c4e2a287919",
         "field_mapping": {},
         "type": "log"
     },
@@ -38,6 +36,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "DexTradingv3_event_OwnershipTransferred"
+        "table_name": "DexTrading_v2_event_OwnershipTransferred"
     }
 }
