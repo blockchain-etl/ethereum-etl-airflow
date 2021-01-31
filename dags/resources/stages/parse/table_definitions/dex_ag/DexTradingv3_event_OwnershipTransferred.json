@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "DexTrading_event_OwnershipTransferred"
+        "table_name": "DexTradingv3_event_OwnershipTransferred"
     }
 }

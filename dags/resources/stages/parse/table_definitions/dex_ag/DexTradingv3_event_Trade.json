@@ -82,6 +82,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "DexTrading_event_Trade"
+        "table_name": "DexTradingv3_event_Trade"
     }
 }
