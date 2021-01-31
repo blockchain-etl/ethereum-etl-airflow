@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        "contract_address": "0x86969d29f5fd327e1009ba66072be22db6017cc6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paraswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AugustusSwapper_v1_event_OwnershipTransferred"
+    }
+}

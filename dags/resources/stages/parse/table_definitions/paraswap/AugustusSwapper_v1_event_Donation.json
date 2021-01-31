@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "donationPercentage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Donation",
+            "type": "event"
+        },
+        "contract_address": "0x86969d29f5fd327e1009ba66072be22db6017cc6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paraswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "donationPercentage",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AugustusSwapper_v1_event_Donation"
+    }
+}
