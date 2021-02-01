@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        "contract_address": "0x37629db35889e1e87dcee07b171efd565e571e05",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "totle",
+        "schema": [],
+        "table_description": "",
+        "table_name": "TotlePrimary_v4_event_Unpaused"
+    }
+}
