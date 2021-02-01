@@ -5,16 +5,11 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "_prevOwner",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "name": "_newOwner",
+                    "name": "_token",
                     "type": "address"
                 }
             ],
-            "name": "OwnerUpdate",
+            "name": "NewSmartToken",
             "type": "event"
         },
         "contract_address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
@@ -22,20 +17,15 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "bancor_network",
+        "dataset_name": "bancor",
         "schema": [
             {
                 "description": "",
-                "name": "_prevOwner",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "_newOwner",
+                "name": "_token",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SmartToken_event_OwnerUpdate"
+        "table_name": "SmartToken_event_NewSmartToken"
     }
 }

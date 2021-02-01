@@ -5,12 +5,12 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "_from",
+                    "name": "_owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "_to",
+                    "name": "_spender",
                     "type": "address"
                 },
                 {
@@ -19,7 +19,7 @@
                     "type": "uint256"
                 }
             ],
-            "name": "Transfer",
+            "name": "Approval",
             "type": "event"
         },
         "contract_address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
@@ -27,16 +27,16 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "bancor_network",
+        "dataset_name": "bancor",
         "schema": [
             {
                 "description": "",
-                "name": "_from",
+                "name": "_owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_to",
+                "name": "_spender",
                 "type": "STRING"
             },
             {
@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SmartToken_event_Transfer"
+        "table_name": "SmartToken_event_Approval"
     }
 }

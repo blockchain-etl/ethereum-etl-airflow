@@ -5,11 +5,11 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "name": "_token",
-                    "type": "address"
+                    "name": "_amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "NewSmartToken",
+            "name": "Issuance",
             "type": "event"
         },
         "contract_address": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
@@ -17,15 +17,15 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "bancor_network",
+        "dataset_name": "bancor",
         "schema": [
             {
                 "description": "",
-                "name": "_token",
+                "name": "_amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SmartToken_event_NewSmartToken"
+        "table_name": "SmartToken_event_Issuance"
     }
 }
