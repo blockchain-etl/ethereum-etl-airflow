@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "approverAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "delegateAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "expiry",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Authorize",
+            "type": "event"
+        },
+        "contract_address": "0x54d2690e97e477a4b33f40d6e4afdd4832c07c57",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "airswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "approverAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegateAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expiry",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SwapOld_event_Authorize"
+    }
+}
