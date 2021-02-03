@@ -5,21 +5,19 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "uint256",
-                    "name": "nonce",
-                    "type": "uint256"
+                    "name": "previousOwner",
+                    "type": "address"
                 },
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "signerWallet",
+                    "name": "newOwner",
                     "type": "address"
                 }
             ],
-            "name": "CancelUpTo",
+            "name": "OwnershipTransferred",
             "type": "event"
         },
-        "contract_address": "0xc50cb225e0f45e814fd41bcb3a120463ab1f04c3",
+        "contract_address": "0x7113dd99c79aff93d54cfa4b2885576535a132de",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +26,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "nonce",
+                "name": "previousOwner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "signerWallet",
+                "name": "newOwner",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Light_event_CancelUpTo"
+        "table_name": "TotlePrimary_v7_event_OwnershipTransferred"
     }
 }
