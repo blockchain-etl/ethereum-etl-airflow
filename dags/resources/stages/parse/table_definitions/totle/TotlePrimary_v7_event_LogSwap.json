@@ -5,57 +5,44 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "uint256",
-                    "name": "nonce",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "sourceAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "destinationAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "sourceAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "timestamp",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "signerWallet",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "senderWallet",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "contract IERC20",
-                    "name": "signerToken",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "contract IERC20",
-                    "name": "senderToken",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "signerAmount",
+                    "name": "destinationAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "senderAmount",
+                    "name": "feeAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "feeAmount",
                     "type": "uint256"
                 }
             ],
-            "name": "Swap",
+            "name": "LogSwap",
             "type": "event"
         },
-        "contract_address": "0xc50cb225e0f45e814fd41bcb3a120463ab1f04c3",
+        "contract_address": "0x7113dd99c79aff93d54cfa4b2885576535a132de",
         "field_mapping": {},
         "type": "log"
     },
@@ -64,46 +51,41 @@
         "schema": [
             {
                 "description": "",
-                "name": "nonce",
+                "name": "id",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "timestamp",
+                "name": "sourceAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "signerWallet",
+                "name": "destinationAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "senderWallet",
+                "name": "sourceAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "signerToken",
+                "name": "destinationAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "senderToken",
+                "name": "feeAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "signerAmount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "senderAmount",
+                "name": "feeAmount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Light_event_Swap"
+        "table_name": "TotlePrimary_v7_event_LogSwap"
     }
 }

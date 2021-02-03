@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "partnerContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "user",
+                    "type": "address"
+                }
+            ],
+            "name": "LogSwapCollection",
+            "type": "event"
+        },
+        "contract_address": "0x7113dd99c79aff93d54cfa4b2885576535a132de",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "totle",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "partnerContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TotlePrimary_v7_event_LogSwapCollection"
+    }
+}
