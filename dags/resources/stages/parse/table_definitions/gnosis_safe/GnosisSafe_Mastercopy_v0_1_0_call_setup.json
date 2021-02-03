@@ -1,0 +1,60 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "_owners",
+                    "type": "address[]"
+                },
+                {
+                    "name": "_threshold",
+                    "type": "uint256"
+                },
+                {
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "setup",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x8942595a2dc5181df0465af0d7be08c8f23c93af",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "gnosis_safe",
+        "schema": [
+            {
+                "description": "",
+                "name": "_owners",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_threshold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GnosisSafe_Mastercopy_v0_1_0_call_setup"
+    }
+}
