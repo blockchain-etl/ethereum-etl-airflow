@@ -5,19 +5,19 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "_converter",
+                    "name": "_prevOwner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "_owner",
+                    "name": "_newOwner",
                     "type": "address"
                 }
             ],
-            "name": "NewConverter",
+            "name": "OwnerUpdate",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x5ed8c09f98b2b3ed37d07414bb8c3f065bbb802b','0x005f7ed737346941acd68d0292a86f21d173538a','0x9af06fcff3f867caf949ca8d2305795fd7bb2ede','0x0040c769b501805c6ebd77e3e2c64073fe4ebd69','0x009bb5e9fcf28e5e601b7d0e9e821da6365d0a9c','0x0a8079ce1fd9b1ae682d9f1b709609a05bf9b236','0xb6cc59f55d3a68635d07269bf12ba892a73c45aa','0x87558bafcf76866d70569bf36a60d78f0d0067fb'])",
+        "contract_address": "0x52ae12abe5d8bd778bd5397f99ca900624cfadd4",
         "field_mapping": {},
         "type": "log"
     },
@@ -26,16 +26,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "_converter",
+                "name": "_prevOwner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_owner",
+                "name": "_newOwner",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BancorConverterFactory_event_NewConverter"
+        "table_name": "ContractRegistry_event_OwnerUpdate"
     }
 }
