@@ -5,36 +5,26 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "_fromToken",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "name": "_toToken",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "name": "_trader",
+                    "name": "_connectorToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "name": "_amount",
+                    "name": "_tokenSupply",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "_return",
+                    "name": "_connectorBalance",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "name": "_conversionFee",
-                    "type": "int256"
+                    "name": "_connectorWeight",
+                    "type": "uint32"
                 }
             ],
-            "name": "Conversion",
+            "name": "PriceDataUpdate",
             "type": "event"
         },
         "contract_address": "SELECT _converter FROM ref('BancorConverterFactory_event_NewConverter')",
@@ -46,36 +36,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "_fromToken",
+                "name": "_connectorToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_toToken",
+                "name": "_tokenSupply",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_trader",
+                "name": "_connectorBalance",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_amount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "_return",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "_conversionFee",
+                "name": "_connectorWeight",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BancorConverter_event_Conversion"
+        "table_name": "BancorConverter_event_PriceDataUpdate"
     }
 }
