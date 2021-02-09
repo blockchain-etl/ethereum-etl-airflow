@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "fromDelegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "toDelegate",
+                    "type": "address"
+                }
+            ],
+            "name": "DelegateChanged",
+            "type": "event"
+        },
+        "contract_address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromDelegate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toDelegate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Uni_event_DelegateChanged"
+    }
+}
