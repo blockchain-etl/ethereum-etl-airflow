@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract Mooniswap",
+                    "name": "mooniswap",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token1",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token2",
+                    "type": "address"
+                }
+            ],
+            "name": "Deployed",
+            "type": "event"
+        },
+        "contract_address": "0xbaf9a5d4b0052359326a6cdab54babaa3a3a9643",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "oneinch_lp",
+        "schema": [
+            {
+                "description": "Address of the pool",
+                "name": "mooniswap",
+                "type": "STRING"
+            },
+            {
+                "description": "Address of token1",
+                "name": "token1",
+                "type": "STRING"
+            },
+            {
+                "description": "Address of token2",
+                "name": "token2",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "New 1inch liquidity pool deployed",
+        "table_name": "MooniswapFactory_event_Deployed"
+    }
+}

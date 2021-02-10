@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "FeeCollectorUpdate",
+            "type": "event"
+        },
+        "contract_address": "0xbaf9a5d4b0052359326a6cdab54babaa3a3a9643",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "oneinch_lp",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeCollector",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MooniswapFactory_event_FeeCollectorUpdate"
+    }
+}
