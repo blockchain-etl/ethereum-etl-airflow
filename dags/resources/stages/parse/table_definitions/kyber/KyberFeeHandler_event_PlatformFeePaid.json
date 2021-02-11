@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "platformWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PlatformFeePaid",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xd3d2b5643e506c6d9b7099e9116d7aaa941114fe', '0xec30037c9a8a6a3f42734c30dfa0a208af71b40c'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "schema": [
+            {
+                "description": "",
+                "name": "platformWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KyberFeeHandler_event_PlatformFeePaid"
+    }
+}
