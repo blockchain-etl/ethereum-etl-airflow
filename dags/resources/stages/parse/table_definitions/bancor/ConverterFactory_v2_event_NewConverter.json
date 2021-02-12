@@ -11,21 +11,21 @@
                 },
                 {
                     "indexed": true,
-                    "internalType": "contract IConverterAnchor",
-                    "name": "_anchor",
+                    "internalType": "contract IConverter",
+                    "name": "_converter",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "internalType": "bool",
-                    "name": "_activated",
-                    "type": "bool"
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
                 }
             ],
-            "name": "Activation",
+            "name": "NewConverter",
             "type": "event"
         },
-        "contract_address": "SELECT _converter FROM ref('ConverterFactory_v2_event_NewConverter')",
+        "contract_address": "SELECT _contractAddress FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x436f6e766572746572466163746f727900000000000000000000000000000000' AND _contractAddress != '0x9afb9d7ed0f6c054ec76ea61d5cabc384d4dcb25'",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "_anchor",
+                "name": "_converter",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_activated",
+                "name": "_owner",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "StandardPoolConverter_event_Activation"
+        "table_name": "ConverterFactory_v2_event_NewConverter"
     }
 }
