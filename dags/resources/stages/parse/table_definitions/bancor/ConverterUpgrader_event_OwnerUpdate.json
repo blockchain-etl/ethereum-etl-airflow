@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_prevOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnerUpdate",
+            "type": "event"
+        },
+        "contract_address": "SELECT _contractAddress FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x42616e636f72436f6e7665727465725570677261646572000000000000000000'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "_prevOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ConverterUpgrader_event_OwnerUpdate"
+    }
+}
