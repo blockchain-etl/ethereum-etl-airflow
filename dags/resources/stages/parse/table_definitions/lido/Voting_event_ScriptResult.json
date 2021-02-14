@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "executor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "script",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "input",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "returnData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "ScriptResult",
+            "type": "event"
+        },
+        "contract_address": "0x2e59a20f205bb85a89c53f1936454680651e618e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lido",
+        "schema": [
+            {
+                "description": "",
+                "name": "executor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "script",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "input",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "returnData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Voting_event_ScriptResult"
+    }
+}

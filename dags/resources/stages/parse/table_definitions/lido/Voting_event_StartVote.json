@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "voteId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "creator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "metadata",
+                    "type": "string"
+                }
+            ],
+            "name": "StartVote",
+            "type": "event"
+        },
+        "contract_address": "0x2e59a20f205bb85a89c53f1936454680651e618e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lido",
+        "schema": [
+            {
+                "description": "",
+                "name": "voteId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "metadata",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Voting_event_StartVote"
+    }
+}
