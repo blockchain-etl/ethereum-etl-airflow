@@ -43,7 +43,7 @@
             "name": "Conversion",
             "type": "event"
         },
-        "contract_address": "SELECT _newConverter FROM ref('ConverterUpgrader_event_ConverterUpgrade",
+        "contract_address": "SELECT _converter FROM ref('ConverterFactory_v2_event_NewConverter')",
         "field_mapping": {},
         "type": "log"
     },
