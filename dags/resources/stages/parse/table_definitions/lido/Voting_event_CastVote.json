@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "voteId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "voter",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "supports",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "name": "stake",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CastVote",
+            "type": "event"
+        },
+        "contract_address": "0x2e59a20f205bb85a89c53f1936454680651e618e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lido",
+        "schema": [
+            {
+                "description": "",
+                "name": "voteId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "voter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "supports",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stake",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Voting_event_CastVote"
+    }
+}
