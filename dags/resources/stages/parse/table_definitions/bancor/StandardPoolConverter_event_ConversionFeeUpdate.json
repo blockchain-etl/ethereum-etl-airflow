@@ -19,7 +19,7 @@
             "name": "ConversionFeeUpdate",
             "type": "event"
         },
-        "contract_address": "SELECT _newConverter FROM ref('ConverterUpgrader_event_ConverterUpgrade",
+        "contract_address": "SELECT _newConverter FROM ref('ConverterUpgrader_event_ConverterUpgrade')",
         "field_mapping": {},
         "type": "log"
     },
