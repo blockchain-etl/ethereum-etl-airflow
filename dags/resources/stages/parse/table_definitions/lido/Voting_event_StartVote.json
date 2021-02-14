@@ -5,37 +5,47 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "_prevOwner",
-                    "type": "address"
+                    "name": "voteId",
+                    "type": "uint256"
                 },
                 {
                     "indexed": true,
-                    "name": "_newOwner",
+                    "name": "creator",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "metadata",
+                    "type": "string"
                 }
             ],
-            "name": "OwnerUpdate",
+            "name": "StartVote",
             "type": "event"
         },
-        "contract_address": "0x9afb9d7ed0f6c054ec76ea61d5cabc384d4dcb25",
+        "contract_address": "0x2e59a20f205bb85a89c53f1936454680651e618e",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "bancor",
+        "dataset_name": "lido",
         "schema": [
             {
                 "description": "",
-                "name": "_prevOwner",
+                "name": "voteId",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_newOwner",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "metadata",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "ConverterFactory_event_OwnerUpdate"
+        "table_name": "Voting_event_StartVote"
     }
 }

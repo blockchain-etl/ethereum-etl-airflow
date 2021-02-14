@@ -5,61 +5,57 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "contract IERC20Token",
-                    "name": "_token1",
-                    "type": "address"
+                    "name": "voteId",
+                    "type": "uint256"
                 },
                 {
                     "indexed": true,
-                    "internalType": "contract IERC20Token",
-                    "name": "_token2",
+                    "name": "voter",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_rateN",
-                    "type": "uint256"
+                    "name": "supports",
+                    "type": "bool"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_rateD",
+                    "name": "stake",
                     "type": "uint256"
                 }
             ],
-            "name": "TokenRateUpdate",
+            "name": "CastVote",
             "type": "event"
         },
-        "contract_address": "SELECT _converter FROM ref('ConverterFactory_v2_event_NewConverter')",
+        "contract_address": "0x2e59a20f205bb85a89c53f1936454680651e618e",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "bancor",
+        "dataset_name": "lido",
         "schema": [
             {
                 "description": "",
-                "name": "_token1",
+                "name": "voteId",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_token2",
+                "name": "voter",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_rateN",
+                "name": "supports",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_rateD",
+                "name": "stake",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "StandardPoolConverter_event_TokenRateUpdate"
+        "table_name": "Voting_event_CastVote"
     }
 }

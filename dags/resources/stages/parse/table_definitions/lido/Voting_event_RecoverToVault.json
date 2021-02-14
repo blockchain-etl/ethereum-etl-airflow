@@ -5,37 +5,47 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "name": "_prevOwner",
+                    "name": "vault",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "name": "_newOwner",
+                    "name": "token",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "OwnerUpdate",
+            "name": "RecoverToVault",
             "type": "event"
         },
-        "contract_address": "0x9afb9d7ed0f6c054ec76ea61d5cabc384d4dcb25",
+        "contract_address": "0x2e59a20f205bb85a89c53f1936454680651e618e",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "bancor",
+        "dataset_name": "lido",
         "schema": [
             {
                 "description": "",
-                "name": "_prevOwner",
+                "name": "vault",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_newOwner",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "ConverterFactory_event_OwnerUpdate"
+        "table_name": "Voting_event_RecoverToVault"
     }
 }
