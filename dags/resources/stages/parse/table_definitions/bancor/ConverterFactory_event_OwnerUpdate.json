@@ -17,7 +17,7 @@
             "name": "OwnerUpdate",
             "type": "event"
         },
-        "contract_address": "0x9afb9d7ed0f6c054ec76ea61d5cabc384d4dcb25",
+        "contract_address": "SELECT _contractAddress FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x42616e636f72436f6e766572746572466163746f727900000000000000000000' UNION ALL SELECT '0x9afb9d7ed0f6c054ec76ea61d5cabc384d4dcb25' AS _contractAddress ",
         "field_mapping": {},
         "type": "log"
     },
