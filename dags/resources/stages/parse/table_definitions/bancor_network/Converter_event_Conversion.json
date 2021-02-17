@@ -37,7 +37,7 @@
             "name": "Conversion",
             "type": "event"
         },
-        "contract_address": "SELECT _converter FROM ref('BancorConverterFactory_event_NewConverter') UNION ALL SELECT _contractAddress AS _converter FROM ref('ContractRegistry_event_AddressUpdate') WHERE contractName = '0x424e54436f6e7665727465720000000000000000000000000000000000000000' ",
+        "contract_address": "SELECT _converter FROM ref('BancorConverterFactory_event_NewConverter') UNION ALL SELECT _contractAddress AS _converter FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x424e54436f6e7665727465720000000000000000000000000000000000000000' ",
         "field_mapping": {},
         "type": "log"
     },
