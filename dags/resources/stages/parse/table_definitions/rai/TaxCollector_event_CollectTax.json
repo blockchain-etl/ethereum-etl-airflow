@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "latestAccumulatedRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "deltaRate",
+                    "type": "int256"
+                }
+            ],
+            "name": "CollectTax",
+            "type": "event"
+        },
+        "contract_address": "0xcdb05aeda142a1b0d6044c09c64e4226c1a281eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "latestAccumulatedRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deltaRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TaxCollector_event_CollectTax"
+    }
+}

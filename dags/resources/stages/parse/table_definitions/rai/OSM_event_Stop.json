@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Stop",
+            "type": "event"
+        },
+        "contract_address": "0xe6f5377de93a361cd5531bdfbdf0f4b522e16b2b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [],
+        "table_description": "",
+        "table_name": "OSM_event_Stop"
+    }
+}

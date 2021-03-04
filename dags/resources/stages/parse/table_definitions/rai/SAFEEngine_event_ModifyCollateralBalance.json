@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "wad",
+                    "type": "int256"
+                }
+            ],
+            "name": "ModifyCollateralBalance",
+            "type": "event"
+        },
+        "contract_address": "0xcc88a9d330da1133df3a7bd823b95e52511a6962",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SAFEEngine_event_ModifyCollateralBalance"
+    }
+}

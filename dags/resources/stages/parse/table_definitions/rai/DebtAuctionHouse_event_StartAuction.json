@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "auctionsStarted",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountToSell",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "initialBid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "incomeReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "auctionDeadline",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "activeDebtAuctions",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StartAuction",
+            "type": "event"
+        },
+        "contract_address": "0x1896adbe708bf91158748b3f33738ba497a69e8f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionsStarted",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountToSell",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initialBid",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "incomeReceiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionDeadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "activeDebtAuctions",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DebtAuctionHouse_event_StartAuction"
+    }
+}

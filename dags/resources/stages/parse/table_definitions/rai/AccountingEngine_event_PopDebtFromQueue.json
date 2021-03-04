@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "debtQueueBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalQueuedDebt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PopDebtFromQueue",
+            "type": "event"
+        },
+        "contract_address": "0xcee6aa1ab47d0fb0f24f51a3072ec16e20f90fce",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtQueueBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalQueuedDebt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AccountingEngine_event_PopDebtFromQueue"
+    }
+}

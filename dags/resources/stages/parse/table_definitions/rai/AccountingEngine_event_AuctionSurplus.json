@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lastSurplusAuctionTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "coinBalance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AuctionSurplus",
+            "type": "event"
+        },
+        "contract_address": "0xcee6aa1ab47d0fb0f24f51a3072ec16e20f90fce",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lastSurplusAuctionTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coinBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AccountingEngine_event_AuctionSurplus"
+    }
+}

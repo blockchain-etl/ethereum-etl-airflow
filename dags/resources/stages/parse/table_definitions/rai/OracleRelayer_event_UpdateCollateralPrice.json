@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "priceFeedValue",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "safetyPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidationPrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateCollateralPrice",
+            "type": "event"
+        },
+        "contract_address": "0x4ed9c0dca0479bc64d8f4eb3007126d5791f7851",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "priceFeedValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "safetyPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationPrice",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OracleRelayer_event_UpdateCollateralPrice"
+    }
+}

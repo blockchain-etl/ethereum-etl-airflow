@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "DisableContract",
+            "type": "event"
+        },
+        "contract_address": "0x4ed9c0dca0479bc64d8f4eb3007126d5791f7851",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [],
+        "table_description": "",
+        "table_name": "OracleRelayer_event_DisableContract"
+    }
+}

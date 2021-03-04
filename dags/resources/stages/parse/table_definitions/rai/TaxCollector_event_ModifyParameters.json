@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "position",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "taxPercentage",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiverAccount",
+                    "type": "address"
+                }
+            ],
+            "name": "ModifyParameters",
+            "type": "event"
+        },
+        "contract_address": "0xcdb05aeda142a1b0d6044c09c64e4226c1a281eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "position",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taxPercentage",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiverAccount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TaxCollector_event_ModifyParameters"
+    }
+}

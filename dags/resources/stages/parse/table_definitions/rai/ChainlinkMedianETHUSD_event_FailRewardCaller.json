@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "revertReason",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FailRewardCaller",
+            "type": "event"
+        },
+        "contract_address": "0x6a4b575ba61d2fb86ad0ff5e5be286960580e71a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "revertReason",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeReceiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ChainlinkMedianETHUSD_event_FailRewardCaller"
+    }
+}

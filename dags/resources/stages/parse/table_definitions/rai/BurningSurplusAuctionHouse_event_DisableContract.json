@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "DisableContract",
+            "type": "event"
+        },
+        "contract_address": "0xeef4ea1a548417df1e7f0f6ab89494eed9e06b70",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [],
+        "table_description": "",
+        "table_name": "BurningSurplusAuctionHouse_event_DisableContract"
+    }
+}
