@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "auctionDeadline",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RestartAuction",
+            "type": "event"
+        },
+        "contract_address": "0x1896adbe708bf91158748b3f33738ba497a69e8f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionDeadline",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DebtAuctionHouse_event_RestartAuction"
+    }
+}

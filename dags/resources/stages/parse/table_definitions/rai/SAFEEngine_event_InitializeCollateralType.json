@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "InitializeCollateralType",
+            "type": "event"
+        },
+        "contract_address": "0xcc88a9d330da1133df3a7bd823b95e52511a6962",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SAFEEngine_event_InitializeCollateralType"
+    }
+}

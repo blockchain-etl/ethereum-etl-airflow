@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "debtDestination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "coinDestination",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rad",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "debtDstBalance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "coinDstBalance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "globalUnbackedDebt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "globalDebt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreateUnbackedDebt",
+            "type": "event"
+        },
+        "contract_address": "0xcc88a9d330da1133df3a7bd823b95e52511a6962",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "debtDestination",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coinDestination",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rad",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtDstBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coinDstBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "globalUnbackedDebt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "globalDebt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SAFEEngine_event_CreateUnbackedDebt"
+    }
+}

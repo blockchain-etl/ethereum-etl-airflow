@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "highBidder",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountToBuy",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bidExpiry",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DecreaseSoldAmount",
+            "type": "event"
+        },
+        "contract_address": "0x1896adbe708bf91158748b3f33738ba497a69e8f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "highBidder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountToBuy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bid",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bidExpiry",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DebtAuctionHouse_event_DecreaseSoldAmount"
+    }
+}

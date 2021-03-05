@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "safe",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "saviour",
+                    "type": "address"
+                }
+            ],
+            "name": "ProtectSAFE",
+            "type": "event"
+        },
+        "contract_address": "0x27efc6ffe79692e0521e7e27657cf228240a06c2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "safe",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "saviour",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LiquidationEngine_event_ProtectSAFE"
+    }
+}
