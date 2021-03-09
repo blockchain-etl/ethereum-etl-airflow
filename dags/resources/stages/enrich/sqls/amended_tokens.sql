@@ -19,7 +19,7 @@ deduplicated_token_amendments AS (
     GROUP BY address
 )
 SELECT 
-    LOWER(address),
+    LOWER(address) as address,
     COALESCE(am.symbol, tokens.symbol) AS symbol,
     COALESCE(am.name, tokens.name) AS name,
     COALESCE(am.decimals, tokens.decimals) AS decimals,
