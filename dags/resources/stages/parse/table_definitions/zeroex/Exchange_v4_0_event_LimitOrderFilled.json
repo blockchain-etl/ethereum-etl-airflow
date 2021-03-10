@@ -1,0 +1,142 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "makerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "takerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "takerTokenFilledAmount",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "makerTokenFilledAmount",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "takerTokenFeeFilledAmount",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "protocolFeePaid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "pool",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "LimitOrderFilled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v4_0_event_LimitOrderFilled",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "maker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "taker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "feeRecipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerTokenFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "makerTokenFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "takerTokenFeeFilledAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "protocolFeePaid",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "pool",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
