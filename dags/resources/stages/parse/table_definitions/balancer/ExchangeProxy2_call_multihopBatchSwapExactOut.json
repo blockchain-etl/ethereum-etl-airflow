@@ -52,20 +52,15 @@
                 },
                 {
                     "internalType": "uint256",
-                    "name": "totalAmountIn",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "minTotalAmountOut",
+                    "name": "maxTotalAmountIn",
                     "type": "uint256"
                 }
             ],
-            "name": "multihopBatchSwapExactIn",
+            "name": "multihopBatchSwapExactOut",
             "outputs": [
                 {
                     "internalType": "uint256",
-                    "name": "totalAmountOut",
+                    "name": "totalAmountIn",
                     "type": "uint256"
                 }
             ],
@@ -97,16 +92,11 @@
             },
             {
                 "description": "",
-                "name": "totalAmountIn",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "minTotalAmountOut",
+                "name": "maxTotalAmountIn",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "ExchangeProxy2_event_multihopBatchSwapExactIn"
+        "table_name": "ExchangeProxy2_call_multihopBatchSwapExactOut"
     }
 }

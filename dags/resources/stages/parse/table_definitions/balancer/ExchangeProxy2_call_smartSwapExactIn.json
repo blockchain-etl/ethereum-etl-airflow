@@ -15,12 +15,12 @@
                 },
                 {
                     "internalType": "uint256",
-                    "name": "totalAmountOut",
+                    "name": "totalAmountIn",
                     "type": "uint256"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "maxTotalAmountIn",
+                    "name": "minTotalAmountOut",
                     "type": "uint256"
                 },
                 {
@@ -29,11 +29,11 @@
                     "type": "uint256"
                 }
             ],
-            "name": "smartSwapExactOut",
+            "name": "smartSwapExactIn",
             "outputs": [
                 {
                     "internalType": "uint256",
-                    "name": "totalAmountIn",
+                    "name": "totalAmountOut",
                     "type": "uint256"
                 }
             ],
@@ -60,12 +60,12 @@
             },
             {
                 "description": "",
-                "name": "totalAmountOut",
+                "name": "totalAmountIn",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "maxTotalAmountIn",
+                "name": "minTotalAmountOut",
                 "type": "STRING"
             },
             {
@@ -75,6 +75,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "ExchangeProxy2_event_smartSwapExactOut"
+        "table_name": "ExchangeProxy2_call_smartSwapExactIn"
     }
 }

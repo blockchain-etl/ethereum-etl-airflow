@@ -36,9 +36,9 @@
                             "type": "uint256"
                         }
                     ],
-                    "internalType": "struct ExchangeProxy.Swap[][]",
-                    "name": "swapSequences",
-                    "type": "tuple[][]"
+                    "internalType": "struct ExchangeProxy.Swap[]",
+                    "name": "swaps",
+                    "type": "tuple[]"
                 },
                 {
                     "internalType": "contract TokenInterface",
@@ -52,15 +52,20 @@
                 },
                 {
                     "internalType": "uint256",
-                    "name": "maxTotalAmountIn",
+                    "name": "totalAmountIn",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minTotalAmountOut",
                     "type": "uint256"
                 }
             ],
-            "name": "multihopBatchSwapExactOut",
+            "name": "batchSwapExactIn",
             "outputs": [
                 {
                     "internalType": "uint256",
-                    "name": "totalAmountIn",
+                    "name": "totalAmountOut",
                     "type": "uint256"
                 }
             ],
@@ -77,7 +82,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "swapSequences",
+                "name": "swaps",
                 "type": "STRING"
             },
             {
@@ -92,11 +97,16 @@
             },
             {
                 "description": "",
-                "name": "maxTotalAmountIn",
+                "name": "totalAmountIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minTotalAmountOut",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "ExchangeProxy2_event_multihopBatchSwapExactOut"
+        "table_name": "ExchangeProxy2_call_batchSwapExactIn"
     }
 }
