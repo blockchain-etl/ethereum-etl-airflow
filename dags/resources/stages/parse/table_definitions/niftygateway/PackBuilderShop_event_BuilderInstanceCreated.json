@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "new_contract_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "contractId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BuilderInstanceCreated",
+            "type": "event"
+        },
+        "contract_address": "0x5e156645b572dae1c3a487173fa2dfaae3a1fa22",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "niftygateway",
+        "schema": [
+            {
+                "description": "",
+                "name": "new_contract_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "contractId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PackBuilderShop_event_BuilderInstanceCreated"
+    }
+}
