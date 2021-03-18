@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "isAuthorised",
+                    "type": "bool"
+                }
+            ],
+            "name": "AuthorisationChanged",
+            "type": "event"
+        },
+        "contract_address": "0x9c4e9cce4780062942a7fe34fa2fa7316c872956",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "node",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isAuthorised",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OpenSeaENSResolver_event_AuthorisationChanged"
+    }
+}
