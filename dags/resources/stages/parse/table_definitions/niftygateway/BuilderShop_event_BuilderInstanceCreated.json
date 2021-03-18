@@ -1,0 +1,41 @@
+{
+  "parser": {
+    "abi": {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "new_contract_address",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "contractId",
+          "type": "uint256"
+        }
+      ],
+      "name": "BuilderInstanceCreated",
+      "type": "event"
+    },
+    "contract_address": "SELECT * FROM UNNEST(['0x431bd1297a1c7664d599364a427a2d926a1f58ae', '0x806167087d7dc1a95fe2cbfb92407e952cee4d37', '0x0fe4f2398fc9d1186398461dff126130bef11a6e', '0xa8a804aecdd1cc6eebd862bd98e9feca5d17bf5a'])",
+    "field_mapping": {},
+    "type": "log"
+  },
+  "table": {
+    "dataset_name": "niftygateway",
+    "schema": [
+      {
+        "description": "",
+        "name": "new_contract_address",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "contractId",
+        "type": "STRING"
+      }
+    ],
+    "table_description": "",
+    "table_name": "BuilderShop_event_BuilderInstanceCreated"
+  }
+}
