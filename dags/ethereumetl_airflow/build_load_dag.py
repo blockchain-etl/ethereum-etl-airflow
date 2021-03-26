@@ -12,7 +12,7 @@ from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
 from airflow.operators.email_operator import EmailOperator
 from airflow.operators.python_operator import PythonOperator
 from google.cloud import bigquery
-from google.cloud.bigquery import TimePartitioning
+from google.cloud.bigquery import TimePartitioning, SchemaField
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job
 
@@ -103,7 +103,9 @@ def build_load_dag(
             client = bigquery.Client()
             job_config = bigquery.LoadJobConfig()
             schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/{task}.json'.format(task=task))
-            job_config.schema = read_bigquery_schema_from_file(schema_path)
+            schema = read_bigquery_schema_from_file(schema_path)
+            schema = adjust_schema_for_kovan(dag_id, task, schema)
+            job_config.schema = schema
             job_config.source_format = bigquery.SourceFormat.CSV if file_format == 'csv' else bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
             if file_format == 'csv':
                 job_config.skip_leading_rows = 1
@@ -146,6 +148,7 @@ def build_load_dag(
 
             schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/{task}.json'.format(task=task))
             schema = read_bigquery_schema_from_file(schema_path)
+            schema = adjust_schema_for_kovan(dag_id, task, schema)
             table = bigquery.Table(temp_table_ref, schema=schema)
 
             description_path = os.path.join(
@@ -300,3 +303,31 @@ def build_load_dag(
         calculate_balances_task >> send_email_task
 
     return dag
+
+
+def adjust_schema_for_kovan(dag_id, task, schema):
+    result = []
+    if 'kovan' in dag_id and task == 'blocks':
+        for field in schema:
+            # nonce can be empty in Kovan
+            if field.name == 'nonce':
+                result.append(SchemaField(
+                    name=field.name,
+                    field_type=field.field_type,
+                    mode="NULLABLE",
+                    description=field.description,
+                    fields=field.fields
+                ))
+            elif field.name == 'difficulty' or field.name == 'total_difficulty':
+                result.append(SchemaField(
+                    name=field.name,
+                    field_type='STRING',
+                    mode=field.mode,
+                    description=field.description,
+                    fields=field.fields
+                ))
+            else:
+                result.append(field)
+    else:
+        result = schema
+    return result
