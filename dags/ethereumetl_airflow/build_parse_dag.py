@@ -39,8 +39,16 @@ def build_parse_dag(
     if parse_all_partitions:
         dag_id = dag_id + '_FULL'
 
-    SOURCE_PROJECT_ID = 'bigquery-public-data'
-    SOURCE_DATASET_NAME = 'crypto_ethereum'
+    if 'ethereum_kovan_parse' in dag_id:
+        SOURCE_PROJECT_ID = 'public-data-finance'
+        SOURCE_DATASET_NAME = 'crypto_ethereum_kovan'
+
+        PARTITION_DAG_ID = 'ethereum_kovan_partition_dag'
+    else:
+        SOURCE_PROJECT_ID = 'bigquery-public-data'
+        SOURCE_DATASET_NAME = 'crypto_ethereum'
+
+        PARTITION_DAG_ID = 'ethereum_partition_dag'
 
     default_dag_args = {
         'depends_on_past': False,
@@ -136,7 +144,7 @@ def build_parse_dag(
 
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
         task_id='wait_for_ethereum_partition_dag',
-        external_dag_id='ethereum_partition_dag',
+        external_dag_id=PARTITION_DAG_ID,
         external_task_id='done',
         execution_delta=timedelta(minutes=30),
         priority_weight=0,

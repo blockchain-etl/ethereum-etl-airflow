@@ -9,7 +9,7 @@ DAG = build_load_dag(
     chain='ethereum_kovan',
     **read_load_dag_vars(
         var_prefix='ethereum_kovan_',
-        schedule_interval='30 13 * * *'
+        schedule_interval='30 12 * * *'
     )
 )
 
