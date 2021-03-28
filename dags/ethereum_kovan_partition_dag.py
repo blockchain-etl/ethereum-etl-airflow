@@ -9,11 +9,11 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 # airflow DAG
 DAG = build_partition_dag(
-    dag_id='ethereum_partition_dag',
-    partitioned_project_id='blockchain-etl-internal',
+    dag_id='ethereum_kovan_partition_dag',
+    partitioned_project_id='blockchain-etl-kovan-internal',
     partitioned_dataset_name = 'crypto_ethereum_partitioned',
-    public_project_id = 'bigquery-public-data',
-    public_dataset_name = 'crypto_ethereum',
-    load_dag_id='ethereum_load_dag',
-    schedule_interval='30 13 * * *',
+    public_project_id = 'public-data-finance',
+    public_dataset_name = 'crypto_ethereum_kovan',
+    load_dag_id='ethereum_kovan_load_dag',
+    schedule_interval='30 13 * * *'
 )

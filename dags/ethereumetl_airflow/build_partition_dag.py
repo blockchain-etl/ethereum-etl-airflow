@@ -14,9 +14,14 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 
 def build_partition_dag(
-    dag_id,
-    notification_emails=None,
-    schedule_interval='0 0 * * *'
+        dag_id,
+        partitioned_project_id,
+        partitioned_dataset_name ,
+        public_project_id,
+        public_dataset_name,
+        load_dag_id,
+        notification_emails=None,
+        schedule_interval='0 0 * * *'
 ):
 
     default_dag_args = {
@@ -43,7 +48,14 @@ def build_partition_dag(
             client = bigquery.Client()
 
             ds_with_underscores = ds.replace('-', '_')
-            sql = sql_template.format(ds=ds, ds_with_underscores=ds_with_underscores)
+            sql = sql_template.format(
+                ds=ds,
+                ds_with_underscores=ds_with_underscores,
+                partitioned_project_id=partitioned_project_id,
+                partitioned_dataset_name=partitioned_dataset_name,
+                public_project_id=public_project_id,
+                public_dataset_name=public_dataset_name,
+            )
             print(sql)
             query_job = client.query(sql)
             result = query_job.result()
@@ -64,7 +76,7 @@ def build_partition_dag(
 
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
         task_id='wait_for_ethereum_load_dag',
-        external_dag_id='ethereum_load_dag',
+        external_dag_id=load_dag_id,
         external_task_id='send_email',
         execution_delta=timedelta(hours=1),
         priority_weight=0,
@@ -96,7 +108,7 @@ def build_partition_dag(
 
 SQL_TEMPLATE_LOGS = '''
 CREATE OR REPLACE TABLE
-  `blockchain-etl-internal.crypto_ethereum_partitioned.logs_by_date_{ds_with_underscores}`
+  `{partitioned_project_id}.{partitioned_dataset_name}.logs_by_date_{ds_with_underscores}`
 PARTITION BY
   RANGE_BUCKET(_topic_partition_index, GENERATE_ARRAY(0, 3999, 1))
 OPTIONS(
@@ -107,13 +119,13 @@ AS
 SELECT 
   MOD(ABS(FARM_FINGERPRINT(topics[SAFE_OFFSET(0)])), 3999) as _topic_partition_index, 
   *
-FROM `bigquery-public-data.crypto_ethereum.logs`
+FROM `{public_project_id}.{public_dataset_name}.logs`
 WHERE date(block_timestamp) = '{ds}'
 '''
 
 SQL_TEMPLATE_TRACES = '''
 CREATE OR REPLACE TABLE
-  `blockchain-etl-internal.crypto_ethereum_partitioned.traces_by_date_{ds_with_underscores}`
+  `{partitioned_project_id}.{partitioned_dataset_name}.traces_by_date_{ds_with_underscores}`
 PARTITION BY
   RANGE_BUCKET(_input_partition_index, GENERATE_ARRAY(0, 3999, 1))
 OPTIONS(
@@ -124,29 +136,29 @@ AS
 SELECT 
   MOD(ABS(FARM_FINGERPRINT(SUBSTRING(input, 0, 10))), 3999) as _input_partition_index, 
   *
-FROM `bigquery-public-data.crypto_ethereum.traces`
+FROM `{public_project_id}.{public_dataset_name}.traces`
 WHERE date(block_timestamp) = '{ds}'
 '''
 
 SQL_TEMPLATE_BALANCES = '''
 CREATE OR REPLACE TABLE
-  `blockchain-etl-internal.common.ethereum_balances_{ds_with_underscores}`
+  `{partitioned_project_id}.common.ethereum_balances_{ds_with_underscores}`
 OPTIONS(
   expiration_timestamp=TIMESTAMP_ADD(CURRENT_TIMESTAMP(), INTERVAL 7 DAY)
 )
 AS
 
 SELECT *
-FROM `bigquery-public-data.crypto_ethereum.balances`;
+FROM `{public_project_id}.{public_dataset_name}.balances`;
 
 CREATE OR REPLACE VIEW
-  `blockchain-etl-internal.common.ethereum_balances_live`
+  `{partitioned_project_id}.common.ethereum_balances_live`
 AS
 
 with latest_double_entry_book as (
     -- debits
     select to_address as address, value as value
-    from `bigquery-public-data.crypto_ethereum.traces`
+    from `{public_project_id}.{public_dataset_name}.traces`
     where true
     and date(block_timestamp) > '{ds}'
     and to_address is not null
@@ -155,7 +167,7 @@ with latest_double_entry_book as (
     union all
     -- credits
     select from_address as address, -value as value
-    from `bigquery-public-data.crypto_ethereum.traces`
+    from `{public_project_id}.{public_dataset_name}.traces`
     where true
     and date(block_timestamp) > '{ds}'
     and from_address is not null
@@ -164,15 +176,15 @@ with latest_double_entry_book as (
     union all
     -- transaction fees debits
     select miner as address, sum(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value
-    from `bigquery-public-data.crypto_ethereum.transactions` as transactions
-    join `bigquery-public-data.crypto_ethereum.blocks` as blocks on blocks.number = transactions.block_number
+    from `{public_project_id}.{public_dataset_name}.transactions` as transactions
+    join `{public_project_id}.{public_dataset_name}.blocks` as blocks on blocks.number = transactions.block_number
     where true
     and date(transactions.block_timestamp) > '{ds}'
     group by blocks.miner
     union all
     -- transaction fees credits
     select from_address as address, -(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value
-    from `bigquery-public-data.crypto_ethereum.transactions`
+    from `{public_project_id}.{public_dataset_name}.transactions`
     where true
     and date(block_timestamp) > '{ds}'
 ),
@@ -182,7 +194,7 @@ latest_balance_changes as (
   group by address
 )
 select address, coalesce(sum(eth_balance), 0) + coalesce(sum(eth_change), 0) as eth_balance
-from `blockchain-etl-internal.common.ethereum_balances_{ds_with_underscores}` as historical_balances
+from `{partitioned_project_id}.common.ethereum_balances_{ds_with_underscores}` as historical_balances
 full outer join latest_balance_changes using(address)
 group by address;
 '''
