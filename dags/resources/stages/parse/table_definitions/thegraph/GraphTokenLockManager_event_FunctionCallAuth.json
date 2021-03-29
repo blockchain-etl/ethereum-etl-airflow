@@ -36,7 +36,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "graph",
+        "dataset_name": "thegraph",
         "schema": [
             {
                 "description": "",
