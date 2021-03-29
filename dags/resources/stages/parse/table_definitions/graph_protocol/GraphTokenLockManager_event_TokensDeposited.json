@@ -6,11 +6,17 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "masterCopy",
+                    "name": "sender",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "MasterCopyUpdated",
+            "name": "TokensDeposited",
             "type": "event"
         },
         "contract_address": "0xfcf78ac094288d7200cfdb367a8cd07108dfa128",
@@ -18,15 +24,20 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "thegraph",
+        "dataset_name": "graph_protocol",
         "schema": [
             {
                 "description": "",
-                "name": "masterCopy",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "GraphTokenLockManager_event_MasterCopyUpdated"
+        "table_name": "GraphTokenLockManager_event_TokensDeposited"
     }
 }

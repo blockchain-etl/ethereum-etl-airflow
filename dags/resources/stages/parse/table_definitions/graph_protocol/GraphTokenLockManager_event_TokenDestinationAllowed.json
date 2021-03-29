@@ -6,17 +6,17 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "previousOwner",
+                    "name": "dst",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "allowed",
+                    "type": "bool"
                 }
             ],
-            "name": "OwnershipTransferred",
+            "name": "TokenDestinationAllowed",
             "type": "event"
         },
         "contract_address": "0xfcf78ac094288d7200cfdb367a8cd07108dfa128",
@@ -24,20 +24,20 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "thegraph",
+        "dataset_name": "graph_protocol",
         "schema": [
             {
                 "description": "",
-                "name": "previousOwner",
+                "name": "dst",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newOwner",
+                "name": "allowed",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "GraphTokenLockManager_event_OwnershipTransferred"
+        "table_name": "GraphTokenLockManager_event_TokenDestinationAllowed"
     }
 }

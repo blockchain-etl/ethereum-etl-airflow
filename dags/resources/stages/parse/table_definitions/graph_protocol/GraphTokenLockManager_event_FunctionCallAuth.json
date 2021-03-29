@@ -36,7 +36,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "thegraph",
+        "dataset_name": "graph_protocol",
         "schema": [
             {
                 "description": "",
