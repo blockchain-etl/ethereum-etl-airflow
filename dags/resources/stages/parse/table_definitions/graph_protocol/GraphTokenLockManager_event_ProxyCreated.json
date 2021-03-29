@@ -6,17 +6,11 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "dst",
+                    "name": "proxy",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "allowed",
-                    "type": "bool"
                 }
             ],
-            "name": "TokenDestinationAllowed",
+            "name": "ProxyCreated",
             "type": "event"
         },
         "contract_address": "0xfcf78ac094288d7200cfdb367a8cd07108dfa128",
@@ -24,20 +18,15 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "thegraph",
+        "dataset_name": "graph_protocol",
         "schema": [
             {
                 "description": "",
-                "name": "dst",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "allowed",
+                "name": "proxy",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "GraphTokenLockManager_event_TokenDestinationAllowed"
+        "table_name": "GraphTokenLockManager_event_ProxyCreated"
     }
 }

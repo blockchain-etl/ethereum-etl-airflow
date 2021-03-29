@@ -16,7 +16,7 @@
                     "type": "uint256"
                 }
             ],
-            "name": "TokensDeposited",
+            "name": "TokensWithdrawn",
             "type": "event"
         },
         "contract_address": "0xfcf78ac094288d7200cfdb367a8cd07108dfa128",
@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "thegraph",
+        "dataset_name": "graph_protocol",
         "schema": [
             {
                 "description": "",
@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "GraphTokenLockManager_event_TokensDeposited"
+        "table_name": "GraphTokenLockManager_event_TokensWithdrawn"
     }
 }
