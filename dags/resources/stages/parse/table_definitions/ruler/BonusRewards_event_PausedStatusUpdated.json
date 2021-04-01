@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "old",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "_new",
+                    "type": "bool"
+                }
+            ],
+            "name": "PausedStatusUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x3423c8af3a95d9fee7ec06c4e0e905d4fd559f89",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ruler",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "old",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_new",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BonusRewards_event_PausedStatusUpdated"
+    }
+}
