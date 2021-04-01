@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "FundRebalancerSet",
+            "type": "event"
+        },
+        "contract_address": "0x369855b051d1b2dbee88a792dcfc08614ff4e262",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RariFundController_event_FundRebalancerSet"
+    }
+}

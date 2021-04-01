@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "previousAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0xd291e7a03283640fdc51b121ac401383a46cc623",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdminUpgradeabilityProxy_event_AdminChanged"
+    }
+}
