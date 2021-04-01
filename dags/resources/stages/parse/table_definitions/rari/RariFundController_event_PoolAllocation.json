@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "enum RariFundController.PoolAllocationAction",
+                    "name": "action",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "enum RariFundController.LiquidityPool",
+                    "name": "pool",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "currencyCode",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PoolAllocation",
+            "type": "event"
+        },
+        "contract_address": "0x369855b051d1b2dbee88a792dcfc08614ff4e262",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "action",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currencyCode",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RariFundController_event_PoolAllocation"
+    }
+}

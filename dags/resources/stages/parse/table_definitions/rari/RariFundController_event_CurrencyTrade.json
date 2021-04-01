@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "inputCurrencyCode",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "outputCurrencyCode",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "inputAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "inputAmountUsd",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "outputAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "outputAmountUsd",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "enum RariFundController.CurrencyExchange",
+                    "name": "exchange",
+                    "type": "uint8"
+                }
+            ],
+            "name": "CurrencyTrade",
+            "type": "event"
+        },
+        "contract_address": "0x369855b051d1b2dbee88a792dcfc08614ff4e262",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "inputCurrencyCode",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputCurrencyCode",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inputAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inputAmountUsd",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputAmountUsd",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchange",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RariFundController_event_CurrencyTrade"
+    }
+}

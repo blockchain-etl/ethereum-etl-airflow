@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "Upgraded",
+            "type": "event"
+        },
+        "contract_address": "0xd291e7a03283640fdc51b121ac401383a46cc623",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "implementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdminUpgradeabilityProxy_event_Upgraded"
+    }
+}

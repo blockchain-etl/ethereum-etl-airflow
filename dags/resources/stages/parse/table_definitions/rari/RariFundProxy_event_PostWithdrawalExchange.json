@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "inputCurrencyCode",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "outputErc20Contract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "payee",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "withdrawalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "withdrawalAmountAfterFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "makerAssetFilledAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PostWithdrawalExchange",
+            "type": "event"
+        },
+        "contract_address": "0xe4dee94233dd4d7c2504744ee6d34f3875b3b439",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "inputCurrencyCode",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputErc20Contract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawalAmountAfterFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerAssetFilledAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RariFundProxy_event_PostWithdrawalExchange"
+    }
+}

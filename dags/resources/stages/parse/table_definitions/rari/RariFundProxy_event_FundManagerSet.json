@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newContract",
+                    "type": "address"
+                }
+            ],
+            "name": "FundManagerSet",
+            "type": "event"
+        },
+        "contract_address": "0xe4dee94233dd4d7c2504744ee6d34f3875b3b439",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "newContract",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RariFundProxy_event_FundManagerSet"
+    }
+}
