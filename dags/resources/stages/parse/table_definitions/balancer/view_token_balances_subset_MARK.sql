@@ -17,7 +17,7 @@
 
 with events as (
   select block_number, log_index,
-  cast('115792089237316195423570985008687907853269984665640564039457525000000000000000' as float64)/cast(totalSupply as float64) as atomsPerMolecule 
+  cast('115792089237316195423570985008687907853269984665640564039457525000000000000000' as float64)/cast(_totalSupply as float64) as atomsPerMolecule 
   from `blockchain-etl.ethereum_benchmark.Benchmark_event_LogRebase`
   -- manually add a "ghost" event because initialization didn't emit a LogRebase event
   union all
@@ -32,15 +32,15 @@ atomsPerMolecule_state_with_gaps as (
 ),
 molecules_double_entry_book as (
     -- debits
-    select `to` as address, cast(value as FLOAT64) as molecule_value, block_number, log_index
-    from `blockchain-etl.ethereum_benchmark.Benchmark_event_LogRebase`
-    where `to` <> '0x0000000000000000000000000000000000000000' 
+    select `_to` as address, cast(_value as FLOAT64) as molecule_value, block_number, log_index
+    from `blockchain-etl.ethereum_benchmark.Benchmark_event_Transfer`
+    where `_to` <> '0x0000000000000000000000000000000000000000' 
     and date(block_timestamp) > "2020-11-15" 
     union all
     -- credits
-    select `from` as address, -cast(value as FLOAT64) as molecule_value, block_number, log_index
-  from `blockchain-etl.ethereum_ampleforth.UMolecules_event_Transfer`
-    where `from` <> '0x0000000000000000000000000000000000000000' 
+    select `_from` as address, -cast(_value as FLOAT64) as molecule_value, block_number, log_index
+  from `blockchain-etl.ethereum_benchmark.Benchmark_event_Transfer`
+    where `_from` <> '0x0000000000000000000000000000000000000000' 
     and date(block_timestamp) > "2020-11-15" 
 ), 
 atoms_double_entry_book as (
