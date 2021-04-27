@@ -1,7 +1,7 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "SELECT pool FROM ref('WeightedPoolFactory_event_PoolCreated')",
+        "contract_address": "SELECT pool FROM ref('V2_WeightedPoolFactory_event_PoolCreated')",
         "abi": {
             "anonymous": false,
             "inputs": [
