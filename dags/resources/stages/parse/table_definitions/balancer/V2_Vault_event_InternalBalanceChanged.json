@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "delta",
+                    "type": "int256"
+                }
+            ],
+            "name": "InternalBalanceChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_Vault_event_InternalBalanceChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "user",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "delta",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
