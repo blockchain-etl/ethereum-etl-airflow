@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "poolId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "poolAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum IVault.PoolSpecialization",
+                    "name": "specialization",
+                    "type": "uint8"
+                }
+            ],
+            "name": "PoolRegistered",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_Vault_event_PoolRegistered",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "poolId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "poolAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "specialization",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

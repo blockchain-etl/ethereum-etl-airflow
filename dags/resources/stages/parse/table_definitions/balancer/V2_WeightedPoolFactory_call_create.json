@@ -1,0 +1,88 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x8e9aa87e45e92bad84d5f8dd1bff34fb92637de9",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "internalType": "contract IERC20[]",
+                    "name": "tokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "weights",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "swapFeePercentage",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_WeightedPoolFactory_call_create",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "name",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "symbol",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tokens",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "weights",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "swapFeePercentage",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
