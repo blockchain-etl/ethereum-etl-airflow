@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x8e9aa87e45e92bad84d5f8dd1bff34fb92637de9",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolCreated",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_WeightedPoolFactory_event_PoolCreated",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "pool",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
