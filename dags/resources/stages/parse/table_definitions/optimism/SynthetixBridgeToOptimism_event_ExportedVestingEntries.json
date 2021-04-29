@@ -1,0 +1,66 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "escrowedAccountBalance",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint64",
+                            "name": "endTime",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "escrowAmount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct VestingEntries.VestingEntry[]",
+                    "name": "vestingEntries",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "ExportedVestingEntries",
+            "type": "event"
+        },
+        "contract_address": "0x045e507925d2e05d114534d0810a1abd94aca8d6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "optimism",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "escrowedAccountBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vestingEntries",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SynthetixBridgeToOptimism_event_ExportedVestingEntries"
+    }
+}
