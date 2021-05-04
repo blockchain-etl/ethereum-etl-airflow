@@ -1,51 +1,40 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "SELECT pool FROM ref('V2_WeightedPoolFactory_event_PoolCreated')",
+        "contract_address": "0x74e838ecf981aaef2523aa5b666175da319d8d31",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "owner",
+                    "name": "oldOwner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "spender",
+                    "name": "newOwner",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
                 }
             ],
-            "name": "Approval",
+            "name": "OwnerChanged",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
-        "dataset_name": "balancer",
-        "table_name": "V2_WeightedPool_event_Approval",
+        "dataset_name": "uniswap",
+        "table_name": "UniswapV3Factory_event_OwnerChanged",
         "table_description": "",
         "schema": [
             {
-                "name": "owner",
+                "name": "oldOwner",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "spender",
-                "description": "",
-                "type": "STRING"
-            },
-            {
-                "name": "value",
+                "name": "newOwner",
                 "description": "",
                 "type": "STRING"
             }

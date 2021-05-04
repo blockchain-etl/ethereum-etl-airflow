@@ -1,54 +1,54 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "SELECT pool FROM ref('V2_WeightedPoolFactory_event_PoolCreated')",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "owner",
+                    "name": "_from",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "spender",
+                    "name": "_to",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "_amount",
                     "type": "uint256"
                 }
             ],
-            "name": "Approval",
+            "name": "DepositInitiated",
             "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0xf20c38fcddf0c790319fd7431d17ea0c2bc9959c",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
-        "dataset_name": "balancer",
-        "table_name": "V2_WeightedPool_event_Approval",
-        "table_description": "",
+        "dataset_name": "optimism",
         "schema": [
             {
-                "name": "owner",
                 "description": "",
+                "name": "_from",
                 "type": "STRING"
             },
             {
-                "name": "spender",
                 "description": "",
+                "name": "_to",
                 "type": "STRING"
             },
             {
-                "name": "value",
                 "description": "",
+                "name": "_amount",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "OVM_L1ETHGateway_event_DepositInitiated"
     }
 }

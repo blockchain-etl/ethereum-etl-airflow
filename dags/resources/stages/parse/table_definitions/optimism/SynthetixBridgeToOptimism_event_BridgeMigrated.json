@@ -1,54 +1,54 @@
 {
     "parser": {
-        "type": "log",
-        "contract_address": "SELECT pool FROM ref('V2_WeightedPoolFactory_event_PoolCreated')",
         "abi": {
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "owner",
+                    "name": "oldBridge",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "spender",
+                    "name": "newBridge",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "Approval",
+            "name": "BridgeMigrated",
             "type": "event"
         },
-        "field_mapping": {}
+        "contract_address": "0x045e507925d2e05d114534d0810a1abd94aca8d6",
+        "field_mapping": {},
+        "type": "log"
     },
     "table": {
-        "dataset_name": "balancer",
-        "table_name": "V2_WeightedPool_event_Approval",
-        "table_description": "",
+        "dataset_name": "optimism",
         "schema": [
             {
-                "name": "owner",
                 "description": "",
+                "name": "oldBridge",
                 "type": "STRING"
             },
             {
-                "name": "spender",
                 "description": "",
+                "name": "newBridge",
                 "type": "STRING"
             },
             {
-                "name": "value",
                 "description": "",
+                "name": "amount",
                 "type": "STRING"
             }
-        ]
+        ],
+        "table_description": "",
+        "table_name": "SynthetixBridgeToOptimism_event_BridgeMigrated"
     }
 }
