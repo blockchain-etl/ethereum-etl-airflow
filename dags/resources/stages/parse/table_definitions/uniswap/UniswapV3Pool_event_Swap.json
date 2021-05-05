@@ -37,6 +37,12 @@
                 },
                 {
                     "indexed": false,
+                    "internalType": "uint128",
+                    "name": "liquidity",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
                     "internalType": "int24",
                     "name": "tick",
                     "type": "int24"
@@ -74,6 +80,11 @@
             },
             {
                 "name": "sqrtPriceX96",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "liquidity",
                 "description": "",
                 "type": "STRING"
             },
