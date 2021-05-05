@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "ApprovalForAll",
+            "type": "event"
+        },
+        "contract_address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "approved",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NonfungiblePositionManager_event_ApprovalForAll"
+    }
+}
