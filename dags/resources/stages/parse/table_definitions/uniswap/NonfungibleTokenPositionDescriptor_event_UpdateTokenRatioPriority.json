@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "priority",
+                    "type": "int256"
+                }
+            ],
+            "name": "UpdateTokenRatioPriority",
+            "type": "event"
+        },
+        "contract_address": "0x91ae842a5ffd8d12023116943e72a606179294f3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "priority",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NonfungibleTokenPositionDescriptor_event_UpdateTokenRatioPriority"
+    }
+}
