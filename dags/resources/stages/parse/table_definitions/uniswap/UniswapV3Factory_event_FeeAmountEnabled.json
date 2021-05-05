@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint24",
+                    "name": "fee",
+                    "type": "uint24"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "int24",
+                    "name": "tickSpacing",
+                    "type": "int24"
+                }
+            ],
+            "name": "FeeAmountEnabled",
+            "type": "event"
+        },
+        "contract_address": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tickSpacing",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapV3Factory_event_FeeAmountEnabled"
+    }
+}
