@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        "contract_address": "0x77208a6000691e440026bed1b178ef4661d37426",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "totle",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TotlePrimary_0x7720_event_OwnershipTransferred"
+    }
+}
