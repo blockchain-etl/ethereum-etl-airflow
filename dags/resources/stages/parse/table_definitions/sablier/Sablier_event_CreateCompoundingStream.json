@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "streamId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "exchangeRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "senderSharePercentage",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "recipientSharePercentage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreateCompoundingStream",
+            "type": "event"
+        },
+        "contract_address": "0xa4fc358455febe425536fd1878be67ffdbdec59a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sablier",
+        "schema": [
+            {
+                "description": "",
+                "name": "streamId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchangeRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderSharePercentage",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipientSharePercentage",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Sablier_event_CreateCompoundingStream"
+    }
+}
