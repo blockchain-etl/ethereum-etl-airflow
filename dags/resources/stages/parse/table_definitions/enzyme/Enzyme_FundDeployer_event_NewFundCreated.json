@@ -115,6 +115,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "FundDeployer_event_NewFundCreated"
+        "table_name": "Enzyme_FundDeployer_event_NewFundCreated"
     }
 }
