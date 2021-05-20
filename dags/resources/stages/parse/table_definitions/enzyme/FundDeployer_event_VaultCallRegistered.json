@@ -16,7 +16,7 @@
                     "type": "bytes4"
                 }
             ],
-            "name": "VaultCallDeregistered",
+            "name": "VaultCallRegistered",
             "type": "event"
         },
         "contract_address": "0x7e6d3b1161df9c9c7527f68d651b297d2fdb820b",
@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Enzyme_FundDeployer_event_VaultCallDeregistered"
+        "table_name": "FundDeployer_event_VaultCallRegistered"
     }
 }

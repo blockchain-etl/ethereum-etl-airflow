@@ -93,6 +93,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Enzyme_FundDeployer_event_ComptrollerProxyDeployed"
+        "table_name": "FundDeployer_event_ComptrollerProxyDeployed"
     }
 }
