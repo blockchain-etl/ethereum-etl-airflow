@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "fundDeployer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "vaultProxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vaultLib",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "vaultAccessor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "fundName",
+                    "type": "string"
+                }
+            ],
+            "name": "VaultProxyDeployed",
+            "type": "event"
+        },
+        "contract_address": "0xc3dc853dd716bd5754f421ef94fdcbac3902ab32",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "enzyme",
+        "schema": [
+            {
+                "description": "",
+                "name": "fundDeployer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vaultProxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vaultLib",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vaultAccessor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fundName",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MelonV1_Dispatcher_event_VaultProxyDeployed"
+    }
+}
