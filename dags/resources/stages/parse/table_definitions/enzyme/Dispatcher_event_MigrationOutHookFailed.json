@@ -54,7 +54,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "MelonV1",
+        "dataset_name": "enzyme",
         "schema": [
             {
                 "description": "",
