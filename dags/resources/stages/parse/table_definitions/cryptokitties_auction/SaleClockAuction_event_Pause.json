@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Pause",
+            "type": "event"
+        },
+        "contract_address": "0xb1690c08e213a35ed9bab7b318de14420fb57d8c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cryptokitties_auction",
+        "schema": [],
+        "table_description": "",
+        "table_name": "SaleClockAuction_event_Pause"
+    }
+}
