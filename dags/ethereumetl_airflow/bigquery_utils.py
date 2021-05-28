@@ -84,3 +84,31 @@ def does_table_exist(bigquery_client, table_ref):
     except NotFound:
         return False
     return True
+
+
+def share_dataset_all_users_read(bigquery_client, full_dataset_name):
+    bigquery.AccessEntry.ENTITY_TYPES = ["userByEmail", "groupByEmail", "domain", "specialGroup", "view", "iamMember"]
+
+    role = 'READER'
+    entity_type = 'iamMember'
+    entity_id = 'allUsers'
+
+    dataset = bigquery_client.get_dataset(full_dataset_name)
+    entries = list(dataset.access_entries)
+    is_shared = False
+    for entry in entries:
+        if entry.role == role and entry.entity_type == entity_type and entry.entity_id == entity_id:
+            is_shared = True
+
+    if not is_shared:
+        entry = bigquery.AccessEntry(
+            role=role,
+            entity_type=entity_type,
+            entity_id=entity_id,
+        )
+        entries.append(entry)
+        dataset.access_entries = entries
+        dataset = bigquery_client.update_dataset(dataset, ["access_entries"])
+        logging.info('Updated dataset permissions')
+    else:
+        logging.info('The dataset is already shared')

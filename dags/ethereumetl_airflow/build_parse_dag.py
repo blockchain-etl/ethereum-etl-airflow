@@ -13,7 +13,7 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.sensors import ExternalTaskSensor
 from google.cloud import bigquery
 
-from ethereumetl_airflow.bigquery_utils import create_view
+from ethereumetl_airflow.bigquery_utils import create_view, share_dataset_all_users_read
 from ethereumetl_airflow.common import read_json_file, read_file
 from ethereumetl_airflow.parse.parse_logic import ref_regex, parse, create_dataset
 
@@ -142,6 +142,25 @@ def build_parse_dag(
 
         return create_view_operator
 
+    def create_share_dataset_task(dataset_name):
+        def share_dataset_task(**kwargs):
+            if parse_destination_dataset_project_id != 'blockchain-etl':
+                logging.info('Skipping sharing dataset.')
+            else:
+                client = bigquery.Client()
+                share_dataset_all_users_read(client, f'{parse_destination_dataset_project_id}.{dataset_name}')
+                share_dataset_all_users_read(client, f'{parse_destination_dataset_project_id}-internal.{dataset_name}')
+
+        share_dataset_operator = PythonOperator(
+            task_id='share_dataset',
+            python_callable=share_dataset_task,
+            provide_context=True,
+            execution_timeout=timedelta(minutes=10),
+            dag=dag
+        )
+
+        return share_dataset_operator
+
     wait_for_ethereum_load_dag_task = ExternalTaskSensor(
         task_id='wait_for_ethereum_partition_dag',
         external_dag_id=PARTITION_DAG_ID,
@@ -184,12 +203,18 @@ def build_parse_dag(
 
     final_tasks = [checkpoint_task]
 
+    dataset_name = os.path.basename(dataset_folder)
+    full_dataset_name = 'ethereum_' + dataset_name
+
+    share_dataset_task = create_share_dataset_task(full_dataset_name)
+    checkpoint_task >> share_dataset_task
+    final_tasks.append(share_dataset_task)
+
+    # Create views
+
     sql_files = get_list_of_files(dataset_folder, '*.sql')
     logging.info(sql_files)
 
-    # TODO: Use folder name as dataset name and remove dataset_name in JSON definitions.
-    dataset_name = os.path.basename(dataset_folder)
-    full_dataset_name = 'ethereum_' + dataset_name
     for sql_file in sql_files:
         sql = read_file(sql_file)
         base_name = os.path.basename(sql_file)
