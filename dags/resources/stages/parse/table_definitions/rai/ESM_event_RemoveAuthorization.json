@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "RemoveAuthorization",
+            "type": "event"
+        },
+        "contract_address": "0xa33ea2ac39902d4a206d6a1f8d38c7330c80f094",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ESM_event_RemoveAuthorization"
+    }
+}
