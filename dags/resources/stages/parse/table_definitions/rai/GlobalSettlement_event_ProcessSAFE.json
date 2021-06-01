@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "safe",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralShortfall",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProcessSAFE",
+            "type": "event"
+        },
+        "contract_address": "0xee4cf96e5359d9619197fd82b6ef2a9eae7b91e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "safe",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralShortfall",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GlobalSettlement_event_ProcessSAFE"
+    }
+}

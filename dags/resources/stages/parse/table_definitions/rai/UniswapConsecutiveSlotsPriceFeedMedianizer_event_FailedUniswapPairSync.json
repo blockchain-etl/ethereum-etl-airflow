@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "reason",
+                    "type": "bytes"
+                }
+            ],
+            "name": "FailedUniswapPairSync",
+            "type": "event"
+        },
+        "contract_address": "0xfbf4849a06f6e6f53ecb31d2f8bd61aa7874b268",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "reason",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapConsecutiveSlotsPriceFeedMedianizer_event_FailedUniswapPairSync"
+    }
+}

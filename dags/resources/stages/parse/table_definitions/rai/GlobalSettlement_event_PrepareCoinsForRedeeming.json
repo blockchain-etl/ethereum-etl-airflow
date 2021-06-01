@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "coinBag",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PrepareCoinsForRedeeming",
+            "type": "event"
+        },
+        "contract_address": "0xee4cf96e5359d9619197fd82b6ef2a9eae7b91e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coinBag",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GlobalSettlement_event_PrepareCoinsForRedeeming"
+    }
+}
