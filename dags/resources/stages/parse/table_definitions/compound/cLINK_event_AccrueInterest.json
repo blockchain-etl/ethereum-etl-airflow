@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cashPrior",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "interestAccumulated",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AccrueInterest",
+            "type": "event"
+        },
+        "contract_address": "0xface851a4921ce59e912d19329929ce6da6eb0c7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "cashPrior",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestAccumulated",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBorrows",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cLINK_event_AccrueInterest"
+    }
+}
