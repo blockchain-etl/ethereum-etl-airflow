@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldPendingAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x12392f67bdf24fae0af363c24ac620a2f67dad86",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldPendingAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPendingAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cTUSD_event_NewPendingAdmin"
+    }
+}
