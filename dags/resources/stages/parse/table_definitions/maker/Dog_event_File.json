@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "ilk",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "what",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "clip",
+                    "type": "address"
+                }
+            ],
+            "name": "File",
+            "type": "event"
+        },
+        "contract_address": "0x135954d155898d42c90d2a57824c690e0c7bef1b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "ilk",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "what",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "clip",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Dog_event_File"
+    }
+}
