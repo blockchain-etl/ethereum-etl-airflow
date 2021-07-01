@@ -59,5 +59,20 @@
         "name": "input",
         "type": "STRING",
         "description": "The data sent along with the transaction"
+    },
+    {
+        "name": "max_fee_per_gas",
+        "type": "INT64",
+        "description": "Total fee that covers both base and priority fees"
+    },
+    {
+        "name": "max_priority_fee_per_gas",
+        "type": "INT64",
+        "description": "Fee given to miners to incentivize them to include the transaction"
+    },
+    {
+        "name": "transaction_type",
+        "type": "INT64",
+        "description": "An envelope for future transaction types"
     }
 ]
