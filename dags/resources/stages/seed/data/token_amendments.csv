@@ -51,3 +51,5 @@ address,symbol,name,decimals
 0x7e7e112a68d8d2e221e11047a72ffc1065c38e1a,bDIGG,Badger Sett Digg,18
 0xb4db55a20e0624edd82a0cf356e3488b4669bd27,1LP-ETH-USDC,1inch Liquidity Pool (ETH-USDC),18
 0x8798249c2e607446efb7ad49ec89dd1865ff4272,xSUSHI,SushiBar,18
+0x03ab458634910aad20ef5f1c8ee96f1d6ac54919,RAI,Rai Reflex Index,18
+0xd5147bc8e386d91cc5dbe72099dac6c9b99276f5,renFIL,renFIL,18
