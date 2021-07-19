@@ -107,7 +107,7 @@
         "description": "An envelope for future transaction types"
     },
     {
-        "name": "effective_gas_price",
+        "name": "receipt_effective_gas_price",
         "type": "INT64",
         "description": "The amount of gas used by this specific transaction alone (a replacement for gasUsed field)"
     }

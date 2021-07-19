@@ -19,7 +19,7 @@ SELECT
     transactions.max_fee_per_gas,
     transactions.max_priority_fee_per_gas,
     transactions.transaction_type,
-    receipts.effective_gas_price as effective_gas_price
+    receipts.effective_gas_price as receipt_effective_gas_price
 FROM {{params.dataset_name_raw}}.blocks AS blocks
     JOIN {{params.dataset_name_raw}}.transactions AS transactions ON blocks.number = transactions.block_number
     JOIN {{params.dataset_name_raw}}.receipts AS receipts ON transactions.hash = receipts.transaction_hash
