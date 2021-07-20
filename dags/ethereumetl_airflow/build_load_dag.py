@@ -240,14 +240,14 @@ def build_load_dag(
                 dependency >> verify_task
         return verify_task
 
-    load_blocks_task = add_load_tasks('blocks', 'csv')
-    load_transactions_task = add_load_tasks('transactions', 'csv')
-    load_receipts_task = add_load_tasks('receipts', 'csv')
+    load_blocks_task = add_load_tasks('blocks', 'json')
+    load_transactions_task = add_load_tasks('transactions', 'json')
+    load_receipts_task = add_load_tasks('receipts', 'json')
     load_logs_task = add_load_tasks('logs', 'json')
     load_contracts_task = add_load_tasks('contracts', 'json')
-    load_tokens_task = add_load_tasks('tokens', 'csv', allow_quoted_newlines=True)
-    load_token_transfers_task = add_load_tasks('token_transfers', 'csv')
-    load_traces_task = add_load_tasks('traces', 'csv')
+    load_tokens_task = add_load_tasks('tokens', 'json', allow_quoted_newlines=True)
+    load_token_transfers_task = add_load_tasks('token_transfers', 'json')
+    load_traces_task = add_load_tasks('traces', 'json')
 
     enrich_blocks_task = add_enrich_tasks(
         'blocks', time_partitioning_field='timestamp', dependencies=[load_blocks_task])
