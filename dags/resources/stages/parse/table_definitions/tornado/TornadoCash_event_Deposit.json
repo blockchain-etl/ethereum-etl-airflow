@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "commitment",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "leafIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        "contract_address": "0x910cbd523d972eb0a6f4cae4618ad62622b39dbf",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "schema": [
+            {
+                "description": "",
+                "name": "commitment",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "leafIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TornadoCash_event_Deposit"
+    }
+}
