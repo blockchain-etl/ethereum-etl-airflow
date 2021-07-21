@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract ITornadoInstance",
+                    "name": "instance",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum TornadoProxy.InstanceState",
+                    "name": "state",
+                    "type": "uint8"
+                }
+            ],
+            "name": "InstanceStateUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x722122df12d4e14e13ac3b6895a86e84145b6967",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "schema": [
+            {
+                "description": "",
+                "name": "instance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "state",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TornadoProxy_event_InstanceStateUpdated"
+    }
+}
