@@ -10,13 +10,13 @@ from airflow.operators import python_operator
 
 from ethereumetl.cli import (
     get_block_range_for_date,
-    extract_csv_column,
     export_blocks_and_transactions,
     export_receipts_and_logs,
     extract_contracts,
     extract_tokens,
     extract_token_transfers,
     export_traces,
+    extract_field,
 )
 
 
@@ -159,10 +159,10 @@ def build_export_dag(
             )
 
             logging.info('Calling extract_csv_column(...)')
-            extract_csv_column.callback(
+            extract_field.callback(
                 input=os.path.join(tempdir, "transactions.json"),
                 output=os.path.join(tempdir, "transaction_hashes.txt"),
-                column="hash",
+                field="hash",
             )
 
             logging.info('Calling export_receipts_and_logs({}, ..., {}, {}, ...)'.format(
