@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "internalType": "contract IERC20[]",
+                    "name": "tokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "weights",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "swapFeePercentage",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "swapEnabledOnStart",
+                    "type": "bool"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x751a0bc0e3f75b38e01cf25bfce7ff36de1c87de",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "weights",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "swapFeePercentage",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "swapEnabledOnStart",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_LiquidityBootstrappingPoolFactory_call_create"
+    }
+}

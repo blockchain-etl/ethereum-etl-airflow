@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('V2_LiquidityBootstrappingPoolFactory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "startWeights",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "endWeights",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "GradualWeightUpdateScheduled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_LiquidityBootstrappingPool_event_GradualWeightUpdateScheduled",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "startTime",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "endTime",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "startWeights",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "endWeights",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

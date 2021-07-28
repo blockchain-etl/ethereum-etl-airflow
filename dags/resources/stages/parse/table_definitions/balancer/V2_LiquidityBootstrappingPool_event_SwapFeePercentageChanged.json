@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('V2_LiquidityBootstrappingPoolFactory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "swapFeePercentage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SwapFeePercentageChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_LiquidityBootstrappingPool_event_SwapFeePercentageChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "swapFeePercentage",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

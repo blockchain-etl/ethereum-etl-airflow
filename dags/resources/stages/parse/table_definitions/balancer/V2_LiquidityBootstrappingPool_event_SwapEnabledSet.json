@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('V2_LiquidityBootstrappingPoolFactory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "swapEnabled",
+                    "type": "bool"
+                }
+            ],
+            "name": "SwapEnabledSet",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_LiquidityBootstrappingPool_event_SwapEnabledSet",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "swapEnabled",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
