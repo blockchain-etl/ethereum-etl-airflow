@@ -27,5 +27,7 @@ ALTER TABLE `your-project.your-dataset.transactions` DROP COLUMN receipt_effecti
 
 EIP-1559 notes:
 
+- London Mainnet Announcement: https://blog.ethereum.org/2021/07/15/london-mainnet-announcement/
+- London upgrade will go live on mainnet on block **12965000**
 - Legacy transactions are converted to EIP-1559 compatible transactions by using the legacy `gas_price` in the
     transaction as both `max_priority_fee_per_gas` and `max_fee_per_gas`.
