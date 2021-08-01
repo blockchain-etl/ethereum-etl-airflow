@@ -104,11 +104,11 @@
     {
         "name": "transaction_type",
         "type": "INT64",
-        "description": "An envelope for future transaction types"
+        "description": "Transaction type"
     },
     {
         "name": "receipt_effective_gas_price",
         "type": "INT64",
-        "description": "The amount of gas used by this specific transaction alone (a replacement for gasUsed field)"
+        "description": "The actual value per gas deducted from the senders account. Replacement of gas_price after EIP-1559"
     }
 ]
