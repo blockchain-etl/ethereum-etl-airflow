@@ -104,7 +104,7 @@
     {
         "name": "transaction_type",
         "type": "INT64",
-        "description": "An envelope for future transaction types"
+        "description": "Transaction type"
     },
     {
         "name": "receipt_effective_gas_price",
