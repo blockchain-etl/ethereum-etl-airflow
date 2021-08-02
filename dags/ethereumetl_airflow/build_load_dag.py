@@ -99,7 +99,7 @@ def build_load_dag(
             dag=dag
         )
 
-        def load_task():
+        def load_task(ds, **kwargs):
             client = bigquery.Client()
             job_config = bigquery.LoadJobConfig()
             schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/{task}.json'.format(task=task))
@@ -114,8 +114,12 @@ def build_load_dag(
             job_config.ignore_unknown_values = True
 
             export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
-            uri = '{export_location_uri}/{task}/*.{file_format}'.format(
-                export_location_uri=export_location_uri, task=task, file_format=file_format)
+            if load_all_partitions:
+                uri = '{export_location_uri}/{task}/*.{file_format}'.format(
+                    export_location_uri=export_location_uri, task=task, file_format=file_format)
+            else:
+                uri = '{export_location_uri}/{task}/block_date={ds}/*.{file_format}'.format(
+                    export_location_uri=export_location_uri, task=task, ds=ds, file_format=file_format)
             table_ref = client.dataset(dataset_name_raw).table(task)
             load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
             submit_bigquery_job(load_job, job_config)
@@ -124,6 +128,7 @@ def build_load_dag(
         load_operator = PythonOperator(
             task_id='load_{task}'.format(task=task),
             python_callable=load_task,
+            provide_context=True,
             execution_timeout=timedelta(minutes=30),
             dag=dag
         )
