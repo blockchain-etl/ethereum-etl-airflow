@@ -326,7 +326,7 @@ def adjust_schema_for_kovan(dag_id, task, schema):
             elif field.name == 'difficulty' or field.name == 'total_difficulty':
                 result.append(SchemaField(
                     name=field.name,
-                    field_type='STRING',
+                    field_type='FLOAT64',
                     mode=field.mode,
                     description=field.description,
                     fields=field.fields
