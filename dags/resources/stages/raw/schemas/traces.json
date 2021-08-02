@@ -73,7 +73,8 @@
     },
     {
         "name": "trace_address",
-        "type": "STRING",
+        "type": "INT64",
+        "mode": "REPEATED",
         "description": "Comma separated list of trace address in call tree"
     },
     {

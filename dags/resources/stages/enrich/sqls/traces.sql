@@ -12,7 +12,7 @@ SELECT
     traces.gas,
     traces.gas_used,
     traces.subtraces,
-    traces.trace_address,
+    ARRAY_TO_STRING(ARRAY(SELECT CAST(addr AS STRING) FROM UNNEST(trace_address) AS addr WITH OFFSET ORDER BY OFFSET), ',') AS trace_address,
     traces.error,
     traces.status,
     traces.trace_id,
