@@ -45,5 +45,11 @@
         "name": "status",
         "type": "INT64",
         "description": "Either 1 (success) or 0 (failure) (post Byzantium)"
+    },
+    {
+
+        "name": "effective_gas_price",
+        "type": "INT64",
+        "description": "The actual value per gas deducted from the senders account. Replacement of gas_price after EIP-1559"
     }
 ]
