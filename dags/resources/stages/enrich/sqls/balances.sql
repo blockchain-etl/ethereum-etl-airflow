@@ -20,7 +20,7 @@ with double_entry_book as (
     -- transaction fees debits
     select
         miner as address,
-        if(blocks.number >= 12965000, -- EIP-1559, base_fee_per_gas * receipt_gas_used is burnt
+        if(blocks.number >= 12965000, -- EIP-1559, base_fee_per_gas * receipt_gas_used is burnt, remaining goes to miner
             sum(cast(receipt_gas_used as numeric) * cast((receipt_effective_gas_price - base_fee_per_gas) as numeric)),
             sum(cast(receipt_gas_used as numeric) * cast(gas_price as numeric))
         ) as value
