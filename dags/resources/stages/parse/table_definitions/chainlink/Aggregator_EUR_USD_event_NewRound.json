@@ -17,7 +17,7 @@
             "name": "NewRound",
             "type": "event"
         },
-        "contract_address": "0x25fa978ea1a7dc9bdc33a2959b9053eae57169b5",
+        "contract_address": "0x02f878a94a1ae1b15705acd65b5519a46fe3517e",
         "field_mapping": {},
         "type": "log"
     },

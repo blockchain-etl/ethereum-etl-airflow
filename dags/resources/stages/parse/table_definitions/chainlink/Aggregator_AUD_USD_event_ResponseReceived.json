@@ -22,7 +22,7 @@
             "name": "ResponseReceived",
             "type": "event"
         },
-        "contract_address": "0x05cf62c4ba0ccea3da680f9a8744ac51116d6231",
+        "contract_address": "0x7f7b323291c052de18926396176d384c4a8e19e2",
         "field_mapping": {},
         "type": "log"
     },

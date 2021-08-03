@@ -12,7 +12,7 @@
             "name": "ChainlinkRequested",
             "type": "event"
         },
-        "contract_address": "0xf5fff180082d6017036b771ba883025c654bc935",
+        "contract_address": "0xae74faa92cb67a95ebcab07358bc222e33a34da7",
         "field_mapping": {},
         "type": "log"
     },
