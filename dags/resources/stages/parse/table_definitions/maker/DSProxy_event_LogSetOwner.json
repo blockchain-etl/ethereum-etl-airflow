@@ -1,7 +1,7 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "SELECT proxy FROM `blockchain-etl.ethereum_maker.DSProxyFactory_event_Created`",
+        "contract_address": "SELECT proxy FROM ref('DSProxyFactory_event_Created')",
         "abi": {
             "anonymous": false,
             "inputs": [
