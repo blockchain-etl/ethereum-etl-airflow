@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TransferFee",
+            "type": "event"
+        },
+        "contract_address": "0x8c5acf6dbd24c66e6fd44d4a4c3d7a2d955aaad2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "mintable",
+        "schema": [
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MintableNFT_event_TransferFee"
+    }
+}
