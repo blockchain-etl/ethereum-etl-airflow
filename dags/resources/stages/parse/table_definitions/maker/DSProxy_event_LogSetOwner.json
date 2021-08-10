@@ -1,7 +1,7 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x1b93556ab8dccef01cd7823c617a6d340f53fb58",
+        "contract_address": "SELECT proxy FROM `blockchain-etl.ethereum_maker.DSProxyFactory_event_Created`",
         "abi": {
             "anonymous": false,
             "inputs": [
@@ -29,3 +29,4 @@
         ]
     }
 }
+
