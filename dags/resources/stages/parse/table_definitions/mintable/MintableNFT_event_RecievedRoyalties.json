@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RecievedRoyalties",
+            "type": "event"
+        },
+        "contract_address": "0x8c5acf6dbd24c66e6fd44d4a4c3d7a2d955aaad2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "mintable",
+        "schema": [
+            {
+                "description": "",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MintableNFT_event_RecievedRoyalties"
+    }
+}
