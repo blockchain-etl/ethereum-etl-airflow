@@ -9,7 +9,7 @@ WITH parsed_logs AS
 FROM `blockchain-etl-internal.crypto_ethereum_partitioned.logs_by_date_2020_01_01` AS logs
 WHERE
 
-  address in ('0x6090a6e47849629b7245dfa1ca21d94cd15878ef')
+  address in (lower('0x6090a6e47849629b7245dfa1ca21d94cd15878ef'))
 
   AND topics[SAFE_OFFSET(0)] = '0xb556ff269c1b6714f432c36431e2041d28436a73b6c3f19c021827bbdc6bfc29'
 

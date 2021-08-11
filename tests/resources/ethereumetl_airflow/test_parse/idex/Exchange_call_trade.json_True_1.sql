@@ -11,7 +11,7 @@ WITH parsed_traces AS
 FROM `blockchain-etl-internal.crypto_ethereum_partitioned.traces_by_input_0xef3` AS traces
 WHERE to_address IN (
 
-    '0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208'
+    lower('0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208')
 
   )
   AND STARTS_WITH(traces.input, '0xef343588')
