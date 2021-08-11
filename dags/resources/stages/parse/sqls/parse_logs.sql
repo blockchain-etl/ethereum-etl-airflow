@@ -13,7 +13,7 @@ WHERE
   {% elif parser.contract_address is none %}
   true
   {% else %}
-  address in ('{{parser.contract_address}}')
+  address in (lower('{{parser.contract_address}}'))
   {% endif %}
   AND topics[SAFE_OFFSET(0)] = '{{selector}}'
 

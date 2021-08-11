@@ -9,7 +9,7 @@ WITH parsed_logs AS
 FROM `bigquery-public-data.crypto_ethereum.logs` AS logs
 WHERE
 
-  address in ('0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e')
+  address in (lower('0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e'))
 
   AND topics[SAFE_OFFSET(0)] = '0x54d4cc60cf7d570631cc1a58942812cb0fc461713613400f56932040c3497d19'
 
