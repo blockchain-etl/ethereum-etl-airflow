@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "contract_address",
+                    "name": "_contract_address",
                     "type": "address"
                 },
                 {
@@ -31,7 +31,7 @@
             "name": "NFTSold",
             "type": "event"
         },
-        "contract_address": "0x974b10a997DE02E2c14C439f95EEaa58090A0Ca1",
+        "contract_address": "0x974b10a997de02e2c14c439f95eeaa58090a0ca1",
         "field_mapping": {},
         "type": "log"
     },
@@ -40,7 +40,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "contract_address",
+                "name": "_contract_address",
                 "type": "STRING"
             },
             {
