@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                }
+            ],
+            "name": "TokenMetaUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x1559fa1b8f28238fd5d76d9f434ad86fd20d1559",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eden",
+        "schema": [
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EdenToken_event_TokenMetaUpdated"
+    }
+}
