@@ -29,6 +29,14 @@ with bpt_transfers as (
       value,
       block_number
     FROM `blockchain-etl.ethereum_balancer.V2_StablePool_event_Transfer`
+    union all
+    select 
+      contract_address as token_address,
+      `from` as from_address,
+      `to` as to_address,
+      value,
+      block_number
+    FROM `blockchain-etl.ethereum_balancer.V2_MetaStablePool_event_Transfer`
 ),
 double_entry_book as (
     -- debits
