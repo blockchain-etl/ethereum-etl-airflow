@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Paused",
+            "type": "event"
+        },
+        "contract_address": "0x1a2a1c938ce3ec39b6d47113c7955baa9dd454f2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [],
+        "table_description": "",
+        "table_name": "MainchainGatewayProxy_event_Paused"
+    }
+}
