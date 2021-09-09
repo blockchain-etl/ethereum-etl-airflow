@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "gauge",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "cancelled_by",
+                    "type": "address"
+                }
+            ],
+            "name": "CancelledDelegation",
+            "type": "event"
+        },
+        "contract_address": "0x2fc52c61fb0c03489649311989ce2689d93dc1a2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "keep3r",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gauge",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cancelled_by",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "vKP3R_event_CancelledDelegation"
+    }
+}
