@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newManager",
+                    "type": "address"
+                }
+            ],
+            "name": "MetadataManagerChanged",
+            "type": "event"
+        },
+        "contract_address": "0x1559fa1b8f28238fd5d76d9f434ad86fd20d1559",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eden",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EdenToken_event_MetadataManagerChanged"
+    }
+}

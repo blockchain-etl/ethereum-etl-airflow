@@ -22,7 +22,7 @@
             "name": "AnswerUpdated",
             "type": "event"
         },
-        "contract_address": "0xafce0c7b7fe3425adb3871eae5c0ec6d93e01935",
+        "contract_address": "0xea5f70faa03f5c30b96029635c8d431d1a3cd1b8",
         "field_mapping": {},
         "type": "log"
     },

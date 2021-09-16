@@ -13,7 +13,7 @@ WHERE to_address IN (
     {% if parser.contract_address_sql %}
     {{parser.contract_address_sql}}
     {% else %}
-    '{{parser.contract_address}}'
+    lower('{{parser.contract_address}}')
     {% endif %}
   )
   AND STARTS_WITH(traces.input, '{{selector}}')

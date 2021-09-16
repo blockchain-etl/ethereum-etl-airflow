@@ -213,6 +213,7 @@ def build_export_dag(
                 output=os.path.join(tempdir, "tokens.json"),
                 max_workers=export_max_workers,
                 provider_uri=provider_uri,
+                values_as_strings=True,
             )
 
             copy_to_export_path(
@@ -233,6 +234,7 @@ def build_export_dag(
                 batch_size=export_batch_size,
                 output=os.path.join(tempdir, "token_transfers.json"),
                 max_workers=export_max_workers,
+                values_as_strings=True,
             )
 
             copy_to_export_path(

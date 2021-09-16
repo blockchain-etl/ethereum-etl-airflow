@@ -18,15 +18,19 @@ with double_entry_book as (
     and (call_type not in ('delegatecall', 'callcode', 'staticcall') or call_type is null)
     union all
     -- transaction fees debits
-    select miner as address, sum(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value
+    select
+        miner as address,
+        sum(cast(receipt_gas_used as numeric) * cast((receipt_effective_gas_price - coalesce(base_fee_per_gas, 0)) as numeric)) as value
     from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.transactions` as transactions
     join `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.blocks` as blocks on blocks.number = transactions.block_number
     where true
     and date(transactions.block_timestamp) <= '{{ds}}'
-    group by blocks.miner
+    group by blocks.number, blocks.miner
     union all
     -- transaction fees credits
-    select from_address as address, -(cast(receipt_gas_used as numeric) * cast(gas_price as numeric)) as value
+    select
+        from_address as address,
+        -(cast(receipt_gas_used as numeric) * cast(receipt_effective_gas_price as numeric)) as value
     from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.transactions`
     where true
     and date(block_timestamp) <= '{{ds}}'

@@ -23,7 +23,7 @@ gcloud composer environments create $ENVIRONMENT_NAME --location=us-central1 --z
     --disk-size=200GB --machine-type=n1-standard-4 --node-count=3 --python-version=3 --image-version=composer-1.16.10-airflow-1.10.15 \
     --network=default --subnetwork=default
 
-gcloud composer environments update $ENVIRONMENT_NAME --location=us-central1 --update-pypi-package=ethereum-etl==1.4.1
+gcloud composer environments update $ENVIRONMENT_NAME --location=us-central1 --update-pypi-package=ethereum-etl==1.7.0
 ```
 
 Create variables in Airflow (**Admin > Variables** in the UI):

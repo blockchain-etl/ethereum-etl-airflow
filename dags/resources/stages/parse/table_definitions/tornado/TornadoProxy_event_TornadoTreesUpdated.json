@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract ITornadoTrees",
+                    "name": "addr",
+                    "type": "address"
+                }
+            ],
+            "name": "TornadoTreesUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x722122df12d4e14e13ac3b6895a86e84145b6967",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "schema": [
+            {
+                "description": "",
+                "name": "addr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TornadoProxy_event_TornadoTreesUpdated"
+    }
+}
