@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "forwarder",
+        "dataset_name": "common",
         "schema": [
             {
                 "description": "",
