@@ -1,0 +1,91 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "tokenGet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountGet",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokenGive",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amountGive",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "get",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "give",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "exchange",
+                    "type": "uint8"
+                }
+            ],
+            "name": "Trade",
+            "type": "event"
+        },
+        "contract_address": "0xbF45F4280Cfbe7C2D2515A7D984B8c71c15E82B7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "enclaves_dex",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenGet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountGet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenGive",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountGive",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "get",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "give",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchange",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EnclavesDEX_event_Trade"
+    }
+}
