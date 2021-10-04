@@ -27,7 +27,7 @@
             "name": "Withdraw",
             "type": "event"
         },
-        "contract_address": "0xbF45F4280Cfbe7C2D2515A7D984B8c71c15E82B7",
+        "contract_address": "0xbf45f4280cfbe7c2d2515a7d984b8c71c15e82b7",
         "field_mapping": {},
         "type": "log"
     },
