@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newGro",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogGroPerBlock",
+            "type": "event"
+        },
+        "contract_address": "0x001c249c09090d79dc350a286247479f08c7aad7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gro",
+        "schema": [
+            {
+                "description": "",
+                "name": "newGro",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LPTokenStaker_event_LogGroPerBlock"
+    }
+}
