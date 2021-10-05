@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "pid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "allocPoint",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "lpToken",
+                    "type": "address"
+                }
+            ],
+            "name": "LogAddPool",
+            "type": "event"
+        },
+        "contract_address": "0x001c249c09090d79dc350a286247479f08c7aad7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gro",
+        "schema": [
+            {
+                "description": "",
+                "name": "pid",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allocPoint",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LPTokenStaker_event_LogAddPool"
+    }
+}
