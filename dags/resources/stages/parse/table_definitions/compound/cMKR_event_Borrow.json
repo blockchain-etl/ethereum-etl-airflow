@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "accountBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Borrow",
+            "type": "event"
+        },
+        "contract_address": "0x95b4ef2869ebd94beb4eee400a99824bf5dc325b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "accountBorrows",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBorrows",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cMKR_event_Borrow"
+    }
+}
