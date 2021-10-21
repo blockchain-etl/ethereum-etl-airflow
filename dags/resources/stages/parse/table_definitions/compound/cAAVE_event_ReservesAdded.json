@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "benefactor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "addAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTotalReserves",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReservesAdded",
+            "type": "event"
+        },
+        "contract_address": "0xe65cdb6479bac1e22340e4e755fae7e509ecd06c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "benefactor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "addAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newTotalReserves",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cAAVE_event_ReservesAdded"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reduceAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTotalReserves",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReservesReduced",
+            "type": "event"
+        },
+        "contract_address": "0x95b4ef2869ebd94beb4eee400a99824bf5dc325b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reduceAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newTotalReserves",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cMKR_event_ReservesReduced"
+    }
+}
