@@ -74,3 +74,6 @@ DELETE;
 
 -- Delete the temporary table.
 DROP TABLE `stage_sessions_{ds_no_dashes}`;
+
+-- Drop staging table for root call traces.
+DROP TABLE `{destination_project_id}.{destination_dataset_name}.stage_root_call_traces_{ds_no_dashes}`;
