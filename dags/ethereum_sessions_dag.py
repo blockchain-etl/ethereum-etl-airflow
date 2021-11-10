@@ -22,8 +22,8 @@ DAG = build_sessions_dag(
     sql_dir=sql_dir,
     source_project_id='bigquery-public-data',
     source_dataset_name='crypto_ethereum',
-    destination_project_id='crypto-etl-public-data-dev',  # blockchain-etl-internal
-    destination_dataset_name='sessions',
+    destination_project_id=Variable.get('ethereum_destination_dataset_project_id'),
+    destination_dataset_name=Variable.get('ethereum_destination_dataset_name', 'crypto_ethereum'),
     # Load DAG should complete by 14:00.
     schedule_interval='0 14 * * *',
     start_date=datetime(2015, 7, 30),
