@@ -1,6 +1,4 @@
-DROP TABLE If EXISTS `{destination_project_id}.{destination_dataset_name}.stage_root_call_traces_{ds_no_dashes}`;
-
-CREATE TABLE `{destination_project_id}.{destination_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
+CREATE OR REPLACE TABLE `{destination_project_id}.{destination_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
 (
   trace_id           STRING,
   wallet_address     STRING    NOT NULL,
