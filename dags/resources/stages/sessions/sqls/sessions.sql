@@ -6,6 +6,7 @@ CREATE TEMPORARY TABLE `stage_sessions_{ds_no_dashes}`
   start_block_timestamp              TIMESTAMP NOT NULL,
   wallet_address                     STRING    NOT NULL,
   contract_address                   STRING,
+  -- TODO: Drop this column.
   next_session_start_block_timestamp TIMESTAMP
 );
 
@@ -33,7 +34,7 @@ SELECT
                     AS next_session_start_block_timestamp
 
 FROM
-  `{destination_project_id}.{destination_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
+  `{destination_project_id}.{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
 WHERE
   -- Greater than 30 minutes of inactivity defines a new session.
   (inactivity_minutes > 30 OR inactivity_minutes IS NULL)
@@ -76,4 +77,4 @@ DELETE;
 DROP TABLE `stage_sessions_{ds_no_dashes}`;
 
 -- Drop staging table for root call traces.
-DROP TABLE `{destination_project_id}.{destination_dataset_name}.stage_root_call_traces_{ds_no_dashes}`;
+DROP TABLE `{destination_project_id}.{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`;

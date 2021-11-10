@@ -22,6 +22,7 @@ def build_sessions_dag(
         source_dataset_name,
         destination_project_id,
         destination_dataset_name,
+        temp_dataset_name,
         notification_emails=None,
         schedule_interval='0 14 * * *',
         start_date=datetime(2015, 7, 30),
@@ -66,6 +67,7 @@ def build_sessions_dag(
                 source_dataset_name=source_dataset_name,
                 destination_project_id=destination_project_id,
                 destination_dataset_name=destination_dataset_name,
+                temp_dataset_name=temp_dataset_name,
             )
             print(sql)
             query_job = client.query(sql)

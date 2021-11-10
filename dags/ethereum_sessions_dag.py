@@ -23,7 +23,9 @@ DAG = build_sessions_dag(
     source_project_id='bigquery-public-data',
     source_dataset_name='crypto_ethereum',
     destination_project_id=Variable.get('ethereum_destination_dataset_project_id'),
+    # Variables default to the prod values. Override for dev environment.
     destination_dataset_name=Variable.get('ethereum_destination_dataset_name', 'crypto_ethereum'),
+    temp_dataset_name=Variable.get('ethereum_temp_dataset_name', 'crypto_ethereum_temp'),
     # Load DAG should complete by 14:00.
     schedule_interval='0 14 * * *',
     start_date=datetime(2015, 7, 30),
