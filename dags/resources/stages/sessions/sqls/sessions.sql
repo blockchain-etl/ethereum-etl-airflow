@@ -31,7 +31,7 @@ WHERE
   (inactivity_minutes > 30 OR inactivity_minutes IS NULL)
   -- Only create new sessions using traces in the current execution date partition.
   -- This is necessary because the staging table overlaps the previous partition.
-  AND date(block_timestamp) = date('{ds}');
+  AND date(block_timestamp) = '{ds}';
 
 
 -- Create the sessions table if necessary.
@@ -43,7 +43,7 @@ LIKE `stage_sessions_{ds_no_dashes}`;
 MERGE INTO `{destination_project_id}.{destination_dataset_name}.sessions` AS target
 USING `stage_sessions_{ds_no_dashes}` AS source
 ON false
-WHEN NOT MATCHED AND date(start_block_timestamp) = date('{ds}') THEN
+WHEN NOT MATCHED AND date(start_block_timestamp) = '{ds}' THEN
 INSERT (
   id,
   start_block_number,
@@ -58,7 +58,7 @@ VALUES (
   wallet_address,
   contract_address
 )
-WHEN NOT MATCHED BY SOURCE AND date(start_block_timestamp) = date('{ds}') THEN
+WHEN NOT MATCHED BY SOURCE AND date(start_block_timestamp) = '{ds}' THEN
 DELETE;
 
 
