@@ -5,9 +5,7 @@ CREATE TEMPORARY TABLE `stage_sessions_{ds_no_dashes}`
   start_block_number                 INT64     NOT NULL,
   start_block_timestamp              TIMESTAMP NOT NULL,
   wallet_address                     STRING    NOT NULL,
-  contract_address                   STRING,
-  -- TODO: Drop this column.
-  next_session_start_block_timestamp TIMESTAMP
+  contract_address                   STRING
 );
 
 
@@ -25,14 +23,7 @@ SELECT
   block_number      AS start_block_number,
   block_timestamp   AS start_block_timestamp,
   wallet_address    AS wallet_address,
-  contract_address  AS contract_address,
-
-  LEAD(block_timestamp) OVER (
-    PARTITION BY wallet_address, contract_address
-    ORDER BY block_timestamp ASC
-  )
-                    AS next_session_start_block_timestamp
-
+  contract_address  AS contract_address
 FROM
   `{destination_project_id}.{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
 WHERE
@@ -58,16 +49,14 @@ INSERT (
   start_block_number,
   start_block_timestamp,
   wallet_address,
-  contract_address,
-  next_session_start_block_timestamp
+  contract_address
 )
 VALUES (
   id,
   start_block_number,
   start_block_timestamp,
   wallet_address,
-  contract_address,
-  next_session_start_block_timestamp
+  contract_address
 )
 WHEN NOT MATCHED BY SOURCE AND date(start_block_timestamp) = date('{ds}') THEN
 DELETE;
