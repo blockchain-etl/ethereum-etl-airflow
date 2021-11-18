@@ -25,7 +25,7 @@ SELECT
   wallet_address    AS wallet_address,
   contract_address  AS contract_address
 FROM
-  `{destination_project_id}.{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
+  `{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`
 WHERE
   -- Greater than 30 minutes of inactivity defines a new session.
   (inactivity_minutes > 30 OR inactivity_minutes IS NULL)
