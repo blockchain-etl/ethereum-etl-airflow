@@ -1,5 +1,5 @@
 -- Create a staging table.
-CREATE TEMPORARY TABLE `stage_sessions_{ds_no_dashes}`
+CREATE TABLE `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`
 (
   id                                 STRING    NOT NULL,
   start_block_number                 INT64     NOT NULL,
@@ -10,7 +10,7 @@ CREATE TEMPORARY TABLE `stage_sessions_{ds_no_dashes}`
 
 
 -- Stage sessions for this execution date.
-INSERT INTO `stage_sessions_{ds_no_dashes}`
+INSERT INTO `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`
 SELECT
   TO_HEX(MD5(CONCAT(
     trace_id,
@@ -36,12 +36,12 @@ WHERE
 
 -- Create the sessions table if necessary.
 CREATE TABLE IF NOT EXISTS `{destination_project_id}.{destination_dataset_name}.sessions`
-LIKE `stage_sessions_{ds_no_dashes}`;
+LIKE `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`;
 
 
 -- Merge staging table with destination table.
 MERGE INTO `{destination_project_id}.{destination_dataset_name}.sessions` AS target
-USING `stage_sessions_{ds_no_dashes}` AS source
+USING `{temp_dataset_name}.stage_sessions_{ds_no_dashes}` AS source
 ON false
 WHEN NOT MATCHED AND date(start_block_timestamp) = '{ds}' THEN
 INSERT (
@@ -63,7 +63,7 @@ DELETE;
 
 
 -- Delete the temporary table.
-DROP TABLE `stage_sessions_{ds_no_dashes}`;
+DROP TABLE `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`;
 
 -- Drop staging table for root call traces.
-DROP TABLE `{destination_project_id}.{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`;
+DROP TABLE `{temp_dataset_name}.stage_root_call_traces_{ds_no_dashes}`;
