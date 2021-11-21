@@ -46,6 +46,7 @@ def build_sessions_dag(
         dag_id,
         catchup=True,
         schedule_interval=schedule_interval,
+        max_active_runs=1,
         default_args=default_dag_args)
 
     def read_file(filepath):
