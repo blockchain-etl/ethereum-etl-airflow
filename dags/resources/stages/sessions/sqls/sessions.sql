@@ -1,5 +1,5 @@
 -- Create a staging table.
-CREATE TABLE `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`
+CREATE OR REPLACE TABLE `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`
 (
   id                                 STRING    NOT NULL,
   start_trace_id                     STRING    NOT NULL,
