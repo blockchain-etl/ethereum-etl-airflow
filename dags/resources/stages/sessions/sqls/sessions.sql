@@ -2,6 +2,7 @@
 CREATE TABLE `{temp_dataset_name}.stage_sessions_{ds_no_dashes}`
 (
   id                                 STRING    NOT NULL,
+  start_trace_id                     STRING    NOT NULL,
   start_block_number                 INT64     NOT NULL,
   start_block_timestamp              TIMESTAMP NOT NULL,
   wallet_address                     STRING    NOT NULL,
@@ -20,6 +21,7 @@ SELECT
   )))
                     AS id,
 
+  trace_id          AS start_trace_id,
   block_number      AS start_block_number,
   block_timestamp   AS start_block_timestamp,
   wallet_address    AS wallet_address,
@@ -46,6 +48,7 @@ ON false
 WHEN NOT MATCHED AND date(start_block_timestamp) = '{ds}' THEN
 INSERT (
   id,
+  start_trace_id,
   start_block_number,
   start_block_timestamp,
   wallet_address,
@@ -53,6 +56,7 @@ INSERT (
 )
 VALUES (
   id,
+  start_trace_id,
   start_block_number,
   start_block_timestamp,
   wallet_address,
