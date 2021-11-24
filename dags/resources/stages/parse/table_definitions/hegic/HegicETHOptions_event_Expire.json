@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "premium",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Expire",
+            "type": "event"
+        },
+        "contract_address": "0xefc0eeadc1132a12c9487d800112693bf49ecfa2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hegic",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "premium",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "HegicETHOptions_event_Expire"
+    }
+}

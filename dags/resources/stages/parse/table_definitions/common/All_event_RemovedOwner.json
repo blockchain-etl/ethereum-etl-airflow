@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "RemovedOwner",
+            "type": "event"
+        },
+        "contract_address": null,
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "common",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "All_event_RemovedOwner"
+    }
+}

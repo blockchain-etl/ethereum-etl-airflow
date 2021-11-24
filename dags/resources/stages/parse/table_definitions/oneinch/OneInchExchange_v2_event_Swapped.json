@@ -1,0 +1,131 @@
+{
+  "parser": {
+    "abi": {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IERC20",
+          "name": "srcToken",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "contract IERC20",
+          "name": "dstToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "dstReceiver",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "spentAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "returnAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "minReturnAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "guaranteedAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "referrer",
+          "type": "address"
+        }
+      ],
+      "name": "Swapped",
+      "type": "event"
+    },
+    "contract_address": "0x111111125434b319222cdbf8c261674adb56f3ae",
+    "field_mapping": {},
+    "type": "log"
+  },
+  "table": {
+    "dataset_name": "oneinch",
+    "schema": [
+      {
+        "description": "",
+        "name": "sender",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "srcToken",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "dstToken",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "dstReceiver",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "amount",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "spentAmount",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "returnAmount",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "minReturnAmount",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "guaranteedAmount",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "name": "referrer",
+        "type": "STRING"
+      }
+    ],
+    "table_description": "",
+    "table_name": "OneInchExchange_v2_event_Swapped"
+  }
+}

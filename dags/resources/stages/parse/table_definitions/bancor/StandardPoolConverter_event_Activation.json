@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "_type",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IConverterAnchor",
+                    "name": "_anchor",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bool",
+                    "name": "_activated",
+                    "type": "bool"
+                }
+            ],
+            "name": "Activation",
+            "type": "event"
+        },
+        "contract_address": "SELECT _converter FROM ref('ConverterFactory_v2_event_NewConverter')  UNION ALL SELECT _contractAddress AS _converter FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x424e54436f6e7665727465720000000000000000000000000000000000000000' ",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "_type",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_anchor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_activated",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StandardPoolConverter_event_Activation"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldPendingAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingAdmin",
+            "type": "event"
+        },
+        "contract_address": "0xccf4429db6322d5c611ee964527d42e5d685dd6a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldPendingAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPendingAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cWBTC2_event_NewPendingAdmin"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ok",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AllowHandler",
+            "type": "event"
+        },
+        "contract_address": "0xefe0b4ca532769a3ae758fd82e1426a03a94f185",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ok",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GebSafeManager_event_AllowHandler"
+    }
+}

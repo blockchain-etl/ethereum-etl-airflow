@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "numOfBlocks",
+                    "type": "uint64"
+                }
+            ],
+            "name": "LockPeriod",
+            "type": "event"
+        },
+        "contract_address": "0x351bac612b50e87b46e4b10a282f632d41397de2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "fetchai",
+        "schema": [
+            {
+                "description": "",
+                "name": "numOfBlocks",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Staking_event_LockPeriod"
+    }
+}

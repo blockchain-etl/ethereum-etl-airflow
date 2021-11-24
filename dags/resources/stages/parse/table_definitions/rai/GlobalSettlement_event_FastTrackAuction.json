@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "auctionId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralTotalDebt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FastTrackAuction",
+            "type": "event"
+        },
+        "contract_address": "0xee4cf96e5359d9619197fd82b6ef2a9eae7b91e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralTotalDebt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GlobalSettlement_event_FastTrackAuction"
+    }
+}

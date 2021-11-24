@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "max",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "price",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "owe",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tab",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lot",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                }
+            ],
+            "name": "Take",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x832dd5f17b30078a5e46fdb8130a68cbc4a74dc0', '0x9dacc11dcd0aa13386d295eaeebbd38130897e6f', '0xc67963a226eddd77b91ad8c421630a1b0adff270', '0x71eb894330e8a4b96b8d6056962e7f116f50e06f', '0xc2b12567523e3f3cbd9931492b91fe65b240bc47', '0x0227b54adbfaeec5f1ed1dfa11f54dcff9076e2c', '0x3d22e6f643e2f4c563fd9db22b229cbb0cd570fb', '0x046b1a5718da6a226d912cfd306ba19980772908', '0x5590f23358fe17361d7e4e4f91219145d8ccfcb3', '0x0f6f88f8a4b918584e3539182793a0c276097f44', '0xdc90d461e148552387f3ab3ebee0bdc58aa16375', '0x006aa3eb5e666d8e006aa647d4afab212555ddea', '0xf5c8176e1eb0915359e46ded16e52c071bb435c0', '0xfc9d6dd08bee324a5a8b557d2854b9c36c2aec5d', '0xbcb396cd139d1116bd89562b49b9d1d6c25378b0', '0x2bb690931407dca7ece84753ea931ffd304f0f38', '0x81c5cdf4817dbf75c7f08b8a1cdab05c9b3f70f7', '0x6aac067bb903e633a422de7be9355e62b3ce0378', '0xa47d68b9db0a0361284fa04ba40623fcbd1a263e', '0x3713f83ee6d138ce191294c131148176015bc29a', '0x834719bea8da68c46484e001143bdde29370a6a3', '0x8723b74f598de2ea49747de5896f9034cc09349e', '0x9f6981ba5c77211a34b76c6385c0f6fa10414035', '0xb15afab996904170f87a64fe42db0b64a6f75d24', '0x93ae03815baf1f19d7f18d9116e4b637cc32a131', '0x9b3310708af333f6f379fa42a5d09cbaa10ab309', '0x2ac4c9b49051275acb4c43ec973082388d015d48', '0x6aa0520354d1b84e1c6abfe64a708939529b619e', '0xb0ece6f5542a4577e2f1be491a937ccbbec8479e', '0x4fc53a57262b87abda61d6d0db2be7e9be68f6b8', '0x854b252ba15eafa4d1609d3b98e00cc10084ec55', '0xe4b82be84391b9e7c56a1fc821f47569b364dd4a'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "max",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "price",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owe",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tab",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Clipper_event_Take"
+    }
+}

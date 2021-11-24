@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "hasProxy",
+                    "type": "bool"
+                }
+            ],
+            "name": "AddressSet",
+            "type": "event"
+        },
+        "contract_address": "0xb53c1a33016b2dc2ff3653530bff1848a515c8c5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "hasProxy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendingPoolAddressesProvider_v2_event_AddressSet"
+    }
+}

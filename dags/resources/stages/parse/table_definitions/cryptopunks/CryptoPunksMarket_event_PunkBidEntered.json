@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "punkIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "fromAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "PunkBidEntered",
+            "type": "event"
+        },
+        "contract_address": "0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cryptopunks",
+        "schema": [
+            {
+                "description": "",
+                "name": "punkIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CryptoPunksMarket_event_PunkBidEntered"
+    }
+}

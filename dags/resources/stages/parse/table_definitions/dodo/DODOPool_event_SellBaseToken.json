@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "payBase",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "receiveQuote",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SellBaseToken",
+            "type": "event"
+        },
+        "contract_address": "SELECT newBorn FROM ref('DODOZoo_event_DODOBirth')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dodo",
+        "schema": [
+            {
+                "description": "",
+                "name": "seller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payBase",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiveQuote",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DODOPool_event_SellBaseToken"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MarketBorrowRateSet",
+            "type": "event"
+        },
+        "contract_address": "0x8a32f49ffba88aba6eff96f45d8bd1d4b3f35c7d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendingRateOracle_v2_event_MarketBorrowRateSet"
+    }
+}

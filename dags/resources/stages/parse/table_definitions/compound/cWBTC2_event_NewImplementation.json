@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldImplementation",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newImplementation",
+                    "type": "address"
+                }
+            ],
+            "name": "NewImplementation",
+            "type": "event"
+        },
+        "contract_address": "0xccf4429db6322d5c611ee964527d42e5d685dd6a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldImplementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newImplementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cWBTC2_event_NewImplementation"
+    }
+}

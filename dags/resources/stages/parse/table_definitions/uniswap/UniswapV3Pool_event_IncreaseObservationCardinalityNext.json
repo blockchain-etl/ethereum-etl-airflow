@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "observationCardinalityNextOld",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "observationCardinalityNextNew",
+                    "type": "uint16"
+                }
+            ],
+            "name": "IncreaseObservationCardinalityNext",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "table_name": "UniswapV3Pool_event_IncreaseObservationCardinalityNext",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "observationCardinalityNextOld",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "observationCardinalityNextNew",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

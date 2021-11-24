@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_sidechainAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "_standard",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_tokenNumber",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenDeposited",
+            "type": "event"
+        },
+        "contract_address": "0x1a2a1c938ce3ec39b6d47113c7955baa9dd454f2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "axie",
+        "schema": [
+            {
+                "description": "",
+                "name": "_depositId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_sidechainAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_standard",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenNumber",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MainchainGatewayProxy_event_TokenDeposited"
+    }
+}

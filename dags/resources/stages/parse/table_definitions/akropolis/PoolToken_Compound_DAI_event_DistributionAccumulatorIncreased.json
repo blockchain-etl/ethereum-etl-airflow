@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DistributionAccumulatorIncreased",
+            "type": "event"
+        },
+        "contract_address": "0x9fca734bb62c20d2cf654705b8fbf4f49ff5cc31",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "akropolis",
+        "schema": [
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolToken_Compound_DAI_event_DistributionAccumulatorIncreased"
+    }
+}

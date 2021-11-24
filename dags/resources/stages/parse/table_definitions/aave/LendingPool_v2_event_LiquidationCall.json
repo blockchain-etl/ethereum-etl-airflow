@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "collateralAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "debtAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "debtToCover",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidatedCollateralAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "liquidator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "receiveAToken",
+                    "type": "bool"
+                }
+            ],
+            "name": "LiquidationCall",
+            "type": "event"
+        },
+        "contract_address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtToCover",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidatedCollateralAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiveAToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendingPool_v2_event_LiquidationCall"
+    }
+}

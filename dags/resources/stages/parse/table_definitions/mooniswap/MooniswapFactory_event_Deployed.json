@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract Mooniswap",
+                    "name": "mooniswap",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token1",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token2",
+                    "type": "address"
+                }
+            ],
+            "name": "Deployed",
+            "type": "event"
+        },
+        "contract_address": "0xc4a8b7e29e3c8ec560cd4945c1cf3461a85a148d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "mooniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "mooniswap",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token2",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MooniswapFactory_event_Deployed"
+    }
+}

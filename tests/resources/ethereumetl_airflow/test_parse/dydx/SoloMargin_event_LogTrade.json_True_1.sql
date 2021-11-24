@@ -6,15 +6,16 @@ WITH parsed_logs AS
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
     ,`blockchain-etl-internal.ethereum_dydx.parse_SoloMargin_event_LogTrade`(logs.data, logs.topics) AS parsed
-FROM `bigquery-public-data.crypto_ethereum.logs` AS logs
-WHERE address in (
+FROM `blockchain-etl-internal.crypto_ethereum_partitioned.logs_by_topic_0x54d` AS logs
+WHERE
 
-    '0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e'
+  address in (lower('0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e'))
 
-  )
   AND topics[SAFE_OFFSET(0)] = '0x54d4cc60cf7d570631cc1a58942812cb0fc461713613400f56932040c3497d19'
 
-  -- pass
+
+  -- live
+
 
   )
 SELECT
@@ -36,3 +37,4 @@ SELECT
     ,parsed.makerOutputUpdate AS `makerOutputUpdate`
     ,parsed.autoTrader AS `autoTrader`
 FROM parsed_logs
+WHERE parsed IS NOT NULL

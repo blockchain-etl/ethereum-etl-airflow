@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "admin_fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewFee",
+            "type": "event"
+        },
+        "contract_address": "0xc18cc39da8b11da8c3541c598ee022258f9744da",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin_fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RSVSwap_event_NewFee"
+    }
+}

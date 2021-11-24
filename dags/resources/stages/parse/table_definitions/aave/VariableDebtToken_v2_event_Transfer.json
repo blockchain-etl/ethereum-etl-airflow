@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xf7dba49d571745d9d7fcb56225b05bea803ebf3c', '0xfc218a6dfe6901cb34b1a5281fc6f1b8e7e56877', '0xba429f7011c9fa04cdd46a2da24dc0ff0ac6099c', '0x00ad8ebf64f141f1c81e9f8f792d3d1631c6c684', '0x6c3c78838c761c6ac7be9f59fe808ea2a6e4379d', '0x38995f292a6e31b78203254fe1cdd5ca1010a446', '0x279af5b99540c1a3a7e3cdd326e19659401ef99e', '0x6b05d1c608015ccb8e205a690cb86773a96f39f1', '0x0b8f12b1788bfde65aa1ca52e3e9f3ba401be16d', '0x0a68976301e46ca6ce7410db28883e309ea0d352', '0xba728ead5e496be00dcf66f650b6d7758ecb50f8', '0xcd9d82d33bd737de215cdac57fe2f7f04df77fe0', '0x267eb8cf715455517f9bd5834aeae3cea1ebdbd8', '0xdc6a3ab17299d9c2a412b0e0a4c1f55446ae0817', '0x01c0eb1f8c6f1c1bf74ae028697ce7aa2a8b0e92', '0x5bdb050a92cadccfcdcccbfc17204a1c9cc0ab73', '0x619beb58998ed2278e08620f97007e1116d5d25b', '0x531842cebbdd378f8ee36d171d6cc9c4fcf475ec', '0x9c39809dec7f95f5e0713634a4d0701329b3b4d2', '0xf63b34710400cad3e044cffdcab00a0f32e33ecf', '0x7ebd09022be45ad993baa1cec61166fcc8644d97', '0x85791d117a392097590bded3bd5abb8d5a20491a'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VariableDebtToken_v2_event_Transfer"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                }
+            ],
+            "name": "LogNewCrp",
+            "type": "event"
+        },
+        "contract_address": "0xed52d8e202401645edad1c0aa21e872498ce47d0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CRPFactory_event_LogNewCrp"
+    }
+}

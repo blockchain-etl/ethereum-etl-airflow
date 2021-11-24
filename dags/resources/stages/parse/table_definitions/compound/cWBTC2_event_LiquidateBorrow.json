@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "liquidator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "repayAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "cTokenCollateral",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "seizeTokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LiquidateBorrow",
+            "type": "event"
+        },
+        "contract_address": "0xccf4429db6322d5c611ee964527d42e5d685dd6a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "liquidator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "repayAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cTokenCollateral",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seizeTokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cWBTC2_event_LiquidateBorrow"
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "_owners",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_threshold",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "address",
+                    "name": "fallbackHandler",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "paymentToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "payment",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "paymentReceiver",
+                    "type": "address"
+                }
+            ],
+            "name": "setup",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x6851d6fdfafd08c0295c392436245e5bc78b0185",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "gnosis_safe",
+        "schema": [
+            {
+                "description": "",
+                "name": "_owners",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_threshold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fallbackHandler",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paymentToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payment",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paymentReceiver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GnosisSafe_Mastercopy_v1_2_0_call_setup"
+    }
+}

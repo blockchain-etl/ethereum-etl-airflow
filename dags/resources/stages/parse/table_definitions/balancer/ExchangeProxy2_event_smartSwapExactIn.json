@@ -1,0 +1,80 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "contract TokenInterface",
+                    "name": "tokenIn",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract TokenInterface",
+                    "name": "tokenOut",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "totalAmountIn",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minTotalAmountOut",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "nPools",
+                    "type": "uint256"
+                }
+            ],
+            "name": "smartSwapExactIn",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "totalAmountOut",
+                    "type": "uint256"
+                }
+            ],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x3e66b66fd1d0b02fda6c811da9e0547970db2f21",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalAmountIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minTotalAmountOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nPools",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExchangeProxy2_event_smartSwapExactIn"
+    }
+}

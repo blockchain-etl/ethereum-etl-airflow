@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "auctionsStarted",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountToSell",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "initialBid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "amountToRaise",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "forgoneCollateralReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "auctionIncomeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "auctionDeadline",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StartAuction",
+            "type": "event"
+        },
+        "contract_address": "0x6d2a73e16c255c1931730b776d96aaff1909322e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionsStarted",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountToSell",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initialBid",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountToRaise",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "forgoneCollateralReceiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionIncomeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionDeadline",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FixedDiscountCollateralAuctionHouse_event_StartAuction"
+    }
+}

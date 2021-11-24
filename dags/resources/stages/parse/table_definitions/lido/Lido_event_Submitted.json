@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "referral",
+                    "type": "address"
+                }
+            ],
+            "name": "Submitted",
+            "type": "event"
+        },
+        "contract_address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lido",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referral",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Lido_event_Submitted"
+    }
+}

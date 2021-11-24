@@ -92,5 +92,10 @@
         "name": "transaction_count",
         "type": "INT64",
         "description": "The number of transactions in the block"
+    },
+    {
+        "name": "base_fee_per_gas",
+        "type": "INT64",
+        "description": "Protocol base fee per gas, which can move up or down"
     }
 ]

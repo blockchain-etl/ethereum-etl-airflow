@@ -38,8 +38,8 @@ def parse(
         dataset_name=dataset_name,
         table_definition=table_definition,
         ds=ds,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        public_project_id=source_project_id,
+        public_dataset_name=source_dataset_name,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         sqls_folder=sqls_folder
@@ -60,8 +60,8 @@ def parse(
         history_table_name=history_table_name,
         table_definition=table_definition,
         ds=ds,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        public_project_id=source_project_id,
+        public_dataset_name=source_dataset_name,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         sqls_folder=sqls_folder,
@@ -85,8 +85,8 @@ def create_or_replace_internal_view(
         dataset_name,
         table_definition,
         ds,
-        source_project_id,
-        source_dataset_name,
+        public_project_id,
+        public_dataset_name,
         internal_project_id,
         destination_project_id,
         sqls_folder
@@ -114,11 +114,25 @@ def create_or_replace_internal_view(
 
     # # # Create view
 
+    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
+
+    parse_mode = get_parse_mode(HistoryType.LIVE)
+    full_source_table_name = get_source_table(
+        parser_type=parser_type,
+        parse_mode=parse_mode,
+        ds=ds,
+        internal_project_id=internal_project_id,
+        public_project_id=public_project_id,
+        public_dataset_name=public_dataset_name,
+        selector=selector
+    )
+
     sql = generate_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        parse_mode,
+        full_source_table_name=full_source_table_name,
+        selector=selector,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         dataset_name=dataset_name,
@@ -138,8 +152,8 @@ def create_or_update_history_table(
         history_table_name,
         table_definition,
         ds,
-        source_project_id,
-        source_dataset_name,
+        public_project_id,
+        public_dataset_name,
         internal_project_id,
         destination_project_id,
         sqls_folder,
@@ -173,11 +187,26 @@ def create_or_update_history_table(
     # # # Query to temporary table
 
     udf_name = 'parse_{}'.format(table_name)
+
+    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
+
+    parse_mode = get_parse_mode(HistoryType.HISTORY, parse_all_partitions=parse_all_partitions)
+    full_source_table_name = get_source_table(
+        parser_type=parser_type,
+        parse_mode=parse_mode,
+        ds=ds,
+        internal_project_id=internal_project_id,
+        public_project_id=public_project_id,
+        public_dataset_name=public_dataset_name,
+        selector=selector
+    )
+
     sql = generate_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        parse_mode,
+        full_source_table_name=full_source_table_name,
+        selector=selector,
         internal_project_id=internal_project_id,
         destination_project_id=destination_project_id,
         dataset_name=dataset_name,
@@ -253,11 +282,81 @@ def create_or_replace_stitch_view(
     create_view(bigquery_client, sql, dest_view_ref)
 
 
+def get_parse_mode(
+        history_type,
+        parse_all_partitions=None,
+):
+    if history_type == HistoryType.HISTORY:
+        if parse_all_partitions is None:
+            raise ValueError('If history_type is "history" parse_all_partitions must be set to True or False')
+        if parse_all_partitions:
+            parse_mode = ParseMode.HISTORY_ALL_DATES
+        else:
+            parse_mode = ParseMode.HISTORY_SINGLE_DATE
+    elif history_type == HistoryType.LIVE:
+        parse_mode = ParseMode.LIVE
+    else:
+        raise ValueError(f'unknown history type {history_type}. Allowed values: history, live')
+
+    assert parse_mode is not None
+
+    return parse_mode
+
+
+def get_source_table(
+        parser_type,
+        parse_mode,
+        ds,
+        internal_project_id,
+        public_project_id,
+        public_dataset_name,
+        selector
+):
+    partitioned_dataset_name = 'crypto_ethereum_partitioned'
+
+    if parse_mode == ParseMode.HISTORY_ALL_DATES:
+        source_project_id = public_project_id
+        source_dataset_name = public_dataset_name
+        if parser_type == 'log':
+            source_table_name = 'logs'
+        elif parser_type == 'trace':
+            source_table_name = 'traces'
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
+    elif parse_mode == ParseMode.HISTORY_SINGLE_DATE:
+        if ds is None:
+            raise ValueError('If history_type is "history" and parse_all_partitions is True ds must be provided')
+        source_project_id = internal_project_id
+        source_dataset_name = partitioned_dataset_name
+        if parser_type == 'log':
+            source_table_name = 'logs_by_date_' + ds.replace('-', '_')
+        elif parser_type == 'trace':
+            source_table_name = 'traces_by_date_' + ds.replace('-', '_')
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
+    elif parse_mode == ParseMode.LIVE:
+        source_project_id = internal_project_id
+        source_dataset_name = partitioned_dataset_name
+        table_suffix = selector[:5]
+        if parser_type == 'log':
+            table_prefix = 'logs_by_topic_'
+        elif parser_type == 'trace':
+            table_prefix = 'traces_by_input_'
+        else:
+            raise ValueError(f'unknown parser type {parser_type}')
+        source_table_name = table_prefix + table_suffix
+    else:
+        raise ValueError(f'unknown parse mode {parse_mode}. Allowed values: history_all_dates, history_single_date, live')
+
+    return f'{source_project_id}.{source_dataset_name}.{source_table_name}'
+
+
 def generate_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id,
-        source_dataset_name,
+        parse_mode,
+        full_source_table_name,
+        selector,
         internal_project_id,
         destination_project_id,
         dataset_name,
@@ -266,18 +365,16 @@ def generate_parse_sql_template(
         parse_all_partitions,
         ds):
     contract_address = table_definition['parser']['contract_address']
-    if not contract_address.startswith('0x'):
+    if contract_address is not None and not contract_address.startswith('0x'):
         table_definition['parser']['contract_address_sql'] = replace_refs(
             contract_address, ref_regex, destination_project_id, dataset_name
         )
 
-    selector = abi_to_selector(parser_type, table_definition['parser']['abi'])
-
     sql = render_parse_sql_template(
         sqls_folder,
         parser_type,
-        source_project_id=source_project_id,
-        source_dataset_name=source_dataset_name,
+        parse_mode=parse_mode,
+        full_source_table_name=full_source_table_name,
         internal_project_id=internal_project_id,
         dataset_name=dataset_name,
         udf_name=udf_name,
@@ -360,9 +457,17 @@ def read_bigquery_schema_from_dict(schema, parser_type):
             description='Address of the contract that produced the log'))
     elif parser_type == 'trace':
         result.append(bigquery.SchemaField(
+            name='transaction_index',
+            field_type='INTEGER',
+            description='Integer of the transactions index position in the block'))
+        result.append(bigquery.SchemaField(
             name='trace_address',
             field_type='STRING',
             description='Comma separated list of trace address in call tree'))
+        result.append(bigquery.SchemaField(
+            name='to_address',
+            field_type='STRING',
+            description='Address of the called contract'))
         result.append(bigquery.SchemaField(
             name='status',
             field_type='INT64',
@@ -383,3 +488,13 @@ def abi_to_selector(parser_type, abi):
     else:
         return '0x' + function_abi_to_4byte_selector(abi).hex()
 
+
+class HistoryType:
+    LIVE = 'live'
+    HISTORY = 'history'
+
+
+class ParseMode:
+    LIVE = 'live'
+    HISTORY_ALL_DATES = 'history_all_dates'
+    HISTORY_SINGLE_DATE = 'history_single_date'

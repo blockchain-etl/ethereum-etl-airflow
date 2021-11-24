@@ -1,0 +1,151 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "hash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "exchange",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerRelayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerRelayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerProtocolFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerProtocolFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "feeMethod",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "side",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "saleKind",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "target",
+                    "type": "address"
+                }
+            ],
+            "name": "OrderApprovedPartOne",
+            "type": "event"
+        },
+        "contract_address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "hash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchange",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerRelayerFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerRelayerFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerProtocolFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerProtocolFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeMethod",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "side",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "saleKind",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WyvernExchange_event_OrderApprovedPartOne"
+    }
+}

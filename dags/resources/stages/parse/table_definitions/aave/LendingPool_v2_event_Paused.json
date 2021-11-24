@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Paused",
+            "type": "event"
+        },
+        "contract_address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LendingPool_v2_event_Paused"
+    }
+}

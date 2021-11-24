@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_contract_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "seller",
+                    "type": "address"
+                }
+            ],
+            "name": "NFTSold",
+            "type": "event"
+        },
+        "contract_address": "0x974b10a997de02e2c14c439f95eeaa58090a0ca1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "mintable",
+        "schema": [
+            {
+                "description": "",
+                "name": "_contract_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seller",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MintableExchange_event_NFTSold"
+    }
+}

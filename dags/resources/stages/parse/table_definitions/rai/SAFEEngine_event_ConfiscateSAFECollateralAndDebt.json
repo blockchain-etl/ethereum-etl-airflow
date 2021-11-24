@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "safe",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "collateralCounterparty",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "debtCounterparty",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "deltaCollateral",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "deltaDebt",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "globalUnbackedDebt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ConfiscateSAFECollateralAndDebt",
+            "type": "event"
+        },
+        "contract_address": "0xcc88a9d330da1133df3a7bd823b95e52511a6962",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "safe",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralCounterparty",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtCounterparty",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deltaCollateral",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deltaDebt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "globalUnbackedDebt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SAFEEngine_event_ConfiscateSAFECollateralAndDebt"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPendingAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingAdmin",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xee56e2b3d491590b5b31738cc34d5232f378a8d5', '0x61910ecd7e8e942136ce7fe7943f956cea1cc2f7'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "newPendingAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Executor_v2_event_NewPendingAdmin"
+    }
+}

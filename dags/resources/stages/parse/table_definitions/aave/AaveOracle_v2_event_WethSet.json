@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "weth",
+                    "type": "address"
+                }
+            ],
+            "name": "WethSet",
+            "type": "event"
+        },
+        "contract_address": "0xa50ba011c48153de246e5192c8f9258a2ba79ca9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "weth",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AaveOracle_v2_event_WethSet"
+    }
+}

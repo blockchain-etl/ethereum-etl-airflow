@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "benefactor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "addAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTotalReserves",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReservesAdded",
+            "type": "event"
+        },
+        "contract_address": "0xccf4429db6322d5c611ee964527d42e5d685dd6a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "benefactor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "addAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newTotalReserves",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cWBTC2_event_ReservesAdded"
+    }
+}

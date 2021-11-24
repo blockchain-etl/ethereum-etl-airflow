@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "initiator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "beneficiary",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "srcToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "srcAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "receivedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "expectedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "referrer",
+                    "type": "string"
+                }
+            ],
+            "name": "Bought",
+            "type": "event"
+        },
+        "contract_address": "0x9509665d015bfe3c77aa5ad6ca20c8afa1d98989",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paraswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "initiator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "beneficiary",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "destToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receivedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expectedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referrer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AugustusSwapper_v2_event_Bought"
+    }
+}

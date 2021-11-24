@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "stableRateEnabled",
+                    "type": "bool"
+                }
+            ],
+            "name": "BorrowingEnabledOnReserve",
+            "type": "event"
+        },
+        "contract_address": "0x311bb771e4f8952e6da169b425e7e92d6ac45756",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stableRateEnabled",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendingPoolConfigurator_v2_event_BorrowingEnabledOnReserve"
+    }
+}

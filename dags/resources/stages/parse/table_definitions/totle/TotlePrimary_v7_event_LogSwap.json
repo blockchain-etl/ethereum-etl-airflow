@@ -1,0 +1,91 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "sourceAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "destinationAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "sourceAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "destinationAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "feeAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "feeAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogSwap",
+            "type": "event"
+        },
+        "contract_address": "0x7113dd99c79aff93d54cfa4b2885576535a132de",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "totle",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sourceAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "destinationAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sourceAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "destinationAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TotlePrimary_v7_event_LogSwap"
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "internalType": "contract IERC20[]",
+                    "name": "tokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "weights",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "swapFeePercentage",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "oracleEnabled",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xa5bf2ddf098bb0ef6d120c98217dd6b141c74ee0",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "weights",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "swapFeePercentage",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oracleEnabled",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_WeightedPool2TokensFactory_call_create"
+    }
+}

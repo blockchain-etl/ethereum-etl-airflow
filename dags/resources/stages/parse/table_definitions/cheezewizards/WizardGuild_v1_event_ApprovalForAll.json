@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "WizardGuild_event_v1_ApprovalForAll"
+        "table_name": "WizardGuild_v1_event_ApprovalForAll"
     }
 }

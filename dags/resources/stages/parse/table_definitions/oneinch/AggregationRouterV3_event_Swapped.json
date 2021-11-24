@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "srcToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "dstToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "dstReceiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "spentAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "returnAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Swapped",
+            "type": "event"
+        },
+        "contract_address": "0x11111112542d85b3ef69ae05771c2dccff4faa26",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "oneinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dstToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dstReceiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "spentAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "returnAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AggregationRouterV3_event_Swapped"
+    }
+}

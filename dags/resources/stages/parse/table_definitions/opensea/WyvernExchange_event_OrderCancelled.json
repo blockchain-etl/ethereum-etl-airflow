@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "hash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "OrderCancelled",
+            "type": "event"
+        },
+        "contract_address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "hash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WyvernExchange_event_OrderCancelled"
+    }
+}

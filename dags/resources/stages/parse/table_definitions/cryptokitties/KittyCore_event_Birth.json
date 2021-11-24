@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "kittyId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "matronId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sireId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "genes",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Birth",
+            "type": "event"
+        },
+        "contract_address": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cryptokitties",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "kittyId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "matronId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sireId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "genes",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KittyCore_event_Birth"
+    }
+}

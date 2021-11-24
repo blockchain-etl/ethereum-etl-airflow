@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "exchanges",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tradeType",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Trade",
+            "type": "event"
+        },
+        "contract_address": "0xa540fb50288cc31639305b1675c70763c334953b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dex_ag",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exchanges",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tradeType",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DexTrading_v3_event_Trade"
+    }
+}

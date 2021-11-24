@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "initiator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "premium",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "referralCode",
+                    "type": "uint16"
+                }
+            ],
+            "name": "FlashLoan",
+            "type": "event"
+        },
+        "contract_address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initiator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "premium",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referralCode",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendingPool_v2_event_FlashLoan"
+    }
+}

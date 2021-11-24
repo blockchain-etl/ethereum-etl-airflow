@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "actionHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "signature",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "executionTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "withDelegatecall",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "resultData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "ExecutedAction",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xee56e2b3d491590b5b31738cc34d5232f378a8d5', '0x61910ecd7e8e942136ce7fe7943f956cea1cc2f7'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "actionHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "executionTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withDelegatecall",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "resultData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Executor_v2_event_ExecutedAction"
+    }
+}

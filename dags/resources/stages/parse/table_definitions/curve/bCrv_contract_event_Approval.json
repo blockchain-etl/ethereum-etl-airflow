@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "bCrv_event_Approval"
+        "table_name": "bCrv_contract_event_Approval"
     }
 }

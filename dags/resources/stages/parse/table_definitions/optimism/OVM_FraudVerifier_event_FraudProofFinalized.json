@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "_preStateRoot",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_preStateRootIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "_transactionHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_who",
+                    "type": "address"
+                }
+            ],
+            "name": "FraudProofFinalized",
+            "type": "event"
+        },
+        "contract_address": "0xb89f3cf275f0ccbe6d70fa01e225879dccd4184f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "optimism",
+        "schema": [
+            {
+                "description": "",
+                "name": "_preStateRoot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_preStateRootIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_transactionHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_who",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OVM_FraudVerifier_event_FraudProofFinalized"
+    }
+}

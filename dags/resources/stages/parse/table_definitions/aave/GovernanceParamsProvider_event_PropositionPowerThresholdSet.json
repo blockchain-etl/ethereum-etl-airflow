@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "setter",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "propositionPowerThreshold",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PropositionPowerThresholdSet",
+            "type": "event"
+        },
+        "contract_address": "0xf7ff0aee0c2d6fbdea3a85742443e284b62fd0b2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "setter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "propositionPowerThreshold",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "See https://docs.aave.com/developers/developing-on-aave/the-protocol/governance",
+        "table_name": "GovernanceParamsProvider_event_PropositionPowerThresholdSet"
+    }
+}

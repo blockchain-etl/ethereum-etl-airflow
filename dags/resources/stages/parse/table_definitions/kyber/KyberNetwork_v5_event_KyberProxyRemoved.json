@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "kyberProxy",
+                    "type": "address"
+                }
+            ],
+            "name": "KyberProxyRemoved",
+            "type": "event"
+        },
+        "contract_address": "0x7c66550c9c730b6fdd4c03bc2e73c5462c5f7acc",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "schema": [
+            {
+                "description": "",
+                "name": "kyberProxy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KyberNetwork_v5_event_KyberProxyRemoved"
+    }
+}

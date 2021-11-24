@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "secondaryReceiverNonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "latestSecondaryReceiver",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "secondaryReceiverAllotedTax",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "secondaryReceiverRevenueSources",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddSecondaryReceiver",
+            "type": "event"
+        },
+        "contract_address": "0xcdb05aeda142a1b0d6044c09c64e4226c1a281eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "secondaryReceiverNonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "latestSecondaryReceiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "secondaryReceiverAllotedTax",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "secondaryReceiverRevenueSources",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TaxCollector_event_AddSecondaryReceiver"
+    }
+}

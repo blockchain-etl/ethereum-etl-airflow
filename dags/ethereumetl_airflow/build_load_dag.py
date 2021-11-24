@@ -15,7 +15,7 @@ from airflow.operators import python_operator
 from airflow.operators.email_operator import EmailOperator
 from airflow.operators.python_operator import PythonOperator
 from google.cloud import bigquery
-from google.cloud.bigquery import TimePartitioning
+from google.cloud.bigquery import TimePartitioning, SchemaField
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job
 from ethereumetl_airflow.build_export_dag import upload_to_gcs
@@ -103,11 +103,13 @@ def build_load_dag(
             dag=dag
         )
 
-        def load_task():
+        def load_task(ds, **kwargs):
             client = bigquery.Client()
             job_config = bigquery.LoadJobConfig()
             schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/{task}.json'.format(task=task))
-            job_config.schema = read_bigquery_schema_from_file(schema_path)
+            schema = read_bigquery_schema_from_file(schema_path)
+            schema = adjust_schema_for_kovan(dag_id, task, schema)
+            job_config.schema = schema
             job_config.source_format = bigquery.SourceFormat.CSV if file_format == 'csv' else bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
             if file_format == 'csv':
                 job_config.skip_leading_rows = 1
@@ -116,8 +118,12 @@ def build_load_dag(
             job_config.ignore_unknown_values = True
 
             export_location_uri = 'gs://{bucket}/export'.format(bucket=output_bucket)
-            uri = '{export_location_uri}/{task}/*.{file_format}'.format(
-                export_location_uri=export_location_uri, task=task, file_format=file_format)
+            if load_all_partitions:
+                uri = '{export_location_uri}/{task}/*.{file_format}'.format(
+                    export_location_uri=export_location_uri, task=task, file_format=file_format)
+            else:
+                uri = '{export_location_uri}/{task}/block_date={ds}/*.{file_format}'.format(
+                    export_location_uri=export_location_uri, task=task, ds=ds, file_format=file_format)
             table_ref = client.dataset(dataset_name_raw).table(task)
             load_job = client.load_table_from_uri(uri, table_ref, job_config=job_config)
             submit_bigquery_job(load_job, job_config)
@@ -126,6 +132,7 @@ def build_load_dag(
         load_operator = PythonOperator(
             task_id='load_{task}'.format(task=task),
             python_callable=load_task,
+            provide_context=True,
             execution_timeout=timedelta(minutes=30),
             dag=dag
         )
@@ -150,6 +157,7 @@ def build_load_dag(
 
             schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/{task}.json'.format(task=task))
             schema = read_bigquery_schema_from_file(schema_path)
+            schema = adjust_schema_for_kovan(dag_id, task, schema)
             table = bigquery.Table(temp_table_ref, schema=schema)
 
             description_path = os.path.join(
@@ -269,14 +277,14 @@ def build_load_dag(
 
     # Load tasks #
 
-    load_blocks_task = add_load_tasks('blocks', 'csv')
-    load_transactions_task = add_load_tasks('transactions', 'csv')
-    load_receipts_task = add_load_tasks('receipts', 'csv')
+    load_blocks_task = add_load_tasks('blocks', 'json')
+    load_transactions_task = add_load_tasks('transactions', 'json')
+    load_receipts_task = add_load_tasks('receipts', 'json')
     load_logs_task = add_load_tasks('logs', 'json')
     load_contracts_task = add_load_tasks('contracts', 'json')
-    load_tokens_task = add_load_tasks('tokens', 'csv', allow_quoted_newlines=True)
-    load_token_transfers_task = add_load_tasks('token_transfers', 'csv')
-    load_traces_task = add_load_tasks('traces', 'csv')
+    load_tokens_task = add_load_tasks('tokens', 'json', allow_quoted_newlines=True)
+    load_token_transfers_task = add_load_tasks('token_transfers', 'json')
+    load_traces_task = add_load_tasks('traces', 'json')
 
     # Enrich tasks #
 
@@ -344,3 +352,31 @@ def build_load_dag(
         save_checkpoint_task >> send_email_task
 
     return dag
+
+
+def adjust_schema_for_kovan(dag_id, task, schema):
+    result = []
+    if 'kovan' in dag_id and task == 'blocks':
+        for field in schema:
+            # nonce can be empty in Kovan
+            if field.name == 'nonce':
+                result.append(SchemaField(
+                    name=field.name,
+                    field_type=field.field_type,
+                    mode="NULLABLE",
+                    description=field.description,
+                    fields=field.fields
+                ))
+            elif field.name == 'difficulty' or field.name == 'total_difficulty':
+                result.append(SchemaField(
+                    name=field.name,
+                    field_type='FLOAT64',
+                    mode=field.mode,
+                    description=field.description,
+                    fields=field.fields
+                ))
+            else:
+                result.append(field)
+    else:
+        result = schema
+    return result

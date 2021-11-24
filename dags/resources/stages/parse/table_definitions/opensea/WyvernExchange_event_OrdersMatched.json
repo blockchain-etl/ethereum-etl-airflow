@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "buyHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "sellHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "price",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "metadata",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "OrdersMatched",
+            "type": "event"
+        },
+        "contract_address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "buyHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sellHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "price",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "metadata",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WyvernExchange_event_OrdersMatched"
+    }
+}

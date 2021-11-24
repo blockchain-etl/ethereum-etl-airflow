@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vaultProxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "prevFundDeployer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nextFundDeployer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nextVaultAccessor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nextVaultLib",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "executableTimestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MigrationCancelled",
+            "type": "event"
+        },
+        "contract_address": "0xc3dc853dd716bd5754f421ef94fdcbac3902ab32",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "enzyme",
+        "schema": [
+            {
+                "description": "",
+                "name": "vaultProxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "prevFundDeployer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextFundDeployer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextVaultAccessor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextVaultLib",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "executableTimestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MelonV1_Dispatcher_event_MigrationCancelled"
+    }
+}

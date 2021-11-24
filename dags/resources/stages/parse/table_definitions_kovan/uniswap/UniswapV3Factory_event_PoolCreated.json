@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x74e838ecf981aaef2523aa5b666175da319d8d31",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token0",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token1",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint24",
+                    "name": "fee",
+                    "type": "uint24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "tickSpacing",
+                    "type": "int24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolCreated",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "table_name": "UniswapV3Factory_event_PoolCreated",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "token0",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "token1",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fee",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tickSpacing",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "pool",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

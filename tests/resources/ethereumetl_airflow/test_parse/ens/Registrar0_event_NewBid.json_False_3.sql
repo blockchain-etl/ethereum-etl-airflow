@@ -1,5 +1,5 @@
 merge `blockchain-etl-internal.ethereum_ens.Registrar0_event_NewBid_history` dest
-using parse_temp.temp_Registrar0_event_NewBid_1587556654993 source
+using parse_temp.temp_Registrar0_event_NewBid_1587556654993 source_table
 on false
 when not matched and date(block_timestamp) = '2020-01-01' then
 insert (

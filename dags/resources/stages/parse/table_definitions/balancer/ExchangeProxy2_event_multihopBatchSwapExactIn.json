@@ -1,0 +1,112 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "pool",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "tokenIn",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "tokenOut",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "swapAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "limitReturnAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxPrice",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct ExchangeProxy.Swap[][]",
+                    "name": "swapSequences",
+                    "type": "tuple[][]"
+                },
+                {
+                    "internalType": "contract TokenInterface",
+                    "name": "tokenIn",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract TokenInterface",
+                    "name": "tokenOut",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "totalAmountIn",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minTotalAmountOut",
+                    "type": "uint256"
+                }
+            ],
+            "name": "multihopBatchSwapExactIn",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "totalAmountOut",
+                    "type": "uint256"
+                }
+            ],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x3e66b66fd1d0b02fda6c811da9e0547970db2f21",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "swapSequences",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalAmountIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minTotalAmountOut",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExchangeProxy2_event_multihopBatchSwapExactIn"
+    }
+}

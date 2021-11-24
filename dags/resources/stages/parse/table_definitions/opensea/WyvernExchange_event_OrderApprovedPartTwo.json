@@ -1,0 +1,151 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "hash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "howToCall",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "name": "calldata",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "replacementPattern",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "staticTarget",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "staticExtradata",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "name": "paymentToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "basePrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "extra",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "listingTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "expirationTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "salt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "orderbookInclusionDesired",
+                    "type": "bool"
+                }
+            ],
+            "name": "OrderApprovedPartTwo",
+            "type": "event"
+        },
+        "contract_address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "hash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "howToCall",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "calldata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "replacementPattern",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "staticTarget",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "staticExtradata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paymentToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "basePrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "extra",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "listingTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expirationTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "salt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "orderbookInclusionDesired",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WyvernExchange_event_OrderApprovedPartTwo"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "source",
+                    "type": "address"
+                }
+            ],
+            "name": "AssetSourceUpdated",
+            "type": "event"
+        },
+        "contract_address": "0xa50ba011c48153de246e5192c8f9258a2ba79ca9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "source",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AaveOracle_v2_event_AssetSourceUpdated"
+    }
+}

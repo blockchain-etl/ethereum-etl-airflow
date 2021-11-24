@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint160",
+                    "name": "sqrtPriceX96",
+                    "type": "uint160"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "tick",
+                    "type": "int24"
+                }
+            ],
+            "name": "Initialize",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "table_name": "UniswapV3Factory_event_Initialize",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "sqrtPriceX96",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tick",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

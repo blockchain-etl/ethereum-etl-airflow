@@ -26,6 +26,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "BasicTournament_event_v1_OneSidedCommitCancelled"
+        "table_name": "BasicTournament_v1_event_OneSidedCommitCancelled"
     }
 }

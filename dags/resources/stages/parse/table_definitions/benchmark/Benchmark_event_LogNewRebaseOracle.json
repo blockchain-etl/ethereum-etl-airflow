@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_rebaseOracle",
+                    "type": "address"
+                }
+            ],
+            "name": "LogNewRebaseOracle",
+            "type": "event"
+        },
+        "contract_address": "0x67c597624b17b16fb77959217360b7cd18284253",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "benchmark",
+        "schema": [
+            {
+                "description": "",
+                "name": "_rebaseOracle",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Benchmark_event_LogNewRebaseOracle"
+    }
+}

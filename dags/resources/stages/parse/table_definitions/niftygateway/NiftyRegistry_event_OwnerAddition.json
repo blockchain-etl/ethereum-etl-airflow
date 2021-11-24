@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnerAddition",
+            "type": "event"
+        },
+        "contract_address": "0x6e53130ddff21e3bc963ee902005223b9a202106",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "niftygateway",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NiftyRegistry_event_OwnerAddition"
+    }
+}

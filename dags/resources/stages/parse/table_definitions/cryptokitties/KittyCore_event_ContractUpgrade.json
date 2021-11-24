@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "newContract",
+                    "type": "address"
+                }
+            ],
+            "name": "ContractUpgrade",
+            "type": "event"
+        },
+        "contract_address": "0x06012c8cf97bead5deae237070f9587f8e7a266d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cryptokitties",
+        "schema": [
+            {
+                "description": "",
+                "name": "newContract",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KittyCore_event_ContractUpgrade"
+    }
+}

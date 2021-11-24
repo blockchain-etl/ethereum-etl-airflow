@@ -1,0 +1,32 @@
+{
+  "parser": {
+    "abi": {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "Unpaused",
+      "type": "event"
+    },
+    "contract_address": "0x111111125434b319222cdbf8c261674adb56f3ae",
+    "field_mapping": {},
+    "type": "log"
+  },
+  "table": {
+    "dataset_name": "oneinch",
+    "schema": [
+      {
+        "description": "",
+        "name": "account",
+        "type": "STRING"
+      }
+    ],
+    "table_description": "",
+    "table_name": "OneInchExchange_v2_event_Unpaused"
+  }
+}

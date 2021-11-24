@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "error",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "info",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "detail",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Failure",
+            "type": "event"
+        },
+        "contract_address": "0x12392f67bdf24fae0af363c24ac620a2f67dad86",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "error",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "info",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "detail",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cTUSD_event_Failure"
+    }
+}

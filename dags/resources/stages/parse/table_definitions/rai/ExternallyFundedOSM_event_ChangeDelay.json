@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "delay",
+                    "type": "uint16"
+                }
+            ],
+            "name": "ChangeDelay",
+            "type": "event"
+        },
+        "contract_address": "0xd4a0e3ec2a937e7cca4a192756a8439a8bf4ba91",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "delay",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExternallyFundedOSM_event_ChangeDelay"
+    }
+}

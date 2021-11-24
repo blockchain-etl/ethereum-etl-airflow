@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "signerWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "senderWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "signerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "senderToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "signerAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "senderAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Swap",
+            "type": "event"
+        },
+        "contract_address": "0xc50cb225e0f45e814fd41bcb3a120463ab1f04c3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "airswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "senderAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Light_event_Swap"
+    }
+}

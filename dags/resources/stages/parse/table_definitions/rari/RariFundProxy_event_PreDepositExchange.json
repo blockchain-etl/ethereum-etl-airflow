@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "inputErc20Contract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "outputCurrencyCode",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "payee",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "takerAssetFilledAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "depositAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PreDepositExchange",
+            "type": "event"
+        },
+        "contract_address": "0xe4dee94233dd4d7c2504744ee6d34f3875b3b439",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari",
+        "schema": [
+            {
+                "description": "",
+                "name": "inputErc20Contract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputCurrencyCode",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerAssetFilledAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "depositAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RariFundProxy_event_PreDepositExchange"
+    }
+}

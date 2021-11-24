@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "minter",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newMinter",
+                    "type": "address"
+                }
+            ],
+            "name": "MinterChanged",
+            "type": "event"
+        },
+        "contract_address": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "minter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newMinter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Uni_event_MinterChanged"
+    }
+}

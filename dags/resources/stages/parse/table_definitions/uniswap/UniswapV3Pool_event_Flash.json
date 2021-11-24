@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount1",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "paid0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "paid1",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Flash",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "table_name": "UniswapV3Pool_event_Flash",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "sender",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "recipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount0",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount1",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "paid0",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "paid1",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

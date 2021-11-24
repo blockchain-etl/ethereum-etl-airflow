@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT pool FROM ref('V2_LiquidityBootstrappingPoolFactory_event_PoolCreated')",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "table_name": "V2_LiquidityBootstrappingPool_event_Transfer",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "from",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "value",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

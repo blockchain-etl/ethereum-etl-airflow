@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "_prevFee",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "_newFee",
+                    "type": "uint32"
+                }
+            ],
+            "name": "ConversionFeeUpdate",
+            "type": "event"
+        },
+        "contract_address": "SELECT _converter FROM ref('ConverterFactory_v2_event_NewConverter')  UNION ALL SELECT _contractAddress AS _converter FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x424e54436f6e7665727465720000000000000000000000000000000000000000' ",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "_prevFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StandardPoolConverter_event_ConversionFeeUpdate"
+    }
+}

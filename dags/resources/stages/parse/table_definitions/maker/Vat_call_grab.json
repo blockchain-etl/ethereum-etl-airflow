@@ -1,0 +1,84 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "i",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "address",
+                    "name": "u",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "v",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "w",
+                    "type": "address"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "dink",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "dart",
+                    "type": "int256"
+                }
+            ],
+            "name": "grab",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x35d1b3f3d7966a1dfe207aa4514c12a259a0492b",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "i",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "u",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "v",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "w",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dink",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dart",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vat_call_grab"
+    }
+}

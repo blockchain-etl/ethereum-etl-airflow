@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "ilk",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "urn",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ink",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "art",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "due",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "clip",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Bark",
+            "type": "event"
+        },
+        "contract_address": "0x135954d155898d42c90d2a57824c690e0c7bef1b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "ilk",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "urn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ink",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "art",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "due",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "clip",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Dog_event_Bark"
+    }
+}

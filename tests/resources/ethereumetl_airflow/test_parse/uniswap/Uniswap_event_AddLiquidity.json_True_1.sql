@@ -6,15 +6,16 @@ WITH parsed_logs AS
     ,logs.log_index AS log_index
     ,logs.address AS contract_address
     ,`blockchain-etl-internal.ethereum_uniswap.parse_Uniswap_event_AddLiquidity`(logs.data, logs.topics) AS parsed
-FROM `bigquery-public-data.crypto_ethereum.logs` AS logs
-WHERE address in (
+FROM `blockchain-etl-internal.crypto_ethereum_partitioned.logs_by_topic_0x062` AS logs
+WHERE
 
-    SELECT exchange FROM `blockchain-etl.ethereum_uniswap.Vyper_contract_event_NewExchange`
+  address in (SELECT exchange FROM `blockchain-etl.ethereum_uniswap.Vyper_contract_event_NewExchange`)
 
-  )
   AND topics[SAFE_OFFSET(0)] = '0x06239653922ac7bea6aa2b19dc486b9361821d37712eb796adfd38d81de278ca'
 
-  -- pass
+
+  -- live
+
 
   )
 SELECT
@@ -28,3 +29,4 @@ SELECT
     ,parsed.eth_amount AS `eth_amount`
     ,parsed.token_amount AS `token_amount`
 FROM parsed_logs
+WHERE parsed IS NOT NULL

@@ -1,0 +1,33 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "comptrollerLib",
+                    "type": "address"
+                }
+            ],
+            "name": "ComptrollerLibSet",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x7e6d3b1161df9c9c7527f68d651b297d2fdb820b', '0x9134c9975244b46692ad9a7da36dba8734ec6da3'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "enzyme",
+        "schema": [
+            {
+                "description": "",
+                "name": "comptrollerLib",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FundDeployer_event_ComptrollerLibSet"
+    }
+}
+

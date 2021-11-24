@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_supply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidityOne",
+            "type": "event"
+        },
+        "contract_address": "0xd81da8d904b52208541bade1bd6595d8a251f8dd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_supply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "oBTC_event_RemoveLiquidityOne"
+    }
+}

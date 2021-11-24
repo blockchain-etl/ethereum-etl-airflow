@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "_type",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IConverter",
+                    "name": "_converter",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "NewConverter",
+            "type": "event"
+        },
+        "contract_address": "SELECT _contractAddress FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x436f6e766572746572466163746f727900000000000000000000000000000000' ",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "_type",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_converter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ConverterFactory_v2_event_NewConverter"
+    }
+}

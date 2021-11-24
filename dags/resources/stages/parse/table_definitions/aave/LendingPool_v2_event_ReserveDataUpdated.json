@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidityRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "stableBorrowRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "variableBorrowRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidityIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "variableBorrowIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReserveDataUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stableBorrowRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "variableBorrowRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "variableBorrowIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendingPool_v2_event_ReserveDataUpdated"
+    }
+}

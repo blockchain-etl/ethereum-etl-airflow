@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_token1",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_token2",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_rateN",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_rateD",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenRateUpdate",
+            "type": "event"
+        },
+        "contract_address": "SELECT _converter FROM ref('ConverterFactory_event_NewConverter') UNION ALL SELECT _contractAddress AS _converter FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x424e54436f6e7665727465720000000000000000000000000000000000000000' ",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "_token1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_token2",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_rateN",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_rateD",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LiquidityPoolV1Converter_event_TokenRateUpdate"
+    }
+}

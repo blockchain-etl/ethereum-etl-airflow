@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20Token",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20Token",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_return",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "_conversionFee",
+                    "type": "int256"
+                }
+            ],
+            "name": "Conversion",
+            "type": "event"
+        },
+        "contract_address": "SELECT _converter FROM ref('ConverterFactory_v2_event_NewConverter')  UNION ALL SELECT _contractAddress AS _converter FROM ref('ContractRegistry_event_AddressUpdate') WHERE _contractName = '0x424e54436f6e7665727465720000000000000000000000000000000000000000' ",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "_fromToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_toToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_trader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_return",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_conversionFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StandardPoolConverter_event_Conversion"
+    }
+}

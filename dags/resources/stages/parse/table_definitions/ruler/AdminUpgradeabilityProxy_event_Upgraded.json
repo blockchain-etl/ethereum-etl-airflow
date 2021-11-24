@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "Upgraded",
+            "type": "event"
+        },
+        "contract_address": "0xf19f4490a7fccfef2dab8199acdb2dc1b9027c18",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ruler",
+        "schema": [
+            {
+                "description": "",
+                "name": "implementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdminUpgradeabilityProxy_event_Upgraded"
+    }
+}

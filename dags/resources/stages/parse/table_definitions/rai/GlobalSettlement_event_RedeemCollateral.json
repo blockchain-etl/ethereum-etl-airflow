@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "collateralType",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "coinsAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RedeemCollateral",
+            "type": "event"
+        },
+        "contract_address": "0xee4cf96e5359d9619197fd82b6ef2a9eae7b91e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rai",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coinsAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GlobalSettlement_event_RedeemCollateral"
+    }
+}

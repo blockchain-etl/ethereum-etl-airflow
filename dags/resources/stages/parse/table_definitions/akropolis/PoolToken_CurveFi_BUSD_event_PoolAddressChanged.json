@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPool",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolAddressChanged",
+            "type": "event"
+        },
+        "contract_address": "0x8367af78444c5b57bc1cf38ded331d03558e67bb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "akropolis",
+        "schema": [
+            {
+                "description": "",
+                "name": "newPool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolToken_CurveFi_BUSD_event_PoolAddressChanged"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "signerWallet",
+                    "type": "address"
+                }
+            ],
+            "name": "CancelUpTo",
+            "type": "event"
+        },
+        "contract_address": "0xc50cb225e0f45e814fd41bcb3a120463ab1f04c3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "airswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signerWallet",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Light_event_CancelUpTo"
+    }
+}

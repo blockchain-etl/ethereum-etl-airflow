@@ -1,0 +1,131 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "makerWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerParam",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "makerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "takerWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerParam",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "takerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "affiliateWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "affiliateParam",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "affiliateToken",
+                    "type": "address"
+                }
+            ],
+            "name": "Swap",
+            "type": "event"
+        },
+        "contract_address": "0x54d2690e97e477a4b33f40d6e4afdd4832c07c57",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "airswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerParam",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerParam",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateParam",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SwapOld_event_Swap"
+    }
+}

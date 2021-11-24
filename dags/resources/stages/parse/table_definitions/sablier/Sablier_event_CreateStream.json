@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "streamId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deposit",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "stopTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreateStream",
+            "type": "event"
+        },
+        "contract_address": "0xa4fc358455febe425536fd1878be67ffdbdec59a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sablier",
+        "schema": [
+            {
+                "description": "",
+                "name": "streamId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deposit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stopTime",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Sablier_event_CreateStream"
+    }
+}

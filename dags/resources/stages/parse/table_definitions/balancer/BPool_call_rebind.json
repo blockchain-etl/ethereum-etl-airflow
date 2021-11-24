@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "balance",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "denorm",
+                    "type": "uint256"
+                }
+            ],
+            "name": "rebind",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT pool FROM ref('BFactory_event_LOG_NEW_POOL')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "balance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "denorm",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BPool_call_rebind"
+    }
+}

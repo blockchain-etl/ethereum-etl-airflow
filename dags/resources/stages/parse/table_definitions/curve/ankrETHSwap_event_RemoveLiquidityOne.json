@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidityOne",
+            "type": "event"
+        },
+        "contract_address": "0xa96a65c051bf88b4095ee1f2451c2a9d43f53ae2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ankrETHSwap_event_RemoveLiquidityOne"
+    }
+}
