@@ -5,16 +5,20 @@ import logging
 import os
 import time
 from datetime import datetime, timedelta
+from tempfile import TemporaryDirectory
 
 from airflow import models
+from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
 from airflow.contrib.operators.bigquery_operator import BigQueryOperator
 from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
+from airflow.operators import python_operator
 from airflow.operators.email_operator import EmailOperator
 from airflow.operators.python_operator import PythonOperator
 from google.cloud import bigquery
 from google.cloud.bigquery import TimePartitioning, SchemaField
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job
+from ethereumetl_airflow.build_export_dag import upload_to_gcs
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -245,6 +249,34 @@ def build_load_dag(
                 dependency >> verify_task
         return verify_task
 
+    def add_save_checkpoint_tasks(dependencies=None):
+        def save_checkpoint(execution_date, **kwargs):
+            with TemporaryDirectory() as tempdir:
+                local_path = os.path.join(tempdir, "checkpoint.txt")
+                remote_path = "checkpoint/block_date={block_date}/load_complete_checkpoint.txt".format(
+                    block_date=execution_date.strftime("%Y-%m-%d")
+                )
+                open(local_path, mode='a').close()
+                upload_to_gcs(
+                    gcs_hook=GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default"),
+                    bucket=output_bucket,
+                    object=remote_path,
+                    filename=local_path)
+
+        save_checkpoint_task = python_operator.PythonOperator(
+            task_id='save_checkpoint',
+            python_callable=save_checkpoint,
+            provide_context=True,
+            execution_timeout=timedelta(hours=1),
+            dag=dag,
+        )
+        if dependencies is not None and len(dependencies) > 0:
+            for dependency in dependencies:
+                dependency >> save_checkpoint_task
+        return save_checkpoint_task
+
+    # Load tasks #
+
     load_blocks_task = add_load_tasks('blocks', 'json')
     load_transactions_task = add_load_tasks('transactions', 'json')
     load_receipts_task = add_load_tasks('receipts', 'json')
@@ -253,6 +285,8 @@ def build_load_dag(
     load_tokens_task = add_load_tasks('tokens', 'json', allow_quoted_newlines=True)
     load_token_transfers_task = add_load_tasks('token_transfers', 'json')
     load_traces_task = add_load_tasks('traces', 'json')
+
+    # Enrich tasks #
 
     enrich_blocks_task = add_enrich_tasks(
         'blocks', time_partitioning_field='timestamp', dependencies=[load_blocks_task])
@@ -273,6 +307,8 @@ def build_load_dag(
         'balances', dependencies=[enrich_blocks_task, enrich_transactions_task, enrich_traces_task],
         time_partitioning_field=None, always_load_all_partitions=True)
 
+    # Verify tasks #
+
     verify_blocks_count_task = add_verify_tasks('blocks_count', [enrich_blocks_task])
     verify_blocks_have_latest_task = add_verify_tasks('blocks_have_latest', [enrich_blocks_task])
     verify_transactions_count_task = add_verify_tasks('transactions_count',
@@ -287,6 +323,24 @@ def build_load_dag(
     verify_traces_contracts_count_task = add_verify_tasks(
         'traces_contracts_count', [enrich_transactions_task, enrich_traces_task, enrich_contracts_task])
 
+    # Save checkpoint tasks #
+
+    save_checkpoint_task = add_save_checkpoint_tasks(dependencies=[
+        verify_blocks_count_task,
+        verify_blocks_have_latest_task,
+        verify_transactions_count_task,
+        verify_transactions_have_latest_task,
+        verify_logs_have_latest_task,
+        verify_token_transfers_have_latest_task,
+        verify_traces_blocks_count_task,
+        verify_traces_transactions_count_task,
+        verify_traces_contracts_count_task,
+        enrich_tokens_task,
+        calculate_balances_task,
+    ])
+
+    # Send email task #
+
     if notification_emails and len(notification_emails) > 0:
         send_email_task = EmailOperator(
             task_id='send_email',
@@ -295,17 +349,7 @@ def build_load_dag(
             html_content='Ethereum ETL Airflow Load DAG Succeeded - {}'.format(chain),
             dag=dag
         )
-        verify_blocks_count_task >> send_email_task
-        verify_blocks_have_latest_task >> send_email_task
-        verify_transactions_count_task >> send_email_task
-        verify_transactions_have_latest_task >> send_email_task
-        verify_logs_have_latest_task >> send_email_task
-        verify_token_transfers_have_latest_task >> send_email_task
-        verify_traces_blocks_count_task >> send_email_task
-        verify_traces_transactions_count_task >> send_email_task
-        verify_traces_contracts_count_task >> send_email_task
-        enrich_tokens_task >> send_email_task
-        calculate_balances_task >> send_email_task
+        save_checkpoint_task >> send_email_task
 
     return dag
 
