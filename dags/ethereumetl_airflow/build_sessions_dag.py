@@ -4,9 +4,9 @@ import logging
 import os
 
 from airflow import models
+from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.python_operator import PythonOperator
-from airflow.operators.sensors import ExternalTaskSensor
 from datetime import datetime, timedelta
 from google.cloud import bigquery
 
@@ -16,7 +16,7 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 def build_sessions_dag(
         dag_id,
-        load_dag_id,
+        output_bucket,
         sql_dir,
         source_project_id,
         source_dataset_name,
@@ -106,15 +106,14 @@ def build_sessions_dag(
     # not running in the lower environments.
     #
     if environment == 'prod':
-        wait_for_ethereum_load_dag_task = ExternalTaskSensor(
+        wait_for_ethereum_load_dag_task = GoogleCloudStorageObjectSensor(
             task_id='wait_for_ethereum_load_dag',
-            external_dag_id=load_dag_id,
-            external_task_id='send_email', # Task sends a notification on DAG completion.
-            execution_delta=timedelta(hours=1),
-            priority_weight=0,
-            mode='reschedule',
-            poke_interval=5 * 60,
             timeout=60 * 60 * 12,
+            poke_interval=5 * 60,
+            bucket=output_bucket,
+            object="checkpoint/block_date={block_date}/load_complete_checkpoint.txt".format(
+                block_date='{{ds}}'
+            ),
             dag=dag
         )
         wait_for_ethereum_load_dag_task >> stage_root_call_traces_task

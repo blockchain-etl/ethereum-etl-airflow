@@ -18,7 +18,7 @@ environment = Variable.get('environment', 'prod')
 # airflow DAG
 DAG = build_sessions_dag(
     dag_id='ethereum_sessions_dag',
-    load_dag_id='ethereum_load_dag',
+    output_bucket=Variable.get('ethereum_output_bucket'),
     sql_dir=sql_dir,
     source_project_id='bigquery-public-data',
     source_dataset_name='crypto_ethereum',
