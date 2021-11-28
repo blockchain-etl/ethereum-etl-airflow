@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_bondContract",
+                    "type": "address"
+                }
+            ],
+            "name": "toggleBondContract",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x246c00f93001c344038a0d9cf012754b539c1014",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "olympus",
+        "schema": [
+            {
+                "description": "",
+                "name": "_bondContract",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OP_alchemix_treasury_event_toggleBondContract"
+    }
+}

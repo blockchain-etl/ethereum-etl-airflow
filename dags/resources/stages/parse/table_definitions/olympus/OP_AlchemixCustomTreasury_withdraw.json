@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destination",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "withdraw",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x246c00f93001c344038a0d9cf012754b539c1014",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "olympus",
+        "schema": [
+            {
+                "description": "",
+                "name": "_token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_destination",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OP_alchemix_treasury_event_withdraw"
+    }
+}
