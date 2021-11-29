@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "policy",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x246c00f93001c344038a0d9cf012754b539c1014",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "olympus",
+        "schema": [],
+        "table_description": "",
+        "table_name": "OP_alchemix_treasury_event_policy"
+    }
+}
