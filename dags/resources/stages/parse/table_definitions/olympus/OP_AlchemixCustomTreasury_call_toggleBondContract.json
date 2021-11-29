@@ -4,11 +4,11 @@
             "inputs": [
                 {
                     "internalType": "address",
-                    "name": "_newOwner",
+                    "name": "_bondContract",
                     "type": "address"
                 }
             ],
-            "name": "transferManagment",
+            "name": "toggleBondContract",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "_newOwner",
+                "name": "_bondContract",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "OP_alchemix_treasury_event_transferManagment"
+        "table_name": "OP_AlchemixCustomTreasury_call_toggleBondContract"
     }
 }
