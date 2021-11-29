@@ -48,8 +48,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "Emitted when `account` grants or revokes permission to `operator` to transfer their tokens, according to
-     * `approved",
+        "table_description": "Emitted when `account` grants or revokes permission to `operator` to transfer their tokens, according to * `approved",
         "table_name": "EulerBeats_event_ApprovalForAll"
     }
 }
