@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipPulled",
+            "type": "event"
+        },
+        "contract_address": "0xfd31c7d00ca47653c6ce64af53c1571f9c36566a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "olympus",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "staking_v2_event_OwnershipPulled"
+    }
+}

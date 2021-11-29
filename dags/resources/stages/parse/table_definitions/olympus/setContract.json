@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "enum OlympusStaking.CONTRACTS",
+                    "name": "_contract",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_address",
+                    "type": "address"
+                }
+            ],
+            "name": "setContract",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xfd31c7d00ca47653c6ce64af53c1571f9c36566a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "olympus",
+        "schema": [
+            {
+                "description": "",
+                "name": "_contract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_address",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "staking_v2_event_setContract"
+    }
+}

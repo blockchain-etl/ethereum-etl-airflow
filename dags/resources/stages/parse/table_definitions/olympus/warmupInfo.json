@@ -1,0 +1,53 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "warmupInfo",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "deposit",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "gons",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "expiry",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "lock",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0xfd31c7d00ca47653c6ce64af53c1571f9c36566a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "olympus",
+        "schema": [
+            {
+                "description": "",
+                "name": "",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "staking_v2_event_warmupInfo"
+    }
+}
