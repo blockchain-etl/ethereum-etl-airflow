@@ -1,16 +1,16 @@
 {
     "parser": {
         "abi": {
-            "inputs": [],
-            "name": "policy",
-            "outputs": [
+            "inputs": [
                 {
                     "internalType": "address",
-                    "name": "",
+                    "name": "_newOwner",
                     "type": "address"
                 }
             ],
-            "stateMutability": "view",
+            "name": "transferManagment",
+            "outputs": [],
+            "stateMutability": "nonpayable",
             "type": "function"
         },
         "contract_address": "0x246c00f93001c344038a0d9cf012754b539c1014",
@@ -19,8 +19,14 @@
     },
     "table": {
         "dataset_name": "olympus",
-        "schema": [],
+        "schema": [
+            {
+                "description": "",
+                "name": "_newOwner",
+                "type": "STRING"
+            }
+        ],
         "table_description": "",
-        "table_name": "OP_alchemix_treasury_event_policy"
+        "table_name": "OP_AlchemixCustomTreasury_call_transferManagment"
     }
 }

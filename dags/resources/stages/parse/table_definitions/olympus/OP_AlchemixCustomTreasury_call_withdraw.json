@@ -47,6 +47,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "OP_alchemix_treasury_event_withdraw"
+        "table_name": "OP_AlchemixCustomTreasury_call_withdraw"
     }
 }
