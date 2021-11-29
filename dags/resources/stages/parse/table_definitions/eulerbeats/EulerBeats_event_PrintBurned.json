@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "seed",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "priceReceived",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nextPrintPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nextBurnPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "printsSupply",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reserve",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PrintBurned",
+            "type": "event"
+        },
+        "contract_address": "0x8754f54074400ce745a7ceddc928fb1b7e985ed6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eulerbeats",
+        "schema": [
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seed",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "priceReceived",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextPrintPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextBurnPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "printsSupply",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "Emitted when a print is burned",
+        "table_name": "EulerBeats_event_PrintBurned"
+    }
+}

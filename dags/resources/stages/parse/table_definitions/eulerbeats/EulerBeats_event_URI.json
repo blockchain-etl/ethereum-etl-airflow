@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "value",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "URI",
+            "type": "event"
+        },
+        "contract_address": "0x8754f54074400ce745a7ceddc928fb1b7e985ed6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eulerbeats",
+        "schema": [
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "Emitted when the URI for token type `id` changes to `value`, if it is a non-programmatic URI",
+        "table_name": "EulerBeats_event_URI"
+    }
+}
