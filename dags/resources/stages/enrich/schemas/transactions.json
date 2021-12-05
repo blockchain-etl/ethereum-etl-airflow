@@ -104,7 +104,7 @@
     {
         "name": "transaction_type",
         "type": "INT64",
-        "description": "Transaction type"
+        "description": "Transaction type. One of 0 (Legacy), 1 (Legacy), 2 (EIP-1559)"
     },
     {
         "name": "receipt_effective_gas_price",
