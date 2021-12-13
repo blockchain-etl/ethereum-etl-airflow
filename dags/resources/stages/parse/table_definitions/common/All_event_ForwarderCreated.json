@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newForwarderAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "parentAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "ForwarderCreated",
+            "type": "event"
+        },
+        "contract_address": null,
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "common",
+        "schema": [
+            {
+                "description": "",
+                "name": "newForwarderAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "parentAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "All_event_ForwarderCreated"
+    }
+}

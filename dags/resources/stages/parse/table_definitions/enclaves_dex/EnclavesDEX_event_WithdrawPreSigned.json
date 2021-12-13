@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "feeToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "feeValue",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "feeReceiver",
+                    "type": "address"
+                }
+            ],
+            "name": "WithdrawPreSigned",
+            "type": "event"
+        },
+        "contract_address": "0xbf45f4280cfbe7c2d2515a7d984b8c71c15e82b7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "enclaves_dex",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeReceiver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EnclavesDEX_event_WithdrawPreSigned"
+    }
+}
