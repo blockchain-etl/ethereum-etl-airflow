@@ -28,6 +28,6 @@ DAG = build_sessions_dag(
     temp_dataset_name=Variable.get('ethereum_temp_dataset_name', 'crypto_ethereum_temp'),
     # Load DAG should complete by 14:00.
     schedule_interval='0 14 * * *',
-    start_date=datetime(2021, 11, 29),
+    start_date=datetime(2021, 12, 12),
     environment=environment
 )
