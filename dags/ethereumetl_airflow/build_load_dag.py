@@ -177,7 +177,7 @@ def build_load_dag(
 
             sql_path = os.path.join(dags_folder, 'resources/stages/enrich/sqls/{task}.sql'.format(task=task))
             sql_template = read_file(sql_path)
-            sql = kwargs['task'].render_template('', sql_template, template_context)
+            sql = kwargs['task'].render_template(sql_template, template_context)
             print('Enrichment sql:')
             print(sql)
 
@@ -209,7 +209,7 @@ def build_load_dag(
                 merge_template_context['params']['source_table'] = temp_table_name
                 merge_template_context['params']['destination_dataset_project_id'] = destination_dataset_project_id
                 merge_template_context['params']['destination_dataset_name'] = dataset_name
-                merge_sql = kwargs['task'].render_template('', merge_sql_template, merge_template_context)
+                merge_sql = kwargs['task'].render_template(merge_sql_template, merge_template_context)
                 print('Merge sql:')
                 print(merge_sql)
                 merge_job = client.query(merge_sql, location='US', job_config=merge_job_config)
