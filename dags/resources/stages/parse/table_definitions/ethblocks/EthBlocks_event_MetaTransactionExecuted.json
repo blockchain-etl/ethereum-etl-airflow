@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "userAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address payable",
+                    "name": "relayerAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "functionSignature",
+                    "type": "bytes"
+                }
+            ],
+            "name": "MetaTransactionExecuted",
+            "type": "event"
+        },
+        "contract_address": "0x01234567bac6ff94d7e4f0ee23119cf848f93245",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethblocks",
+        "schema": [
+            {
+                "description": "",
+                "name": "userAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "relayerAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "functionSignature",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EthBlocks_event_MetaTransactionExecuted"
+    }
+}
