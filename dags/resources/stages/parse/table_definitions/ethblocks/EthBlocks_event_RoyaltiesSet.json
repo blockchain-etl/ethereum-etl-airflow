@@ -1,0 +1,55 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address payable",
+                            "name": "account",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint96",
+                            "name": "value",
+                            "type": "uint96"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LibPart.Part[]",
+                    "name": "royalties",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "RoyaltiesSet",
+            "type": "event"
+        },
+        "contract_address": "0x01234567bac6ff94d7e4f0ee23119cf848f93245",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethblocks",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "royalties",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EthBlocks_event_RoyaltiesSet"
+    }
+}
