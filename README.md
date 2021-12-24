@@ -54,3 +54,9 @@ pytest -vv -s
 ### Creating Table Definition Files for Parsing Events and Function Calls
 
 Read this article: https://medium.com/@medvedev1088/query-ens-and-0x-events-with-sql-in-google-bigquery-4d197206e644
+
+### More Information
+
+You can follow the instructions here for Polygon DAGs https://github.com/blockchain-etl/polygon-etl. The architecture
+there is very similar to Ethereum so in most case substituting `polygon` for `ethereum` will work. Contributions 
+to this README file for porting documentation from Polygon to Ethereum are welcome.
