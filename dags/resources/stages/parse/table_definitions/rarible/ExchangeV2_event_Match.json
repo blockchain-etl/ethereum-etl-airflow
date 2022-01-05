@@ -1,0 +1,157 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "leftHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "rightHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "leftMaker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "rightMaker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newLeftFill",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newRightFill",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes4",
+                            "name": "assetClass",
+                            "type": "bytes4"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "data",
+                            "type": "bytes"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LibAsset.AssetType",
+                    "name": "leftAsset",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes4",
+                            "name": "assetClass",
+                            "type": "bytes4"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "data",
+                            "type": "bytes"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LibAsset.AssetType",
+                    "name": "rightAsset",
+                    "type": "tuple"
+                }
+            ],
+            "name": "Match",
+            "type": "event"
+        },
+        "contract_address": "0x9757f2d2b135150bbeb65308d4a91804107cd8d6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rarible",
+        "schema": [
+            {
+                "description": "",
+                "name": "leftHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rightHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "leftMaker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rightMaker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newLeftFill",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newRightFill",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "assetClass",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "data",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "leftAsset",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "assetClass",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "data",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "rightAsset",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExchangeV2_event_Match"
+    }
+}
