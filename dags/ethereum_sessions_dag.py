@@ -29,5 +29,6 @@ DAG = build_sessions_dag(
     # Load DAG should complete by 14:00.
     schedule_interval='0 14 * * *',
     start_date=datetime(2021, 12, 12),
+    notification_emails=Variable.get('notification_emails', None),
     environment=environment
 )
