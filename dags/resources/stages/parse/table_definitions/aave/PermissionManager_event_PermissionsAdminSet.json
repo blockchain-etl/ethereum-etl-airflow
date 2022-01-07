@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "set",
+                    "type": "bool"
+                }
+            ],
+            "name": "PermissionsAdminSet",
+            "type": "event"
+        },
+        "contract_address": "0xf4a1f5fea79c3609514a417425971fadc10ecfbe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_aave",
+        "schema": [
+            {
+                "description": "Permissions of admin set",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "set",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PermissionManager_event_PermissionsAdminSet"
+    }
+}
