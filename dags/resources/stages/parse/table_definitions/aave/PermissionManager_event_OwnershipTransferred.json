@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_aave",
+        "dataset_name": "aave",
         "schema": [
             {
                 "description": "Transfer of role ownership",
