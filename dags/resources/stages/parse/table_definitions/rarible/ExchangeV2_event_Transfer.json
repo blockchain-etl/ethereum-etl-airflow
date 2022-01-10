@@ -1,0 +1,124 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "bytes4",
+                                    "name": "assetClass",
+                                    "type": "bytes4"
+                                },
+                                {
+                                    "internalType": "bytes",
+                                    "name": "data",
+                                    "type": "bytes"
+                                }
+                            ],
+                            "internalType": "struct LibAsset.AssetType",
+                            "name": "assetType",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LibAsset.Asset",
+                    "name": "asset",
+                    "type": "tuple"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes4",
+                    "name": "transferDirection",
+                    "type": "bytes4"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes4",
+                    "name": "transferType",
+                    "type": "bytes4"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "contract_address": "0x9757f2d2b135150bbeb65308d4a91804107cd8d6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rarible",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "fields": [
+                            {
+                                "description": "",
+                                "name": "assetClass",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "data",
+                                "type": "STRING"
+                            }
+                        ],
+                        "name": "assetType",
+                        "type": "RECORD"
+                    },
+                    {
+                        "description": "",
+                        "name": "value",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "asset",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transferDirection",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transferType",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExchangeV2_event_Transfer"
+    }
+}
