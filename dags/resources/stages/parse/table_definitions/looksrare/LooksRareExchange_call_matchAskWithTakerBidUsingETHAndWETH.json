@@ -265,6 +265,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LooksRareExchange_event_matchAskWithTakerBidUsingETHAndWETH"
+        "table_name": "LooksRareExchange_call_matchAskWithTakerBidUsingETHAndWETH"
     }
 }
