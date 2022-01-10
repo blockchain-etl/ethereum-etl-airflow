@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "currencyManager",
+                    "type": "address"
+                }
+            ],
+            "name": "NewCurrencyManager",
+            "type": "event"
+        },
+        "contract_address": "0x59728544b08ab483533076417fbbb2fd0b17ce3a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "currencyManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LooksRareExchange_event_NewCurrencyManager"
+    }
+}

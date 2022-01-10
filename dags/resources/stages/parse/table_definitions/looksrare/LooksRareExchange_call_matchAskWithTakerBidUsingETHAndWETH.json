@@ -1,0 +1,270 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bool",
+                            "name": "isOrderAsk",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "taker",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minPercentageToAsk",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "params",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct OrderTypes.TakerOrder",
+                    "name": "takerBid",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "bool",
+                            "name": "isOrderAsk",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "signer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collection",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "strategy",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "currency",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "nonce",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minPercentageToAsk",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "params",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "v",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "r",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "s",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "internalType": "struct OrderTypes.MakerOrder",
+                    "name": "makerAsk",
+                    "type": "tuple"
+                }
+            ],
+            "name": "matchAskWithTakerBidUsingETHAndWETH",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x59728544b08ab483533076417fbbb2fd0b17ce3a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "isOrderAsk",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "taker",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "price",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "tokenId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "minPercentageToAsk",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "params",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "takerBid",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "isOrderAsk",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "signer",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "collection",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "price",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "tokenId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "amount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "strategy",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "currency",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "nonce",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "endTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "minPercentageToAsk",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "params",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "v",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "r",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "s",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "makerAsk",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LooksRareExchange_event_matchAskWithTakerBidUsingETHAndWETH"
+    }
+}

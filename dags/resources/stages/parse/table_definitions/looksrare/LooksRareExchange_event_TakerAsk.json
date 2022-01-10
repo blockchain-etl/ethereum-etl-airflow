@@ -1,0 +1,131 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "orderNonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "strategy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "currency",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "collection",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "price",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TakerAsk",
+            "type": "event"
+        },
+        "contract_address": "0x59728544b08ab483533076417fbbb2fd0b17ce3a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "orderNonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "strategy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currency",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collection",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "price",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LooksRareExchange_event_TakerAsk"
+    }
+}
