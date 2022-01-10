@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "role",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "whiteLister",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "set",
+                    "type": "bool"
+                }
+            ],
+            "name": "RoleSet",
+            "type": "event"
+        },
+        "contract_address": "0xf4a1f5fea79c3609514a417425971fadc10ecfbe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "Setting the role of a particular address",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "role",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "whiteLister",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "set",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PermissionManager_event_RoleSet"
+    }
+}
