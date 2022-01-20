@@ -5,7 +5,7 @@
 -- Block by block balance of "mining power" for the purposes of liquidity mining
 
 with bpt_transfers as (
-    select * from `blockchain-etl.ethereum_balancerview_LM_transfers`
+    select * from `blockchain-etl.ethereum_balancer.view_LM_transfers`
 ),
 double_entry_book as (
     -- debits
