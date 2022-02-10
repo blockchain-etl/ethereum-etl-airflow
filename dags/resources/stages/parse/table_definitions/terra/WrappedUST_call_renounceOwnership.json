@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xa47c8bf37f92abed4a126bda807a7b7498661acd",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "terra",
+        "schema": [],
+        "table_description": "",
+        "table_name": "WrappedUST_call_renounceOwnership"
+    }
+}
