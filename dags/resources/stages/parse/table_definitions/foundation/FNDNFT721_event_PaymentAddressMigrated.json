@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "originalAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "originalPaymentAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPaymentAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "PaymentAddressMigrated",
+            "type": "event"
+        },
+        "contract_address": "0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation-erc-721",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "originalAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "originalPaymentAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPaymentAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDNFT721_event_PaymentAddressMigrated"
+    }
+}

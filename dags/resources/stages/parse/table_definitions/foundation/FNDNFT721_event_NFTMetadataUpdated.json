@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "baseURI",
+                    "type": "string"
+                }
+            ],
+            "name": "NFTMetadataUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation-erc-721",
+        "schema": [
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "baseURI",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDNFT721_event_NFTMetadataUpdated"
+    }
+}
