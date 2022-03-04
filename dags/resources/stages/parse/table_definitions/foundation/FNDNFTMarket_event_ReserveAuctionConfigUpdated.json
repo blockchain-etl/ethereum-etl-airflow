@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "minPercentIncrementInBasisPoints",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxBidIncrementRequirement",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "duration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "extensionDuration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "goLiveDate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReserveAuctionConfigUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x8a8f22aa06f47fd453202eb1bd747a073f84bb4b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation",
+        "schema": [
+            {
+                "description": "",
+                "name": "minPercentIncrementInBasisPoints",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxBidIncrementRequirement",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "duration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "extensionDuration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "goLiveDate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDNFTMarket_event_ReserveAuctionConfigUpdated"
+    }
+}
