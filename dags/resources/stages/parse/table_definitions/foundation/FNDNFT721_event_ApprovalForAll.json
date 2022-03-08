@@ -25,12 +25,12 @@
             "name": "ApprovalForAll",
             "type": "event"
         },
-        "contract_address": "0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405",
+        "contract_address": "0x3b3ee1931dc30c1957379fac9aba94d1c48a5405",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "foundation-erc-721",
+        "dataset_name": "foundation",
         "schema": [
             {
                 "description": "",
