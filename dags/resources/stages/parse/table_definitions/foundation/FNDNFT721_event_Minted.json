@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "indexedTokenIPFSPath",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "tokenIPFSPath",
+                    "type": "string"
+                }
+            ],
+            "name": "Minted",
+            "type": "event"
+        },
+        "contract_address": "0x3b3ee1931dc30c1957379fac9aba94d1c48a5405",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation",
+        "schema": [
+            {
+                "description": "",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "indexedTokenIPFSPath",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIPFSPath",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDNFT721_event_Minted"
+    }
+}

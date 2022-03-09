@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "f8nFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "creatorFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ownerRev",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deadline",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PrivateSaleFinalized",
+            "type": "event"
+        },
+        "contract_address": "0x8a8f22aa06f47fd453202eb1bd747a073f84bb4b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "f8nFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "creatorFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ownerRev",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDNFTMarket_event_PrivateSaleFinalized"
+    }
+}

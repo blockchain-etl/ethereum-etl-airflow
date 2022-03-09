@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "originalAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "NFTCreatorMigrated",
+            "type": "event"
+        },
+        "contract_address": "0x3b3ee1931dc30c1957379fac9aba94d1c48a5405",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "originalAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDNFT721_event_NFTCreatorMigrated"
+    }
+}
