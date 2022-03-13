@@ -14,9 +14,16 @@ jobs:
           python-version: '3.9'
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Pytest Action Step
-        id: pytest
-        uses: paolorechia/fast-pytest-github-action@develop
-        with:
-          pytest_args: '.'
-          requirements_file: 'requirements.txt'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run pyTest to Validate JSON Files
+        run: python -m pytest --import-mode=append tests/test_validate_json.py
+      
+      # - name: Pytest Action Step
+      #   id: pytest
+      #   uses: paolorechia/fast-pytest-github-action@develop
+      #   with:
+      #     pytest_args: '.'
+      #     requirements_file: 'requirements.txt'
