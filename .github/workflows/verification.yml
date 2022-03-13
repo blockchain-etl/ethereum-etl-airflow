@@ -1,0 +1,23 @@
+name: pyTest
+
+on: 
+  pull_request
+  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Validate Json Files in parse Directory
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install jsonschema
+      - name: Run pyTest to Validate JSON Files
+        run: python -m pytest --import-mode=append tests/test_validate_json.py

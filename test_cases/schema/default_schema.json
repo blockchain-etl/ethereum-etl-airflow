@@ -1,0 +1,147 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1646985065.json",
+  "title": "Root",
+  "type": "object",
+  "required": ["parser", "table"],
+  "properties": {
+    "parser": {
+      "$id": "#root/parser",
+      "title": "Parser",
+      "type": "object",
+      "required": ["abi", "contract_address", "type"],
+      "properties": {
+        "abi": {
+          "$id": "#root/parser/abi",
+          "title": "Abi",
+          "type": "object",
+          "required": ["inputs", "name", "type"],
+          "properties": {
+            "anonymous": {
+              "$id": "#root/parser/abi/anonymous",
+              "title": "Anonymous",
+              "type": "boolean",
+              "examples": [false],
+              "default": true
+            },
+            "inputs": {
+              "$id": "#root/parser/abi/inputs",
+              "title": "Inputs",
+              "type": "array",
+              "default": []
+            },
+            "name": {
+              "$id": "#root/parser/abi/name",
+              "title": "Name",
+              "type": "string",
+              "default": "",
+              "examples": ["PairCreated"],
+              "pattern": "^.*$"
+            },
+            "type": {
+              "$id": "#root/parser/abi/type",
+              "title": "Type",
+              "type": "string",
+              "default": "",
+              "examples": ["event"],
+              "pattern": "^.*$"
+            }
+          }
+        },
+        "contract_address": {
+          "anyOf": [
+            {
+              "$id": "#root/parser/contract_address",
+              "title": "Contract_address",
+              "type": "string",
+              "default": "",
+              "examples": ["0xef45d134b73241eda7703fa787148d9c9f4950b0"],
+              "pattern": "0x[a-f0-9]{40}"
+            },
+            {
+              "$id": "#root/parser/contract_address",
+              "title": "Contract_address",
+              "type": "null",
+              "default": "",
+              "examples": [null]
+            },
+            {
+              "$id": "#root/parser/contract_address",
+              "title": "Contract_address",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "SELECT pair FROM ref('UniSwapV2Factory_event_PairCreated')"
+              ],
+              "pattern": "SELECT .* FROM ref\\('.*'\\)"
+            },
+            {
+              "$id": "#root/parser/contract_address",
+              "title": "Contract_address",
+              "type": "string",
+              "default": "",
+              "examples": [
+                "SELECT * FROM UNNEST(['0x5c0401e81bc07ca70fad469b451682c0d747ef1c', '0xe194c4c5ac32a3c9ffdb358d9bfd523a0b6d1568', '0x334ad834cd4481bb02d09615e7c11a00579a7909', '0xc9e5999b8e75c3feb117f6f73e664b9f3c8ca65c'])"
+              ],
+              "pattern": "SELECT .* FROM.*UNNEST\\(\\[(('0x[a-f0-9]{40}', )+)'0x[a-f0-9]{40}']\\)"
+            }
+          ]
+        },
+        "field_mapping": {
+          "$id": "#root/parser/field_mapping",
+          "title": "Field_mapping",
+          "type": "object",
+          "required": [],
+          "properties": {}
+        },
+        "type": {
+          "$id": "#root/parser/type",
+          "title": "Type",
+          "type": "string",
+          "default": "",
+          "examples": ["log"],
+          "pattern": "^.*$"
+        }
+      }
+    },
+    "table": {
+      "$id": "#root/table",
+      "title": "Table",
+      "type": "object",
+      "required": ["dataset_name", "schema", "table_description", "table_name"],
+      "properties": {
+        "dataset_name": {
+          "$id": "#root/table/dataset_name",
+          "title": "Dataset_name",
+          "type": "string",
+          "default": "",
+          "examples": ["spiritswap"],
+          "pattern": "^.*$"
+        },
+        "schema": {
+          "$id": "#root/table/schema",
+          "title": "Schema",
+          "type": "array",
+          "default": []
+        },
+        "table_description": {
+          "$id": "#root/table/table_description",
+          "title": "Table_description",
+          "type": "string",
+          "default": "",
+          "examples": [""],
+          "pattern": "^.*$"
+        },
+        "table_name": {
+          "$id": "#root/table/table_name",
+          "title": "Table_name",
+          "type": "string",
+          "default": "",
+          "examples": ["SpiritFactory_event_PairCreated"],
+          "pattern": "^.*$"
+        }
+      }
+    }
+  }
+}

@@ -43,7 +43,7 @@
             "name": "ReserveUpdated",
             "type": "event"
         },
-        "contract_address": "0x3dfd23A6c5E8BbcFc9581d2E864a68feb6a076d3",
+        "contract_address": "0x3dfd23a6c5e8bbcfc9581d2e864a68feb6a076d3",
         "field_mapping": {},
         "type": "log"
     },
