@@ -17,7 +17,7 @@
             "name": "Minted",
             "type": "event"
         },
-        "contract_address": "select store from ref('ThingFactory_event_StoreLaunch')",
+        "contract_address": "SELECT store FROM ref('ThingFactory_event_StoreLaunch')",
         "field_mapping": {},
         "type": "log"
     },

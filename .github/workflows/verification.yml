@@ -1,0 +1,22 @@
+name: pyTest
+
+on: 
+  pull_request
+  
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Validate Json Files in parse Directory
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Pytest Action Step
+        id: pytest
+        uses: paolorechia/fast-pytest-github-action@develop
+        with:
+          pytest_args: '.'
+          requirements_file: 'requirements.txt'

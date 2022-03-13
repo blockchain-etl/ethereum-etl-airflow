@@ -22,7 +22,7 @@
             "name": "NewAppProxy",
             "type": "event"
         },
-        "contract_address": "select dao from ref('DAOFactory_event_DeployDAO')",
+        "contract_address": "SELECT dao FROM ref('DAOFactory_event_DeployDAO')",
         "field_mapping": {},
         "type": "log"
     },
