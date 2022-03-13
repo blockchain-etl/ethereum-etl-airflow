@@ -1,0 +1,66 @@
+{
+    "parser": {
+      "abi": {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "token0",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "token1",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "pair",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "_uint",
+            "type": "uint256"
+          }
+        ],
+        "name": "PairCreated",
+        "type": "event"
+      },
+      "contract_address": "SELECT * FROM UNNEST(['0x5C0401e81bc07ca70fad469b451682c0d747ef1c', '0xe194c4c5ac32a3c9ffdb358d9bfd523a0b6d1568', '0x334ad834cd4481bb02d09615e7c11a00579a7909', '0xc9e5999b8e75c3feb117f6f73e664b9f3c8ca65c', '0x4e9f683a27a6bdad3fc2764003759277e93696e6', '0xbeb5d47a3f720ec0a390d04b4d41ed7d9688bc7f', '0x835866d37afb8cb8f8334dccdaf66cf01832ff5d', '0x35bd6aeda81a7e5fc7a7832490e71f757b0cd9ce'])",
+      "field_mapping": {},
+      "type": "log"
+    },
+    "table": {
+      "dataset_name": "spiritswap",
+      "schema": [
+        {
+          "description": "",
+          "name": "token0",
+          "type": "STRING"
+        },
+        {
+          "description": "",
+          "name": "token1",
+          "type": "STRING"
+        },
+        {
+          "description": "",
+          "name": "pair",
+          "type": "STRING"
+        },
+        {
+          "description": "",
+          "name": "_uint",
+          "type": "STRING"
+        }
+      ],
+      "table_description": "",
+      "table_name": "SpiritFactory_event_PairCreated"
+    }
+  }
+  
