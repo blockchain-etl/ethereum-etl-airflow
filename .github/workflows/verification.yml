@@ -21,10 +21,3 @@ jobs:
           pip install jsonschema
       - name: Run pyTest to Validate JSON Files
         run: python -m pytest --import-mode=append tests/test_validate_json.py
-      
-      # - name: Pytest Action Step
-      #   id: pytest
-      #   uses: paolorechia/fast-pytest-github-action@develop
-      #   with:
-      #     pytest_args: '.'
-      #     requirements_file: 'requirements.txt'
