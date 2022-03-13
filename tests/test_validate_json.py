@@ -16,7 +16,8 @@ schema_path = 'test_cases/schema/default_schema.json'
 
 pass_tests = ['test_cases/correct_a.json', 'test_cases/correct_b.json',
               'test_cases/correct_c.json', 'test_cases/correct_d.json']
-fail_tests = ['test_cases/wrong_a.json', 'test_cases/wrong_b.json']
+fail_tests = ['test_cases/wrong_a.json', 'test_cases/wrong_b.json', 
+              'test_cases/wrong_c.json']
 
 
 schema = load_json_file(schema_path)
