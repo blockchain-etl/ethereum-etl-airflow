@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_claimDuration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_claimStartTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ClaimStart",
+            "type": "event"
+        },
+        "contract_address": "0x025c6da5bd0e6a5dd1350fda9e3b6a614b205a1f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "apecoin",
+        "schema": [
+            {
+                "description": "",
+                "name": "_claimDuration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_claimStartTime",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AirdropGrapesToken_event_ClaimStart"
+    }
+}
