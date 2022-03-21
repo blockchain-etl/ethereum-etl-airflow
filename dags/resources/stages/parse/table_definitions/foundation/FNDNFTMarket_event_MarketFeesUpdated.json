@@ -25,7 +25,7 @@
             "name": "MarketFeesUpdated",
             "type": "event"
         },
-        "contract_address": "0x8a8f22aa06f47fd453202eb1bd747a073f84bb4b",
+        "contract_address": "0xcda72070e455bb31c7690a170224ce43623d0b6f",
         "field_mapping": {},
         "type": "log"
     },
