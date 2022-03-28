@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "reward_token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "distributor",
+                    "type": "address"
+                }
+            ],
+            "name": "RewardDistributorUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT gauge FROM ref('LiquidityGaugeFactory_event_GaugeCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "reward_token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "distributor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LiquidityGaugeV5_event_RewardDistributorUpdated"
+    }
+}
