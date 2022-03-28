@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "gauge",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                }
+            ],
+            "name": "GaugeCreated",
+            "type": "event"
+        },
+        "contract_address": "0x4e7bbd911cf1efa442bc1b2e9ea01ffe785412ec",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "gauge",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LiquidityGaugeFactory_event_GaugeCreated"
+    }
+}
