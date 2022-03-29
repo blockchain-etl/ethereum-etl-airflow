@@ -27,6 +27,38 @@ select
   block_timestamp
 FROM `blockchain-etl.ethereum_balancer.V2_BalancerPoolToken_event_Transfer` 
 union all
+-- transfers of BPT to the liquidity gauges 
+-- are handled as transfers back to the user
+-- so that the token transfer and the deposit cancel each other out
+select 
+  contract_address as token_address,
+  `to` as from_address,
+  `from` as to_address,
+  value,
+  block_number,
+  block_timestamp
+FROM `blockchain-etl.ethereum_balancer.V2_BalancerPoolToken_event_Transfer` 
+where `to` in (
+  select gauge
+  FROM `blockchain-etl.ethereum_balancer.LiquidityGaugeFactory_event_GaugeCreated` 
+)
+union all
+-- transfers of BPT from the liquidity gauges 
+-- are handled as transfers back to the gauge
+-- so that the token transfer and the withdraw cancel each other out
+select 
+  contract_address as token_address,
+  `to` as from_address,
+  `from` as to_address,
+  value,
+  block_number,
+  block_timestamp
+FROM `blockchain-etl.ethereum_balancer.V2_BalancerPoolToken_event_Transfer` 
+where `from` in (
+  select gauge
+  FROM `blockchain-etl.ethereum_balancer.LiquidityGaugeFactory_event_GaugeCreated` 
+)
+union all
 -- veBAL - 80/20 BPT deposits
 -- are handled as trasnfers back to the user
 -- so that the token transfer and the deposit cancel each other out
