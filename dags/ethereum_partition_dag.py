@@ -2,6 +2,8 @@ from __future__ import print_function
 
 import logging
 
+from airflow.models import Variable
+
 from ethereumetl_airflow.build_partition_dag import build_partition_dag
 
 logging.basicConfig()
