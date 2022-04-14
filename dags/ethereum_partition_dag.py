@@ -15,5 +15,6 @@ DAG = build_partition_dag(
     public_project_id = 'bigquery-public-data',
     public_dataset_name = 'crypto_ethereum',
     load_dag_id='ethereum_load_dag',
+    notification_emails=Variable.get('notification_emails', None),
     schedule_interval='30 13 * * *',
 )
