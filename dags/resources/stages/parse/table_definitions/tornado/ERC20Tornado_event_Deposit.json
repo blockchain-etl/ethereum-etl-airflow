@@ -32,7 +32,7 @@
     "table": {
         "dataset_name": "ethereum_tornado",
         "table_name": "ERC20Tornado_event_Deposit",
-        "table_description": "",
+        "table_description": "Deposit events for 10k DAI, 100k DAI, 0.1 WBTC, 1 WBTC and 10 WBTC Tornado Cash Pools",
         "schema": [
             {
                 "name": "commitment",

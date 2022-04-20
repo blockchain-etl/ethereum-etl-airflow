@@ -32,7 +32,7 @@
     "table": {
         "dataset_name": "ethereum_tornado",
         "table_name": "TornadoCash_erc20_event_Deposit",
-        "table_description": "",
+        "table_description": "Deposit events for 100 DAI, 1k DAI, 5k cDAI, 100 USDC, 1k USDC, 100 USDT and 1k USDT Tornado Cash Pools",
         "schema": [
             {
                 "name": "commitment",

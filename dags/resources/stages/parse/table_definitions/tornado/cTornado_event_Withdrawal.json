@@ -38,7 +38,7 @@
     "table": {
         "dataset_name": "ethereum_tornado",
         "table_name": "cTornado_event_Withdrawal",
-        "table_description": "",
+        "table_description": "Withrawal events for 50k cDai, 500k cDai and 5 million cDai Tornado Cash pools",
         "schema": [
             {
                 "name": "to",

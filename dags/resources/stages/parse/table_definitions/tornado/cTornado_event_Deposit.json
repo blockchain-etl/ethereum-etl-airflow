@@ -32,7 +32,7 @@
     "table": {
         "dataset_name": "ethereum_tornado",
         "table_name": "cTornado_event_Deposit",
-        "table_description": "",
+        "table_description": "Deposit events for 50k cDai, 500k cDai and 5 million cDai Tornado Cash pools",
         "schema": [
             {
                 "name": "commitment",
