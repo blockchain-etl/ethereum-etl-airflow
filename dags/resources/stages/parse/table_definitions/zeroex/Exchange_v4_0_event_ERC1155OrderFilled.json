@@ -78,52 +78,52 @@
         "schema": [
             {
                 "name": "direction",
-                "description": "",
+                "description": "Whether the order is selling or buying the ERC1155 token.",
                 "type": "STRING"
             },
             {
                 "name": "maker",
-                "description": "",
+                "description": "The maker of the order.",
                 "type": "STRING"
             },
             {
                 "name": "taker",
-                "description": "",
+                "description": "The taker of the order.",
                 "type": "STRING"
             },
             {
                 "name": "nonce",
-                "description": "",
+                "description": "The unique maker nonce in the order.",
                 "type": "STRING"
             },
             {
                 "name": "erc20Token",
-                "description": "",
+                "description": "The address of the ERC20 token.",
                 "type": "STRING"
             },
             {
                 "name": "erc20FillAmount",
-                "description": "",
+                "description": "The amount of ERC20 token filled.",
                 "type": "STRING"
             },
             {
                 "name": "erc1155Token",
-                "description": "",
+                "description": "The address of the ERC1155 token.",
                 "type": "STRING"
             },
             {
                 "name": "erc1155TokenId",
-                "description": "",
+                "description": "The ID of the ERC1155 asset.",
                 "type": "STRING"
             },
             {
                 "name": "erc1155FillAmount",
-                "description": "",
+                "description": "The amount of ERC1155 asset filled.",
                 "type": "STRING"
             },
             {
                 "name": "matcher",
-                "description": "",
+                "description": "Currently unused.",
                 "type": "STRING"
             }
         ]

@@ -72,47 +72,47 @@
         "schema": [
             {
                 "name": "direction",
-                "description": "",
+                "description": "Whether the order is selling or buying the ERC721 token.",
                 "type": "STRING"
             },
             {
                 "name": "maker",
-                "description": "",
+                "description": "The maker of the order",
                 "type": "STRING"
             },
             {
                 "name": "taker",
-                "description": "",
+                "description": "The taker of the order",
                 "type": "STRING"
             },
             {
                 "name": "nonce",
-                "description": "",
+                "description": "The unique maker nonce in the order.",
                 "type": "STRING"
             },
             {
                 "name": "erc20Token",
-                "description": "",
+                "description": "The address of the ERC20 token.",
                 "type": "STRING"
             },
             {
                 "name": "erc20TokenAmount",
-                "description": "",
+                "description": "The amount of ERC20 token to sell or buy.",
                 "type": "STRING"
             },
             {
                 "name": "erc721Token",
-                "description": "",
+                "description": "The address of the ERC721 token.",
                 "type": "STRING"
             },
             {
                 "name": "erc721TokenId",
-                "description": "",
+                "description": "The ID of the ERC721 asset.",
                 "type": "STRING"
             },
             {
                 "name": "matcher",
-                "description": "",
+                "description": "If this order was matched with another using `matchERC721Orders()`, this will be the address of the caller. If not, this will be `address(0)`.",
                 "type": "STRING"
             }
         ]

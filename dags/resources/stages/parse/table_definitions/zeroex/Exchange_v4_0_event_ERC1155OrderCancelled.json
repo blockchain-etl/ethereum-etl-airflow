@@ -30,12 +30,12 @@
         "schema": [
             {
                 "name": "maker",
-                "description": "",
+                "description": "The maker of the order.",
                 "type": "STRING"
             },
             {
                 "name": "nonce",
-                "description": "",
+                "description": "The nonce of the order that was cancelled.",
                 "type": "STRING"
             }
         ]
