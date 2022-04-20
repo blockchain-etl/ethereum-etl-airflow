@@ -74,7 +74,7 @@
     "table": {
         "dataset_name": "zeroex",
         "table_name": "Exchange_v4_0_event_ERC1155OrderFilled",
-        "table_description": "",
+        "table_description": "Emitted whenever an `ERC1155Order` is filled.",
         "schema": [
             {
                 "name": "direction",
@@ -123,7 +123,7 @@
             },
             {
                 "name": "matcher",
-                "description": "Emitted whenever an `ERC1155Order` is filled.",
+                "description": "",
                 "type": "STRING"
             }
         ]

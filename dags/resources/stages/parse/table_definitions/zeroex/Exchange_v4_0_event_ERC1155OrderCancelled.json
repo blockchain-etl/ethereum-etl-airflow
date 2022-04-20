@@ -26,7 +26,7 @@
     "table": {
         "dataset_name": "zeroex",
         "table_name": "Exchange_v4_0_event_ERC1155OrderCancelled",
-        "table_description": "",
+        "table_description": "Emitted whenever an `ERC1155Order` is canceled.",
         "schema": [
             {
                 "name": "maker",
@@ -35,7 +35,7 @@
             },
             {
                 "name": "nonce",
-                "description": "Emitted whenever an `ERC1155Order` is canceled.",
+                "description": "",
                 "type": "STRING"
             }
         ]
