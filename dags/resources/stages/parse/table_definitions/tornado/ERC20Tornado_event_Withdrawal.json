@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT * FROM UNNEST(['0x07687e702b410fa43f4cb4af7fa097918ffd2730', '0x23773e65ed146a459791799d01336db287f25334', '0x178169b423a011fff22b9e3f3abea13414ddd0f1', '0x610b717796ad172b316836ac95a2ffad065ceab4', '0xbb93e510bbcd0b7beb5a853875f9ec60275cf498'])",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "nullifierHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "relayer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Withdrawal",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "ethereum_tornado",
+        "table_name": "ERC20Tornado_event_Withdrawal",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nullifierHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "relayer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fee",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
