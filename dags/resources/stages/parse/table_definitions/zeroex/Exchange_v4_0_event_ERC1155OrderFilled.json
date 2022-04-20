@@ -1,0 +1,131 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "enum LibNFTOrder.TradeDirection",
+                    "name": "direction",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20TokenV06",
+                    "name": "erc20Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc20FillAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC1155Token",
+                    "name": "erc1155Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc1155TokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "erc1155FillAmount",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "matcher",
+                    "type": "address"
+                }
+            ],
+            "name": "ERC1155OrderFilled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v4_0_event_ERC1155OrderFilled",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "direction",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "maker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "taker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "erc20Token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "erc20FillAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "erc1155Token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "erc1155TokenId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "erc1155FillAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "matcher",
+                "description": "Emitted whenever an `ERC1155Order` is filled.",
+                "type": "STRING"
+            }
+        ]
+    }
+}

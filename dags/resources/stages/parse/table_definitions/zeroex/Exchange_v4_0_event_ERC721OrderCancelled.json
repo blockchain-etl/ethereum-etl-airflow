@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ERC721OrderCancelled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v4_0_event_ERC721OrderCancelled",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "maker",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "Emitted whenever an `ERC721Order` is canceled.",
+                "type": "STRING"
+            }
+        ]
+    }
+}
