@@ -36,7 +36,7 @@
         "field_mapping": {}
     },
     "table": {
-        "dataset_name": "ethereum_tornado",
+        "dataset_name": "tornado",
         "table_name": "TornadoCash_erc20_event_Withdrawal",
         "table_description": "Withdrawal events for 100 DAI, 1k DAI, 5k cDAI, 100 USDC, 1k USDC, 100 USDT and 1k USDT Tornado Cash Pools",
         "schema": [

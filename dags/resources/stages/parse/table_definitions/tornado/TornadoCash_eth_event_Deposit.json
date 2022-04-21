@@ -30,7 +30,7 @@
         "field_mapping": {}
     },
     "table": {
-        "dataset_name": "ethereum_tornado",
+        "dataset_name": "tornado",
         "table_name": "TornadoCash_eth_event_Deposit",
         "table_description": "Deposit events for 1 ETH, 10 ETH and 100 ETH Tornado Cash Pools",
         "schema": [
