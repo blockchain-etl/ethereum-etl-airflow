@@ -1,0 +1,131 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "enum LibNFTOrder.TradeDirection",
+                    "name": "direction",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20TokenV06",
+                    "name": "erc20Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc20FillAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC1155Token",
+                    "name": "erc1155Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc1155TokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "erc1155FillAmount",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "matcher",
+                    "type": "address"
+                }
+            ],
+            "name": "ERC1155OrderFilled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v4_0_event_ERC1155OrderFilled",
+        "table_description": "Emitted whenever an `ERC1155Order` is filled.",
+        "schema": [
+            {
+                "name": "direction",
+                "description": "Whether the order is selling or buying the ERC1155 token.",
+                "type": "STRING"
+            },
+            {
+                "name": "maker",
+                "description": "The maker of the order.",
+                "type": "STRING"
+            },
+            {
+                "name": "taker",
+                "description": "The taker of the order.",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "The unique maker nonce in the order.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc20Token",
+                "description": "The address of the ERC20 token.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc20FillAmount",
+                "description": "The amount of ERC20 token filled.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc1155Token",
+                "description": "The address of the ERC1155 token.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc1155TokenId",
+                "description": "The ID of the ERC1155 asset.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc1155FillAmount",
+                "description": "The amount of ERC1155 asset filled.",
+                "type": "STRING"
+            },
+            {
+                "name": "matcher",
+                "description": "Currently unused.",
+                "type": "STRING"
+            }
+        ]
+    }
+}

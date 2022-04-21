@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "enum LibNFTOrder.TradeDirection",
+                    "name": "direction",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20TokenV06",
+                    "name": "erc20Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc20TokenAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC721Token",
+                    "name": "erc721Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "erc721TokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "matcher",
+                    "type": "address"
+                }
+            ],
+            "name": "ERC721OrderFilled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "table_name": "Exchange_v4_0_event_ERC721OrderFilled",
+        "table_description": "Emitted whenever an `ERC721Order` is filled.",
+        "schema": [
+            {
+                "name": "direction",
+                "description": "Whether the order is selling or buying the ERC721 token.",
+                "type": "STRING"
+            },
+            {
+                "name": "maker",
+                "description": "The maker of the order",
+                "type": "STRING"
+            },
+            {
+                "name": "taker",
+                "description": "The taker of the order",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "The unique maker nonce in the order.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc20Token",
+                "description": "The address of the ERC20 token.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc20TokenAmount",
+                "description": "The amount of ERC20 token to sell or buy.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc721Token",
+                "description": "The address of the ERC721 token.",
+                "type": "STRING"
+            },
+            {
+                "name": "erc721TokenId",
+                "description": "The ID of the ERC721 asset.",
+                "type": "STRING"
+            },
+            {
+                "name": "matcher",
+                "description": "If this order was matched with another using `matchERC721Orders()`, this will be the address of the caller. If not, this will be `address(0)`.",
+                "type": "STRING"
+            }
+        ]
+    }
+}
