@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT * FROM UNNEST(['0xd4b88df4d29f5cedd6857912842cff3b20c8cfa3', '0xfd8610d20aa15b7b2e3be39b396a1bc3516c7144', '0xd96f2b1c14db8458374d9aca76e26c3d18364307', '0x4736dcf1b7a3d580672cce6e7c65cd5cc9cfba9d', '0x169ad27a470d064dede56a2d3ff727986b15d52b', '0x0836222f2b2b24a3f36f98668ed8f0b38d1a872f', '0x22aaa7720ddd5388a3c0a3333430953c68f1849b'])",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "commitment",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "leafIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "table_name": "TornadoCash_erc20_event_Deposit",
+        "table_description": "Deposit events for 100 DAI, 1k DAI, 5k cDAI, 100 USDC, 1k USDC, 100 USDT and 1k USDT Tornado Cash Pools",
+        "schema": [
+            {
+                "name": "commitment",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "leafIndex",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "timestamp",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x12d66f87a04a9e220743712ce6d9bb1b5616b8fc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "nullifierHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "relayer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Withdrawal",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "table_name": "TornadoCash_Eth_01_event_Withdrawal",
+        "table_description": "Withdrawal events for 0.1 ETH Tornado Cash Pool",
+        "schema": [
+            {
+                "name": "to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nullifierHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "relayer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fee",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

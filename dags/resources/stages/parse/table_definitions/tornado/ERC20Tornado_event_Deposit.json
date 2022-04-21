@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT * FROM UNNEST(['0x07687e702b410fa43f4cb4af7fa097918ffd2730', '0x23773e65ed146a459791799d01336db287f25334', '0x178169b423a011fff22b9e3f3abea13414ddd0f1', '0x610b717796ad172b316836ac95a2ffad065ceab4', '0xbb93e510bbcd0b7beb5a853875f9ec60275cf498'])",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "commitment",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "leafIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "table_name": "ERC20Tornado_event_Deposit",
+        "table_description": "Deposit events for 10k DAI, 100k DAI, 0.1 WBTC, 1 WBTC and 10 WBTC Tornado Cash Pools",
+        "schema": [
+            {
+                "name": "commitment",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "leafIndex",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "timestamp",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

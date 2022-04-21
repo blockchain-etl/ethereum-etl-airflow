@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "SELECT * FROM UNNEST(['0x03893a7c7463ae47d46bc7f091665f1893656003', '0x2717c5e28cf931547b621a5dddb772ab6a35b701', '0xd21be7248e0197ee08e0c20d4a96debdac3d20af'])",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "commitment",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "leafIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "tornado",
+        "table_name": "cTornado_event_Deposit",
+        "table_description": "Deposit events for 50k cDai, 500k cDai and 5 million cDai Tornado Cash pools",
+        "schema": [
+            {
+                "name": "commitment",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "leafIndex",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "timestamp",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
