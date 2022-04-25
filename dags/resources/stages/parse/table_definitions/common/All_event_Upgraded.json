@@ -17,7 +17,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_common",
+        "dataset_name": "common",
         "schema": [
             {
                 "description": "",
