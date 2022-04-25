@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "Upgraded",
+            "type": "event"
+        },
+        "contract_address": null,
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_common",
+        "schema": [
+            {
+                "description": "",
+                "name": "implementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "Emitted when a contract is deployed to manage assets.",
+        "table_name": "All_event_Upgraded"
+    }
+}
