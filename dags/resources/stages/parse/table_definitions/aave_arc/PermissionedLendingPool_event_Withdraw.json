@@ -10,7 +10,7 @@
                     "type": "address"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
@@ -18,7 +18,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "onBehalfOf",
+                    "name": "to",
                     "type": "address"
                 },
                 {
@@ -26,30 +26,12 @@
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "borrowRateMode",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "borrowRate",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint16",
-                    "name": "referral",
-                    "type": "uint16"
                 }
             ],
-            "name": "Borrow",
+            "name": "Withdraw",
             "type": "event"
         },
-        "contract_address": "0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0",
+        "contract_address": "0x37d7306019a38af123e4b245eb6c28af552e0bb0",
         "field_mapping": {},
         "type": "log"
     },
@@ -68,31 +50,16 @@
             },
             {
                 "description": "",
-                "name": "onBehalfOf",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "amount",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "borrowRateMode",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "borrowRate",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "referral",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_Arc_event_Borrow"
+        "table_name": "PermissionedLendingPool_event_Withdraw"
     }
 }

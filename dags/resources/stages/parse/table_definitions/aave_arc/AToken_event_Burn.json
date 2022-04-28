@@ -12,7 +12,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "to",
+                    "name": "target",
                     "type": "address"
                 },
                 {
@@ -20,12 +20,18 @@
                     "internalType": "uint256",
                     "name": "value",
                     "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
                 }
             ],
-            "name": "Transfer",
+            "name": "Burn",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x89eFaC495C65d43619c661df654ec64fc10C0A75', '0xd35f648C3C7f17cd1Ba92e5eac991E3EfcD4566d', '0xe6d6e7da65a2c18109ff56b7cbbdc7b706fc13f8', '0x319190E3Bbc595602A9E63B2bCfB61c6634355b1'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x89efac495c65d43619c661df654ec64fc10c0a75', '0xd35f648c3c7f17cd1ba92e5eac991e3efcd4566d', '0xe6d6e7da65a2c18109ff56b7cbbdc7b706fc13f8', '0x319190e3bbc595602a9e63b2bcfb61c6634355b1'])",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +45,21 @@
             },
             {
                 "description": "",
-                "name": "to",
+                "name": "target",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "value",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_Arc_event_Transfer"
+        "table_name": "AToken_event_Burn"
     }
 }

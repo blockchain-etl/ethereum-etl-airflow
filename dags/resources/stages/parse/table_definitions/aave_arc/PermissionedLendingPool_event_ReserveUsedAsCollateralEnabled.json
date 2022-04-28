@@ -14,18 +14,12 @@
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "rateMode",
-                    "type": "uint256"
                 }
             ],
-            "name": "Swap",
+            "name": "ReserveUsedAsCollateralEnabled",
             "type": "event"
         },
-        "contract_address": "0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0",
+        "contract_address": "0x37d7306019a38af123e4b245eb6c28af552e0bb0",
         "field_mapping": {},
         "type": "log"
     },
@@ -41,14 +35,9 @@
                 "description": "",
                 "name": "user",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "rateMode",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_Arc_event_Swap"
+        "table_name": "PermissionedLendingPool_event_ReserveUsedAsCollateralEnabled"
     }
 }

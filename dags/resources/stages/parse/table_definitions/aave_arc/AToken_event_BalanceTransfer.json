@@ -6,32 +6,32 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "reserve",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "user",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "repayer",
+                    "name": "to",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
                     "type": "uint256"
                 }
             ],
-            "name": "Repay",
+            "name": "BalanceTransfer",
             "type": "event"
         },
-        "contract_address": "0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0",
+        "contract_address": "SELECT * FROM UNNEST(['0x89efac495c65d43619c661df654ec64fc10c0a75', '0xd35f648c3c7f17cd1ba92e5eac991e3efcd4566d', '0xe6d6e7da65a2c18109ff56b7cbbdc7b706fc13f8', '0x319190e3bbc595602a9e63b2bcfb61c6634355b1'])",
         "field_mapping": {},
         "type": "log"
     },
@@ -40,26 +40,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "reserve",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "user",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "repayer",
+                "name": "value",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "index",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_Arc_event_Repay"
+        "table_name": "AToken_event_BalanceTransfer"
     }
 }

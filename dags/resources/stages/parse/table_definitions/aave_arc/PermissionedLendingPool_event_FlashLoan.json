@@ -6,50 +6,44 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "collateralAsset",
+                    "name": "target",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "debtAsset",
+                    "name": "initiator",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "user",
+                    "name": "asset",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "debtToCover",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "liquidatedCollateralAmount",
+                    "name": "premium",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "liquidator",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "receiveAToken",
-                    "type": "bool"
+                    "internalType": "uint16",
+                    "name": "referralCode",
+                    "type": "uint16"
                 }
             ],
-            "name": "LiquidationCall",
+            "name": "FlashLoan",
             "type": "event"
         },
-        "contract_address": "0x37D7306019a38Af123e4b245Eb6C28AF552e0bB0",
+        "contract_address": "0x37d7306019a38af123e4b245eb6c28af552e0bb0",
         "field_mapping": {},
         "type": "log"
     },
@@ -58,41 +52,36 @@
         "schema": [
             {
                 "description": "",
-                "name": "collateralAsset",
+                "name": "target",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "debtAsset",
+                "name": "initiator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "user",
+                "name": "asset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "debtToCover",
+                "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "liquidatedCollateralAmount",
+                "name": "premium",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "liquidator",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "receiveAToken",
+                "name": "referralCode",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "LendingPool_Arc_event_LiquidationCall"
+        "table_name": "PermissionedLendingPool_event_FlashLoan"
     }
 }
