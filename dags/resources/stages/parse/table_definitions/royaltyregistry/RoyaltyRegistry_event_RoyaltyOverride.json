@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "royaltyAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "RoyaltyOverride",
+            "type": "event"
+        },
+        "contract_address": "0xad2184fb5dbcfc05d8f056542fb25b04fa32a95d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "royaltyregistry",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "royaltyAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RoyaltyRegistry_event_RoyaltyOverride"
+    }
+}
