@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bool",
+                    "name": "claimableActive",
+                    "type": "bool"
+                }
+            ],
+            "name": "ClaimableStateChanged",
+            "type": "event"
+        },
+        "contract_address": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "otherside",
+        "schema": [
+            {
+                "description": "",
+                "name": "claimableActive",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Land_event_ClaimableStateChanged"
+    }
+}

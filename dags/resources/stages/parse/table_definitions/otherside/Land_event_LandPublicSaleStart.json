@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_saleDuration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_saleStartTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LandPublicSaleStart",
+            "type": "event"
+        },
+        "contract_address": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "otherside",
+        "schema": [
+            {
+                "description": "",
+                "name": "_saleDuration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_saleStartTime",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Land_event_LandPublicSaleStart"
+    }
+}
