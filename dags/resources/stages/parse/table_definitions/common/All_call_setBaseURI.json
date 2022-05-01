@@ -19,7 +19,7 @@
     },
     "table": {
         "dataset_name": "common",
-        "table_name": "erc721_call_setBaseURI",
+        "table_name": "All_call_setBaseURI",
         "table_description": "",
         "schema": [
             {
