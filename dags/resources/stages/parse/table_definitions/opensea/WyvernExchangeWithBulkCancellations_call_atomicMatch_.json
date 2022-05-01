@@ -1,0 +1,123 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "addrs",
+                    "type": "address[14]"
+                },
+                {
+                    "name": "uints",
+                    "type": "uint256[18]"
+                },
+                {
+                    "name": "feeMethodsSidesKindsHowToCalls",
+                    "type": "uint8[8]"
+                },
+                {
+                    "name": "calldataBuy",
+                    "type": "bytes"
+                },
+                {
+                    "name": "calldataSell",
+                    "type": "bytes"
+                },
+                {
+                    "name": "replacementPatternBuy",
+                    "type": "bytes"
+                },
+                {
+                    "name": "replacementPatternSell",
+                    "type": "bytes"
+                },
+                {
+                    "name": "staticExtradataBuy",
+                    "type": "bytes"
+                },
+                {
+                    "name": "staticExtradataSell",
+                    "type": "bytes"
+                },
+                {
+                    "name": "vs",
+                    "type": "uint8[2]"
+                },
+                {
+                    "name": "rssMetadata",
+                    "type": "bytes32[5]"
+                }
+            ],
+            "name": "atomicMatch_",
+            "outputs": [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x7f268357a8c2552623316e2562d90e642bb538e5",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "addrs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "uints",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeMethodsSidesKindsHowToCalls",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "calldataBuy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "calldataSell",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "replacementPatternBuy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "replacementPatternSell",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "staticExtradataBuy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "staticExtradataSell",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rssMetadata",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WyvernExchangeWithBulkCancellations_call_atomicMatch_"
+    }
+}

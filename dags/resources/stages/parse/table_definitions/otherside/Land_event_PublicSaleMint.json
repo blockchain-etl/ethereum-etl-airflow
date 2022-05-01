@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "numLands",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "mintPrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PublicSaleMint",
+            "type": "event"
+        },
+        "contract_address": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "otherside",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "numLands",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mintPrice",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Land_event_PublicSaleMint"
+    }
+}
