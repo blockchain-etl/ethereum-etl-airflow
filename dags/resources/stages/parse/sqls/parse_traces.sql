@@ -9,13 +9,14 @@ WITH parsed_traces AS
     ,traces.status AS status
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(traces.input) AS parsed
 FROM `{{full_source_table_name}}` AS traces
-WHERE to_address IN (
+WHERE 
     {% if parser.contract_address_sql %}
-    {{parser.contract_address_sql}}
+    to_address IN ({{parser.contract_address_sql}})
+    {% elif parser.contract_address is none %}
+    true
     {% else %}
-    lower('{{parser.contract_address}}')
+    to_address IN (lower('{{parser.contract_address}}'))
     {% endif %}
-  )
   AND STARTS_WITH(traces.input, '{{selector}}')
 
   {% if parse_mode == 'live' %}
