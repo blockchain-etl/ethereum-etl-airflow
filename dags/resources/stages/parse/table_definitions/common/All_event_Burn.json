@@ -26,12 +26,12 @@
         "schema": [
             {
                 "description": "",
-                "name": "burner",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
