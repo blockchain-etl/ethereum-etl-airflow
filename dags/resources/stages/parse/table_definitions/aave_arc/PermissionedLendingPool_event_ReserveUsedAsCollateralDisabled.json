@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                }
+            ],
+            "name": "ReserveUsedAsCollateralDisabled",
+            "type": "event"
+        },
+        "contract_address": "0x37d7306019a38af123e4b245eb6c28af552e0bb0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave_arc",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PermissionedLendingPool_event_ReserveUsedAsCollateralDisabled"
+    }
+}

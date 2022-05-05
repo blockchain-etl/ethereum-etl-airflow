@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "underlyingAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "treasury",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "incentivesController",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "aTokenDecimals",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "aTokenName",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "aTokenSymbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "params",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Initialized",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x89efac495c65d43619c661df654ec64fc10c0a75', '0xd35f648c3c7f17cd1ba92e5eac991e3efcd4566d', '0xe6d6e7da65a2c18109ff56b7cbbdc7b706fc13f8', '0x319190e3bbc595602a9e63b2bcfb61c6634355b1'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave_arc",
+        "schema": [
+            {
+                "description": "",
+                "name": "underlyingAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "treasury",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "incentivesController",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "aTokenDecimals",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "aTokenName",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "aTokenSymbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "params",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AToken_event_Initialized"
+    }
+}
