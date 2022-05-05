@@ -1,7 +1,6 @@
 {
     "parser": {
         "abi": {
-            
             "anonymous": false,
             "inputs": [
                 {
