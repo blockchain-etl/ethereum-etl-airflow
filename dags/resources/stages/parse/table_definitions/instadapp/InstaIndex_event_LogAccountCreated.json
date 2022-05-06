@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "origin",
+                    "type": "address"
+                }
+            ],
+            "name": "LogAccountCreated",
+            "type": "event"
+        },
+        "contract_address": "0x2971adfa57b20e5a416ae5a708a8655a9c74f723",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "instadapp",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "origin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "Emitted when new InstaAccount is created",
+        "table_name": "InstaIndex_event_LogAccountCreated"
+    }
+}

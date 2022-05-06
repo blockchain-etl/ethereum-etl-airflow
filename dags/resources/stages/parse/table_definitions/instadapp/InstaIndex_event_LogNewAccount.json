@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_newAccount",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_connectors",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_check",
+                    "type": "address"
+                }
+            ],
+            "name": "LogNewAccount",
+            "type": "event"
+        },
+        "contract_address": "0x2971adfa57b20e5a416ae5a708a8655a9c74f723",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "instadapp",
+        "schema": [
+            {
+                "description": "",
+                "name": "_newAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_connectors",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_check",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "InstaIndex_event_LogNewAccount"
+    }
+}
