@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "accountVersion",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "check",
+                    "type": "address"
+                }
+            ],
+            "name": "LogNewCheck",
+            "type": "event"
+        },
+        "contract_address": "0x2971adfa57b20e5a416ae5a708a8655a9c74f723",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "instadapp",
+        "schema": [
+            {
+                "description": "",
+                "name": "accountVersion",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "check",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "InstaIndex_event_LogNewCheck"
+    }
+}
