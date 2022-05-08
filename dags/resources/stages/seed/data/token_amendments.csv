@@ -17,7 +17,7 @@ address,symbol,name,decimals
 0x6b3595068778dd592e39a122f4f5a5cf09c90fe2,SUSHI,SushiToken,18
 0xc944e90c64b2c07662a292be6244bdf05cda44a7,GRT,Graph Token,18
 0xbbbbca6a901c926f240b89eacb641d8aec7aeafd,LRC,LoopringCoin V2,18
-0x8e870d67f660d95d5be530380d0ec0bd388289e1,PAX,Paxos Standard,18
+0x8e870d67f660d95d5be530380d0ec0bd388289e1,USDP,Pax Dollar,18
 0x0000000000095413afc295d19edeb1ad7b71c952,LON,Tokenlon,18
 0xa117000000f279d81a1d3cc75430faa017fa5a2e,ANT,Aragon Network Token,18
 0xba100000625a3754423978a60c9317c58a424e3d,BAL,Balancer,18
@@ -53,3 +53,6 @@ address,symbol,name,decimals
 0x8798249c2e607446efb7ad49ec89dd1865ff4272,xSUSHI,SushiBar,18
 0x03ab458634910aad20ef5f1c8ee96f1d6ac54919,RAI,Rai Reflex Index,18
 0xd5147bc8e386d91cc5dbe72099dac6c9b99276f5,renFIL,renFIL,18
+0xfca59cd816ab1ead66534d82bc21e7515ce441cf,RARI,Rarible,18
+0x15d4c048f83bd7e37d49ea4c83a07267ec4203da,GALA,Gala,8
+0xcc8fa225d80b9c7d42f96e9570156c65d6caaa25,SLP,Smooth Love Potion,0
