@@ -25,7 +25,7 @@
             "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT collectionContract FROM ref('foundation_event_CollectionCreated')",
+        "contract_address": "SELECT collectionContract FROM ref('FNDCollectionFactory_event_CollectionCreated')",
         "field_mapping": {},
         "type": "log"
     },
