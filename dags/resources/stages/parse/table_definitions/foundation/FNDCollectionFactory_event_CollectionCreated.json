@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "collectionContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "version",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CollectionCreated",
+            "type": "event"
+        },
+        "contract_address": "0x3b612a5b49e025a6e4ba4ee4fb1ef46d13588059",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "foundation",
+        "schema": [
+            {
+                "description": "",
+                "name": "collectionContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "version",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FNDCollectionFactory_event_CollectionCreated"
+    }
+}
