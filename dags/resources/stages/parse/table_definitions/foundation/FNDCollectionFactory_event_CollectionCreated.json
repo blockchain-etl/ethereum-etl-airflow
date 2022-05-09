@@ -82,6 +82,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "foundation_event_CollectionCreated"
+        "table_name": "FNDCollectionFactory_event_CollectionCreated"
     }
 }
