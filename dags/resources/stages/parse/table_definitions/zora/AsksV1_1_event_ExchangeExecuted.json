@@ -1,0 +1,133 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "userA",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "userB",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenContract",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct UniversalExchangeEventV1.ExchangeDetails",
+                    "name": "a",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "tokenContract",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct UniversalExchangeEventV1.ExchangeDetails",
+                    "name": "b",
+                    "type": "tuple"
+                }
+            ],
+            "name": "ExchangeExecuted",
+            "type": "event"
+        },
+        "contract_address": "0x6170b3c3a54c3d8c854934cbc314ed479b2b29a3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zora",
+        "schema": [
+            {
+                "description": "",
+                "name": "userA",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "userB",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "tokenContract",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "tokenId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "amount",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "a",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "tokenContract",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "tokenId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "amount",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "b",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AsksV1_1_event_ExchangeExecuted"
+    }
+}
