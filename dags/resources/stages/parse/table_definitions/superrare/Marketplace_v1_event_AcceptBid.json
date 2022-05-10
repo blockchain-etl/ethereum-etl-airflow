@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x2947f98c42597966a0ec25e92843c09ac17fbaa7",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "_originContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_bidder",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "_seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "_tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AcceptBid",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "superrare",
+        "table_name": "Marketplace_v1_event_AcceptBid",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_originContract",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_bidder",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_seller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_tokenId",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
