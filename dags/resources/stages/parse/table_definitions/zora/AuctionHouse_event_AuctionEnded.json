@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "auctionId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tokenContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "tokenOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "curator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "winner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "curatorFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "auctionCurrency",
+                    "type": "address"
+                }
+            ],
+            "name": "AuctionEnded",
+            "type": "event"
+        },
+        "contract_address": "0xe468ce99444174bd3bbbed09209577d25d1ad673",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zora",
+        "schema": [
+            {
+                "description": "",
+                "name": "auctionId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "curator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "winner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "curatorFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionCurrency",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AuctionHouse_event_AuctionEnded"
+    }
+}
