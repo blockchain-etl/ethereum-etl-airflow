@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "wallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "guardian",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "refundToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "refundAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WalletCreated",
+            "type": "event"
+        },
+        "contract_address": "0x536384fcd25b576265b6775f383d5ac408ff9db7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "wallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "guardian",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "refundToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "refundAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WalletFactory_2_event_WalletCreated"
+    }
+}
