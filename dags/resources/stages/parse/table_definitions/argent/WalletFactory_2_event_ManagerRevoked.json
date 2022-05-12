@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_manager",
+                    "type": "address"
+                }
+            ],
+            "name": "ManagerRevoked",
+            "type": "event"
+        },
+        "contract_address": "0x536384fcd25b576265b6775f383d5ac408ff9db7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "_manager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WalletFactory_2_event_ManagerRevoked"
+    }
+}
