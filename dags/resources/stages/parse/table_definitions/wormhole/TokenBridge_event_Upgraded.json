@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "Upgraded",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "TokenBridge_event_Upgraded",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "implementation",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
