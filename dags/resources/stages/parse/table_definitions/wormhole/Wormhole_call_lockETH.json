@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0xf92cd566ea4864356c5491c177a430c222d7e678",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "recipient",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "target_chain",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "nonce",
+                    "type": "uint32"
+                }
+            ],
+            "name": "lockETH",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "Wormhole_call_lockETH",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "recipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "target_chain",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

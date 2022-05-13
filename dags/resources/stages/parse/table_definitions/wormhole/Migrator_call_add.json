@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0xf39c29d8f6851d87c40c83b61078eb7384f7cb51",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "add",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "Migrator_call_add",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_amount",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

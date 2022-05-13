@@ -1,0 +1,82 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0xf92cd566ea4864356c5491c177a430c222d7e678",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "recipient",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "target_chain",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "nonce",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "refund_dust",
+                    "type": "bool"
+                }
+            ],
+            "name": "lockAssets",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "Wormhole_call_lockAssets",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "asset",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "recipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "target_chain",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "refund_dust",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
