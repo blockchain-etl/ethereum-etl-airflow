@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf92cd566ea4864356c5491c177a430c222d7e678",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "oldGuardianIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "newGuardianIndex",
+                    "type": "uint32"
+                }
+            ],
+            "name": "LogGuardianSetChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "Wormhole_event_LogGuardianSetChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "oldGuardianIndex",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newGuardianIndex",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xf92cd566ea4864356c5491c177a430c222d7e678",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "target_chain",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "token_chain",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "token_decimals",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "token",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "sender",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "recipient",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "nonce",
+                    "type": "uint32"
+                }
+            ],
+            "name": "LogTokensLocked",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "Wormhole_event_LogTokensLocked",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "target_chain",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "token_chain",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "token_decimals",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "sender",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "recipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
