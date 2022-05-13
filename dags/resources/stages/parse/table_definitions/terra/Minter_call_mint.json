@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x9123077acafb3d743c68418304b2a11566cc1175",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "_txHash",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "_signatures",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "mint",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "terra",
+        "table_name": "Minter_call_mint",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_txHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_signatures",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

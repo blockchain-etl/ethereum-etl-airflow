@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x9123077acafb3d743c68418304b2a11566cc1175",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_signer",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "_signatures",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "removeSigner",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "terra",
+        "table_name": "Minter_call_removeSigner",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_signer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_signatures",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

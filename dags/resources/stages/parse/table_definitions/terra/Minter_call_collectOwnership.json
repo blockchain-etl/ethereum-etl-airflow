@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x9123077acafb3d743c68418304b2a11566cc1175",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "_signatures",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "collectOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "terra",
+        "table_name": "Minter_call_collectOwnership",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_token",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_signatures",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x9123077acafb3d743c68418304b2a11566cc1175",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_newThreshold",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "_signatures",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "changeThreshold",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "terra",
+        "table_name": "Minter_call_changeThreshold",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_newThreshold",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_signatures",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
