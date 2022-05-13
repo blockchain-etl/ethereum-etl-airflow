@@ -1,0 +1,75 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "encoded",
+                    "type": "bytes"
+                }
+            ],
+            "name": "parseTransfer",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint8",
+                            "name": "payloadID",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "tokenAddress",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "tokenChain",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "to",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "toChain",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "fee",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct BridgeStructs.Transfer",
+                    "name": "transfer",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "TokenBridge_call_parseTransfer",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "encoded",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "abi": {
+            "inputs": [],
+            "name": "initialize",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "TokenBridge_call_initialize",
+        "table_description": "",
+        "schema": []
+    }
+}

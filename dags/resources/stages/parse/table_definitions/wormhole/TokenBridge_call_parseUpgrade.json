@@ -1,0 +1,60 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "encoded",
+                    "type": "bytes"
+                }
+            ],
+            "name": "parseUpgrade",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "module",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "action",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "chainId",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "newContract",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "internalType": "struct BridgeStructs.UpgradeContract",
+                    "name": "chain",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "TokenBridge_call_parseUpgrade",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "encoded",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

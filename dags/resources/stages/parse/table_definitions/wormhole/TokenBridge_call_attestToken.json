@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "nonce",
+                    "type": "uint32"
+                }
+            ],
+            "name": "attestToken",
+            "outputs": [
+                {
+                    "internalType": "uint64",
+                    "name": "sequence",
+                    "type": "uint64"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "table_name": "TokenBridge_call_attestToken",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "tokenAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "nonce",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
