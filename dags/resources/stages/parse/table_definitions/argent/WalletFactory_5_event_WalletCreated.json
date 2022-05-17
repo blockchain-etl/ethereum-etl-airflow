@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "wallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "guardian",
+                    "type": "address"
+                }
+            ],
+            "name": "WalletCreated",
+            "type": "event"
+        },
+        "contract_address": "0x9ae0acdb750bfcf694675f46b580847fc49a48bf",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "wallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "guardian",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WalletFactory_5_event_WalletCreated"
+    }
+}
