@@ -5,12 +5,20 @@
             "inputs": [
                 {
                     "indexed": true,
+                    "internalType": "int256",
                     "name": "current",
                     "type": "int256"
                 },
                 {
                     "indexed": true,
-                    "name": "answerId",
+                    "internalType": "uint256",
+                    "name": "roundId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "updatedAt",
                     "type": "uint256"
                 }
             ],
@@ -31,7 +39,12 @@
             },
             {
                 "description": "",
-                "name": "answerId",
+                "name": "roundId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "updatedAt",
                 "type": "STRING"
             }
         ],
