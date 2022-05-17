@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "new_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "version",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddressModified",
+            "type": "event"
+        },
+        "contract_address": "0x0000000022d53366457f9d5e68ec105046fc4383",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "version",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Registry_provider_event_AddressModified"
+    }
+}
