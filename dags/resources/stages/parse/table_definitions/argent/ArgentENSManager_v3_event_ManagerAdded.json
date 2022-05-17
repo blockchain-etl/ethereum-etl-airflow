@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_manager",
+                    "type": "address"
+                }
+            ],
+            "name": "ManagerAdded",
+            "type": "event"
+        },
+        "contract_address": "0xf32fddef964b98b1d2d2b1c071ac60ed55d4d217",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "argent",
+        "schema": [
+            {
+                "description": "",
+                "name": "_manager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ArgentENSManager_v3_event_ManagerAdded"
+    }
+}
