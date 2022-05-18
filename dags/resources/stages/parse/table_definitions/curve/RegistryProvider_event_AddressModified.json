@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Registry_provider_event_AddressModified"
+        "table_name": "RegistryProvider_event_AddressModified"
     }
 }
