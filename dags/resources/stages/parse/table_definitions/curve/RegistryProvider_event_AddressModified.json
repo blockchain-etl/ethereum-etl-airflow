@@ -5,50 +5,47 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "int256",
-                    "name": "current",
-                    "type": "int256"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "roundId",
+                    "name": "id",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "updatedAt",
+                    "name": "new_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "version",
                     "type": "uint256"
                 }
             ],
-            "name": "AnswerUpdated",
+            "name": "AddressModified",
             "type": "event"
         },
-        "contract_address": "0x37bc7498f4ff12c19678ee8fe19d713b87f6a9e6",
+        "contract_address": "0x0000000022d53366457f9d5e68ec105046fc4383",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "chainlink",
+        "dataset_name": "curve",
         "schema": [
             {
                 "description": "",
-                "name": "current",
+                "name": "id",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "roundId",
+                "name": "new_address",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "updatedAt",
+                "name": "version",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Aggregator_ETH_USD_event_AnswerUpdated"
+        "table_name": "Registry_provider_event_AddressModified"
     }
 }
