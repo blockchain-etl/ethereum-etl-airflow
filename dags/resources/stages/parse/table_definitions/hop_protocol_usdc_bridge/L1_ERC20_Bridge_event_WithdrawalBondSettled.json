@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "bonder",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "transferId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "rootHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "WithdrawalBondSettled",
+            "type": "event"
+        },
+        "contract_address": "0x3666f603cc164936c1b87e207f36beba4ac5f18a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_usdc_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "bonder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transferId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rootHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ERC20_Bridge_event_WithdrawalBondSettled"
+    }
+}
