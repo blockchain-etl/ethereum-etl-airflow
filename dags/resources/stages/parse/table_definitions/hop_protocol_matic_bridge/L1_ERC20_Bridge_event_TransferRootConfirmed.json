@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "originChainId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "destinationChainId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "rootHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TransferRootConfirmed",
+            "type": "event"
+        },
+        "contract_address": "0x22b1cbb8d98a01a3b71d034bb899775a76eb1cc2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_matic_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "originChainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "destinationChainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rootHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ERC20_Bridge_event_TransferRootConfirmed"
+    }
+}

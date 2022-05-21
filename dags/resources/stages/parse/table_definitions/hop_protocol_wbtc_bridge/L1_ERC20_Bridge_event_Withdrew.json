@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "transferId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "transferNonce",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "Withdrew",
+            "type": "event"
+        },
+        "contract_address": "0xb98454270065a31d71bf635f6f7ee6a518dfb849",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_wbtc_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "transferId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transferNonce",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ERC20_Bridge_event_Withdrew"
+    }
+}

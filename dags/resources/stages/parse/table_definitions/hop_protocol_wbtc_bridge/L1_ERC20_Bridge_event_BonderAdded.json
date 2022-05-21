@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newBonder",
+                    "type": "address"
+                }
+            ],
+            "name": "BonderAdded",
+            "type": "event"
+        },
+        "contract_address": "0xb98454270065a31d71bf635f6f7ee6a518dfb849",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_wbtc_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "newBonder",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ERC20_Bridge_event_BonderAdded"
+    }
+}

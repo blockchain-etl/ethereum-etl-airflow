@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "rootHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TransferRootSet",
+            "type": "event"
+        },
+        "contract_address": "0x3d4cc8a61c7528fd86c55cfe061a78dcba48edd1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_dai_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "rootHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ERC20_Bridge_event_TransferRootSet"
+    }
+}

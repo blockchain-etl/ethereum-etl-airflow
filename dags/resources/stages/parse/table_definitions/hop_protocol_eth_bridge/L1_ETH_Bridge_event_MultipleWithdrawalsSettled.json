@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "bonder",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "rootHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBondsSettled",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MultipleWithdrawalsSettled",
+            "type": "event"
+        },
+        "contract_address": "0xb8901acb165ed027e32754e0ffe830802919727f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_eth_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "bonder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rootHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBondsSettled",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ETH_Bridge_event_MultipleWithdrawalsSettled"
+    }
+}

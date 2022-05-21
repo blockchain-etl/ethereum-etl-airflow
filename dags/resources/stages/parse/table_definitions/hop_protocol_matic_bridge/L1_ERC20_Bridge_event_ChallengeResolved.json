@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "transferRootId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "rootHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "originalAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ChallengeResolved",
+            "type": "event"
+        },
+        "contract_address": "0x22b1cbb8d98a01a3b71d034bb899775a76eb1cc2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "hop_protocol_matic_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "transferRootId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rootHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "originalAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1_ERC20_Bridge_event_ChallengeResolved"
+    }
+}
