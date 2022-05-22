@@ -5,24 +5,24 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "bytes32",
-                    "name": "role",
-                    "type": "bytes32"
-                },
-                {
-                    "indexed": true,
                     "internalType": "address",
-                    "name": "account",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "sender",
+                    "name": "to",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "RoleRevoked",
+            "name": "FRAXBurned",
             "type": "event"
         },
         "contract_address": "0x853d955acef822db058eb8505911ed77f175b99e",
@@ -30,25 +30,25 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_frax",
+        "dataset_name": "frax",
         "schema": [
             {
                 "description": "",
-                "name": "role",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "account",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "sender",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "FRAXStablecoin_event_RoleRevoked"
+        "table_name": "FRAXStablecoin_event_FRAXBurned"
     }
 }

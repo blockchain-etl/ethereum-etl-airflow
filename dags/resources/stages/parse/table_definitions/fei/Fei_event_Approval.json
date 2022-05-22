@@ -6,23 +6,23 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "_to",
+                    "name": "owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "_burner",
+                    "name": "spender",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_amount",
+                    "name": "value",
                     "type": "uint256"
                 }
             ],
-            "name": "Burning",
+            "name": "Approval",
             "type": "event"
         },
         "contract_address": "0x956f47f50a910163d8bf957cf5846d573e7f87ca",
@@ -30,25 +30,25 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_fei",
+        "dataset_name": "fei",
         "schema": [
             {
                 "description": "",
-                "name": "_to",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_burner",
+                "name": "spender",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_amount",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Fei_event_Burning"
+        "table_name": "Fei_event_Approval"
     }
 }

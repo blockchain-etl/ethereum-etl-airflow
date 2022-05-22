@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_mim",
+        "dataset_name": "abracadabra",
         "schema": [
             {
                 "description": "",

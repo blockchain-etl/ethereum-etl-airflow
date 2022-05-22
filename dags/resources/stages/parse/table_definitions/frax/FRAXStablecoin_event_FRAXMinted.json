@@ -30,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_frax",
+        "dataset_name": "frax",
         "schema": [
             {
                 "description": "",

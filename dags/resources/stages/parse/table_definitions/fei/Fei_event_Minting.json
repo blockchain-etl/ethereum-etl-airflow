@@ -6,49 +6,49 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "_to",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "to",
+                    "name": "_minter",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "_amount",
                     "type": "uint256"
                 }
             ],
-            "name": "FRAXBurned",
+            "name": "Minting",
             "type": "event"
         },
-        "contract_address": "0x853d955acef822db058eb8505911ed77f175b99e",
+        "contract_address": "0x956f47f50a910163d8bf957cf5846d573e7f87ca",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_frax",
+        "dataset_name": "fei",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "_to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "to",
+                "name": "_minter",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "_amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "FRAXStablecoin_event_FRAXBurned"
+        "table_name": "Fei_event_Minting"
     }
 }

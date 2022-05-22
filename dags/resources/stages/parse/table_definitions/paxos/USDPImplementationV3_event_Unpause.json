@@ -11,7 +11,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_usdp",
+        "dataset_name": "paxos",
         "schema": [],
         "table_description": "",
         "table_name": "USDPImplementationV3_event_Unpause"

@@ -22,7 +22,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_usdp",
+        "dataset_name": "paxos",
         "schema": [
             {
                 "description": "",
