@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_core",
+                    "type": "address"
+                }
+            ],
+            "name": "CoreUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x956f47f50a910163d8bf957cf5846d573e7f87ca",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "fei",
+        "schema": [
+            {
+                "description": "",
+                "name": "_core",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Fei_event_CoreUpdate"
+    }
+}
