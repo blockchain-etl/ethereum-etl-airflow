@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amounts",
+                    "type": "uint256[4]"
+                },
+                {
+                    "indexed": false,
+                    "name": "fees",
+                    "type": "uint256[4]"
+                },
+                {
+                    "indexed": false,
+                    "name": "invariant",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_supply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidityImbalance",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('MainRegistry_event_PoolAdded') EXCEPT DISTINCT SELECT pool FROM ref('MainRegistry_event_PoolRemoved') UNION ALL SELECT * FROM UNNEST(['0x1f71f05cf491595652378fe94b7820344a551b8e', '0xfd5db7463a3ab53fd211b4af195c5bccc1a03890', '0x8461a004b50d321cb22b7d034969ce6803911899', '0x19b080fe1ffa0553469d20ca36219f17fcf03859', '0x621f13bf667207335c601f8c89ea5ec260bada9a', '0xed24fe718effc6b2fc59eeaa5c5f51dd079ab6ed', '0x6c7fc04fee277eabdd387c5b498a8d0f4cb9c6a6', '0xda5b670ccd418a187a3066674a8002adc9356ad1', '0x99ae07e7ab61dcce4383a86d14f61c68cdccbf27', '0x87650d7bbfc3a9f10587d7778206671719d9910d', '0x6a274de3e2462c7614702474d64d376729831dca', '0x06cb22615ba53e60d67bf6c341a0fd5e718e1655', '0x43b4fdfd4ff969587185cdb6f0bd875c5fc83f8c', '0xd632f22692fac7611d2aa1c0d552930d43caed3b', '0xf5a95ccde486b5fe98852bb02d8ec80a4b9422bd', '0x2009f19a8b46642e92ea19adcdfb23ab05fc20a6', '0xed279fdd11ca84beef15af5d39bb4d4bee23f0ca', '0x883f7d4b6b24f8bf1db980951ad08930d9aec6bc', '0x46f5ab27914a670cfe260a2dedb87f84c264835f', '0x2206cf41e7db9393a3bcbb6ad35d344811523b46', '0x5a6a4d54456819380173272a5e8e9b9904bdf41b', '0x67d9eae741944d4402eb0d1cb3bc3a168ec1764c', '0x9d0464996170c6b9e75eed71c68b99ddedf279e8', '0x5b3b5df2bf2b6543f78e053bd91c4bdd820929f1', '0x3cfaa1596777cad9f5004f9a0c443d912e262243', '0x9f6664205988c3bf4b12b851c075102714869535', '0x6d0bd8365e2fcd0c2acf7d218f629a319b6c9d47', '0xaa5a67c256e27a5d80712c51971408db3370927d', '0x8818a9bb44fbf33502be7c15c500d0c783b73067', '0x3f1b0278a9ee595635b61817630cc19de792f506', '0xd6ac1cb9019137a896343da59dde6d097f710538', '0x9c2c8910f113181783c249d8f6aa41b51cde0f0c', '0xc8a7c1c4b748970f57ca59326bcd49f5c9dc43e3', '0x3fb78e61784c9c637d560ede23ad57ca1294c14a', '0x737bc004136f66ae3f8fd5a1199e81c18388097b', '0x4e52cfc80679f402d10f7766fa3f85351a7c2530', '0x2de8c952871317fb9f22c73bb66bf86a1eebe1a5', '0x08eaf78d40abfa6c341f05692eb48edca425ce04', '0xc4c319e2d4d66cca4464c0c2b32c9bd23ebe784e', '0x66b2e9b25f8aba6b4a10350c785d63bade5a11e9', '0xe76ebd4f9fa58e5269d3cd032b055b443239e664', '0xfa65aa60a9d45623c57d383fb4cf8fb8b854cc4d', '0xed09ca8275dffb09c632b6ea58c035a851f73616', '0xac5f019a302c4c8caac0a7f28183ac62e6e80034', '0xbcb91e689114b9cc865ad7871845c95241df4105', '0xc2f5fea5197a3d92736500fd7733fcc7a3bbdf3f', '0x705da2596cf6aaa2fea36f2a59985ec9e8aec7e2', '0x6870f9b4dd5d34c7fc53d0d85d9dbd1aab339bf7', '0x55a8a39bc9694714e2874c1ce77aa1e599461e18', '0xf03bd3cfe85f00bf5819ac20f0870ce8a8d1f0d8', '0xc8781f2193e2cb861c9325677d98297f94a0dfd3', '0x9f4a88da14f2b6dbc785c1db3511a53b8f342bde', '0x04c90c198b2eff55716079bc06d7ccc4aa4d7512', '0xceaf7747579696a2f0bb206a14210e3c9e6fb269', '0x9fed7a930d86dfe5980040e18c92b1b0d381ec19', '0xf0c081020b9d06eb1b33e357767c00ccc138be7c', '0xfb9a265b5a1f52d97838ec7274a0b1442efacc87', '0xbaaa1f5dba42c3389bdbc2c9d2de134f5cd0dc89', '0x1f6bb2a7a2a84d08bb821b89e38ca651175aedd4', '0xc270b3b858c335b6ba5d5b10e2da8a09976005ad', '0xfbdca68601f835b27790d98bbb8ec7f05fdeaa9b', '0x8df0713b2a047c45a0bef21c3b309bcef91afd34', '0x148a88719ba0b34f16e0f5a7537da73bdc9c2a2a', '0x45a8cc73ec100306af64ab2ccb7b12e70ec549a8', '0xcbd5cc53c5b846671c6434ab301ad4d210c21184', '0xe667c793513ecbd74fb53bb4b91fdae02bfc092d', '0xb9446c4ef5ebe66268da6700d26f96273de3d571', '0x06d39e95977349431e3d800d49c63b4d472e10fb', '0x1033812efec8716bbae0c19e5678698d25e26edf', '0x679ce2a8b3180f5a00e0dcca26783016799e9a58', '0x6d8ff88973b15df3e2dc6abb9af29cad8c2b5ef5', '0x8083b047e962ca45b210e28ac755fbda3d773c5b', '0x3b22b869ba3c0a495cead0b8a009b70886d37fac', '0xbb2dc673e1091abca3eadb622b18f6d4634b2cd9', '0x1c65ba665ce39cfe85639227eccf17be2b167058', '0xa0d35faead5299bf18efbb5defd1ec6d4ab4ef3b', '0xf083fba98ded0f9c970e5a418500bad08d8b9732', '0x76264772707c8bc24261516b560cbf3cbe6f7819', '0xb37d6c07482bc11cd28a1f11f1a6ad7b66dec933', '0x694650a0b2866472c2eea27827ce6253c1d13074', '0x8ed10e4e307822b969bcdaffd49095235f6f892b', '0x3a70dfa7d2262988064a2d051dd47521e43c9bdd', '0x7abd51bba7f9f6ae87ac77e1ea1c5783ada56e5c', '0x5b78b93fa851c357586915c7ba7258b762eb1ba0', '0x0fafafd3c393ead5f5129cfc7e0e12367088c473', '0xd05ce4ab1f4fb0c0e1b65ebe3ed7f2dcfc6ccf20', '0x97aeb34ac6561146dd9ce191efd5634f6465def4', '0x9462f2b3c9beea8afc334cdb1d1382b072e494ea', '0x50b0d9171160d6eb8aa39e090da51e7e078e81c4', '0x447ddd4960d9fdbf6af9a790560d0af76795cb08', '0xcaf8703f8664731ced11f63bb0570e53ab4600a9', '0x01fe650ef2f8e2982295489ae6adc1413bf6011f', '0xc250b22d15e43d95fbe27b12d98b6098f8493eac', '0x0437ac6109e8a366a1f4816edf312a36952db856', '0x9001a452d39a8710d27ed5c2e10431c13f5fba74', '0x961226b64ad373275130234145b96d100dc0b655', '0xe7e4366f6ed6afd23e88154c00b532bdc0352333', '0x9809f2b973bdb056d24bc2b6571ea1f23db4e861', '0x04ecd49246bf5143e43e2305136c46aeb6fad400', '0xc9467e453620f16b57a34a770c6bcebece002587', '0x8c524635d52bd7b1bd55e062303177a7d916c046', '0x48ff31bbbd8ab553ebe7cbd84e1ea3dba8f54957', '0x9ca41a2dab3cee15308998868ca644e2e3be5c59', '0xd652c40fbb3f06d6b58cb9aa9cff063ee63d465d', '0xd1011b637f979a5d9093df1b32e7736c289024f5', '0xe95e4c2dac312f31dc605533d5a4d0af42579308', '0x6577b46a566ade492ad551a315c04de3fbe3dbfa', '0xdb8cc7eced700a4bffde98013760ff31ff9408d8', '0x323b3a6e7a71c1b8c257606ef0364d61df8aa525', '0xf7b55c3732ad8b2c2da7c24f30a69f55c54fb717', '0xf74bec4bcf432a17470e9c4f71542f2677b9af6a', '0x5a59fd6018186471727faaeae4e57890abc49b08', '0xeb07fcd7a8627281845ba3acbed24435802d4b52', '0x8ee017541375f6bcd802ba119bddc94dad6911a1', '0xaa6a4f8ddcca7d3b9e7ad38c8338a2fcfdb1e713', '0x8c1de7a8f8852197b109daf75a6fbb685c013315', '0xe6b5cc1b4b47305c58392ce3d359b10282fc36ea', '0x828b154032950c8ff7cf8085d841723db2696056', '0x6f80b9543dd5a0408f162fe2a1675db70a2cb77d', '0xbf5d9decccc762fa7b5eb9fac668c803d42d97b6', '0x1977870a4c18a728c19dd4eb6542451df06e0a4b', '0x07350d8c30d463179de6a58764c21558db66dd9c', '0xc38ca214c7a82b1ee977232f045afb6d425cfff0', '0x5c6a6cf9ae657a73b98454d17986af41fc7b44ee', '0x9558b18f021fc3cba1c9b777603829a42244818b']) AS pool",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amounts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fees",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "invariant",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_supply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PegSwapFourAssets_event_RemoveLiquidityImbalance"
+    }
+}
