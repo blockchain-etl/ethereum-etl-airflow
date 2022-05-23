@@ -285,7 +285,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_call_matchAdvancedOrders",
+        "table_name": "Seaport_call_matchAdvancedOrders",
         "table_description": "",
         "schema": [
             {

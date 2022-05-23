@@ -31,7 +31,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_event_OrderCancelled",
+        "table_name": "Seaport_event_OrderCancelled",
         "table_description": "",
         "schema": [
             {

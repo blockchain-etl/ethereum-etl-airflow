@@ -246,7 +246,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_call_fulfillAvailableOrders",
+        "table_name": "Seaport_call_fulfillAvailableOrders",
         "table_description": "",
         "schema": [
             {

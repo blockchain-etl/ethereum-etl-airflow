@@ -29,7 +29,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_call_information",
+        "table_name": "Seaport_call_information",
         "table_description": "",
         "schema": []
     }

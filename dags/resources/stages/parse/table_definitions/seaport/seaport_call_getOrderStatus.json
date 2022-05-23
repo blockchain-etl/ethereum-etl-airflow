@@ -40,7 +40,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_call_getOrderStatus",
+        "table_name": "Seaport_call_getOrderStatus",
         "table_description": "",
         "schema": [
             {

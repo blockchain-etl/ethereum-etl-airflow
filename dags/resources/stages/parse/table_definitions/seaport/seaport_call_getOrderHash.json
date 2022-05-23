@@ -141,7 +141,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_call_getOrderHash",
+        "table_name": "Seaport_call_getOrderHash",
         "table_description": "",
         "schema": [
             {

@@ -129,7 +129,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_call_fulfillBasicOrder",
+        "table_name": "Seaport_call_fulfillBasicOrder",
         "table_description": "",
         "schema": [
             {

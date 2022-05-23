@@ -25,7 +25,7 @@
     },
     "table": {
         "dataset_name": "seaport",
-        "table_name": "seaport_event_NonceIncremented",
+        "table_name": "Seaport_event_NonceIncremented",
         "table_description": "",
         "schema": [
             {
