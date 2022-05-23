@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": null,
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newNonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "offerer",
+                    "type": "address"
+                }
+            ],
+            "name": "NonceIncremented",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "seaport_event_NonceIncremented",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "newNonce",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "offerer",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "offerer",
+                    "type": "address"
+                }
+            ],
+            "name": "getNonce",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "seaport_call_getNonce",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "offerer",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [],
+            "name": "incrementNonce",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "newNonce",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "seaport_call_incrementNonce",
+        "table_description": "",
+        "schema": []
+    }
+}
