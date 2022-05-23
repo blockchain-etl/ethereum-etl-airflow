@@ -1,0 +1,136 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x00000000006cee72100d161c57ada5bb2be1ca79",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "offerer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "zone",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "fulfiller",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "enum ItemType",
+                            "name": "itemType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "identifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct SpentItem[]",
+                    "name": "offer",
+                    "type": "tuple[]"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "enum ItemType",
+                            "name": "itemType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "identifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address payable",
+                            "name": "recipient",
+                            "type": "address"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct ReceivedItem[]",
+                    "name": "consideration",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "OrderFulfilled",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "Seaport_event_OrderFulfilled",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "offerer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "zone",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fulfiller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "offer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "consideration",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
