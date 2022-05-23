@@ -1,0 +1,228 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x00000000006cee72100d161c57ada5bb2be1ca79",
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "offerer",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "zone",
+                                    "type": "address"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "enum ItemType",
+                                            "name": "itemType",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "internalType": "address",
+                                            "name": "token",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "identifierOrCriteria",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "startAmount",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "endAmount",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct OfferItem[]",
+                                    "name": "offer",
+                                    "type": "tuple[]"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "enum ItemType",
+                                            "name": "itemType",
+                                            "type": "uint8"
+                                        },
+                                        {
+                                            "internalType": "address",
+                                            "name": "token",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "identifierOrCriteria",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "startAmount",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "endAmount",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "address payable",
+                                            "name": "recipient",
+                                            "type": "address"
+                                        }
+                                    ],
+                                    "internalType": "struct ConsiderationItem[]",
+                                    "name": "consideration",
+                                    "type": "tuple[]"
+                                },
+                                {
+                                    "internalType": "enum OrderType",
+                                    "name": "orderType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "startTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "endTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "zoneHash",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "salt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "conduitKey",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "totalOriginalConsiderationItems",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct OrderParameters",
+                            "name": "parameters",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint120",
+                            "name": "numerator",
+                            "type": "uint120"
+                        },
+                        {
+                            "internalType": "uint120",
+                            "name": "denominator",
+                            "type": "uint120"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signature",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct AdvancedOrder",
+                    "name": "advancedOrder",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "orderIndex",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum Side",
+                            "name": "side",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "identifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32[]",
+                            "name": "criteriaProof",
+                            "type": "bytes32[]"
+                        }
+                    ],
+                    "internalType": "struct CriteriaResolver[]",
+                    "name": "criteriaResolvers",
+                    "type": "tuple[]"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "fulfillerConduitKey",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "fulfillAdvancedOrder",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "fulfilled",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "Seaport_call_fulfillAdvancedOrder",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "advancedOrder",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "criteriaResolvers",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fulfillerConduitKey",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
