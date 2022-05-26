@@ -1,0 +1,308 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "salt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "user",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "network",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "intent",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "delegateType",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deadline",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "contract IERC20Upgradeable",
+                                    "name": "currency",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "bytes",
+                                    "name": "dataMask",
+                                    "type": "bytes"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "price",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "bytes",
+                                            "name": "data",
+                                            "type": "bytes"
+                                        }
+                                    ],
+                                    "internalType": "struct Market.OrderItem[]",
+                                    "name": "items",
+                                    "type": "tuple[]"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "r",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "s",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "uint8",
+                                    "name": "v",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint8",
+                                    "name": "signVersion",
+                                    "type": "uint8"
+                                }
+                            ],
+                            "internalType": "struct Market.Order[]",
+                            "name": "orders",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum Market.Op",
+                                    "name": "op",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "orderIdx",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "itemIdx",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "price",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "itemHash",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "contract IDelegate",
+                                    "name": "executionDelegate",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "bytes",
+                                    "name": "dataReplacement",
+                                    "type": "bytes"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bidIncentivePct",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "aucMinIncrementPct",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "aucIncDurationSecs",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "percentage",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "address",
+                                            "name": "to",
+                                            "type": "address"
+                                        }
+                                    ],
+                                    "internalType": "struct Market.Fee[]",
+                                    "name": "fees",
+                                    "type": "tuple[]"
+                                }
+                            ],
+                            "internalType": "struct Market.SettleDetail[]",
+                            "name": "details",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "salt",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "deadline",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amountToEth",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amountToWeth",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "user",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "canFail",
+                                    "type": "bool"
+                                }
+                            ],
+                            "internalType": "struct Market.SettleShared",
+                            "name": "shared",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "r",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "s",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "v",
+                            "type": "uint8"
+                        }
+                    ],
+                    "internalType": "struct Market.RunInput",
+                    "name": "input",
+                    "type": "tuple"
+                }
+            ],
+            "name": "run",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x74312363e45dcaba76c59ec49a7aa8a65a67eed3",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "x2y2",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "orders",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "details",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "fields": [
+                            {
+                                "description": "",
+                                "name": "salt",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "deadline",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "amountToEth",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "amountToWeth",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "user",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "canFail",
+                                "type": "STRING"
+                            }
+                        ],
+                        "name": "shared",
+                        "type": "RECORD"
+                    },
+                    {
+                        "description": "",
+                        "name": "r",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "s",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "v",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "input",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "X2Y2r1_call_run"
+    }
+}

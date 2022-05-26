@@ -1,0 +1,303 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "itemHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "orderSalt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "settleSalt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "intent",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "delegateType",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deadline",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20Upgradeable",
+                    "name": "currency",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "dataMask",
+                    "type": "bytes"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "data",
+                            "type": "bytes"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct Market.OrderItem",
+                    "name": "item",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "enum Market.Op",
+                            "name": "op",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "orderIdx",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "itemIdx",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "itemHash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "contract IDelegate",
+                            "name": "executionDelegate",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "dataReplacement",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "bidIncentivePct",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "aucMinIncrementPct",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "aucIncDurationSecs",
+                            "type": "uint256"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "percentage",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "to",
+                                    "type": "address"
+                                }
+                            ],
+                            "internalType": "struct Market.Fee[]",
+                            "name": "fees",
+                            "type": "tuple[]"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct Market.SettleDetail",
+                    "name": "detail",
+                    "type": "tuple"
+                }
+            ],
+            "name": "EvInventory",
+            "type": "event"
+        },
+        "contract_address": "0x74312363e45dcaba76c59ec49a7aa8a65a67eed3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "x2y2",
+        "schema": [
+            {
+                "description": "",
+                "name": "itemHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "orderSalt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "settleSalt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "intent",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegateType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currency",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dataMask",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "price",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "data",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "item",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "op",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "orderIdx",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "itemIdx",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "price",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "itemHash",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "executionDelegate",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "dataReplacement",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "bidIncentivePct",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "aucMinIncrementPct",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "aucIncDurationSecs",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "fees",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "detail",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "X2Y2r1_event_EvInventory"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_editionId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_bidder",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "EditionBidAccepted",
+            "type": "event"
+        },
+        "contract_address": "0x0eb65b4c3d3de340e1b15384f8f211784247a37a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "known_origin",
+        "schema": [
+            {
+                "description": "",
+                "name": "_editionId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_bidder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "KODAV3SecondaryMarketplace_event_EditionBidAccepted"
+    }
+}
