@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "offerId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "pricePaid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "feePaid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OfferClaimed",
+            "type": "event"
+        },
+        "contract_address": "0x921fd42f147b26b51aa3c7fa3f2e2ce7704c2858",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sandbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "seller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "offerId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pricePaid",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feePaid",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AssetSignedAuction_event_OfferClaimed"
+    }
+}

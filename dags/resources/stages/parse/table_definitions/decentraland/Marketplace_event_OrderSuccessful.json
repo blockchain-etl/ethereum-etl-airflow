@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "assetId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "nftAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "buyer",
+                    "type": "address"
+                }
+            ],
+            "name": "OrderSuccessful",
+            "type": "event"
+        },
+        "contract_address": "0x8e5660b4ab70168b5a6feea0e0315cb49c8cd539",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "decentraland",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assetId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Marketplace_event_OrderSuccessful"
+    }
+}

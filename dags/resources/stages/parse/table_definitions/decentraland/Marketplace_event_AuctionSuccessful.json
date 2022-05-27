@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "name": "assetId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "totalPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "name": "winner",
+                    "type": "address"
+                }
+            ],
+            "name": "AuctionSuccessful",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xb3bca6f5052c7e24726b44da7403b56a8a1b98f8', '0x8e5660b4ab70168b5a6feea0e0315cb49c8cd539'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "decentraland",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assetId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "winner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Marketplace_event_AuctionSuccessful"
+    }
+}
