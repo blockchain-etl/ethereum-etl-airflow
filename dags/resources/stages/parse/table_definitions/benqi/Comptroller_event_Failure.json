@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "error",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "info",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "detail",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Failure",
+            "type": "event"
+        },
+        "contract_address": "0xd8e426c61b0fbbda06e9f603263abea09d717dbd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [
+            {
+                "description": "",
+                "name": "error",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "info",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "detail",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_Failure"
+    }
+}

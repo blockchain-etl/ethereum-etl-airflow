@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract QiToken",
+                    "name": "qiToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldCollateralFactorMantissa",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newCollateralFactorMantissa",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewCollateralFactor",
+            "type": "event"
+        },
+        "contract_address": "0xd8e426c61b0fbbda06e9f603263abea09d717dbd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [
+            {
+                "description": "",
+                "name": "qiToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldCollateralFactorMantissa",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newCollateralFactorMantissa",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_NewCollateralFactor"
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint8",
+                    "name": "tokenType",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract QiToken",
+                    "name": "qiToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "qiDelta",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "qiBorrowIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DistributedBorrowerReward",
+            "type": "event"
+        },
+        "contract_address": "0xd8e426c61b0fbbda06e9f603263abea09d717dbd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "qiToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "qiDelta",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "qiBorrowIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_DistributedBorrowerReward"
+    }
+}
