@@ -42,7 +42,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "avalanche_benqi",
         "schema": [
             {
                 "description": "",
@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_DistributedBorrowerReward"
+        "table_name": "Comptroller_event_DistributedBorrowerReward"
     }
 }
