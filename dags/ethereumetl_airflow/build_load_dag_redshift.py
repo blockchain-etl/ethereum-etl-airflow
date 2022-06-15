@@ -21,7 +21,7 @@ def build_load_dag_redshift(
         aws_secret_access_key,
         chain='ethereum',
         notification_emails=None,
-        start_date=datetime(2018, 7, 1),
+        start_date=datetime(2020, 12, 31),
         schedule_interval='0 0 * * *'
 ):
     default_dag_args = {

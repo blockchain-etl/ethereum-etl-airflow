@@ -30,7 +30,7 @@ def build_load_dag(
     destination_dataset_project_id,
     chain='ethereum',
     notification_emails=None,
-    load_start_date=datetime(2018, 7, 1),
+    load_start_date=datetime(2020, 12, 31),
     schedule_interval='0 0 * * *',
     load_all_partitions=True
 ):
