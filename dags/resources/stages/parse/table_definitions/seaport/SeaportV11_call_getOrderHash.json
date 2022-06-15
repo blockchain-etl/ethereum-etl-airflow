@@ -1,0 +1,154 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x00000000006c3852cbef3e08e8df289169ede581",
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "offerer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "zone",
+                            "type": "address"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum ItemType",
+                                    "name": "itemType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "token",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "identifierOrCriteria",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "startAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "endAmount",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct OfferItem[]",
+                            "name": "offer",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum ItemType",
+                                    "name": "itemType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "token",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "identifierOrCriteria",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "startAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "endAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "address payable",
+                                    "name": "recipient",
+                                    "type": "address"
+                                }
+                            ],
+                            "internalType": "struct ConsiderationItem[]",
+                            "name": "consideration",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "internalType": "enum OrderType",
+                            "name": "orderType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "zoneHash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "salt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "conduitKey",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "counter",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct OrderComponents",
+                    "name": "order",
+                    "type": "tuple"
+                }
+            ],
+            "name": "getOrderHash",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "SeaportV11_call_getOrderHash",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "order",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

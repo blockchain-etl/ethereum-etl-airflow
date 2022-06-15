@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x00000000006c3852cbef3e08e8df289169ede581",
+        "abi": {
+            "inputs": [],
+            "name": "name",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "contractName",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "SeaportV11_call_name",
+        "table_description": "",
+        "schema": []
+    }
+}
