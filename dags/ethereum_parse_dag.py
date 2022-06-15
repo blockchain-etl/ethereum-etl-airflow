@@ -8,25 +8,37 @@ from ethereumetl_airflow.build_parse_dag import build_parse_dag
 from ethereumetl_airflow.variables import read_parse_dag_vars
 
 DAGS_FOLDER = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
-table_definitions_folder = os.path.join(DAGS_FOLDER, 'resources/stages/parse/table_definitions/*')
+table_definitions_folder = os.path.join(DAGS_FOLDER, 'resources/stages/parse/table_definitions_bitski/*')
 
-logging.basicConfig()
-logging.getLogger().setLevel(logging.DEBUG)
+# todo: troubleshoot dynamic dags in aws airflow
 
-var_prefix = 'ethereum_'
+# logging.basicConfig()
+# logging.getLogger().setLevel(logging.DEBUG)
 
-for folder in glob(table_definitions_folder):
-    dataset = folder.split('/')[-1]
+# var_prefix = 'ethereum_'
 
-    dag_id = f'ethereum_parse_{dataset}_dag'
-    logging.info(folder)
-    logging.info(dataset)
-    globals()[dag_id] = build_parse_dag(
-        dag_id=dag_id,
-        dataset_folder=folder,
-        **read_parse_dag_vars(
-            var_prefix=var_prefix,
-            dataset=dataset,
-            schedule_interval='0 14 * * *'
-        )
+# for folder in glob(table_definitions_folder):
+#     dataset = folder.split('/')[-1]
+
+#     dag_id = f'ethereum_parse_{dataset}_dag'
+#     logging.info(folder)
+#     logging.info(dataset)
+#     globals()[dag_id] = build_parse_dag(
+#         dag_id=dag_id,
+#         dataset_folder=folder,
+#         **read_parse_dag_vars(
+#             var_prefix=var_prefix,
+#             dataset=dataset,
+#             schedule_interval='0 14 * * *'
+#         )
+#     )
+
+DAG = build_parse_dag(
+    dag_id='ethereum_parse_opensea_dag',
+    dataset_folder='resources/stages/parse/table_definitions_bitski/opensea',
+    **read_parse_dag_vars(
+        var_prefix='ethereum_',
+        dataset='opensea',
+        schedule_interval='0 14 * * *'
     )
+)
