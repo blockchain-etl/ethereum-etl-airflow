@@ -1,0 +1,53 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x00000000006c3852cbef3e08e8df289169ede581",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "getOrderStatus",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "isValidated",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isCancelled",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "totalFilled",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "totalSize",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "SeaportV11_call_getOrderStatus",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "orderHash",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
