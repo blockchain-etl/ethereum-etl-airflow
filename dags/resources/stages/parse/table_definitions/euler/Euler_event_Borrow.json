@@ -6,49 +6,49 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "underlying",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "index",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "Mint",
+            "name": "Borrow",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "euler",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "underlying",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "account",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Mint"
+        "table_name": "Euler_event_Borrow"
     }
 }

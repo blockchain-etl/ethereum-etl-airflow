@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract CToken",
+                    "name": "cToken",
+                    "type": "address"
+                }
+            ],
+            "name": "MarketListed",
+            "type": "event"
+        },
+        "contract_address": "0x3d5bc3c8d13dcb8bf317092d84783c2697ae9258",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "cToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Unitroller_event_MarketListed"
+    }
+}

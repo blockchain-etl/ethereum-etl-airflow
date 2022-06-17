@@ -6,93 +6,115 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "_from",
+                    "name": "liquidator",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "_to",
+                    "name": "violator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "underlying",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "collateral",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_value",
+                    "name": "repay",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_fromBalanceIncrease",
+                    "name": "yield",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_toBalanceIncrease",
+                    "name": "healthScore",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_fromIndex",
+                    "name": "baseDiscount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_toIndex",
+                    "name": "discount",
                     "type": "uint256"
                 }
             ],
-            "name": "BalanceTransfer",
+            "name": "Liquidation",
             "type": "event"
         },
-        "contract_address": "SELECT _wToken FROM ref('Proxy_event_ReserveInitialized')",
+        "contract_address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "euler",
         "schema": [
             {
                 "description": "",
-                "name": "_from",
+                "name": "liquidator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_to",
+                "name": "violator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_value",
+                "name": "underlying",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_fromBalanceIncrease",
+                "name": "collateral",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_toBalanceIncrease",
+                "name": "repay",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_fromIndex",
+                "name": "yield",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_toIndex",
+                "name": "healthScore",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "baseDiscount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "discount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_event_BalanceTransfer"
+        "table_name": "Euler_event_Liquidation"
     }
 }

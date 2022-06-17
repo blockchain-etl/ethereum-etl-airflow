@@ -4,62 +4,73 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "target",
+                    "name": "borrower",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "borrowAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "index",
+                    "name": "accountBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "accountInterestIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBorrows",
                     "type": "uint256"
                 }
             ],
-            "name": "Burn",
+            "name": "Borrow",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "SELECT iToken FROM ref('Controller_event_MarketAdded')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "dforce",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "borrower",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "target",
+                "name": "borrowAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "accountBorrows",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "accountInterestIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBorrows",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Burn"
+        "table_name": "iToken_event_Borrow"
     }
 }
