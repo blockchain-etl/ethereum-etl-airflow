@@ -42,7 +42,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound",
+        "dataset_name": "ironbank",
         "schema": [
             {
                 "description": "",
