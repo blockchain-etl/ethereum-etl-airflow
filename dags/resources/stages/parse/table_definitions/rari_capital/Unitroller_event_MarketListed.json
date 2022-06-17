@@ -18,7 +18,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound",
+        "dataset_name": "rari_capital",
         "schema": [
             {
                 "description": "",
