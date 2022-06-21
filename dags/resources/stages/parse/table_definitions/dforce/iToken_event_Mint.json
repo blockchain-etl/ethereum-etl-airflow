@@ -4,51 +4,62 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "recipient",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "mintAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "index",
+                    "name": "mintTokens",
                     "type": "uint256"
                 }
             ],
             "name": "Mint",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "SELECT iToken FROM ref('Controller_event_MarketAdded')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "dforce",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "sender",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "recipient",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "mintAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mintTokens",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Mint"
+        "table_name": "iToken_event_Mint"
     }
 }

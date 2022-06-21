@@ -4,28 +4,25 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "from",
+                    "indexed": false,
+                    "name": "_reserve",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
+                    "name": "_wToken",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "index",
-                    "type": "uint256"
+                    "name": "_interestRateStrategyAddress",
+                    "type": "address"
                 }
             ],
-            "name": "Mint",
+            "name": "ReserveInitialized",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "0x4965f6fa20fe9728decf5165016fc338a5a85abf",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +31,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "_reserve",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "_wToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "_interestRateStrategyAddress",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Mint"
+        "table_name": "Proxy_event_ReserveInitialized"
     }
 }

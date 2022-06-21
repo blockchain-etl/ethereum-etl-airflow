@@ -1,0 +1,97 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "string",
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "creator",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "comptroller",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "blockPosted",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timestampPosted",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct FusePoolDirectory.FusePool",
+                    "name": "pool",
+                    "type": "tuple"
+                }
+            ],
+            "name": "PoolRegistered",
+            "type": "event"
+        },
+        "contract_address": "0x835482fe0532f169024d5e9410199369aad5c77e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rari_capital",
+        "schema": [
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "name",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "creator",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "comptroller",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "blockPosted",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "timestampPosted",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "pool",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FusePoolDirectory_event_PoolRegistered"
+    }
+}

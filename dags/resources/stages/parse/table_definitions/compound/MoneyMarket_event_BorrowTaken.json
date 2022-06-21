@@ -4,73 +4,78 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "_targetAddress",
+                    "indexed": false,
+                    "name": "account",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_targetBalanceIncrease",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_targetIndex",
+                    "name": "startingBalance",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_redirectedBalanceAdded",
+                    "name": "borrowAmountWithFee",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_redirectedBalanceRemoved",
+                    "name": "newBalance",
                     "type": "uint256"
                 }
             ],
-            "name": "RedirectedBalanceUpdated",
+            "name": "BorrowTaken",
             "type": "event"
         },
-        "contract_address": "SELECT _wToken FROM ref('Proxy_event_ReserveInitialized')",
+        "contract_address": "0x3fda67f7583380e67ef93072294a7fac882fd7e7",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
-                "name": "_targetAddress",
+                "name": "account",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_targetBalanceIncrease",
+                "name": "asset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_targetIndex",
+                "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_redirectedBalanceAdded",
+                "name": "startingBalance",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_redirectedBalanceRemoved",
+                "name": "borrowAmountWithFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBalance",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_event_RedirectedBalanceUpdated"
+        "table_name": "MoneyMarket_event_BorrowTaken"
     }
 }

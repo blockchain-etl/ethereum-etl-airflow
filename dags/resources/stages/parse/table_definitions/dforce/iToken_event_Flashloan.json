@@ -4,62 +4,73 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "target",
+                    "name": "loaner",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "loanAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "index",
+                    "name": "flashloanFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "protocolFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
                     "type": "uint256"
                 }
             ],
-            "name": "Burn",
+            "name": "Flashloan",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "SELECT iToken FROM ref('Controller_event_MarketAdded')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "dforce",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "loaner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "target",
+                "name": "loanAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "flashloanFee",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "protocolFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Burn"
+        "table_name": "iToken_event_Flashloan"
     }
 }

@@ -4,62 +4,73 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "liquidator",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "target",
+                    "name": "borrower",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "repayAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
+                    "internalType": "address",
+                    "name": "cTokenCollateral",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "index",
+                    "name": "seizeTokens",
                     "type": "uint256"
                 }
             ],
-            "name": "Burn",
+            "name": "LiquidateBorrow",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "SELECT cToken FROM ref('Unitroller_event_MarketListed')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "rari_capital",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "liquidator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "target",
+                "name": "borrower",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "repayAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "cTokenCollateral",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seizeTokens",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Burn"
+        "table_name": "cToken_event_LiquidateBorrow"
     }
 }

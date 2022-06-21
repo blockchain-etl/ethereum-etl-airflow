@@ -4,62 +4,68 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "target",
+                    "indexed": false,
+                    "name": "account",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "index",
+                    "name": "startingBalance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "newBalance",
                     "type": "uint256"
                 }
             ],
-            "name": "Burn",
+            "name": "SupplyReceived",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "0x3fda67f7583380e67ef93072294a7fac882fd7e7",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "account",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "target",
+                "name": "asset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "startingBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBalance",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Burn"
+        "table_name": "MoneyMarket_event_SupplyReceived"
     }
 }

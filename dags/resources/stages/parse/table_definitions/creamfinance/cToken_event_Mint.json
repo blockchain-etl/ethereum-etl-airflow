@@ -4,51 +4,51 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "minter",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "mintAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "index",
+                    "name": "mintTokens",
                     "type": "uint256"
                 }
             ],
             "name": "Mint",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "SELECT cToken FROM ref('Unitroller_event_MarketListed')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "creamfinance",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "minter",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "mintAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "mintTokens",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Mint"
+        "table_name": "cToken_event_Mint"
     }
 }

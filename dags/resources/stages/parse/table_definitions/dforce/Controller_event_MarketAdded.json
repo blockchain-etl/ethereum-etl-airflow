@@ -4,62 +4,84 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "_from",
+                    "name": "iToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_value",
+                    "name": "collateralFactor",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_fromBalanceIncrease",
+                    "name": "borrowFactor",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_fromIndex",
+                    "name": "supplyCapacity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowCapacity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "distributionFactor",
                     "type": "uint256"
                 }
             ],
-            "name": "BurnOnLiquidation",
+            "name": "MarketAdded",
             "type": "event"
         },
-        "contract_address": "SELECT _wToken FROM ref('Proxy_event_ReserveInitialized')",
+        "contract_address": "0x8b53ab2c0df3230ea327017c91eb909f815ad113",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "dforce",
         "schema": [
             {
                 "description": "",
-                "name": "_from",
+                "name": "iToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_value",
+                "name": "collateralFactor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_fromBalanceIncrease",
+                "name": "borrowFactor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_fromIndex",
+                "name": "supplyCapacity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowCapacity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "distributionFactor",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_event_BurnOnLiquidation"
+        "table_name": "Controller_event_MarketAdded"
     }
 }

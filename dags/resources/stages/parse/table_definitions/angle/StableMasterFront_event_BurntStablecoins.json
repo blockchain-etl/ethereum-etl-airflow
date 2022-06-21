@@ -6,49 +6,49 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "_poolManager",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "index",
+                    "name": "redeemInC",
                     "type": "uint256"
                 }
             ],
-            "name": "Mint",
+            "name": "BurntStablecoins",
             "type": "event"
         },
-        "contract_address": "SELECT aToken FROM ref('LendingPoolConfigurator_v2_event_ReserveInitialized')",
+        "contract_address": "0x5addc89785d75c86ab939e9e15bfbbb7fc086a87",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "aave",
+        "dataset_name": "angle",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "_poolManager",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "index",
+                "name": "redeemInC",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "AToken_v2_event_Mint"
+        "table_name": "StableMasterFront_event_BurntStablecoins"
     }
 }
