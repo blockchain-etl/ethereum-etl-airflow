@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amounts",
+                    "type": "uint256[3]"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_supply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddLiquidity",
+            "type": "event"
+        },
+        "contract_address": "0xd51a44d3fae010294c616388b506acda1bfaae46",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amounts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_supply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "tricrypto2_event_AddLiquidity"
+    }
+}

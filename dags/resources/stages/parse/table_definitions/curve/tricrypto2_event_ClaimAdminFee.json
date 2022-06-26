@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ClaimAdminFee",
+            "type": "event"
+        },
+        "contract_address": "0xd51a44d3fae010294c616388b506acda1bfaae46",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "tricrypto2_event_ClaimAdminFee"
+    }
+}
