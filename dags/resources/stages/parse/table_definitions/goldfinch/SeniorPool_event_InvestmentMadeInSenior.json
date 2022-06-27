@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tranchedPool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "InvestmentMadeInSenior",
+            "type": "event"
+        },
+        "contract_address": "0x422bf428c9777c78cdb9a6188837f79466d9beb7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_goldfinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "tranchedPool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeniorPool_event_InvestmentMadeInSenior"
+    }
+}

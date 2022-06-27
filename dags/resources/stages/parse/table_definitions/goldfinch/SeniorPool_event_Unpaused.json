@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        "contract_address": "0x422bf428c9777c78cdb9a6188837f79466d9beb7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_goldfinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeniorPool_event_Unpaused"
+    }
+}

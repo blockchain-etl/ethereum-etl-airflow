@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "capitalProvider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "userAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reserveAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawalMade",
+            "type": "event"
+        },
+        "contract_address": "0x422bf428c9777c78cdb9a6188837f79466d9beb7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_goldfinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "capitalProvider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "userAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeniorPool_event_WithdrawalMade"
+    }
+}
