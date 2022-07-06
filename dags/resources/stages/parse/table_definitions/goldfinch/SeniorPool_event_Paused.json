@@ -18,7 +18,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_goldfinch",
+        "dataset_name": "goldfinch",
         "schema": [
             {
                 "description": "",
