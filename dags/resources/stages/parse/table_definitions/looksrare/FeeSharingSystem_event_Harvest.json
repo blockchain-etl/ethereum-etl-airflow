@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "harvestedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Harvest",
+            "type": "event"
+        },
+        "contract_address": "0xbcd7254a1d759efa08ec7c3291b2e85c5dcc12ce",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "harvestedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FeeSharingSystem_event_Harvest"
+    }
+}
