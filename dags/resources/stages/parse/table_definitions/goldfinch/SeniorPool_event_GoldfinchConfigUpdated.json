@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "who",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "configAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "GoldfinchConfigUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x422bf428c9777c78cdb9a6188837f79466d9beb7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "goldfinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "who",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "configAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeniorPool_event_GoldfinchConfigUpdated"
+    }
+}
