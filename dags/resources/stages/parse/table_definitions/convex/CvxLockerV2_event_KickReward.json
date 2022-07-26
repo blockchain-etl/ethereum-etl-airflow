@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_kicked",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_reward",
+                    "type": "uint256"
+                }
+            ],
+            "name": "KickReward",
+            "type": "event"
+        },
+        "contract_address": "0x72a19342e8f1838460ebfccef09f6585e32db86e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_kicked",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_reward",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CvxLockerV2_event_KickReward"
+    }
+}

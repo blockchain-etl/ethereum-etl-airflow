@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_epoch",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_paidAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_lockedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_boostedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Staked",
+            "type": "event"
+        },
+        "contract_address": "0x72a19342e8f1838460ebfccef09f6585e32db86e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_epoch",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_paidAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_lockedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_boostedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CvxLockerV2_event_Staked"
+    }
+}
