@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "underlying",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBalances",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint96",
+                    "name": "reserveBalance",
+                    "type": "uint96"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "poolSize",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "interestAccumulator",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int96",
+                    "name": "interestRate",
+                    "type": "int96"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AssetStatus",
+            "type": "event"
+        },
+        "contract_address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler",
+        "schema": [
+            {
+                "description": "",
+                "name": "underlying",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBalances",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBorrows",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "poolSize",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestAccumulator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Euler_event_AssetStatus"
+    }
+}
