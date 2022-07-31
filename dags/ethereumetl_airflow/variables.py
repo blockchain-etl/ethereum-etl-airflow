@@ -6,7 +6,7 @@ from airflow.models import Variable
 def read_export_dag_vars(var_prefix, **kwargs):
     export_start_date = read_var('export_start_date', var_prefix, True, **kwargs)
     export_start_date = datetime.strptime(export_start_date, '%Y-%m-%d')
-    
+
     provider_uris = read_var('provider_uris', var_prefix, True, **kwargs)
     provider_uris = [uri.strip() for uri in provider_uris.split(',')]
 

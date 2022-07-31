@@ -20,29 +20,71 @@ Ethereum-ETL Supports two cloud providres - aws and gcp. The default is `gcp`.
 You can set this by
 
 ```json
-	"ethereum_cloud_provider: "aws",
+	"cloud_provider": "aws",
 ```
 
 or
 
 ```json
-	"ethereum_cloud_provider": "gcp",
+	"cloud_provider": "gcp",
 ```
 
 ## ethereum_destination_dataset_project_id
 
-Project ID of BigQuery or Redshift datasets.
+Project ID of Google Cloud Project which has the datasets.
 
-### BigQuery
+### GCP
 
 If you don't have a project created, create one. 
 Within this project, create new datasets called 
 `crypto_ethereum`, `crypto_ethereum_raw` and `crypto_ethereum_temp`.
 Copy the ID of this project to be used in this variable.
 
+```json
+	"ethereum_destination_dataset_project_id": "COPIED_ID_OF_GCP_PROJECT",
+```
+
 ### AWS
 
-eth-redshift.cjhr02tuz8yb.ap-south-1.redshift.amazonaws.com:5439/dev
+This is not supported. However, dummy values are required to be set for the DAG Imports to happen correctly.
+
+```json
+	"ethereum_destination_dataset_project_id": "dummy",
+```
+
+## ethereum_parse_destination_dataset_project_id
+
+### GCP
+
+Project ID of Google Cloud Project which has the datasets.
+
+```json
+	"ethereum_parse_destination_dataset_project_id": "ID_OF_GCP_PROJECT",
+```
+
+### AWS
+
+This is not supported. However, dummy values are required to be set for the DAG Imports to happen correctly.
+
+```json
+	"ethereum_parse_destination_dataset_project_id": "dummy",
+```
+
+## ethereum_aws_access_key_id
+
+This is used only when `cloud_provider` is set to `aws`.
+
+```json
+	"ethereum_aws_access_key_id": "AWS_ACCESS_KEY_ID",
+```
+
+## ethereum_aws_secret_access_key
+
+This is used only when `cloud_provider` is set to `aws`.
+
+```json
+	"ethereum_aws_secret_access_key": "AWS_SECRET_KEY",
+```
 
 
 ## ethereum_output_bucket

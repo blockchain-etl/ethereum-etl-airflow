@@ -2,4 +2,4 @@ apache-airflow[gcp]==1.10.15
 ethereum-etl==1.7.2
 google-cloud-bigquery
 pytest==5.4.1
-jsonschema==4.4.0
+jsonschema

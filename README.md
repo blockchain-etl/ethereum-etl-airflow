@@ -2,6 +2,25 @@
 
 Read this article: [https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-how-we-built-dataset](https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-how-we-built-dataset)
 
+## Support
+
+The repo itself can be deployed on any compute cloud platform. 
+Certain DAGs are available only for GCP.
+
+
+| Feature | GCP | AWS | 
+|---------|-------|-------|
+| Can be deployed? | Yes | Yes |
+| ethereum_amend_dag | Yes | No |
+| ethereum_clean_dag | Yes ? | Yes ? |
+| ethereum_export_dag | Yes (Provider → BigQuery)| Yes (Provider → S3) |
+| ethereum_load_dag | Yes (BigQuery → Storage) | Yes (S3 → RedShift) |
+| ethereum_parse_dag | Yes | No |
+| ethereum_partition_dag | Yes | No |
+| ethereum_sessions_dag | Yes | No |
+------------------------------------
+
+
 # Setting up Airflow DAGs
 
 ## Google Cloud Composer
