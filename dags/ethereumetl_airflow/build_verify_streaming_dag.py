@@ -17,6 +17,7 @@ def build_verify_streaming_dag(
         chain='ethereum',
         notification_emails=None,
         verify_partitioned_tables=False,
+        extra_streaming_tables=None,
         parse_destination_dataset_project_id='',
         start_date=datetime(2018, 7, 1),
         schedule_interval='*/10 * * * *',
@@ -53,17 +54,25 @@ def build_verify_streaming_dag(
 
     dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
-    def add_verify_tasks(task, dependencies=None):
+    def add_verify_tasks(task, dependencies=None, params=None):
         # The queries in verify/sqls will fail when the condition is not met
         # Have to use this trick since the Python 2 version of BigQueryCheckOperator doesn't support standard SQL
         # and legacy SQL can't be used to query partitioned tables.
         sql_path = os.path.join(dags_folder, 'resources/stages/verify_streaming/sqls/{task}.sql'.format(task=task))
         sql = read_file(sql_path)
+
+        combined_params = environment.copy()
+        task_id = 'verify_{task}'.format(task=task)
+        if params:
+            combined_params.update(params)
+            serialized_params = '_'.join(params.values()).replace('.', '_')
+            task_id = task_id + '_' + serialized_params
+
         verify_task = BigQueryOperator(
-            task_id='verify_{task}'.format(task=task),
+            task_id=task_id,
             sql=sql,
             use_legacy_sql=False,
-            params=environment,
+            params=combined_params,
             dag=dag)
         if dependencies is not None and len(dependencies) > 0:
             for dependency in dependencies:
@@ -84,6 +93,13 @@ def build_verify_streaming_dag(
     if verify_partitioned_tables:
         add_verify_tasks('partitioned_logs_have_latest')
         add_verify_tasks('partitioned_traces_have_latest')
+
+    # Use this to verify the lag of a streaming job https://github.com/blockchain-etl/blockchain-etl-streaming by piping a Pub/Sub topic to a BigQuery Table
+    # https://cloud.google.com/blog/products/data-analytics/pub-sub-launches-direct-path-to-bigquery-for-streaming-analytics
+    if extra_streaming_tables is not None and len(extra_streaming_tables) > 0:
+        streaming_table_list = [table.strip() for table in extra_streaming_tables.split(',')]
+        for streaming_table in streaming_table_list:
+            add_verify_tasks('extra_streaming_tables_have_latest', params={'streaming_table': streaming_table})
 
     return dag
 
