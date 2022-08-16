@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x2b2e8cda09bba9660dca5cb6233787738ad68329",
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC721",
+                    "name": "nft",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "enum ILSSVMPairFactoryLike.PairVariant",
+                    "name": "variant",
+                    "type": "uint8"
+                }
+            ],
+            "name": "pairTransferNFTFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMRouter_call_pairTransferNFTFrom",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "nft",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "from",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "id",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "variant",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

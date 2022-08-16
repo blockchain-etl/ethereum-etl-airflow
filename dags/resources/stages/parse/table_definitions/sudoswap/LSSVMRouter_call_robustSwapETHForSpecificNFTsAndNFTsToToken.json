@@ -1,0 +1,118 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": "0x2b2e8cda09bba9660dca5cb6233787738ad68329",
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "contract LSSVMPair",
+                                            "name": "pair",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint256[]",
+                                            "name": "nftIds",
+                                            "type": "uint256[]"
+                                        }
+                                    ],
+                                    "internalType": "struct LSSVMRouter.PairSwapSpecific",
+                                    "name": "swapInfo",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "maxCost",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LSSVMRouter.RobustPairSwapSpecific[]",
+                            "name": "tokenToNFTTrades",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "contract LSSVMPair",
+                                            "name": "pair",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint256[]",
+                                            "name": "nftIds",
+                                            "type": "uint256[]"
+                                        }
+                                    ],
+                                    "internalType": "struct LSSVMRouter.PairSwapSpecific",
+                                    "name": "swapInfo",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minOutput",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LSSVMRouter.RobustPairSwapSpecificForToken[]",
+                            "name": "nftToTokenTrades",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "inputAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address payable",
+                            "name": "tokenRecipient",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftRecipient",
+                            "type": "address"
+                        }
+                    ],
+                    "internalType": "struct LSSVMRouter.RobustPairNFTsFoTokenAndTokenforNFTsTrade",
+                    "name": "params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "robustSwapETHForSpecificNFTsAndNFTsToToken",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "remainingValue",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "outputAmount",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMRouter_call_robustSwapETHForSpecificNFTsAndNFTsToToken",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "params",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
