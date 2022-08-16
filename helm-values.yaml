@@ -1,0 +1,47 @@
+# Default airflow tag to deploy
+defaultAirflowTag: "1.10.15"
+
+# Airflow version (Used to make some decisions based on Airflow Version being deployed)
+airflowVersion: "1.10.15"
+
+images:
+  airflow:
+    repository: {{IMAGE_REPOSITORY}}
+    tag: "{{IMAGE_TAG}}"
+
+# Airflow database & redis config
+data:
+  metadataSecretName: airflow-database
+  resultBackendSecretName: airflow-result-database
+
+# Flask secret key for Airflow Webserver: `[webserver] secret_key` in airflow.cfg
+webserverSecretKeySecretName: airflow-webserver-secret
+
+# Fernet key settings
+# Note: fernetKey can only be set during install, not upgrade
+fernetKey: {{FERNET_KEY}}
+
+# PgBouncer settings
+pgbouncer:
+  # Enable PgBouncer
+  enabled: true
+
+# Configuration for postgresql subchart
+# Not recommended for production
+postgresql:
+  enabled: false
+
+# Git sync
+dags:
+  gitSync:
+    enabled: true
+
+    # git repo clone url
+    # ssh examples ssh://git@github.com/apache/airflow.git
+    # git@github.com:apache/airflow.git
+    # https example: https://github.com/apache/airflow.git
+    repo: https://github.com/bitpack-me/ethereum-etl-airflow.git
+    branch: master
+    # subpath within the repo where dags are located
+    # should be "" if dags are at repo root
+    subPath: "/dags"
