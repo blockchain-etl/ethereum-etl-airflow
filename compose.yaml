@@ -1,0 +1,52 @@
+x-airflow: &airflow-common
+  build:
+    context: .
+    dockerfile: ./docker/Dockerfile
+  environment:
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: sqlite:////home/airflow_db/airflow.db
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS: "false"
+    AIRFLOW__CORE__LOGGING_LEVEL: INFO
+    AIRFLOW__SECRETS__BACKEND: airflow.secrets.local_filesystem.LocalFilesystemBackend
+    AIRFLOW__SECRETS__BACKEND_KWARGS: '{"variables_file_path":"/root/airflow/variables.json"}'
+    AIRFLOW__WEBSERVER__WORKERS: 1
+    # For BigQuery auth issues, see https://stackoverflow.com/a/66032397
+    AIRFLOW_CONN_BIGQUERY_DEFAULT: "google-cloud-platform://?extra__google_cloud_platform__project=${CLOUDSDK_CORE_PROJECT}"
+    AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: "google-cloud-platform://?extra__google_cloud_platform__project=${CLOUDSDK_CORE_PROJECT}"
+    DAGS_FOLDER: /root/airflow/dags
+    CLOUDSDK_CORE_PROJECT:
+    GCLOUD_PROJECT: ${CLOUDSDK_CORE_PROJECT}
+    GOOGLE_CLOUD_PROJECT: ${CLOUDSDK_CORE_PROJECT}
+  volumes:
+    - airflow_db:/home/airflow_db
+    - airflow_logs:/root/airflow/logs
+    - ./dags:/root/airflow/dags
+    - ./docker/variables.json:/root/airflow/variables.json
+    - ~/.config/gcloud:/root/.config/gcloud
+
+services:
+  _airflow_initdb:
+    <<: *airflow-common
+    command: ["db", "init"]
+
+  _airflow_scheduler:
+    <<: *airflow-common
+    command: ["scheduler"]
+    depends_on:
+      - _airflow_initdb
+    restart: on-failure # Might fail if "db init" has not succeeded yet.
+
+  airflow:
+    <<: *airflow-common
+    command: ["webserver"]
+    depends_on:
+      - _airflow_scheduler
+    ports:
+      - 8080:8080
+
+volumes:
+  # Used to persist metadata across runs:
+  airflow_db:
+  # Used to share logs between scheduler and webserver so they actually show
+  # up in the UI:
+  airflow_logs:

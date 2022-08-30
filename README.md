@@ -50,6 +50,20 @@ pip install -r requirements.txt
 pytest -vv -s
 ```
 
+### Running locally
+A docker compose definition has been provided to easily spin up a local Airflow instance.
+
+To build the required image:
+```bash
+docker compose build
+```
+To start Airflow:
+```bash
+docker compose up airflow
+```
+
+The instance requires the `CLOUDSDK_CORE_PROJECT` environment variable to be set in most cases. Airflow Variables can be defined in [variables.json](./docker/variables.json).
+
 ### Creating Table Definition Files for Parsing Events and Function Calls
 
 Read this article: https://medium.com/@medvedev1088/query-ens-and-0x-events-with-sql-in-google-bigquery-4d197206e644

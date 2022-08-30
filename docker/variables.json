@@ -1,0 +1,7 @@
+{
+    "ethereum_destination_dataset_project_id": "<PROJECT ID>",
+    "ethereum_load_all_partitions": false,
+    "ethereum_output_bucket": "<OUTPUT BUCKET>",
+    "ethereum_parse_destination_dataset_project_id": "<PROJECT ID>",
+    "ethereum_provider_uris": "<PROVIDER URIS>"
+}
