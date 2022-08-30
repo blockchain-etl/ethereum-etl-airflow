@@ -47,7 +47,6 @@ Check other variables in `dags/ethereumetl_airflow/variables.py`.
 
 ```bash
 pip install -r requirements.txt
-export PYTHONPATH='dags'
 pytest -vv -s
 ```
 
