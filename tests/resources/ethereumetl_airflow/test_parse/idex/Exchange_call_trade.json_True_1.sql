@@ -9,11 +9,10 @@ WITH parsed_traces AS
     ,traces.status AS status
     ,`blockchain-etl-internal.ethereum_idex.parse_Exchange_call_trade`(traces.input) AS parsed
 FROM `blockchain-etl-internal.crypto_ethereum_partitioned.traces_by_input_0xef3` AS traces
-WHERE to_address IN (
+WHERE
 
-    lower('0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208')
+    to_address IN (lower('0x2a0c0dbecc7e4d658f48e01e3fa353f44050c208'))
 
-  )
   AND STARTS_WITH(traces.input, '0xef343588')
 
 
