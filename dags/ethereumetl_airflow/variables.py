@@ -89,7 +89,7 @@ def read_parse_dag_vars(var_prefix, dataset, **kwargs):
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
     }
 
-    parse_start_date = read_var('parse_start_date', vars, False, **kwargs)
+    parse_start_date = read_var('parse_start_date', var_prefix, False, **kwargs)
     if parse_start_date is not None:
         parse_start_date = datetime.strptime(parse_start_date, '%Y-%m-%d')
         vars['parse_start_date'] = parse_start_date
