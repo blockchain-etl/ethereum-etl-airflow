@@ -1,0 +1,90 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "contract ERC20",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "contract IERC721",
+                            "name": "nft",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "contract ICurve",
+                            "name": "bondingCurve",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address payable",
+                            "name": "assetRecipient",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "enum LSSVMPair.PoolType",
+                            "name": "poolType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint128",
+                            "name": "delta",
+                            "type": "uint128"
+                        },
+                        {
+                            "internalType": "uint96",
+                            "name": "fee",
+                            "type": "uint96"
+                        },
+                        {
+                            "internalType": "uint128",
+                            "name": "spotPrice",
+                            "type": "uint128"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "initialNFTIDs",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "initialTokenBalance",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LSSVMPairFactory.CreateERC20PairParams",
+                    "name": "params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "createPairERC20",
+            "outputs": [
+                {
+                    "internalType": "contract LSSVMPairERC20",
+                    "name": "pair",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_createPairERC20",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "params",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

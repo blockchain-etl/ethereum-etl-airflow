@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [],
+            "name": "protocolFeeMultiplier",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_protocolFeeMultiplier",
+        "table_description": "",
+        "schema": []
+    }
+}

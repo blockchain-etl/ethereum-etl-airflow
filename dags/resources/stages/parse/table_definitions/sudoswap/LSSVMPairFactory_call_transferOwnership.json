@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_transferOwnership",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "newOwner",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract LSSVMRouter",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "routerStatus",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "allowed",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "wasEverAllowed",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_routerStatus",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

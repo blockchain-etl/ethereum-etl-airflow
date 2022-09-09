@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "_protocolFeeRecipient",
+                    "type": "address"
+                }
+            ],
+            "name": "changeProtocolFeeRecipient",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_changeProtocolFeeRecipient",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_protocolFeeRecipient",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "potentialPair",
+                    "type": "address"
+                },
+                {
+                    "internalType": "enum ILSSVMPairFactoryLike.PairVariant",
+                    "name": "variant",
+                    "type": "uint8"
+                }
+            ],
+            "name": "isPair",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_isPair",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "potentialPair",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "variant",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

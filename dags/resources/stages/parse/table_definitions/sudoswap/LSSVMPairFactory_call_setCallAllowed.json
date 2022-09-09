@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isAllowed",
+                    "type": "bool"
+                }
+            ],
+            "name": "setCallAllowed",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_setCallAllowed",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "target",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "isAllowed",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

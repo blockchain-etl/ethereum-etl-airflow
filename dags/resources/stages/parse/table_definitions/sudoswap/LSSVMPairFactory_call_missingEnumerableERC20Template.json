@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [],
+            "name": "missingEnumerableERC20Template",
+            "outputs": [
+                {
+                    "internalType": "contract LSSVMPairMissingEnumerableERC20",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_missingEnumerableERC20Template",
+        "table_description": "",
+        "schema": []
+    }
+}

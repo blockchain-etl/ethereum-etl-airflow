@@ -1,0 +1,108 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC721",
+                    "name": "_nft",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract ICurve",
+                    "name": "_bondingCurve",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "_assetRecipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "enum LSSVMPair.PoolType",
+                    "name": "_poolType",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_delta",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint96",
+                    "name": "_fee",
+                    "type": "uint96"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_spotPrice",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_initialNFTIDs",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "createPairETH",
+            "outputs": [
+                {
+                    "internalType": "contract LSSVMPairETH",
+                    "name": "pair",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_createPairETH",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_nft",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_bondingCurve",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_assetRecipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_poolType",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_delta",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_fee",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_spotPrice",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_initialNFTIDs",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

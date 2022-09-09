@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "type": "trace",
+        "contract_address": null,
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract ICurve",
+                    "name": "bondingCurve",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isAllowed",
+                    "type": "bool"
+                }
+            ],
+            "name": "setBondingCurveAllowed",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "table_name": "LSSVMPairFactory_call_setBondingCurveAllowed",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "bondingCurve",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "isAllowed",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
