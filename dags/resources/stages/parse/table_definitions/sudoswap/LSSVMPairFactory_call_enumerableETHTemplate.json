@@ -1,7 +1,7 @@
 {
     "parser": {
         "type": "trace",
-        "contract_address": null,
+        "contract_address": "0xb16c1342e617a5b6e4b631eb114483fdb289c0a4",
         "abi": {
             "inputs": [],
             "name": "enumerableETHTemplate",
