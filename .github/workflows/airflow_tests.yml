@@ -1,4 +1,4 @@
-name: parseValidationTests
+name: airflowTests
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: Validate Json Files in parse Directory
+    name: airflow tests
     steps:
       - uses: actions/setup-python@v2
         with:
@@ -19,6 +19,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip &&
-          pip install -r requirements_test.txt
-      - name: Run pyTest to Validate JSON Files
-        run: pytest tests/test_validate_json.py
+          pip install \
+            -r requirements_test.txt \
+            -r requirements_local.txt \
+            -r requirements_airflow.txt
+      - name: Run pytest on airflow/tests
+        run: pytest -v tests/test_airflow_imports.py
