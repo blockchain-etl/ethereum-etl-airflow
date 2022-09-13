@@ -1,4 +1,4 @@
-apache-airflow[gcp]==2.2.5
+apache-airflow[google,postgres]==2.2.5
 google-cloud-bigquery==2.34.4
 google-cloud-dataform==0.2.0
 google-cloud-storage==1.44.0
