@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 from airflow import DAG
-from airflow.contrib.operators.bigquery_operator import BigQueryOperator
+from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -68,10 +68,9 @@ def build_verify_streaming_dag(
             serialized_params = '_'.join(params.values()).replace('.', '_')
             task_id = task_id + '_' + serialized_params
 
-        verify_task = BigQueryOperator(
+        verify_task = BigQueryInsertJobOperator(
             task_id=task_id,
-            sql=sql,
-            use_legacy_sql=False,
+            configuration={"query": {"query": sql, "useLegacySql": False}},
             params=combined_params,
             dag=dag)
         if dependencies is not None and len(dependencies) > 0:

@@ -82,7 +82,6 @@ def build_parse_dag(
         validation_error_operator = PythonOperator(
             task_id='validation_error',
             python_callable=raise_validation_error,
-            provide_context=True,
             execution_timeout=timedelta(minutes=10),
             dag=dag
         )
@@ -109,7 +108,6 @@ def build_parse_dag(
         parsing_operator = PythonOperator(
             task_id=table_name,
             python_callable=parse_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )
@@ -135,7 +133,6 @@ def build_parse_dag(
         create_view_operator = PythonOperator(
             task_id=f'create_view_{view_name}',
             python_callable=create_view_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=10),
             dag=dag
         )
@@ -154,7 +151,6 @@ def build_parse_dag(
         share_dataset_operator = PythonOperator(
             task_id='share_dataset',
             python_callable=share_dataset_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=10),
             dag=dag
         )

@@ -52,7 +52,6 @@ def build_clean_dag(
         clean_operator = PythonOperator(
             task_id=f'clean_{task}',
             python_callable=clean_task,
-            provide_context=True,
             execution_timeout=timedelta(hours=4),
             dag=dag
         )

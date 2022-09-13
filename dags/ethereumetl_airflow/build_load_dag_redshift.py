@@ -52,7 +52,6 @@ def build_load_dag_redshift(
             task_id='s3_to_redshift_{task}'.format(task=task),
             dag=dag,
             python_callable=load_task,
-            provide_context=True,
             op_kwargs={
                 'conn_id': 'redshift',
                 'file_format': file_format,

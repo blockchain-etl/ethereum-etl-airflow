@@ -93,7 +93,6 @@ def build_amend_dag(
         create_view_operator = PythonOperator(
             task_id='create_token_amendments_view',
             python_callable=create_view_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )

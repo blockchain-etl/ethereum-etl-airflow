@@ -4,7 +4,7 @@ import logging
 import os
 
 from airflow import models
-from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
+from airflow.providers.google.cloud.sensors.gcs import GCSObjectExistenceSensor
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
@@ -81,7 +81,6 @@ def build_sessions_dag(
             depends_on_past=True,
             wait_for_downstream=True,
             python_callable=sessions_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )
@@ -106,7 +105,7 @@ def build_sessions_dag(
     # not running in the lower environments.
     #
     if environment == 'prod':
-        wait_for_ethereum_load_dag_task = GoogleCloudStorageObjectSensor(
+        wait_for_ethereum_load_dag_task = GCSObjectExistenceSensor(
             task_id='wait_for_ethereum_load_dag',
             timeout=60 * 60 * 12,
             poke_interval=5 * 60,

@@ -6,7 +6,7 @@ from datetime import timedelta
 from tempfile import TemporaryDirectory
 
 from airflow import DAG, configuration
-from airflow.operators import python_operator
+from airflow.operators.python import PythonOperator
 
 from ethereumetl.cli import (
     get_block_range_for_date,
@@ -70,8 +70,8 @@ def build_export_dag(
         from airflow.hooks.S3_hook import S3Hook
         cloud_storage_hook = S3Hook(aws_conn_id="aws_default")
     else:
-        from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
-        cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
+        from airflow.providers.google.cloud.hooks.gcs import GCSHook
+        cloud_storage_hook = GCSHook(gcp_conn_id="google_cloud_default")
 
     # Export
     def export_path(directory, date):
@@ -267,10 +267,9 @@ def build_export_dag(
 
     def add_export_task(toggle, task_id, python_callable, dependencies=None):
         if toggle:
-            operator = python_operator.PythonOperator(
+            operator = PythonOperator(
                 task_id=task_id,
                 python_callable=python_callable,
-                provide_context=True,
                 execution_timeout=timedelta(hours=15),
                 dag=dag,
             )

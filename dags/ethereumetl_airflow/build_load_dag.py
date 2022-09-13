@@ -8,10 +8,9 @@ from datetime import datetime, timedelta
 from tempfile import TemporaryDirectory
 
 from airflow import models
-from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
-from airflow.contrib.operators.bigquery_operator import BigQueryOperator
-from airflow.contrib.sensors.gcs_sensor import GoogleCloudStorageObjectSensor
-from airflow.operators import python_operator
+from airflow.providers.google.cloud.hooks.gcs import GCSHook
+from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
+from airflow.providers.google.cloud.sensors.gcs import GCSObjectExistenceSensor
 from airflow.operators.email import EmailOperator
 from airflow.operators.python import PythonOperator
 from google.cloud import bigquery
@@ -93,7 +92,7 @@ def build_load_dag(
     dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
     def add_load_tasks(task, file_format, allow_quoted_newlines=False):
-        wait_sensor = GoogleCloudStorageObjectSensor(
+        wait_sensor = GCSObjectExistenceSensor(
             task_id='wait_latest_{task}'.format(task=task),
             timeout=60 * 60,
             poke_interval=60,
@@ -132,7 +131,6 @@ def build_load_dag(
         load_operator = PythonOperator(
             task_id='load_{task}'.format(task=task),
             python_callable=load_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=30),
             dag=dag
         )
@@ -222,7 +220,6 @@ def build_load_dag(
         enrich_operator = PythonOperator(
             task_id='enrich_{task}'.format(task=task),
             python_callable=enrich_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )
@@ -238,11 +235,10 @@ def build_load_dag(
         # and legacy SQL can't be used to query partitioned tables.
         sql_path = os.path.join(dags_folder, 'resources/stages/verify/sqls/{task}.sql'.format(task=task))
         sql = read_file(sql_path)
-        verify_task = BigQueryOperator(
+        verify_task = BigQueryInsertJobOperator(
             task_id='verify_{task}'.format(task=task),
-            bql=sql,
+            configuration={"query": {"query": sql, "useLegacySql": False}},
             params=environment,
-            use_legacy_sql=False,
             dag=dag)
         if dependencies is not None and len(dependencies) > 0:
             for dependency in dependencies:
@@ -258,15 +254,14 @@ def build_load_dag(
                 )
                 open(local_path, mode='a').close()
                 upload_to_gcs(
-                    gcs_hook=GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default"),
+                    gcs_hook=GCSHook(gcp_conn_id="google_cloud_default"),
                     bucket=output_bucket,
                     object=remote_path,
                     filename=local_path)
 
-        save_checkpoint_task = python_operator.PythonOperator(
+        save_checkpoint_task = PythonOperator(
             task_id='save_checkpoint',
             python_callable=save_checkpoint,
-            provide_context=True,
             execution_timeout=timedelta(hours=1),
             dag=dag,
         )
