@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 from airflow import models
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
 from google.cloud import bigquery
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, create_view, read_bigquery_schema_from_file

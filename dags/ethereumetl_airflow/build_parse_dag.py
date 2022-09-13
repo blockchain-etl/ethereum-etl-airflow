@@ -7,10 +7,10 @@ from datetime import datetime, timedelta
 from glob import glob
 
 from airflow import models
-from airflow.operators.bash_operator import BashOperator
-from airflow.operators.email_operator import EmailOperator
-from airflow.operators.python_operator import PythonOperator
-from airflow.operators.sensors import ExternalTaskSensor
+from airflow.operators.bash import BashOperator
+from airflow.operators.email import EmailOperator
+from airflow.operators.python import PythonOperator
+from airflow.sensors.external_task import ExternalTaskSensor
 from google.cloud import bigquery
 
 from ethereumetl_airflow.bigquery_utils import create_view, share_dataset_all_users_read
