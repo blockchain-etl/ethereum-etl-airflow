@@ -24,4 +24,4 @@ jobs:
             -r requirements_local.txt \
             -r requirements_airflow.txt
       - name: Run pytest on airflow/tests
-        run: pytest -v tests/test_airflow_imports.py
+        run: pytest -v tests/test_dag_validation.py

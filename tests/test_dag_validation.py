@@ -20,6 +20,7 @@ def env_vars_setup(monkeypatch):
 def airflow_vars_setup(monkeypatch):
     mock_airflow_vars = {
         "ethereum_destination_dataset_project_id": "test",
+        "ethereum_load_all_partitions": False,
         "ethereum_output_bucket": "test",
         "ethereum_parse_destination_dataset_project_id": "test",
         "ethereum_provider_uris": "test",
