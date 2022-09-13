@@ -250,11 +250,11 @@ def build_load_dag(
         return verify_task
 
     def add_save_checkpoint_tasks(dependencies=None):
-        def save_checkpoint(execution_date, **kwargs):
+        def save_checkpoint(logical_date, **kwargs):
             with TemporaryDirectory() as tempdir:
                 local_path = os.path.join(tempdir, "checkpoint.txt")
                 remote_path = "checkpoint/block_date={block_date}/load_complete_checkpoint.txt".format(
-                    block_date=execution_date.strftime("%Y-%m-%d")
+                    block_date=logical_date.strftime("%Y-%m-%d")
                 )
                 open(local_path, mode='a').close()
                 upload_to_gcs(
