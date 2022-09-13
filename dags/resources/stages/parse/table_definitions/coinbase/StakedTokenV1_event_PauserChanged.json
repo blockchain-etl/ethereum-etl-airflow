@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "PauserChanged",
+            "type": "event"
+        },
+        "contract_address": "0x31724ca0c982a31fbb5c57f4217ab585271fc9a5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "coinbase",
+        "schema": [
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StakedTokenV1_event_PauserChanged"
+    }
+}

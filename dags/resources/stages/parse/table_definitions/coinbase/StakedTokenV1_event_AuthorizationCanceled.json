@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "authorizer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "nonce",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "AuthorizationCanceled",
+            "type": "event"
+        },
+        "contract_address": "0x31724ca0c982a31fbb5c57f4217ab585271fc9a5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "coinbase",
+        "schema": [
+            {
+                "description": "",
+                "name": "authorizer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StakedTokenV1_event_AuthorizationCanceled"
+    }
+}
