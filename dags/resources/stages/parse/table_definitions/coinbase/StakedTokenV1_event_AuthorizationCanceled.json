@@ -19,7 +19,7 @@
             "name": "AuthorizationCanceled",
             "type": "event"
         },
-        "contract_address": "0x31724ca0c982a31fbb5c57f4217ab585271fc9a5",
+        "contract_address": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
         "field_mapping": {},
         "type": "log"
     },
