@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "absorber",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "basePaidOut",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "usdValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AbsorbDebt",
+            "type": "event"
+        },
+        "contract_address": "0xc3d688b66703497daa19211eedff47f25384cdc3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "absorber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "basePaidOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "usdValue",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cUSDCv3_event_AbsorbDebt"
+    }
+}
