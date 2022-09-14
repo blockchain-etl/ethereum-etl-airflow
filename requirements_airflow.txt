@@ -1,1 +1,2 @@
+eth-hash==0.3.3
 ethereum-etl
