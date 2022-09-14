@@ -19,6 +19,12 @@ from ethereumetl.cli import (
     extract_field,
 )
 
+# Use Composer's suggested Data folder for temp storage
+# This is a folder in the Composer Bucket, mounted locally using gcsfuse
+# Overcomes the 10GB ephemerol storage limit on workers (imposed by GKE Autopilot)
+# https://cloud.google.com/composer/docs/composer-2/cloud-storage
+GCS_DATA_DIR = "/home/airflow/gcs/data/"
+
 
 def build_export_dag(
         dag_id,
@@ -124,7 +130,7 @@ def build_export_dag(
         return int(start_block), int(end_block)
 
     def export_blocks_and_transactions_command(logical_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
+        with TemporaryDirectory(dir=GCS_DATA_DIR) as tempdir:
             start_block, end_block = get_block_range(tempdir, logical_date, provider_uri)
 
             logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
@@ -153,7 +159,7 @@ def build_export_dag(
             )
 
     def export_receipts_and_logs_command(logical_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
+        with TemporaryDirectory(dir=GCS_DATA_DIR) as tempdir:
             copy_from_export_path(
                 export_path("transactions", logical_date), os.path.join(tempdir, "transactions.json")
             )
@@ -182,7 +188,7 @@ def build_export_dag(
             copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", logical_date))
 
     def extract_contracts_command(logical_date, **kwargs):
-        with TemporaryDirectory() as tempdir:
+        with TemporaryDirectory(dir=GCS_DATA_DIR) as tempdir:
             copy_from_export_path(
                 export_path("traces", logical_date), os.path.join(tempdir, "traces.json")
             )
@@ -202,7 +208,7 @@ def build_export_dag(
             )
 
     def extract_tokens_command(logical_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
+        with TemporaryDirectory(dir=GCS_DATA_DIR) as tempdir:
             copy_from_export_path(
                 export_path("contracts", logical_date), os.path.join(tempdir, "contracts.json")
             )
@@ -221,7 +227,7 @@ def build_export_dag(
             )
 
     def extract_token_transfers_command(logical_date, **kwargs):
-        with TemporaryDirectory() as tempdir:
+        with TemporaryDirectory(dir=GCS_DATA_DIR) as tempdir:
             copy_from_export_path(
                 export_path("logs", logical_date), os.path.join(tempdir, "logs.json")
             )
@@ -243,7 +249,7 @@ def build_export_dag(
             )
 
     def export_traces_command(logical_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
+        with TemporaryDirectory(dir=GCS_DATA_DIR) as tempdir:
             start_block, end_block = get_block_range(tempdir, logical_date, provider_uri)
 
             logging.info('Calling export_traces({}, {}, {}, ...,{}, {}, {}, {})'.format(
