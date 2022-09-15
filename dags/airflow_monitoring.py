@@ -1,7 +1,7 @@
 """A liveness prober dag for monitoring composer.googleapis.com/environment/healthy."""
 import airflow
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.operators.bash_operator import BashOperator
 from datetime import timedelta
 
 default_args = {
@@ -15,7 +15,7 @@ dag = DAG(
     default_args=default_args,
     description='liveness monitoring dag',
     schedule_interval=None,
-    dagrun_timeout=timedelta(minutes=60))
+    dagrun_timeout=timedelta(minutes=20))
 
 # priority_weight has type int in Airflow DB, uses the maximum.
 t1 = BashOperator(
