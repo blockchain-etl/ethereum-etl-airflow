@@ -30,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "tbtc_v1",
+        "dataset_name": "tbtc",
         "schema": [
             {
                 "description": "",
