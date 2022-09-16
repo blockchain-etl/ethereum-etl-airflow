@@ -327,9 +327,9 @@ def build_load_dag(
         verify_transactions_have_latest_task,
         verify_logs_have_latest_task,
         verify_token_transfers_have_latest_task,
-        verify_traces_blocks_count_task,
-        verify_traces_transactions_count_task,
-        verify_traces_contracts_count_task,
+        # verify_traces_blocks_count_task,
+        # verify_traces_transactions_count_task,
+        # verify_traces_contracts_count_task,
         enrich_tokens_task,
         calculate_balances_task,
     ])
