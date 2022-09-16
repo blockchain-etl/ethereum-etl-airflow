@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalSupply",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalShares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WarningMaxExpectedSupplyExceeded",
+            "type": "event"
+        },
+        "contract_address": "0xdfe66b14d37c77f4e9b180ceb433d1b164f0281d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stakehound",
+        "schema": [
+            {
+                "description": "",
+                "name": "totalSupply",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalShares",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StakedTokenV2_event_WarningMaxExpectedSupplyExceeded"
+    }
+}

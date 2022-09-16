@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldMinter",
+                    "type": "address"
+                }
+            ],
+            "name": "MinterRemoved",
+            "type": "event"
+        },
+        "contract_address": "0xbe9895146f7af43049ca1c1ae358b0541ea49704",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "coinbase",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldMinter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StakedTokenV1_event_MinterRemoved"
+    }
+}
