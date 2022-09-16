@@ -1,2 +1,2 @@
-eth-hash==0.3.3
+eth-hash==0.3.3         # Fixes install conflicts issue in Composer
 ethereum-etl==2.0.3

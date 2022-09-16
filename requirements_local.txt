@@ -1,4 +1,4 @@
-apache-airflow[google,postgres]==2.2.5
-google-cloud-bigquery==2.34.4
-google-cloud-dataform==0.2.0
-google-cloud-storage==1.44.0
+apache-airflow[google,postgres]==2.2.5      # similar to `composer-2.0.25-airflow-2.2.5`
+google-cloud-bigquery==2.34.4               # matches `composer-2.0.25-airflow-2.2.5`
+google-cloud-dataform==0.2.0                # matches `composer-2.0.25-airflow-2.2.5`
+google-cloud-storage==1.44.0                # matches `composer-2.0.25-airflow-2.2.5`
