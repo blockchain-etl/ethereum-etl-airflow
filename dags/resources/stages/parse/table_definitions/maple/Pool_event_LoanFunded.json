@@ -6,38 +6,49 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "tranchedPool",
+                    "name": "loan",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "debtLocker",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "amountFunded",
                     "type": "uint256"
                 }
             ],
-            "name": "InvestmentMadeInSenior",
+            "name": "LoanFunded",
             "type": "event"
         },
-        "contract_address": "0x8481a6ebaf5c7dabc3f7e09e44a89531fd31f822",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "goldfinch",
+        "dataset_name": "maple",
         "schema": [
             {
                 "description": "",
-                "name": "tranchedPool",
+                "name": "loan",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "debtLocker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountFunded",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeniorPool_event_InvestmentMadeInSenior"
+        "table_name": "Pool_event_LoanFunded"
     }
 }
