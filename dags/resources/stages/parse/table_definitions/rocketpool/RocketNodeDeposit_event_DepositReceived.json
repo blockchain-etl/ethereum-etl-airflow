@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DepositReceived",
+            "type": "event"
+        },
+        "contract_address": "0xdcd51fc5cd918e0461b9b7fb75967fdfd10dae2f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rocketpool",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RocketNodeDeposit_event_DepositReceived"
+    }
+}
