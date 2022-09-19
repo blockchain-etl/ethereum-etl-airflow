@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "stakeAndClaimAethB",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x84db6ee82b7cf3b47e8f19270abde5718b936670",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_stakeAndClaimAethB"
+    }
+}

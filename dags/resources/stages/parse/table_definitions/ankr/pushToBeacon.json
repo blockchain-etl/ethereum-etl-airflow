@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "pubkey",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "withdrawal_credentials",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "signature",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "deposit_data_root",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "pushToBeacon",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x84db6ee82b7cf3b47e8f19270abde5718b936670",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [
+            {
+                "description": "",
+                "name": "pubkey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawal_credentials",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deposit_data_root",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_pushToBeacon"
+    }
+}
