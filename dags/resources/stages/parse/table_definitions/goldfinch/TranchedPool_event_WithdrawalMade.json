@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tranche",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "interestWithdrawn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "principalWithdrawn",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawalMade",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('GoldfinchFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "goldfinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tranche",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestWithdrawn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "principalWithdrawn",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TranchedPool_event_WithdrawalMade"
+    }
+}

@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "tranchedPool",
+                    "name": "payer",
                     "type": "address"
                 },
                 {
@@ -16,19 +16,19 @@
                     "type": "uint256"
                 }
             ],
-            "name": "InvestmentMadeInSenior",
+            "name": "Repaid",
             "type": "event"
         },
-        "contract_address": "0x8481a6ebaf5c7dabc3f7e09e44a89531fd31f822",
+        "contract_address": "SELECT pools FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "goldfinch",
+        "dataset_name": "truefi",
         "schema": [
             {
                 "description": "",
-                "name": "tranchedPool",
+                "name": "payer",
                 "type": "STRING"
             },
             {
@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeniorPool_event_InvestmentMadeInSenior"
+        "table_name": "TrueFiPool2_event_Repaid"
     }
 }

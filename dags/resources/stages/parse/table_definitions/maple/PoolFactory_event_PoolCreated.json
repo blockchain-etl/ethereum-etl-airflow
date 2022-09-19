@@ -1,0 +1,142 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "liquidityAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "stakeAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "liquidityLocker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "stakeLocker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "stakingFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "delegateFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidityCap",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                }
+            ],
+            "name": "PoolCreated",
+            "type": "event"
+        },
+        "contract_address": "0x2cd79f7f8b38b9c0d80ea6b230441841a31537ec",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakeAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityLocker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakeLocker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakingFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegateFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityCap",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolFactory_event_PoolCreated"
+    }
+}

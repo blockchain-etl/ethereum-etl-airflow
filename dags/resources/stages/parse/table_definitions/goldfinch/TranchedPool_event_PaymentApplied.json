@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "payer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "interestAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "principalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "remainingAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reserveAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PaymentApplied",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('GoldfinchFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "goldfinch",
+        "schema": [
+            {
+                "description": "",
+                "name": "payer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "principalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "remainingAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TranchedPool_event_PaymentApplied"
+    }
+}

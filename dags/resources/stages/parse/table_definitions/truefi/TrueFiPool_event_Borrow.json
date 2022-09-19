@@ -4,9 +4,9 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "tranchedPool",
+                    "name": "borrower",
                     "type": "address"
                 },
                 {
@@ -14,30 +14,41 @@
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
                 }
             ],
-            "name": "InvestmentMadeInSenior",
+            "name": "Borrow",
             "type": "event"
         },
-        "contract_address": "0x8481a6ebaf5c7dabc3f7e09e44a89531fd31f822",
+        "contract_address": "0xa1e72267084192db7387c8cc1328fade470e4149",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "goldfinch",
+        "dataset_name": "truefi",
         "schema": [
             {
                 "description": "",
-                "name": "tranchedPool",
+                "name": "borrower",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "amount",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeniorPool_event_InvestmentMadeInSenior"
+        "table_name": "TrueFiPool_event_Borrow"
     }
 }

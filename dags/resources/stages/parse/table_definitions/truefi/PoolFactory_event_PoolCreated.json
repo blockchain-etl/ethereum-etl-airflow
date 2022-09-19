@@ -4,40 +4,40 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "tranchedPool",
+                    "name": "token",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
                 }
             ],
-            "name": "InvestmentMadeInSenior",
+            "name": "PoolCreated",
             "type": "event"
         },
-        "contract_address": "0x8481a6ebaf5c7dabc3f7e09e44a89531fd31f822",
+        "contract_address": "0x1391d9223e08845e536157995085fe0cef8bd393",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "goldfinch",
+        "dataset_name": "truefi",
         "schema": [
             {
                 "description": "",
-                "name": "tranchedPool",
+                "name": "token",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "pool",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeniorPool_event_InvestmentMadeInSenior"
+        "table_name": "PoolFactory_event_PoolCreated"
     }
 }
