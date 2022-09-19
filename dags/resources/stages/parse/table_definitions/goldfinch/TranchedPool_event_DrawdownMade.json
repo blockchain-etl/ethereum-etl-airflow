@@ -6,20 +6,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "pool",
+                    "name": "borrower",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "borrower",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolCreated",
+            "name": "DrawdownMade",
             "type": "event"
         },
-        "contract_address": "0xd20508e1e971b80ee172c73517905bfffcbd87f9",
+        "contract_address": "SELECT pool FROM ref('GoldfinchFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "pool",
+                "name": "borrower",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "borrower",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "GoldfinchFactory_event_PoolCreated"
+        "table_name": "TranchedPool_event_DrawdownMade"
     }
 }
