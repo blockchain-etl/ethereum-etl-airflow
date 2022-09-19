@@ -19,7 +19,7 @@
             "name": "InvestmentMadeInJunior",
             "type": "event"
         },
-        "contract_address": "0x422bf428c9777c78cdb9a6188837f79466d9beb7",
+        "contract_address": "0x8481a6ebaf5c7dabc3f7e09e44a89531fd31f822",
         "field_mapping": {},
         "type": "log"
     },
