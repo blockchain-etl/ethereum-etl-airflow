@@ -2,19 +2,19 @@
     "parser": {
         "abi": {
             "inputs": [],
-            "name": "stakeAndClaimAethB",
+            "name": "stake",
             "outputs": [],
             "stateMutability": "payable",
             "type": "function"
         },
-        "contract_address": "0x84db6ee82b7cf3b47e8f19270abde5718b936670",
+        "contract_address": "0xc874b064f465bdd6411d45734b56fac750cda29a",
         "field_mapping": {},
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "stakewise",
         "schema": [],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_stakeAndClaimAethB"
+        "table_name": "Pool_call_stake"
     }
 }

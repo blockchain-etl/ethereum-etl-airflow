@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "partner",
+                    "type": "address"
+                }
+            ],
+            "name": "stakeWithPartner",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xc874b064f465bdd6411d45734b56fac750cda29a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "stakewise",
+        "schema": [
+            {
+                "description": "",
+                "name": "partner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_call_stakeWithPartner"
+    }
+}

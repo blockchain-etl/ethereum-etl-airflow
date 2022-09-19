@@ -33,7 +33,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "ankr",
         "schema": [
             {
                 "description": "",
@@ -57,6 +57,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_pushToBeacon"
+        "table_name": "GlobalPool_R38_call_pushToBeacon"
     }
 }

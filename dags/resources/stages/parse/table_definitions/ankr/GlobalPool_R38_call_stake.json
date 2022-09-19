@@ -2,7 +2,7 @@
     "parser": {
         "abi": {
             "inputs": [],
-            "name": "stakeAndClaimAethC",
+            "name": "stake",
             "outputs": [],
             "stateMutability": "payable",
             "type": "function"
@@ -12,9 +12,9 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "ankr",
         "schema": [],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_stakeAndClaimAethC"
+        "table_name": "GlobalPool_R38_call_stake"
     }
 }
