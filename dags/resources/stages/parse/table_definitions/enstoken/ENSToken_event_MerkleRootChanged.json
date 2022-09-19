@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "merkleRoot",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "MerkleRootChanged",
+            "type": "event"
+        },
+        "contract_address": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "",
+        "schema": [
+            {
+                "description": "",
+                "name": "merkleRoot",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ENSToken_event_MerkleRootChanged"
+    }
+}
