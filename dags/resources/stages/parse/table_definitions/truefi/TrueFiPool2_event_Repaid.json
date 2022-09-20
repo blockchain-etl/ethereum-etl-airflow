@@ -19,7 +19,7 @@
             "name": "Repaid",
             "type": "event"
         },
-        "contract_address": "SELECT pools FROM ref('PoolFactory_event_PoolCreated')",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
