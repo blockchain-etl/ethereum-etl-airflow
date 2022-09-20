@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "feesEarned0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "feesEarned1",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FeesEarned",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "feesEarned0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feesEarned1",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "arrakis_vault_event_FeesEarned"
+    }
+}

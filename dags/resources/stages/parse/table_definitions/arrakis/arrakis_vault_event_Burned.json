@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "burnAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount0Out",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount1Out",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "liquidityBurned",
+                    "type": "uint128"
+                }
+            ],
+            "name": "Burned",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "burnAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount0Out",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount1Out",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityBurned",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "arrakis_vault_event_Burned"
+    }
+}

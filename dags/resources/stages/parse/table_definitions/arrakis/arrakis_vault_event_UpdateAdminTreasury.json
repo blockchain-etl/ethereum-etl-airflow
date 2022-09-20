@@ -4,28 +4,22 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "uniPool",
+                    "name": "oldAdminTreasury",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "manager",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "pool",
+                    "name": "newAdminTreasury",
                     "type": "address"
                 }
             ],
-            "name": "PoolCreated",
+            "name": "UpdateAdminTreasury",
             "type": "event"
         },
-        "contract_address": "0xea1aff9dbffd1580f6b81a3ad3589e66652db7d9",
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "uniPool",
+                "name": "oldAdminTreasury",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "manager",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "pool",
+                "name": "newAdminTreasury",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "factory_event_PoolCreated"
+        "table_name": "arrakis_vault_event_UpdateAdminTreasury"
     }
 }

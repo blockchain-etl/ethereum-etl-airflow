@@ -6,26 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "uniPool",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "manager",
+                    "name": "to",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "pool",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolCreated",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "0xea1aff9dbffd1580f6b81a3ad3589e66652db7d9",
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "uniPool",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "manager",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "pool",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "factory_event_PoolCreated"
+        "table_name": "arrakis_vault_event_Transfer"
     }
 }
