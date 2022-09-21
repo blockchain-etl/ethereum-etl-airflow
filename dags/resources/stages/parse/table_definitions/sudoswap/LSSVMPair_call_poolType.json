@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "poolType",
+            "outputs": [
+                {
+                    "internalType": "enum LSSVMPair.PoolType",
+                    "name": "_poolType",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LSSVMPair_call_poolType"
+    }
+}

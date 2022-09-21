@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "_assetRecipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_delta",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint96",
+                    "name": "_fee",
+                    "type": "uint96"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_spotPrice",
+                    "type": "uint128"
+                }
+            ],
+            "name": "initialize",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_assetRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_delta",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_spotPrice",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPair_call_initialize"
+    }
+}
