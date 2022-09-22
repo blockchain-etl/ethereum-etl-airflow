@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "referrer",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                }
+            ],
+            "name": "stakeWithReferrerOnBehalf",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xc874b064f465bdd6411d45734b56fac750cda29a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "stakewise",
+        "schema": [
+            {
+                "description": "",
+                "name": "referrer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_call_stakeWithReferrerOnBehalf"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "legacy",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProviderLockedEthReset",
+            "type": "event"
+        },
+        "contract_address": "0x84db6ee82b7cf3b47e8f19270abde5718b936670",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ankr",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "legacy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GlobalPool_R38_event_ProviderLockedEthReset"
+    }
+}
