@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "_lock",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_stakeAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "depositAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x8014595f2ab54cd7c604b00e9fb932176fdc86ae",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_lock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_stakeAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CrvDepositor_call_depositAll"
+    }
+}

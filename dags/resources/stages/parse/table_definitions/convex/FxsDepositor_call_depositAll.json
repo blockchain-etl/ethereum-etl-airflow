@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "_lock",
+                    "type": "bool"
+                }
+            ],
+            "name": "depositAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x8f55d7c21bdff1a51afaa60f3de7590222a3181e",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_lock",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FxsDepositor_call_depositAll"
+    }
+}
