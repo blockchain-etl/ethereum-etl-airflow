@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "lockRewards",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "stakerRewards",
+                    "type": "address"
+                }
+            ],
+            "name": "RewardContractsUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x7818a1da7bd1e64c199029e86ba244a9798eee10",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aura",
+        "schema": [
+            {
+                "description": "",
+                "name": "lockRewards",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakerRewards",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Booster_event_RewardContractsUpdated"
+    }
+}
