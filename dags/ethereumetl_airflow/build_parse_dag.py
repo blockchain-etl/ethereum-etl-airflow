@@ -3,7 +3,7 @@ from __future__ import print_function
 import collections
 import logging
 import os
-from datetime import date, datetime, time, timedelta
+from datetime import datetime, time, timedelta
 from glob import glob
 
 from airflow import models
