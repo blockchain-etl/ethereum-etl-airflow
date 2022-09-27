@@ -5,20 +5,19 @@ from string import ascii_lowercase
 
 
 def generate_ordered_index(input: str, width=3) -> int:
-    # Map int (1 to 26) for [a-z] and 0 for everything else
-    chars = "_" + ascii_lowercase
-    chars_map = {chars[i]: i for i in range(27)}
+    # Map int (0 to 25) for [a-z]
+    chars_map = {ascii_lowercase[i]: i for i in range(26)}
 
-    # Pad input to minimum width, replace upper case and non alphabetic chars
-    input_ljust = input.ljust(width, "_")
-    input_transformed = re.sub(r"[^a-z]", "_", input_ljust.lower())
+    # Force lower case and remove non-alpha chars, then pad to minimum width
+    input_chars = re.sub(r"[^a-z]", "", input.lower())
+    input_chars_padded = input_chars.ljust(width, "a")
 
-    # "abc" -> (1 * 27**2) + (2 * 27**1) + (3 * 27**0) = 786
+    # "a__bc" -> (0 * 26**2) + (1 * 26**1) + (2 * 26**0) = 28
     output = 0
     for i in range(width):
-        input_char = input_transformed[i]
+        input_char = input_chars_padded[i]
         output_int = chars_map[input_char]
-        output += output_int * 27 ** (width - i - 1)
+        output += output_int * 26 ** (width - i - 1)
     return output
 
 
@@ -37,7 +36,7 @@ def generate_schedule_offset(
 
     dataset_name = Path(dataset_folder).name
     ordered_index = generate_ordered_index(dataset_name, width=3)
-    max_ordered_index = 27**3 - 1
+    max_ordered_index = 26**3 - 1
     offset_minutes = total_minutes * ordered_index // max_ordered_index
 
     return timedelta(minutes=offset_minutes)
