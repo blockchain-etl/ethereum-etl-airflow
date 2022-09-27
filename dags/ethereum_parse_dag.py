@@ -27,6 +27,7 @@ for folder in glob(table_definitions_folder):
         **read_parse_dag_vars(
             var_prefix=var_prefix,
             dataset=dataset,
-            schedule_interval='0 14 * * *'
+            parse_daily_schedule_start="14:00",
+            parse_daily_schedule_end="20:00"
         )
     )

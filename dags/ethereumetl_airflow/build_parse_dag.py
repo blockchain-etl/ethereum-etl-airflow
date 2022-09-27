@@ -3,7 +3,7 @@ from __future__ import print_function
 import collections
 import logging
 import os
-from datetime import datetime, timedelta
+from datetime import date, datetime, time, timedelta
 from glob import glob
 
 from airflow import models
@@ -16,6 +16,10 @@ from google.cloud import bigquery
 from ethereumetl_airflow.bigquery_utils import create_view, share_dataset_all_users_read
 from ethereumetl_airflow.common import read_json_file, read_file
 from ethereumetl_airflow.parse.parse_logic import ref_regex, parse, create_dataset
+from ethereumetl_airflow.parse.parse_utils import (
+    calculate_schedule_interval,
+    generate_schedule_offset,
+)
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -29,7 +33,9 @@ def build_parse_dag(
         parse_destination_dataset_project_id,
         notification_emails=None,
         parse_start_date=datetime(2018, 7, 1),
-        schedule_interval='0 0 * * *',
+        parse_schedule_interval=None,
+        parse_daily_schedule_start=None,
+        parse_daily_schedule_end=None,
         parse_all_partitions=None,
         send_success_email=False
 ):
@@ -49,6 +55,20 @@ def build_parse_dag(
         SOURCE_DATASET_NAME = 'crypto_ethereum'
 
         PARTITION_DAG_ID = 'ethereum_partition_dag'
+
+    if parse_daily_schedule_start and not parse_schedule_interval:
+        schedule_offset = generate_schedule_offset(
+            parse_daily_schedule_start,
+            parse_daily_schedule_end or time(23, 59),
+            dataset_folder,
+        )
+        schedule_interval = calculate_schedule_interval(
+            parse_daily_schedule_start,
+            schedule_offset,
+        )
+    else:
+        schedule_offset = timedelta(0)
+        schedule_interval = parse_schedule_interval or "0 0 * * *"
 
     default_dag_args = {
         'depends_on_past': True,
@@ -161,7 +181,7 @@ def build_parse_dag(
         task_id='wait_for_ethereum_partition_dag',
         external_dag_id=PARTITION_DAG_ID,
         external_task_id='done',
-        execution_delta=timedelta(minutes=30),
+        execution_delta=timedelta(minutes=30) + schedule_offset,
         priority_weight=0,
         mode='reschedule',
         poke_interval=5 * 60,
