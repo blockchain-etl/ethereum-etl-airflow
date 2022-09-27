@@ -75,3 +75,11 @@ def test_dataset_name_is_correct(filename):
     dataset_name = json_data.get('table', {}).get('dataset_name', None)
     assert os.path.split(filename)[0].split("/")[-1] == dataset_name
 
+
+@pytest.mark.parametrize("filename", all_files)
+def test_table_name_is_correct(filename):
+    json_data = load_json_file(filename)
+    table_name = json_data.get('table', {}).get('table_name', None)
+    basename = os.path.basename(filename)
+    expected_table_name = basename.replace('.json', '')
+    assert expected_table_name == table_name

@@ -39,7 +39,7 @@
             "stateMutability": "view",
             "type": "function"
         },
-        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
         "field_mapping": {},
         "type": "trace"
     },
@@ -53,6 +53,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LSSVM_call_getBuyNFTQuote"
+        "table_name": "LSSVMPair_call_getBuyNFTQuote"
     }
 }
