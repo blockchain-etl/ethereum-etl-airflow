@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "bondingCurve",
+            "outputs": [
+                {
+                    "internalType": "contract ICurve",
+                    "name": "_bondingCurve",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LSSVMPair_call_bondingCurve"
+    }
+}

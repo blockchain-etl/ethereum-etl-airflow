@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC721",
+                    "name": "a",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "nftIds",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "withdrawERC721",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "a",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftIds",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LVSSMPair_call_withdrawERC721"
+    }
+}

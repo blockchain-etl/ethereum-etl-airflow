@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "SwapNFTOutPair",
+            "type": "event"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LSSVMPair_event_SwapNFTOutPair"
+    }
+}
