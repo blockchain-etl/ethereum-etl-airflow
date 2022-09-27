@@ -18,7 +18,7 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
         "field_mapping": {},
         "type": "trace"
     },
@@ -37,6 +37,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LVSSMPair_call_withdrawERC721"
+        "table_name": "LSSVMPair_call_withdrawERC721"
     }
 }

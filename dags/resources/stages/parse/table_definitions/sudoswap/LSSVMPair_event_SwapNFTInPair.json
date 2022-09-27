@@ -6,7 +6,7 @@
             "name": "SwapNFTInPair",
             "type": "event"
         },
-        "contract_address": "SELECT poolAddress FROM ref('ethereum_sudoswap.LSSVMPairFactory_event_NewPair')",
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
         "field_mapping": {},
         "type": "log"
     },
