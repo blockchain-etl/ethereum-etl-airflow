@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint96",
+                    "name": "newFee",
+                    "type": "uint96"
+                }
+            ],
+            "name": "FeeUpdate",
+            "type": "event"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "newFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPair_event_FeeUpdate"
+    }
+}

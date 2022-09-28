@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "pool",
+                    "type": "bytes"
+                }
+            ],
+            "name": "PoolCompleted",
+            "type": "event"
+        },
+        "contract_address": "0x84db6ee82b7cf3b47e8f19270abde5718b936670",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ankr",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GlobalPool_R38_event_PoolCompleted"
+    }
+}

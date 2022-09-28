@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "getAssetRecipient",
+            "outputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "_assetRecipient",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LSSVMPair_call_getAssetRecipient"
+    }
+}

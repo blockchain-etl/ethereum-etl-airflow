@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC1155",
+                    "name": "a",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "ids",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "amounts",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "withdrawERC1155",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "a",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ids",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amounts",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPair_call_withdrawERC1155"
+    }
+}

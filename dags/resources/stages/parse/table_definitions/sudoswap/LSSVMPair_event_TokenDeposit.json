@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenDeposit",
+            "type": "event"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPair_event_TokenDeposit"
+    }
+}

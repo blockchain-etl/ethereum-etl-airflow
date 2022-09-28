@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint128",
+                    "name": "newSpotPrice",
+                    "type": "uint128"
+                }
+            ],
+            "name": "changeSpotPrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactory_event_NewPair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "newSpotPrice",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPair_call_changeSpotPrice"
+    }
+}

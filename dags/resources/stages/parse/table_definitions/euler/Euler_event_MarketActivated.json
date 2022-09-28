@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "underlying",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "eToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "dToken",
+                    "type": "address"
+                }
+            ],
+            "name": "MarketActivated",
+            "type": "event"
+        },
+        "contract_address": "0x27182842e098f60e3d576794a5bffb0777e025d3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler",
+        "schema": [
+            {
+                "description": "",
+                "name": "underlying",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "eToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Euler_event_MarketActivated"
+    }
+}
