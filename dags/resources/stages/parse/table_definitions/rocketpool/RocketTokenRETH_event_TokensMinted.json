@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ethAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokensMinted",
+            "type": "event"
+        },
+        "contract_address": "0xae78736cd615f374d3085123a210448e74fc6393",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "rocketpool",
+        "schema": [
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ethAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RocketTokenRETH_event_TokensMinted"
+    }
+}
