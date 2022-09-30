@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "oldInterestRate",
+                    "type": "uint64"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "newInterestRate",
+                    "type": "uint64"
+                }
+            ],
+            "name": "LogInterestChange",
+            "type": "event"
+        },
+        "contract_address": "SELECT cloneAddress FROM ref('DegenBox_event_LogDeploy')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldInterestRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newInterestRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DegenBoxMarkets_event_LogInterestChange"
+    }
+}

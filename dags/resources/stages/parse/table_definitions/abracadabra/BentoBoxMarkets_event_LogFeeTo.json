@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newFeeTo",
+                    "type": "address"
+                }
+            ],
+            "name": "LogFeeTo",
+            "type": "event"
+        },
+        "contract_address": "SELECT cloneAddress FROM ref('BentoBoxV1_event_LogDeploy')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "newFeeTo",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BentoBoxMarkets_event_LogFeeTo"
+    }
+}

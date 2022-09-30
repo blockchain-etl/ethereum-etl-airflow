@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "share",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogDeposit",
+            "type": "event"
+        },
+        "contract_address": "0xd96f48665a1410c0cd669a88898eca36b9fc2cce",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "share",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DegenBox_event_LogDeposit"
+    }
+}

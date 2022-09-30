@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "feeTo",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "feesEarnedFraction",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogWithdrawFees",
+            "type": "event"
+        },
+        "contract_address": "SELECT cloneAddress FROM ref('DegenBox_event_LogDeploy')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeTo",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feesEarnedFraction",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DegenBoxMarkets_event_LogWithdrawFees"
+    }
+}
