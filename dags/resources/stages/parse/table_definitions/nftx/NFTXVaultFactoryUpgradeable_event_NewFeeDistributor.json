@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldDistributor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newDistributor",
+                    "type": "address"
+                }
+            ],
+            "name": "NewFeeDistributor",
+            "type": "event"
+        },
+        "contract_address": "0xbe86f647b167567525ccaafcd6f881f1ee558216",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftx",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldDistributor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newDistributor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NFTXVaultFactoryUpgradeable_event_NewFeeDistributor"
+    }
+}
