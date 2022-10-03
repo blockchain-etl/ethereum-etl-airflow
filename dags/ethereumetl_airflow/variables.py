@@ -84,7 +84,7 @@ def read_parse_dag_vars(var_prefix, dataset, **kwargs):
     per_dataset_var_prefix = var_prefix + dataset + '_'
     vars = {
         'parse_destination_dataset_project_id': read_var('parse_destination_dataset_project_id', var_prefix, True, **kwargs),
-        'parse_schedule_interval': read_var('parse_schedule_interval', var_prefix, False, **kwargs),
+        'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
         'parse_all_partitions': parse_bool(read_var('parse_all_partitions', per_dataset_var_prefix, False), default=None),
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
     }
@@ -93,10 +93,6 @@ def read_parse_dag_vars(var_prefix, dataset, **kwargs):
     if parse_start_date is not None:
         parse_start_date = datetime.strptime(parse_start_date, '%Y-%m-%d')
         vars['parse_start_date'] = parse_start_date
-
-    for t in ["parse_daily_schedule_start", "parse_daily_schedule_end"]:
-        t_var_str = read_var(t, var_prefix, False, **kwargs)
-        vars[t] = datetime.strptime(t_var_str, "%H:%M").time()
 
     return vars
 
