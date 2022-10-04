@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redeem",
+            "type": "event"
+        },
+        "contract_address": "0xc581b735a1688071a1746c968e0798d642ede491",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "tether",
+        "schema": [
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EuroTether_event_Redeem"
+    }
+}

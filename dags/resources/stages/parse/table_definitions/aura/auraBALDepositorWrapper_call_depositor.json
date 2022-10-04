@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "crvDeposit",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x68655ad9852a99c87c0934c7290bb62cfa5d4123",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "aura",
+        "schema": [],
+        "table_description": "",
+        "table_name": "auraBALDepositorWrapper_call_depositor"
+    }
+}

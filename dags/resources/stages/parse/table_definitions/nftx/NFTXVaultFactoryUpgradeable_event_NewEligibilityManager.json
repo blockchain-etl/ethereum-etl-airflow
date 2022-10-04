@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldEligManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newEligManager",
+                    "type": "address"
+                }
+            ],
+            "name": "NewEligibilityManager",
+            "type": "event"
+        },
+        "contract_address": "0xbe86f647b167567525ccaafcd6f881f1ee558216",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftx",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldEligManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newEligManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NFTXVaultFactoryUpgradeable_event_NewEligibilityManager"
+    }
+}

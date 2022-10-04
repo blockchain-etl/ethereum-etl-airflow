@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "burner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Burn",
+            "type": "event"
+        },
+        "contract_address": "0x00006100f7090010005f1bd7ae6122c3c2cf0090",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "trusttoken",
+        "schema": [
+            {
+                "description": "",
+                "name": "burner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueAUD_event_Burn"
+    }
+}
