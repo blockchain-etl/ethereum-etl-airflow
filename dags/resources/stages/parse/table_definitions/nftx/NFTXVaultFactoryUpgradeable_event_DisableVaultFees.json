@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DisableVaultFees",
+            "type": "event"
+        },
+        "contract_address": "0xbe86f647b167567525ccaafcd6f881f1ee558216",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftx",
+        "schema": [
+            {
+                "description": "",
+                "name": "vaultId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NFTXVaultFactoryUpgradeable_event_DisableVaultFees"
+    }
+}

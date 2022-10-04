@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldZap",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newZap",
+                    "type": "address"
+                }
+            ],
+            "name": "NewZapContract",
+            "type": "event"
+        },
+        "contract_address": "0xbe86f647b167567525ccaafcd6f881f1ee558216",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftx",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldZap",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newZap",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NFTXVaultFactoryUpgradeable_event_NewZapContract"
+    }
+}

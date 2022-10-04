@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeExcluded",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "excluded",
+                    "type": "bool"
+                }
+            ],
+            "name": "FeeExclusion",
+            "type": "event"
+        },
+        "contract_address": "0xbe86f647b167567525ccaafcd6f881f1ee558216",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftx",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeExcluded",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "excluded",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NFTXVaultFactoryUpgradeable_event_FeeExclusion"
+    }
+}
