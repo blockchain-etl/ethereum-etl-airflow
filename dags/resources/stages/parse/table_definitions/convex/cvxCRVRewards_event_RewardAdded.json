@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reward",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RewardAdded",
+            "type": "event"
+        },
+        "contract_address": "0x3fe65692bfcd0e6cf84cb1e7d24108e434a7587e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "reward",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cvxCRVRewards_event_RewardAdded"
+    }
+}
