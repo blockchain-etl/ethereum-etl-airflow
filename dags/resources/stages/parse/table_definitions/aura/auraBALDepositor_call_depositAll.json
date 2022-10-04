@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "_lock",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_stakeAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "depositAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xead792b55340aa20181a80d6a16db6a0ecd1b827",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "aura",
+        "schema": [
+            {
+                "description": "",
+                "name": "_lock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_stakeAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "auraBALDepositor_call_depositAll"
+    }
+}

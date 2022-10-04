@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPoolManager",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolManagerUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x7818a1da7bd1e64c199029e86ba244a9798eee10",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aura",
+        "schema": [
+            {
+                "description": "",
+                "name": "newPoolManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Booster_event_PoolManagerUpdated"
+    }
+}
