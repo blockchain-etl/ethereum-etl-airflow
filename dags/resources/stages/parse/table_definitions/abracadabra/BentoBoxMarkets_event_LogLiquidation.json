@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralShare",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowPart",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogLiquidation",
+            "type": "event"
+        },
+        "contract_address": "SELECT cloneAddress FROM ref('BentoBoxV1_event_LogDeploy')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralShare",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowPart",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BentoBoxMarkets_event_LogLiquidation"
+    }
+}
