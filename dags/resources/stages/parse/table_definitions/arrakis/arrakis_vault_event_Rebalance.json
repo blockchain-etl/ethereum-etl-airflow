@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "lowerTick_",
+                    "type": "int24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "upperTick_",
+                    "type": "int24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "liquidityBefore",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "liquidityAfter",
+                    "type": "uint128"
+                }
+            ],
+            "name": "Rebalance",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "lowerTick_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "upperTick_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityBefore",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityAfter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "arrakis_vault_event_Rebalance"
+    }
+}

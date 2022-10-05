@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldAdminTreasury",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAdminTreasury",
+                    "type": "address"
+                }
+            ],
+            "name": "UpdateAdminTreasury",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldAdminTreasury",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdminTreasury",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "arrakis_vault_event_UpdateAdminTreasury"
+    }
+}

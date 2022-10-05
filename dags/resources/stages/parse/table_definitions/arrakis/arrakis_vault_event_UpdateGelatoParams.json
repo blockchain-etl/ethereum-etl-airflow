@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "gelatoRebalanceBPS",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "gelatoWithdrawBPS",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "gelatoSlippageBPS",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "gelatoSlippageInterval",
+                    "type": "uint32"
+                }
+            ],
+            "name": "UpdateGelatoParams",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "gelatoRebalanceBPS",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gelatoWithdrawBPS",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gelatoSlippageBPS",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gelatoSlippageInterval",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "arrakis_vault_event_UpdateGelatoParams"
+    }
+}
