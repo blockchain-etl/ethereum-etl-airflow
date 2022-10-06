@@ -51,7 +51,7 @@ def build_parse_dag(
         PARTITION_DAG_ID = 'ethereum_partition_dag'
 
     default_dag_args = {
-        'depends_on_past': True,
+        'depends_on_past': False,
         'start_date': parse_start_date,
         'email_on_failure': True,
         'email_on_retry': False,
