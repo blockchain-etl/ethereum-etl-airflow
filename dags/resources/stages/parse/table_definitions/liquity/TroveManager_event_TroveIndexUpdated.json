@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_newIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TroveIndexUpdated",
+            "type": "event"
+        },
+        "contract_address": "0xa39739ef8b0231dbfa0dcda07d7e29faabcf4bb2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "liquity",
+        "schema": [
+            {
+                "description": "",
+                "name": "_borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TroveManager_event_TroveIndexUpdated"
+    }
+}
