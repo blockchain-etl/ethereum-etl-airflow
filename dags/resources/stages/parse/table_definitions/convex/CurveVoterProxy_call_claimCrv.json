@@ -1,0 +1,38 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_gauge",
+                    "type": "address"
+                }
+            ],
+            "name": "claimCrv",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x989aeb4d175e16225e39e87d0d97a3360524ad80",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_gauge",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveVoterProxy_call_claimCrv"
+    }
+}
