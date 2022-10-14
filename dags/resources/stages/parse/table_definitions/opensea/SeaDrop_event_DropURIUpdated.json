@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "newDropURI",
+                    "type": "string"
+                }
+            ],
+            "name": "DropURIUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "OpenSea",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newDropURI",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaDrop_event_DropURIUpdated"
+    }
+}

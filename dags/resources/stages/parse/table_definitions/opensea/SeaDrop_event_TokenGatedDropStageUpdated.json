@@ -1,0 +1,138 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "allowedNftToken",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint80",
+                            "name": "mintPrice",
+                            "type": "uint80"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "maxTotalMintableByWallet",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint48",
+                            "name": "startTime",
+                            "type": "uint48"
+                        },
+                        {
+                            "internalType": "uint48",
+                            "name": "endTime",
+                            "type": "uint48"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "dropStageIndex",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "maxTokenSupplyForStage",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "feeBps",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "restrictFeeRecipients",
+                            "type": "bool"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct TokenGatedDropStage",
+                    "name": "dropStage",
+                    "type": "tuple"
+                }
+            ],
+            "name": "TokenGatedDropStageUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "OpenSea",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allowedNftToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "mintPrice",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxTotalMintableByWallet",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "endTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "dropStageIndex",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxTokenSupplyForStage",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "feeBps",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "restrictFeeRecipients",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "dropStage",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaDrop_event_TokenGatedDropStageUpdated"
+    }
+}

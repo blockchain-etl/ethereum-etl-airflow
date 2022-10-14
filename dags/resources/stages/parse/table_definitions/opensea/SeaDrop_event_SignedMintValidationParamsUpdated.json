@@ -1,0 +1,128 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "signer",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint80",
+                            "name": "minMintPrice",
+                            "type": "uint80"
+                        },
+                        {
+                            "internalType": "uint24",
+                            "name": "maxMaxTotalMintableByWallet",
+                            "type": "uint24"
+                        },
+                        {
+                            "internalType": "uint40",
+                            "name": "minStartTime",
+                            "type": "uint40"
+                        },
+                        {
+                            "internalType": "uint40",
+                            "name": "maxEndTime",
+                            "type": "uint40"
+                        },
+                        {
+                            "internalType": "uint40",
+                            "name": "maxMaxTokenSupplyForStage",
+                            "type": "uint40"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "minFeeBps",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "maxFeeBps",
+                            "type": "uint16"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct SignedMintValidationParams",
+                    "name": "signedMintValidationParams",
+                    "type": "tuple"
+                }
+            ],
+            "name": "SignedMintValidationParamsUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "OpenSea",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "minMintPrice",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxMaxTotalMintableByWallet",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "minStartTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxEndTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxMaxTokenSupplyForStage",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "minFeeBps",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxFeeBps",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "signedMintValidationParams",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaDrop_event_SignedMintValidationParamsUpdated"
+    }
+}

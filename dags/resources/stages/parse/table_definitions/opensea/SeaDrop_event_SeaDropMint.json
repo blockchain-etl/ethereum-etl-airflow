@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "minter",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "payer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "quantityMinted",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "unitMintPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "feeBps",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "dropStageIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SeaDropMint",
+            "type": "event"
+        },
+        "contract_address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "OpenSea",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quantityMinted",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "unitMintPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeBps",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dropStageIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaDrop_event_SeaDropMint"
+    }
+}
