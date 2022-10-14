@@ -67,7 +67,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "OpenSea",
+        "dataset_name": "opensea",
         "schema": [
             {
                 "description": "",
