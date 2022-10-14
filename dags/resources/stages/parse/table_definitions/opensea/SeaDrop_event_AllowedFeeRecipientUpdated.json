@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bool",
+                    "name": "allowed",
+                    "type": "bool"
+                }
+            ],
+            "name": "AllowedFeeRecipientUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allowed",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaDrop_event_AllowedFeeRecipientUpdated"
+    }
+}
