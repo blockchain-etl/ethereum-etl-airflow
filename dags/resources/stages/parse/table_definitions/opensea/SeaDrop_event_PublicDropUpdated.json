@@ -1,0 +1,107 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint80",
+                            "name": "mintPrice",
+                            "type": "uint80"
+                        },
+                        {
+                            "internalType": "uint48",
+                            "name": "startTime",
+                            "type": "uint48"
+                        },
+                        {
+                            "internalType": "uint48",
+                            "name": "endTime",
+                            "type": "uint48"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "maxTotalMintableByWallet",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "feeBps",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "restrictFeeRecipients",
+                            "type": "bool"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct PublicDrop",
+                    "name": "publicDrop",
+                    "type": "tuple"
+                }
+            ],
+            "name": "PublicDropUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "opensea",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "mintPrice",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "endTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxTotalMintableByWallet",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "feeBps",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "restrictFeeRecipients",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "publicDrop",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaDrop_event_PublicDropUpdated"
+    }
+}
