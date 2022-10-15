@@ -1,0 +1,22 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [],
+            "name": "withdrawAll",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xc5bddf9843308380375a611c18b50fb9341f502a', '0xba2e7fed597fd0e3e70f5130bcdbbfe06bb94fe1', '0xec0d8d3ed5477106c6d4ea27d90a60e594693c90', '0x597ad1e0c13bfe8025993d9e79c69e1c0233522e', '0x37d19d1c4e1fa9dc47bd1ea12f742a0887eda74a', '0xacd43e627e64355f1861cec6d3a6688b31a6f952', '0x2f08119c6f07c006695e079aafc638b8789faf18', '0xe1237aa7f535b0cc33fd973d66cbf830354d16c7', '0x9ca85572e6a3ebf24dedd195623f188735a5179f', '0x629c759d1e83efbf63d84eb3868b564d9521c129', '0x0fcdaedfb8a7dfda2e9838564c5a1665d856afdf', '0xcc7e70a958917cce67b4b87a8c30e6297451ae98', '0x98b058b2cbacf5e99bc7012df757ea7cfebd35bc', '0xe0db48b4f71752c4bef16de1dbd042b82976b8c7', '0x5334e150b938dd2b6bd040d9c4a03cff0ced3765', '0xf6c9e9af314982a4b38366f4abfaa00595c5a6fc', '0xa8b1cb4ed612ee179bdea16cca6ba596321ae52d', '0x07fb4756f67bd46b748b16119e802f1f880fb2cc', '0x7f83935ecfe4729c4ea592ab2bc1a32588409797', '0x123964ebe096a920dae00fb795ffbfa0c9ff4675', '0x46afc2dfbd1ea0c0760cad8262a5838e803a37e5', '0x5533ed0a3b83f70c3c4a1f69ef5546d3d4713e44', '0x39546945695dcb1c037c836925b355262f551f55', '0x8e6741b456a074f0bc45b8b82a755d4af7e965df', '0x03403154afc09ce8e44c3b185c82c6ad5f86b9ab', '0xe625f5923303f1ce7a43acfefd11fd12f30dbca4', '0xbacb69571323575c6a5a3b4f9eede1dc7d31fbc1', '0x1b5eb1173d2bf770e50f10410c9a96f7a8eb6e75', '0x96ea6af74af09522fcb4c28c269c26f59a31ced6', '0x5dbcf33d8c2e976c6b560249878e6f1491bca25c', '0x2994529c0652d127b7842094103715ec5299bbed', '0x7ff566e1d69deff32a7b244ae7276b9f90e9d0f6', '0xfe39ce91437c76178665d64d7a2694b0f6f17fe3'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "yearn",
+        "schema": [],
+        "table_description": "",
+        "table_name": "V1Vault_call_withdrawAll"
+    }
+}

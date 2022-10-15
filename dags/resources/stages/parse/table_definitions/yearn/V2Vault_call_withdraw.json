@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "maxShares",
+                    "type": "uint256"
+                },
+                {
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "name": "maxLoss",
+                    "type": "uint256"
+                }
+            ],
+            "name": "withdraw",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT vault FROM ref('Vault_Deployer_event_NewExperimentalVault')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "yearn",
+        "schema": [
+            {
+                "description": "",
+                "name": "maxShares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxLoss",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2Vault_call_withdraw"
+    }
+}
