@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "claim",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xc5bddf9843308380375a611c18b50fb9341f502a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "yearn",
+        "schema": [],
+        "table_description": "",
+        "table_name": "VeCurveVault_call_claim"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "adapter",
+                    "type": "address"
+                }
+            ],
+            "name": "add",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x5a464c28d19848f44199d003bef5ecc87d090f87",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "adapter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "IlkRegistry_call_add"
+    }
+}
