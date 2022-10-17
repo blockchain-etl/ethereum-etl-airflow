@@ -59,7 +59,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "ethereum_sudoswap",
         "schema": [
             {
                 "description": "",
@@ -103,6 +103,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_createPairETH"
+        "table_name": "LSSVMPairFactory_call_createPairETH"
     }
 }
