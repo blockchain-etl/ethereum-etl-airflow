@@ -1,0 +1,45 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "name": "receiver",
+                    "type": "address"
+                }
+            ],
+            "name": "woof",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xd0660cd418a64a1d44e9214ad8e459324d8157f1",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "yearn",
+        "schema": [
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Woofy_call_woof"
+    }
+}
