@@ -1,0 +1,44 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "join",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x1fe789bbac5b141bdd795a3bc5e12af29ddb4b86', '0x476b81c12dc71edfad1f64b9e07caa60f4b156e2', '0x5e11e34b6745feba9449ae53c185413d6edc66be', '0xa4fd373b93ad8e054970a3d6cd4fd4c31d08192e', '0xd50a8e9369140539d1c2d113c4dc1e659c6242eb', '0xe72c7e90bc26c11d45dbee736f0acf57fc5b7152', '0x885f16e177d45fc9e7c87e1da9fd47a9cfce8e13', '0x9759a6ac90977b93b58547b4a71c78317f391a28', '0xbfd445a97e7459b0ebb34cfbd3245750dba4d7a4'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "mcd_call_join"
+    }
+}

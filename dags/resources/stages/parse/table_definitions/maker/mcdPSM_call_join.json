@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "urn",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_msgSender",
+                    "type": "address"
+                }
+            ],
+            "name": "join",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x79a0fa989fb7adf1f8e80c93ee605ebb94f7c6a5', '0x7bbd8ca5e413bca521c2c80d8d1908616894cf21', '0x0a59649758aa4d66e25f08dd01271e891fe52199'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "urn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_msgSender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "mcdPSM_call_join"
+    }
+}
