@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint128",
+                    "name": "spotPrice",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "delta",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "numItems",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "feeMultiplier",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "protocolFeeMultiplier",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getSellInfo",
+            "outputs": [
+                {
+                    "internalType": "enum CurveErrorCodes.Error",
+                    "name": "error",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "newSpotPrice",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "newDelta",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "outputValue",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "protocolFee",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "contract_address": "0x5b6ac51d9b1cede0068a1b26533cace807f883ee",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "spotPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delta",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "numItems",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeMultiplier",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocolFeeMultiplier",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LinearCurve_call_getSellInfo"
+    }
+}
