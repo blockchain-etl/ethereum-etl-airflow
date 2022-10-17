@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_S",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "_epoch",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "_scale",
+                    "type": "uint128"
+                }
+            ],
+            "name": "S_Updated",
+            "type": "event"
+        },
+        "contract_address": "0x66017d22b0f8556afdd19fc67041899eb65a21bb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "liquity",
+        "schema": [
+            {
+                "description": "",
+                "name": "_S",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_epoch",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_scale",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StabilityPool_event_S_Updated"
+    }
+}

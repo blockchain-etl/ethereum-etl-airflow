@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_debt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_coll",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "stake",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum BorrowerOperations.BorrowerOperation",
+                    "name": "operation",
+                    "type": "uint8"
+                }
+            ],
+            "name": "TroveUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x24179cd81c9e782a4096035f7ec97fb8b783e007",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "liquity",
+        "schema": [
+            {
+                "description": "",
+                "name": "_borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_debt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_coll",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stake",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BorrowerOperations_event_TroveUpdated"
+    }
+}
