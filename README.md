@@ -19,23 +19,33 @@ Create a new Cloud Composer environment:
 
 ```bash
 export ENVIRONMENT_NAME=ethereum-etl-0
+
+AIRFLOW_CONFIGS_ARR=(
+    "celery-worker_concurrency=12"
+    "core-parallelism=48"
+    "scheduler-dag_dir_list_interval=300"
+    "scheduler-min_file_process_interval=120"
+)
+export AIRFLOW_CONFIGS=$(IFS=, ; echo "${AIRFLOW_CONFIGS_ARR[*]}")
+
 gcloud composer environments create \
     $ENVIRONMENT_NAME \
     --location=us-central1 \
     --image-version=composer-2.0.25-airflow-2.2.5 \
-    --environment-size=small \
+    --environment-size=medium \
     --scheduler-cpu=2 \
-    --scheduler-memory=4 \
-    --scheduler-storage=1 \
-    --scheduler-count=1 \
-    --web-server-cpu=0.5 \
+    --scheduler-memory=13 \
+    --scheduler-storage=2 \
+    --scheduler-count=2 \
+    --web-server-cpu=1 \
     --web-server-memory=2 \
-    --web-server-storage=512MB \
-    --worker-cpu=2 \
-    --worker-memory=8 \
-    --worker-storage=1 \
+    --web-server-storage=1 \
+    --worker-cpu=4 \
+    --worker-memory=26 \
+    --worker-storage=4 \
     --min-workers=1 \
-    --max-workers=8
+    --max-workers=8 \
+    --airflow-configs=$AIRFLOW_CONFIGS
 
 gcloud composer environments update \
     $ENVIRONMENT_NAME \
