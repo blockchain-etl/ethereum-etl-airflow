@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_depositor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_P",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_S",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_G",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DepositSnapshotUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x66017d22b0f8556afdd19fc67041899eb65a21bb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "liquity",
+        "schema": [
+            {
+                "description": "",
+                "name": "_depositor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_P",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_S",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_G",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StabilityPool_event_DepositSnapshotUpdated"
+    }
+}

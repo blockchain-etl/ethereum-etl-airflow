@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_newBalance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StabilityPoolETHBalanceUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x66017d22b0f8556afdd19fc67041899eb65a21bb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "liquity",
+        "schema": [
+            {
+                "description": "",
+                "name": "_newBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StabilityPool_event_StabilityPoolETHBalanceUpdated"
+    }
+}

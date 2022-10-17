@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_newBalance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CollBalanceUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x3d32e8b97ed5881324241cf03b2da5e2ebce5521",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "liquity",
+        "schema": [
+            {
+                "description": "",
+                "name": "_account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CollSurplusPool_event_CollBalanceUpdated"
+    }
+}
