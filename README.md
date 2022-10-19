@@ -13,17 +13,44 @@ Read this article: https://cloud.google.com/blog/products/data-analytics/ethereu
 
 - Create a new Google Storage bucket to store exported files https://console.cloud.google.com/storage/browser
 
-### Create Google Cloud Composer environment
+### Create Google Cloud Composer (version 2) environment
 
 Create a new Cloud Composer environment:
 
 ```bash
 export ENVIRONMENT_NAME=ethereum-etl-0
-gcloud composer environments create $ENVIRONMENT_NAME --location=us-central1 --zone=us-central1-a \
-    --disk-size=50GB --machine-type=n1-standard-2 --node-count=3 --python-version=3 --image-version=composer-1.17.6-airflow-1.10.15 \
-    --network=default --subnetwork=default
 
-gcloud composer environments update $ENVIRONMENT_NAME --location=us-central1 --update-pypi-package=ethereum-etl==1.7.2
+AIRFLOW_CONFIGS_ARR=(
+    "celery-worker_concurrency=12"
+    "core-parallelism=48"
+    "scheduler-dag_dir_list_interval=300"
+    "scheduler-min_file_process_interval=120"
+)
+export AIRFLOW_CONFIGS=$(IFS=, ; echo "${AIRFLOW_CONFIGS_ARR[*]}")
+
+gcloud composer environments create \
+    $ENVIRONMENT_NAME \
+    --location=us-central1 \
+    --image-version=composer-2.0.25-airflow-2.2.5 \
+    --environment-size=medium \
+    --scheduler-cpu=2 \
+    --scheduler-memory=13 \
+    --scheduler-storage=2 \
+    --scheduler-count=2 \
+    --web-server-cpu=1 \
+    --web-server-memory=2 \
+    --web-server-storage=1 \
+    --worker-cpu=4 \
+    --worker-memory=26 \
+    --worker-storage=4 \
+    --min-workers=1 \
+    --max-workers=8 \
+    --airflow-configs=$AIRFLOW_CONFIGS
+
+gcloud composer environments update \
+    $ENVIRONMENT_NAME \
+    --location=us-central1 \
+    --update-pypi-packages-from-file=requirements_airflow.txt
 ```
 
 Create variables in Airflow (**Admin > Variables** in the UI):
@@ -46,7 +73,10 @@ Check other variables in `dags/ethereumetl_airflow/variables.py`.
 ### Running Tests
 
 ```bash
-pip install -r requirements.txt
+pip install \
+    -r requirements_test.txt \
+    -r requirements_local.txt \
+    -r requirements_airflow.txt
 pytest -vv -s
 ```
 

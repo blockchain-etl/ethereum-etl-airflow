@@ -22,6 +22,7 @@ x-airflow: &airflow-common
     - airflow_logs:/root/airflow/logs
     - ./dags:/root/airflow/dags
     - ./docker/variables.json:/root/airflow/variables.json
+    - ./docker/webserver_config_local.py:/root/airflow/webserver_config.py:ro
     - ~/.config/gcloud:/root/.config/gcloud
 
 services:

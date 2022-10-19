@@ -9,4 +9,4 @@ if [ -z "${airflow_bucket}" ]; then
     exit 1
 fi
 
-gsutil -m cp -r dags/* gs://${airflow_bucket}/dags/
+gsutil -m rsync -x 'airflow_monitoring|.*\.pyc$' -cr dags/ gs://${airflow_bucket}/dags/

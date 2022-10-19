@@ -3,10 +3,11 @@ from __future__ import print_function
 import os
 import logging
 from datetime import timedelta
+from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from airflow import DAG, configuration
-from airflow.operators import python_operator
+from airflow.operators.python import PythonOperator
 
 from ethereumetl.cli import (
     get_block_range_for_date,
@@ -18,6 +19,13 @@ from ethereumetl.cli import (
     export_traces,
     extract_field,
 )
+
+# When running on Composer, use suggested Data folder for temp storage
+# This is a folder in the Composer Bucket, mounted locally using gcsfuse
+# Overcomes the 10GB ephemerol storage limit on workers (imposed by GKE Autopilot)
+# https://cloud.google.com/composer/docs/composer-2/cloud-storage
+GCS_DATA_DIR = "/home/airflow/gcs/data/"
+TEMP_DIR = GCS_DATA_DIR if Path(GCS_DATA_DIR).exists() else None
 
 
 def build_export_dag(
@@ -70,8 +78,8 @@ def build_export_dag(
         from airflow.hooks.S3_hook import S3Hook
         cloud_storage_hook = S3Hook(aws_conn_id="aws_default")
     else:
-        from airflow.contrib.hooks.gcs_hook import GoogleCloudStorageHook
-        cloud_storage_hook = GoogleCloudStorageHook(google_cloud_storage_conn_id="google_cloud_default")
+        from airflow.providers.google.cloud.hooks.gcs import GCSHook
+        cloud_storage_hook = GCSHook(gcp_conn_id="google_cloud_default")
 
     # Export
     def export_path(directory, date):
@@ -123,9 +131,9 @@ def build_export_dag(
 
         return int(start_block), int(end_block)
 
-    def export_blocks_and_transactions_command(execution_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
-            start_block, end_block = get_block_range(tempdir, execution_date, provider_uri)
+    def export_blocks_and_transactions_command(logical_date, provider_uri, **kwargs):
+        with TemporaryDirectory(dir=TEMP_DIR) as tempdir:
+            start_block, end_block = get_block_range(tempdir, logical_date, provider_uri)
 
             logging.info('Calling export_blocks_and_transactions({}, {}, {}, {}, {}, ...)'.format(
                 start_block, end_block, export_batch_size, provider_uri, export_max_workers))
@@ -141,21 +149,21 @@ def build_export_dag(
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "blocks_meta.txt"), export_path("blocks_meta", execution_date)
+                os.path.join(tempdir, "blocks_meta.txt"), export_path("blocks_meta", logical_date)
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "blocks.json"), export_path("blocks", execution_date)
+                os.path.join(tempdir, "blocks.json"), export_path("blocks", logical_date)
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "transactions.json"), export_path("transactions", execution_date)
+                os.path.join(tempdir, "transactions.json"), export_path("transactions", logical_date)
             )
 
-    def export_receipts_and_logs_command(execution_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
+    def export_receipts_and_logs_command(logical_date, provider_uri, **kwargs):
+        with TemporaryDirectory(dir=TEMP_DIR) as tempdir:
             copy_from_export_path(
-                export_path("transactions", execution_date), os.path.join(tempdir, "transactions.json")
+                export_path("transactions", logical_date), os.path.join(tempdir, "transactions.json")
             )
 
             logging.info('Calling extract_csv_column(...)')
@@ -177,14 +185,14 @@ def build_export_dag(
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "receipts.json"), export_path("receipts", execution_date)
+                os.path.join(tempdir, "receipts.json"), export_path("receipts", logical_date)
             )
-            copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", execution_date))
+            copy_to_export_path(os.path.join(tempdir, "logs.json"), export_path("logs", logical_date))
 
-    def extract_contracts_command(execution_date, **kwargs):
-        with TemporaryDirectory() as tempdir:
+    def extract_contracts_command(logical_date, **kwargs):
+        with TemporaryDirectory(dir=TEMP_DIR) as tempdir:
             copy_from_export_path(
-                export_path("traces", execution_date), os.path.join(tempdir, "traces.json")
+                export_path("traces", logical_date), os.path.join(tempdir, "traces.json")
             )
 
             logging.info('Calling extract_contracts(..., {}, {})'.format(
@@ -198,13 +206,13 @@ def build_export_dag(
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "contracts.json"), export_path("contracts", execution_date)
+                os.path.join(tempdir, "contracts.json"), export_path("contracts", logical_date)
             )
 
-    def extract_tokens_command(execution_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
+    def extract_tokens_command(logical_date, provider_uri, **kwargs):
+        with TemporaryDirectory(dir=TEMP_DIR) as tempdir:
             copy_from_export_path(
-                export_path("contracts", execution_date), os.path.join(tempdir, "contracts.json")
+                export_path("contracts", logical_date), os.path.join(tempdir, "contracts.json")
             )
 
             logging.info('Calling extract_tokens(..., {}, {})'.format(export_max_workers, provider_uri))
@@ -217,13 +225,13 @@ def build_export_dag(
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "tokens.json"), export_path("tokens", execution_date)
+                os.path.join(tempdir, "tokens.json"), export_path("tokens", logical_date)
             )
 
-    def extract_token_transfers_command(execution_date, **kwargs):
-        with TemporaryDirectory() as tempdir:
+    def extract_token_transfers_command(logical_date, **kwargs):
+        with TemporaryDirectory(dir=TEMP_DIR) as tempdir:
             copy_from_export_path(
-                export_path("logs", execution_date), os.path.join(tempdir, "logs.json")
+                export_path("logs", logical_date), os.path.join(tempdir, "logs.json")
             )
 
             logging.info('Calling extract_token_transfers(..., {}, ..., {})'.format(
@@ -239,12 +247,12 @@ def build_export_dag(
 
             copy_to_export_path(
                 os.path.join(tempdir, "token_transfers.json"),
-                export_path("token_transfers", execution_date),
+                export_path("token_transfers", logical_date),
             )
 
-    def export_traces_command(execution_date, provider_uri, **kwargs):
-        with TemporaryDirectory() as tempdir:
-            start_block, end_block = get_block_range(tempdir, execution_date, provider_uri)
+    def export_traces_command(logical_date, provider_uri, **kwargs):
+        with TemporaryDirectory(dir=TEMP_DIR) as tempdir:
+            start_block, end_block = get_block_range(tempdir, logical_date, provider_uri)
 
             logging.info('Calling export_traces({}, {}, {}, ...,{}, {}, {}, {})'.format(
                 start_block, end_block, export_batch_size, export_max_workers, provider_uri,
@@ -262,15 +270,14 @@ def build_export_dag(
             )
 
             copy_to_export_path(
-                os.path.join(tempdir, "traces.json"), export_path("traces", execution_date)
+                os.path.join(tempdir, "traces.json"), export_path("traces", logical_date)
             )
 
     def add_export_task(toggle, task_id, python_callable, dependencies=None):
         if toggle:
-            operator = python_operator.PythonOperator(
+            operator = PythonOperator(
                 task_id=task_id,
                 python_callable=python_callable,
-                provide_context=True,
                 execution_timeout=timedelta(hours=15),
                 dag=dag,
             )
