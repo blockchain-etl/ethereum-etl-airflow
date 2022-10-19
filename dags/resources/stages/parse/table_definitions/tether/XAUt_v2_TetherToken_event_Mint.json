@@ -4,13 +4,19 @@
             "anonymous": false,
             "inputs": [
                 {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_destination",
+                    "type": "address"
+                },
+                {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "_amount",
                     "type": "uint256"
                 }
             ],
-            "name": "Issue",
+            "name": "Mint",
             "type": "event"
         },
         "contract_address": "0x68749665ff8d2d112fa859aa293f07a622782f38",
@@ -22,7 +28,12 @@
         "schema": [
             {
                 "description": "",
-                "name": "amount",
+                "name": "_destination",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
                 "type": "STRING"
             }
         ],
