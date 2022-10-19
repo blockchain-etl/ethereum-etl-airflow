@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 from airflow import models
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
 from google.cloud import bigquery
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job, create_view, read_bigquery_schema_from_file
@@ -93,7 +93,6 @@ def build_amend_dag(
         create_view_operator = PythonOperator(
             task_id='create_token_amendments_view',
             python_callable=create_view_task,
-            provide_context=True,
             execution_timeout=timedelta(minutes=60),
             dag=dag
         )

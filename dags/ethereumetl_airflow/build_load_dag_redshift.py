@@ -7,8 +7,8 @@ import time
 from datetime import datetime, timedelta
 
 from airflow import models
-from airflow.hooks.postgres_hook import PostgresHook
-from airflow.operators.python_operator import PythonOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+from airflow.operators.python import PythonOperator
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -52,7 +52,6 @@ def build_load_dag_redshift(
             task_id='s3_to_redshift_{task}'.format(task=task),
             dag=dag,
             python_callable=load_task,
-            provide_context=True,
             op_kwargs={
                 'conn_id': 'redshift',
                 'file_format': file_format,

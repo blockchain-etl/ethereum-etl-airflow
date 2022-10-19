@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 from glob import glob
 
 from airflow import models
-from airflow.operators.python_operator import PythonOperator
-from airflow.operators.sensors import ExternalTaskSensor
+from airflow.operators.python import PythonOperator
+from airflow.sensors.external_task import ExternalTaskSensor
 from google.cloud import bigquery
 
 logging.basicConfig()
@@ -52,7 +52,6 @@ def build_clean_dag(
         clean_operator = PythonOperator(
             task_id=f'clean_{task}',
             python_callable=clean_task,
-            provide_context=True,
             execution_timeout=timedelta(hours=4),
             dag=dag
         )

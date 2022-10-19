@@ -1,5 +1,0 @@
-apache-airflow[gcp]==1.10.15
-ethereum-etl
-google-cloud-bigquery
-pytest
-jsonschema
