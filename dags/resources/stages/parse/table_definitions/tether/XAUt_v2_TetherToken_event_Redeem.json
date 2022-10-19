@@ -6,7 +6,7 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "_amount",
                     "type": "uint256"
                 }
             ],
@@ -22,7 +22,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "amount",
+                "name": "_amount",
                 "type": "STRING"
             }
         ],
