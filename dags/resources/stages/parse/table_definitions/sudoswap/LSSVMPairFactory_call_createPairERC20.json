@@ -80,60 +80,8 @@
         "schema": [
             {
                 "description": "",
-                "fields": [
-                    {
-                        "description": "",
-                        "name": "token",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "nft",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "bondingCurve",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "assetRecipient",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "poolType",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "delta",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "fee",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "spotPrice",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "initialNFTIDs",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "initialTokenBalance",
-                        "type": "STRING"
-                    }
-                ],
                 "name": "params",
-                "type": "RECORD"
+                "type": "STRING"
             }
         ],
         "table_description": "",
