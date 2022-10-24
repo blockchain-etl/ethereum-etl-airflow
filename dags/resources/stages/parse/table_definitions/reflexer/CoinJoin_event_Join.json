@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Join",
+            "type": "event"
+        },
+        "contract_address": "0x0a5653cca4db1b6e265f47caf6969e64f1cfdc45",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "reflexer",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CoinJoin_event_Join"
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "proxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "cache",
+                    "type": "address"
+                }
+            ],
+            "name": "Created",
+            "type": "event"
+        },
+        "contract_address": "0xa26e15c895efc0616177b7c1e7270a4c7d51c997",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "reflexer",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "proxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cache",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DSProxyFactory_event_Created"
+    }
+}

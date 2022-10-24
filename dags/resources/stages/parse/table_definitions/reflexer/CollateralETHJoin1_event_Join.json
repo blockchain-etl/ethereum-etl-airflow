@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "wad",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Join",
+            "type": "event"
+        },
+        "contract_address": "0x2d3cd7b81c93f188f3cb8ad87c8acc73d6226e3a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "reflexer",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wad",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CollateralETHJoin1_event_Join"
+    }
+}
