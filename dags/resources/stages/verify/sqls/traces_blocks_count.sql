@@ -4,6 +4,7 @@ select count(distinct(block_number))
 from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.traces`
 where trace_type = 'reward' and reward_type = 'block'
     and date(block_timestamp) <= '{{ds}}'
+    and value > 0
 ) =
 (
 select count(*)
