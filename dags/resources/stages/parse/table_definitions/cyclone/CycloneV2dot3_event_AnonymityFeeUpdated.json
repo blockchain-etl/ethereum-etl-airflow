@@ -19,7 +19,7 @@
             "name": "AnonymityFeeUpdated",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x7e6d3b1161df9c9c7527f68d651b297d2fdb820b', '0x9134c9975244b46692ad9a7da36dba8734ec6da3'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x09f03488291063a8f3c67d2aab7002419d11c113', '0x52609307f2f6C43b7DF63364ef65718d299Ac246'])",
         "field_mapping": {},
         "type": "log"
     },
