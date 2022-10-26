@@ -250,12 +250,12 @@
             "stateMutability": "payable",
             "type": "function"
         },
-        "contract_address": "0x031aa05da8bf778dfc36d8d25ca68cbb2fc447c6",
+        "contract_address": "0x000000000000ad05ccc4f10045630fb830b95127",
         "field_mapping": {},
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "blur",
         "schema": [
             {
                 "description": "",
@@ -477,6 +477,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_execute"
+        "table_name": "BlurExchange_call_execute"
     }
 }
