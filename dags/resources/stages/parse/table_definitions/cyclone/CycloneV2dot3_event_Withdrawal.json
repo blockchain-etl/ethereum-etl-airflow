@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "nullifierHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "relayer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reward",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "relayerFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Withdrawal",
+            "type": "event"
+        },
+        "contract_address": "0x09f03488291063a8f3c67d2aab7002419d11c113",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cyclone",
+        "schema": [
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nullifierHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "relayer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reward",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "relayerFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CycloneV2dot3_event_Withdrawal"
+    }
+}
