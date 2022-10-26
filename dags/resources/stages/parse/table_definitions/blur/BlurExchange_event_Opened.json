@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Opened",
+            "type": "event"
+        },
+        "contract_address": "0x031aa05da8bf778dfc36d8d25ca68cbb2fc447c6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [],
+        "table_description": "",
+        "table_name": "BlurExchange_event_Opened"
+    }
+}
