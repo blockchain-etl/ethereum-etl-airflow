@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "commitment",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "leafIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cycDenomination",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "anonymityFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Deposit",
+            "type": "event"
+        },
+        "contract_address": "0x09f03488291063a8f3c67d2aab7002419d11c113",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cyclone",
+        "schema": [
+            {
+                "description": "",
+                "name": "commitment",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "leafIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cycDenomination",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "anonymityFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CycloneV2dot3_event_Deposit"
+    }
+}
