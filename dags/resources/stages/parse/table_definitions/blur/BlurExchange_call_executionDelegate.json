@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "executionDelegate",
+            "outputs": [
+                {
+                    "internalType": "contract IExecutionDelegate",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x000000000000ad05ccc4f10045630fb830b95127",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [],
+        "table_description": "",
+        "table_name": "BlurExchange_call_executionDelegate"
+    }
+}
