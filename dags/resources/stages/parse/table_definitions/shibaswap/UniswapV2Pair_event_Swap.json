@@ -43,7 +43,7 @@
             "name": "Swap",
             "type": "event"
         },
-        "contract_address": "SELECT DSP FROM ref('UniswapV2Factory_event_PairCreated')",
+        "contract_address": "SELECT pair FROM ref('UniswapV2Factory_event_PairCreated')",
         "field_mapping": {},
         "type": "log"
     },
