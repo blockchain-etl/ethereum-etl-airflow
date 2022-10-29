@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "maker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "makerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "takerToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "makerTokenFilledAmount",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "takerTokenFilledAmount",
+                    "type": "uint128"
+                }
+            ],
+            "name": "OtcOrderFilled",
+            "type": "event"
+        },
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerTokenFilledAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerTokenFilledAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Exchange_v4_0_event_OtcOrderFilled"
+    }
+}

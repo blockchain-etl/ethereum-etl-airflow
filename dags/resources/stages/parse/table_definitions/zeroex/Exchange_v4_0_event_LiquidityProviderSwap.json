@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "inputToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "outputToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "inputTokenAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "outputTokenAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                }
+            ],
+            "name": "LiquidityProviderSwap",
+            "type": "event"
+        },
+        "contract_address": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zeroex",
+        "schema": [
+            {
+                "description": "",
+                "name": "inputToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inputTokenAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputTokenAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Exchange_v4_0_event_LiquidityProviderSwap"
+    }
+}
