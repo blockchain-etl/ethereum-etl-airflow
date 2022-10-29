@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "contextId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract Token",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "availableAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "originalAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FundsMigrated",
+            "type": "event"
+        },
+        "contract_address": "0xeef417e1d5cc832e619ae18d2f140de2999dd4fb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "contextId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "availableAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "originalAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BancorNetworkV3_event_FundsMigrated"
+    }
+}
