@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "contextId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract Token",
+                    "name": "sourceToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract Token",
+                    "name": "targetToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "sourceAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "targetAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bntAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "targetFeeAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bntFeeAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                }
+            ],
+            "name": "TokensTraded",
+            "type": "event"
+        },
+        "contract_address": "0xeef417e1d5cc832e619ae18d2f140de2999dd4fb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "contextId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sourceToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "targetToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sourceAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "targetAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bntAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "targetFeeAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bntFeeAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trader",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BancorNetwork_event_TokensTraded"
+    }
+}
