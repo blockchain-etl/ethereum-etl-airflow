@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "inAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "outAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "inAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "outAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "auxiliaryData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Swapped",
+            "type": "event"
+        },
+        "contract_address": "0x2e9c6dcdca22a5952a88c4b18edb5b54c5155bc9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "clipper",
+        "schema": [
+            {
+                "description": "",
+                "name": "inAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auxiliaryData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ClipperExchangeInterface_event_Swapped"
+    }
+}
