@@ -48,7 +48,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_dodo",
+        "dataset_name": "dodo",
         "schema": [
             {
                 "description": "",
