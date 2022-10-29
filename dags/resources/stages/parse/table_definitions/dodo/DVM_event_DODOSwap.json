@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "fromToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "toToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fromAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                }
+            ],
+            "name": "DODOSwap",
+            "type": "event"
+        },
+        "contract_address": "SELECT dvm FROM ref('DVMFactory_event_NewDVM')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_dodo",
+        "schema": [
+            {
+                "description": "",
+                "name": "fromToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DVM_event_DODOSwap"
+    }
+}

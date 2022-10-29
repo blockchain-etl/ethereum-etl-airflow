@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "baseToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "quoteToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "creator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "dvm",
+                    "type": "address"
+                }
+            ],
+            "name": "NewDVM",
+            "type": "event"
+        },
+        "contract_address": "0x72d220ce168c4f361dd4dee5d826a01ad8598f6c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_dodo",
+        "schema": [
+            {
+                "description": "",
+                "name": "baseToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quoteToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "creator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dvm",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DVMFactory_event_NewDVM"
+    }
+}
