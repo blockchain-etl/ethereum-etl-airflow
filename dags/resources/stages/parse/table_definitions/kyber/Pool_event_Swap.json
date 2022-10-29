@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "deltaQty0",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "deltaQty1",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint160",
+                    "name": "sqrtP",
+                    "type": "uint160"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "liquidity",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "currentTick",
+                    "type": "int24"
+                }
+            ],
+            "name": "Swap",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('Factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kyber",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deltaQty0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deltaQty1",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sqrtP",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currentTick",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_event_Swap"
+    }
+}
