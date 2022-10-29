@@ -43,7 +43,7 @@
             "name": "SynthExchange",
             "type": "event"
         },
-        "contract_address": "SELECT '0xc011a72400e58ecd99ee497cf89e3775d4bd732f' UNION ALL SELECT '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f'",
+        "contract_address": "SELECT * FROM UNNEST(['0xc011a72400e58ecd99ee497cf89e3775d4bd732f', '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f'])",
         "field_mapping": {},
         "type": "log"
     },

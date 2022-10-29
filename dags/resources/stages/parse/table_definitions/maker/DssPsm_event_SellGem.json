@@ -25,7 +25,7 @@
             "name": "SellGem",
             "type": "event"
         },
-        "contract_address": "SELECT '0x204659b2fd2ad5723975c362ce2230fba11d3900' UNION ALL SELECT '0x89b78cfa322f6c5de0abceecab66aee45393cc5a' UNION ALL SELECT '0x961ae24a1ceba861d1fdf723794f6024dc5485cf'",
+        "contract_address": "SELECT * FROM UNNEST(['0x204659b2fd2ad5723975c362ce2230fba11d3900', '0x89b78cfa322f6c5de0abceecab66aee45393cc5a', '0x961ae24a1ceba861d1fdf723794f6024dc5485cf'])",
         "field_mapping": {},
         "type": "log"
     },
