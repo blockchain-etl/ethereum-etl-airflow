@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "fromCurrencyKey",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fromAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "toCurrencyKey",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "toAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "SynthExchange",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xc011a72400e58ecd99ee497cf89e3775d4bd732f', '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "synthetix",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromCurrencyKey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toCurrencyKey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Synthetix_event_SynthExchange"
+    }
+}

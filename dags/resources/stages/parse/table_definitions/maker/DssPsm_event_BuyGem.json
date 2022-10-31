@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BuyGem",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x204659b2fd2ad5723975c362ce2230fba11d3900', '0x89b78cfa322f6c5de0abceecab66aee45393cc5a', '0x961ae24a1ceba861d1fdf723794f6024dc5485cf'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DssPsm_event_BuyGem"
+    }
+}
