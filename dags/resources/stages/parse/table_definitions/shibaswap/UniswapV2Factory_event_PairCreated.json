@@ -24,7 +24,7 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "",
+                    "name": "unnamedField0",
                     "type": "uint256"
                 }
             ],
@@ -55,7 +55,7 @@
             },
             {
                 "description": "",
-                "name": "",
+                "name": "unnamedField0",
                 "type": "STRING"
             }
         ],
