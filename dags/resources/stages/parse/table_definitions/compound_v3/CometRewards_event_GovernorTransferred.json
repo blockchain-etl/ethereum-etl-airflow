@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldGovernor",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newGovernor",
+                    "type": "address"
+                }
+            ],
+            "name": "GovernorTransferred",
+            "type": "event"
+        },
+        "contract_address": "0x1b0e765f6224c21223aea2af16c1c46e38885a40",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound_v3",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldGovernor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newGovernor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CometRewards_event_GovernorTransferred"
+    }
+}

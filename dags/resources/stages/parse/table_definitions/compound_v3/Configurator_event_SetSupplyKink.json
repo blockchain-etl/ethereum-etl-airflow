@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "cometProxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "oldKink",
+                    "type": "uint64"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "newKink",
+                    "type": "uint64"
+                }
+            ],
+            "name": "SetSupplyKink",
+            "type": "event"
+        },
+        "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound_v3",
+        "schema": [
+            {
+                "description": "",
+                "name": "cometProxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldKink",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newKink",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Configurator_event_SetSupplyKink"
+    }
+}
