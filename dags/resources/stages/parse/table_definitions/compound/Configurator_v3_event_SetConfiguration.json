@@ -1,0 +1,556 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "cometProxy",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "governor",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "pauseGuardian",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "baseToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "baseTokenPriceFeed",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "extensionDelegate",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyKink",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyPerYearInterestRateSlopeLow",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyPerYearInterestRateSlopeHigh",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyPerYearInterestRateBase",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowKink",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowPerYearInterestRateSlopeLow",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowPerYearInterestRateSlopeHigh",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowPerYearInterestRateBase",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "storeFrontPriceFactor",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "trackingIndexScale",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "baseTrackingSupplySpeed",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "baseTrackingBorrowSpeed",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint104",
+                            "name": "baseMinForRewards",
+                            "type": "uint104"
+                        },
+                        {
+                            "internalType": "uint104",
+                            "name": "baseBorrowMin",
+                            "type": "uint104"
+                        },
+                        {
+                            "internalType": "uint104",
+                            "name": "targetReserves",
+                            "type": "uint104"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "priceFeed",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint8",
+                                    "name": "decimals",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint64",
+                                    "name": "borrowCollateralFactor",
+                                    "type": "uint64"
+                                },
+                                {
+                                    "internalType": "uint64",
+                                    "name": "liquidateCollateralFactor",
+                                    "type": "uint64"
+                                },
+                                {
+                                    "internalType": "uint64",
+                                    "name": "liquidationFactor",
+                                    "type": "uint64"
+                                },
+                                {
+                                    "internalType": "uint128",
+                                    "name": "supplyCap",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "internalType": "struct CometConfiguration.AssetConfig[]",
+                            "name": "assetConfigs",
+                            "type": "tuple[]"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct CometConfiguration.Configuration",
+                    "name": "oldConfiguration",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "governor",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "pauseGuardian",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "baseToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "baseTokenPriceFeed",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "extensionDelegate",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyKink",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyPerYearInterestRateSlopeLow",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyPerYearInterestRateSlopeHigh",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "supplyPerYearInterestRateBase",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowKink",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowPerYearInterestRateSlopeLow",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowPerYearInterestRateSlopeHigh",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowPerYearInterestRateBase",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "storeFrontPriceFactor",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "trackingIndexScale",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "baseTrackingSupplySpeed",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "baseTrackingBorrowSpeed",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint104",
+                            "name": "baseMinForRewards",
+                            "type": "uint104"
+                        },
+                        {
+                            "internalType": "uint104",
+                            "name": "baseBorrowMin",
+                            "type": "uint104"
+                        },
+                        {
+                            "internalType": "uint104",
+                            "name": "targetReserves",
+                            "type": "uint104"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "asset",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "priceFeed",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint8",
+                                    "name": "decimals",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint64",
+                                    "name": "borrowCollateralFactor",
+                                    "type": "uint64"
+                                },
+                                {
+                                    "internalType": "uint64",
+                                    "name": "liquidateCollateralFactor",
+                                    "type": "uint64"
+                                },
+                                {
+                                    "internalType": "uint64",
+                                    "name": "liquidationFactor",
+                                    "type": "uint64"
+                                },
+                                {
+                                    "internalType": "uint128",
+                                    "name": "supplyCap",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "internalType": "struct CometConfiguration.AssetConfig[]",
+                            "name": "assetConfigs",
+                            "type": "tuple[]"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct CometConfiguration.Configuration",
+                    "name": "newConfiguration",
+                    "type": "tuple"
+                }
+            ],
+            "name": "SetConfiguration",
+            "type": "event"
+        },
+        "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "cometProxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "governor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "pauseGuardian",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseTokenPriceFeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "extensionDelegate",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyKink",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyPerYearInterestRateSlopeLow",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyPerYearInterestRateSlopeHigh",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyPerYearInterestRateBase",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowKink",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowPerYearInterestRateSlopeLow",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowPerYearInterestRateSlopeHigh",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowPerYearInterestRateBase",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "storeFrontPriceFactor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "trackingIndexScale",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseTrackingSupplySpeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseTrackingBorrowSpeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseMinForRewards",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseBorrowMin",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "targetReserves",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "assetConfigs",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "oldConfiguration",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "governor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "pauseGuardian",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseTokenPriceFeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "extensionDelegate",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyKink",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyPerYearInterestRateSlopeLow",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyPerYearInterestRateSlopeHigh",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyPerYearInterestRateBase",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowKink",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowPerYearInterestRateSlopeLow",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowPerYearInterestRateSlopeHigh",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowPerYearInterestRateBase",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "storeFrontPriceFactor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "trackingIndexScale",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseTrackingSupplySpeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseTrackingBorrowSpeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseMinForRewards",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "baseBorrowMin",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "targetReserves",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "assetConfigs",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "newConfiguration",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Configurator_v3_event_SetConfiguration"
+    }
+}
