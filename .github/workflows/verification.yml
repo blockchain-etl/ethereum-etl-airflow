@@ -11,11 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Validate Json Files in parse Directory
     steps:
-      - uses: actions/setup-python@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
           python-version: "3.8.12"
-      - name: Checkout
-        uses: actions/checkout@v2
+          cache: 'pip'
       - name: Install dependencies
         run: |
           pip install --upgrade pip &&
