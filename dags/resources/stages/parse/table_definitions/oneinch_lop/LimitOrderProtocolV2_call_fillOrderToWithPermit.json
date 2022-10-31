@@ -1,0 +1,257 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "salt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "makerAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "takerAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "maker",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "receiver",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "allowedSender",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "makingAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "takingAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "makerAssetData",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "takerAssetData",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "getMakerAmount",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "getTakerAmount",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "predicate",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "permit",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "interaction",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct OrderMixin.Order",
+                    "name": "order",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "signature",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "makingAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "takingAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "thresholdAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "permit",
+                    "type": "bytes"
+                }
+            ],
+            "name": "fillOrderToWithPermit",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x119c71d3bbac22029622cbaec24854d3d32d2828",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "oneinch_lop",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "salt",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "makerAsset",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "takerAsset",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maker",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "receiver",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "allowedSender",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "makingAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "takingAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "makerAssetData",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "takerAssetData",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "getMakerAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "getTakerAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "predicate",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "permit",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "interaction",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "order",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makingAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takingAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "thresholdAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "permit",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LimitOrderProtocolV2_call_fillOrderToWithPermit"
+    }
+}
