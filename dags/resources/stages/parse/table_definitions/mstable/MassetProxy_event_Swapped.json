@@ -43,7 +43,7 @@
             "name": "Swapped",
             "type": "event"
         },
-        "contract_address": "0x15b2838cd28cc353afbe59385db3f366d8945aee",
+        "contract_address": "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
         "field_mapping": {},
         "type": "log"
     },
