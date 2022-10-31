@@ -10,25 +10,19 @@
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "asset",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "oldIRSlopeHigh",
+                    "type": "uint64"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint128",
-                    "name": "oldSupplyCap",
-                    "type": "uint128"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint128",
-                    "name": "newSupplyCap",
-                    "type": "uint128"
+                    "internalType": "uint64",
+                    "name": "newIRSlopeHigh",
+                    "type": "uint64"
                 }
             ],
-            "name": "UpdateAssetSupplyCap",
+            "name": "SetSupplyPerYearInterestRateSlopeHigh",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -36,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -45,21 +39,16 @@
             },
             {
                 "description": "",
-                "name": "asset",
+                "name": "oldIRSlopeHigh",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "oldSupplyCap",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "newSupplyCap",
+                "name": "newIRSlopeHigh",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_UpdateAssetSupplyCap"
+        "table_name": "Configurator_v3_event_SetSupplyPerYearInterestRateSlopeHigh"
     }
 }

@@ -10,25 +10,19 @@
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "asset",
-                    "type": "address"
-                },
-                {
                     "indexed": false,
                     "internalType": "uint64",
-                    "name": "oldLiquidateCF",
+                    "name": "oldIRBase",
                     "type": "uint64"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint64",
-                    "name": "newLiquidateCF",
+                    "name": "newIRBase",
                     "type": "uint64"
                 }
             ],
-            "name": "UpdateAssetLiquidateCollateralFactor",
+            "name": "SetSupplyPerYearInterestRateBase",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -36,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -45,21 +39,16 @@
             },
             {
                 "description": "",
-                "name": "asset",
+                "name": "oldIRBase",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "oldLiquidateCF",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "newLiquidateCF",
+                "name": "newIRBase",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_UpdateAssetLiquidateCollateralFactor"
+        "table_name": "Configurator_v3_event_SetSupplyPerYearInterestRateBase"
     }
 }

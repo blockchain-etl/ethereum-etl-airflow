@@ -318,7 +318,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -551,6 +551,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_SetConfiguration"
+        "table_name": "Configurator_v3_event_SetConfiguration"
     }
 }

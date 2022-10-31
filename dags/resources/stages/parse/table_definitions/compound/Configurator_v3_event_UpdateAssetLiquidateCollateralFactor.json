@@ -10,19 +10,25 @@
                     "type": "address"
                 },
                 {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
                     "indexed": false,
                     "internalType": "uint64",
-                    "name": "oldIRSlopeLow",
+                    "name": "oldLiquidateCF",
                     "type": "uint64"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint64",
-                    "name": "newIRSlopeLow",
+                    "name": "newLiquidateCF",
                     "type": "uint64"
                 }
             ],
-            "name": "SetBorrowPerYearInterestRateSlopeLow",
+            "name": "UpdateAssetLiquidateCollateralFactor",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -30,7 +36,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -39,16 +45,21 @@
             },
             {
                 "description": "",
-                "name": "oldIRSlopeLow",
+                "name": "asset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newIRSlopeLow",
+                "name": "oldLiquidateCF",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newLiquidateCF",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_SetBorrowPerYearInterestRateSlopeLow"
+        "table_name": "Configurator_v3_event_UpdateAssetLiquidateCollateralFactor"
     }
 }

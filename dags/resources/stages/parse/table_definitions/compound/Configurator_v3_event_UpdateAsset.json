@@ -49,11 +49,54 @@
                     ],
                     "indexed": false,
                     "internalType": "struct CometConfiguration.AssetConfig",
-                    "name": "assetConfig",
+                    "name": "oldAssetConfig",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "asset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "priceFeed",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "decimals",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "borrowCollateralFactor",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "liquidateCollateralFactor",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "liquidationFactor",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint128",
+                            "name": "supplyCap",
+                            "type": "uint128"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct CometConfiguration.AssetConfig",
+                    "name": "newAssetConfig",
                     "type": "tuple"
                 }
             ],
-            "name": "AddAsset",
+            "name": "UpdateAsset",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -61,7 +104,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -107,11 +150,53 @@
                         "type": "STRING"
                     }
                 ],
-                "name": "assetConfig",
+                "name": "oldAssetConfig",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "asset",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "priceFeed",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "decimals",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowCollateralFactor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "liquidateCollateralFactor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "liquidationFactor",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "supplyCap",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "newAssetConfig",
                 "type": "RECORD"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_AddAsset"
+        "table_name": "Configurator_v3_event_UpdateAsset"
     }
 }

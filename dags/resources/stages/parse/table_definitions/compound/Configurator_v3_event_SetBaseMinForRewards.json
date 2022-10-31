@@ -12,17 +12,17 @@
                 {
                     "indexed": false,
                     "internalType": "uint104",
-                    "name": "oldTargetReserves",
+                    "name": "oldBaseMinForRewards",
                     "type": "uint104"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint104",
-                    "name": "newTargetReserves",
+                    "name": "newBaseMinForRewards",
                     "type": "uint104"
                 }
             ],
-            "name": "SetTargetReserves",
+            "name": "SetBaseMinForRewards",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -30,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "oldTargetReserves",
+                "name": "oldBaseMinForRewards",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newTargetReserves",
+                "name": "newBaseMinForRewards",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_SetTargetReserves"
+        "table_name": "Configurator_v3_event_SetBaseMinForRewards"
     }
 }

@@ -6,23 +6,17 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "cometProxy",
+                    "name": "oldGovernor",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "oldPauseGuardian",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newPauseGuardian",
+                    "name": "newGovernor",
                     "type": "address"
                 }
             ],
-            "name": "SetPauseGuardian",
+            "name": "GovernorTransferred",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -30,25 +24,20 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
-                "name": "cometProxy",
+                "name": "oldGovernor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "oldPauseGuardian",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "newPauseGuardian",
+                "name": "newGovernor",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_SetPauseGuardian"
+        "table_name": "Configurator_v3_event_GovernorTransferred"
     }
 }

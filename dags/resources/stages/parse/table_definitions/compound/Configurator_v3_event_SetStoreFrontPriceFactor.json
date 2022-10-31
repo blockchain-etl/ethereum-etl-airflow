@@ -10,25 +10,19 @@
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "asset",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "oldStoreFrontPriceFactor",
+                    "type": "uint64"
                 },
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "oldPriceFeed",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "newPriceFeed",
-                    "type": "address"
+                    "internalType": "uint64",
+                    "name": "newStoreFrontPriceFactor",
+                    "type": "uint64"
                 }
             ],
-            "name": "UpdateAssetPriceFeed",
+            "name": "SetStoreFrontPriceFactor",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -36,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -45,21 +39,16 @@
             },
             {
                 "description": "",
-                "name": "asset",
+                "name": "oldStoreFrontPriceFactor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "oldPriceFeed",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "newPriceFeed",
+                "name": "newStoreFrontPriceFactor",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_UpdateAssetPriceFeed"
+        "table_name": "Configurator_v3_event_SetStoreFrontPriceFactor"
     }
 }

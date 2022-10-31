@@ -10,19 +10,13 @@
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint104",
-                    "name": "oldBaseBorrowMin",
-                    "type": "uint104"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint104",
-                    "name": "newBaseBorrowMin",
-                    "type": "uint104"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newComet",
+                    "type": "address"
                 }
             ],
-            "name": "SetBaseBorrowMin",
+            "name": "CometDeployed",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -30,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -39,16 +33,11 @@
             },
             {
                 "description": "",
-                "name": "oldBaseBorrowMin",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "newBaseBorrowMin",
+                "name": "newComet",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_SetBaseBorrowMin"
+        "table_name": "Configurator_v3_event_CometDeployed"
     }
 }

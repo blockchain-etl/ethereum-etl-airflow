@@ -10,19 +10,19 @@
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint104",
-                    "name": "oldBaseMinForRewards",
-                    "type": "uint104"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldFactory",
+                    "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint104",
-                    "name": "newBaseMinForRewards",
-                    "type": "uint104"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newFactory",
+                    "type": "address"
                 }
             ],
-            "name": "SetBaseMinForRewards",
+            "name": "SetFactory",
             "type": "event"
         },
         "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
@@ -30,7 +30,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "oldBaseMinForRewards",
+                "name": "oldFactory",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newBaseMinForRewards",
+                "name": "newFactory",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_SetBaseMinForRewards"
+        "table_name": "Configurator_v3_event_SetFactory"
     }
 }

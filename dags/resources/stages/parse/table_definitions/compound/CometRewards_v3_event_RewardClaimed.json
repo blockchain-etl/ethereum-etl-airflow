@@ -6,60 +6,60 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "cometProxy",
+                    "name": "src",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "asset",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint64",
-                    "name": "oldBorrowCF",
-                    "type": "uint64"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint64",
-                    "name": "newBorrowCF",
-                    "type": "uint64"
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "UpdateAssetBorrowCollateralFactor",
+            "name": "RewardClaimed",
             "type": "event"
         },
-        "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
+        "contract_address": "0x1b0e765f6224c21223aea2af16c1c46e38885a40",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "compound_v3",
+        "dataset_name": "compound",
         "schema": [
             {
                 "description": "",
-                "name": "cometProxy",
+                "name": "src",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "asset",
+                "name": "recipient",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "oldBorrowCF",
+                "name": "token",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newBorrowCF",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Configurator_event_UpdateAssetBorrowCollateralFactor"
+        "table_name": "CometRewards_v3_event_RewardClaimed"
     }
 }
