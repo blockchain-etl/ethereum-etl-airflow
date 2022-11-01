@@ -43,7 +43,7 @@
             "name": "Swapped",
             "type": "event"
         },
-        "contract_address": "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
+        "contract_address": "SELECT * FROM UNNEST(['0xe2f2a5c287993345a840db3b0845fbc70f5935a5', '0x945facb997494cc2570096c74b5f66a3507330a1'])",
         "field_mapping": {},
         "type": "log"
     },
