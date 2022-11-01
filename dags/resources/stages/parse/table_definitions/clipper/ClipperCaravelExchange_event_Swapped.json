@@ -6,82 +6,82 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "swapper",
+                    "name": "inAsset",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
-                    "name": "input",
+                    "name": "outAsset",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "output",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "outputAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "scaledFee",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "recipient",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "inAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "outAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "auxiliaryData",
+                    "type": "bytes"
                 }
             ],
             "name": "Swapped",
             "type": "event"
         },
-        "contract_address": "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
+        "contract_address": "0xcc12532e95c2a6a4c53af153b9b739a3cc9218a7",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "mstable",
+        "dataset_name": "clipper",
         "schema": [
             {
                 "description": "",
-                "name": "swapper",
+                "name": "inAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "input",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "output",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "outputAmount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "scaledFee",
+                "name": "outAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "recipient",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auxiliaryData",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MassetProxy_event_Swapped"
+        "table_name": "ClipperCaravelExchange_event_Swapped"
     }
 }

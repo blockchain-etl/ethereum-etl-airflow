@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "currencyKey",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "synth",
+                    "type": "address"
+                }
+            ],
+            "name": "SynthAdded",
+            "type": "event"
+        },
+        "contract_address": "0xf187dad9bea2ba24bab1b3094e6fd7d809f29de7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "synthetix",
+        "schema": [
+            {
+                "description": "",
+                "name": "currencyKey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "synth",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Issuer_event_SynthAdded"
+    }
+}

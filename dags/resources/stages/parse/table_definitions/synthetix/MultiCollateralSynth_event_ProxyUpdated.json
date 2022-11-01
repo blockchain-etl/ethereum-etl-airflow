@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "proxyAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "ProxyUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT synth FROM ref('Issuer_event_SynthAdded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "synthetix",
+        "schema": [
+            {
+                "description": "",
+                "name": "proxyAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MultiCollateralSynth_event_ProxyUpdated"
+    }
+}

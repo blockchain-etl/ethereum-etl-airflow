@@ -4,84 +4,62 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "swapper",
+                    "name": "baseToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "input",
+                    "name": "quoteToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "output",
+                    "name": "creator",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "outputAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "scaledFee",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "dpp",
                     "type": "address"
                 }
             ],
-            "name": "Swapped",
+            "name": "NewDPP",
             "type": "event"
         },
-        "contract_address": "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
+        "contract_address": "0x5336ede8f971339f6c0e304c66ba16f1296a2fbe",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "mstable",
+        "dataset_name": "dodo",
         "schema": [
             {
                 "description": "",
-                "name": "swapper",
+                "name": "baseToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "input",
+                "name": "quoteToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "output",
+                "name": "creator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "outputAmount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "scaledFee",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "recipient",
+                "name": "dpp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MassetProxy_event_Swapped"
+        "table_name": "DPPFactory_event_NewDPP"
     }
 }

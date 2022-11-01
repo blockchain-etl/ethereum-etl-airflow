@@ -4,84 +4,84 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "swapper",
+                    "name": "fromToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "input",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "output",
+                    "name": "toToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "outputAmount",
+                    "name": "fromAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "scaledFee",
+                    "name": "toAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiver",
                     "type": "address"
                 }
             ],
-            "name": "Swapped",
+            "name": "DODOSwap",
             "type": "event"
         },
-        "contract_address": "0xe2f2a5c287993345a840db3b0845fbc70f5935a5",
+        "contract_address": "SELECT dpp FROM ref('DPPFactory_event_NewDPP')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "mstable",
+        "dataset_name": "dodo",
         "schema": [
             {
                 "description": "",
-                "name": "swapper",
+                "name": "fromToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "input",
+                "name": "toToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "output",
+                "name": "fromAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "outputAmount",
+                "name": "toAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "scaledFee",
+                "name": "trader",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "recipient",
+                "name": "receiver",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MassetProxy_event_Swapped"
+        "table_name": "DPP_event_DODOSwap"
     }
 }
