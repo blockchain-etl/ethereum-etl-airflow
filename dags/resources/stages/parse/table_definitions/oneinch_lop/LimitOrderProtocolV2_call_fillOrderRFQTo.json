@@ -90,45 +90,8 @@
         "schema": [
             {
                 "description": "",
-                "fields": [
-                    {
-                        "description": "",
-                        "name": "info",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makerAsset",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takerAsset",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "maker",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "allowedSender",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makingAmount",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takingAmount",
-                        "type": "STRING"
-                    }
-                ],
                 "name": "order",
-                "type": "RECORD"
+                "type": "STRING"
             },
             {
                 "description": "",

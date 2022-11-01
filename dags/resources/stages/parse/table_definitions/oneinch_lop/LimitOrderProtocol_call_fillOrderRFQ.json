@@ -64,35 +64,8 @@
         "schema": [
             {
                 "description": "",
-                "fields": [
-                    {
-                        "description": "",
-                        "name": "info",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makerAsset",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takerAsset",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makerAssetData",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takerAssetData",
-                        "type": "STRING"
-                    }
-                ],
                 "name": "order",
-                "type": "RECORD"
+                "type": "STRING"
             },
             {
                 "description": "",

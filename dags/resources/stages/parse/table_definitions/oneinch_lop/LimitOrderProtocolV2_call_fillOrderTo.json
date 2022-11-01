@@ -135,85 +135,8 @@
         "schema": [
             {
                 "description": "",
-                "fields": [
-                    {
-                        "description": "",
-                        "name": "salt",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makerAsset",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takerAsset",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "maker",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "receiver",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "allowedSender",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makingAmount",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takingAmount",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "makerAssetData",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "takerAssetData",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "getMakerAmount",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "getTakerAmount",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "predicate",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "permit",
-                        "type": "STRING"
-                    },
-                    {
-                        "description": "",
-                        "name": "interaction",
-                        "type": "STRING"
-                    }
-                ],
                 "name": "order",
-                "type": "RECORD"
+                "type": "STRING"
             },
             {
                 "description": "",
