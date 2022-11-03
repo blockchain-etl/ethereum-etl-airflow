@@ -56,11 +56,20 @@ def topologically_sort_json_files(json_files):
         dependencies[table_name] = set(ref_dependencies)
         table_name_to_file_map[table_name] = json_file
 
+    validate_dependencies(dependencies, table_name_to_file_map.keys())
+
     # TODO: Use toposort() instead of toposort_flatten() so that independent tables could be run in parallel
     sorted_tables = list(toposort_flatten(dependencies))
 
     topologically_sorted_json_files = [table_name_to_file_map[table_name] for table_name in sorted_tables]
     return topologically_sorted_json_files
+
+
+def validate_dependencies(dependencies, table_names):
+    for deps in dependencies.values():
+        for dep_table_name in deps:
+            if dep_table_name not in table_names:
+                raise ValueError(f'Dependency {dep_table_name} not found. Check ref() in table definitions')
 
 
 def get_table_name_from_json_file_name(json_file_name):
