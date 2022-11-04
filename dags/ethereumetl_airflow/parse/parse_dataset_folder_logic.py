@@ -53,7 +53,7 @@ def topologically_sort_json_files(json_files):
 
         table_name = get_table_name_from_json_file_name(json_file)
 
-        dependencies[table_name] = set(ref_dependencies)
+        dependencies[table_name] = set(ref_dependencies) if ref_dependencies is not None else set()
         table_name_to_file_map[table_name] = json_file
 
     validate_dependencies(dependencies, table_name_to_file_map.keys())
