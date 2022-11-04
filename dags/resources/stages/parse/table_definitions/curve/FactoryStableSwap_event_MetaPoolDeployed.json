@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "coin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "base_pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "deployer",
+                    "type": "address"
+                }
+            ],
+            "name": "MetaPoolDeployed",
+            "type": "event"
+        },
+        "contract_address": "0xb9fc157394af804a3578134a6585c0dc9cc990d4",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "coin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "base_pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deployer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FactoryStableSwap_event_MetaPoolDeployed"
+    }
+}
