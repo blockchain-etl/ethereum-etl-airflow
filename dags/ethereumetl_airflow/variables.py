@@ -80,12 +80,12 @@ def read_amend_dag_vars(var_prefix, **kwargs):
 
     return vars
 
-def read_parse_dag_vars(var_prefix, dataset, **kwargs):
-    per_dataset_var_prefix = var_prefix + dataset + '_'
+
+def read_parse_dag_vars(var_prefix, **kwargs):
     vars = {
         'parse_destination_dataset_project_id': read_var('parse_destination_dataset_project_id', var_prefix, True, **kwargs),
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
-        'parse_all_partitions': parse_bool(read_var('parse_all_partitions', per_dataset_var_prefix, False), default=None),
+        'parse_all_partitions': parse_bool(read_var('parse_all_partitions', var_prefix, False), default=None),
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
     }
 

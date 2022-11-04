@@ -15,6 +15,11 @@ logging.getLogger().setLevel(logging.DEBUG)
 
 var_prefix = 'ethereum_'
 
+parse_dag_vars = read_parse_dag_vars(
+    var_prefix=var_prefix,
+    schedule_interval='0 14 * * *'
+)
+
 for folder in glob(table_definitions_folder):
     dataset = folder.split('/')[-1]
 
@@ -24,9 +29,5 @@ for folder in glob(table_definitions_folder):
     globals()[dag_id] = build_parse_dag(
         dag_id=dag_id,
         dataset_folder=folder,
-        **read_parse_dag_vars(
-            var_prefix=var_prefix,
-            dataset=dataset,
-            schedule_interval='0 14 * * *'
-        )
+        **parse_dag_vars
     )
