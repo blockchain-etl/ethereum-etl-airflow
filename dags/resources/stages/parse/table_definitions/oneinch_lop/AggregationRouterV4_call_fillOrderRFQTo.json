@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "info",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "makerAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "takerAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "maker",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "allowedSender",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "makingAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "takingAmount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LimitOrderProtocolRFQ.OrderRFQ",
+                    "name": "order",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "signature",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "makingAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "takingAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "target",
+                    "type": "address"
+                }
+            ],
+            "name": "fillOrderRFQTo",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x1111111254fb6c44bac0bed2854e76f90643097d",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "oneinch_lop",
+        "schema": [
+            {
+                "description": "",
+                "name": "order",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makingAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takingAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AggregationRouterV4_call_fillOrderRFQTo"
+    }
+}
