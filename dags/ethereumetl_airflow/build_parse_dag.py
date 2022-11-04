@@ -4,18 +4,17 @@ import collections
 import logging
 import os
 from datetime import datetime, timedelta
-from glob import glob
 
 from airflow import models
 from airflow.operators.bash import BashOperator
-from airflow.operators.email import EmailOperator
 from airflow.operators.python import PythonOperator
 from airflow.sensors.external_task import ExternalTaskSensor
 from google.cloud import bigquery
 
 from ethereumetl_airflow.bigquery_utils import create_view, share_dataset_all_users_read
-from ethereumetl_airflow.common import read_json_file, read_file
-from ethereumetl_airflow.parse.parse_logic import ref_regex, parse, create_dataset
+from ethereumetl_airflow.common import read_json_file, read_file, get_list_of_files
+from ethereumetl_airflow.parse.parse_dataset_folder_logic import parse_dataset_folder
+from ethereumetl_airflow.parse.parse_table_definition_logic import create_dataset
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -30,8 +29,7 @@ def build_parse_dag(
         notification_emails=None,
         parse_start_date=datetime(2018, 7, 1),
         schedule_interval='0 0 * * *',
-        parse_all_partitions=None,
-        send_success_email=False
+        parse_all_partitions=None
 ):
 
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
@@ -68,34 +66,16 @@ def build_parse_dag(
         schedule_interval=schedule_interval,
         default_args=default_dag_args)
 
-    validation_error = None
-    try:
-        validate_definition_files(dataset_folder)
-    except ValueError as e:
-        validation_error = e
-
-    # This prevents failing all dags as they are constructed in a loop in ethereum_parse_dag.py
-    if validation_error is not None:
-        def raise_validation_error(ds, **kwargs):
-            raise validation_error
-
-        validation_error_operator = PythonOperator(
-            task_id='validation_error',
-            python_callable=raise_validation_error,
-            execution_timeout=timedelta(minutes=10),
-            dag=dag
-        )
-
-        return dag
-
-    def create_parse_task(table_definition):
+    def create_parse_task():
 
         def parse_task(ds, **kwargs):
+            validate_definition_files(dataset_folder)
+
             client = bigquery.Client()
 
-            parse(
+            parse_dataset_folder(
                 bigquery_client=client,
-                table_definition=table_definition,
+                dataset_folder=dataset_folder,
                 ds=ds,
                 source_project_id=SOURCE_PROJECT_ID,
                 source_dataset_name=SOURCE_DATASET_NAME,
@@ -104,20 +84,15 @@ def build_parse_dag(
                 parse_all_partitions=parse_all_partitions
             )
 
-        table_name = table_definition['table']['table_name']
+        dataset_name = get_dataset_name(dataset_folder)
         parsing_operator = PythonOperator(
-            task_id=table_name,
+            task_id=f'parse_tables_{dataset_name}',
             python_callable=parse_task,
-            execution_timeout=timedelta(minutes=60),
+            execution_timeout=timedelta(minutes=60 * 4),
             dag=dag
         )
 
-        contract_address = table_definition['parser']['contract_address']
-        if contract_address is not None:
-            ref_dependencies = ref_regex.findall(table_definition['parser']['contract_address'])
-        else:
-            ref_dependencies = []
-        return parsing_operator, ref_dependencies
+        return parsing_operator
 
     def create_add_view_task(dataset_name, view_name, sql):
         def create_view_task(ds, **kwargs):
@@ -168,43 +143,22 @@ def build_parse_dag(
         timeout=60 * 60 * 12,
         dag=dag)
 
-    json_files = get_list_of_files(dataset_folder, '*.json')
-    logging.info(json_files)
-
-    all_parse_tasks = {}
-    task_dependencies = {}
-    for json_file in json_files:
-        table_definition = read_json_file(json_file)
-        task, dependencies = create_parse_task(table_definition)
-        wait_for_ethereum_load_dag_task >> task
-        all_parse_tasks[task.task_id] = task
-        task_dependencies[task.task_id] = dependencies
+    parse_task = create_parse_task()
+    wait_for_ethereum_load_dag_task >> parse_task
 
     checkpoint_task = BashOperator(
         task_id='parse_all_checkpoint',
         bash_command='echo parse_all_checkpoint',
-        priority_weight=1000,
         dag=dag
     )
 
-    for task, dependencies in task_dependencies.items():
-        for dependency in dependencies:
-            if dependency not in all_parse_tasks:
-                raise ValueError(
-                    'Table {} is not found in the the dataset. Check your ref() in contract_address field.'.format(
-                        dependency))
-            all_parse_tasks[dependency] >> all_parse_tasks[task]
-
-        all_parse_tasks[task] >> checkpoint_task
-
-    final_tasks = [checkpoint_task]
+    parse_task >> checkpoint_task
 
     dataset_name = os.path.basename(dataset_folder)
     full_dataset_name = 'ethereum_' + dataset_name
 
     share_dataset_task = create_share_dataset_task(full_dataset_name)
     checkpoint_task >> share_dataset_task
-    final_tasks.append(share_dataset_task)
 
     # Create views
 
@@ -217,31 +171,13 @@ def build_parse_dag(
         view_name = os.path.splitext(base_name)[0]
         create_view_task = create_add_view_task(full_dataset_name, view_name, sql)
         checkpoint_task >> create_view_task
-        final_tasks.append(create_view_task)
 
-    if notification_emails and len(notification_emails) > 0 and send_success_email:
-        send_email_task = EmailOperator(
-            task_id='send_email',
-            to=[email.strip() for email in notification_emails.split(',')],
-            subject='Ethereum ETL Airflow Parse DAG Succeeded',
-            html_content='Ethereum ETL Airflow Parse DAG Succeeded for {}'.format(dag_id),
-            dag=dag
-        )
-        for final_task in final_tasks:
-            final_task >> send_email_task
     return dag
-
-
-def get_list_of_files(dataset_folder, filter='*.json'):
-    logging.info('get_list_of_files')
-    logging.info(dataset_folder)
-    logging.info(os.path.join(dataset_folder, filter))
-    return [f for f in glob(os.path.join(dataset_folder, filter))]
 
 
 def validate_definition_files(dataset_folder):
     json_files = get_list_of_files(dataset_folder, '*.json')
-    dataset_folder_name = dataset_folder.split('/')[-1]
+    dataset_folder_name = get_dataset_name(dataset_folder)
 
     all_lowercase_table_names = []
     for json_file in json_files:
@@ -273,3 +209,7 @@ def validate_definition_files(dataset_folder):
 
     if len(non_unique_table_names) > 0:
         raise ValueError(f'The following table names are not unique {",".join(non_unique_table_names)}')
+
+
+def get_dataset_name(dataset_folder):
+    return dataset_folder.split('/')[-1]

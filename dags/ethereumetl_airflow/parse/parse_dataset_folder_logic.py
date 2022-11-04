@@ -2,7 +2,7 @@ import logging
 import time
 
 from ethereumetl_airflow.common import get_list_of_files, read_json_file
-from ethereumetl_airflow.parse.parse_logic import parse, ref_regex
+from ethereumetl_airflow.parse.parse_table_definition_logic import parse, ref_regex
 from ethereumetl_airflow.parse.toposort import toposort_flatten
 
 
@@ -57,6 +57,7 @@ def topologically_sort_json_files(json_files):
         table_name_to_file_map[table_name] = json_file
 
     validate_dependencies(dependencies, table_name_to_file_map.keys())
+    logging.info(f'Table definition dependencies: {dependencies}')
 
     # TODO: Use toposort() instead of toposort_flatten() so that independent tables could be run in parallel
     sorted_tables = list(toposort_flatten(dependencies))
