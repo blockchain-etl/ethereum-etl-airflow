@@ -34,9 +34,6 @@ def build_parse_dag(
 
     logging.info('parse_all_partitions is {}'.format(parse_all_partitions))
 
-    if parse_all_partitions:
-        dag_id = dag_id + '_FULL'
-
     if 'ethereum_kovan_parse' in dag_id:
         SOURCE_PROJECT_ID = 'public-data-finance'
         SOURCE_DATASET_NAME = 'crypto_ethereum_kovan'
