@@ -4,7 +4,6 @@ from glob import glob
 import logging
 import os
 
-from ethereum_parse_v2_datasets import PARSE_V2_DATASETS
 from ethereumetl_airflow.build_parse_dag import build_parse_dag
 from ethereumetl_airflow.variables import read_parse_dag_vars
 
@@ -18,9 +17,6 @@ var_prefix = 'ethereum_'
 
 for folder in glob(table_definitions_folder):
     dataset = folder.split('/')[-1]
-
-    if dataset in PARSE_V2_DATASETS:
-        continue
 
     dag_id = f'ethereum_parse_{dataset}_dag'
     logging.info(folder)
