@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "poolType",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract IPoolCollection",
+                    "name": "poolCollection",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolCollectionAdded",
+            "type": "event"
+        },
+        "contract_address": "0xeef417e1d5cc832e619ae18d2f140de2999dd4fb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "poolType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "poolCollection",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BancorNetworkV3_event_PoolCollectionAdded"
+    }
+}
