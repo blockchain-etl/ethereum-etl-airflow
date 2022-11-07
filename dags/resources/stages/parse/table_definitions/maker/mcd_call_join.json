@@ -20,7 +20,7 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x1fe789bbac5b141bdd795a3bc5e12af29ddb4b86', '0x476b81c12dc71edfad1f64b9e07caa60f4b156e2', '0x5e11e34b6745feba9449ae53c185413d6edc66be', '0xa4fd373b93ad8e054970a3d6cd4fd4c31d08192e', '0xd50a8e9369140539d1c2d113c4dc1e659c6242eb', '0xe72c7e90bc26c11d45dbee736f0acf57fc5b7152', '0x885f16e177d45fc9e7c87e1da9fd47a9cfce8e13', '0x9759a6ac90977b93b58547b4a71c78317f391a28', '0xbfd445a97e7459b0ebb34cfbd3245750dba4d7a4'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x1fe789bbac5b141bdd795a3bc5e12af29ddb4b86', '0x476b81c12dc71edfad1f64b9e07caa60f4b156e2', '0x5e11e34b6745feba9449ae53c185413d6edc66be', '0xa4fd373b93ad8e054970a3d6cd4fd4c31d08192e', '0xd50a8e9369140539d1c2d113c4dc1e659c6242eb', '0xe72c7e90bc26c11d45dbee736f0acf57fc5b7152', '0x885f16e177d45fc9e7c87e1da9fd47a9cfce8e13', '0x9759a6ac90977b93b58547b4a71c78317f391a28', '0xbfd445a97e7459b0ebb34cfbd3245750dba4d7a4', '0x56edd5067d89d4e65bf956c49eaf054e6ff0b262', '0x476aad14f42469989efad0b7a31f07b795ff0621', '0xee0fc514280f09083a32ae906ccbd2fac4c680fa', '0xc6424e862f1462281b0a5fac078e4b63006bdebf'])",
         "field_mapping": {},
         "type": "trace"
     },
