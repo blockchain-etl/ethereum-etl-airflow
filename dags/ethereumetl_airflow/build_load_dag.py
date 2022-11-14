@@ -94,8 +94,8 @@ def build_load_dag(
     def add_load_tasks(task, file_format, allow_quoted_newlines=False):
         wait_sensor = GCSObjectExistenceSensor(
             task_id='wait_latest_{task}'.format(task=task),
-            timeout=60 * 60,
-            poke_interval=60,
+            timeout=6 * 60 * 60,
+            poke_interval=5 * 60,
             bucket=output_bucket,
             object='export/{task}/block_date={datestamp}/{task}.{file_format}'.format(
                 task=task, datestamp='{{ds}}', file_format=file_format),
