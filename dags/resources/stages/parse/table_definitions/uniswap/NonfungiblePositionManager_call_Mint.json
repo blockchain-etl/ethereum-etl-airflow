@@ -105,6 +105,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "NonfungiblePositionManager_call_mint"
+        "table_name": "NonfungiblePositionManager_call_Mint"
     }
 }
