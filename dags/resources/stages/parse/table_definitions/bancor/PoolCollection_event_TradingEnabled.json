@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract Token",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bool",
+                    "name": "newStatus",
+                    "type": "bool"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint8",
+                    "name": "reason",
+                    "type": "uint8"
+                }
+            ],
+            "name": "TradingEnabled",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT poolCollection FROM ref(`blockchain-etl.ethereum_bancor.BancorNetworkV3_event_PoolCreated`)",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newStatus",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reason",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolCollection_event_TradingEnabled"
+    }
+}

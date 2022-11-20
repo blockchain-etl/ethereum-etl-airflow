@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract Token",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "prevFeePPM",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "newFeePPM",
+                    "type": "uint32"
+                }
+            ],
+            "name": "TradingFeePPMUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT poolCollection FROM ref(`blockchain-etl.ethereum_bancor.BancorNetworkV3_event_PoolCreated`)",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bancor",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "prevFeePPM",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFeePPM",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolCollection_event_TradingFeePPMUpdated"
+    }
+}
