@@ -19,7 +19,7 @@
             "name": "OwnerUpdate",
             "type": "event"
         },
-        "contract_address": "SELECT DISTINCT FROM ref(`BancorNetworkV3_event_PoolCreated`)",
+        "contract_address": "SELECT DISTINCT poolCollection FROM ref(`BancorNetworkV3_event_PoolCreated`)",
         "field_mapping": {},
         "type": "log"
     },
