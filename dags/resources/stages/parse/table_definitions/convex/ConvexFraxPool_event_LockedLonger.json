@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "kek_id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "new_secs",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "new_start_ts",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "new_end_ts",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LockedLonger",
+            "type": "event"
+        },
+        "contract_address": "(SELECT DISTINCT _stakingAddress FROM ref(`FraxBooster_call_addPool`) UNION ALL SELECT * FROM UNNEST(['0x02577b426f223a6b4f2351315a19ecd6f357d65c', '0x0a08673e3d7c454e1c6b27acd059c50df6727fc9', '0x698137c473bc1f0ea9b85ade45caf64ef2df48d6']))",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "kek_id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_secs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_start_ts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_end_ts",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ConvexFraxPool_event_LockedLonger"
+    }
+}
