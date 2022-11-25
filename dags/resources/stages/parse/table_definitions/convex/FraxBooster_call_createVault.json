@@ -1,0 +1,38 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_pid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "createVault",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x569f5b842b5006ec17be02b8b94510ba8e79fbca",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_pid",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FraxBooster_call_createVault"
+    }
+}

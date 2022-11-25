@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_implementation",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_stakingAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_stakingToken",
+                    "type": "address"
+                }
+            ],
+            "name": "addPool",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x569f5b842b5006ec17be02b8b94510ba8e79fbca",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "_implementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_stakingAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_stakingToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FraxBooster_call_addPool"
+    }
+}
