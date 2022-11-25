@@ -37,7 +37,7 @@
             "name": "StakeLocked",
             "type": "event"
         },
-        "contract_address": "(SELECT DISTINCT _stakingAddress FROM ref(`FraxBooster_call_addPool`) UNION ALL SELECT * FROM UNNEST(['0x02577b426f223a6b4f2351315a19ecd6f357d65c', '0x0a08673e3d7c454e1c6b27acd059c50df6727fc9', '0x698137c473bc1f0ea9b85ade45caf64ef2df48d6']))",
+        "contract_address": "(SELECT DISTINCT _stakingAddress FROM ref(`FraxBooster_call_addPool`)) UNION ALL SELECT '0x02577b426f223a6b4f2351315a19ecd6f357d65c' UNION ALL SELECT '0x0a08673e3d7c454e1c6b27acd059c50df6727fc9' UNION ALL SELECT '0x698137c473bc1f0ea9b85ade45caf64ef2df48d6'",
         "field_mapping": {},
         "type": "log"
     },
