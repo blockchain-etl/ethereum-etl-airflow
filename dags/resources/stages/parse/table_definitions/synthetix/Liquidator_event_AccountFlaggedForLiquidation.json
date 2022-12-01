@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deadline",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AccountFlaggedForLiquidation",
+            "type": "event"
+        },
+        "contract_address": "0x05e661738e3a3c6f254d9c29a40dad0ec357ea85",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Synthetix_event_",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Liquidator_event_AccountFlaggedForLiquidation"
+    }
+}
