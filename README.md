@@ -66,6 +66,16 @@ Check other variables in `dags/ethereumetl_airflow/variables.py`.
 
 ### Upload DAGs
 
+In order to install the DAGs you will need to install dependencies first otherwise the installation will fail. 
+For this setup we recommend trying the following dependencies. You may have to adjust some to get your DAGs working. 
+
+```eth-hash=0.3.3
+web3==5.29.2
+eth-abi==2.1.1
+eth-rlp==0.2.1
+ethereum-etl
+```
+
 ```bash
 > ./upload_dags.sh <airflow_bucket>
 ```
