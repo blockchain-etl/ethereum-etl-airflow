@@ -76,6 +76,8 @@ eth-rlp==0.2.1
 ethereum-etl
 ```
 
+Once dependencies are installed you can upload your DAGs using:
+
 ```bash
 > ./upload_dags.sh <airflow_bucket>
 ```
