@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "destination_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "claim_extra_too",
+                    "type": "bool"
+                }
+            ],
+            "name": "getReward2",
+            "outputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "(SELECT DISTINCT _stakingAddress FROM ref('FraxBooster_call_addPool') UNION ALL SELECT '0x02577b426f223a6b4f2351315a19ecd6f357d65c' UNION ALL SELECT '0x0a08673e3d7c454e1c6b27acd059c50df6727fc9' UNION ALL SELECT '0x698137c473bc1f0ea9b85ade45caf64ef2df48d6')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "convex",
+        "schema": [
+            {
+                "description": "",
+                "name": "destination_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "claim_extra_too",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ConvexFraxPool_call_getReward2"
+    }
+}
