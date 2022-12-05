@@ -67,6 +67,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "AngleRouter_call_event_burn"
+        "table_name": "AngleRouter_call_burn"
     }
 }

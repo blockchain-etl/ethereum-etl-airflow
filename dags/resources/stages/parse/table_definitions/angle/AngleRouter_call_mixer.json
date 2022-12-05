@@ -148,6 +148,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "AngleRouter_call_event_mixer"
+        "table_name": "AngleRouter_call_mixer"
     }
 }
