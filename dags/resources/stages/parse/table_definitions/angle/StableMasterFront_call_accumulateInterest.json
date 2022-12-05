@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "gain",
+                    "type": "uint256"
+                }
+            ],
+            "name": "accumulateInterest",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x5addc89785d75c86ab939e9e15bfbbb7fc086a87",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "gain",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StableMasterFront_call_accumulateInterest"
+    }
+}
