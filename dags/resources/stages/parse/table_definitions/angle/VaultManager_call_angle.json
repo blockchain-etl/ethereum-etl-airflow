@@ -1,0 +1,110 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "enum ActionType[]",
+                    "name": "actions",
+                    "type": "uint8[]"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "datas",
+                    "type": "bytes[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "who",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "repayData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "angle",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "stablecoinAmountToGive",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stablecoinAmountToReceive",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralAmountToGive",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralAmountToReceive",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct PaymentData",
+                    "name": "paymentData",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT vaultManager FROM ref('Treasury_event_VaultManagerToggled')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "actions",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "datas",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "who",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "repayData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultManager_call_angle"
+    }
+}

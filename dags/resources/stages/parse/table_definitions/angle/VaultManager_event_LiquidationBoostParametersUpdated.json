@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_veBoostProxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "xBoost",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "yBoost",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "LiquidationBoostParametersUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT vaultManager FROM ref('Treasury_event_VaultManagerToggled')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "_veBoostProxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "xBoost",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "yBoost",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultManager_event_LiquidationBoostParametersUpdated"
+    }
+}
