@@ -1,0 +1,153 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "deadline",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "v",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "r",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "s",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "internalType": "struct AngleRouter.PermitType[]",
+                    "name": "paramsPermit",
+                    "type": "tuple[]"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "inToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountIn",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct AngleRouter.TransferType[]",
+                    "name": "paramsTransfer",
+                    "type": "tuple[]"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "inToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateral",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountIn",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minAmountOut",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "args",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "enum AngleRouter.SwapType",
+                            "name": "swapType",
+                            "type": "uint8"
+                        }
+                    ],
+                    "internalType": "struct AngleRouter.ParamsSwapType[]",
+                    "name": "paramsSwap",
+                    "type": "tuple[]"
+                },
+                {
+                    "internalType": "enum AngleRouter.ActionType[]",
+                    "name": "actions",
+                    "type": "uint8[]"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "data",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "mixer",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xbb755240596530be0c1de5dfd77ec6398471561d",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "paramsPermit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paramsTransfer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paramsSwap",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "actions",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AngleRouter_call_event_mixer"
+    }
+}

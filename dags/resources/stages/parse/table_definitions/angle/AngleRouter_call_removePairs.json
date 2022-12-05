@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC20[]",
+                    "name": "stablecoins",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "contract IERC20[]",
+                    "name": "collaterals",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "contract IStableMasterFront[]",
+                    "name": "stableMasters",
+                    "type": "address[]"
+                }
+            ],
+            "name": "removePairs",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xbb755240596530be0c1de5dfd77ec6398471561d",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "stablecoins",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collaterals",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stableMasters",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AngleRouter_call_removePairs"
+    }
+}
