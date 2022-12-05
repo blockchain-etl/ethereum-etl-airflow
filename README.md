@@ -64,6 +64,27 @@ Create variables in Airflow (**Admin > Variables** in the UI):
 
 Check other variables in `dags/ethereumetl_airflow/variables.py`.
 
+### Updating package requirements
+Suggested package requirements for Composer are stored in `requirements_airflow.txt`.
+
+You can update the Composer environment using the follow script:
+```bash
+ENVIRONMENT_NAME="ethereum-etl-0"
+LOCAL_REQUIREMENTS_PATH="$(mktemp)"
+
+# grep pattern removes comments and whitespace:
+cat "./requirements_airflow.txt" | grep -o '^[^#| ]*' > "$LOCAL_REQUIREMENTS_PATH"
+
+gcloud composer environments update \
+  "$ENVIRONMENT_NAME" \
+  --location="us-central1" \
+  --update-pypi-packages-from-file="$LOCAL_REQUIREMENTS_PATH"
+```
+
+**Note:** Composer can be _very_ pedantic about conflicts in additional packages. You may have to fix dependency conflicts where you had no issues testing locally (when updating dependencies, Composer does something "cleverer" than just `pip install -r requirements.txt`). This is why `eth-hash` is currently pinned in `requirements_airflow.txt`. Typically we have found that pinning `eth-hash` and/or `eth-rlp` may make things work, though Your Mileage May Vary.
+
+See [this issue](https://github.com/blockchain-etl/ethereum-etl-airflow/issues/481#issuecomment-1332878533) for further ideas on how to unblock problems you may encounter.
+
 ### Upload DAGs
 
 ```bash
