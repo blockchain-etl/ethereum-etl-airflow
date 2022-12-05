@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vaultManager",
+                    "type": "address"
+                }
+            ],
+            "name": "VaultManagerToggled",
+            "type": "event"
+        },
+        "contract_address": "0x8667dbebf68b0bfa6db54f550f41be16c4067d60",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "vaultManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Treasury_event_VaultManagerToggled"
+    }
+}
