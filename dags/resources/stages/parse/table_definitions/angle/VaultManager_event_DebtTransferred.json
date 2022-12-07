@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "srcVaultID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "dstVaultID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "dstVaultManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DebtTransferred",
+            "type": "event"
+        },
+        "contract_address": "SELECT vaultManager FROM ref('Treasury_event_VaultManagerToggled')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "srcVaultID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dstVaultID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dstVaultManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultManager_event_DebtTransferred"
+    }
+}

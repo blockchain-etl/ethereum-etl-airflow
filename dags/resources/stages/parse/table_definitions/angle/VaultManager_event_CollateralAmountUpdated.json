@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "isIncrease",
+                    "type": "uint8"
+                }
+            ],
+            "name": "CollateralAmountUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT vaultManager FROM ref('Treasury_event_VaultManagerToggled')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "vaultID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isIncrease",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultManager_event_CollateralAmountUpdated"
+    }
+}
