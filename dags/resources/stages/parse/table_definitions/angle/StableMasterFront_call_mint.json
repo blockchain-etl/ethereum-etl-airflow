@@ -57,6 +57,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "StableMasterFront_call_event_mint"
+        "table_name": "StableMasterFront_call_mint"
     }
 }
