@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newSwapFeePercentage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SwapFeePercentageChanged",
+            "type": "event"
+        },
+        "contract_address": "0xce88686553686da562ce7cea497ce749da109f9f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "newSwapFeePercentage",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_ProtocolFeesCollector_event_SwapFeePercentageChanged"
+    }
+}

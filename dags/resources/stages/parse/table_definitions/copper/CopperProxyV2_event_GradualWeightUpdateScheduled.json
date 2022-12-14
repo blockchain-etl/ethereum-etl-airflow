@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "endWeights",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "GradualWeightUpdateScheduled",
+            "type": "event"
+        },
+        "contract_address": "0x9a74cbff3f36ff1e433ef88d0ec1cdcd1eb79afa",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "copper",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "endTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "endWeights",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CopperProxyV2_event_GradualWeightUpdateScheduled"
+    }
+}
