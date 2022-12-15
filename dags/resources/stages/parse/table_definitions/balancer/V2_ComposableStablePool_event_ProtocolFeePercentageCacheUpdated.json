@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "feeType",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "protocolFeePercentage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProtocolFeePercentageCacheUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT pool FROM ref('V2_ComposableStablePoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocolFeePercentage",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_ComposableStablePool_event_ProtocolFeePercentageCacheUpdated"
+    }
+}

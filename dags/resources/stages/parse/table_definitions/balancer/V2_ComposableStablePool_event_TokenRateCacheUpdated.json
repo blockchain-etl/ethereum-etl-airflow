@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenRateCacheUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT pool FROM ref('V2_ComposableStablePoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_ComposableStablePool_event_TokenRateCacheUpdated"
+    }
+}
