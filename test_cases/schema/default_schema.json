@@ -29,6 +29,29 @@
                 "$id": "#root/parser/abi/inputs",
                 "title": "Inputs",
                 "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "indexed": {
+                      "type": "boolean"
+                    },
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Cannot be empty. Use unnamedField0, unnamedField1, etc. as placeholders."
+                    },
+                    "internalType": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type"
+                  ]
+                },
                 "default": []
               },
               "name": {
@@ -123,6 +146,26 @@
             "$id": "#root/table/schema",
             "title": "Schema",
             "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Cannot be empty. Use unnamedField0, unnamedField1, etc. as placeholders."
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ]
+            },
             "default": []
           },
           "table_description": {
