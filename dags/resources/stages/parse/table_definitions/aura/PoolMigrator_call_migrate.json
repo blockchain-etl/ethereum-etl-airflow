@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "_fromPids",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_toPids",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "migrate",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x12adde99768a82871eaaecfbdb065b12c56f0578",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "aura",
+        "schema": [
+            {
+                "description": "",
+                "name": "_fromPids",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_toPids",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amounts",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolMigrator_call_migrate"
+    }
+}
