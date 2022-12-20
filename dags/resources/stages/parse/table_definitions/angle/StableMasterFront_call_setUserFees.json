@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IPoolManager",
+                    "name": "poolManager",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint64[]",
+                    "name": "_xFee",
+                    "type": "uint64[]"
+                },
+                {
+                    "internalType": "uint64[]",
+                    "name": "_yFee",
+                    "type": "uint64[]"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "_mint",
+                    "type": "uint8"
+                }
+            ],
+            "name": "setUserFees",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x5addc89785d75c86ab939e9e15bfbbb7fc086a87",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "poolManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_xFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_yFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_mint",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StableMasterFront_call_setUserFees"
+    }
+}

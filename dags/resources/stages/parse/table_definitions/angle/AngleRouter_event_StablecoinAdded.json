@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "stableMaster",
+                    "type": "address"
+                }
+            ],
+            "name": "StablecoinAdded",
+            "type": "event"
+        },
+        "contract_address": "0xbb755240596530be0c1de5dfd77ec6398471561d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "stableMaster",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AngleRouter_event_StablecoinAdded"
+    }
+}

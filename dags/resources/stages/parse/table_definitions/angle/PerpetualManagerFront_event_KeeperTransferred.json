@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "keeperAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidationFees",
+                    "type": "uint256"
+                }
+            ],
+            "name": "KeeperTransferred",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x5efe48f8383921d950683c46b87e28e21dea9fb5', '0x98fdbc5497599eff830923ea1ee152adb9a4cea5', '0x4121a258674e507c990cdf390f74d4ef27592114', '0xb924497a1157b1f8835c93cb7f3d4aa6d2f227ba', '0xfc8f9eefc5fce1d9dace2b0a11a1e184381787c4'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "keeperAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationFees",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PerpetualManagerFront_event_KeeperTransferred"
+    }
+}

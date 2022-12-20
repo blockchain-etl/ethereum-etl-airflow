@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IPoolManager",
+                    "name": "poolManager",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IPerpetualManager",
+                    "name": "perpetualManager",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IFeeManager",
+                    "name": "feeManager",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IOracle",
+                    "name": "oracle",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract ISanToken",
+                    "name": "sanToken",
+                    "type": "address"
+                }
+            ],
+            "name": "deployCollateral",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x5addc89785d75c86ab939e9e15bfbbb7fc086a87",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "poolManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "perpetualManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oracle",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sanToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StableMasterFront_call_deployCollateral"
+    }
+}

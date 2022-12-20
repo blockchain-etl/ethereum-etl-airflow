@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "stablecoin",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IStableMasterFront",
+                    "name": "stableMaster",
+                    "type": "address"
+                }
+            ],
+            "name": "addStableMaster",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xbb755240596530be0c1de5dfd77ec6398471561d",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "angle",
+        "schema": [
+            {
+                "description": "",
+                "name": "stablecoin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stableMaster",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AngleRouter_call_addStableMaster"
+    }
+}
