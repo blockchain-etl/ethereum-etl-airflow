@@ -1,65 +1,78 @@
 {
     "parser": {
         "abi": {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
                     "internalType": "uint256",
-                    "name": "_perpetualID",
+                    "name": "margin",
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "_entryRate",
+                    "name": "committedAmount",
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "_margin",
+                    "name": "maxOracleRate",
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "_committedAmount",
+                    "name": "minNetMargin",
                     "type": "uint256"
                 }
             ],
-            "name": "PerpetualOpened",
-            "type": "event"
+            "name": "openPerpetual",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "perpetualID",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         "contract_address": "SELECT _perpetualManager FROM ref('StableMasterFront_event_CollateralDeployed')",
         "field_mapping": {},
-        "type": "log"
+        "type": "trace"
     },
     "table": {
         "dataset_name": "angle",
         "schema": [
             {
                 "description": "",
-                "name": "_perpetualID",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_entryRate",
+                "name": "margin",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_margin",
+                "name": "committedAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_committedAmount",
+                "name": "maxOracleRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minNetMargin",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PerpetualManagerFront_event_PerpetualOpened"
+        "table_name": "PerpetualManagerFront_call_openPerpetual"
     }
 }
