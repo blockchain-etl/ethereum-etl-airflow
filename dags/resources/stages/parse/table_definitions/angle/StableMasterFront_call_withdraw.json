@@ -57,6 +57,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "StableMasterFront_event_withdraw"
+        "table_name": "StableMasterFront_call_withdraw"
     }
 }
