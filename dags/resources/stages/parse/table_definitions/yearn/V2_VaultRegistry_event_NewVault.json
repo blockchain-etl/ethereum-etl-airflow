@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "vaultId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum VaultRegistry.VaultType",
+                    "name": "vaultType",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "apiVersion",
+                    "type": "string"
+                }
+            ],
+            "name": "NewVault",
+            "type": "event"
+        },
+        "contract_address": "0x78f73705105a63e06b932611643e0b210fae93e9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "yearn",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vaultId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vaultType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vault",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "apiVersion",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_VaultRegistry_event_NewVault"
+    }
+}

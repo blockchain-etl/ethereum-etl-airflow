@@ -22,7 +22,7 @@
             "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x671a912c10bba0cfa74cfc2d6fba9ba1ed9530b2', '0x986b4aff588a109c09b50a03f42e4110e29d353f'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x671a912c10bba0cfa74cfc2d6fba9ba1ed9530b2', '0x986b4aff588a109c09b50a03f42e4110e29d353f', '0xe2f6b9773bf3a015e2aa70741bde1498bdb9425b', '0xcb550a6d4c8e3517a939bc79d0c7093eb7cf56b5', '0xa696a63cc78dffa1a63e9e50587c197387ff6c7e', '0xbfa4d8aa6d8a379abfe7793399d3ddacc5bbecbb', '0xe11ba472f74869176652c35d30db89854b5ae84d']) UNION ALL SELECT vault FROM ref('V2_VaultRegistry_event_NewVault')",
         "field_mapping": {},
         "type": "log"
     },
