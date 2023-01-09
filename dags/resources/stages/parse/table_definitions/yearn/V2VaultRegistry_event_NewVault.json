@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "V2_VaultRegistry_event_NewVault"
+        "table_name": "V2VaultRegistry_event_NewVault"
     }
 }
