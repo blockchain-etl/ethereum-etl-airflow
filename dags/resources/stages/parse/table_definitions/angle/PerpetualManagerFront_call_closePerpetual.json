@@ -4,31 +4,26 @@
             "inputs": [
                 {
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "perpetualID",
                     "type": "uint256"
                 },
                 {
                     "internalType": "address",
-                    "name": "burner",
+                    "name": "to",
                     "type": "address"
                 },
                 {
-                    "internalType": "address",
-                    "name": "dest",
-                    "type": "address"
-                },
-                {
-                    "internalType": "contract IPoolManager",
-                    "name": "poolManager",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "minCashOutAmount",
+                    "type": "uint256"
                 }
             ],
-            "name": "withdraw",
+            "name": "closePerpetual",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0x5addc89785d75c86ab939e9e15bfbbb7fc086a87",
+        "contract_address": "SELECT _perpetualManager FROM ref('StableMasterFront_event_CollateralDeployed')",
         "field_mapping": {},
         "type": "trace"
     },
@@ -37,26 +32,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "amount",
+                "name": "perpetualID",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "burner",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "dest",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "poolManager",
+                "name": "minCashOutAmount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "StableMasterFront_event_withdraw"
+        "table_name": "PerpetualManagerFront_call_closePerpetual"
     }
 }

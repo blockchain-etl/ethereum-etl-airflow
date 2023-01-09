@@ -4,26 +4,31 @@
             "inputs": [
                 {
                     "internalType": "uint256",
-                    "name": "perpetualID",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "internalType": "address",
-                    "name": "to",
+                    "name": "burner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "dest",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IPoolManager",
+                    "name": "poolManager",
                     "type": "address"
                 }
             ],
-            "name": "removeFromPerpetual",
+            "name": "withdraw",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "SELECT _perpetualManager FROM ref('StableMasterFront_event_CollateralDeployed')",
+        "contract_address": "0x5addc89785d75c86ab939e9e15bfbbb7fc086a87",
         "field_mapping": {},
         "type": "trace"
     },
@@ -32,21 +37,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "perpetualID",
-                "type": "STRING"
-            },
-            {
-                "description": "",
                 "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "to",
+                "name": "burner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dest",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "poolManager",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PerpetualManagerFront_call_removeFromPerpetual"
+        "table_name": "StableMasterFront_call_withdraw"
     }
 }

@@ -3,17 +3,12 @@
         "abi": {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "perpetualID",
-                    "type": "uint256"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
+                    "internalType": "uint256[]",
+                    "name": "perpetualIDs",
+                    "type": "uint256[]"
                 }
             ],
-            "name": "addToPerpetual",
+            "name": "forceClosePerpetuals",
             "outputs": [],
             "stateMutability": "nonpayable",
             "type": "function"
@@ -27,16 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "perpetualID",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "amount",
+                "name": "perpetualIDs",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PerpetualManagerFront_call_addToPerpetual"
+        "table_name": "PerpetualManagerFront_call_forceClosePerpetuals"
     }
 }
