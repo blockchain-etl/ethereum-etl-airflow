@@ -22,7 +22,7 @@
             "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x671a912c10bba0cfa74cfc2d6fba9ba1ed9530b2', '0x986b4aff588a109c09b50a03f42e4110e29d353f'])",
+        "contract_address": "(SELECT vault FROM ref('V2VaultRegistry_event_NewVault') EXCEPT DISTINCT SELECT vault FROM ref('Vault_Deployer_event_NewExperimentalVault')) UNION ALL SELECT '0xa696a63cc78dffa1a63e9e50587c197387ff6c7e'",
         "field_mapping": {},
         "type": "log"
     },
