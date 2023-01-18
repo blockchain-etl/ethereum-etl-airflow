@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "currentBalance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "balanceIncrease",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "avgStableRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTotalSupply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Burn",
+            "type": "event"
+        },
+        "contract_address": "SELECT stableDebtToken FROM ref('PoolConfigurator_event_ReserveInitialized') GROUP BY stableDebtToken",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currentBalance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "balanceIncrease",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "avgStableRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newTotalSupply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StableDebtToken_v3_event_Burn"
+    }
+}
