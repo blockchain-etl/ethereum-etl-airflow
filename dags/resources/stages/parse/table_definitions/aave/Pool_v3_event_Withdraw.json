@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Withdraw",
+            "type": "event"
+        },
+        "contract_address": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_v3_event_Withdraw"
+    }
+}

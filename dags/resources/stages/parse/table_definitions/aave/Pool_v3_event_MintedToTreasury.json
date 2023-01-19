@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountMinted",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MintedToTreasury",
+            "type": "event"
+        },
+        "contract_address": "0x794a61358d6845594f94dc1db02a252b5b4814ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountMinted",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_v3_event_MintedToTreasury"
+    }
+}
