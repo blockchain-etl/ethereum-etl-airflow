@@ -25,7 +25,7 @@
             "name": "DebtCeilingChanged",
             "type": "event"
         },
-        "contract_address": "0x8145edddf43f50276641b55bd3ad95944510021e",
+        "contract_address": "0x64b761d848206f447fe2dd461b0c635ec39ebb27",
         "field_mapping": {},
         "type": "log"
     },
