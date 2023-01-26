@@ -1,21 +1,23 @@
 {
     "parser": {
         "abi": {
-            "anonymous": false,
+            "constant": false,
             "inputs": [
                 {
-                    "indexed": false,
                     "internalType": "uint256",
                     "name": "id",
                     "type": "uint256"
                 }
             ],
-            "name": "Yank",
-            "type": "event"
+            "name": "deal",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
-        "contract_address": "SELECT DISTINCT clip FROM ref('Dog_event_Bark')",
+        "contract_address": "SELECT DISTINCT flip FROM ref('Cat_event_Bite')",
         "field_mapping": {},
-        "type": "log"
+        "type": "trace"
     },
     "table": {
         "dataset_name": "maker",
@@ -27,6 +29,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Clipper_event_Yank"
+        "table_name": "Flipper_call_deal"
     }
 }

@@ -19,7 +19,7 @@
             "name": "File",
             "type": "event"
         },
-        "contract_address": "0xc67963a226eddd77b91ad8c421630a1b0adff270",
+        "contract_address": "SELECT DISTINCT clip FROM ref('Dog_event_Bark')",
         "field_mapping": {},
         "type": "log"
     },
