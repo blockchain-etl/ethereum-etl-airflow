@@ -31,7 +31,7 @@
             "name": "BuyCollateral",
             "type": "event"
         },
-        "contract_address": "0xc3d688b66703497daa19211eedff47f25384cdc3",
+        "contract_address": "0xa17581a9e3356d9a858b789d68b4d866e593ae94",
         "field_mapping": {},
         "type": "log"
     },
@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "cUSDCv3_event_BuyCollateral"
+        "table_name": "cWETHv3_event_BuyCollateral"
     }
 }
