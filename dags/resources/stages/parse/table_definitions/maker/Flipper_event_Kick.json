@@ -4,33 +4,9 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "uint256",
                     "name": "id",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "max",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "price",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "owe",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "tab",
                     "type": "uint256"
                 },
                 {
@@ -40,16 +16,34 @@
                     "type": "uint256"
                 },
                 {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bid",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tab",
+                    "type": "uint256"
+                },
+                {
                     "indexed": true,
                     "internalType": "address",
                     "name": "usr",
                     "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "gal",
+                    "type": "address"
                 }
             ],
-            "name": "Take",
+            "name": "Kick",
             "type": "event"
         },
-        "contract_address": "SELECT DISTINCT clip FROM ref('Dog_event_Bark')",
+        "contract_address": "SELECT DISTINCT flip FROM ref('Cat_event_Bite')",
         "field_mapping": {},
         "type": "log"
     },
@@ -63,17 +57,12 @@
             },
             {
                 "description": "",
-                "name": "max",
+                "name": "lot",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "price",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "owe",
+                "name": "bid",
                 "type": "STRING"
             },
             {
@@ -83,16 +72,16 @@
             },
             {
                 "description": "",
-                "name": "lot",
+                "name": "usr",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "usr",
+                "name": "gal",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Clipper_event_Take"
+        "table_name": "Flipper_event_Kick"
     }
 }

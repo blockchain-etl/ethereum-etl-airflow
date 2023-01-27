@@ -1,0 +1,80 @@
+{
+    "parser": {
+        "abi": {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "gal",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "tab",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "lot",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "bid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "kick",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT DISTINCT flip FROM ref('Cat_event_Bite')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gal",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tab",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bid",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Flipper_call_kick"
+    }
+}
