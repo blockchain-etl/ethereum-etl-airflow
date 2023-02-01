@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_originContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_bidder",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_currencyAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CancelOffer",
+            "type": "event"
+        },
+        "contract_address": "0x6d7c44773c52d396f43c2d511b81aa168e9a7a42",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "superrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "_originContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_bidder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_currencyAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SuperRareBazaar_event_CancelOffer"
+    }
+}
