@@ -1,0 +1,63 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint8[]",
+                    "name": "actions",
+                    "type": "uint8[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "values",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "bytes[]",
+                    "name": "datas",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "cook",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "value1",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "value2",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "SELECT cloneAddress FROM ref('BentoBoxV1_event_LogDeploy')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "actions",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "values",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "datas",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BentoBoxMarkets_call_cook"
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "users",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "maxBorrowParts",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract ISwapper",
+                    "name": "swapper",
+                    "type": "address"
+                }
+            ],
+            "name": "liquidate",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT cloneAddress FROM ref('DegenBox_event_LogDeploy')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "abracadabra",
+        "schema": [
+            {
+                "description": "",
+                "name": "users",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxBorrowParts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "swapper",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DegenBoxMarkets_call_liquidate"
+    }
+}
