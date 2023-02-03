@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xcda72070e455bb31c7690a170224ce43623d0b6f",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "seller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalFees",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "creatorRev",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "sellerRev",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OfferAccepted",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "foundation",
+        "table_name": "FNDNFTMarket_event_OfferAccepted",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "nftContract",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "tokenId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "buyer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "seller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "totalFees",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "creatorRev",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "sellerRev",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
