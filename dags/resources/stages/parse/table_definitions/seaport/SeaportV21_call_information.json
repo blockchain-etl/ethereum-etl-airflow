@@ -1,0 +1,36 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "information",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "version",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "domainSeparator",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "address",
+                    "name": "conduitController",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x00000000000006c7676171937c444f6bde3d6282",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "schema": [],
+        "table_description": "",
+        "table_name": "SeaportV21_call_information"
+    }
+}
