@@ -132,7 +132,7 @@
                         }
                     ],
                     "internalType": "struct Order",
-                    "name": "",
+                    "name": "order",
                     "type": "tuple"
                 },
                 {
@@ -161,12 +161,17 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "order",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "fulfillerConduitKey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fulfilled",
                 "type": "STRING"
             }
         ],

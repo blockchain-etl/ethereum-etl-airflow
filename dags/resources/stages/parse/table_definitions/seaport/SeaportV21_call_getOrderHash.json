@@ -120,7 +120,7 @@
                         }
                     ],
                     "internalType": "struct OrderComponents",
-                    "name": "",
+                    "name": "orderComponents",
                     "type": "tuple"
                 }
             ],
@@ -144,7 +144,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "orderComponents",
                 "type": "STRING"
             }
         ],

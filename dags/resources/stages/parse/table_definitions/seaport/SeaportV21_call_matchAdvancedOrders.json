@@ -147,7 +147,7 @@
                         }
                     ],
                     "internalType": "struct AdvancedOrder[]",
-                    "name": "",
+                    "name": "advancedOrders",
                     "type": "tuple[]"
                 },
                 {
@@ -179,7 +179,7 @@
                         }
                     ],
                     "internalType": "struct CriteriaResolver[]",
-                    "name": "",
+                    "name": "criteriaResolvers",
                     "type": "tuple[]"
                 },
                 {
@@ -220,7 +220,7 @@
                         }
                     ],
                     "internalType": "struct Fulfillment[]",
-                    "name": "",
+                    "name": "fulfillments",
                     "type": "tuple[]"
                 },
                 {
@@ -277,7 +277,7 @@
                         }
                     ],
                     "internalType": "struct Execution[]",
-                    "name": "",
+                    "name": "executions",
                     "type": "tuple[]"
                 }
             ],
@@ -292,23 +292,23 @@
         "dataset_name": "seaport",
         "schema": [
             {
+                "name": "advancedOrders",
                 "description": "",
-                "name": "",
+                "type": "STRING"
+            },
+            {
+                "name": "criteriaResolvers",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fulfillments",
+                "description": "",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "recipient",
+                "name": "executions",
                 "type": "STRING"
             }
         ],

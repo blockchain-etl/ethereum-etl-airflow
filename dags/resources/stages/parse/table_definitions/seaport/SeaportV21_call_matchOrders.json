@@ -132,7 +132,7 @@
                         }
                     ],
                     "internalType": "struct Order[]",
-                    "name": "",
+                    "name": "orders",
                     "type": "tuple[]"
                 },
                 {
@@ -173,7 +173,7 @@
                         }
                     ],
                     "internalType": "struct Fulfillment[]",
-                    "name": "",
+                    "name": "fulfillments",
                     "type": "tuple[]"
                 }
             ],
@@ -225,7 +225,7 @@
                         }
                     ],
                     "internalType": "struct Execution[]",
-                    "name": "",
+                    "name": "execution",
                     "type": "tuple[]"
                 }
             ],
@@ -241,12 +241,12 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "orders",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "fulfillments",
                 "type": "STRING"
             }
         ],

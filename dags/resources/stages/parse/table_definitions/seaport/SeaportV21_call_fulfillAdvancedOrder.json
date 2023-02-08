@@ -147,7 +147,7 @@
                         }
                     ],
                     "internalType": "struct AdvancedOrder",
-                    "name": "",
+                    "name": "advancedOrders",
                     "type": "tuple"
                 },
                 {
@@ -179,7 +179,7 @@
                         }
                     ],
                     "internalType": "struct CriteriaResolver[]",
-                    "name": "",
+                    "name": "criteriaResolvers",
                     "type": "tuple[]"
                 },
                 {
@@ -213,12 +213,12 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "advancedOrders",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "criteriaResolvers",
                 "type": "STRING"
             },
             {
@@ -229,6 +229,11 @@
             {
                 "description": "",
                 "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fulfilled",
                 "type": "STRING"
             }
         ],

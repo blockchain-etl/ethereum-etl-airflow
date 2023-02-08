@@ -132,7 +132,7 @@
                         }
                     ],
                     "internalType": "struct Order[]",
-                    "name": "",
+                    "name": "orders",
                     "type": "tuple[]"
                 }
             ],
@@ -140,7 +140,7 @@
             "outputs": [
                 {
                     "internalType": "bool",
-                    "name": "",
+                    "name": "validated",
                     "type": "bool"
                 }
             ],
@@ -156,7 +156,12 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "orders",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "validated",
                 "type": "STRING"
             }
         ],
