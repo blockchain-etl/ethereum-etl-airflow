@@ -308,7 +308,7 @@
             },
             {
                 "description": "",
-                "name": "executions",
+                "name": "recipient",
                 "type": "STRING"
             }
         ],

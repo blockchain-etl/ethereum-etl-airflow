@@ -333,11 +333,6 @@
                 "description": "",
                 "name": "maximumFulfilled",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "executions",
-                "type": "STRING"
             }
         ],
         "table_description": "",
