@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x22ab31cd55130435b5efbf9224b6a9d5ec36533f",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "floatingDepositShares",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "floatingAssets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "floatingBorrowShares",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "floatingDebt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "earningsAccumulator",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MarketUpdate",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "exactly",
+        "table_name": "ExactlyMarketWETH_event_MarketUpdate",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "timestamp",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "floatingDepositShares",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "floatingAssets",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "floatingBorrowShares",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "floatingDebt",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "earningsAccumulator",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
