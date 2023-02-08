@@ -1,0 +1,216 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "offerer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "zone",
+                            "type": "address"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum ItemType",
+                                    "name": "itemType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "token",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "identifierOrCriteria",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "startAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "endAmount",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct OfferItem[]",
+                            "name": "offer",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum ItemType",
+                                    "name": "itemType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "token",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "identifierOrCriteria",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "startAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "endAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "address payable",
+                                    "name": "recipient",
+                                    "type": "address"
+                                }
+                            ],
+                            "internalType": "struct ConsiderationItem[]",
+                            "name": "consideration",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "internalType": "enum OrderType",
+                            "name": "orderType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "zoneHash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "salt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "conduitKey",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "totalOriginalConsiderationItems",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct OrderParameters",
+                    "name": "orderParameters",
+                    "type": "tuple"
+                }
+            ],
+            "name": "OrderValidated",
+            "type": "event"
+        },
+        "contract_address": "0x00000000000006c7676171937c444f6bde3d6282",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "offerer",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "zone",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "offer",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "consideration",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "orderType",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "endTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "zoneHash",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "salt",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "conduitKey",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "totalOriginalConsiderationItems",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "orderParameters",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaportV21_event_OrderValidated"
+    }
+}
