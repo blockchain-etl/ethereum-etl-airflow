@@ -168,11 +168,6 @@
                 "description": "",
                 "name": "fulfillerConduitKey",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "fulfilled",
-                "type": "STRING"
             }
         ],
         "table_description": "",

@@ -147,7 +147,7 @@
                         }
                     ],
                     "internalType": "struct AdvancedOrder",
-                    "name": "advancedOrders",
+                    "name": "advancedOrder",
                     "type": "tuple"
                 },
                 {
@@ -213,7 +213,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "advancedOrders",
+                "name": "advancedOrder",
                 "type": "STRING"
             },
             {
@@ -229,11 +229,6 @@
             {
                 "description": "",
                 "name": "recipient",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "fulfilled",
                 "type": "STRING"
             }
         ],

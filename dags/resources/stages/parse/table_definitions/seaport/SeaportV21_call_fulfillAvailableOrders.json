@@ -249,7 +249,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "orders",
+                "name": "availableOrders",
                 "type": "STRING"
             },
             {

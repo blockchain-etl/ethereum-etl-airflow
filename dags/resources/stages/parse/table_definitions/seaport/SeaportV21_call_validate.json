@@ -158,11 +158,6 @@
                 "description": "",
                 "name": "orders",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "validated",
-                "type": "STRING"
             }
         ],
         "table_description": "",

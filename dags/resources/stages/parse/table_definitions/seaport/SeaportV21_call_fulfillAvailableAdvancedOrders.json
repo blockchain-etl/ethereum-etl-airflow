@@ -236,7 +236,7 @@
             "outputs": [
                 {
                     "internalType": "bool[]",
-                    "name": "considerationFulfillments",
+                    "name": "availableOrders",
                     "type": "bool[]"
                 },
                 {
