@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x163538e22f4d38c1eb21b79939f3d2ee274198ff",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Withdraw",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "exactly",
+        "table_name": "ExactlyMarketDAI_event_Withdraw",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "caller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "receiver",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "assets",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "shares",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
