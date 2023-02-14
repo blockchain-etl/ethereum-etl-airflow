@@ -131,110 +131,22 @@
                             "type": "bytes"
                         }
                     ],
-                    "internalType": "struct Order[]",
-                    "name": "orders",
-                    "type": "tuple[]"
-                },
-                {
-                    "components": [
-                        {
-                            "internalType": "uint256",
-                            "name": "orderIndex",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "itemIndex",
-                            "type": "uint256"
-                        }
-                    ],
-                    "internalType": "struct FulfillmentComponent[][]",
-                    "name": "offerFulfillments",
-                    "type": "tuple[][]"
-                },
-                {
-                    "components": [
-                        {
-                            "internalType": "uint256",
-                            "name": "orderIndex",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "itemIndex",
-                            "type": "uint256"
-                        }
-                    ],
-                    "internalType": "struct FulfillmentComponent[][]",
-                    "name": "considerationFulfillments",
-                    "type": "tuple[][]"
+                    "internalType": "struct Order",
+                    "name": "order",
+                    "type": "tuple"
                 },
                 {
                     "internalType": "bytes32",
                     "name": "fulfillerConduitKey",
                     "type": "bytes32"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "maximumFulfilled",
-                    "type": "uint256"
                 }
             ],
-            "name": "fulfillAvailableOrders",
+            "name": "fulfillOrder",
             "outputs": [
                 {
-                    "internalType": "bool[]",
-                    "name": "availableOrders",
-                    "type": "bool[]"
-                },
-                {
-                    "components": [
-                        {
-                            "components": [
-                                {
-                                    "internalType": "enum ItemType",
-                                    "name": "itemType",
-                                    "type": "uint8"
-                                },
-                                {
-                                    "internalType": "address",
-                                    "name": "token",
-                                    "type": "address"
-                                },
-                                {
-                                    "internalType": "uint256",
-                                    "name": "identifier",
-                                    "type": "uint256"
-                                },
-                                {
-                                    "internalType": "uint256",
-                                    "name": "amount",
-                                    "type": "uint256"
-                                },
-                                {
-                                    "internalType": "address payable",
-                                    "name": "recipient",
-                                    "type": "address"
-                                }
-                            ],
-                            "internalType": "struct ReceivedItem",
-                            "name": "item",
-                            "type": "tuple"
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "offerer",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "bytes32",
-                            "name": "conduitKey",
-                            "type": "bytes32"
-                        }
-                    ],
-                    "internalType": "struct Execution[]",
-                    "name": "executions",
-                    "type": "tuple[]"
+                    "internalType": "bool",
+                    "name": "fulfilled",
+                    "type": "bool"
                 }
             ],
             "stateMutability": "payable",
@@ -249,31 +161,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "availableOrders",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "offerFulfillments",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "considerationFulfillments",
+                "name": "order",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "fulfillerConduitKey",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "maximumFulfilled",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_fulfillAvailableOrders"
+        "table_name": "SeaportV12_call_fulfillOrder"
     }
 }

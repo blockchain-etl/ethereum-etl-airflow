@@ -27,6 +27,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_event_OrdersMatched"
+        "table_name": "SeaportV12_event_OrdersMatched"
     }
 }

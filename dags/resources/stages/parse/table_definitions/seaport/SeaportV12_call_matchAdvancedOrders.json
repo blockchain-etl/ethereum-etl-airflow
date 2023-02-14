@@ -126,25 +126,162 @@
                             "type": "tuple"
                         },
                         {
+                            "internalType": "uint120",
+                            "name": "numerator",
+                            "type": "uint120"
+                        },
+                        {
+                            "internalType": "uint120",
+                            "name": "denominator",
+                            "type": "uint120"
+                        },
+                        {
                             "internalType": "bytes",
                             "name": "signature",
                             "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
                         }
                     ],
-                    "internalType": "struct Order[]",
-                    "name": "orders",
+                    "internalType": "struct AdvancedOrder[]",
+                    "name": "advancedOrders",
+                    "type": "tuple[]"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "orderIndex",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum Side",
+                            "name": "side",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "identifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32[]",
+                            "name": "criteriaProof",
+                            "type": "bytes32[]"
+                        }
+                    ],
+                    "internalType": "struct CriteriaResolver[]",
+                    "name": "criteriaResolvers",
+                    "type": "tuple[]"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "orderIndex",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "itemIndex",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct FulfillmentComponent[]",
+                            "name": "offerComponents",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "orderIndex",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "itemIndex",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct FulfillmentComponent[]",
+                            "name": "considerationComponents",
+                            "type": "tuple[]"
+                        }
+                    ],
+                    "internalType": "struct Fulfillment[]",
+                    "name": "fulfillments",
+                    "type": "tuple[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                }
+            ],
+            "name": "matchAdvancedOrders",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum ItemType",
+                                    "name": "itemType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "token",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "identifier",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "address payable",
+                                    "name": "recipient",
+                                    "type": "address"
+                                }
+                            ],
+                            "internalType": "struct ReceivedItem",
+                            "name": "item",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "offerer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "conduitKey",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "internalType": "struct Execution[]",
+                    "name": "executions",
                     "type": "tuple[]"
                 }
             ],
-            "name": "validate",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "validated",
-                    "type": "bool"
-                }
-            ],
-            "stateMutability": "nonpayable",
+            "stateMutability": "payable",
             "type": "function"
         },
         "contract_address": "0x00000000000006c7676171937c444f6bde3d6282",
@@ -155,12 +292,27 @@
         "dataset_name": "seaport",
         "schema": [
             {
+                "name": "advancedOrders",
                 "description": "",
-                "name": "orders",
+                "type": "STRING"
+            },
+            {
+                "name": "criteriaResolvers",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fulfillments",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_validate"
+        "table_name": "SeaportV12_call_matchAdvancedOrders"
     }
 }

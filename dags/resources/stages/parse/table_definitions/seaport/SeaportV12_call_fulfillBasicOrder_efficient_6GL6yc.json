@@ -112,7 +112,7 @@
                     "type": "tuple"
                 }
             ],
-            "name": "fulfillBasicOrder",
+            "name": "fulfillBasicOrder_efficient_6GL6yc",
             "outputs": [
                 {
                     "internalType": "bool",
@@ -137,6 +137,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_fulfillBasicOrder"
+        "table_name": "SeaportV12_call_fulfillBasicOrder_efficient_6GL6yc"
     }
 }

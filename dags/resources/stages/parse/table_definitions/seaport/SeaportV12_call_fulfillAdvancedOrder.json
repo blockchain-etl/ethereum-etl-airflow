@@ -126,22 +126,74 @@
                             "type": "tuple"
                         },
                         {
+                            "internalType": "uint120",
+                            "name": "numerator",
+                            "type": "uint120"
+                        },
+                        {
+                            "internalType": "uint120",
+                            "name": "denominator",
+                            "type": "uint120"
+                        },
+                        {
                             "internalType": "bytes",
                             "name": "signature",
                             "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
                         }
                     ],
-                    "internalType": "struct Order",
-                    "name": "order",
+                    "internalType": "struct AdvancedOrder",
+                    "name": "advancedOrder",
                     "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "orderIndex",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum Side",
+                            "name": "side",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "identifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32[]",
+                            "name": "criteriaProof",
+                            "type": "bytes32[]"
+                        }
+                    ],
+                    "internalType": "struct CriteriaResolver[]",
+                    "name": "criteriaResolvers",
+                    "type": "tuple[]"
                 },
                 {
                     "internalType": "bytes32",
                     "name": "fulfillerConduitKey",
                     "type": "bytes32"
+                },
+                {
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
                 }
             ],
-            "name": "fulfillOrder",
+            "name": "fulfillAdvancedOrder",
             "outputs": [
                 {
                     "internalType": "bool",
@@ -161,16 +213,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "order",
+                "name": "advancedOrder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "criteriaResolvers",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "fulfillerConduitKey",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_fulfillOrder"
+        "table_name": "SeaportV12_call_fulfillAdvancedOrder"
     }
 }

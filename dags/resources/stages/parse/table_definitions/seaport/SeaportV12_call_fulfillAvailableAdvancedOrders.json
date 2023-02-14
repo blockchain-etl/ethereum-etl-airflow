@@ -336,6 +336,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_fulfillAvailableAdvancedOrders"
+        "table_name": "SeaportV12_call_fulfillAvailableAdvancedOrders"
     }
 }
