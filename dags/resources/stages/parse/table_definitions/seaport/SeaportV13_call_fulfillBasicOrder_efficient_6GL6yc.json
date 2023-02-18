@@ -1,0 +1,142 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "considerationToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "considerationIdentifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "considerationAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "addresspayable",
+                            "name": "offerer",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "zone",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "offerToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "offerIdentifier",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "offerAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enumBasicOrderType",
+                            "name": "basicOrderType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "endTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "zoneHash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "salt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "offererConduitKey",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "fulfillerConduitKey",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "totalOriginalAdditionalRecipients",
+                            "type": "uint256"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "addresspayable",
+                                    "name": "recipient",
+                                    "type": "address"
+                                }
+                            ],
+                            "internalType": "structAdditionalRecipient[]",
+                            "name": "additionalRecipients",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signature",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "structBasicOrderParameters",
+                    "name": "parameters",
+                    "type": "tuple"
+                }
+            ],
+            "name": "fulfillBasicOrder_efficient_6GL6yc",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "fulfilled",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x0000000000000ad24e80fd803c6ac37206a45f15",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "schema": [
+            {
+                "description": "",
+                "name": "parameters",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaportV13_call_fulfillBasicOrder_efficient_6GL6yc"
+    }
+}
