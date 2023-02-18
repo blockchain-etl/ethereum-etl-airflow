@@ -152,7 +152,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "seaport",
         "schema": [
             {
                 "description": "",
@@ -161,6 +161,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_validate"
+        "table_name": "SeaportV13_call_validate"
     }
 }
