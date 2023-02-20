@@ -149,6 +149,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_getOrderHash"
+        "table_name": "SeaportV12_call_getOrderHash"
     }
 }

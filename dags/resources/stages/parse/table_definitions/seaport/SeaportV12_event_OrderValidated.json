@@ -211,6 +211,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_event_OrderValidated"
+        "table_name": "SeaportV12_event_OrderValidated"
     }
 }

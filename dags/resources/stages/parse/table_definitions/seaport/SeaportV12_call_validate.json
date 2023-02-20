@@ -126,82 +126,25 @@
                             "type": "tuple"
                         },
                         {
-                            "internalType": "uint120",
-                            "name": "numerator",
-                            "type": "uint120"
-                        },
-                        {
-                            "internalType": "uint120",
-                            "name": "denominator",
-                            "type": "uint120"
-                        },
-                        {
                             "internalType": "bytes",
                             "name": "signature",
                             "type": "bytes"
-                        },
-                        {
-                            "internalType": "bytes",
-                            "name": "extraData",
-                            "type": "bytes"
                         }
                     ],
-                    "internalType": "struct AdvancedOrder",
-                    "name": "advancedOrder",
-                    "type": "tuple"
-                },
-                {
-                    "components": [
-                        {
-                            "internalType": "uint256",
-                            "name": "orderIndex",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "enum Side",
-                            "name": "side",
-                            "type": "uint8"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "index",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "identifier",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "bytes32[]",
-                            "name": "criteriaProof",
-                            "type": "bytes32[]"
-                        }
-                    ],
-                    "internalType": "struct CriteriaResolver[]",
-                    "name": "criteriaResolvers",
+                    "internalType": "struct Order[]",
+                    "name": "orders",
                     "type": "tuple[]"
-                },
-                {
-                    "internalType": "bytes32",
-                    "name": "fulfillerConduitKey",
-                    "type": "bytes32"
-                },
-                {
-                    "internalType": "address",
-                    "name": "recipient",
-                    "type": "address"
                 }
             ],
-            "name": "fulfillAdvancedOrder",
+            "name": "validate",
             "outputs": [
                 {
                     "internalType": "bool",
-                    "name": "fulfilled",
+                    "name": "validated",
                     "type": "bool"
                 }
             ],
-            "stateMutability": "payable",
+            "stateMutability": "nonpayable",
             "type": "function"
         },
         "contract_address": "0x00000000000006c7676171937c444f6bde3d6282",
@@ -213,26 +156,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "advancedOrder",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "criteriaResolvers",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "fulfillerConduitKey",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "recipient",
+                "name": "orders",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_fulfillAdvancedOrder"
+        "table_name": "SeaportV12_call_validate"
     }
 }

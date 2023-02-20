@@ -5,24 +5,18 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "bytes32",
-                    "name": "orderHash",
-                    "type": "bytes32"
+                    "internalType": "uint256",
+                    "name": "newCounter",
+                    "type": "uint256"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
                     "name": "offerer",
                     "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "zone",
-                    "type": "address"
                 }
             ],
-            "name": "OrderCancelled",
+            "name": "CounterIncremented",
             "type": "event"
         },
         "contract_address": "0x00000000000006c7676171937c444f6bde3d6282",
@@ -34,21 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "orderHash",
+                "name": "newCounter",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "offerer",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "zone",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_event_OrderCancelled"
+        "table_name": "SeaportV12_event_CounterIncremented"
     }
 }

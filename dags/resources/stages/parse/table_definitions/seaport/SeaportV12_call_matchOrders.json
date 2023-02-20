@@ -251,6 +251,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "SeaportV21_call_matchOrders"
+        "table_name": "SeaportV12_call_matchOrders"
     }
 }
