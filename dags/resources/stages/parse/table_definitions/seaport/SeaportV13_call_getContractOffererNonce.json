@@ -1,0 +1,38 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "contractOfferer",
+                    "type": "address"
+                }
+            ],
+            "name": "getContractOffererNonce",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x0000000000000ad24e80fd803c6ac37206a45f15",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "schema": [
+            {
+                "description": "",
+                "name": "contractOfferer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaportV13_call_getContractOffererNonce"
+    }
+}
