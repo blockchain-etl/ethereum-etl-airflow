@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "numerator",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "denominator",
+                    "type": "uint256"
+                }
+            ],
+            "name": "distribute",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x16d02dc67eb237c387023339356b25d1d54b0922",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "numerator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "denominator",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueLender_call_distribute"
+    }
+}

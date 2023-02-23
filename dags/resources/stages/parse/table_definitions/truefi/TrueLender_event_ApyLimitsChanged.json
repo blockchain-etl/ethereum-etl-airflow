@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "minApy",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxApy",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ApyLimitsChanged",
+            "type": "event"
+        },
+        "contract_address": "0x16d02dc67eb237c387023339356b25d1d54b0922",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "minApy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxApy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueLender_event_ApyLimitsChanged"
+    }
+}
