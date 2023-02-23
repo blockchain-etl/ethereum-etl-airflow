@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x3843c41da1d7909c86fad51c47b9a97cf62a29e1",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "maturity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "positionAssets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawAtMaturity",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "exactly",
+        "table_name": "ExactlyMarketWstETH_event_WithdrawAtMaturity",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "maturity",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "caller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "receiver",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "positionAssets",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "assets",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
