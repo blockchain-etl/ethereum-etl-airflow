@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "borrower",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [],
+        "table_description": "",
+        "table_name": "Loan_call_borrower"
+    }
+}
