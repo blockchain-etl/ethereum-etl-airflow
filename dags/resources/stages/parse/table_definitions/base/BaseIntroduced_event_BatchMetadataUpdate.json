@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_fromTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_toTokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BatchMetadataUpdate",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "base",
+        "table_name": "BaseIntroduced_event_BatchMetadataUpdate",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "_fromTokenId",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "_toTokenId",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

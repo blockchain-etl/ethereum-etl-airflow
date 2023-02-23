@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "role",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "previousAdminRole",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "newAdminRole",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "RoleAdminChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "base",
+        "table_name": "BaseIntroduced_event_RoleAdminChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "role",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "previousAdminRole",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newAdminRole",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

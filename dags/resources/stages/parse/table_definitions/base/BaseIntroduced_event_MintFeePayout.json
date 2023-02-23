@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintFeeAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "mintFeeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "name": "MintFeePayout",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "base",
+        "table_name": "BaseIntroduced_event_MintFeePayout",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "mintFeeAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "mintFeeRecipient",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "success",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
