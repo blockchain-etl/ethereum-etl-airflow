@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_lockId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "_msgSender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_proposedCustodian",
+                    "type": "address"
+                }
+            ],
+            "name": "CustodianChangeRequested",
+            "type": "event"
+        },
+        "contract_address": "0x056fd409e1d7a124bd7017459dfea2f387b6d5cd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gusd",
+        "schema": [
+            {
+                "description": "",
+                "name": "_lockId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_msgSender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_proposedCustodian",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GUSD_event_CustodianChangeRequested"
+    }
+}
