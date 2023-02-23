@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x660e2fc185a9ffe722af253329ceaad4c9f6f928",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lendersAssets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract Market",
+                    "name": "seizeMarket",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "seizedAssets",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Liquidate",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "exactly",
+        "table_name": "ExactlyMarketUSDC_event_Liquidate",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "receiver",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "borrower",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "assets",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "lendersAssets",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "seizeMarket",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "seizedAssets",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
