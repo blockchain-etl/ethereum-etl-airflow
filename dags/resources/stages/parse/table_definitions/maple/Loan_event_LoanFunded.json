@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "fundedBy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountFunded",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LoanFunded",
+            "type": "event"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "fundedBy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountFunded",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Loan_event_LoanFunded"
+    }
+}

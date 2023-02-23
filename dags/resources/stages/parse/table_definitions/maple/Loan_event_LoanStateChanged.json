@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "enum Loan.State",
+                    "name": "state",
+                    "type": "uint8"
+                }
+            ],
+            "name": "LoanStateChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "state",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Loan_event_LoanStateChanged"
+    }
+}

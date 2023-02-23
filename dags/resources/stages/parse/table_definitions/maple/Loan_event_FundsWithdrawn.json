@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "by",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fundsWithdrawn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalWithdrawn",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FundsWithdrawn",
+            "type": "event"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "by",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fundsWithdrawn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalWithdrawn",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Loan_event_FundsWithdrawn"
+    }
+}
