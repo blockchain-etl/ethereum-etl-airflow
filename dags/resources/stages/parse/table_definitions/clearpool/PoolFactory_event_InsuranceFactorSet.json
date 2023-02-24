@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "factor",
+                    "type": "uint256"
+                }
+            ],
+            "name": "InsuranceFactorSet",
+            "type": "event"
+        },
+        "contract_address": "0xde204e5a060ba5d3b63c7a4099712959114c2d48",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "clearpool",
+        "schema": [
+            {
+                "description": "",
+                "name": "factor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolFactory_event_InsuranceFactorSet"
+    }
+}
