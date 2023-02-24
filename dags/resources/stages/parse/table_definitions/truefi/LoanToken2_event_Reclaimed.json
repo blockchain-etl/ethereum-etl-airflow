@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reclaimedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Reclaimed",
+            "type": "event"
+        },
+        "contract_address": "SELECT contractAddress FROM ref('LoanFactory2_event_LoanTokenCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reclaimedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanToken2_event_Reclaimed"
+    }
+}

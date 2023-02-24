@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "returnedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Defaulted",
+            "type": "event"
+        },
+        "contract_address": "SELECT contractAddress FROM ref('LoanFactory2_event_LoanTokenCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "returnedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanToken2_event_Defaulted"
+    }
+}
