@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "pauseStatus",
+                    "type": "bool"
+                }
+            ],
+            "name": "PauseStatusChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "pauseStatus",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueFiPool2_event_PauseStatusChanged"
+    }
+}
