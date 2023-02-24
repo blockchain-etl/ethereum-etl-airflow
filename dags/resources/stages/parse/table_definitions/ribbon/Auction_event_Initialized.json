@@ -5,15 +5,15 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "utilization",
-                    "type": "uint256"
+                    "internalType": "uint8",
+                    "name": "version",
+                    "type": "uint8"
                 }
             ],
-            "name": "ProvisionalDefaultUtilizationSet",
+            "name": "Initialized",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "0x3b383d8e92cc922539f9e9f4d64da119e250334a",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "utilization",
+                "name": "version",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_ProvisionalDefaultUtilizationSet"
+        "table_name": "Auction_event_Initialized"
     }
 }

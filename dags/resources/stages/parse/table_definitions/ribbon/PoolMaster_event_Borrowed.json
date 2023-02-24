@@ -6,14 +6,20 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "period",
+                    "name": "amount",
                     "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
                 }
             ],
-            "name": "MaxInactivePeriodSet",
+            "name": "Borrowed",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "period",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_MaxInactivePeriodSet"
+        "table_name": "PoolMaster_event_Borrowed"
     }
 }

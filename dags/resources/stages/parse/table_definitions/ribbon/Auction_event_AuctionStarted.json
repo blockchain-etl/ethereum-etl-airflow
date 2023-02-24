@@ -6,20 +6,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "previousOwner",
+                    "name": "pool",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "newOwner",
+                    "name": "bidder",
                     "type": "address"
                 }
             ],
-            "name": "OwnershipTransferred",
+            "name": "AuctionStarted",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "0x3b383d8e92cc922539f9e9f4d64da119e250334a",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "previousOwner",
+                "name": "pool",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newOwner",
+                "name": "bidder",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_OwnershipTransferred"
+        "table_name": "Auction_event_AuctionStarted"
     }
 }

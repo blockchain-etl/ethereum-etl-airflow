@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "redeemer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "currencyAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redeemed",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ribbon",
+        "schema": [
+            {
+                "description": "",
+                "name": "redeemer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currencyAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolMaster_event_Redeemed"
+    }
+}
