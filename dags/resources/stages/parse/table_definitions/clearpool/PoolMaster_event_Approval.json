@@ -6,20 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "pool",
+                    "name": "owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "manager",
+                    "name": "spender",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolClosed",
+            "name": "Approval",
             "type": "event"
         },
-        "contract_address": "0xde204e5a060ba5d3b63c7a4099712959114c2d48",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "pool",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "manager",
+                "name": "spender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_PoolClosed"
+        "table_name": "PoolMaster_event_Approval"
     }
 }
