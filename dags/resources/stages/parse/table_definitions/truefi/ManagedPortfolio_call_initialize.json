@@ -1,0 +1,122 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_symbol",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_manager",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IERC20WithDecimals",
+                    "name": "_underlyingToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IBulletLoans",
+                    "name": "_bulletLoans",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IProtocolConfig",
+                    "name": "_protocolConfig",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract ILenderVerifier",
+                    "name": "_lenderVerifier",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_duration",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_maxSize",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_managerFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "initialize",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT newPortfolio FROM ref('ManagedPortfolioFactory_event_PortfolioCreated')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "_name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_manager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_underlyingToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_bulletLoans",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_protocolConfig",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_lenderVerifier",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_duration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_maxSize",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_managerFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ManagedPortfolio_call_initialize"
+    }
+}
