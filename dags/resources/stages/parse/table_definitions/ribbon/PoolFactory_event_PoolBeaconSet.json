@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPoolBeacon",
+                    "type": "address"
+                }
+            ],
+            "name": "PoolBeaconSet",
+            "type": "event"
+        },
+        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ribbon",
+        "schema": [
+            {
+                "description": "",
+                "name": "newPoolBeacon",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolFactory_event_PoolBeaconSet"
+    }
+}
