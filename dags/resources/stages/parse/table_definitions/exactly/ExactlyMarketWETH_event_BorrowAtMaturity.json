@@ -7,8 +7,20 @@
             "inputs": [
                 {
                     "indexed": true,
+                    "internalType": "uint256",
+                    "name": "maturity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
                     "internalType": "address",
                     "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
                     "type": "address"
                 },
                 {
@@ -26,22 +38,32 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "shares",
+                    "name": "fee",
                     "type": "uint256"
                 }
             ],
-            "name": "Repay",
+            "name": "BorrowAtMaturity",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "exactly",
-        "table_name": "ExactlyMarketWETH_event_Repay",
+        "table_name": "ExactlyMarketWETH_event_BorrowAtMaturity",
         "table_description": "",
         "schema": [
             {
+                "name": "maturity",
+                "description": "",
+                "type": "STRING"
+            },
+            {
                 "name": "caller",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "receiver",
                 "description": "",
                 "type": "STRING"
             },
@@ -56,7 +78,7 @@
                 "type": "STRING"
             },
             {
-                "name": "shares",
+                "name": "fee",
                 "description": "",
                 "type": "STRING"
             }

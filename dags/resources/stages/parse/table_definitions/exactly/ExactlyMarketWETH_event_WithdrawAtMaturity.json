@@ -7,6 +7,12 @@
             "inputs": [
                 {
                     "indexed": true,
+                    "internalType": "uint256",
+                    "name": "maturity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
                     "internalType": "address",
                     "name": "caller",
                     "type": "address"
@@ -14,49 +20,65 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "borrower",
+                    "name": "receiver",
                     "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "positionAssets",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
                     "name": "assets",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "shares",
-                    "type": "uint256"
                 }
             ],
-            "name": "Repay",
+            "name": "WithdrawAtMaturity",
             "type": "event"
         },
         "field_mapping": {}
     },
     "table": {
         "dataset_name": "exactly",
-        "table_name": "ExactlyMarketWETH_event_Repay",
+        "table_name": "ExactlyMarketWETH_event_WithdrawAtMaturity",
         "table_description": "",
         "schema": [
+            {
+                "name": "maturity",
+                "description": "",
+                "type": "STRING"
+            },
             {
                 "name": "caller",
                 "description": "",
                 "type": "STRING"
             },
             {
-                "name": "borrower",
+                "name": "receiver",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "owner",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "positionAssets",
                 "description": "",
                 "type": "STRING"
             },
             {
                 "name": "assets",
-                "description": "",
-                "type": "STRING"
-            },
-            {
-                "name": "shares",
                 "description": "",
                 "type": "STRING"
             }
