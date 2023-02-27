@@ -1,7 +1,7 @@
 {
     "parser": {
         "type": "log",
-        "contract_address": "0x29babff3eba7b517a75109ea8fd6d1eab4a10258",
+        "contract_address": "0xc4d4500326981eacd020e20a81b1c479c161c7ef",
         "abi": {
             "anonymous": false,
             "inputs": [
