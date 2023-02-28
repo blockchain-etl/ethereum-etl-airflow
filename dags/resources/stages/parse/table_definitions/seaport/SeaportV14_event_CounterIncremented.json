@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x00000000000001ad428e4906ae43d8f9852d0dd6",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newCounter",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "offerer",
+                    "type": "address"
+                }
+            ],
+            "name": "CounterIncremented",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "table_name": "SeaportV14_event_CounterIncremented",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "newCounter",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "offerer",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
