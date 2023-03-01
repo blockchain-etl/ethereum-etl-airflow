@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "beacon",
+                    "type": "address"
+                }
+            ],
+            "name": "BeaconUpgraded",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "base",
+        "table_name": "BaseIntroduced_event_BeaconUpgraded",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "beacon",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

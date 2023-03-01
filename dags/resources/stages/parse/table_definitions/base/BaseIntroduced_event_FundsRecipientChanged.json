@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "changedBy",
+                    "type": "address"
+                }
+            ],
+            "name": "FundsRecipientChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "base",
+        "table_name": "BaseIntroduced_event_FundsRecipientChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "newAddress",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "changedBy",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
