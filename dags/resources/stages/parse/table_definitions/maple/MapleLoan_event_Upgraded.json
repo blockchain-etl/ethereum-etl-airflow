@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toVersion_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "arguments_",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Upgraded",
+            "type": "event"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "toVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "arguments_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MapleLoan_event_Upgraded"
+    }
+}

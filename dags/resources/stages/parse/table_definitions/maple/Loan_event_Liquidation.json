@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralSwapped",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidityAssetReturned",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidationExcess",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "defaultSuffered",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Liquidation",
+            "type": "event"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "collateralSwapped",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityAssetReturned",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationExcess",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "defaultSuffered",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Loan_event_Liquidation"
+    }
+}

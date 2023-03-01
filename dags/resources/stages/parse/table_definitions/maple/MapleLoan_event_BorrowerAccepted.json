@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower_",
+                    "type": "address"
+                }
+            ],
+            "name": "BorrowerAccepted",
+            "type": "event"
+        },
+        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "borrower_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MapleLoan_event_BorrowerAccepted"
+    }
+}
