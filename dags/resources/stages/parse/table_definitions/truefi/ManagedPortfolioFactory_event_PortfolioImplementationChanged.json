@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IManagedPortfolio",
+                    "name": "newImplementation",
+                    "type": "address"
+                }
+            ],
+            "name": "PortfolioImplementationChanged",
+            "type": "event"
+        },
+        "contract_address": "0x17b7b75fd4288197cfd99d20e13b0dd9da1ff3e7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "newImplementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ManagedPortfolioFactory_event_PortfolioImplementationChanged"
+    }
+}
