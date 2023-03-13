@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newEndDate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "EndDateChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT newPortfolio FROM ref('ManagedPortfolioFactory_event_PortfolioCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "newEndDate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ManagedPortfolio_event_EndDateChanged"
+    }
+}

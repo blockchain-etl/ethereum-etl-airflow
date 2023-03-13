@@ -1,0 +1,68 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "apy",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "term",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "yesVotes",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "noVotes",
+                    "type": "uint256"
+                }
+            ],
+            "name": "loanIsCredible",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x16d02dc67eb237c387023339356b25d1d54b0922",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "apy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "term",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "yesVotes",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "noVotes",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueLender_call_loanIsCredible"
+    }
+}

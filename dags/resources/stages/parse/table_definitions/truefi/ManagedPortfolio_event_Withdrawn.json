@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "sharesAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "receivedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Withdrawn",
+            "type": "event"
+        },
+        "contract_address": "SELECT newPortfolio FROM ref('ManagedPortfolioFactory_event_PortfolioCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sharesAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receivedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ManagedPortfolio_event_Withdrawn"
+    }
+}

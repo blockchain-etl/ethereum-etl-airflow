@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newManager",
+                    "type": "address"
+                }
+            ],
+            "name": "ManagementTransferred",
+            "type": "event"
+        },
+        "contract_address": "SELECT newPortfolio FROM ref('ManagedPortfolioFactory_event_PortfolioCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ManagedPortfolio_event_ManagementTransferred"
+    }
+}

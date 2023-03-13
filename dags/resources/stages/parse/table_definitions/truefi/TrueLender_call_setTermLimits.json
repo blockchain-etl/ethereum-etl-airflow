@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "min",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "max",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setTermLimits",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x16d02dc67eb237c387023339356b25d1d54b0922",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "min",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "max",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueLender_call_setTermLimits"
+    }
+}

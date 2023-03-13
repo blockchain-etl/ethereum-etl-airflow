@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "staker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deposited",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "minted",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Joined",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "staker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deposited",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minted",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueFiPool2_event_Joined"
+    }
+}

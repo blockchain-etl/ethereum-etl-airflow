@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "beneficiary",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Collected",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "beneficiary",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueFiPool2_event_Collected"
+    }
+}

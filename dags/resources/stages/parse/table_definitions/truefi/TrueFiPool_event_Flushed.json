@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "currencyAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Flushed",
+            "type": "event"
+        },
+        "contract_address": "0xa1e72267084192db7387c8cc1328fade470e4149",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "truefi",
+        "schema": [
+            {
+                "description": "",
+                "name": "currencyAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "TrueFiPool_event_Flushed"
+    }
+}
