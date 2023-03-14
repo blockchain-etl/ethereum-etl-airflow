@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "manager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "ipfsHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "ManagerInfoSet",
+            "type": "event"
+        },
+        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ribbon",
+        "schema": [
+            {
+                "description": "",
+                "name": "manager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ipfsHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolFactory_event_ManagerInfoSet"
+    }
+}
