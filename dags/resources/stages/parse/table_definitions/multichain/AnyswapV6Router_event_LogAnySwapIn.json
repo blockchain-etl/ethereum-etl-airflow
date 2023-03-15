@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "txhash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fromChainID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toChainID",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogAnySwapIn",
+            "type": "event"
+        },
+        "contract_address": "0xba8da9dcf11b50b03fd5284f164ef5cdef910705",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "multichain",
+        "schema": [
+            {
+                "description": "",
+                "name": "txhash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromChainID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toChainID",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AnyswapV6Router_event_LogAnySwapIn"
+    }
+}
