@@ -6,20 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "pool",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "rewardPerSecond",
-                    "type": "uint256"
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
                 }
             ],
-            "name": "PoolRewardPerSecondSet",
+            "name": "ApprovalForAll",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "0x3b383d8e92cc922539f9e9f4d64da119e250334a",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "pool",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "rewardPerSecond",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "approved",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_PoolRewardPerSecondSet"
+        "table_name": "Auction_event_ApprovalForAll"
     }
 }

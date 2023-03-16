@@ -6,26 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "pool",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "manager",
+                    "name": "to",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "currency",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolCreated",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "pool",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "manager",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "currency",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_PoolCreated"
+        "table_name": "PoolMaster_event_Transfer"
     }
 }

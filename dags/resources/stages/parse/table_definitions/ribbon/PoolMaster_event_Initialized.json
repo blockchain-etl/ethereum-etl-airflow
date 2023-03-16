@@ -5,15 +5,15 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "newPoolBeacon",
-                    "type": "address"
+                    "internalType": "uint8",
+                    "name": "version",
+                    "type": "uint8"
                 }
             ],
-            "name": "PoolBeaconSet",
+            "name": "Initialized",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "newPoolBeacon",
+                "name": "version",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_PoolBeaconSet"
+        "table_name": "PoolMaster_event_Initialized"
     }
 }

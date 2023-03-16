@@ -6,14 +6,14 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "period",
+                    "name": "newRewardPerSecond",
                     "type": "uint256"
                 }
             ],
-            "name": "WarningGracePeriodSet",
+            "name": "RewardPerSecondSet",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "period",
+                "name": "newRewardPerSecond",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_WarningGracePeriodSet"
+        "table_name": "PoolMaster_event_RewardPerSecondSet"
     }
 }

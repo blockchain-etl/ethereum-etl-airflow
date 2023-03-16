@@ -6,20 +6,20 @@
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "currency",
+                    "name": "bidder",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "bool",
-                    "name": "allowed",
+                    "name": "whitelisted",
                     "type": "bool"
                 }
             ],
-            "name": "CurrencySet",
+            "name": "WhitelistedBidderSet",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "0x3b383d8e92cc922539f9e9f4d64da119e250334a",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "currency",
+                "name": "bidder",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "allowed",
+                "name": "whitelisted",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_CurrencySet"
+        "table_name": "Auction_event_WhitelistedBidderSet"
     }
 }

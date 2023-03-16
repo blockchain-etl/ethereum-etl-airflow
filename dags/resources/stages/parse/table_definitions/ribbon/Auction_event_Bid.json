@@ -12,14 +12,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "manager",
+                    "name": "bidder",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolClosed",
+            "name": "Bid",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "0x3b383d8e92cc922539f9e9f4d64da119e250334a",
         "field_mapping": {},
         "type": "log"
     },
@@ -33,11 +39,16 @@
             },
             {
                 "description": "",
-                "name": "manager",
+                "name": "bidder",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_PoolClosed"
+        "table_name": "Auction_event_Bid"
     }
 }

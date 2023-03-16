@@ -5,15 +5,21 @@
             "inputs": [
                 {
                     "indexed": false,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "factor",
+                    "name": "end",
                     "type": "uint256"
                 }
             ],
-            "name": "ReserveFactorSet",
+            "name": "AuctionEndSet",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "0x3b383d8e92cc922539f9e9f4d64da119e250334a",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "factor",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "end",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_ReserveFactorSet"
+        "table_name": "Auction_event_AuctionEndSet"
     }
 }

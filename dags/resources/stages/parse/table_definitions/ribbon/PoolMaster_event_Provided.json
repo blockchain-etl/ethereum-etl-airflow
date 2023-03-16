@@ -6,26 +6,32 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "pool",
+                    "name": "provider",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "oldManager",
+                    "name": "referral",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newManager",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "currencyAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokens",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolTransferred",
+            "name": "Provided",
             "type": "event"
         },
-        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +40,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "pool",
+                "name": "provider",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "oldManager",
+                "name": "referral",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newManager",
+                "name": "currencyAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_PoolTransferred"
+        "table_name": "PoolMaster_event_Provided"
     }
 }
