@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "period",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WarningGracePeriodSet",
+            "type": "event"
+        },
+        "contract_address": "0x312853485a41f76f20a14f927cd0ea676588936c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ribbon",
+        "schema": [
+            {
+                "description": "",
+                "name": "period",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolFactory_event_WarningGracePeriodSet"
+    }
+}
