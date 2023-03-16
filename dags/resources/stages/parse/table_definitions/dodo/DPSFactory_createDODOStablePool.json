@@ -1,0 +1,88 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "baseToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "quoteToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "lpFeeRate",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "i",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "k",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isOpenTWAP",
+                    "type": "bool"
+                }
+            ],
+            "name": "createDODOStablePool",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "newStablePool",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x6fddb76c93299d985f4d3fc7ac468f9a168577a4",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "",
+        "schema": [
+            {
+                "description": "",
+                "name": "baseToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quoteToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpFeeRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "i",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "k",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isOpenTWAP",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DODO_event_createDODOStablePool"
+    }
+}
