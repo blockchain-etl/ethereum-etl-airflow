@@ -6,14 +6,14 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "utilization",
+                    "name": "newRewardPerBlock",
                     "type": "uint256"
                 }
             ],
-            "name": "WarningUtilizationSet",
+            "name": "RewardPerBlockSet",
             "type": "event"
         },
-        "contract_address": "0xde204e5a060ba5d3b63c7a4099712959114c2d48",
+        "contract_address": "SELECT pool FROM ref('PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "utilization",
+                "name": "newRewardPerBlock",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolFactory_event_WarningUtilizationSet"
+        "table_name": "PoolMaster_event_RewardPerBlockSet"
     }
 }
