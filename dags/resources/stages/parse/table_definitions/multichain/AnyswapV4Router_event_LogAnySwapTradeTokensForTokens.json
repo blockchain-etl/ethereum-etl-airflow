@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "path",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountIn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountOutMin",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fromChainID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toChainID",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogAnySwapTradeTokensForTokens",
+            "type": "event"
+        },
+        "contract_address": "0x6b7a87899490ece95443e979ca9485cbe7e71522",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "multichain",
+        "schema": [
+            {
+                "description": "",
+                "name": "path",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountOutMin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromChainID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toChainID",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AnyswapV4Router_event_LogAnySwapTradeTokensForTokens"
+    }
+}
