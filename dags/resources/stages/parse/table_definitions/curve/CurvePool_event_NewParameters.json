@@ -47,7 +47,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "",
+        "dataset_name": "curve",
         "schema": [
             {
                 "description": "",
