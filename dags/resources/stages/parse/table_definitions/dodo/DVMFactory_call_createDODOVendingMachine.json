@@ -83,6 +83,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "DVMFactory_createDODOVendingMachine"
+        "table_name": "DVMFactory_call_createDODOVendingMachine"
     }
 }
