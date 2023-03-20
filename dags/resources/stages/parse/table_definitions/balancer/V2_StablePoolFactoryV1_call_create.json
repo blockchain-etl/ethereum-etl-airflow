@@ -50,7 +50,7 @@
     },
     "table": {
         "dataset_name": "balancer",
-        "table_name": "V2_StablePoolFactory_call_create",
+        "table_name": "V2_StablePoolFactoryV1_call_create",
         "table_description": "",
         "schema": [
             {
