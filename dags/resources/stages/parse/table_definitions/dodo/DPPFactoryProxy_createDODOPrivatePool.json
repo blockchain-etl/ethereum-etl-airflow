@@ -1,0 +1,118 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "baseToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "quoteToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "baseInAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "quoteInAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "lpFeeRate",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "i",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "k",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isOpenTwap",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "deadLine",
+                    "type": "uint256"
+                }
+            ],
+            "name": "createDODOPrivatePool",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "newPrivatePool",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xff7c8f518e6f1435957ed3d3e0692c94676dae7a",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "dodo",
+        "schema": [
+            {
+                "description": "",
+                "name": "baseToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quoteToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "baseInAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quoteInAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpFeeRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "i",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "k",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isOpenTwap",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadLine",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DPPFactoryProxy_createDODOPrivatePool"
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "baseToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "quoteToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "lpFeeRate",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "i",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "k",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isOpenTWAP",
+                    "type": "bool"
+                }
+            ],
+            "name": "createDODOVendingMachine",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "newVendingMachine",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x72d220ce168c4f361dd4dee5d826a01ad8598f6c",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "dodo",
+        "schema": [
+            {
+                "description": "",
+                "name": "baseToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quoteToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpFeeRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "i",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "k",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isOpenTWAP",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DVMFactory_createDODOVendingMachine"
+    }
+}
