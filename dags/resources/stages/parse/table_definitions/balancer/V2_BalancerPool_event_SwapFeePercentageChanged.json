@@ -18,7 +18,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "curve",
+        "dataset_name": "balancer",
         "schema": [
             {
                 "description": "",
