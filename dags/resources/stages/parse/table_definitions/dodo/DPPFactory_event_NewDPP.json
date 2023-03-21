@@ -31,7 +31,7 @@
             "name": "NewDPP",
             "type": "event"
         },
-        "contract_address": "0x5336ede8f971339f6c0e304c66ba16f1296a2fbe",
+        "contract_address": "SELECT * FROM UNNEST(['0x5336ede8f971339f6c0e304c66ba16f1296a2fbe', '0x6b4fa0bc61eddc928e0df9c7f01e407bfcd3e5ef'])",
         "field_mapping": {},
         "type": "log"
     },
