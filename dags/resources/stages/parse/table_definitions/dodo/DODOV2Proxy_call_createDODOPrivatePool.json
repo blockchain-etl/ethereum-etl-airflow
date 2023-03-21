@@ -59,7 +59,7 @@
             "stateMutability": "payable",
             "type": "function"
         },
-        "contract_address": "0xff7c8f518e6f1435957ed3d3e0692c94676dae7a",
+        "contract_address": "SELECT * FROM UNNEST(['0xa356867fdcea8e71aeaf87805808803806231fdc', '0x9ae501385bc7996a2a4a1fbb00c8d3820611bcb5'])",
         "field_mapping": {},
         "type": "trace"
     },
@@ -113,6 +113,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "DPPFactoryProxy_createDODOPrivatePool"
+        "table_name": "DODOV2Proxy_call_createDODOPrivatePool"
     }
 }

@@ -83,6 +83,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "DPSFactory_createDODOStablePool"
+        "table_name": "DPSFactory_call_createDODOStablePool"
     }
 }
