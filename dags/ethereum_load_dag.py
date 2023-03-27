@@ -21,7 +21,7 @@ if cloud_provider == 'gcp':
         chain='ethereum',
         **read_load_dag_vars(
             var_prefix='ethereum_',
-            schedule_interval='30 12 * * *'
+            schedule_interval='30 8 * * *'
         )
     )
 elif cloud_provider == 'aws':

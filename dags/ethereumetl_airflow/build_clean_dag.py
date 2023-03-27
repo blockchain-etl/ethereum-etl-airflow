@@ -68,7 +68,7 @@ def build_clean_dag(
             task_id=f'wait_{dataset}_parse_dag',
             external_dag_id=f'ethereum_parse_{dataset}_dag',
             external_task_id='parse_all_checkpoint',
-            execution_delta=timedelta(hours=9),
+            execution_delta=timedelta(hours=13),
             priority_weight=0,
             mode='reschedule',
             poke_interval=5 * 60,
