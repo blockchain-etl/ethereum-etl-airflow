@@ -14,6 +14,6 @@ DAG = build_amend_dag(
     chain='ethereum',
     **read_amend_dag_vars(
         var_prefix='ethereum_',
-        schedule_interval='30 12 * * *'
+        schedule_interval='30 8 * * *'
     )
 )

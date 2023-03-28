@@ -17,7 +17,7 @@ var_prefix = 'ethereum_'
 
 parse_dag_vars = read_parse_dag_vars(
     var_prefix=var_prefix,
-    schedule_interval='0 14 * * *'
+    schedule_interval='0 10 * * *'
 )
 
 for folder in glob(table_definitions_folder):
