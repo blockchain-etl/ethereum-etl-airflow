@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "reservesFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Flashloan",
+            "type": "event"
+        },
+        "contract_address": "SELECT cToken FROM ref('Unitroller_event_MarketListed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ironbank",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reservesFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cToken_event_Flashloan"
+    }
+}
