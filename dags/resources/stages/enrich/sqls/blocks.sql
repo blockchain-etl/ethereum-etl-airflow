@@ -17,7 +17,9 @@ SELECT
     blocks.gas_limit,
     blocks.gas_used,
     blocks.transaction_count,
-    blocks.base_fee_per_gas
+    blocks.base_fee_per_gas,
+    blocks.withdrawals_root,
+    blocks.withdrawals,
 FROM {{params.dataset_name_raw}}.blocks AS blocks
 where true
     {% if not params.load_all_partitions %}

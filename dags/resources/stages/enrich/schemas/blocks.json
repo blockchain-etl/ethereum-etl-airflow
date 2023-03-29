@@ -97,5 +97,38 @@
         "name": "base_fee_per_gas",
         "type": "INT64",
         "description": "Protocol base fee per gas, which can move up or down"
+    },
+    {
+        "name": "withdrawals_root",
+        "type": "STRING",
+        "description": "The root of the withdrawal trie of the block"
+    },
+    {
+        "name": "withdrawals",
+        "type": "RECORD",
+        "fields": [
+            {
+                "name": "index",
+                "type": "INT64",
+                "description": ""
+            },
+            {
+                "name": "validator_index",
+                "type": "INT64",
+                "description": ""
+            },
+            {
+                "name": "address",
+                "type": "STRING",
+                "description": ""
+            },
+            {
+                "name": "amount",
+                "type": "STRING",
+                "description": ""
+            }
+        ],
+        "mode": "REPEATED",
+        "description": "Validator withdrawals"
     }
 ]
