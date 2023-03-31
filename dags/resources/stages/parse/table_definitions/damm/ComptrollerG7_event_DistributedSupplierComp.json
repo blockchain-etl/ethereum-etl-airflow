@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract CToken",
+                    "name": "cToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "supplier",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "compDelta",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "compSupplyIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DistributedSupplierComp",
+            "type": "event"
+        },
+        "contract_address": "0x4f96ab61520a6636331a48a11eafba8fb51f74e4",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "damm",
+        "schema": [
+            {
+                "description": "",
+                "name": "cToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "supplier",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "compDelta",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "compSupplyIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ComptrollerG7_event_DistributedSupplierComp"
+    }
+}

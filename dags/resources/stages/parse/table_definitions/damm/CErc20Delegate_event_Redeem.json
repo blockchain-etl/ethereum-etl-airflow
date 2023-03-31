@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "redeemer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redeemAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redeemTokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redeem",
+            "type": "event"
+        },
+        "contract_address": "0x07e87bf536c4b791fe9f5ffa921ad8812ae1c079",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "damm",
+        "schema": [
+            {
+                "description": "",
+                "name": "redeemer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "redeemAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "redeemTokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CErc20Delegate_event_Redeem"
+    }
+}
