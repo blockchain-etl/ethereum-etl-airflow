@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PriceRateCacheUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('V2_MetaStablePoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_MetaStablePool_event_PriceRateCacheUpdated"
+    }
+}

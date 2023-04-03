@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "enabled",
+                    "type": "bool"
+                }
+            ],
+            "name": "OracleEnabledChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('V2_MetaStablePoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "enabled",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_MetaStablePool_event_OracleEnabledChanged"
+    }
+}
