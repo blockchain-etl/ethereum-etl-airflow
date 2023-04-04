@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "blockNumber",
+                    "type": "uint32"
+                }
+            ],
+            "name": "BlockVerification",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xf9efcc901827daf0425a945a124ec0badab3ed73', '0xabea9132b05a70803a4e85094fd0e1800777fbef', '0x1a4e7d58c329bd440fbd7b24a2e4b610de2e5889', '0x1e3cfbc5adfd98a5af70ff551b11140e87452172', '0xc3f7374c566bbaaac378b6de267b1d12b7864d50', '0xf991c0e209ec116a3abd6cc020a503b1d629676b'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zksync",
+        "schema": [
+            {
+                "description": "",
+                "name": "blockNumber",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "zkSyncLite_event_BlockVerification"
+    }
+}

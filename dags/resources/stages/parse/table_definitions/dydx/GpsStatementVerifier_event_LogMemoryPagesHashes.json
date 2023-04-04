@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "factHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32[]",
+                    "name": "pagesHashes",
+                    "type": "bytes32[]"
+                }
+            ],
+            "name": "LogMemoryPagesHashes",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x45769d52d47e9cbfac9a2df68c2051adb0630f17', '0xb1eda32c467569fbdc8c3e041c81825d76b32b84', '0x9bca5c55137057208ee5b14f3e269133bdcac1f8', '0x522b2871c3918b92c165115d862e50e440905068', '0x894c4a12548fb18eaa48cf34f9cd874fc08b7fc3', '0xa739b175325cca7b71fcb51c3032935ef7ac338f'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "dydx",
+        "schema": [
+            {
+                "description": "",
+                "name": "factHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pagesHashes",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GpsStatementVerifier_event_LogMemoryPagesHashes"
+    }
+}

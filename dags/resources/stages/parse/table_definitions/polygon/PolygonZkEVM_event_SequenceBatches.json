@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint64",
+                    "name": "numBatch",
+                    "type": "uint64"
+                }
+            ],
+            "name": "SequenceBatches",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x5132a183e9f3cb7c848b0aac5ae0c4f0491b7ab2', '0xf7cac54de3578e6975424cabaf2ddfc0efda58f4'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "polygon",
+        "schema": [
+            {
+                "description": "",
+                "name": "numBatch",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PolygonZkEVM_event_SequenceBatches"
+    }
+}

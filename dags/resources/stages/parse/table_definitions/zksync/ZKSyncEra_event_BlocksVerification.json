@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "previousLastVerifiedBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "currentLastVerifiedBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum IExecutor.BlockVerificationMode",
+                    "name": "verificationMode",
+                    "type": "uint8"
+                }
+            ],
+            "name": "BlocksVerification",
+            "type": "event"
+        },
+        "contract_address": "0x32400084c286cf3e17e7b677ea9583e60a000324",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zksync",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousLastVerifiedBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currentLastVerifiedBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "verificationMode",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ZKSyncEra_event_BlocksVerification"
+    }
+}

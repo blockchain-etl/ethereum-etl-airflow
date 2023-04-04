@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "blockNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "blockHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "commitment",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "BlockCommit",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x324000e0c256b806548b307af600afff3d000324', '0x32400084c286cf3e17e7b677ea9583e60a000324', '0x32400046d061e27823c2a8a77172740a1b000324'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "zksync",
+        "schema": [
+            {
+                "description": "",
+                "name": "blockNumber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "blockHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "commitment",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ZKSyncEra_event_BlockCommit"
+    }
+}
