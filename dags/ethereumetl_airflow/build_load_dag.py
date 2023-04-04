@@ -53,18 +53,6 @@ def build_load_dag(
         'load_all_partitions': load_all_partitions
     }
 
-    def read_bigquery_schema_from_file(filepath):
-        result = []
-        file_content = read_file(filepath)
-        json_content = json.loads(file_content)
-        for field in json_content:
-            result.append(bigquery.SchemaField(
-                name=field.get('name'),
-                field_type=field.get('type', 'STRING'),
-                mode=field.get('mode', 'NULLABLE'),
-                description=field.get('description')))
-        return result
-
     def read_file(filepath):
         with open(filepath) as file_handle:
             content = file_handle.read()
@@ -106,7 +94,7 @@ def build_load_dag(
             client = bigquery.Client()
             job_config = bigquery.LoadJobConfig()
             schema_path = os.path.join(dags_folder, 'resources/stages/raw/schemas/{task}.json'.format(task=task))
-            schema = read_bigquery_schema_from_file(schema_path)
+            schema = client.schema_from_json(schema_path)
             schema = adjust_schema_for_kovan(dag_id, task, schema)
             job_config.schema = schema
             job_config.source_format = bigquery.SourceFormat.CSV if file_format == 'csv' else bigquery.SourceFormat.NEWLINE_DELIMITED_JSON
@@ -154,7 +142,7 @@ def build_load_dag(
             temp_table_ref = client.dataset(dataset_name_temp).table(temp_table_name)
 
             schema_path = os.path.join(dags_folder, 'resources/stages/enrich/schemas/{task}.json'.format(task=task))
-            schema = read_bigquery_schema_from_file(schema_path)
+            schema = client.schema_from_json(schema_path)
             schema = adjust_schema_for_kovan(dag_id, task, schema)
             table = bigquery.Table(temp_table_ref, schema=schema)
 
