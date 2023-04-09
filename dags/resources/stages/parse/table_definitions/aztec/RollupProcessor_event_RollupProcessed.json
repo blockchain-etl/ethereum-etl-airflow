@@ -6,71 +6,71 @@
                 {
                     "indexed": true,
                     "internalType": "uint256",
-                    "name": "_batchIndex",
+                    "name": "rollupId",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "bytes32",
-                    "name": "_batchRoot",
+                    "name": "dataRoot",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "nullRoot",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "rootRoot",
                     "type": "bytes32"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "_batchSize",
+                    "name": "dataSize",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "_prevTotalElements",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bytes",
-                    "name": "_extraData",
-                    "type": "bytes"
                 }
             ],
-            "name": "StateBatchAppended",
+            "name": "RollupProcessed",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x901a629a72a5daf200fc359657f070b34bbfdd18', '0xb528607929a9d428d93100d007f639cdc19a8c4c', '0xbe5dab4a2e9cd0f27300db4ab94bee3a233aeb19', '0x6786eb419547a4902d285f70c6acdbc9aefadb6f', '0x1d0c46671e0696a4ba800032d5195d5b0f8c60a3', '0xe969c2724d2448f1d1a6189d3e2aa1f37d5998c1', '0xba9dedf725b20b448425d58b4a860576cfc8f6d2'])",
+        "contract_address": "0x737901bea3eeb88459df9ef1be8ff3ae1b42a2ba",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "optimism",
+        "dataset_name": "aztec",
         "schema": [
             {
                 "description": "",
-                "name": "_batchIndex",
+                "name": "rollupId",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_batchRoot",
+                "name": "dataRoot",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_batchSize",
+                "name": "nullRoot",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_prevTotalElements",
+                "name": "rootRoot",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "_extraData",
+                "name": "dataSize",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "OVM_StateCommitmentChain_event_StateBatchAppended"
+        "table_name": "RollupProcessor_event_RollupProcessed"
     }
 }

@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "firstMessageNum",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "beforeAcc",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newMessageCount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "afterAcc",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "transactions",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "lengths",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "sectionsMetadata",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "seqBatchIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sequencer",
+                    "type": "address"
+                }
+            ],
+            "name": "SequencerBatchDelivered",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x857233e34b8966cc0a468104e3e1e1956354b6ea', '0x211e1c4c7f1bf5351ac850ed10fd68cffcf6c21b', '0x1c479675ad559dc151f6ec7ed3fbf8cee79582b6'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum",
+        "schema": [
+            {
+                "description": "",
+                "name": "firstMessageNum",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "beforeAcc",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newMessageCount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "afterAcc",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transactions",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lengths",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sectionsMetadata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "seqBatchIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sequencer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SequencerInbox_event_SequencerBatchDelivered"
+    }
+}

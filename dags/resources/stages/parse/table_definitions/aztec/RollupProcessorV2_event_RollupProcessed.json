@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "rollupId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32[]",
+                    "name": "nextExpectedDefiHashes",
+                    "type": "bytes32[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                }
+            ],
+            "name": "RollupProcessed",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0xff1f2b4adb9df6fc8eafecdcbf96a2b351680455', '0x3e062e842a195eb162c73b7391517853c0025c4f', '0xff6bed1e4d28491b89a02dc56b34a4b273eb9e0d'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aztec",
+        "schema": [
+            {
+                "description": "",
+                "name": "rollupId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextExpectedDefiHashes",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RollupProcessorV2_event_RollupProcessed"
+    }
+}

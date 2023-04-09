@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "blockIdx",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "merkleRoot",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "publicDataHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "BlockSubmitted",
+            "type": "event"
+        },
+        "contract_address": "0x0baba1ad5be3a5c0a66e7ac838a129bf948f1ea4",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "loopring",
+        "schema": [
+            {
+                "description": "",
+                "name": "blockIdx",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "merkleRoot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "publicDataHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExchangeV3_event_BlockSubmitted"
+    }
+}
