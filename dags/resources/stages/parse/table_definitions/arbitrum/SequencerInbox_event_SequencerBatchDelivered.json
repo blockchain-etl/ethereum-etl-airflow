@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "uint256",
-                    "name": "firstMessageNum",
+                    "name": "batchSequenceNumber",
                     "type": "uint256"
                 },
                 {
@@ -16,46 +16,56 @@
                     "type": "bytes32"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "newMessageCount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "bytes32",
                     "name": "afterAcc",
                     "type": "bytes32"
                 },
                 {
                     "indexed": false,
-                    "internalType": "bytes",
-                    "name": "transactions",
-                    "type": "bytes"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256[]",
-                    "name": "lengths",
-                    "type": "uint256[]"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256[]",
-                    "name": "sectionsMetadata",
-                    "type": "uint256[]"
+                    "internalType": "bytes32",
+                    "name": "delayedAcc",
+                    "type": "bytes32"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "seqBatchIndex",
+                    "name": "afterDelayedMessagesRead",
                     "type": "uint256"
                 },
                 {
+                    "components": [
+                        {
+                            "internalType": "uint64",
+                            "name": "minTimestamp",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "maxTimestamp",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "minBlockNumber",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "maxBlockNumber",
+                            "type": "uint64"
+                        }
+                    ],
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "sequencer",
-                    "type": "address"
+                    "internalType": "struct ISequencerInbox.TimeBounds",
+                    "name": "timeBounds",
+                    "type": "tuple"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum ISequencerInbox.BatchDataLocation",
+                    "name": "dataLocation",
+                    "type": "uint8"
                 }
             ],
             "name": "SequencerBatchDelivered",
@@ -70,7 +80,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "firstMessageNum",
+                "name": "batchSequenceNumber",
                 "type": "STRING"
             },
             {
@@ -80,37 +90,49 @@
             },
             {
                 "description": "",
-                "name": "newMessageCount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
                 "name": "afterAcc",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "transactions",
+                "name": "delayedAcc",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "lengths",
+                "name": "afterDelayedMessagesRead",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "sectionsMetadata",
-                "type": "STRING"
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "minTimestamp",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxTimestamp",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "minBlockNumber",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maxBlockNumber",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "timeBounds",
+                "type": "RECORD"
             },
             {
                 "description": "",
-                "name": "seqBatchIndex",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "sequencer",
+                "name": "dataLocation",
                 "type": "STRING"
             }
         ],
