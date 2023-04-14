@@ -14,12 +14,6 @@
                     "internalType": "uint256",
                     "name": "currentLastVerifiedBlock",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "enum IExecutor.BlockVerificationMode",
-                    "name": "verificationMode",
-                    "type": "uint8"
                 }
             ],
             "name": "BlocksVerification",
@@ -40,11 +34,6 @@
             {
                 "description": "",
                 "name": "currentLastVerifiedBlock",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "verificationMode",
                 "type": "STRING"
             }
         ],
