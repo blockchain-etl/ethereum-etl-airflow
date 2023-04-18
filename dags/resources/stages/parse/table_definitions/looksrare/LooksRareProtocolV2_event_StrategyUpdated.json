@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "strategyId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isActive",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "standardProtocolFeeBp",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "minTotalFeeBp",
+                    "type": "uint16"
+                }
+            ],
+            "name": "StrategyUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x0000000000e655fae4d56241588680f86e3b2377",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "strategyId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isActive",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "standardProtocolFeeBp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minTotalFeeBp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LooksRareProtocolV2_event_StrategyUpdated"
+    }
+}
