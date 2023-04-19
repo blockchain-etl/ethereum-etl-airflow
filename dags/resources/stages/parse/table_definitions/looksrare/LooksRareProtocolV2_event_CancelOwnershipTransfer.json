@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "CancelOwnershipTransfer",
+            "type": "event"
+        },
+        "contract_address": "0x0000000000e655fae4d56241588680f86e3b2377",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LooksRareProtocolV2_event_CancelOwnershipTransfer"
+    }
+}

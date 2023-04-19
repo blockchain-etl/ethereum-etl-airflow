@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bidNonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "askNonce",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewBidAskNonces",
+            "type": "event"
+        },
+        "contract_address": "0x0000000000e655fae4d56241588680f86e3b2377",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bidNonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "askNonce",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LooksRareProtocolV2_event_NewBidAskNonces"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "affiliate",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "currency",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "affiliateFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AffiliatePayment",
+            "type": "event"
+        },
+        "contract_address": "0x0000000000e655fae4d56241588680f86e3b2377",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "looksrare",
+        "schema": [
+            {
+                "description": "",
+                "name": "affiliate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currency",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "affiliateFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LooksRareProtocolV2_event_AffiliatePayment"
+    }
+}
