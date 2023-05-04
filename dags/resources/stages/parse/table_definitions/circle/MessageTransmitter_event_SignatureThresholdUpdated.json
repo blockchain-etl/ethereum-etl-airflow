@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldSignatureThreshold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newSignatureThreshold",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SignatureThresholdUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x0a992d191deec32afe36203ad87d7d289a738f81",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "circle",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldSignatureThreshold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newSignatureThreshold",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MessageTransmitter_event_SignatureThresholdUpdated"
+    }
+}
