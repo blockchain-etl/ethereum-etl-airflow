@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lienId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "collection",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newLender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newAuctionDuration",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Refinance",
+            "type": "event"
+        },
+        "contract_address": "0x13244ef110692c1d8256c8dd4aa0a09bb5af0156",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "lienId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collection",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newLender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAuctionDuration",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Blend_event_Refinance"
+    }
+}
