@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lienId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "collection",
+                    "type": "address"
+                }
+            ],
+            "name": "StartAuction",
+            "type": "event"
+        },
+        "contract_address": "0x13244ef110692c1d8256c8dd4aa0a09bb5af0156",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "lienId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collection",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Blend_event_StartAuction"
+    }
+}
