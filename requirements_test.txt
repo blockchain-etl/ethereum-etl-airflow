@@ -1,2 +1,2 @@
-jsonschema==3.2.0       # matches `composer-2.0.25-airflow-2.2.5`
+jsonschema==3.2.0       # matches `composer-2.1.14-airflow-2.5.1`
 pytest

@@ -1,2 +1,5 @@
-eth-hash==0.3.3         # Fixes install conflicts issue in Composer
-ethereum-etl==2.2.0
+eth-hash<0.4            # Fixes install conflicts issue in Composer
+ethereum-etl==2.2.1     # Requires web3>=5.29,<6
+# web3>5.31.0,<6 requires protobuf==3.19.5 which conflicts with `composer-2.1.14-airflow-2.5.1`.
+# web3==5.31.0 is the latest version that has the more relaxed protobuf>=3.10.0,<4 requirement.
+web3==5.31.0
