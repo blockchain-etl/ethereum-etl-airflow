@@ -30,7 +30,7 @@ export AIRFLOW_CONFIGS=$(IFS=, ; echo "${AIRFLOW_CONFIGS_ARR[*]}")
 gcloud composer environments create \
     $ENVIRONMENT_NAME \
     --location=us-central1 \
-    --image-version=composer-2.0.25-airflow-2.2.5 \
+    --image-version=composer-2.1.14-airflow-2.5.1 \
     --environment-size=medium \
     --scheduler-cpu=2 \
     --scheduler-memory=13 \
@@ -41,7 +41,7 @@ gcloud composer environments create \
     --web-server-storage=512MB \
     --worker-cpu=2 \
     --worker-memory=13 \
-    --worker-storage=1 \
+    --worker-storage=10 \
     --min-workers=1 \
     --max-workers=8 \
     --airflow-configs=$AIRFLOW_CONFIGS
