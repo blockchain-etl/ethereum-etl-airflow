@@ -7,6 +7,9 @@ def read_export_dag_vars(var_prefix, **kwargs):
     export_start_date = read_var('export_start_date', var_prefix, True, **kwargs)
     export_start_date = datetime.strptime(export_start_date, '%Y-%m-%d')
     
+    export_end_date = read_var('export_end_date', var_prefix, False, **kwargs)
+    export_end_date = datetime.strptime(export_end_date, '%Y-%m-%d') if export_end_date is not None else None
+    
     provider_uris = read_var('provider_uris', var_prefix, True, **kwargs)
     provider_uris = [uri.strip() for uri in provider_uris.split(',')]
 
@@ -24,6 +27,7 @@ def read_export_dag_vars(var_prefix, **kwargs):
         'output_bucket': read_var('output_bucket', var_prefix, True, **kwargs),
         'cloud_provider': cloud_provider,
         'export_start_date': export_start_date,
+        'export_end_date': export_end_date,
         'export_schedule_interval': read_var('export_schedule_interval', var_prefix, True, **kwargs),
         'provider_uris': provider_uris,
         'provider_uris_archival': provider_uris_archival,
@@ -60,13 +64,19 @@ def read_load_dag_vars(var_prefix, **kwargs):
         'destination_dataset_project_id': read_var('destination_dataset_project_id', var_prefix, True, **kwargs),
         'notification_emails': read_var('notification_emails', None, False, **kwargs),
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
-        'load_all_partitions': parse_bool(read_var('load_all_partitions', var_prefix, True, **kwargs))
+        'load_all_partitions': parse_bool(read_var('load_all_partitions', var_prefix, True, **kwargs)),
+        'load_catchup': parse_bool(read_var('load_catchup', var_prefix, False, **kwargs))
     }
 
-    load_start_date = read_var('load_start_date', vars, False, **kwargs)
+    load_start_date = read_var('load_start_date', var_prefix, False, **kwargs)
     if load_start_date is not None:
         load_start_date = datetime.strptime(load_start_date, '%Y-%m-%d')
         vars['load_start_date'] = load_start_date
+
+    load_end_date = read_var('load_end_date', var_prefix, False, **kwargs)
+    if load_end_date is not None:
+        load_end_date = datetime.strptime(load_end_date, '%Y-%m-%d')
+        vars['load_end_date'] = load_end_date
 
     return vars
 
