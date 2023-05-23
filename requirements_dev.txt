@@ -1,0 +1,3 @@
+black
+crcmod==1.7     # matches `composer-2.1.14-airflow-2.5.1`
+isort
