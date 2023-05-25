@@ -34,6 +34,15 @@ with double_entry_book as (
     from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.transactions`
     where true
     and date(block_timestamp) <= '{{ds}}'
+    union all
+    -- withdrawals
+    select
+        withdrawal.address as address,
+        -- withdrawal amounts are in gwei, so multiplying by pow(10, 9)
+        (cast(withdrawal.amount as NUMERIC) * cast(pow(10, 9) as NUMERIC)) as value
+    from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.blocks`, unnest(withdrawals) as withdrawal
+    where true
+    and date(timestamp) <= '{{ds}}'
 )
 select address, sum(value) as eth_balance
 from double_entry_book
