@@ -43,7 +43,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "arbitrum",
         "schema": [
             {
                 "description": "",
@@ -77,6 +77,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_addSequencerL2BatchFromOrigin"
+        "table_name": "SequencerInbox_call_addSequencerL2BatchFromOrigin"
     }
 }
