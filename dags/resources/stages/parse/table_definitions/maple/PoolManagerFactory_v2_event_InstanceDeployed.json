@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "version_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "instance_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "initializationArguments_",
+                    "type": "bytes"
+                }
+            ],
+            "name": "InstanceDeployed",
+            "type": "event"
+        },
+        "contract_address": "0xe463cd473ecc1d1a4ecf20b62624d84dd20a8339",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "version_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "instance_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initializationArguments_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolManagerFactory_v2_event_InstanceDeployed"
+    }
+}

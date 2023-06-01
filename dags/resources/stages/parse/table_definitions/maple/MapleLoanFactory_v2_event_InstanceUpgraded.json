@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "instance_",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "fromVersion_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "toVersion_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "migrationArguments_",
+                    "type": "bytes"
+                }
+            ],
+            "name": "InstanceUpgraded",
+            "type": "event"
+        },
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "instance_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "migrationArguments_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MapleLoanFactory_v2_event_InstanceUpgraded"
+    }
+}

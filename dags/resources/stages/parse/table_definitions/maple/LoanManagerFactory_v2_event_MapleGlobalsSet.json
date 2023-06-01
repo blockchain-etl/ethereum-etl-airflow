@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "mapleGlobals_",
+                    "type": "address"
+                }
+            ],
+            "name": "MapleGlobalsSet",
+            "type": "event"
+        },
+        "contract_address": "0x1551717ae4fdcb65ed028f7fb7aba39908f6a7a6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "mapleGlobals_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanManagerFactory_v2_event_MapleGlobalsSet"
+    }
+}

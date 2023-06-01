@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "unrealizedLosses_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UnrealizedLossesUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('LoanManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "unrealizedLosses_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanManager_v2_event_UnrealizedLossesUpdated"
+    }
+}

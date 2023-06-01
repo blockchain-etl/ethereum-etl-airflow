@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "loan_",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "paymentId_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "platformManagementFeeRate_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "delegateManagementFeeRate_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startDate_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nextPaymentDueDate_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netRefinanceInterest_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newRate_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PaymentAdded",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('LoanManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "loan_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paymentId_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "platformManagementFeeRate_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegateManagementFeeRate_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startDate_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nextPaymentDueDate_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netRefinanceInterest_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newRate_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanManager_v2_event_PaymentAdded"
+    }
+}

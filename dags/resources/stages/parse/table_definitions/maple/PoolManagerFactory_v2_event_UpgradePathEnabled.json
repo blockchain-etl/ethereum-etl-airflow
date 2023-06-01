@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "fromVersion_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "toVersion_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "migrator_",
+                    "type": "address"
+                }
+            ],
+            "name": "UpgradePathEnabled",
+            "type": "event"
+        },
+        "contract_address": "0xe463cd473ecc1d1a4ecf20b62624d84dd20a8339",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "fromVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "migrator_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolManagerFactory_v2_event_UpgradePathEnabled"
+    }
+}
