@@ -42,7 +42,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "blur",
         "schema": [
             {
                 "description": "",
@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_BuyLocked"
+        "table_name": "Blend_event_BuyLocked"
     }
 }
