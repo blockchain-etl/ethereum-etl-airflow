@@ -235,6 +235,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Blend_event_buyToBorrowLocked"
+        "table_name": "Blend_call_buyToBorrowLocked"
     }
 }

@@ -248,6 +248,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Blend_event_buyToBorrowETH"
+        "table_name": "Blend_call_buyToBorrowETH"
     }
 }

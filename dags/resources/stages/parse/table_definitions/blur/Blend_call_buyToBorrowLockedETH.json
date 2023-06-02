@@ -235,6 +235,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Blend_event_buyToBorrowLockedETH"
+        "table_name": "Blend_call_buyToBorrowLockedETH"
     }
 }
