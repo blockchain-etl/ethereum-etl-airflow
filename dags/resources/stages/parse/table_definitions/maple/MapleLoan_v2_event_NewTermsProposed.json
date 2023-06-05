@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "refinanceCommitment_",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "refinancer_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deadline_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes[]",
+                    "name": "calls_",
+                    "type": "bytes[]"
+                }
+            ],
+            "name": "NewTermsProposed",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('MapleLoanFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "refinanceCommitment_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "refinancer_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "calls_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MapleLoan_v2_event_NewTermsProposed"
+    }
+}

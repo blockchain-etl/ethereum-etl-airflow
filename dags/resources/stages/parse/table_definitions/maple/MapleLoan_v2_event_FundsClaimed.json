@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination_",
+                    "type": "address"
+                }
+            ],
+            "name": "FundsClaimed",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('MapleLoanFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "amount_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "destination_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MapleLoan_v2_event_FundsClaimed"
+    }
+}

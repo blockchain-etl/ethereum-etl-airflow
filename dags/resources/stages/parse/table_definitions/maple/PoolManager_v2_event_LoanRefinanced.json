@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "loan_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "refinancer_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "deadline_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes[]",
+                    "name": "calls_",
+                    "type": "bytes[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "principalIncrease_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LoanRefinanced",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('PoolManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "loan_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "refinancer_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "calls_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "principalIncrease_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolManager_v2_event_LoanRefinanced"
+    }
+}
