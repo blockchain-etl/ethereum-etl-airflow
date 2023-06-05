@@ -203,7 +203,7 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0x97bdb4aed0b50a335a78ed24f68528ce3222af72",
+        "contract_address": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
         "field_mapping": {},
         "type": "trace"
     },
