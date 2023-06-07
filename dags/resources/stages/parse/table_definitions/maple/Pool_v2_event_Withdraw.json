@@ -37,7 +37,7 @@
             "name": "Withdraw",
             "type": "event"
         },
-        "contract_address": "SELECT DISTINCT(CONCAT('0x', SUBSTRING(parsed.initializationArguments_, 27, 40))) FROM ref('LoanManagerFactory_v2_event_InstanceDeployed')",
+        "contract_address": "SELECT DISTINCT(CONCAT('0x', SUBSTRING(initializationArguments_, 27, 40))) FROM ref('LoanManagerFactory_v2_event_InstanceDeployed')",
         "field_mapping": {},
         "type": "log"
     },
