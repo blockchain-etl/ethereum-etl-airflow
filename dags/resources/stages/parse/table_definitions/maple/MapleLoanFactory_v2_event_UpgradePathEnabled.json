@@ -4,22 +4,28 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "uint256",
-                    "name": "principalPaid_",
+                    "name": "fromVersion_",
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "uint256",
-                    "name": "interestPaid_",
+                    "name": "toVersion_",
                     "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "migrator_",
+                    "type": "address"
                 }
             ],
-            "name": "PaymentMade",
+            "name": "UpgradePathEnabled",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "principalPaid_",
+                "name": "fromVersion_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "interestPaid_",
+                "name": "toVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "migrator_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_PaymentMade"
+        "table_name": "MapleLoanFactory_v2_event_UpgradePathEnabled"
     }
 }

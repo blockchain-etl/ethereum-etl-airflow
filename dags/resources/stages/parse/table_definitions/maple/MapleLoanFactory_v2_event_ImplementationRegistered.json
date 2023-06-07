@@ -4,28 +4,28 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "uint256",
-                    "name": "collateralRepossessed_",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "fundsRepossessed_",
+                    "name": "version_",
                     "type": "uint256"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "destination_",
+                    "name": "implementationAddress_",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "initializer_",
                     "type": "address"
                 }
             ],
-            "name": "Repossessed",
+            "name": "ImplementationRegistered",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "collateralRepossessed_",
+                "name": "version_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "fundsRepossessed_",
+                "name": "implementationAddress_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "destination_",
+                "name": "initializer_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_Repossessed"
+        "table_name": "MapleLoanFactory_v2_event_ImplementationRegistered"
     }
 }

@@ -6,14 +6,14 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "borrower_",
+                    "name": "mapleGlobals_",
                     "type": "address"
                 }
             ],
-            "name": "BorrowerAccepted",
+            "name": "MapleGlobalsSet",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "borrower_",
+                "name": "mapleGlobals_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_BorrowerAccepted"
+        "table_name": "MapleLoanFactory_v2_event_MapleGlobalsSet"
     }
 }

@@ -1,48 +1,43 @@
 {
     "parser": {
         "abi": {
+            "anonymous": false,
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "lender_",
-                    "type": "address"
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "fromVersion_",
+                    "type": "uint256"
                 },
                 {
+                    "indexed": true,
                     "internalType": "uint256",
-                    "name": "amount_",
+                    "name": "toVersion_",
                     "type": "uint256"
                 }
             ],
-            "name": "fundLoan",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "fundsLent_",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "name": "UpgradePathDisabled",
+            "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0xe463cd473ecc1d1a4ecf20b62624d84dd20a8339",
         "field_mapping": {},
-        "type": "trace"
+        "type": "log"
     },
     "table": {
         "dataset_name": "maple",
         "schema": [
             {
                 "description": "",
-                "name": "lender_",
+                "name": "fromVersion_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount_",
+                "name": "toVersion_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_call_fundLoan"
+        "table_name": "PoolManagerFactory_v2_event_UpgradePathDisabled"
     }
 }

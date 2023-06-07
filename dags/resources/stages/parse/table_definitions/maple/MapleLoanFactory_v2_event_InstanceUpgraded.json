@@ -6,26 +6,32 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "token_",
+                    "name": "instance_",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "uint256",
-                    "name": "amount_",
+                    "name": "fromVersion_",
                     "type": "uint256"
                 },
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "destination_",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "toVersion_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "migrationArguments_",
+                    "type": "bytes"
                 }
             ],
-            "name": "Skimmed",
+            "name": "InstanceUpgraded",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +40,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "token_",
+                "name": "instance_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount_",
+                "name": "fromVersion_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "destination_",
+                "name": "toVersion_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "migrationArguments_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_Skimmed"
+        "table_name": "MapleLoanFactory_v2_event_InstanceUpgraded"
     }
 }

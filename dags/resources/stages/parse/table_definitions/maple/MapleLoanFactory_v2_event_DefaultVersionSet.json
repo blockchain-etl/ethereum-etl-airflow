@@ -4,16 +4,16 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "pendingLender_",
-                    "type": "address"
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "version_",
+                    "type": "uint256"
                 }
             ],
-            "name": "PendingLenderSet",
+            "name": "DefaultVersionSet",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "pendingLender_",
+                "name": "version_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_PendingLenderSet"
+        "table_name": "MapleLoanFactory_v2_event_DefaultVersionSet"
     }
 }

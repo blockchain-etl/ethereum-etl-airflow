@@ -5,27 +5,27 @@
             "inputs": [
                 {
                     "indexed": true,
+                    "internalType": "uint256",
+                    "name": "version_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
                     "internalType": "address",
-                    "name": "lender_",
+                    "name": "instance_",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount_",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "nextPaymentDueDate_",
-                    "type": "uint256"
+                    "internalType": "bytes",
+                    "name": "initializationArguments_",
+                    "type": "bytes"
                 }
             ],
-            "name": "Funded",
+            "name": "InstanceDeployed",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x1551717ae4fdcb65ed028f7fb7aba39908f6a7a6",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "lender_",
+                "name": "version_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount_",
+                "name": "instance_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "nextPaymentDueDate_",
+                "name": "initializationArguments_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_Funded"
+        "table_name": "LoanManagerFactory_v2_event_InstanceDeployed"
     }
 }

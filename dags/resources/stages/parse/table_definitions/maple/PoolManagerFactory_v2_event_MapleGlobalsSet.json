@@ -4,16 +4,16 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount_",
-                    "type": "uint256"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "mapleGlobals_",
+                    "type": "address"
                 }
             ],
-            "name": "CollateralPosted",
+            "name": "MapleGlobalsSet",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0xe463cd473ecc1d1a4ecf20b62624d84dd20a8339",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "amount_",
+                "name": "mapleGlobals_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_CollateralPosted"
+        "table_name": "PoolManagerFactory_v2_event_MapleGlobalsSet"
     }
 }

@@ -4,28 +4,28 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "bytes32",
-                    "name": "refinanceCommitment_",
-                    "type": "bytes32"
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "version_",
+                    "type": "uint256"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
-                    "name": "refinancer_",
+                    "name": "implementationAddress_",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "bytes[]",
-                    "name": "calls_",
-                    "type": "bytes[]"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "initializer_",
+                    "type": "address"
                 }
             ],
-            "name": "NewTermsProposed",
+            "name": "ImplementationRegistered",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0xe463cd473ecc1d1a4ecf20b62624d84dd20a8339",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "refinanceCommitment_",
+                "name": "version_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "refinancer_",
+                "name": "implementationAddress_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "calls_",
+                "name": "initializer_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_NewTermsProposed"
+        "table_name": "PoolManagerFactory_v2_event_ImplementationRegistered"
     }
 }

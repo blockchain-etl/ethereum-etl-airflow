@@ -4,22 +4,28 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "uint256",
-                    "name": "amount_",
+                    "name": "version_",
                     "type": "uint256"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "destination_",
+                    "name": "instance_",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "initializationArguments_",
+                    "type": "bytes"
                 }
             ],
-            "name": "FundsClaimed",
+            "name": "InstanceDeployed",
             "type": "event"
         },
-        "contract_address": "SELECT loan FROM ref('Pool_event_LoanFunded')",
+        "contract_address": "0x36a7350309b2eb30f3b908ab0154851b5ed81db0",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "amount_",
+                "name": "version_",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "destination_",
+                "name": "instance_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initializationArguments_",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "MapleLoan_event_FundsClaimed"
+        "table_name": "MapleLoanFactory_v2_event_InstanceDeployed"
     }
 }
