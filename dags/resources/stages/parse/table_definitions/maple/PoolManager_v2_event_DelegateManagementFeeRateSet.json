@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "managementFeeRate_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DelegateManagementFeeRateSet",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('PoolManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "managementFeeRate_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolManager_v2_event_DelegateManagementFeeRateSet"
+    }
+}

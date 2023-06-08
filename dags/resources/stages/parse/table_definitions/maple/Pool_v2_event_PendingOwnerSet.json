@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner_",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pendingOwner_",
+                    "type": "address"
+                }
+            ],
+            "name": "PendingOwnerSet",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(CONCAT('0x', SUBSTRING(initializationArguments_, 27, 40))) FROM ref('LoanManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pendingOwner_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_v2_event_PendingOwnerSet"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "loanManager_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "withdrawalManager_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidityCap_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "delegateManagementFeeRate_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PoolConfigured",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(instance_) FROM ref('PoolManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanManager_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawalManager_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityCap_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegateManagementFeeRate_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolManager_v2_event_PoolConfigured"
+    }
+}

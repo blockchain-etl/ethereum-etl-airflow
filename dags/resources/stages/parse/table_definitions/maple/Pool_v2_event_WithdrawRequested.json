@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner_",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets_",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "escrowedShares_",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawRequested",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT(CONCAT('0x', SUBSTRING(initializationArguments_, 27, 40))) FROM ref('LoanManagerFactory_v2_event_InstanceDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maple",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assets_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "escrowedShares_",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_v2_event_WithdrawRequested"
+    }
+}
