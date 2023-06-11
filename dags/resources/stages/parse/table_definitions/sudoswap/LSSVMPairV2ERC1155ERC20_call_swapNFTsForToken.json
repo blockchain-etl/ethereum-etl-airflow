@@ -39,7 +39,7 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0x3b91af330524d05c8d33102b18fdd765c9a5ff00",
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactoryV2_event_NewERC1155Pair')",
         "field_mapping": {},
         "type": "trace"
     },
