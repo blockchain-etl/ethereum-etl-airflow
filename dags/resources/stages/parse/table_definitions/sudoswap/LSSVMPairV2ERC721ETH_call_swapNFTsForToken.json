@@ -1,0 +1,78 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "nftIds",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minExpectedTokenOutput",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "tokenRecipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isRouter",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "routerCaller",
+                    "type": "address"
+                }
+            ],
+            "name": "swapNFTsForToken",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "outputAmount",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactoryV2_event_NewERC721Pair')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "nftIds",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minExpectedTokenOutput",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isRouter",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "routerCaller",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPairV2ERC721ETH_call_swapNFTsForToken"
+    }
+}
