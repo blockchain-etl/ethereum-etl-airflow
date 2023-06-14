@@ -73,6 +73,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LSSVMPairV2ERC1155ETH_swapTokenForSpecificNFTs"
+        "table_name": "LSSVMPairV2ERC1155ETH_call_swapTokenForSpecificNFTs"
     }
 }

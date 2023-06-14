@@ -1,0 +1,118 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "contract IERC721",
+                    "name": "_nft",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract ICurve",
+                    "name": "_bondingCurve",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "_assetRecipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "enum LSSVMPair.PoolType",
+                    "name": "_poolType",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_delta",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint96",
+                    "name": "_fee",
+                    "type": "uint96"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_spotPrice",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_propertyChecker",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_initialNFTIDs",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "createPairERC721ETH",
+            "outputs": [
+                {
+                    "internalType": "contract LSSVMPairERC721ETH",
+                    "name": "pair",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xa020d57ab0448ef74115c112d18a9c231cc86000",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "sudoswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "_nft",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_bondingCurve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_assetRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_poolType",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_delta",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_spotPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_propertyChecker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_initialNFTIDs",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LSSVMPairFactoryV2_call_createPairERC721ETH"
+    }
+}

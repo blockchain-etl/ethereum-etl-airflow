@@ -4,17 +4,17 @@
             "inputs": [
                 {
                     "internalType": "uint256[]",
-                    "name": "numNFTs",
+                    "name": "nftIds",
                     "type": "uint256[]"
                 },
                 {
                     "internalType": "uint256",
-                    "name": "minExpectedTokenOutput",
+                    "name": "maxExpectedTokenInput",
                     "type": "uint256"
                 },
                 {
-                    "internalType": "address payable",
-                    "name": "tokenRecipient",
+                    "internalType": "address",
+                    "name": "nftRecipient",
                     "type": "address"
                 },
                 {
@@ -28,18 +28,18 @@
                     "type": "address"
                 }
             ],
-            "name": "swapNFTsForToken",
+            "name": "swapTokenForSpecificNFTs",
             "outputs": [
                 {
                     "internalType": "uint256",
-                    "name": "outputAmount",
+                    "name": "",
                     "type": "uint256"
                 }
             ],
-            "stateMutability": "nonpayable",
+            "stateMutability": "payable",
             "type": "function"
         },
-        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactoryV2_event_NewERC1155Pair')",
+        "contract_address": "SELECT poolAddress FROM ref('LSSVMPairFactoryV2_event_NewERC721Pair')",
         "field_mapping": {},
         "type": "trace"
     },
@@ -48,17 +48,17 @@
         "schema": [
             {
                 "description": "",
-                "name": "numNFTs",
+                "name": "nftIds",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "minExpectedTokenOutput",
+                "name": "maxExpectedTokenInput",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tokenRecipient",
+                "name": "nftRecipient",
                 "type": "STRING"
             },
             {
@@ -73,6 +73,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LSSVMPairV2ERC1155ETH_swapNFTsForToken"
+        "table_name": "LSSVMPairV2ERC721ERC20_call_swapTokenForSpecificNFTs"
     }
 }
