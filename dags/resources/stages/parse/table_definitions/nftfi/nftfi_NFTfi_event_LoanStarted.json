@@ -1,0 +1,153 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanPrincipalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maximumRepaymentAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nftCollateralId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanStartTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanDuration",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanInterestRateForDurationInBasisPoints",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nftCollateralContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "loanERC20Denomination",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "interestIsProRated",
+                    "type": "bool"
+                }
+            ],
+            "name": "LoanStarted",
+            "type": "event"
+        },
+        "contract_address": "0x88341d1a8f672d2780c8dc725902aae72f143b0c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanPrincipalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maximumRepaymentAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftCollateralId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanStartTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanDuration",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanInterestRateForDurationInBasisPoints",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftCollateralContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanERC20Denomination",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestIsProRated",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "nftfi_NFTfi_event_LoanStarted"
+    }
+}

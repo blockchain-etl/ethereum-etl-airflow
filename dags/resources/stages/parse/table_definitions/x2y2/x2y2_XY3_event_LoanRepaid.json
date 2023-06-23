@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "loanId",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nftTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "repayAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "adminFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nftAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrowAsset",
+                    "type": "address"
+                }
+            ],
+            "name": "LoanRepaid",
+            "type": "event"
+        },
+        "contract_address": "0xc28f7ee92cd6619e8eec6a70923079fbafb86196",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "x2y2",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftTokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "repayAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "adminFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowAsset",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "x2y2_XY3_event_LoanRepaid"
+    }
+}

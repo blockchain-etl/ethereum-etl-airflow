@@ -1,0 +1,224 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "loanId",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "loanPrincipalAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maximumRepaymentAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "nftCollateralId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "loanERC20Denomination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "loanDuration",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "loanInterestRateForDurationInBasisPoints",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "loanAdminFeeInBasisPoints",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftCollateralWrapper",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "loanStartTime",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftCollateralContract",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "borrower",
+                            "type": "address"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LoanData.LoanTerms",
+                    "name": "loanTerms",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "revenueSharePartner",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "revenueShareInBasisPoints",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "referralFeeInBasisPoints",
+                            "type": "uint16"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LoanData.LoanExtras",
+                    "name": "loanExtras",
+                    "type": "tuple"
+                }
+            ],
+            "name": "LoanStarted",
+            "type": "event"
+        },
+        "contract_address": "0xf896527c49b44aab3cf22ae356fa3af8e331f280",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "loanPrincipalAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maximumRepaymentAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "nftCollateralId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanERC20Denomination",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanDuration",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanInterestRateForDurationInBasisPoints",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanAdminFeeInBasisPoints",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "nftCollateralWrapper",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanStartTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "nftCollateralContract",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrower",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "loanTerms",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "revenueSharePartner",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "revenueShareInBasisPoints",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "referralFeeInBasisPoints",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "loanExtras",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "nftfi_DirectLoanFixedOffer_event_LoanStarted"
+    }
+}
