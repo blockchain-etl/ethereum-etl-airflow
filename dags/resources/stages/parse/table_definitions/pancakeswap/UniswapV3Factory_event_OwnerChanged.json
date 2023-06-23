@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnerChanged",
+            "type": "event"
+        },
+        "contract_address": "0x0bfbcf9fa4f9c56b0f40a671ad40e0805a091865",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pancakeswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newOwner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapV3Factory_event_OwnerChanged"
+    }
+}
