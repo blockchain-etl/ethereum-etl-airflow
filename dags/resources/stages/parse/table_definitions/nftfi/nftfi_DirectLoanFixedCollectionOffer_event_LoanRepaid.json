@@ -1,0 +1,142 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "loanId",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanPrincipalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nftCollateralId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountPaidToLender",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "adminFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "revenueShare",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "revenueSharePartner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nftCollateralContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "loanERC20Denomination",
+                    "type": "address"
+                }
+            ],
+            "name": "LoanRepaid",
+            "type": "event"
+        },
+        "contract_address": "0xe52cec0e90115abeb3304baa36bc2655731f7934",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanPrincipalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftCollateralId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountPaidToLender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "adminFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "revenueShare",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "revenueSharePartner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftCollateralContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanERC20Denomination",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "nftfi_DirectLoanFixedCollectionOffer_event_LoanRepaid"
+    }
+}

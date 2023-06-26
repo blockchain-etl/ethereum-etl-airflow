@@ -1,0 +1,180 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "loanId",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "borrowAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "repayAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "nftTokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "borrowAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "loanDuration",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "adminShare",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "loanStart",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftAsset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "borrower",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "isCollection",
+                            "type": "bool"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LoanDetail",
+                    "name": "loanDetail",
+                    "type": "tuple"
+                }
+            ],
+            "name": "LoanStarted",
+            "type": "event"
+        },
+        "contract_address": "0xc28f7ee92cd6619e8eec6a70923079fbafb86196",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "x2y2",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "borrowAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "repayAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "nftTokenId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowAsset",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanDuration",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "adminShare",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "loanStart",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "nftAsset",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrower",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "isCollection",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "loanDetail",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "x2y2_XY3_event_LoanStarted"
+    }
+}
