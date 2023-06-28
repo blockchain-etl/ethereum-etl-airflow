@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "proofParams",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "proof",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "taskMetadata",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "cairoAuxInput",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "cairoVerifierId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "verifyProofAndRegister",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x6cb3ee90c50a38a0e4662bb7e7e6e40b91361bf6",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "starknet",
+        "schema": [
+            {
+                "description": "",
+                "name": "proofParams",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "proof",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "taskMetadata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cairoAuxInput",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cairoVerifierId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GpsStatementVerifier_call_verifyProofAndRegister"
+    }
+}
