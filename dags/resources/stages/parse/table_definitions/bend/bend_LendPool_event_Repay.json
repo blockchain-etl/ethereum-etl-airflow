@@ -49,7 +49,7 @@
             "name": "Repay",
             "type": "event"
         },
-        "contract_address": "0x290afb1f68131d39de177199b57fb613a31066a4",
+        "contract_address": "0x70b97a0da65c15dfb0ffa02aee6fa36e507c2762",
         "field_mapping": {},
         "type": "log"
     },
