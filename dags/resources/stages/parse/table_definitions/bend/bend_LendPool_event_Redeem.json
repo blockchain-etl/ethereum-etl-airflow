@@ -55,7 +55,7 @@
             "name": "Redeem",
             "type": "event"
         },
-        "contract_address": "0x290afb1f68131d39de177199b57fb613a31066a4",
+        "contract_address": "0x70b97A0da65C15dfb0FFA02aEE6FA36e507C2762",
         "field_mapping": {},
         "type": "log"
     },
