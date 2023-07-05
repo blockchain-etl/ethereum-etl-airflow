@@ -1,0 +1,93 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "bToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "liquidityAdded",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "liquidityTaken",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "totalVariableDebt",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "reserveFactor",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateInterestRates",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0xba061eecd101daeed3eb87504903702a6b5708cd",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "bend",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityAdded",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityTaken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalVariableDebt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveFactor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "bend_InterestRate_call_calculateInterestRates"
+    }
+}
