@@ -1,0 +1,32 @@
+[
+    {
+        "name": "chain",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "Blockchain name of the completed `{chain}_load_dag`"
+    },
+    {
+        "name": "load_all_partitions",
+        "type": "BOOLEAN",
+        "mode": "REQUIRED",
+        "description": "Load all partitions if True, else only load blocks `WHERE DATE(block_timestamp) = ds`"
+    },
+    {
+        "name": "ds",
+        "type": "DATE",
+        "mode": "REQUIRED",
+        "description": "The Airflow `ds` of the completed `{chain}_load_dag` run"
+    },
+    {
+        "name": "run_id",
+        "type": "STRING",
+        "mode": "REQUIRED",
+        "description": "The Airflow `run_id` of the completed `{chain}_load_dag` run"
+    },
+    {
+        "name": "complete_at",
+        "type": "TIMESTAMP",
+        "mode": "REQUIRED",
+        "description": "Completion timestamp of the `{chain}_load_dag` run"
+    }
+]
