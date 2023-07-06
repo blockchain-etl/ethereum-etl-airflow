@@ -5,10 +5,8 @@ import logging
 import os
 import time
 from datetime import datetime, timedelta
-from tempfile import TemporaryDirectory
 
 from airflow import models
-from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
 from airflow.providers.google.cloud.sensors.gcs import GCSObjectExistenceSensor
 from airflow.operators.email import EmailOperator
@@ -17,7 +15,6 @@ from google.cloud import bigquery
 from google.cloud.bigquery import TimePartitioning, SchemaField
 
 from ethereumetl_airflow.bigquery_utils import submit_bigquery_job
-from ethereumetl_airflow.build_export_dag import upload_to_gcs
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -236,30 +233,39 @@ def build_load_dag(
                 dependency >> verify_task
         return verify_task
 
-    def add_save_checkpoint_tasks(dependencies=None):
-        def save_checkpoint(logical_date, **kwargs):
-            with TemporaryDirectory() as tempdir:
-                local_path = os.path.join(tempdir, "checkpoint.txt")
-                remote_path = "checkpoint/block_date={block_date}/load_complete_checkpoint.txt".format(
-                    block_date=logical_date.strftime("%Y-%m-%d")
-                )
-                open(local_path, mode='a').close()
-                upload_to_gcs(
-                    gcs_hook=GCSHook(gcp_conn_id="google_cloud_default"),
-                    bucket=output_bucket,
-                    object=remote_path,
-                    filename=local_path)
+    def add_load_metadata_tasks(dependencies=None):
+        load_metadata_query_path = os.path.join(dags_folder, 'resources/stages/load_metadata/sqls/load_metadata.sql')
+        load_metadata_query = read_file(load_metadata_query_path)
+        load_metadata_schema_path = os.path.join(dags_folder, 'resources/stages/load_metadata/schemas/load_metadata.json')
+        load_metadata_schema = read_file(load_metadata_schema_path)
 
-        save_checkpoint_task = PythonOperator(
-            task_id='save_checkpoint',
-            python_callable=save_checkpoint,
-            execution_timeout=timedelta(hours=1),
+        load_metadata_task = BigQueryInsertJobOperator(
+            task_id="load_metadata_task",
+            configuration={
+                "query": {
+                    "destinationTable": {
+                        "projectId": destination_dataset_project_id,
+                        "datasetId": dataset_name,
+                        "tableId": "load_metadata",
+                    },
+                    "schema": {"fields": json.loads(load_metadata_schema)},
+                    "createDisposition": "CREATE_IF_NEEDED",
+                    "writeDisposition": "WRITE_APPEND",
+                    "query": load_metadata_query,
+                    "useLegacySql": False,
+                },
+            },
+            params={
+                "chain": chain,
+                "load_all_partitions": load_all_partitions,
+            },
             dag=dag,
         )
+
         if dependencies is not None and len(dependencies) > 0:
             for dependency in dependencies:
-                dependency >> save_checkpoint_task
-        return save_checkpoint_task
+                dependency >> load_metadata_task
+        return load_metadata_task
 
     # Load tasks #
 
@@ -310,9 +316,9 @@ def build_load_dag(
     verify_traces_contracts_count_task = add_verify_tasks(
         'traces_contracts_count', [enrich_transactions_task, enrich_traces_task, enrich_contracts_task])
 
-    # Save checkpoint tasks #
+    # Load metadata tasks #
 
-    save_checkpoint_task = add_save_checkpoint_tasks(dependencies=[
+    load_metadata_task = add_load_metadata_tasks(dependencies=[
         verify_blocks_count_task,
         verify_blocks_have_latest_task,
         verify_transactions_count_task,
@@ -337,7 +343,7 @@ def build_load_dag(
             html_content='Ethereum ETL Airflow Load DAG Succeeded - {}'.format(chain),
             dag=dag
         )
-        save_checkpoint_task >> send_email_task
+        load_metadata_task >> send_email_task
 
     return dag
 
