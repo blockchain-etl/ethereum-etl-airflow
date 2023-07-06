@@ -36,7 +36,7 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amountTaken",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
@@ -46,7 +46,7 @@
                     "type": "uint256"
                 }
             ],
-            "name": "LoanRedeemed",
+            "name": "LoanLiquidated",
             "type": "event"
         },
         "contract_address": "0x5f6ac80cdb9e87f3cfa6a90e5140b9a16a361d5c",
@@ -83,7 +83,7 @@
             },
             {
                 "description": "",
-                "name": "amountTaken",
+                "name": "amount",
                 "type": "STRING"
             },
             {
@@ -93,6 +93,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "bend_LendPoolLoan_event_LoanRedeemed"
+        "table_name": "LendPoolLoan_event_LoanLiquidated"
     }
 }
