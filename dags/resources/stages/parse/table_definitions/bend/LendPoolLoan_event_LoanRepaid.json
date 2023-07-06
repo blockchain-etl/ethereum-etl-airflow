@@ -4,31 +4,19 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "reserve",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "borrowAmount",
+                    "name": "loanId",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "fineAmount",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": true,
                     "internalType": "address",
                     "name": "nftAsset",
                     "type": "address"
@@ -40,22 +28,28 @@
                     "type": "uint256"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "borrower",
+                    "name": "reserveAsset",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "loanId",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowIndex",
                     "type": "uint256"
                 }
             ],
-            "name": "Redeem",
+            "name": "LoanRepaid",
             "type": "event"
         },
-        "contract_address": "0x70b97a0da65c15dfb0ffa02aee6fa36e507c2762",
+        "contract_address": "0x5f6ac80cdb9e87f3cfa6a90e5140b9a16a361d5c",
         "field_mapping": {},
         "type": "log"
     },
@@ -69,17 +63,7 @@
             },
             {
                 "description": "",
-                "name": "reserve",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "borrowAmount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "fineAmount",
+                "name": "loanId",
                 "type": "STRING"
             },
             {
@@ -94,16 +78,21 @@
             },
             {
                 "description": "",
-                "name": "borrower",
+                "name": "reserveAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "loanId",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowIndex",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "bend_LendPool_event_Redeem"
+        "table_name": "LendPoolLoan_event_LoanRepaid"
     }
 }

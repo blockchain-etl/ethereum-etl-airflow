@@ -11,6 +11,12 @@
                 },
                 {
                     "indexed": true,
+                    "internalType": "address",
+                    "name": "onBehalfOf",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
                     "internalType": "uint256",
                     "name": "loanId",
                     "type": "uint256"
@@ -46,7 +52,7 @@
                     "type": "uint256"
                 }
             ],
-            "name": "LoanRepaid",
+            "name": "LoanCreated",
             "type": "event"
         },
         "contract_address": "0x5f6ac80cdb9e87f3cfa6a90e5140b9a16a361d5c",
@@ -59,6 +65,11 @@
             {
                 "description": "",
                 "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "onBehalfOf",
                 "type": "STRING"
             },
             {
@@ -93,6 +104,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "bend_LendPoolLoan_event_LoanRepaid"
+        "table_name": "LendPoolLoan_event_LoanCreated"
     }
 }

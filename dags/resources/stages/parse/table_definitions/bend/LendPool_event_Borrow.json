@@ -4,7 +4,7 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
@@ -12,13 +12,13 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "onBehalfOf",
+                    "name": "reserve",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "loanId",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
@@ -34,28 +34,34 @@
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
-                    "name": "reserveAsset",
+                    "name": "onBehalfOf",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "borrowRate",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "borrowIndex",
+                    "name": "loanId",
                     "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "referral",
+                    "type": "uint16"
                 }
             ],
-            "name": "LoanCreated",
+            "name": "Borrow",
             "type": "event"
         },
-        "contract_address": "0x5f6ac80cdb9e87f3cfa6a90e5140b9a16a361d5c",
+        "contract_address": "0x70b97a0da65c15dfb0ffa02aee6fa36e507c2762",
         "field_mapping": {},
         "type": "log"
     },
@@ -69,12 +75,12 @@
             },
             {
                 "description": "",
-                "name": "onBehalfOf",
+                "name": "reserve",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "loanId",
+                "name": "amount",
                 "type": "STRING"
             },
             {
@@ -89,21 +95,26 @@
             },
             {
                 "description": "",
-                "name": "reserveAsset",
+                "name": "onBehalfOf",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "borrowRate",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "borrowIndex",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referral",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "bend_LendPoolLoan_event_LoanCreated"
+        "table_name": "LendPool_event_Borrow"
     }
 }

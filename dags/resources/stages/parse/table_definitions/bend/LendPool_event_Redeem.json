@@ -18,11 +18,17 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "borrowAmount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fineAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
                     "internalType": "address",
                     "name": "nftAsset",
                     "type": "address"
@@ -36,29 +42,17 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "onBehalfOf",
+                    "name": "borrower",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "borrowRate",
-                    "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
                     "name": "loanId",
                     "type": "uint256"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint16",
-                    "name": "referral",
-                    "type": "uint16"
                 }
             ],
-            "name": "Borrow",
+            "name": "Redeem",
             "type": "event"
         },
         "contract_address": "0x70b97a0da65c15dfb0ffa02aee6fa36e507c2762",
@@ -80,7 +74,12 @@
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "borrowAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fineAmount",
                 "type": "STRING"
             },
             {
@@ -95,26 +94,16 @@
             },
             {
                 "description": "",
-                "name": "onBehalfOf",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "borrowRate",
+                "name": "borrower",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "loanId",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "referral",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "bend_LendPool_event_Borrow"
+        "table_name": "LendPool_event_Redeem"
     }
 }
