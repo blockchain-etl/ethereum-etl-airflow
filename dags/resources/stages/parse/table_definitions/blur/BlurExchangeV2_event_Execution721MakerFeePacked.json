@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenIdListingIndexTrader",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collectionPriceSide",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "makerFeeRecipientRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Execution721MakerFeePacked",
+            "type": "event"
+        },
+        "contract_address": "0x5fa60726e62c50af45ff2f6280c468da438a7837",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIdListingIndexTrader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collectionPriceSide",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerFeeRecipientRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlurExchangeV2_event_Execution721MakerFeePacked"
+    }
+}
