@@ -30,12 +30,12 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0x5fa60726e62c50af45ff2f6280c468da438a7837",
+        "contract_address": "0xb2ecfe4e4d61f8790bbb9de2d1259b9e2410cea5",
         "field_mapping": {},
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "blur",
         "schema": [
             {
                 "description": "",
@@ -44,6 +44,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_cancelTrades"
+        "table_name": "BlurExchangeV2_call_cancelTrades"
     }
 }
