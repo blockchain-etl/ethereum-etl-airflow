@@ -1,0 +1,223 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "lender",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "contract ERC721",
+                            "name": "collection",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "totalAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "auctionDuration",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "salt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "expirationTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "rate",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "oracle",
+                            "type": "address"
+                        }
+                    ],
+                    "internalType": "struct LoanOffer",
+                    "name": "offer",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "signature",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "loanAmount",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "trader",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "collection",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "listingsRoot",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "numberOfListings",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expirationTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "enum AssetType",
+                                    "name": "assetType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "address",
+                                            "name": "recipient",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint16",
+                                            "name": "rate",
+                                            "type": "uint16"
+                                        }
+                                    ],
+                                    "internalType": "struct FeeRate",
+                                    "name": "makerFee",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "salt",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct Order",
+                            "name": "order",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "index",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "tokenId",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "amount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "price",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct Listing",
+                            "name": "listing",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "bytes32[]",
+                            "name": "proof",
+                            "type": "bytes32[]"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signature",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "oracleSignature",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct AskExecutionV2",
+                    "name": "execution",
+                    "type": "tuple"
+                }
+            ],
+            "name": "buyToBorrowV2ETH",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "lienId",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "offer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "execution",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlendV2_call_buyToBorrowV2ETH"
+    }
+}

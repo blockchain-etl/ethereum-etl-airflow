@@ -1,0 +1,49 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes32",
+                            "name": "hash",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "index",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct Cancel[]",
+                    "name": "cancels",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "cancelTrades",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xb2ecfe4e4d61f8790bbb9de2d1259b9e2410cea5",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "cancels",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlurExchangeV2_call_cancelTrades"
+    }
+}
