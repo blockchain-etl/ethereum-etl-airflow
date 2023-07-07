@@ -1,0 +1,186 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "trader",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "collection",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "bytes32",
+                                    "name": "listingsRoot",
+                                    "type": "bytes32"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "numberOfListings",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expirationTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "enum AssetType",
+                                    "name": "assetType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "address",
+                                            "name": "recipient",
+                                            "type": "address"
+                                        },
+                                        {
+                                            "internalType": "uint16",
+                                            "name": "rate",
+                                            "type": "uint16"
+                                        }
+                                    ],
+                                    "internalType": "struct FeeRate",
+                                    "name": "makerFee",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "salt",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct Order",
+                            "name": "order",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "index",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bytes32[]",
+                                    "name": "proof",
+                                    "type": "bytes32[]"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "index",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "tokenId",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "amount",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "price",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Listing",
+                                    "name": "listing",
+                                    "type": "tuple"
+                                },
+                                {
+                                    "components": [
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "tokenId",
+                                            "type": "uint256"
+                                        },
+                                        {
+                                            "internalType": "uint256",
+                                            "name": "amount",
+                                            "type": "uint256"
+                                        }
+                                    ],
+                                    "internalType": "struct Taker",
+                                    "name": "taker",
+                                    "type": "tuple"
+                                }
+                            ],
+                            "internalType": "struct Exchange",
+                            "name": "exchange",
+                            "type": "tuple"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "address",
+                                    "name": "recipient",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint16",
+                                    "name": "rate",
+                                    "type": "uint16"
+                                }
+                            ],
+                            "internalType": "struct FeeRate",
+                            "name": "takerFee",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signature",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct TakeBidSingle",
+                    "name": "inputs",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "oracleSignature",
+                    "type": "bytes"
+                }
+            ],
+            "name": "takeBidSingle",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x5fa60726e62c50af45ff2f6280c468da438a7837",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [
+            {
+                "description": "",
+                "name": "inputs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oracleSignature",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_takeBidSingle"
+    }
+}
