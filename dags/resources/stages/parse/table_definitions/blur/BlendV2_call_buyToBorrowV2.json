@@ -189,12 +189,12 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0xb258ca5559b11cd702f363796522b04d7722ea56",
+        "contract_address": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
         "field_mapping": {},
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "blur",
         "schema": [
             {
                 "description": "",
@@ -218,6 +218,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_buyToBorrowV2"
+        "table_name": "BlendV2_call_buyToBorrowV2"
     }
 }
