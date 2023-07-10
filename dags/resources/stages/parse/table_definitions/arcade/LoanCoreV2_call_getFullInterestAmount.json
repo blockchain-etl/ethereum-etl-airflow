@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "principal",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "interestRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getFullInterestAmount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        "contract_address": "0xecbaac1ad75d9444b621d309b0f9c045455d78f5",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "principal",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCoreV2_call_getFullInterestAmount"
+    }
+}

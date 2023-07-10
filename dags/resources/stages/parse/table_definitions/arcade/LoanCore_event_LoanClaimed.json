@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LoanClaimed",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x59e57f9a313a2eb1c7357ecc331ddca14209f403', '0x7691ee8febd406968d46f9de96cb8cc18fc8b325'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCore_event_LoanClaimed"
+    }
+}

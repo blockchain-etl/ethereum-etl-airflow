@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "durationSecs",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "principal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "interest",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralTokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "payableCurrency",
+                            "type": "address"
+                        }
+                    ],
+                    "internalType": "struct LoanLibrary.LoanTerms",
+                    "name": "terms",
+                    "type": "tuple"
+                }
+            ],
+            "name": "createLoan",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x59e57f9a313a2eb1c7357ecc331ddca14209f403', '0x7691ee8febd406968d46f9de96cb8cc18fc8b325'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "terms",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCore_call_createLoan"
+    }
+}

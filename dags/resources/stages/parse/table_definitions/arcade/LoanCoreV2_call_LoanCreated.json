@@ -1,0 +1,127 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint32",
+                            "name": "durationSecs",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "deadline",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint24",
+                            "name": "numInstallments",
+                            "type": "uint24"
+                        },
+                        {
+                            "internalType": "uint160",
+                            "name": "interestRate",
+                            "type": "uint160"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "principal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "payableCurrency",
+                            "type": "address"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct LoanLibrary.LoanTerms",
+                    "name": "terms",
+                    "type": "tuple"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LoanCreated",
+            "type": "event"
+        },
+        "contract_address": "0xecbaac1ad75d9444b621d309b0f9c045455d78f5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "durationSecs",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "deadline",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "numInstallments",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "interestRate",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "principal",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "collateralAddress",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "collateralId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "payableCurrency",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "terms",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCoreV2_call_LoanCreated"
+    }
+}
