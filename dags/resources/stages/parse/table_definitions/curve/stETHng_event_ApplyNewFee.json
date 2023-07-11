@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ApplyNewFee",
+            "type": "event"
+        },
+        "contract_address": "0x21e27a5e5513d6e65c4f830167390997aa84843a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "stETHng_event_ApplyNewFee"
+    }
+}

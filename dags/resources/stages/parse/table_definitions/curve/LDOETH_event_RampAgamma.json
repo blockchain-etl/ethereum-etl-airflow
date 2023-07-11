@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "initial_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "future_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "initial_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "future_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "initial_time",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "future_time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RampAgamma",
+            "type": "event"
+        },
+        "contract_address": "0x9409280dc1e6d33ab7a8c6ec03e5763fb61772b5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "initial_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "future_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initial_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "future_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initial_time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "future_time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LDOETH_event_RampAgamma"
+    }
+}
