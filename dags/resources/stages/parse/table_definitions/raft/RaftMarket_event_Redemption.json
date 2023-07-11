@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x5f59b322eb3e16a0c78846195af1f588b77403fc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "redeemer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralSent",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rebate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redemption",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_event_Redemption",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "redeemer",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "amount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "collateralSent",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "fee",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "rebate",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
