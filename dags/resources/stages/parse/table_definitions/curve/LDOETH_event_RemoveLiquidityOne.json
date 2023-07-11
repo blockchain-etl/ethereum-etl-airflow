@@ -1,0 +1,61 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidityOne",
+            "type": "event"
+        },
+        "contract_address": "0x9409280dc1e6d33ab7a8c6ec03e5763fb61772b5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LDOETH_event_RemoveLiquidityOne"
+    }
+}

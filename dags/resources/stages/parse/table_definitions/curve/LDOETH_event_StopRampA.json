@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "current_A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "current_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StopRampA",
+            "type": "event"
+        },
+        "contract_address": "0x9409280dc1e6d33ab7a8c6ec03e5763fb61772b5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "current_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "current_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LDOETH_event_StopRampA"
+    }
+}
