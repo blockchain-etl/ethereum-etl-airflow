@@ -11,10 +11,9 @@ from airflow.operators.python import PythonOperator
 from airflow.sensors.external_task import ExternalTaskSensor
 from google.cloud import bigquery
 
-from ethereumetl_airflow.bigquery_utils import create_view, share_dataset_all_users_read
-from ethereumetl_airflow.common import read_json_file, read_file, get_list_of_files
+from ethereumetl_airflow.bigquery_utils import share_dataset_all_users_read
+from ethereumetl_airflow.common import read_json_file, get_list_of_files
 from ethereumetl_airflow.parse.parse_dataset_folder_logic import parse_dataset_folder
-from ethereumetl_airflow.parse.parse_table_definition_logic import create_dataset
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -91,25 +90,6 @@ def build_parse_dag(
 
         return parsing_operator
 
-    def create_add_view_task(dataset_name, view_name, sql):
-        def create_view_task(ds, **kwargs):
-            client = bigquery.Client()
-
-            dest_table_name = view_name
-            dest_table_ref = create_dataset(client, dataset_name, parse_destination_dataset_project_id).table(dest_table_name)
-
-            print('View sql: \n' + sql)
-
-            create_view(client, sql, dest_table_ref)
-
-        create_view_operator = PythonOperator(
-            task_id=f'create_view_{view_name}',
-            python_callable=create_view_task,
-            execution_timeout=timedelta(minutes=10),
-            dag=dag
-        )
-
-        return create_view_operator
 
     def create_share_dataset_task(dataset_name):
         def share_dataset_task(**kwargs):
@@ -156,18 +136,6 @@ def build_parse_dag(
 
     share_dataset_task = create_share_dataset_task(full_dataset_name)
     checkpoint_task >> share_dataset_task
-
-    # Create views
-
-    sql_files = get_list_of_files(dataset_folder, '*.sql')
-    logging.info(sql_files)
-
-    for sql_file in sql_files:
-        sql = read_file(sql_file)
-        base_name = os.path.basename(sql_file)
-        view_name = os.path.splitext(base_name)[0]
-        create_view_task = create_add_view_task(full_dataset_name, view_name, sql)
-        checkpoint_task >> create_view_task
 
     return dag
 
