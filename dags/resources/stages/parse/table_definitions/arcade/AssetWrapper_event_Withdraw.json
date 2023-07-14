@@ -19,7 +19,7 @@
             "name": "Withdraw",
             "type": "event"
         },
-        "contract_address": "0x5cb803c31e8f4f895a3ab19d8218646dc63e9dc2",
+        "contract_address": "SELECT * FROM UNNEST(['0x5cb803c31e8f4f895a3ab19d8218646dc63e9dc2', '0x1f563cdd688ad47b75e474fde74e87c643d129b7'])",
         "field_mapping": {},
         "type": "log"
     },

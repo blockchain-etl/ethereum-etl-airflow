@@ -23,7 +23,7 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0x4b95640d56f81fc851f952793f4e5485e352bed2",
+        "contract_address": "SELECT * FROM UNNEST(['0x4b95640d56f81fc851f952793f4e5485e352bed2', '0xfdda20a20cb4249e73e3356f468ddfdfb61483f6'])",
         "field_mapping": {},
         "type": "trace"
     },
