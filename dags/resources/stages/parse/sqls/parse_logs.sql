@@ -7,8 +7,21 @@ WITH parsed_logs AS
     ,logs.address AS contract_address
     ,`{{internal_project_id}}.{{dataset_name}}.{{udf_name}}`(logs.data, logs.topics) AS parsed
 FROM `{{full_source_table_name}}` AS logs
+{#
+    Queries that reference more than one table cant be used in the "IN" clause as it produced this error in BigQuery:
+    > Correlated subqueries that reference other tables are not supported unless they can be de-correlated, such as by transforming them into an efficient JOIN.
+    To avoid it we use JOIN instead of the IN clause.
+    For backward compatibility we require marking such queries with the comment /* avoid correlated subquery error */
+    e.g. see chainlink/AccessControlledOffchainAggregator_event_AnswerUpdated.json
+    You need to make sure the query in the contract_address field produces distinct addresses and has a field named address
+#}
+{% if 'avoid correlated subquery error' in parser.contract_address_sql %}
+JOIN ({{parser.contract_address_sql}}) AS join_addresses ON logs.address = join_addresses.address
+{% endif %}
 WHERE
-  {% if parser.contract_address_sql %}
+  {% if 'avoid correlated subquery error' in parser.contract_address_sql %}
+  true
+  {% elif parser.contract_address_sql %}
   address in ({{parser.contract_address_sql}})
   {% elif parser.contract_address is none %}
   true

@@ -25,7 +25,7 @@
             "name": "AnswerUpdated",
             "type": "event"
         },
-        "contract_address": "SELECT contract_address FROM ref('view_AccessControlledOffchainAggregator_info')",
+        "contract_address": "/* avoid correlated subquery error */ SELECT contract_address AS address FROM ref('view_AccessControlledOffchainAggregator_info') UNION DISTINCT SELECT DISTINCT _aggregator from ref('EACAggregatorProxy_call_confirmAggregator')",
         "field_mapping": {},
         "type": "log"
     },
