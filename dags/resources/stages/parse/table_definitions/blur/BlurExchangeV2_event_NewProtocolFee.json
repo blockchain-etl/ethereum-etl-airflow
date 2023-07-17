@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "rate",
+                    "type": "uint16"
+                }
+            ],
+            "name": "NewProtocolFee",
+            "type": "event"
+        },
+        "contract_address": "0xb2ecfe4e4d61f8790bbb9de2d1259b9e2410cea5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlurExchangeV2_event_NewProtocolFee"
+    }
+}

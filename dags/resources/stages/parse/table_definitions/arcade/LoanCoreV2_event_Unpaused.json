@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        "contract_address": "0x81b2f8fc75bab64a6b144aa6d2faa127b4fa7fd9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCoreV2_event_Unpaused"
+    }
+}

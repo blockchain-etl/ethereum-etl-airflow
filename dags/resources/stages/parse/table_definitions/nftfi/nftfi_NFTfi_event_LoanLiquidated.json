@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanPrincipalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nftCollateralId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanMaturityDate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanLiquidationDate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nftCollateralContract",
+                    "type": "address"
+                }
+            ],
+            "name": "LoanLiquidated",
+            "type": "event"
+        },
+        "contract_address": "0x88341d1a8f672d2780c8dc725902aae72f143b0c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "nftfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanPrincipalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftCollateralId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanMaturityDate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanLiquidationDate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftCollateralContract",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "nftfi_NFTfi_event_LoanLiquidated"
+    }
+}

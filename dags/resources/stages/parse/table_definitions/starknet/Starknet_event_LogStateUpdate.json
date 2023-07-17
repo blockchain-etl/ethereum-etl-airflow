@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "globalRoot",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "blockNumber",
+                    "type": "int256"
+                }
+            ],
+            "name": "LogStateUpdate",
+            "type": "event"
+        },
+        "contract_address": "0xc662c410c0ecf747543f5ba90660f6abebd9c8c4",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "starknet",
+        "schema": [
+            {
+                "description": "",
+                "name": "globalRoot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "blockNumber",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Starknet_event_LogStateUpdate"
+    }
+}

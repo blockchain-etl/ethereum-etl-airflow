@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "orderHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokenIdListingIndexTrader",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collectionPriceSide",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "takerFeeRecipientRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Execution721TakerFeePacked",
+            "type": "event"
+        },
+        "contract_address": "0xb2ecfe4e4d61f8790bbb9de2d1259b9e2410cea5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIdListingIndexTrader",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collectionPriceSide",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerFeeRecipientRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlurExchangeV2_event_Execution721TakerFeePacked"
+    }
+}

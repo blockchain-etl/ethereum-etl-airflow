@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "pause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x81b2f8fc75bab64a6b144aa6d2faa127b4fa7fd9",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LoanCoreV2_call_pause"
+    }
+}

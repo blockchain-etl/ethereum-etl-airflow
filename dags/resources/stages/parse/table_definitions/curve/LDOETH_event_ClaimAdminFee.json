@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokens",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ClaimAdminFee",
+            "type": "event"
+        },
+        "contract_address": "0x9409280dc1e6d33ab7a8c6ec03e5763fb61772b5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LDOETH_event_ClaimAdminFee"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x5f59b322eb3e16a0c78846195af1f588b77403fc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "collateralToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20Indexable",
+                    "name": "raftCollateralToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20Indexable",
+                    "name": "raftDebtToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IPriceFeed",
+                    "name": "priceFeed",
+                    "type": "address"
+                }
+            ],
+            "name": "CollateralTokenAdded",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_event_CollateralTokenAdded",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "collateralToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "raftCollateralToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "raftDebtToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "priceFeed",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

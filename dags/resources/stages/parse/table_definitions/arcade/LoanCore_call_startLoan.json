@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "startLoan",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x59e57f9a313a2eb1c7357ecc331ddca14209f403', '0x7691ee8febd406968d46f9de96cb8cc18fc8b325'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCore_call_startLoan"
+    }
+}

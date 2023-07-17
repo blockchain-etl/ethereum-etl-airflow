@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nftAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nftTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "reserveAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowIndex",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LoanRepaid",
+            "type": "event"
+        },
+        "contract_address": "0x5f6ac80cdb9e87f3cfa6a90e5140b9a16a361d5c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bend",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftTokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendPoolLoan_event_LoanRepaid"
+    }
+}

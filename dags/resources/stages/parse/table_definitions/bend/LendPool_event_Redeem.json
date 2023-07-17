@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fineAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "nftAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nftTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Redeem",
+            "type": "event"
+        },
+        "contract_address": "0x70b97a0da65c15dfb0ffa02aee6fa36e507c2762",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "bend",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fineAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nftTokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loanId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LendPool_event_Redeem"
+    }
+}

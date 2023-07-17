@@ -1,0 +1,93 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "bToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "liquidityAdded",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "liquidityTaken",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "totalVariableDebt",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "reserveFactor",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateInterestRates",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x2a41398b89d1b9a3919d5b0feb4cc582f5b48c64', '0x2c8c82fbea936860bd7b20a756e098360cbaf05b', '0x3e4518e9c8f56ff7a25d3728d0e655b10149c368', '0x4bd4426d7362ef47449ac357267f145f1369d3bf', '0x674189d682cc254a1f8d35fed4f049a1c7c63fd4', '0x710a2b4b5f267047728402f1594f440a2acbae02', '0x73f02faca31a07d4a5ee7877ddb299c632a8673d', '0x7bb2dc775387156f61bdedb415bd16ce6abf43cb', '0x84dd63bbd7e277cb526eb6ba1d7a220c68eefbb6', '0x8b5afd7453a1a76e0462ed3284eefd10afe74a51', '0x996ef43369f943d7e1dd13f2db3f239ab503cb08', '0x9dc361cbc7b2855424a534428ece32084f54e2dc', '0xacdff9f271122108fba9b040d2efba2f42ad81e9', '0xba061eecd101daeed3eb87504903702a6b5708cd', '0xbaa519df1b66a7ed8bbf34c7e9b3f0a8ef2fa0d7', '0xbe63ede6c546f84aa95415d29e5d0e3c0fa02d17', '0xc820824fbf2df69bdb92a07bd22d7dbb7eb449f2', '0xea18252adf22a410ca147433c59bc28ed193d4c0'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "bend",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityAdded",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityTaken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalVariableDebt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveFactor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "InterestRate_call_calculateInterestRates"
+    }
+}

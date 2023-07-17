@@ -46,6 +46,18 @@
                     "internalType": "int24",
                     "name": "tick",
                     "type": "int24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "protocolFeesToken0",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "protocolFeesToken1",
+                    "type": "uint128"
                 }
             ],
             "name": "Swap",
@@ -91,6 +103,16 @@
             {
                 "name": "tick",
                 "description": "",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocolFeesToken0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocolFeesToken1",
                 "type": "STRING"
             }
         ]

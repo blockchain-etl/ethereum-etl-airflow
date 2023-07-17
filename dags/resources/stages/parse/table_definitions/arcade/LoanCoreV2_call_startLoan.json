@@ -1,0 +1,100 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint32",
+                            "name": "durationSecs",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "deadline",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint24",
+                            "name": "numInstallments",
+                            "type": "uint24"
+                        },
+                        {
+                            "internalType": "uint160",
+                            "name": "interestRate",
+                            "type": "uint160"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "principal",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateralAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "payableCurrency",
+                            "type": "address"
+                        }
+                    ],
+                    "internalType": "struct LoanLibrary.LoanTerms",
+                    "name": "terms",
+                    "type": "tuple"
+                }
+            ],
+            "name": "startLoan",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "loanId",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x81b2f8fc75bab64a6b144aa6d2faa127b4fa7fd9",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "terms",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCoreV2_call_startLoan"
+    }
+}

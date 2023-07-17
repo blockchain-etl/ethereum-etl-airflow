@@ -1,0 +1,72 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_loanId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_currentMissedPayments",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_paymentToPrincipal",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_paymentToInterest",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_paymentToLateFees",
+                    "type": "uint256"
+                }
+            ],
+            "name": "repayPart",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x81b2f8fc75bab64a6b144aa6d2faa127b4fa7fd9",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "_loanId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_currentMissedPayments",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_paymentToPrincipal",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_paymentToInterest",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_paymentToLateFees",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LoanCoreV2_call_repayPart"
+    }
+}

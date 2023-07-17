@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_aggregator",
+                    "type": "address"
+                }
+            ],
+            "name": "confirmAggregator",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT proxy_address FROM ref('view_AccessControlledOffchainAggregator_info')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "chainlink",
+        "schema": [
+            {
+                "description": "",
+                "name": "_aggregator",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EACAggregatorProxy_call_confirmAggregator"
+    }
+}

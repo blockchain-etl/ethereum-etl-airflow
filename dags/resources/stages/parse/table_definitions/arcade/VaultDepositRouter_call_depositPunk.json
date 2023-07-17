@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "depositPunk",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x4b95640d56f81fc851f952793f4e5485e352bed2', '0xfdda20a20cb4249e73e3356f468ddfdfb61483f6'])",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "arcade",
+        "schema": [
+            {
+                "description": "",
+                "name": "vault",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultDepositRouter_call_depositPunk"
+    }
+}
