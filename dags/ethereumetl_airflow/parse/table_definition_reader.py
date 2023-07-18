@@ -53,8 +53,8 @@ def toposort_and_read_table_definition_states(
         current_hash = table_definition.content_hash
         is_updated = previous_hash != current_hash
 
-        assert all(states.get(parent.table_name) is not None for parent in table_definition.dependencies)
-        is_dependencies_updated = any(states[parent.table_name].is_updated_or_dependencies_updated for parent in table_definition.dependencies)
+        assert all(states.get(dep.table_name) is not None for dep in table_definition.dependencies)
+        is_dependencies_updated = any(states[dep.table_name].is_updated_or_dependencies_updated for dep in table_definition.dependencies)
         is_updated_or_dependencies_updated = is_updated or is_dependencies_updated
         state = TableDefinitionState(table_definition, is_updated_or_dependencies_updated)
         states[table_definition.table_name] = state
