@@ -45,14 +45,13 @@ def parse(
         sqls_folder=sqls_folder
     )
 
-    dataset = create_dataset(bigquery_client, dataset_name, internal_project_id)
     table_name = table_definition['table']['table_name']
     history_table_name = table_name + '_history'
+
     if parse_all_partitions is None:
-        history_table_ref = dataset.table(history_table_name)
-        history_table_exists = does_table_exist(bigquery_client, history_table_ref)
-        parse_all_partitions = not history_table_exists
-        logging.info('parse_all_partitions is set to {}'.format(str(parse_all_partitions)))
+        raise ValueError('parse_all_partitions cannot be None')
+
+    logging.info('parse_all_partitions is set to {}'.format(str(parse_all_partitions)))
 
     create_or_update_history_table(
         bigquery_client=bigquery_client,

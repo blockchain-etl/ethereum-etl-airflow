@@ -93,6 +93,7 @@ def read_amend_dag_vars(var_prefix, **kwargs):
 
 def read_parse_dag_vars(var_prefix, **kwargs):
     vars = {
+        'output_bucket': read_var('output_bucket', var_prefix, True, **kwargs),
         'parse_destination_dataset_project_id': read_var('parse_destination_dataset_project_id', var_prefix, True, **kwargs),
         'schedule_interval': read_var('schedule_interval', var_prefix, True, **kwargs),
         'parse_all_partitions': parse_bool(read_var('parse_all_partitions', var_prefix, False), default=None),

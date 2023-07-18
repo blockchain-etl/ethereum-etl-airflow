@@ -14,6 +14,7 @@ from google.cloud import bigquery
 from ethereumetl_airflow.bigquery_utils import share_dataset_all_users_read
 from ethereumetl_airflow.common import read_json_file, get_list_of_files
 from ethereumetl_airflow.parse.parse_dataset_folder_logic import parse_dataset_folder
+from ethereumetl_airflow.parse.parse_state_manager import ParseStateManager
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.DEBUG)
@@ -23,6 +24,7 @@ dags_folder = os.environ.get('DAGS_FOLDER', '/home/airflow/gcs/dags')
 
 def build_parse_dag(
         dag_id,
+        output_bucket,
         dataset_folder,
         parse_destination_dataset_project_id,
         notification_emails=None,
@@ -76,6 +78,7 @@ def build_parse_dag(
                 source_project_id=SOURCE_PROJECT_ID,
                 source_dataset_name=SOURCE_DATASET_NAME,
                 destination_project_id=parse_destination_dataset_project_id,
+                parse_state_manager=ParseStateManager(dataset_name, output_bucket, 'parse/state'),
                 sqls_folder=os.path.join(dags_folder, 'resources/stages/parse/sqls'),
                 parse_all_partitions=parse_all_partitions
             )
@@ -89,7 +92,6 @@ def build_parse_dag(
         )
 
         return parsing_operator
-
 
     def create_share_dataset_task(dataset_name):
         def share_dataset_task(**kwargs):
