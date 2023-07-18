@@ -28,5 +28,6 @@
         ],
         "table_description": "",
         "table_name": "EACAggregatorProxy_call_confirmAggregator"
-    }
+    },
+    "version": "1"
 }
