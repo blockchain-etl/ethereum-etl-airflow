@@ -17,7 +17,7 @@ STRUCT('0x61eb091ea16a32ea5b880d0b3d09d518c340d750' as contract_address, 8 as de
 STRUCT('0x6a805f2580b8d75d40331c26c074c2c42961e7f2' as contract_address, 8 as decimals, '0xa89f5d2365ce98b3cd68012b6f503ab1416245fc' as proxy_address, 'GUSD / USD' as description, 4 as version),
 STRUCT('0x3f00247dc3bc14a8dcfa682318ce566b1f34343a' as contract_address, 8 as decimals, '0xbaebefc1d023c0feccc047bff42e75f15ff213e6' as proxy_address, 'IMX / USD' as description, 4 as version),
 STRUCT('0x1a4e4b344125e7ef78de22b55fcef5a4bc45f605' as contract_address, 8 as decimals, '0xae2ebe3c4d20ce13ce47cbb49b6d7ee631cd816e' as proxy_address, 'INJ / USD' as description, 4 as version),
-STRUCT('0xb3b1882c0a7eb5097f12547bcd20dc6fae7ac8a6' as contract_address, 18 as decimals, '0x656c0544ef4c98a6a98491833a89204abb045d6b' as proxy_address, 'KNC / ETH' as description, 4 as version),
+STRUCT('0xbc60258f775683ea28048030806ad3a80c4a33ae' as contract_address, 8 as decimals, '0xf8ff43e991a81e6ec886a3d281a2c6cc19ae70fc' as proxy_address, 'KNC / USD' as description, 4 as version),
 STRUCT('0x20807cf61ad17c31837776fa39847a2fa1839e81' as contract_address, 8 as decimals, '0x2c1d072e956affc0d435cb7ac38ef18d24d9127c' as proxy_address, 'LINK / USD' as description, 4 as version),
 STRUCT('0x7be21aef96e2faeb8dc0d07306814319ca034cad' as contract_address, 8 as decimals, '0x56a4857acbcfe3a66965c251628b1c9f1c408c19' as proxy_address, 'MANA / USD' as description, 4 as version),
 STRUCT('0x4b35f7854e1fd8291f4ec714ac3ebb1dea450585' as contract_address, 8 as decimals, '0x7bac85a8a13a4bcd8abb3eb7d6b4d632c5a57676' as proxy_address, 'MATIC / USD' as description, 4 as version),
