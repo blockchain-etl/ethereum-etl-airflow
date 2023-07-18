@@ -29,7 +29,7 @@ def parse_dataset_folder(
     table_definition_states = toposort_and_read_table_definition_states(table_definitions, parse_state_manager)
 
     for table_definition_state in table_definition_states:
-        logging.info(f'{table_definition_state.table_definition.filepath}: is_updated_or_dependencies_updated: {table_definition_state.is_updated_or_dependencies_updated}')
+        logging.info(f'{table_definition_state.table_definition.table_name}: is_updated_or_dependencies_updated: {table_definition_state.is_updated_or_dependencies_updated}')
 
     updated_table_definitions = [tds.table_definition for tds in table_definition_states if tds.is_updated_or_dependencies_updated]
 
