@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newProgramsPerProduct",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProgramsPerProductUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x9df509186b6d3b7d033359f94c8b1bb5544d51b3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "newProgramsPerProduct",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Controller_event_ProgramsPerProductUpdated"
+    }
+}

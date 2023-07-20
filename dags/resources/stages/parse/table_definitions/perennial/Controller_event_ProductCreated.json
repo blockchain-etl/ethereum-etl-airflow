@@ -1,0 +1,235 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IProduct",
+                    "name": "product",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "string",
+                            "name": "name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "symbol",
+                            "type": "string"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum PayoffDefinitionLib.PayoffType",
+                                    "name": "payoffType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "enum PayoffDefinitionLib.PayoffDirection",
+                                    "name": "payoffDirection",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "bytes30",
+                                    "name": "data",
+                                    "type": "bytes30"
+                                }
+                            ],
+                            "internalType": "struct PayoffDefinition",
+                            "name": "payoffDefinition",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "contract IOracleProvider",
+                            "name": "oracle",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "UFixed18",
+                            "name": "maintenance",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "UFixed18",
+                            "name": "fundingFee",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "UFixed18",
+                            "name": "makerFee",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "UFixed18",
+                            "name": "takerFee",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "UFixed18",
+                            "name": "positionFee",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "UFixed18",
+                            "name": "makerLimit",
+                            "type": "uint256"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "PackedFixed18",
+                                    "name": "minRate",
+                                    "type": "int128"
+                                },
+                                {
+                                    "internalType": "PackedFixed18",
+                                    "name": "maxRate",
+                                    "type": "int128"
+                                },
+                                {
+                                    "internalType": "PackedFixed18",
+                                    "name": "targetRate",
+                                    "type": "int128"
+                                },
+                                {
+                                    "internalType": "PackedUFixed18",
+                                    "name": "targetUtilization",
+                                    "type": "uint128"
+                                }
+                            ],
+                            "internalType": "struct JumpRateUtilizationCurve",
+                            "name": "utilizationCurve",
+                            "type": "tuple"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IProduct.ProductInfo",
+                    "name": "productInfo",
+                    "type": "tuple"
+                }
+            ],
+            "name": "ProductCreated",
+            "type": "event"
+        },
+        "contract_address": "0x9df509186b6d3b7d033359f94c8b1bb5544d51b3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "product",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "name",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "symbol",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "fields": [
+                            {
+                                "description": "",
+                                "name": "payoffType",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "payoffDirection",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "data",
+                                "type": "STRING"
+                            }
+                        ],
+                        "name": "payoffDefinition",
+                        "type": "RECORD"
+                    },
+                    {
+                        "description": "",
+                        "name": "oracle",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "maintenance",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "fundingFee",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "makerFee",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "takerFee",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "positionFee",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "makerLimit",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "fields": [
+                            {
+                                "description": "",
+                                "name": "minRate",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "maxRate",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "targetRate",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "targetUtilization",
+                                "type": "STRING"
+                            }
+                        ],
+                        "name": "utilizationCurve",
+                        "type": "RECORD"
+                    }
+                ],
+                "name": "productInfo",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Controller_event_ProductCreated"
+    }
+}
