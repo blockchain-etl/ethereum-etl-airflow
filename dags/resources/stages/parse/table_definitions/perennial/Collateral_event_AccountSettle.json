@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IProduct",
+                    "name": "product",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "Fixed18",
+                    "name": "amount",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "UFixed18",
+                    "name": "newShortfall",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AccountSettle",
+            "type": "event"
+        },
+        "contract_address": "0x2d264ebdb6632a06a1726193d4d37fef1e5dbdcd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "product",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newShortfall",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Collateral_event_AccountSettle"
+    }
+}

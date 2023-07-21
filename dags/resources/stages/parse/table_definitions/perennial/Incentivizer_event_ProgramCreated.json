@@ -1,0 +1,143 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IProduct",
+                    "name": "product",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "programId",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "coordinatorId",
+                            "type": "uint256"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "UFixed18",
+                                    "name": "maker",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "UFixed18",
+                                    "name": "taker",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct Position",
+                            "name": "amount",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "start",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "duration",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "Token18",
+                            "name": "token",
+                            "type": "address"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct ProgramInfo",
+                    "name": "programInfo",
+                    "type": "tuple"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "UFixed18",
+                    "name": "programFeeAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProgramCreated",
+            "type": "event"
+        },
+        "contract_address": "0x69a682f90d58c8d1abea18ae1bc98c9a1be4f2eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "product",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "programId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "coordinatorId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "fields": [
+                            {
+                                "description": "",
+                                "name": "maker",
+                                "type": "STRING"
+                            },
+                            {
+                                "description": "",
+                                "name": "taker",
+                                "type": "STRING"
+                            }
+                        ],
+                        "name": "amount",
+                        "type": "RECORD"
+                    },
+                    {
+                        "description": "",
+                        "name": "start",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "duration",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "token",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "programInfo",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "name": "programFeeAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Incentivizer_event_ProgramCreated"
+    }
+}

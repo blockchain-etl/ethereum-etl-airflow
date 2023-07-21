@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "Token18",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "UFixed18",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FeeClaim",
+            "type": "event"
+        },
+        "contract_address": "0x69a682f90d58c8d1abea18ae1bc98c9a1be4f2eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Incentivizer_event_FeeClaim"
+    }
+}

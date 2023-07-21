@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "contract IProduct",
+                    "name": "product",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "UFixed18",
+                    "name": "protocolFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "UFixed18",
+                    "name": "productFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ProductSettle",
+            "type": "event"
+        },
+        "contract_address": "0x2d264ebdb6632a06a1726193d4d37fef1e5dbdcd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "product",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocolFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "productFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Collateral_event_ProductSettle"
+    }
+}

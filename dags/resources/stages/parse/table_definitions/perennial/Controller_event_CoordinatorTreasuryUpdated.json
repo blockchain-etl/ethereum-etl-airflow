@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "coordinatorId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newTreasury",
+                    "type": "address"
+                }
+            ],
+            "name": "CoordinatorTreasuryUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x9df509186b6d3b7d033359f94c8b1bb5544d51b3",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "perennial",
+        "schema": [
+            {
+                "description": "",
+                "name": "coordinatorId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newTreasury",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Controller_event_CoordinatorTreasuryUpdated"
+    }
+}
