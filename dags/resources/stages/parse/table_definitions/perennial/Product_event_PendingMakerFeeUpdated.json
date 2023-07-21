@@ -13,7 +13,7 @@
             "name": "PendingMakerFeeUpdated",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x60b24e58a46896724f8e2b18f18c801976d2b569', '0xfed3e166330341e0305594b8c6e6598f9f4cbe9b, '0xdb60626ff6cdc9db07d3625a93d21ddf0f8a688c'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x60b24e58a46896724f8e2b18f18c801976d2b569', '0xfed3e166330341e0305594b8c6e6598f9f4cbe9b', '0xdb60626ff6cdc9db07d3625a93d21ddf0f8a688c'])",
         "field_mapping": {},
         "type": "log"
     },
