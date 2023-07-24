@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x839d6833cee34ffab6fa9057b39f02bd3091a1d6",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "position",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isCollateralIncrease",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "debtAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isDebtIncrease",
+                    "type": "bool"
+                }
+            ],
+            "name": "StETHPositionChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_WstETH_event_StETHPositionChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "position",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "collateralAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "isCollateralIncrease",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "debtAmount",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "isDebtIncrease",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
