@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x183015a9ba6ff60230fdeadc3f43b3d788b13e21",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "positionManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "flashMintFeeRecipient",
+                    "type": "address"
+                }
+            ],
+            "name": "RDeployed",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_r_event_RDeployed",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "positionManager",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "flashMintFeeRecipient",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
