@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x183015a9ba6ff60230fdeadc3f43b3d788b13e21",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Transfer",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_r_event_Transfer",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "from",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "to",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "value",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
