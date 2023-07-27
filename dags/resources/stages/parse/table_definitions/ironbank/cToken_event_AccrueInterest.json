@@ -61,5 +61,6 @@
         ],
         "table_description": "",
         "table_name": "cToken_event_AccrueInterest"
-    }
+    },
+    "version": "1"
 }
