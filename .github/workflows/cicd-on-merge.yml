@@ -44,21 +44,25 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Build Docker image
+        run: |
+          docker build -t ethereum-etl-parse:latest -f parse.Dockerfile .
+
     - name: Run Docker image
       run: |
         DATASET_NAME=${{ matrix.dir }}
         DATASET_NAME=${DATASET_NAME#dags/resources/stages/parse/table_definitions/} # this will remove 'dags/resources/stages/parse/table_definitions/' from start
-
-        docker build -t ethereum-etl-parse:latest -f parse.Dockerfile .
 
         echo "$SERVICE_ACCOUNT_PROD" > ./credentials.json
         docker run \
           -v $PWD:/app \
           -e GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json \
           ethereum-etl-parse:latest \
-          --project crypto-etl-public-data-prod \
+          --project ${{ vars.PARSE_PROJECT }} \
           --dataset_name $DATASET_NAME \
-          --dataset_folder "/app/${{ matrix.dir }}"
+          --dataset_folder "/app/${{ matrix.dir }}" \
+          --state_bucket ${{ vars.PARSE_STATE_BUCKET }} \
+          --destination_dataset_project_id ${{ vars.PARSE_DESTINATION_DATASET_PROJECT_ID }}
         rm ./credentials.json
       env:
         SERVICE_ACCOUNT_PROD: ${{ secrets.SERVICE_ACCOUNT_PROD }}
