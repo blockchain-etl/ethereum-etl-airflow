@@ -28,5 +28,6 @@
         ],
         "table_description": "",
         "table_name": "Unitroller_event_MarketListed"
-    }
+    },
+    "version": "1"
 }
