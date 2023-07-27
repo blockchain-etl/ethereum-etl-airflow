@@ -1,14 +1,8 @@
 ---
 name: CICD (Merge)
 on:
-    pull_request:
+    push:
         branches: [master]
-        types:
-            - opened
-            - reopened
-            - synchronize
-            - ready_for_review
-            - closed
 
 jobs:
 
@@ -26,7 +20,7 @@ jobs:
       - name: Get updated directories
         id: get-dirs
         run: |
-          DIRS=$(git diff --name-only origin/master... | grep '^dags/resources/stages/parse/table_definitions' | cut -d"/" -f1-6 | uniq)
+          DIRS=$(git diff --name-only HEAD~1 HEAD | grep '^dags/resources/stages/parse/table_definitions' | cut -d"/" -f1-6 | uniq)
           echo "Updated directories: $DIRS"
           sudo apt-get install jq
           DIRS_JSON=$(echo $DIRS | tr '\n' ' ' | jq -R -s -c 'split(" ") | map(select(length > 0))')
