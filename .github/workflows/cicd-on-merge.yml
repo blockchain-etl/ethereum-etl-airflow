@@ -1,0 +1,62 @@
+---
+name: CICD (Merge)
+on:
+    push:
+        branches: [master]
+
+jobs:
+
+  get-updated-dirs:
+    runs-on: ubuntu-latest
+    outputs:
+      dirs: ${{ steps.get-dirs.outputs.dirs }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get updated directories
+        id: get-dirs
+        run: |
+          DIRS=$(git diff --name-only HEAD~1 HEAD | grep '^dags/resources/stages/parse/table_definitions' | cut -d"/" -f1-6 | uniq)
+          echo "Updated directories: $DIRS"
+          sudo apt-get install jq
+          DIRS_JSON=$(echo $DIRS | tr '\n' ' ' | jq -R -s -c 'split(" ") | map(select(length > 0))')
+          echo "dirs=$DIRS_JSON" >> $GITHUB_OUTPUT
+
+  run:
+    needs: [get-updated-dirs]
+    if: needs.get-updated-dirs.outputs.dirs != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: ${{fromJson(needs.get-updated-dirs.outputs.dirs)}}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: |
+        docker build -t ethereum-etl-parse:latest -f parse.Dockerfile .
+
+    - name: Run Docker image
+      run: |
+        DATASET_NAME=${{ matrix.dir }}
+        DATASET_NAME=${DATASET_NAME#dags/resources/stages/parse/table_definitions/} # this will remove 'dags/resources/stages/parse/table_definitions/' from start
+
+        echo "$SERVICE_ACCOUNT_PROD" > ./credentials.json
+        docker run \
+          -v $PWD:/app \
+          -e GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json \
+          ethereum-etl-parse:latest \
+          --project ${{ vars.PARSE_PROJECT }} \
+          --dataset_name $DATASET_NAME \
+          --dataset_folder "/app/${{ matrix.dir }}" \
+          --state_bucket ${{ vars.PARSE_STATE_BUCKET }} \
+          --destination_dataset_project_id ${{ vars.PARSE_DESTINATION_DATASET_PROJECT_ID }}
+        rm ./credentials.json
+      env:
+        SERVICE_ACCOUNT_PROD: ${{ secrets.SERVICE_ACCOUNT_PROD }}
