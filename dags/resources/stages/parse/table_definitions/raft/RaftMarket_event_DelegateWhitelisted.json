@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x5f59b322eb3e16a0c78846195af1f588b77403fc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "position",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "whitelisted",
+                    "type": "bool"
+                }
+            ],
+            "name": "DelegateWhitelisted",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_event_DelegateWhitelisted",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "position",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "delegate",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "whitelisted",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0x5f59b322eb3e16a0c78846195af1f588b77403fc",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "collateralToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract ISplitLiquidationCollateral",
+                    "name": "newSplitLiquidationCollateral",
+                    "type": "address"
+                }
+            ],
+            "name": "SplitLiquidationCollateralChanged",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_event_SplitLiquidationCollateralChanged",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "collateralToken",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "newSplitLiquidationCollateral",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}

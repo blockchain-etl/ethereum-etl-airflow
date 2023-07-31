@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "type": "log",
+        "contract_address": "0xb2bf4de5a63b2225338cdfdbad045ea62f158b67",
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "position",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "principalCollateralChange",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "principalCollateralIncrease",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "debtChange",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isDebtIncrease",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "leveragedCollateralChange",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LeveragedPositionAdjusted",
+            "type": "event"
+        },
+        "field_mapping": {}
+    },
+    "table": {
+        "dataset_name": "raft",
+        "table_name": "RaftMarket_OneStopLeverage_event_LeveragedPositionAdjusted",
+        "table_description": "",
+        "schema": [
+            {
+                "name": "position",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "principalCollateralChange",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "principalCollateralIncrease",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "debtChange",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "isDebtIncrease",
+                "description": "",
+                "type": "STRING"
+            },
+            {
+                "name": "leveragedCollateralChange",
+                "description": "",
+                "type": "STRING"
+            }
+        ]
+    }
+}
