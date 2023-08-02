@@ -5,6 +5,8 @@ import time
 from google.cloud import storage
 from google.cloud.exceptions import NotFound
 
+FALLBACK_DATASET = "common"
+
 
 class ParseStateManager:
     def __init__(self, dataset_name, state_bucket, bucket_path, project=None):
@@ -17,11 +19,14 @@ class ParseStateManager:
         else:
             self.storage_client = storage.Client()
 
-        state_file = self._download_state_file()
+        state_file = self._download_state_file(self.dataset_name)
+        self.is_state_empty = False
         if state_file:
             self.state = json.loads(state_file)
+            self.is_state_empty = False
         else:
             self.state = {}
+            self.is_state_empty = True
 
     def get_content_hash(self, table_name):
         content_hash = self.state.get(table_name)
@@ -38,6 +43,17 @@ class ParseStateManager:
             raise ValueError("_last_ds is None in parse state")
         return last_ds
 
+    def get_fallback_last_ds(self):
+        state_file = self._download_state_file(FALLBACK_DATASET)
+        if state_file:
+            state = json.loads(state_file)
+            last_ds = state.get("_last_ds")
+            if last_ds is None:
+                raise ValueError("_last_ds is None in parse state")
+            return last_ds
+        else:
+            raise ValueError(f"Fallback dataset {FALLBACK_DATASET} is not available")
+
     def set_last_ds(self, ds):
         self.state["_last_ds"] = ds
 
@@ -46,18 +62,18 @@ class ParseStateManager:
         self._set_new_version()
 
         bucket = self.storage_client.get_bucket(self.state_bucket)
-        blob = bucket.blob(self._build_state_file_name())
+        blob = bucket.blob(self._build_state_file_name(self.dataset_name))
         state_str = json.dumps(self.state)
         logging.info(f"Persisting parse state: {state_str}")
         blob.upload_from_string(state_str)
 
-    def _build_state_file_name(self):
-        return f"{self.bucket_path}/{self.dataset_name}/state.json"
+    def _build_state_file_name(self, dataset_name):
+        return f"{self.bucket_path}/{dataset_name}/state.json"
 
-    def _download_state_file(self):
+    def _download_state_file(self, dataset_name):
         bucket = self.storage_client.get_bucket(self.state_bucket)
 
-        blob = bucket.blob(self._build_state_file_name())
+        blob = bucket.blob(self._build_state_file_name(dataset_name))
 
         try:
             content = blob.download_as_text()
@@ -67,7 +83,7 @@ class ParseStateManager:
 
     def _check_version(self):
         # Optimistic locking to prevent race conditions with CI/CD
-        state_file = self._download_state_file()
+        state_file = self._download_state_file(self.dataset_name)
         if not state_file:
             return
         else:
