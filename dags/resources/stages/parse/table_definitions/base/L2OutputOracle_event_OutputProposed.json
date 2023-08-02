@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "outputRoot",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "l2OutputIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "l2BlockNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "l1Timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OutputProposed",
+            "type": "event"
+        },
+        "contract_address": "0x56315b90c40730925ec5485cf004d835058518a0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "base",
+        "schema": [
+            {
+                "description": "",
+                "name": "outputRoot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "l2OutputIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "l2BlockNumber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "l1Timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L2OutputOracle_event_OutputProposed"
+    }
+}
