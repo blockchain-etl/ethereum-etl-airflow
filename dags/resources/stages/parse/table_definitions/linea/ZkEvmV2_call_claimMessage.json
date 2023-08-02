@@ -1,0 +1,92 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_fee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "_feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "_calldata",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_nonce",
+                    "type": "uint256"
+                }
+            ],
+            "name": "claimMessage",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x4c8d4ce72afaa417d1f7e833725fdb4e793cd6b3",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "linea",
+        "schema": [
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_feeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_calldata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_nonce",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ZkEvmV2_call_claimMessage"
+    }
+}
