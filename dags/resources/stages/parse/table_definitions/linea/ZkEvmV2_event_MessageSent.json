@@ -54,7 +54,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "core",
+        "dataset_name": "linea",
         "schema": [
             {
                 "description": "",
