@@ -34,7 +34,10 @@ def parse_dataset_folder(
     logging.info(f"Parsing dataset folder {dataset_folder}")
 
     if ds is None:
-        ds = parse_state_manager.get_last_ds()
+        if parse_state_manager.is_state_empty:
+            ds = parse_state_manager.get_fallback_last_ds()
+        else:
+            ds = parse_state_manager.get_last_ds()
 
     table_definitions = read_table_definitions(dataset_folder)
 
