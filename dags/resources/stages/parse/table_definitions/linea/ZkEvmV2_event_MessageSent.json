@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_value",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "_calldata",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "_messageHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "MessageSent",
+            "type": "event"
+        },
+        "contract_address": "0xd19d4b5d358258f05d7b411e21a1460d11b0876f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "linea",
+        "schema": [
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_calldata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_messageHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ZkEvmV2_event_MessageSent"
+    }
+}

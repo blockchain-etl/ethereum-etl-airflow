@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "amountChangeBy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "amountUsedLoweredToLimit",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "usedAmountResetToZero",
+                    "type": "bool"
+                }
+            ],
+            "name": "LimitAmountChanged",
+            "type": "event"
+        },
+        "contract_address": "0xd19d4b5d358258f05d7b411e21a1460d11b0876f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "linea",
+        "schema": [
+            {
+                "description": "",
+                "name": "amountChangeBy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountUsedLoweredToLimit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "usedAmountResetToZero",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ZkEvmV2_event_LimitAmountChanged"
+    }
+}
