@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oldAssetProtectionRole",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newAssetProtectionRole",
+                    "type": "address"
+                }
+            ],
+            "name": "AssetProtectionRoleSet",
+            "type": "event"
+        },
+        "contract_address": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paypal",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldAssetProtectionRole",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAssetProtectionRole",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PYUSDImplementation_event_AssetProtectionRoleSet"
+    }
+}
