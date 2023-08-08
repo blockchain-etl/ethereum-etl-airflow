@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SupplyDecreased",
+            "type": "event"
+        },
+        "contract_address": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paypal",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PYUSDImplementation_event_SupplyDecreased"
+    }
+}

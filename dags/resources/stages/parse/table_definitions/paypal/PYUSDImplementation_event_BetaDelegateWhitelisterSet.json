@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "oldWhitelister",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "newWhitelister",
+                    "type": "address"
+                }
+            ],
+            "name": "BetaDelegateWhitelisterSet",
+            "type": "event"
+        },
+        "contract_address": "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "paypal",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldWhitelister",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newWhitelister",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PYUSDImplementation_event_BetaDelegateWhitelisterSet"
+    }
+}
