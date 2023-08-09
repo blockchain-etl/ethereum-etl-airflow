@@ -1,6 +1,7 @@
 import json
 import logging
 import time
+from datetime import datetime, timedelta
 
 from google.cloud import storage
 from google.cloud.exceptions import NotFound
@@ -19,6 +20,9 @@ class ParseStateManager:
         else:
             self.storage_client = storage.Client()
 
+        self.sync_state_file()
+
+    def sync_state_file(self):
         state_file = self._download_state_file(self.dataset_name)
         self.is_state_empty = False
         if state_file:
@@ -58,7 +62,7 @@ class ParseStateManager:
         self.state["_last_ds"] = ds
 
     def persist_state(self):
-        self._check_version()
+        self._check_version_and_last_ds()
         self._set_new_version()
 
         bucket = self.storage_client.get_bucket(self.state_bucket)
@@ -81,7 +85,7 @@ class ParseStateManager:
         except NotFound:
             return None
 
-    def _check_version(self):
+    def _check_version_and_last_ds(self):
         # Optimistic locking to prevent race conditions with CI/CD
         state_file = self._download_state_file(self.dataset_name)
         if not state_file:
@@ -89,17 +93,38 @@ class ParseStateManager:
         else:
             state = json.loads(state_file)
 
-        persisted_version = state.get("_version")
-        if not persisted_version:
+        previous_version = state.get("_version")
+        if not previous_version:
             return
 
         current_version = self.state.get("_version")
-        if persisted_version != current_version:
+        if previous_version != current_version:
             raise ValueError(
                 f"The state version on the bucket is different from the version in memory,"
-                f"bucket: {persisted_version}, memory: {current_version}. "
+                f"bucket: {previous_version}, memory: {current_version}. "
                 f"Another process must have run in parallel"
             )
+
+        previous_last_ds = state.get("_last_ds")
+        if not previous_last_ds:
+            return
+
+        current_last_ds = self.state.get("_last_ds")
+        if not self._check_last_ds(previous_last_ds, current_last_ds):
+            raise ValueError(
+                f"Some days may have been skipped. Current _last_ds: {current_last_ds}, previous _last_ds: {previous_last_ds}"
+            )
+
+    def _check_last_ds(self, previous_last_ds, current_last_ds):
+        previous_date = datetime.strptime(previous_last_ds, "%Y-%m-%d")
+        current_date = datetime.strptime(current_last_ds, "%Y-%m-%d")
+
+        if current_date != previous_date and current_date != previous_date + timedelta(
+            days=1
+        ):
+            return False
+        else:
+            return True
 
     def _set_new_version(self):
         new_version = int(
