@@ -34,10 +34,20 @@ def parse_dataset_folder(
     logging.info(f"Parsing dataset folder {dataset_folder}")
 
     if ds is None:
+        # If in CI/CD pipeline get ds from state
         if parse_state_manager.is_state_empty:
             ds = parse_state_manager.get_fallback_last_ds()
         else:
             ds = parse_state_manager.get_last_ds()
+    else:
+        if parse_state_manager.is_state_empty:
+            sleep_seconds = 1200
+            # Hacky way to prevent a race condition with CI/CD pipeline
+            logging.info(
+                f"Sleeping for {sleep_seconds} seconds to prevent race condition with CI/CD pipeline"
+            )
+            time.sleep(sleep_seconds)
+            parse_state_manager.sync_state_file()
 
     table_definitions = read_table_definitions(dataset_folder)
 
