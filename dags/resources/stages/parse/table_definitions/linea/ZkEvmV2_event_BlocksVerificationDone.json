@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "lastBlockFinalized",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "startingRootHash",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "finalRootHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "BlocksVerificationDone",
+            "type": "event"
+        },
+        "contract_address": "0xd19d4b5d358258f05d7b411e21a1460d11b0876f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "linea",
+        "schema": [
+            {
+                "description": "",
+                "name": "lastBlockFinalized",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startingRootHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "finalRootHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ZkEvmV2_event_BlocksVerificationDone"
+    }
+}
