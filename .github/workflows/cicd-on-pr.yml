@@ -1,0 +1,73 @@
+---
+name: CICD (PR)
+on:
+    pull_request:
+        branches: [master]
+        types:
+            - opened
+            - reopened
+            - synchronize
+            - ready_for_review
+            - closed
+
+jobs:
+  validate-json-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8.12"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip &&
+          pip install -r requirements_test.txt
+      - name: Run pyTest to Validate JSON Files
+        run: pytest tests/test_validate_json.py
+
+  airflow-tests:
+    runs-on: ubuntu-latest
+    name: airflow tests
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8.12"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip &&
+          pip install \
+            -r requirements_test.txt \
+            -r requirements_local.txt \
+            -r requirements_airflow.txt
+      - name: Run pytest on airflow/tests
+        run: pytest -v tests/test_dag_validation.py
+
+  check-changed-file-limit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Fetch master branch
+        run: git fetch origin master:master
+
+      - name: Check number of changed files
+        id: check-files
+        run: |
+          # Count the number of changed files
+          NUM_FILES=$(git diff --name-only master HEAD | grep '^dags/resources/stages/parse/table_definitions' | wc -l)
+          echo "Number of changed files: $NUM_FILES"
+          
+          # Fail the job if more than 50 files are changed
+          if [ "$NUM_FILES" -gt 50 ]; then
+            echo "Error: More than 50 files have been changed. Failing the job."
+            exit 1
+          else
+            echo "Number of changed files is within limit."
+          fi
