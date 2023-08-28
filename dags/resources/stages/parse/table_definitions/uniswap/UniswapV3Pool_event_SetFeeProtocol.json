@@ -38,7 +38,7 @@
     "table": {
         "dataset_name": "uniswap",
         "table_name": "UniswapV3Pool_event_SetFeeProtocol",
-        "table_description": "1",
+        "table_description": "",
         "schema": [
             {
                 "name": "feeProtocol0Old",

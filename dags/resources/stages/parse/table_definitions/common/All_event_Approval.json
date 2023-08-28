@@ -48,7 +48,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "1",
+        "table_description": "",
         "table_name": "All_event_Approval"
     }
 }

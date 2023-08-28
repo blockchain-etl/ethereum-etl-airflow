@@ -55,7 +55,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "1",
+        "table_description": "",
         "table_name": "ERC223_event_Transfer"
     }
 }

@@ -20,7 +20,7 @@
     "table": {
         "dataset_name": "common",
         "table_name": "All_call_setBaseURI",
-        "table_description": "1",
+        "table_description": "",
         "schema": [
             {
                 "name": "baseURI",
