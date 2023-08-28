@@ -35,7 +35,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "",
+        "table_description": "1",
         "table_name": "All_event_Deposit"
     }
 }

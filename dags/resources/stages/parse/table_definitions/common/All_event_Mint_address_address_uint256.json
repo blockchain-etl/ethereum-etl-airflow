@@ -45,7 +45,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "",
+        "table_description": "1",
         "table_name": "All_event_Mint_address_address_uint256"
     }
 }
