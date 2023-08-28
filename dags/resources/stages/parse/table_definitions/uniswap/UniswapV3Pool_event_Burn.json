@@ -50,7 +50,7 @@
     "table": {
         "dataset_name": "uniswap",
         "table_name": "UniswapV3Pool_event_Burn",
-        "table_description": "",
+        "table_description": "1",
         "schema": [
             {
                 "name": "owner",

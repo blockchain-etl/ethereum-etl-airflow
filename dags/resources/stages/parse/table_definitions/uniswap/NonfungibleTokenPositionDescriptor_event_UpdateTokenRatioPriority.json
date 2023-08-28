@@ -37,7 +37,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "",
+        "table_description": "1",
         "table_name": "NonfungibleTokenPositionDescriptor_event_UpdateTokenRatioPriority"
     }
 }

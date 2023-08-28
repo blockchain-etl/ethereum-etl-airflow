@@ -56,7 +56,7 @@
     "table": {
         "dataset_name": "uniswap",
         "table_name": "UniswapV3Pool_event_Swap",
-        "table_description": "",
+        "table_description": "1",
         "schema": [
             {
                 "name": "sender",

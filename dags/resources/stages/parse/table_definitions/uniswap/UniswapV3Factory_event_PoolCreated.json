@@ -70,7 +70,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "",
+        "table_description": "1",
         "table_name": "UniswapV3Factory_event_PoolCreated"
     }
 }
