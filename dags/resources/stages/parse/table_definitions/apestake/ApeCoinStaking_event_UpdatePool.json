@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lastRewardedBlock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "stakedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "accumulatedRewardsPerShare",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdatePool",
+            "type": "event"
+        },
+        "contract_address": "0x5954ab967bc958940b7eb73ee84797dc8a2afbb9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "apestake",
+        "schema": [
+            {
+                "description": "",
+                "name": "poolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lastRewardedBlock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stakedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "accumulatedRewardsPerShare",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ApeCoinStaking_event_UpdatePool"
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mainTypePoolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mainTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bakcTokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawPairNft",
+            "type": "event"
+        },
+        "contract_address": "0x5954ab967bc958940b7eb73ee84797dc8a2afbb9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "apestake",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mainTypePoolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mainTokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bakcTokenId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ApeCoinStaking_event_WithdrawPairNft"
+    }
+}
