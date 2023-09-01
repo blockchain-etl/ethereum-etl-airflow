@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "unpause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xda1814d75ef1c42d0a4e6abe0d43d49a1d300c8d",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_unpause"
+    }
+}
