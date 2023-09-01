@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "facilitatorAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldCapacity",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newCapacity",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FacilitatorBucketCapacityUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "facilitatorAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldCapacity",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newCapacity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GhoToken_event_FacilitatorBucketCapacityUpdated"
+    }
+}
