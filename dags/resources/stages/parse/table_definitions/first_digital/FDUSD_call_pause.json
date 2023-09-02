@@ -15,6 +15,6 @@
         "dataset_name": "first_digital",
         "schema": [],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_pause"
+        "table_name": "FDUSD_call_pause"
     }
 }

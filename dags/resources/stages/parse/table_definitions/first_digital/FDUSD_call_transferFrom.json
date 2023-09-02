@@ -53,6 +53,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_transferFrom"
+        "table_name": "FDUSD_call_transferFrom"
     }
 }
