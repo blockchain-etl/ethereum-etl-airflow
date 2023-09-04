@@ -1,0 +1,90 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "_owner",
+                    "type": "address"
+                },
+                {
+                    "name": "_spender",
+                    "type": "address"
+                },
+                {
+                    "name": "_value",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_deadline",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_v",
+                    "type": "uint8"
+                },
+                {
+                    "name": "_r",
+                    "type": "bytes32"
+                },
+                {
+                    "name": "_s",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "permit",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_spender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_v",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_r",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_s",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "crvUSDStablecoin_call_permit"
+    }
+}

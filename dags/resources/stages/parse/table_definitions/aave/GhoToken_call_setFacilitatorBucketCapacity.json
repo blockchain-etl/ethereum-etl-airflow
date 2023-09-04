@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "facilitator",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "newCapacity",
+                    "type": "uint128"
+                }
+            ],
+            "name": "setFacilitatorBucketCapacity",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "facilitator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newCapacity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GhoToken_call_setFacilitatorBucketCapacity"
+    }
+}

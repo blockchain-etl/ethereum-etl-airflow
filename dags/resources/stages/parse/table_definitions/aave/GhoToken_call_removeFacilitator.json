@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "facilitatorAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "removeFacilitator",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "facilitatorAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GhoToken_call_removeFacilitator"
+    }
+}

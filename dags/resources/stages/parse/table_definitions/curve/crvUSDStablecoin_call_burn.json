@@ -1,0 +1,36 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "_value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "burn",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "crvUSDStablecoin_call_burn"
+    }
+}

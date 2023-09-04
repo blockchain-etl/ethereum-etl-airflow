@@ -1,0 +1,20 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "first_digital",
+        "schema": [],
+        "table_description": "",
+        "table_name": "FDUSD_call_renounceOwnership"
+    }
+}

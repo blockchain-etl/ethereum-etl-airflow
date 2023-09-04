@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        "contract_address": "0xc5f0f7b66764f6ec8c8dff7ba683102295e16409",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "first_digital",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "FDUSD_event_Unpaused"
+    }
+}

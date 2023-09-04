@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "_minter",
+                    "type": "address"
+                }
+            ],
+            "name": "set_minter",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_minter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "crvUSDStablecoin_call_setminter"
+    }
+}
