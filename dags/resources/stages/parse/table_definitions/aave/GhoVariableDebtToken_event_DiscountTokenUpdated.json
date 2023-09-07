@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldDiscountToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newDiscountToken",
+                    "type": "address"
+                }
+            ],
+            "name": "DiscountTokenUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x7aa606b1b341ffeeafadbbe4a2992efb35972775",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldDiscountToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newDiscountToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GhoVariableDebtToken_event_DiscountTokenUpdated"
+    }
+}
