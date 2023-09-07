@@ -19,7 +19,7 @@
             "name": "DiscountTokenUpdated",
             "type": "event"
         },
-        "contract_address": "0x7aa606b1b341ffeeafadbbe4a2992efb35972775",
+        "contract_address": "0x786dbff3f1292ae8f92ea68cf93c30b34b1ed04b",
         "field_mapping": {},
         "type": "log"
     },
