@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldDiscountPercent",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "newDiscountPercent",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DiscountPercentUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x786dbff3f1292ae8f92ea68cf93c30b34b1ed04b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldDiscountPercent",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newDiscountPercent",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GhoVariableDebtToken_event_DiscountPercentUpdated"
+    }
+}

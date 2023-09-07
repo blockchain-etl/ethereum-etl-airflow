@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "aToken",
+                    "type": "address"
+                }
+            ],
+            "name": "ATokenSet",
+            "type": "event"
+        },
+        "contract_address": "0x786dbff3f1292ae8f92ea68cf93c30b34b1ed04b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave",
+        "schema": [
+            {
+                "description": "",
+                "name": "aToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GhoVariableDebtToken_event_ATokenSet"
+    }
+}
