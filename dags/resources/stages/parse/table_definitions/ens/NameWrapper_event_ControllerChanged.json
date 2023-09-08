@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "controller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "active",
+                    "type": "bool"
+                }
+            ],
+            "name": "ControllerChanged",
+            "type": "event"
+        },
+        "contract_address": "0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "controller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "active",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NameWrapper_event_ControllerChanged"
+    }
+}
