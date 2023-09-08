@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldValidPeriod",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newValidPeriod",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ValidPeriodSet",
+            "type": "event"
+        },
+        "contract_address": "0x4305fb66699c3b2702d4d05cf36551390a4c69c6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pyth",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldValidPeriod",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newValidPeriod",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PythOracle_event_ValidPeriodSet"
+    }
+}
