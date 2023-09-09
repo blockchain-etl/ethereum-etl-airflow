@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "chainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "sequenceNumber",
+                    "type": "uint64"
+                }
+            ],
+            "name": "BatchPriceFeedUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x4305fb66699c3b2702d4d05cf36551390a4c69c6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pyth",
+        "schema": [
+            {
+                "description": "",
+                "name": "chainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sequenceNumber",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PythOracle_event_BatchPriceFeedUpdate"
+    }
+}

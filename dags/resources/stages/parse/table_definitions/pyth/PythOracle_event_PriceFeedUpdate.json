@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "publishTime",
+                    "type": "uint64"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int64",
+                    "name": "price",
+                    "type": "int64"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "conf",
+                    "type": "uint64"
+                }
+            ],
+            "name": "PriceFeedUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x4305fb66699c3b2702d4d05cf36551390a4c69c6",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pyth",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "publishTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "price",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "conf",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PythOracle_event_PriceFeedUpdate"
+    }
+}
