@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "name",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "fuses",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "expiry",
+                    "type": "uint64"
+                }
+            ],
+            "name": "NameWrapped",
+            "type": "event"
+        },
+        "contract_address": "0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "node",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fuses",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expiry",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NameWrapper_event_NameWrapped"
+    }
+}

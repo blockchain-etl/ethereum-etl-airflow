@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "node",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "fuses",
+                    "type": "uint32"
+                }
+            ],
+            "name": "FusesSet",
+            "type": "event"
+        },
+        "contract_address": "0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ens",
+        "schema": [
+            {
+                "description": "",
+                "name": "node",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fuses",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NameWrapper_event_FusesSet"
+    }
+}
