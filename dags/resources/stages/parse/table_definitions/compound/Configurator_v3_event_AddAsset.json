@@ -56,7 +56,7 @@
             "name": "AddAsset",
             "type": "event"
         },
-        "contract_address": "0xcfc1fa6b7ca982176529899d99af6473ad80df4f",
+        "contract_address": "0x316f9708bb98af7da9c68c1c3b5e79039cd336e3",
         "field_mapping": {},
         "type": "log"
     },
