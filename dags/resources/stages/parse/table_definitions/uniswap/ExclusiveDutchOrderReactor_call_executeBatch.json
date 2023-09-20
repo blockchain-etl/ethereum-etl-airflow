@@ -1,0 +1,44 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes",
+                            "name": "order",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "sig",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct SignedOrder[]",
+                    "name": "orders",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "executeBatch",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x6000da47483062a0d734ba3dc7576ce6a0b645c4",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "orders",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExclusiveDutchOrderReactor_call_executeBatch"
+    }
+}
