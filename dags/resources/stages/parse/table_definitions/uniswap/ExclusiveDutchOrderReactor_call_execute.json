@@ -1,0 +1,56 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes",
+                            "name": "order",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "sig",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct SignedOrder",
+                    "name": "order",
+                    "type": "tuple"
+                }
+            ],
+            "name": "execute",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x6000da47483062a0d734ba3dc7576ce6a0b645c4",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "uniswap",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "order",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "sig",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "order",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ExclusiveDutchOrderReactor_call_execute"
+    }
+}
