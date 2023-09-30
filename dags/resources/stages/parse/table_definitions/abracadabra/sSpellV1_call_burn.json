@@ -43,6 +43,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_burn"
+        "table_name": "sSpellV1_call_burn"
     }
 }
