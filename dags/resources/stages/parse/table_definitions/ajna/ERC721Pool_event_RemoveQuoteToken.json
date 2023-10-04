@@ -37,7 +37,7 @@
             "name": "RemoveQuoteToken",
             "type": "event"
         },
-        "contract_address": "0xe19b31c00c01ab38ea279e93ac66ca773d314c91",
+        "contract_address": "SELECT pool FROM ref('ERC721PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
