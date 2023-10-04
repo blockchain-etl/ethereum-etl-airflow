@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpForfeited",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BucketBankruptcy",
+            "type": "event"
+        },
+        "contract_address": "0xe19b31c00c01ab38ea279e93ac66ca773d314c91",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna",
+        "schema": [
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpForfeited",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC721Pool_event_BucketBankruptcy"
+    }
+}
