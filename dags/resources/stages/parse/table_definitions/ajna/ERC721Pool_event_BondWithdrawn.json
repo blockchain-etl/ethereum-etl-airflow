@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "kicker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reciever",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BondWithdrawn",
+            "type": "event"
+        },
+        "contract_address": "0xe19b31c00c01ab38ea279e93ac66ca773d314c91",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna",
+        "schema": [
+            {
+                "description": "",
+                "name": "kicker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reciever",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC721Pool_event_BondWithdrawn"
+    }
+}
