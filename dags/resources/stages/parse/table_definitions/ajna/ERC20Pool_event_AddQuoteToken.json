@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAwarded",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lup",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddQuoteToken",
+            "type": "event"
+        },
+        "contract_address": "0x05bb4f6362b02f17c1a3f2b047a8b23368269a21",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna",
+        "schema": [
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpAwarded",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lup",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC20Pool_event_AddQuoteToken"
+    }
+}

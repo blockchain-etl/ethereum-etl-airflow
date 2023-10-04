@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "transferors",
+                    "type": "address[]"
+                }
+            ],
+            "name": "RevokeLPTransferors",
+            "type": "event"
+        },
+        "contract_address": "0x05bb4f6362b02f17c1a3f2b047a8b23368269a21",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna",
+        "schema": [
+            {
+                "description": "",
+                "name": "lender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transferors",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC20Pool_event_RevokeLPTransferors"
+    }
+}
