@@ -31,7 +31,7 @@
             "name": "AuctionNFTSettle",
             "type": "event"
         },
-        "contract_address": "SELECT pool FROM ref('ERC721PoolFactory_event_PoolCreated')",
+        "contract_address": "SELECT pool_ FROM ref('ERC721PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
