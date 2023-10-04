@@ -31,7 +31,7 @@
             "name": "DecreaseLPAllowance",
             "type": "event"
         },
-        "contract_address": "0x05bb4f6362b02f17c1a3f2b047a8b23368269a21",
+        "contract_address": "SELECT pool FROM ref('ERC20PoolFactory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
