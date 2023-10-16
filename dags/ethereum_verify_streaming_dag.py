@@ -14,6 +14,6 @@ DAG = build_verify_streaming_dag(
     dag_id='ethereum_verify_streaming_dag',
     **read_verify_streaming_dag_vars(
         var_prefix='ethereum_',
-        max_lag_in_minutes=15,
+        max_lag_in_minutes=10,
     )
 )
