@@ -3,3 +3,5 @@ ethereum-etl==2.2.1     # Requires web3>=5.29,<6
 # web3>5.31.0,<6 requires protobuf==3.19.5 which conflicts with `composer-2.1.14-airflow-2.5.1`.
 # web3==5.31.0 is the latest version that has the more relaxed protobuf>=3.10.0,<4 requirement.
 web3==5.31.0
+# Prevents ImportError: cannot import name 'WKBWriter' from 'shapely.geos' (/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/shapely/geos.py)
+shapely < 2.0.0
