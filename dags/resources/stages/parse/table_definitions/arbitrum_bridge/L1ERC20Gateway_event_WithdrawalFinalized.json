@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "l1Token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "_exitNum",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawalFinalized",
+            "type": "event"
+        },
+        "contract_address": "0xb4299a1f5f26ff6a98b7ba35572290c359fde900",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "l1Token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_exitNum",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1ERC20Gateway_event_WithdrawalFinalized"
+    }
+}

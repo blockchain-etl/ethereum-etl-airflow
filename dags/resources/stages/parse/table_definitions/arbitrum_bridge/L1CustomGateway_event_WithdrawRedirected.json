@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "exitNum",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "newData",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "madeExternalCall",
+                    "type": "bool"
+                }
+            ],
+            "name": "WithdrawRedirected",
+            "type": "event"
+        },
+        "contract_address": "0xc8d26ab9e132c79140b3376a0ac7932e4680aa45",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "exitNum",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newData",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "madeExternalCall",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1CustomGateway_event_WithdrawRedirected"
+    }
+}
