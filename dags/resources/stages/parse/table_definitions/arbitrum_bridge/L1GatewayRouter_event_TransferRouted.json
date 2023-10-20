@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_userFrom",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_userTo",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "gateway",
+                    "type": "address"
+                }
+            ],
+            "name": "TransferRouted",
+            "type": "event"
+        },
+        "contract_address": "0x52595021fa01b3e14ec6c88953afc8e35dff423c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_userFrom",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_userTo",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gateway",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1GatewayRouter_event_TransferRouted"
+    }
+}

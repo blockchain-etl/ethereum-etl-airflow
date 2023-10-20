@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newSource",
+                    "type": "address"
+                }
+            ],
+            "name": "WhitelistSourceUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x52595021fa01b3e14ec6c88953afc8e35dff423c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum_bridge",
+        "schema": [
+            {
+                "description": "",
+                "name": "newSource",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "L1GatewayRouter_event_WhitelistSourceUpdated"
+    }
+}
