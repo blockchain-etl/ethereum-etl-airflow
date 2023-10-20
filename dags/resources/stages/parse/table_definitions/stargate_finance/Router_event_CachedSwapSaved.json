@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "chainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "srcAddress",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountLD",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "payload",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "reason",
+                    "type": "bytes"
+                }
+            ],
+            "name": "CachedSwapSaved",
+            "type": "event"
+        },
+        "contract_address": "0x8731d54e9d02c286767d56ac03e8037c07e01e98",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "chainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountLD",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "payload",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reason",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Router_event_CachedSwapSaved"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "swapStop",
+                    "type": "bool"
+                }
+            ],
+            "name": "StopSwapUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "swapStop",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHPool_event_StopSwapUpdated"
+    }
+}

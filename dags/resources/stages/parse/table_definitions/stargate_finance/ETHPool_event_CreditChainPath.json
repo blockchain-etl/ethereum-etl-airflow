@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "chainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "srcPoolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountSD",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "idealBalance",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreditChainPath",
+            "type": "event"
+        },
+        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "chainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcPoolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountSD",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "idealBalance",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHPool_event_CreditChainPath"
+    }
+}

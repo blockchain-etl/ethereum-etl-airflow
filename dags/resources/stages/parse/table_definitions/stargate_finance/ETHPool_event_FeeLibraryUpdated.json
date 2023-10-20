@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeLibraryAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "FeeLibraryUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeLibraryAddr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHPool_event_FeeLibraryUpdated"
+    }
+}

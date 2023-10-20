@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amountSD",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amountToMintSD",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RedeemLocalCallback",
+            "type": "event"
+        },
+        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "_to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amountSD",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amountToMintSD",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHPool_event_RedeemLocalCallback"
+    }
+}

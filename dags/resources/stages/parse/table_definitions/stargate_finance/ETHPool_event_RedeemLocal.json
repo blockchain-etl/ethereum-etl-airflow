@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountLP",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountSD",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "chainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "dstPoolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "to",
+                    "type": "bytes"
+                }
+            ],
+            "name": "RedeemLocal",
+            "type": "event"
+        },
+        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountLP",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountSD",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "chainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "dstPoolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHPool_event_RedeemLocal"
+    }
+}

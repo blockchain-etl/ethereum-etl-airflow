@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "srcChainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "srcPoolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "swapAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawRemote",
+            "type": "event"
+        },
+        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "srcChainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcPoolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "swapAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mintAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ETHPool_event_WithdrawRemote"
+    }
+}
