@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "srcChainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_srcPoolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_dstPoolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "to",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redeemAmountSD",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintAmountSD",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "nonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes",
+                    "name": "srcAddress",
+                    "type": "bytes"
+                }
+            ],
+            "name": "RevertRedeemLocal",
+            "type": "event"
+        },
+        "contract_address": "0x8731d54e9d02c286767d56ac03e8037c07e01e98",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stargate_finance",
+        "schema": [
+            {
+                "description": "",
+                "name": "srcChainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_srcPoolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_dstPoolId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "redeemAmountSD",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mintAmountSD",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "srcAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Router_event_RevertRedeemLocal"
+    }
+}
