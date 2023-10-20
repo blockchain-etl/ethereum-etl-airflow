@@ -25,7 +25,7 @@
             "name": "ChainPathUpdate",
             "type": "event"
         },
-        "contract_address": "0x101816545f6bd2b1076434b54383a1e633390a2e",
+        "contract_address": "SELECT * FROM UNNEST(['0x101816545f6bd2b1076434b54383a1e633390a2e','0x101816545f6bd2b1076434b54383a1e633390a2e', '0xdf0770df86a8034b3efef0a1bb3c889b8332ff56','0x38ea452219524bb87e18de1c24d3bb59510bd783','0x692953e758c3669290cb1677180c64183cee374e','0x0faf1d2d3ced330824de3b8200fc8dc6e397850d','0xfa0f307783ac21c39e939acff795e27b650f6e68','0x590d4f8a68583639f215f675f3a259ed84790580','0xe8f55368c82d38bbbbdb5533e7f56afc2e978cc2','0x9cef9a0b1be0d289ac9f4a98ff317c33eaa84eb8','0xd8772edbf88bba2667ed011542343b0eddacda47','0x430ebff5e3e80a6c58e7e6ada1d90f5c28aa116d'])",
         "field_mapping": {},
         "type": "log"
     },
@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "ETHPool_event_ChainPathUpdate"
+        "table_name": "Pool_event_ChainPathUpdate"
     }
 }
