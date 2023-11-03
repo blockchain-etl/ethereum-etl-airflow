@@ -147,7 +147,7 @@
                         }
                     ],
                     "internalType": "struct AdvancedOrder[]",
-                    "name": "",
+                    "name": "advancedOrders",
                     "type": "tuple[]"
                 },
                 {
@@ -179,7 +179,7 @@
                         }
                     ],
                     "internalType": "struct CriteriaResolver[]",
-                    "name": "",
+                    "name": "criteriaResolvers",
                     "type": "tuple[]"
                 },
                 {
@@ -220,7 +220,7 @@
                         }
                     ],
                     "internalType": "struct Fulfillment[]",
-                    "name": "",
+                    "name": "fulfillments",
                     "type": "tuple[]"
                 },
                 {
@@ -277,7 +277,7 @@
                         }
                     ],
                     "internalType": "struct Execution[]",
-                    "name": "",
+                    "name": "executions",
                     "type": "tuple[]"
                 }
             ],
@@ -293,17 +293,17 @@
         "schema": [
             {
                 "description": "",
-                "name": "unnamedField0",
+                "name": "advancedOrders",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "unnamedField1",
+                "name": "criteriaResolvers",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "unnamedField2",
+                "name": "fulfillments",
                 "type": "STRING"
             },
             {

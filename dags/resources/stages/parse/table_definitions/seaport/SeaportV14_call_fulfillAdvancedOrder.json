@@ -147,7 +147,7 @@
                         }
                     ],
                     "internalType": "struct AdvancedOrder",
-                    "name": "",
+                    "name": "advancedOrder",
                     "type": "tuple"
                 },
                 {
@@ -179,7 +179,7 @@
                         }
                     ],
                     "internalType": "struct CriteriaResolver[]",
-                    "name": "",
+                    "name": "criteriaResolvers",
                     "type": "tuple[]"
                 },
                 {
@@ -297,12 +297,12 @@
                         "type": "STRING"
                     }
                 ],
-                "name": "unnamedField0",
+                "name": "advancedOrder",
                 "type": "RECORD"
             },
             {
                 "description": "",
-                "name": "unnamedField1",
+                "name": "criteriaResolvers",
                 "type": "STRING"
             },
             {
