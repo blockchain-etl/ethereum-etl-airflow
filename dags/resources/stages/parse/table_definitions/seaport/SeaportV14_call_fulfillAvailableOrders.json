@@ -249,17 +249,17 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "unnamedField0",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "unnamedField1",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "unnamedField2",
                 "type": "STRING"
             },
             {

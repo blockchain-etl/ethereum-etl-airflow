@@ -297,12 +297,12 @@
                         "type": "STRING"
                     }
                 ],
-                "name": "",
+                "name": "unnamedField0",
                 "type": "RECORD"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "unnamedField1",
                 "type": "STRING"
             },
             {

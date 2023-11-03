@@ -230,7 +230,7 @@
                         "type": "STRING"
                     }
                 ],
-                "name": "",
+                "name": "unnamedField0",
                 "type": "RECORD"
             },
             {
