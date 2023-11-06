@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "pendingReward",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum UnipilotStaking.TxType",
+                    "name": "txType",
+                    "type": "uint8"
+                }
+            ],
+            "name": "StakeOrUnstakeOrClaim",
+            "type": "event"
+        },
+        "contract_address": "0xc9256e6e85ad7ac18cd9bd665327fc2062703628",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "unipilot",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pendingReward",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "txType",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UnipilotStaking_event_StakeOrUnstakeOrClaim"
+    }
+}
