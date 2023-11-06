@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_tokenA",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_tokenB",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint24",
+                    "name": "_fee",
+                    "type": "uint24"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_vault",
+                    "type": "address"
+                }
+            ],
+            "name": "VaultCreated",
+            "type": "event"
+        },
+        "contract_address": "0x06c2ae330c57a6320b2de720971ebd09003c7a01",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "unipilot",
+        "schema": [
+            {
+                "description": "",
+                "name": "_tokenA",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_tokenB",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_vault",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UnipilotPassiveFactory_event_VaultCreated"
+    }
+}
