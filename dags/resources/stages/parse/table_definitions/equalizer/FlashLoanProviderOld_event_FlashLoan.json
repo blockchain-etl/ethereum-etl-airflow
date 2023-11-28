@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "FlashLoanProvider_event_FlashLoan"
+        "table_name": "FlashLoanProviderOld_event_FlashLoan"
     }
 }
