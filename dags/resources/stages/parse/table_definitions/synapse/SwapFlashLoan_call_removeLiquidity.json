@@ -34,7 +34,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "synapse",
         "schema": [
             {
                 "description": "",
@@ -53,6 +53,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_removeLiquidity"
+        "table_name": "SwapFlashLoan_call_removeLiquidity"
     }
 }
