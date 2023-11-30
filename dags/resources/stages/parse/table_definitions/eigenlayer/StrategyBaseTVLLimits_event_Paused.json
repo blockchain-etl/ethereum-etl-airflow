@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newPausedStatus",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Paused",
+            "type": "event"
+        },
+        "contract_address": "0x54945180db7943c0ed0fee7edab2bd24620256bc",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPausedStatus",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyBaseTVLLimits_event_Paused"
+    }
+}
