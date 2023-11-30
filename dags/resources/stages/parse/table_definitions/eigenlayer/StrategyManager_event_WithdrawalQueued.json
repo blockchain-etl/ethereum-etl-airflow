@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "depositor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint96",
+                    "name": "nonce",
+                    "type": "uint96"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "withdrawer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "delegatedAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "withdrawalRoot",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "WithdrawalQueued",
+            "type": "event"
+        },
+        "contract_address": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "depositor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "delegatedAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawalRoot",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyManager_event_WithdrawalQueued"
+    }
+}
