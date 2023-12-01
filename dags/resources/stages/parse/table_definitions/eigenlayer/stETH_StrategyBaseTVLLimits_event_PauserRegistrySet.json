@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IPauserRegistry",
+                    "name": "pauserRegistry",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IPauserRegistry",
+                    "name": "newPauserRegistry",
+                    "type": "address"
+                }
+            ],
+            "name": "PauserRegistrySet",
+            "type": "event"
+        },
+        "contract_address": "0x93c4b944d05dfe6df7645a86cd2206016c51564d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "pauserRegistry",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPauserRegistry",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "stETH_StrategyBaseTVLLimits_event_PauserRegistrySet"
+    }
+}
