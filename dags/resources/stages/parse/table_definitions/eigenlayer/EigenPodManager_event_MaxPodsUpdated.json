@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "previousValue",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MaxPodsUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x91e677b07f7af907ec9a428aafa9fc14a0d3a338",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newValue",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenPodManager_event_MaxPodsUpdated"
+    }
+}

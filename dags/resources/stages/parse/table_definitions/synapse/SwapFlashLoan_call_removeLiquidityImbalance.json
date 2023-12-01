@@ -1,0 +1,58 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256[]",
+                    "name": "amounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "maxBurnAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "deadline",
+                    "type": "uint256"
+                }
+            ],
+            "name": "removeLiquidityImbalance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x1116898dda4015ed8ddefb84b6e8bc24528af2d8",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "synapse",
+        "schema": [
+            {
+                "description": "",
+                "name": "amounts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxBurnAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SwapFlashLoan_call_removeLiquidityImbalance"
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "tokenAmounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpTokenSupply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidity",
+            "type": "event"
+        },
+        "contract_address": "0x1116898dda4015ed8ddefb84b6e8bc24528af2d8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "synapse",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenAmounts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpTokenSupply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SwapFlashLoan_event_RemoveLiquidity"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "previousAddress",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "StrategyWhitelisterChanged",
+            "type": "event"
+        },
+        "contract_address": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyManager_event_StrategyWhitelisterChanged"
+    }
+}

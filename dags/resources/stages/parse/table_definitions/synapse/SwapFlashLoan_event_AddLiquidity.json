@@ -4,73 +4,73 @@
             "anonymous": false,
             "inputs": [
                 {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "tokenAmounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "fees",
+                    "type": "uint256[]"
+                },
+                {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "lienId",
+                    "name": "invariant",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "collection",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "buyer",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "seller",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "tokenId",
+                    "name": "lpTokenSupply",
                     "type": "uint256"
                 }
             ],
-            "name": "BuyLocked",
+            "name": "AddLiquidity",
             "type": "event"
         },
-        "contract_address": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+        "contract_address": "0x1116898dda4015ed8ddefb84b6e8bc24528af2d8",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "blur",
+        "dataset_name": "synapse",
         "schema": [
             {
                 "description": "",
-                "name": "lienId",
+                "name": "provider",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "collection",
+                "name": "tokenAmounts",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "buyer",
+                "name": "fees",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "seller",
+                "name": "invariant",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tokenId",
+                "name": "lpTokenSupply",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Blend_call_BuyLocked"
+        "table_name": "SwapFlashLoan_event_AddLiquidity"
     }
 }

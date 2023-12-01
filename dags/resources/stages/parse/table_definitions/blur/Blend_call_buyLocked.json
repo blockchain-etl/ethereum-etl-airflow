@@ -1,0 +1,232 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "lender",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "borrower",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "contract ERC721",
+                            "name": "collection",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "tokenId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "rate",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "auctionStartBlock",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "auctionDuration",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct Lien",
+                    "name": "lien",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "borrower",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "lienId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "expirationTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "salt",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "oracle",
+                            "type": "address"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint16",
+                                    "name": "rate",
+                                    "type": "uint16"
+                                },
+                                {
+                                    "internalType": "address",
+                                    "name": "recipient",
+                                    "type": "address"
+                                }
+                            ],
+                            "internalType": "struct Fee[]",
+                            "name": "fees",
+                            "type": "tuple[]"
+                        }
+                    ],
+                    "internalType": "struct SellOffer",
+                    "name": "offer",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "signature",
+                    "type": "bytes"
+                }
+            ],
+            "name": "buyLocked",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x29469395eaf6f95920e59f858042f0e28d98a20b",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "blur",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "lender",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrower",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "collection",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "tokenId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "amount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "rate",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "auctionStartBlock",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "auctionDuration",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "lien",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "borrower",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "lienId",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "price",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "expirationTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "salt",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "oracle",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "fees",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "offer",
+                "type": "RECORD"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Blend_call_buyLocked"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IStrategy",
+                    "name": "strategy",
+                    "type": "address"
+                }
+            ],
+            "name": "StrategyAddedToDepositWhitelist",
+            "type": "event"
+        },
+        "contract_address": "0x858646372cc42e1a627fce94aa7a7033e7cf075a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "strategy",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyManager_event_StrategyAddedToDepositWhitelist"
+    }
+}

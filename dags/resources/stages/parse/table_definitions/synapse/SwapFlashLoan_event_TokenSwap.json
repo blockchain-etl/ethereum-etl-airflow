@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "buyer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokensSold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokensBought",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "soldId",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "boughtId",
+                    "type": "uint128"
+                }
+            ],
+            "name": "TokenSwap",
+            "type": "event"
+        },
+        "contract_address": "0x1116898dda4015ed8ddefb84b6e8bc24528af2d8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "synapse",
+        "schema": [
+            {
+                "description": "",
+                "name": "buyer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokensSold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokensBought",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "soldId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "boughtId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SwapFlashLoan_event_TokenSwap"
+    }
+}

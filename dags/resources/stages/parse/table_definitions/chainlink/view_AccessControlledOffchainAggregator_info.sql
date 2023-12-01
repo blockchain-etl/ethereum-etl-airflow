@@ -17,7 +17,7 @@ STRUCT('0x73dc1b226f7dfac353bdb41a27c4212213e6af07' as contract_address, 8 as de
 STRUCT('0x8034d486fc2620f87a9c32a1fb746d20ed9bfb96' as contract_address, 18 as decimals, '0x3a08ebbab125224b7b6474384ee39fbb247d2200' as proxy_address, 'PAX / ETH' as description, 4 as version),
 STRUCT('0x61eb091ea16a32ea5b880d0b3d09d518c340d750' as contract_address, 8 as decimals, '0xb9e1e3a9feff48998e45fa90847ed4d467e8bcfd' as proxy_address, 'FRAX / USD' as description, 4 as version),
 STRUCT('0x64d2e1f01a19762ddee27b1062cc092b66ff9652' as contract_address, 8 as decimals, '0xdbd020caef83efd542f4de03e3cf0c28a4428bd5' as proxy_address, 'COMP / USD' as description, 4 as version),
-STRUCT('0x4be991b4d560bba8308110ed1e0d7f8da60acf6a' as contract_address, 18 as decimals, '0x7f0d2c2838c6ac24443d13e23d99490017bde370' as proxy_address, 'FEI / ETH' as description, 4 as version),
+-- STRUCT('0x4be991b4d560bba8308110ed1e0d7f8da60acf6a' as contract_address, 18 as decimals, '0x7f0d2c2838c6ac24443d13e23d99490017bde370' as proxy_address, 'FEI / ETH' as description, 4 as version),
 STRUCT('0xbc60258f775683ea28048030806ad3a80c4a33ae' as contract_address, 8 as decimals, '0xf8ff43e991a81e6ec886a3d281a2c6cc19ae70fc' as proxy_address, 'KNC / USD' as description, 4 as version),
 STRUCT('0x7898accc83587c3c55116c5230c17a6cd9c71bad' as contract_address, 18 as decimals, '0x4e844125952d32acdf339be976c98e22f6f318db' as proxy_address, 'LDO / ETH' as description, 4 as version),
 STRUCT('0xcac109af977ac94929a5dd37ed8af763bad78151' as contract_address, 8 as decimals, '0xa027702dbb89fbd58938e4324ac03b58d812b0e1' as proxy_address, 'YFI / USD' as description, 4 as version),

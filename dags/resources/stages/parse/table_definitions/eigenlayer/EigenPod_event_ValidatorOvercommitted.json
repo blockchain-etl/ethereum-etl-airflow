@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint40",
+                    "name": "validatorIndex",
+                    "type": "uint40"
+                }
+            ],
+            "name": "ValidatorOvercommitted",
+            "type": "event"
+        },
+        "contract_address": "0x5a2a4f2f3c18f09179b6703e63d9edd165909073",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "validatorIndex",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenPod_event_ValidatorOvercommitted"
+    }
+}
