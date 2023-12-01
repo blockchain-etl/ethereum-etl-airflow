@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "Blend_call_BuyLocked"
+        "table_name": "Blend_event_BuyLocked"
     }
 }
