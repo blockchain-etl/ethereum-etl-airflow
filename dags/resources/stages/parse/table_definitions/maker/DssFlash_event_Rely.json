@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "usr",
+                    "type": "address"
+                }
+            ],
+            "name": "Rely",
+            "type": "event"
+        },
+        "contract_address": "0x1eb4cf3a948e7d72a198fe073ccb8c7a948cd853",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "usr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DssFlash_event_Rely"
+    }
+}
