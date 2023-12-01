@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint160",
+                    "name": "sqrtPriceX96",
+                    "type": "uint160"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "tick",
+                    "type": "int24"
+                }
+            ],
+            "name": "Initialize",
+            "type": "event"
+        },
+        "contract_address": "0x31ac258b911af9a0d2669ebdfc4e39d92e96b772",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "sushiswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "sqrtPriceX96",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tick",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapV3Pool_event_Initialize"
+    }
+}
