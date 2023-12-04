@@ -4,22 +4,22 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "uint160",
-                    "name": "sqrtPriceX96",
-                    "type": "uint160"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldOwner",
+                    "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "int24",
-                    "name": "tick",
-                    "type": "int24"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
                 }
             ],
-            "name": "Initialize",
+            "name": "OwnerChanged",
             "type": "event"
         },
-        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "contract_address": "0xbaceb8ec6b9355dfc0269c18bac9d6e2bdc29c4f",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "sqrtPriceX96",
+                "name": "oldOwner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tick",
+                "name": "newOwner",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Pool_event_Initialize"
+        "table_name": "UniswapV3Factory_event_OwnerChanged"
     }
 }

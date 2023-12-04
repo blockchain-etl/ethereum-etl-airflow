@@ -19,7 +19,7 @@
             "name": "IncreaseObservationCardinalityNext",
             "type": "event"
         },
-        "contract_address": "0x31ac258b911af9a0d2669ebdfc4e39d92e96b772",
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
