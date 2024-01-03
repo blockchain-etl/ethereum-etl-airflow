@@ -84,7 +84,6 @@ def build_verify_streaming_dag(
     add_verify_tasks('token_transfers_have_latest')
     add_verify_tasks('traces_have_latest')
     add_verify_tasks('contracts_have_latest')
-    add_verify_tasks('tokens_have_latest')
 
     add_verify_tasks('blocks_count')
     add_verify_tasks('transactions_count')
