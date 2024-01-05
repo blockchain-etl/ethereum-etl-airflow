@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "pubkey",
+                    "type": "bytes"
+                }
+            ],
+            "name": "ExitRequest",
+            "type": "event"
+        },
+        "contract_address": "0xdc71affc862fceb6ad32be58e098423a7727bebd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "consensys",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pubkey",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StakingContract_event_ExitRequest"
+    }
+}
