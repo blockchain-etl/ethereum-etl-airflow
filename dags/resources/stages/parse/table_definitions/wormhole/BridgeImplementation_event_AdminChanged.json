@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "previousAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0x3ee18B2214AFF97000D974cf647E7C347E8fa585",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BridgeImplementation_event_AdminChanged"
+    }
+}
