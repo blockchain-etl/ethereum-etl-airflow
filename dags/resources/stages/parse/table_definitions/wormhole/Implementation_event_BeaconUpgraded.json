@@ -13,7 +13,7 @@
             "name": "BeaconUpgraded",
             "type": "event"
         },
-        "contract_address": "0x98f3c9e6E3fAce36bAAd05FE09d375Ef1464288B",
+        "contract_address": "0x98f3c9e6e3face36baad05fe09d375ef1464288b",
         "field_mapping": {},
         "type": "log"
     },
