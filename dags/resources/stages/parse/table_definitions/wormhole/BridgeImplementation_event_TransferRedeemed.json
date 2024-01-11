@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "emitterChainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "emitterAddress",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint64",
+                    "name": "sequence",
+                    "type": "uint64"
+                }
+            ],
+            "name": "TransferRedeemed",
+            "type": "event"
+        },
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "schema": [
+            {
+                "description": "",
+                "name": "emitterChainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "emitterAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sequence",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BridgeImplementation_event_TransferRedeemed"
+    }
+}
