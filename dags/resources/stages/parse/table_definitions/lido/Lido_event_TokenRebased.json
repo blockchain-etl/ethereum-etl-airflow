@@ -1,0 +1,91 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "reportTimestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "timeElapsed",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "preTotalShares",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "preTotalEther",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "postTotalShares",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "postTotalEther",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "sharesMintedAsFees",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenRebased",
+            "type": "event"
+        },
+        "contract_address": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [
+            {
+                "description": "",
+                "name": "reportTimestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timeElapsed",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "preTotalShares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "preTotalEther",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "postTotalShares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "postTotalEther",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sharesMintedAsFees",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_TokenRebased"
+    }
+}
