@@ -47,7 +47,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "lido",
         "schema": [
             {
                 "description": "",
@@ -86,6 +86,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_TokenRebased"
+        "table_name": "Lido_event_TokenRebased"
     }
 }
