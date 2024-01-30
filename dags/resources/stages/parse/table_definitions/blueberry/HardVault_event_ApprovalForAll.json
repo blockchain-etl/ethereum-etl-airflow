@@ -25,7 +25,7 @@
             "name": "ApprovalForAll",
             "type": "event"
         },
-        "contract_address": "0xfba6a8510e54c71cb525067d961fb6a8374a3fcc",
+        "contract_address": "0x426aaa5e187bbe327d3a42795316d61dada006e8",
         "field_mapping": {},
         "type": "log"
     },

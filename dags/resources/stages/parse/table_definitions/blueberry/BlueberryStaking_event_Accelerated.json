@@ -25,7 +25,7 @@
             "name": "Accelerated",
             "type": "event"
         },
-        "contract_address": "0x1e18f9cb292729eafcc3c8b45ac4a7a56110cb7d",
+        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
         "field_mapping": {},
         "type": "log"
     },
