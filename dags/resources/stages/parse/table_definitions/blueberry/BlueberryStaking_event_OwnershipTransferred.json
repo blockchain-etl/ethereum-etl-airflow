@@ -6,26 +6,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "account",
+                    "name": "previousOwner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "operator",
+                    "name": "newOwner",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
                 }
             ],
-            "name": "ApprovalForAll",
+            "name": "OwnershipTransferred",
             "type": "event"
         },
-        "contract_address": "0x426aaa5e187bbe327d3a42795316d61dada006e8",
+        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "account",
+                "name": "previousOwner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "approved",
+                "name": "newOwner",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "HardVault_event_ApprovalForAll"
+        "table_name": "BlueberryStaking_event_OwnershipTransferred"
     }
 }

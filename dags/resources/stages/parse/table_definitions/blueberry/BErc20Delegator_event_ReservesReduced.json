@@ -4,28 +4,28 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "account",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "operator",
+                    "name": "admin",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
+                    "internalType": "uint256",
+                    "name": "reduceAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newTotalReserves",
+                    "type": "uint256"
                 }
             ],
-            "name": "ApprovalForAll",
+            "name": "ReservesReduced",
             "type": "event"
         },
-        "contract_address": "0x426aaa5e187bbe327d3a42795316d61dada006e8",
+        "contract_address": "SELECT bToken FROM ref('BlueberryBank_event_AddBank') UNION ALL bToken FROM ref('BlueberryBank_event_ModifyBank')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "account",
+                "name": "admin",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
+                "name": "reduceAmount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "approved",
+                "name": "newTotalReserves",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "HardVault_event_ApprovalForAll"
+        "table_name": "BErc20Delegator_event_ReservesReduced"
     }
 }

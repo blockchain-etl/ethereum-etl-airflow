@@ -4,28 +4,22 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "account",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "operator",
+                    "name": "oldPendingAdmin",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
+                    "internalType": "address",
+                    "name": "newPendingAdmin",
+                    "type": "address"
                 }
             ],
-            "name": "ApprovalForAll",
+            "name": "NewPendingAdmin",
             "type": "event"
         },
-        "contract_address": "0x426aaa5e187bbe327d3a42795316d61dada006e8",
+        "contract_address": "SELECT bToken FROM ref('BlueberryBank_event_AddBank') UNION ALL bToken FROM ref('BlueberryBank_event_ModifyBank')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "account",
+                "name": "oldPendingAdmin",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "approved",
+                "name": "newPendingAdmin",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "HardVault_event_ApprovalForAll"
+        "table_name": "BErc20Delegator_event_NewPendingAdmin"
     }
 }

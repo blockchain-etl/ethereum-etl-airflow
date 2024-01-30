@@ -5,27 +5,27 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "account",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "operator",
-                    "type": "address"
+                    "internalType": "address[]",
+                    "name": "ibTokens",
+                    "type": "address[]"
                 },
                 {
                     "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
+                    "internalType": "uint256[]",
+                    "name": "amounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
                 }
             ],
-            "name": "ApprovalForAll",
+            "name": "RewardAmountModified",
             "type": "event"
         },
-        "contract_address": "0x426aaa5e187bbe327d3a42795316d61dada006e8",
+        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "account",
+                "name": "ibTokens",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
+                "name": "amounts",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "approved",
+                "name": "timestamp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "HardVault_event_ApprovalForAll"
+        "table_name": "BlueberryStaking_event_RewardAmountModified"
     }
 }
