@@ -19,7 +19,7 @@
             "name": "NewMarketInterestRateModel",
             "type": "event"
         },
-        "contract_address": "SELECT bToken FROM ref('BlueberryBank_event_AddBank') UNION ALL bToken FROM ref('BlueberryBank_event_ModifyBank')",
+        "contract_address": "SELECT bToken FROM ref('BlueberryBank_event_AddBank') UNION ALL SELECT bToken FROM ref('BlueberryBank_event_ModifyBank')",
         "field_mapping": {},
         "type": "log"
     },
