@@ -25,7 +25,7 @@
             "name": "Withdrawn",
             "type": "event"
         },
-        "contract_address": "SELECT softVault FROM ref('BlueberryBank_event_AddBank') UNION ALL softvault FROM ref('BlueberryBank_event_ModifyBank')",
+        "contract_address": "SELECT softVault FROM ref('BlueberryBank_event_AddBank') UNION ALL SELECT softVault FROM ref('BlueberryBank_event_ModifyBank')",
         "field_mapping": {},
         "type": "log"
     },
