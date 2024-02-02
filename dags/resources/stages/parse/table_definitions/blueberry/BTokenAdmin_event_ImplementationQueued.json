@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "bToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newImplementation",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "expiration",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ImplementationQueued",
+            "type": "event"
+        },
+        "contract_address": "0xd94b367b222f72434c70ad36b6a36944561fa5f4",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blueberry",
+        "schema": [
+            {
+                "description": "",
+                "name": "bToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newImplementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expiration",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BTokenAdmin_event_ImplementationQueued"
+    }
+}

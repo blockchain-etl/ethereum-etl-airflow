@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "protocol",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "market",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "creditLimit",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreditLimitChanged",
+            "type": "event"
+        },
+        "contract_address": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blueberry",
+        "schema": [
+            {
+                "description": "",
+                "name": "protocol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "creditLimit",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Comptroller_event_CreditLimitChanged"
+    }
+}
