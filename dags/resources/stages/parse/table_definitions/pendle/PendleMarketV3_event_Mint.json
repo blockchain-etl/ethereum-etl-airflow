@@ -31,7 +31,7 @@
             "name": "Mint",
             "type": "event"
         },
-        "contract_address": "SELECT market from ref(‘PendleMarketFactoryV3_event_CreateNewMarket’)",
+        "contract_address": "SELECT market from ref('PendleMarketFactoryV3_event_CreateNewMarket')",
         "field_mapping": {},
         "type": "log"
     },

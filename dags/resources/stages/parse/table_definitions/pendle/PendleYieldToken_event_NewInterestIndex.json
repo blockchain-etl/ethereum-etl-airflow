@@ -13,7 +13,7 @@
             "name": "NewInterestIndex",
             "type": "event"
         },
-        "contract_address": "SELECT YT from ref(‘PendleYieldContractFactory_event_CreateYieldContract’)",
+        "contract_address": "SELECT YT from ref('PendleYieldContractFactory_event_CreateYieldContract')",
         "field_mapping": {},
         "type": "log"
     },
