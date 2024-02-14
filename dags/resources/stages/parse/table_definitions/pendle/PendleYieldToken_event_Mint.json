@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiverPT",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiverYT",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountSyToMint",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountPYOut",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Mint",
+            "type": "event"
+        },
+        "contract_address": "SELECT YT from ref(‘PendleYieldContractFactory_event_CreateYieldContract’)",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiverPT",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiverYT",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountSyToMint",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountPYOut",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleYieldToken_event_Mint"
+    }
+}
