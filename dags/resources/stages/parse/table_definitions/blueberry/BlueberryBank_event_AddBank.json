@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "bToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "softVault",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "hardVault",
+                    "type": "address"
+                }
+            ],
+            "name": "AddBank",
+            "type": "event"
+        },
+        "contract_address": "0x9b06ea9fbc912845df1302fe1641bef9639009f7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blueberry",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "bToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "softVault",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "hardVault",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlueberryBank_event_AddBank"
+    }
+}

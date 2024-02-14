@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract InterestRateModel",
+                    "name": "oldInterestRateModel",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract InterestRateModel",
+                    "name": "newInterestRateModel",
+                    "type": "address"
+                }
+            ],
+            "name": "NewMarketInterestRateModel",
+            "type": "event"
+        },
+        "contract_address": "SELECT bToken FROM ref('BlueberryBank_event_AddBank') UNION ALL SELECT bToken FROM ref('BlueberryBank_event_ModifyBank')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blueberry",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldInterestRateModel",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newInterestRateModel",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BErc20Delegator_event_NewMarketInterestRateModel"
+    }
+}
