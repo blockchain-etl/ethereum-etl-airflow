@@ -42,7 +42,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "whales",
+        "dataset_name": "whalesmarket",
         "schema": [
             {
                 "description": "",
