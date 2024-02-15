@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "FROM",
+                    "name": "from",
                     "type": "address"
                 },
                 {
@@ -34,7 +34,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "FROM",
+                "name": "from",
                 "type": "STRING"
             },
             {
