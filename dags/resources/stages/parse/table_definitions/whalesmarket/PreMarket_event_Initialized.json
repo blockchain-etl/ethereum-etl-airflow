@@ -18,7 +18,11 @@
         "type": "log"
     },
     "table": {
+<<<<<<< HEAD
         "dataset_name": "whalesmarket",
+=======
+        "dataset_name": "whales",
+>>>>>>> 14eef741 (add other events)
         "schema": [
             {
                 "description": "",
