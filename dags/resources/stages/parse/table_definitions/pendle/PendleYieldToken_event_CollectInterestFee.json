@@ -13,7 +13,7 @@
             "name": "CollectInterestFee",
             "type": "event"
         },
-        "contract_address": "SELECT YT FROM ref('PendleYieldContractFactory_event_CreateYieldContract_history')",
+        "contract_address": "SELECT YT FROM ref('PendleYieldContractFactory_event_CreateYieldContract')",
         "field_mapping": {},
         "type": "log"
     },

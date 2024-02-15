@@ -37,7 +37,7 @@
             "name": "Burn",
             "type": "event"
         },
-        "contract_address": "SELECT market FROM ref('PendleMarketFactoryV3_event_CreateNewMarket_history')",
+        "contract_address": "SELECT market FROM ref('PendleMarketFactoryV3_event_CreateNewMarket')",
         "field_mapping": {},
         "type": "log"
     },
