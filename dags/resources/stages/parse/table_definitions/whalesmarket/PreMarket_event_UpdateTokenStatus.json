@@ -25,7 +25,7 @@
             "name": "UpdateTokenStatus",
             "type": "event"
         },
-        "contract_address": "0x1eCdB32e59e948C010a189a0798C674a2d0c6603",
+        "contract_address": "0x1ecdb32e59e948c010a189a0798c674a2d0c6603",
         "field_mapping": {},
         "type": "log"
     },
