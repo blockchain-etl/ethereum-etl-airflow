@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "orderId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "doer",
+                    "type": "address"
+                }
+            ],
+            "name": "CancelOrder",
+            "type": "event"
+        },
+        "contract_address": "0x23fbb02e83bce558b890ef94cf7eb09ffcf8fa2d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "whales",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "doer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PreMarket_event_CancelOrder"
+    }
+}
