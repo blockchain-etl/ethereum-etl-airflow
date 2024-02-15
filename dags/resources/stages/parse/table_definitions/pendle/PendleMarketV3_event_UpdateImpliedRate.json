@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lnLastImpliedRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateImpliedRate",
+            "type": "event"
+        },
+        "contract_address": "SELECT market FROM ref('PendleMarketFactoryV3_event_CreateNewMarket_history')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lnLastImpliedRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleMarketV3_event_UpdateImpliedRate"
+    }
+}

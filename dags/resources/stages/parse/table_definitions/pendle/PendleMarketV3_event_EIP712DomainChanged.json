@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "EIP712DomainChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT market FROM ref('PendleMarketFactoryV3_event_CreateNewMarket_history')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [],
+        "table_description": "",
+        "table_name": "PendleMarketV3_event_EIP712DomainChanged"
+    }
+}

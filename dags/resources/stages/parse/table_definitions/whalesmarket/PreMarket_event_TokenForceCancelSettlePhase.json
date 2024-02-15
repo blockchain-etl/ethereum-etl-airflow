@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "tokenId",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "TokenForceCancelSettlePhase",
+            "type": "event"
+        },
+        "contract_address": "0x1ecdb32e59e948c010a189a0798c674a2d0c6603",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "whalesmarket",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PreMarket_event_TokenForceCancelSettlePhase"
+    }
+}
