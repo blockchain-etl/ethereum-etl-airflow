@@ -25,7 +25,7 @@
             "name": "Approval",
             "type": "event"
         },
-        "contract_address": "SELECT PT from ref('PendleYieldContractFactory_event_CreateYieldContract')",
+        "contract_address": "SELECT PT from ref('PendleYieldContractFactory_event_CreateYieldContract_history')",
         "field_mapping": {},
         "type": "log"
     },

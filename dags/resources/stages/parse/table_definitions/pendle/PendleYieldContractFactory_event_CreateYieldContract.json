@@ -28,7 +28,7 @@
                     "type": "address"
                 }
             ],
-            "name": "CreateYieldContract",
+            "name": "CreateYieldContract_history",
             "type": "event"
         },
         "contract_address": "0xdf3601014686674e53d1fa52f7602525483f9122",
@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "PendleYieldContractFactory_event_CreateYieldContract"
+        "table_name": "PendleYieldContractFactory_event_CreateYieldContract_history"
     }
 }

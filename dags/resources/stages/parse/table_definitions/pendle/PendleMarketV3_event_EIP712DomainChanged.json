@@ -6,7 +6,7 @@
             "name": "EIP712DomainChanged",
             "type": "event"
         },
-        "contract_address": "SELECT market from ref('PendleMarketFactoryV3_event_CreateNewMarket')",
+        "contract_address": "SELECT market from ref('PendleMarketFactoryV3_event_CreateNewMarket_history')",
         "field_mapping": {},
         "type": "log"
     },
