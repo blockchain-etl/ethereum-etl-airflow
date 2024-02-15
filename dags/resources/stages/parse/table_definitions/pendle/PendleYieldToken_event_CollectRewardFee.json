@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "rewardToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountRewardFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CollectRewardFee",
+            "type": "event"
+        },
+        "contract_address": "SELECT YT FROM ref('PendleYieldContractFactory_event_CreateYieldContract_history')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "rewardToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountRewardFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleYieldToken_event_CollectRewardFee"
+    }
+}
