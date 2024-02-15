@@ -6,7 +6,7 @@
             "name": "EIP712DomainChanged",
             "type": "event"
         },
-        "contract_address": "SELECT PT from ref('PendleYieldContractFactory_event_CreateYieldContract_history')",
+        "contract_address": "SELECT PT FROM ref('PendleYieldContractFactory_event_CreateYieldContract_history')",
         "field_mapping": {},
         "type": "log"
     },
