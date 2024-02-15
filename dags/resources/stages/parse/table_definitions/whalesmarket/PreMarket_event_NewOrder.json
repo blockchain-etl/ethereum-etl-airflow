@@ -4,73 +4,73 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "offerId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "receiverSy",
+                    "name": "seller",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "receiverPt",
+                    "name": "buyer",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "netLpBurned",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "netSyOut",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "netPtOut",
-                    "type": "uint256"
                 }
             ],
-            "name": "Burn",
+            "name": "NewOrder",
             "type": "event"
         },
-        "contract_address": "SELECT market FROM ref('PendleMarketFactoryV3_event_CreateNewMarket')",
+        "contract_address": "0x23fbb02e83bce558b890ef94cf7eb09ffcf8fa2d",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "pendle",
+        "dataset_name": "whalesmarket",
         "schema": [
             {
                 "description": "",
-                "name": "receiverSy",
+                "name": "id",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "receiverPt",
+                "name": "offerId",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "netLpBurned",
+                "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "netSyOut",
+                "name": "seller",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "netPtOut",
+                "name": "buyer",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PendleMarketV3_event_Burn"
+        "table_name": "PreMarket_event_NewOrder"
     }
 }

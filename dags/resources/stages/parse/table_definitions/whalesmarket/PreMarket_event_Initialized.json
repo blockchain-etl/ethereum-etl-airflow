@@ -5,28 +5,28 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amountInterestFee",
-                    "type": "uint256"
+                    "internalType": "uint64",
+                    "name": "version",
+                    "type": "uint64"
                 }
             ],
-            "name": "CollectInterestFee",
+            "name": "Initialized",
             "type": "event"
         },
-        "contract_address": "SELECT YT FROM ref('PendleYieldContractFactory_event_CreateYieldContract')",
+        "contract_address": "0x23fbb02e83bce558b890ef94cf7eb09ffcf8fa2d",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "pendle",
+        "dataset_name": "whalesmarket",
         "schema": [
             {
                 "description": "",
-                "name": "amountInterestFee",
+                "name": "version",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PendleYieldToken_event_CollectInterestFee"
+        "table_name": "PreMarket_event_Initialized"
     }
 }
