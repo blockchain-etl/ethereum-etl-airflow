@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "tokenId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "oldValue",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "newValue",
+                    "type": "uint8"
+                }
+            ],
+            "name": "UpdateTokenStatus",
+            "type": "event"
+        },
+        "contract_address": "0x1eCdB32e59e948C010a189a0798C674a2d0c6603",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "whalesmarket",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newValue",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PreMarket_event_UpdateTokenStatus"
+    }
+}

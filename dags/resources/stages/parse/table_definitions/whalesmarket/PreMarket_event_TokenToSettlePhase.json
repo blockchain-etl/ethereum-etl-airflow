@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "tokenId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "settleRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "settleTime",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TokenToSettlePhase",
+            "type": "event"
+        },
+        "contract_address": "0x1eCdB32e59e948C010a189a0798C674a2d0c6603",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "whalesmarket",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "settleRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "settleTime",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PreMarket_event_TokenToSettlePhase"
+    }
+}

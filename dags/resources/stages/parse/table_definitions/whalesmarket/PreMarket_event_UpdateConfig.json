@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldFeeWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldFeeSettle",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldFeeRefund",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldPledgeRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newFeeWallet",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newFeeSettle",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newFeeRefund",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newPledgeRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateConfig",
+            "type": "event"
+        },
+        "contract_address": "0x1eCdB32e59e948C010a189a0798C674a2d0c6603",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "whalesmarket",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldFeeWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldFeeSettle",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldFeeRefund",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldPledgeRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFeeWallet",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFeeSettle",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFeeRefund",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPledgeRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PreMarket_event_UpdateConfig"
+    }
+}
