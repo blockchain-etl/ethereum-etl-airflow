@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "depositor",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amountShares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "withdraw",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT DISTINCT strategy FROM ref('StrategyManager_event_StrategyAddedToDepositWhitelist')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "depositor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountShares",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyBaseTVLLimits_call_withdraw"
+    }
+}
