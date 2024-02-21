@@ -37,6 +37,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_createDelayedWithdrawal"
+        "table_name": "DelayedWithdrawalRouter_call_createDelayedWithdrawal"
     }
 }
