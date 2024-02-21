@@ -19,7 +19,7 @@
             "name": "Paused",
             "type": "event"
         },
-        "contract_address": "0x44bcb0e01cd0c5060d4bb1a07b42580ef983e2af",
+        "contract_address": "0x7fe7e9cc0f274d2435ad5d56d5fa73e47f6a23d8",
         "field_mapping": {},
         "type": "log"
     },
