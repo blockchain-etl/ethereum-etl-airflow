@@ -1,27 +1,26 @@
 {
     "parser": {
         "abi": {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
                     "internalType": "address",
                     "name": "recipient",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "maxNumberOfDelayedWithdrawalsToClaim",
                     "type": "uint256"
                 }
             ],
-            "name": "RestakedBeaconChainETHWithdrawn",
-            "type": "event"
+            "name": "claimDelayedWithdrawals",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
-        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
+        "contract_address": "0x7fe7e9cc0f274d2435ad5d56d5fa73e47f6a23d8",
         "field_mapping": {},
-        "type": "log"
+        "type": "trace"
     },
     "table": {
         "dataset_name": "eigenlayer",
@@ -33,11 +32,11 @@
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "maxNumberOfDelayedWithdrawalsToClaim",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "EigenPod_event_RestakedBeaconChainETHWithdrawn"
+        "table_name": "DelayedWithdrawalRouter_call_claimDelayedWithdrawals"
     }
 }

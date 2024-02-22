@@ -1,27 +1,26 @@
 {
     "parser": {
         "abi": {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
                     "internalType": "address",
                     "name": "recipient",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "amountWei",
                     "type": "uint256"
                 }
             ],
-            "name": "RestakedBeaconChainETHWithdrawn",
-            "type": "event"
+            "name": "withdrawRestakedBeaconChainETH",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
         "field_mapping": {},
-        "type": "log"
+        "type": "trace"
     },
     "table": {
         "dataset_name": "eigenlayer",
@@ -33,11 +32,11 @@
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "amountWei",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "EigenPod_event_RestakedBeaconChainETHWithdrawn"
+        "table_name": "EigenPod_call_withdrawRestakedBeaconChainETH"
     }
 }

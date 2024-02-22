@@ -13,7 +13,7 @@
             "name": "Initialized",
             "type": "event"
         },
-        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
+        "contract_address": "0x7fe7e9cc0f274d2435ad5d56d5fa73e47f6a23d8",
         "field_mapping": {},
         "type": "log"
     },
@@ -27,6 +27,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "EigenPod_event_Initialized"
+        "table_name": "DelayedWithdrawalRouter_event_Initialized"
     }
 }

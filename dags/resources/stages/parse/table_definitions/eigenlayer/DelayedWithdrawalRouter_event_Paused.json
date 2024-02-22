@@ -6,20 +6,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "account",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "newPausedStatus",
                     "type": "uint256"
                 }
             ],
-            "name": "RestakedBeaconChainETHWithdrawn",
+            "name": "Paused",
             "type": "event"
         },
-        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
+        "contract_address": "0x7fe7e9cc0f274d2435ad5d56d5fa73e47f6a23d8",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "recipient",
+                "name": "account",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "newPausedStatus",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "EigenPod_event_RestakedBeaconChainETHWithdrawn"
+        "table_name": "DelayedWithdrawalRouter_event_Paused"
     }
 }

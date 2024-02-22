@@ -1,34 +1,39 @@
 {
     "parser": {
         "abi": {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "recipient",
+                    "internalType": "contract IERC20",
+                    "name": "token",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "RestakedBeaconChainETHWithdrawn",
-            "type": "event"
+            "name": "deposit",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "newShares",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
-        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
+        "contract_address": "SELECT DISTINCT strategy FROM ref('StrategyManager_event_StrategyAddedToDepositWhitelist')",
         "field_mapping": {},
-        "type": "log"
+        "type": "trace"
     },
     "table": {
         "dataset_name": "eigenlayer",
         "schema": [
             {
                 "description": "",
-                "name": "recipient",
+                "name": "token",
                 "type": "STRING"
             },
             {
@@ -38,6 +43,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "EigenPod_event_RestakedBeaconChainETHWithdrawn"
+        "table_name": "StrategyBaseTVLLimits_call_deposit"
     }
 }

@@ -13,7 +13,7 @@
             "name": "ValidatorRestaked",
             "type": "event"
         },
-        "contract_address": "0x5a2a4f2f3c18f09179b6703e63d9edd165909073",
+        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
         "field_mapping": {},
         "type": "log"
     },

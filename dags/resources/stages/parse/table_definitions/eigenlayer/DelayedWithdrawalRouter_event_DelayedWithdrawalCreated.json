@@ -4,7 +4,13 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "podOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
                     "internalType": "address",
                     "name": "recipient",
                     "type": "address"
@@ -14,18 +20,29 @@
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
                 }
             ],
-            "name": "RestakedBeaconChainETHWithdrawn",
+            "name": "DelayedWithdrawalCreated",
             "type": "event"
         },
-        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
+        "contract_address": "0x7fe7e9cc0f274d2435ad5d56d5fa73e47f6a23d8",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
         "dataset_name": "eigenlayer",
         "schema": [
+            {
+                "description": "",
+                "name": "podOwner",
+                "type": "STRING"
+            },
             {
                 "description": "",
                 "name": "recipient",
@@ -35,9 +52,14 @@
                 "description": "",
                 "name": "amount",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "EigenPod_event_RestakedBeaconChainETHWithdrawn"
+        "table_name": "DelayedWithdrawalRouter_event_DelayedWithdrawalCreated"
     }
 }
