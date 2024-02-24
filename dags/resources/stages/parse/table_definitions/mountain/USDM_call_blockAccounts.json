@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "addresses",
+                    "type": "address[]"
+                }
+            ],
+            "name": "blockAccounts",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "mountain",
+        "schema": [
+            {
+                "description": "",
+                "name": "addresses",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "USDM_call_blockAccounts"
+    }
+}
