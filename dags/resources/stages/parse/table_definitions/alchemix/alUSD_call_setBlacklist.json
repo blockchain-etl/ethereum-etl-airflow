@@ -4,19 +4,13 @@
             "inputs": [
                 {
                     "internalType": "address",
-                    "name": "",
+                    "name": "_toBlacklist",
                     "type": "address"
                 }
             ],
-            "name": "blacklist",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "stateMutability": "view",
+            "name": "setBlacklist",
+            "outputs": [],
+            "stateMutability": "nonpayable",
             "type": "function"
         },
         "contract_address": "0xbc6da0fe9ad5f3b0d58160288917aa56653660e9",
@@ -28,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "_toBlacklist",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "alUSD_call_blacklist"
+        "table_name": "alUSD_call_setBlacklist"
     }
 }
