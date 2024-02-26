@@ -1,0 +1,36 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "calculateTVLs",
+            "outputs": [
+                {
+                    "internalType": "uint256[][]",
+                    "name": "",
+                    "type": "uint256[][]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x74a09653a083691711cf8215a6ab074bb4e99ef5",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "<INSERT_DATASET_NAME>",
+        "schema": [],
+        "table_description": "",
+        "table_name": "<TABLE_PREFIX>_event_calculateTVLs"
+    }
+}
