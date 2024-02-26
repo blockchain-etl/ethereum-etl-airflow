@@ -31,6 +31,6 @@
         "dataset_name": "renzo",
         "schema": [],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_calculateTVLs"
+        "table_name": "RestakeManager_call_calculateTVLs"
     }
 }
