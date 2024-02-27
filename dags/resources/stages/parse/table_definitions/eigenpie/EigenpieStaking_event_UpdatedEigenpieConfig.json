@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "eigenpieConfig",
+                    "type": "address"
+                }
+            ],
+            "name": "UpdatedEigenpieConfig",
+            "type": "event"
+        },
+        "contract_address": "0x24db6717db1c75b9db6ea47164d8730b63875db7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenpie",
+        "schema": [
+            {
+                "description": "",
+                "name": "eigenpieConfig",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenpieStaking_event_UpdatedEigenpieConfig"
+    }
+}
