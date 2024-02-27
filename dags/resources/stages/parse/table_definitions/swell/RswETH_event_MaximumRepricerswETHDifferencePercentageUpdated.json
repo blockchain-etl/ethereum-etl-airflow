@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_oldMaximumRepricerswETHDifferencePercentage",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_newMaximumRepricerswETHDifferencePercentage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MaximumRepricerswETHDifferencePercentageUpdated",
+            "type": "event"
+        },
+        "contract_address": "0xfae103dc9cf190ed75350761e95403b7b8afa6c0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "_oldMaximumRepricerswETHDifferencePercentage",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_newMaximumRepricerswETHDifferencePercentage",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RswETH_event_MaximumRepricerswETHDifferencePercentageUpdated"
+    }
+}
