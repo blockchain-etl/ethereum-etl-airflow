@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "depositor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "depositAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rsethMintAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "referralId",
+                    "type": "string"
+                }
+            ],
+            "name": "ETHDeposit",
+            "type": "event"
+        },
+        "contract_address": "0x036676389e48133b63a802f8635ad39e752d375d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kelpdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "depositor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "depositAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rsethMintAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referralId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LRTDepositPool_event_ETHDeposit"
+    }
+}
