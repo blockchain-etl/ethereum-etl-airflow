@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lltv",
+                    "type": "uint256"
+                }
+            ],
+            "name": "EnableLltv",
+            "type": "event"
+        },
+        "contract_address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "lltv",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Morpho_event_EnableLltv"
+    }
+}

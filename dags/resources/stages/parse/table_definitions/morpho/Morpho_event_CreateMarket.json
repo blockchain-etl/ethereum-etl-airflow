@@ -1,0 +1,97 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "Id",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "loanToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateralToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "oracle",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "irm",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "lltv",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct MarketParams",
+                    "name": "marketParams",
+                    "type": "tuple"
+                }
+            ],
+            "name": "CreateMarket",
+            "type": "event"
+        },
+        "contract_address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "loanToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "collateralToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "oracle",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "irm",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "lltv",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "marketParams",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Morpho_event_CreateMarket"
+    }
+}
