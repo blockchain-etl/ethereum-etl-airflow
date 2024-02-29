@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "Id",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "avgBorrowRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rateAtTarget",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BorrowRateUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x870ac11d48b15db9a138cf899d20f13f79ba00bc",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "avgBorrowRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rateAtTarget",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AdaptiveCurveIrm_event_BorrowRateUpdate"
+    }
+}
