@@ -19,7 +19,7 @@
             "name": "RewardsTransferred",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST([STRUCT('0x8f88eae3e1c01d60bccdc3db3cbd5362dd55d707', '0x676e1b7d5856f4f69e10399685e17c2299370e95', '0xaa768b85ec827ccc36d882c1814bcd27ec4a8593', '0x496da625c736a2ff122638dc26dcf1bfdef1778c', '0xba9e3b3b684719f80657af1a19debc3c772494a0', '0xc2a4fba93d4120d304c94e4fd986e0f9d213ed8a', '0xf31ac95fe692190b9c67112d8c912ba9973944f2')])",
+        "contract_address": "SELECT * FROM UNNEST(['0x8f88eae3e1c01d60bccdc3db3cbd5362dd55d707', '0x676e1b7d5856f4f69e10399685e17c2299370e95', '0xaa768b85ec827ccc36d882c1814bcd27ec4a8593', '0x496da625c736a2ff122638dc26dcf1bfdef1778c', '0xba9e3b3b684719f80657af1a19debc3c772494a0', '0xc2a4fba93d4120d304c94e4fd986e0f9d213ed8a', '0xf31ac95fe692190b9c67112d8c912ba9973944f2'])",
         "field_mapping": {},
         "type": "log"
     },

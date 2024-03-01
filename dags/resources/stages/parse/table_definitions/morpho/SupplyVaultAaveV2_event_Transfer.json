@@ -25,7 +25,7 @@
             "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST([STRUCT('0xd508f85f1511aaec63434e26aeb6d10be0188dc7', '0x490bbbc2485e99989ba39b34802fafa58e26aba4', '0x36f8d0d0573ae92326827c4a82fe4ce4c244cab6', '0xa5269a8e31b93ff27b887b56720a25f844db0529', '0xafe7131a57e44f832cb2de78ade38cad644aac2f', '0x9dc7094530cb1bcf5442c3b9389ee386738a190c')])",
+        "contract_address": "SELECT * FROM UNNEST(['0xd508f85f1511aaec63434e26aeb6d10be0188dc7', '0x490bbbc2485e99989ba39b34802fafa58e26aba4', '0x36f8d0d0573ae92326827c4a82fe4ce4c244cab6', '0xa5269a8e31b93ff27b887b56720a25f844db0529', '0xafe7131a57e44f832cb2de78ade38cad644aac2f', '0x9dc7094530cb1bcf5442c3b9389ee386738a190c'])",
         "field_mapping": {},
         "type": "log"
     },
