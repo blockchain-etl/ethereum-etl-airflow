@@ -19,12 +19,12 @@
             "stateMutability": "nonpayable",
             "type": "function"
         },
-        "contract_address": "0xc21db71648b18c5b9e038d88393c9b254cf8eac8",
+        "contract_address": "SELECT DISTINCT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho')",
         "field_mapping": {},
         "type": "trace"
     },
     "table": {
-        "dataset_name": "<INSERT_DATASET_NAME>",
+        "dataset_name": "morpho",
         "schema": [
             {
                 "description": "",
@@ -33,6 +33,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "<TABLE_PREFIX>_event_multicall"
+        "table_name": "MetaMorpho_call_multicall"
     }
 }

@@ -37,7 +37,7 @@
             "name": "Withdraw",
             "type": "event"
         },
-        "contract_address": "0xc21db71648b18c5b9e038d88393c9b254cf8eac8",
+        "contract_address": "SELECT DISTINCT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho')",
         "field_mapping": {},
         "type": "log"
     },
