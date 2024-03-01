@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "updatedTotalAssets",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateLastTotalAssets",
+            "type": "event"
+        },
+        "contract_address": "SELECT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho') group by metaMorpho",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "updatedTotalAssets",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MetaMorpho_event_UpdateLastTotalAssets"
+    }
+}
