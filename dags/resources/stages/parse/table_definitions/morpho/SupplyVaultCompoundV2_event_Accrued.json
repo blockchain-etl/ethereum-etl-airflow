@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "unclaimed",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Accrued",
+            "type": "event"
+        },
+        "contract_address": "0x07b7319aaf04f8a28c74fd5ca3ec01aa4af66069",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "unclaimed",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SupplyVaultCompoundV2_event_Accrued"
+    }
+}
