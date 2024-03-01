@@ -13,7 +13,7 @@
             "name": "RecipientSet",
             "type": "event"
         },
-        "contract_address": "0x39Dd7790e75C6F663731f7E1FdC0f35007D3879b",
+        "contract_address": "0x39dd7790e75c6f663731f7e1fdc0f35007d3879b",
         "field_mapping": {},
         "type": "log"
     },
