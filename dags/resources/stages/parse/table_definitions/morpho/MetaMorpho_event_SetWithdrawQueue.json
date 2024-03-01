@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "Id[]",
+                    "name": "newWithdrawQueue",
+                    "type": "bytes32[]"
+                }
+            ],
+            "name": "SetWithdrawQueue",
+            "type": "event"
+        },
+        "contract_address": "0xc21db71648b18c5b9e038d88393c9b254cf8eac8",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newWithdrawQueue",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MetaMorpho_event_SetWithdrawQueue"
+    }
+}
