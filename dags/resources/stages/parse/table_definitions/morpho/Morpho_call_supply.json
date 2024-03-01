@@ -1,0 +1,110 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "loanToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateralToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "oracle",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "irm",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "lltv",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct MarketParams",
+                    "name": "marketParams",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "onBehalf",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "supply",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "marketParams",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assets",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "shares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "onBehalf",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Morpho_call_supply"
+    }
+}
