@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_positionsManager",
+                    "type": "address"
+                }
+            ],
+            "name": "PositionsManagerSet",
+            "type": "event"
+        },
+        "contract_address": "0x8888882f8f843896699869179fb6e4f7e3b58888",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_positionsManager",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoCompoundV2Optimizer_event_PositionsManagerSet"
+    }
+}
