@@ -132,7 +132,7 @@
                         }
                     ],
                     "internalType": "struct Order[]",
-                    "name": "",
+                    "name": "orders",
                     "type": "tuple[]"
                 },
                 {
@@ -149,7 +149,7 @@
                         }
                     ],
                     "internalType": "struct FulfillmentComponent[][]",
-                    "name": "",
+                    "name": "offerFulfillments",
                     "type": "tuple[][]"
                 },
                 {
@@ -166,7 +166,7 @@
                         }
                     ],
                     "internalType": "struct FulfillmentComponent[][]",
-                    "name": "",
+                    "name": "considerationFulfillments",
                     "type": "tuple[][]"
                 },
                 {
@@ -184,7 +184,7 @@
             "outputs": [
                 {
                     "internalType": "bool[]",
-                    "name": "",
+                    "name": "availableOrders",
                     "type": "bool[]"
                 },
                 {
@@ -233,7 +233,7 @@
                         }
                     ],
                     "internalType": "struct Execution[]",
-                    "name": "",
+                    "name": "executions",
                     "type": "tuple[]"
                 }
             ],
@@ -249,17 +249,17 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "orders",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "offerFulfillments",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "considerationFulfillments",
                 "type": "STRING"
             },
             {

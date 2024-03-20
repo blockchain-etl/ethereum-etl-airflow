@@ -108,7 +108,7 @@
                         }
                     ],
                     "internalType": "struct BasicOrderParameters",
-                    "name": "",
+                    "name": "parameters",
                     "type": "tuple"
                 }
             ],
@@ -132,8 +132,100 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
-                "type": "STRING"
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "considerationToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "considerationIdentifier",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "considerationAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "offerer",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "zone",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "offerToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "offerIdentifier",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "offerAmount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "basicOrderType",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "endTime",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "zoneHash",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "salt",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "offererConduitKey",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "fulfillerConduitKey",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "totalOriginalAdditionalRecipients",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "additionalRecipients",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "signature",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "parameters",
+                "type": "RECORD"
             }
         ],
         "table_description": "",

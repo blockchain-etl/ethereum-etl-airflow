@@ -147,7 +147,7 @@
                         }
                     ],
                     "internalType": "struct AdvancedOrder[]",
-                    "name": "",
+                    "name": "advancedOrder",
                     "type": "tuple[]"
                 },
                 {
@@ -179,7 +179,7 @@
                         }
                     ],
                     "internalType": "struct CriteriaResolver[]",
-                    "name": "",
+                    "name": "criteriaResolvers",
                     "type": "tuple[]"
                 },
                 {
@@ -196,7 +196,7 @@
                         }
                     ],
                     "internalType": "struct FulfillmentComponent[][]",
-                    "name": "",
+                    "name": "offerFulfillments",
                     "type": "tuple[][]"
                 },
                 {
@@ -213,7 +213,7 @@
                         }
                     ],
                     "internalType": "struct FulfillmentComponent[][]",
-                    "name": "",
+                    "name": "considerationFulfillments",
                     "type": "tuple[][]"
                 },
                 {
@@ -236,7 +236,7 @@
             "outputs": [
                 {
                     "internalType": "bool[]",
-                    "name": "",
+                    "name": "availableOrders",
                     "type": "bool[]"
                 },
                 {
@@ -285,7 +285,7 @@
                         }
                     ],
                     "internalType": "struct Execution[]",
-                    "name": "",
+                    "name": "executions",
                     "type": "tuple[]"
                 }
             ],
@@ -301,22 +301,22 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "advancedOrders",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "criteriaResolvers",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "offerFulfillments",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "",
+                "name": "considerationFulfillments",
                 "type": "STRING"
             },
             {
