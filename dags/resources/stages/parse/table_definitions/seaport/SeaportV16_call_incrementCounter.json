@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "incrementCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "newCounter",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x0000000000000068f116a894984e2db1123eb395",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "schema": [],
+        "table_description": "",
+        "table_name": "SeaportV16_call_incrementCounter"
+    }
+}

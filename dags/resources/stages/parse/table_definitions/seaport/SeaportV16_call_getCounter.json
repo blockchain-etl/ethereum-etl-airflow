@@ -1,0 +1,38 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "offerer",
+                    "type": "address"
+                }
+            ],
+            "name": "getCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "counter",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x0000000000000068f116a894984e2db1123eb395",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "seaport",
+        "schema": [
+            {
+                "description": "",
+                "name": "offerer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "SeaportV16_call_getCounter"
+    }
+}
