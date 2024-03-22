@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountMinted",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MintedToTreasury",
+            "type": "event"
+        },
+        "contract_address": "0xb40f6d584081ac2b0fd84c846dba3c1417889304",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "spark",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountMinted",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_event_MintedToTreasury"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalDebt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "IsolationModeTotalDebtUpdated",
+            "type": "event"
+        },
+        "contract_address": "0xb40f6d584081ac2b0fd84c846dba3c1417889304",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "spark",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalDebt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_event_IsolationModeTotalDebtUpdated"
+    }
+}
