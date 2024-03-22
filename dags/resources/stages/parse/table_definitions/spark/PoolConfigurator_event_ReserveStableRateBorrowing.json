@@ -19,7 +19,7 @@
             "name": "ReserveStableRateBorrowing",
             "type": "event"
         },
-        "contract_address": "0xf7b656c95420194b79687fc86d965fb51da4799f",
+        "contract_address": "0x542dba469bde58faee189ffb60c6b49ce60e0738",
         "field_mapping": {},
         "type": "log"
     },
