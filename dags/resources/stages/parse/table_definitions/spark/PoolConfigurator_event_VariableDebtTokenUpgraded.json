@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "proxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "VariableDebtTokenUpgraded",
+            "type": "event"
+        },
+        "contract_address": "0x542dba469bde58faee189ffb60c6b49ce60e0738",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "spark",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "proxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "implementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolConfigurator_event_VariableDebtTokenUpgraded"
+    }
+}
