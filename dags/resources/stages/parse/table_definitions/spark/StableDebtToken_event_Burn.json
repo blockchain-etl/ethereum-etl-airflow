@@ -43,7 +43,7 @@
             "name": "Burn",
             "type": "event"
         },
-        "contract_address": "0x026a5b6114431d8f3ef2fa0e1b2edddcca9c540e",
+        "contract_address": "SELECT stableDebtToken FROM ref('PoolConfigurator_event_ReserveInitialized')",
         "field_mapping": {},
         "type": "log"
     },
