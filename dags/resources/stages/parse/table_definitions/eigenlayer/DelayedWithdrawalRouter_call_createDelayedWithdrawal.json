@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "podOwner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                }
+            ],
+            "name": "createDelayedWithdrawal",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0x7fe7e9cc0f274d2435ad5d56d5fa73e47f6a23d8",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "podOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DelayedWithdrawalRouter_call_createDelayedWithdrawal"
+    }
+}

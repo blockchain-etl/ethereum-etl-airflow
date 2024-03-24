@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newCurator",
+                    "type": "address"
+                }
+            ],
+            "name": "SetCurator",
+            "type": "event"
+        },
+        "contract_address": "SELECT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho') group by metaMorpho",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "newCurator",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MetaMorpho_event_SetCurator"
+    }
+}

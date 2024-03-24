@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "lrtConfig",
+                    "type": "address"
+                }
+            ],
+            "name": "UpdatedLRTConfig",
+            "type": "event"
+        },
+        "contract_address": "0x036676389e48133b63a802f8635ad39e752d375d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "kelpdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "lrtConfig",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LRTDepositPool_event_UpdatedLRTConfig"
+    }
+}

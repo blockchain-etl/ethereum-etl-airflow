@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tvl",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CollateralTokenTvlUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x74a09653a083691711cf8215a6ab074bb4e99ef5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tvl",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RestakeManager_event_CollateralTokenTvlUpdated"
+    }
+}

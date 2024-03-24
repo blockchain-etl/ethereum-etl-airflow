@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                }
+            ],
+            "name": "RemovedSupportedAsset",
+            "type": "event"
+        },
+        "contract_address": "0x20b70e4a1883b81429533fed944d7957121c7cab",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenpie",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenpieConfig_event_RemovedSupportedAsset"
+    }
+}

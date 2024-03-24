@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "allocator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isAllocator",
+                    "type": "bool"
+                }
+            ],
+            "name": "SetIsAllocator",
+            "type": "event"
+        },
+        "contract_address": "SELECT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho') group by metaMorpho",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "allocator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isAllocator",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MetaMorpho_event_SetIsAllocator"
+    }
+}

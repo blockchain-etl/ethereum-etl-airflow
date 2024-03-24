@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "EIP712DomainChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho') group by metaMorpho",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [],
+        "table_description": "",
+        "table_name": "MetaMorpho_event_EIP712DomainChanged"
+    }
+}

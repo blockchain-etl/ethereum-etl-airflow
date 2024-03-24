@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "Id",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "onBehalf",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Repay",
+            "type": "event"
+        },
+        "contract_address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "onBehalf",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assets",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "shares",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Morpho_event_Repay"
+    }
+}

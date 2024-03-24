@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_underlyingToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "_reserveFactor",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "_p2pIndexCursor",
+                    "type": "uint16"
+                }
+            ],
+            "name": "createMarket",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x777777c9898d384f785ee44acfe945efdff5f3e0",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_underlyingToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_reserveFactor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_p2pIndexCursor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoOptimizerAAVEv2_call_createMarket"
+    }
+}
