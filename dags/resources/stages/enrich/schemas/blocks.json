@@ -130,5 +130,15 @@
         ],
         "mode": "REPEATED",
         "description": "Validator withdrawals"
+    },
+    {
+        "name": "blob_gas_used",
+        "type": "INT64",
+        "description": "The total amount of blob gas consumed by transactions in the block"
+    },
+    {
+        "name": "excess_blob_gas",
+        "type": "INT64",
+        "description": "A running total of blob gas consumed in excess of the target, prior to the block. This is used to set blob gas pricing"
     }
 ]
