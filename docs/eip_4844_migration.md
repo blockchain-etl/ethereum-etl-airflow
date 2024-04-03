@@ -8,7 +8,7 @@ ALTER TABLE `your-project.your-dataset.blocks` ADD COLUMN IF NOT EXISTS excess_b
 
 ALTER TABLE `your-project.your-dataset.transactions` ADD COLUMN IF NOT EXISTS max_fee_per_blob_gas INT64 
     OPTIONS(description="The maximum fee a user is willing to pay per blob gas");
-ALTER TABLE `your-project.your-dataset.transactions` ADD COLUMN IF NOT EXISTS blob_versioned_hashes STRING REPEATED
+ALTER TABLE `your-project.your-dataset.transactions` ADD COLUMN IF NOT EXISTS blob_versioned_hashes ARRAY<STRING>
     OPTIONS(description="A list of hashed outputs from kzg_to_versioned_hash");
 ALTER TABLE `your-project.your-dataset.transactions` ADD COLUMN IF NOT EXISTS receipt_blob_gas_price INT64 
     OPTIONS(description="Blob gas price");
