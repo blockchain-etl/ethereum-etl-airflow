@@ -1,5 +1,5 @@
 eth-hash<0.4                                # Fixes install conflicts issue in Composer
-ethereum-etl==2.2.1                         # Requires web3>=5.29,<6
+ethereum-etl==2.4.1                         # Requires web3>=5.29,<6
 google-api-core==2.8.1                      # matches `composer-2.1.14-airflow-2.5.1`
 google-cloud-bigquery==2.34.4               # matches `composer-2.1.14-airflow-2.5.1`
 google-cloud-storage==2.7.0                 # matches `composer-2.1.14-airflow-2.5.1`
