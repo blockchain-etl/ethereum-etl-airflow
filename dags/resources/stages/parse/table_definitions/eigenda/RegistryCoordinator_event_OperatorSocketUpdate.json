@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "operatorId",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "socket",
+                    "type": "string"
+                }
+            ],
+            "name": "OperatorSocketUpdate",
+            "type": "event"
+        },
+        "contract_address": "0x0baac79acd45a023e19345c352d8a7a83c4e5656",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenda",
+        "schema": [
+            {
+                "description": "",
+                "name": "operatorId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "socket",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RegistryCoordinator_event_OperatorSocketUpdate"
+    }
+}
