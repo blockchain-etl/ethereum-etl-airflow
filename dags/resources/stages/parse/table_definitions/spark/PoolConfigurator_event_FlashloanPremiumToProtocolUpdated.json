@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "oldFlashloanPremiumToProtocol",
+                    "type": "uint128"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint128",
+                    "name": "newFlashloanPremiumToProtocol",
+                    "type": "uint128"
+                }
+            ],
+            "name": "FlashloanPremiumToProtocolUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x542dba469bde58faee189ffb60c6b49ce60e0738",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "spark",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldFlashloanPremiumToProtocol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFlashloanPremiumToProtocol",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolConfigurator_event_FlashloanPremiumToProtocolUpdated"
+    }
+}

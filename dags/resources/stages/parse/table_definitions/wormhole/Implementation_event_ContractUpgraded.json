@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newContract",
+                    "type": "address"
+                }
+            ],
+            "name": "ContractUpgraded",
+            "type": "event"
+        },
+        "contract_address": "0x98f3c9e6e3face36baad05fe09d375ef1464288b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newContract",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Implementation_event_ContractUpgraded"
+    }
+}

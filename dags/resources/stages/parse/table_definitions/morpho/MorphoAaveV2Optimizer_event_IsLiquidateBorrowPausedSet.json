@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_poolToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "_isPaused",
+                    "type": "bool"
+                }
+            ],
+            "name": "IsLiquidateBorrowPausedSet",
+            "type": "event"
+        },
+        "contract_address": "0x777777c9898d384f785ee44acfe945efdff5f3e0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_poolToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_isPaused",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoAaveV2Optimizer_event_IsLiquidateBorrowPausedSet"
+    }
+}

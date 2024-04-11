@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "beacon",
+                    "type": "address"
+                }
+            ],
+            "name": "BeaconUpgraded",
+            "type": "event"
+        },
+        "contract_address": "0x3ee18b2214aff97000d974cf647e7c347e8fa585",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "wormhole",
+        "schema": [
+            {
+                "description": "",
+                "name": "beacon",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BridgeImplementation_event_BeaconUpgraded"
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_poolTokenBorrowed",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_poolTokenCollateral",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_borrower",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "liquidate",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x8888882f8f843896699869179fb6e4f7e3b58888",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_poolTokenBorrowed",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_poolTokenCollateral",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoOptimizerCompoundv2_call_liquidate"
+    }
+}

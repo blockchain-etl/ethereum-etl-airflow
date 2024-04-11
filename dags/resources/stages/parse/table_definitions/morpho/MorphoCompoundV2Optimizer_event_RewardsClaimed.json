@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amountClaimed",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bool",
+                    "name": "_traded",
+                    "type": "bool"
+                }
+            ],
+            "name": "RewardsClaimed",
+            "type": "event"
+        },
+        "contract_address": "0x8888882f8f843896699869179fb6e4f7e3b58888",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amountClaimed",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_traded",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoCompoundV2Optimizer_event_RewardsClaimed"
+    }
+}

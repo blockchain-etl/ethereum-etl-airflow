@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_poolToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "_isDeprecated",
+                    "type": "bool"
+                }
+            ],
+            "name": "IsDeprecatedSet",
+            "type": "event"
+        },
+        "contract_address": "0x8888882f8f843896699869179fb6e4f7e3b58888",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_poolToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_isDeprecated",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoCompoundV2Optimizer_event_IsDeprecatedSet"
+    }
+}

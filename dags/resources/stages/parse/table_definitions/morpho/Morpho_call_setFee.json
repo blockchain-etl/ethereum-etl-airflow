@@ -1,0 +1,69 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "loanToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateralToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "oracle",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "irm",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "lltv",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct MarketParams",
+                    "name": "marketParams",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "newFee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setFee",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "marketParams",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Morpho_call_setFee"
+    }
+}

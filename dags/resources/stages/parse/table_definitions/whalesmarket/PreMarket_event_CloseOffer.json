@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "offerId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "refundAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CloseOffer",
+            "type": "event"
+        },
+        "contract_address": "0x1ecdb32e59e948c010a189a0798c674a2d0c6603",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "whalesmarket",
+        "schema": [
+            {
+                "description": "",
+                "name": "offerId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "refundAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PreMarket_event_CloseOffer"
+    }
+}

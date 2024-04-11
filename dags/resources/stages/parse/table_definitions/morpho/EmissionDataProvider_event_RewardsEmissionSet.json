@@ -1,0 +1,110 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "rewardToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "Id",
+                    "name": "market",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "urd",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "supplyRewardTokensPerYear",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "borrowRewardTokensPerYear",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "collateralRewardTokensPerYear",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct RewardsEmission",
+                    "name": "rewardsEmission",
+                    "type": "tuple"
+                }
+            ],
+            "name": "RewardsEmissionSet",
+            "type": "event"
+        },
+        "contract_address": "0xf27fa85b6748c8a64d4b0d3d6083eb26f18bde8e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "rewardToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "urd",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "supplyRewardTokensPerYear",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "borrowRewardTokensPerYear",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "collateralRewardTokensPerYear",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "rewardsEmission",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EmissionDataProvider_event_RewardsEmissionSet"
+    }
+}
