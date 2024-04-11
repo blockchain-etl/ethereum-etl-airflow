@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_old_owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_new_owner",
+                    "type": "address"
+                }
+            ],
+            "name": "TransferOwnership",
+            "type": "event"
+        },
+        "contract_address": "0xf18056bbd320e96a48e3fbf8bc061322531aac99",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_old_owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_new_owner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LegacyCryptoSwapFactory_event_TransferOwnership"
+    }
+}
