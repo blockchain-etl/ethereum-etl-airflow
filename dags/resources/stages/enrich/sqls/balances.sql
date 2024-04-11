@@ -35,6 +35,15 @@ with double_entry_book as (
     where true
     and date(block_timestamp) <= '{{ds}}'
     union all
+    -- blob transaction fees credits
+    select
+        from_address as address,
+        -(cast(receipt_blob_gas_used as numeric) * cast(receipt_blob_gas_price as numeric)) as value
+    from `{{params.destination_dataset_project_id}}.{{params.dataset_name}}.transactions`
+    where true
+    and receipt_blob_gas_used > 0
+    and date(block_timestamp) <= '{{ds}}'
+    union all
     -- withdrawals
     select
         withdrawal.address as address,
