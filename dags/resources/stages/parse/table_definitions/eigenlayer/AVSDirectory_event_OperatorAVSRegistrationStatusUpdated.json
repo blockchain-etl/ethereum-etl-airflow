@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "avs",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum IAVSDirectory.OperatorAVSRegistrationStatus",
+                    "name": "status",
+                    "type": "uint8"
+                }
+            ],
+            "name": "OperatorAVSRegistrationStatusUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x135dda560e946695d6f155dacafc6f1f25c1f5af",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "avs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "status",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AVSDirectory_event_OperatorAVSRegistrationStatusUpdated"
+    }
+}

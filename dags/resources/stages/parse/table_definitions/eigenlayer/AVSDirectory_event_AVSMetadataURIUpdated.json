@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "avs",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "metadataURI",
+                    "type": "string"
+                }
+            ],
+            "name": "AVSMetadataURIUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x135dda560e946695d6f155dacafc6f1f25c1f5af",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "avs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "metadataURI",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AVSDirectory_event_AVSMetadataURIUpdated"
+    }
+}
