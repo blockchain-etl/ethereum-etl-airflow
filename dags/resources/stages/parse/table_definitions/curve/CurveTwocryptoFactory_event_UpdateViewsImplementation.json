@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "_old_views_implementation",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "_new_views_implementation",
+                    "type": "address"
+                }
+            ],
+            "name": "UpdateViewsImplementation",
+            "type": "event"
+        },
+        "contract_address": "0x98ee851a00abee0d95d08cf4ca2bdce32aeaaf7f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_old_views_implementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_new_views_implementation",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTwocryptoFactory_event_UpdateViewsImplementation"
+    }
+}
