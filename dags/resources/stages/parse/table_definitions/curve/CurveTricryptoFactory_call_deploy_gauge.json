@@ -1,0 +1,36 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "_pool",
+                    "type": "address"
+                }
+            ],
+            "name": "deploy_gauge",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x0c0e5f2ff0ff18a3be9b835635039256dc4b4963",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_pool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTricryptoFactory_call_deploy_gauge"
+    }
+}

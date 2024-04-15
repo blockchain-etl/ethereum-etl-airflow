@@ -1,0 +1,126 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "_symbol",
+                    "type": "string"
+                },
+                {
+                    "name": "_coins",
+                    "type": "address[]"
+                },
+                {
+                    "name": "_A",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_fee",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_offpeg_fee_multiplier",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_ma_exp_time",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_implementation_idx",
+                    "type": "uint256"
+                },
+                {
+                    "name": "_asset_types",
+                    "type": "uint8[]"
+                },
+                {
+                    "name": "_method_ids",
+                    "type": "bytes4[]"
+                },
+                {
+                    "name": "_oracles",
+                    "type": "address[]"
+                }
+            ],
+            "name": "deploy_plain_pool",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x6a8cbed756804b16e05e741edabd5cb544ae21bf",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_coins",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_offpeg_fee_multiplier",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_ma_exp_time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_implementation_idx",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_asset_types",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_method_ids",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_oracles",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveStableswapFactoryNG_call_deploy_plain_pool"
+    }
+}
