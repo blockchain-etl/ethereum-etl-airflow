@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "podOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "sharesDelta",
+                    "type": "int256"
+                }
+            ],
+            "name": "PodSharesUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x91e677b07f7af907ec9a428aafa9fc14a0d3a338",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "podOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sharesDelta",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenPodManager_event_PodSharesUpdated"
+    }
+}
