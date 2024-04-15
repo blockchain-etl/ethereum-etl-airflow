@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "offpeg_fee_multiplier",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ApplyNewFee",
+            "type": "event"
+        },
+        "contract_address": "0x91553bad9fbc8bd69ff5d5678cbf7d514d00de0b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "offpeg_fee_multiplier",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveStableSwapMetaNG_event_ApplyNewFee"
+    }
+}
