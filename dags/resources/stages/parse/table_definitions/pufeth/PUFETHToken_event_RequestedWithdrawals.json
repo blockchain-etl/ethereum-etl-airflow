@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "requestIds",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "RequestedWithdrawals",
+            "type": "event"
+        },
+        "contract_address": "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pufeth",
+        "schema": [
+            {
+                "description": "",
+                "name": "requestIds",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PUFETHToken_event_RequestedWithdrawals"
+    }
+}
