@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "mid_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "out_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "allowed_extra_profit",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "adjustment_step",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "ma_time",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewParameters",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('CurveTricryptoFactory_event_TricryptoPoolDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "mid_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "out_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allowed_extra_profit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "adjustment_step",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ma_time",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTricryptoOptimizedWETH_event_NewParameters"
+    }
+}
