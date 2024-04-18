@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "previousAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "AdminChanged",
+            "type": "event"
+        },
+        "contract_address": "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "weeth",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WEETHToken_event_AdminChanged"
+    }
+}
