@@ -30,7 +30,7 @@ STRUCT('0x478238a1c8b862498c74d0647329aef9ea6819ed' as contract_address, 8 as de
 STRUCT('0xdeaa4288c85e7e0be40bce49e76d4e321d20fc36' as contract_address, 18 as decimals, '0xf05d9b6c08757eacb1fbec18e36a1b7566a13deb' as proxy_address, 'Calculated XSUSHI / ETH' as description, 4 as version),
 STRUCT('0x5df960959de45a2ba9dc11e6fd6f77107f43256c' as contract_address, 8 as decimals, '0x4e155ed98afe9034b7a5962f6c84c86d869daa9d' as proxy_address, 'RPL / USD' as description, 4 as version),
 STRUCT('0x3cf055335b521863a62fb4374972560e3e55a193' as contract_address, 8 as decimals, '0xcc70f09a6cc17553b2e31954cd36e4a2d89501f7' as proxy_address, 'SUSHI / USD' as description, 4 as version),
-STRUCT('0x2abfc56aaa39be7a946ec39aac5d452e30614df1' as contract_address, 8 as decimals, '0x483d36f6a1d063d580c7a24f9a42b346f3a69fbb' as proxy_address, 'RAI / USD' as description, 4 as version),
+-- STRUCT('0x2abfc56aaa39be7a946ec39aac5d452e30614df1' as contract_address, 8 as decimals, '0x483d36f6a1d063d580c7a24f9a42b346f3a69fbb' as proxy_address, 'RAI / USD' as description, 4 as version),
 STRUCT('0xd74ff3f1b565597e59d44320f53a5c5c8ba85f7b' as contract_address, 18 as decimals, '0xf017fcb346a1885194689ba23eff2fe6fa5c483b' as proxy_address, 'CBETH / ETH' as description, 4 as version),
 -- STRUCT('0xbbc9ab3f66d0b934089fdcceda3615a6bb879633' as contract_address, 8 as decimals, '0x7eed379bf00005cfed29fed4009669de9bcc21ce' as proxy_address, 'ANKR / USD' as description, 4 as version),
 STRUCT('0x9cb248e68fb81d0cfe7d6b3265fe6bf123a71fe0' as contract_address, 18 as decimals, '0x536218f9e9eb48863970252233c8f271f554c2d0' as proxy_address, 'RETH / ETH' as description, 4 as version),

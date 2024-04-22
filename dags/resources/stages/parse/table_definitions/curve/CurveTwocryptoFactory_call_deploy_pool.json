@@ -1,0 +1,144 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "name": "_name",
+                    "type": "string"
+                },
+                {
+                    "name": "_symbol",
+                    "type": "string"
+                },
+                {
+                    "name": "_coins",
+                    "type": "address[2]"
+                },
+                {
+                    "name": "implementation_id",
+                    "type": "uint256"
+                },
+                {
+                    "name": "A",
+                    "type": "uint256"
+                },
+                {
+                    "name": "gamma",
+                    "type": "uint256"
+                },
+                {
+                    "name": "mid_fee",
+                    "type": "uint256"
+                },
+                {
+                    "name": "out_fee",
+                    "type": "uint256"
+                },
+                {
+                    "name": "fee_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "name": "allowed_extra_profit",
+                    "type": "uint256"
+                },
+                {
+                    "name": "adjustment_step",
+                    "type": "uint256"
+                },
+                {
+                    "name": "ma_exp_time",
+                    "type": "uint256"
+                },
+                {
+                    "name": "initial_price",
+                    "type": "uint256"
+                }
+            ],
+            "name": "deploy_pool",
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x98ee851a00abee0d95d08cf4ca2bdce32aeaaf7f",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "_name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_coins",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "implementation_id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mid_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "out_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allowed_extra_profit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "adjustment_step",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ma_exp_time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initial_price",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTwocryptoFactory_call_deploy_pool"
+    }
+}

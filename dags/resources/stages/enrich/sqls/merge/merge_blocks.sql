@@ -23,7 +23,9 @@ insert (
     transaction_count,
     base_fee_per_gas,
     withdrawals_root,
-    withdrawals
+    withdrawals,
+    blob_gas_used,
+    excess_blob_gas
 ) values (
     timestamp,
     number,
@@ -45,7 +47,9 @@ insert (
     transaction_count,
     base_fee_per_gas,
     withdrawals_root,
-    withdrawals
+    withdrawals,
+    blob_gas_used,
+    excess_blob_gas
 )
 when not matched by source and date(timestamp) = '{{ds}}' then
 delete

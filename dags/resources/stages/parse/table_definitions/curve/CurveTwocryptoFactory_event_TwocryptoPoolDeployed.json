@@ -1,0 +1,141 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "name": "coins",
+                    "type": "address[2]"
+                },
+                {
+                    "indexed": false,
+                    "name": "math",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "salt",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "name": "precisions",
+                    "type": "uint256[2]"
+                },
+                {
+                    "indexed": false,
+                    "name": "packed_A_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "packed_fee_params",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "packed_rebalancing_params",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "packed_prices",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "deployer",
+                    "type": "address"
+                }
+            ],
+            "name": "TwocryptoPoolDeployed",
+            "type": "event"
+        },
+        "contract_address": "0x98ee851a00abee0d95d08cf4ca2bdce32aeaaf7f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coins",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "math",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "salt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "precisions",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "packed_A_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "packed_fee_params",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "packed_rebalancing_params",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "packed_prices",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deployer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTwocryptoFactory_event_TwocryptoPoolDeployed"
+    }
+}
