@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "protocolId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "GearboxLinearPoolCreated",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x39a79eb449fc05c92c39aa6f0e9bfac03be8de5b','0x2ebe41e1aa44d61c206a94474932dadc7d3fd9e3'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocolId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GearboxLinearPoolFactory_event_GearboxLinearPoolCreated"
+    }
+}
