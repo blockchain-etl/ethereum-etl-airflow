@@ -13,7 +13,7 @@
             "name": "PoolCreated",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0xf9ac7b9df2b3454e841110cce5550bd5ac6f875f', '0x85a80afee867adf27b50bdb7b76da70f1e853062', '0xdba127fbc23fb20f5929c546af220a991b5c6e01', '0xfada0f4547ab2de89d1304a668c39b3e09aa7c76', '0xdb8d758bcb971e482b2c45f7f8a7740283a1bd3a', '0x5b42ec6d40f7b7965be5308c70e2603c0281c1e9'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x39a79eb449fc05c92c39aa6f0e9bfac03be8de5b', '0x2ebe41e1aa44d61c206a94474932dadc7d3fd9e3'])",
         "field_mapping": {},
         "type": "log"
     },
@@ -27,6 +27,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "V2_ComposableStablePoolFactory_event_PoolCreated"
+        "table_name": "GearboxLinearPoolFactory_event_PoolCreated"
     }
 }
