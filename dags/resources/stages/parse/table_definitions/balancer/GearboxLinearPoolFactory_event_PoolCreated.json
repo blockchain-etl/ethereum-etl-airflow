@@ -13,7 +13,7 @@
             "name": "PoolCreated",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x39a79eb449fc05c92c39aa6f0e9bfac03be8de5b','0x2ebe41e1aa44d61c206a94474932dadc7d3fd9e3'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x39a79eb449fc05c92c39aa6f0e9bfac03be8de5b', '0x2ebe41e1aa44d61c206a94474932dadc7d3fd9e3'])",
         "field_mapping": {},
         "type": "log"
     },
