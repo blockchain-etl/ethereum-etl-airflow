@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        "contract_address": "0x6b24183313074abb6e3b30ea206f20c12205053a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BotListV3_event_Unpaused"
+    }
+}
