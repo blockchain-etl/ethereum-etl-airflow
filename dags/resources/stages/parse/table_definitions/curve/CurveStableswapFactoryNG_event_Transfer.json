@@ -22,7 +22,7 @@
             "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT token_address FROM 'bigquery-public-data.crypto_ethereum.token_transfers' WHERE from_address = '0x0000000000000000000000000000000000000000' AND to_address = '0x6a8cbed756804b16e05e741edabd5cb544ae21bf'",
+        "contract_address": "SELECT token_address FROM ref('bigquery-public-data.crypto_ethereum.token_transfers') WHERE from_address = '0x0000000000000000000000000000000000000000' AND to_address = '0x6a8cbed756804b16e05e741edabd5cb544ae21bf'",
         "field_mapping": {},
         "type": "log"
     },
