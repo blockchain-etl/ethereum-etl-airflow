@@ -1,5 +1,5 @@
 SELECT
-  token_address
+  token_address as pool_address,
 FROM
   `bigquery-public-data.crypto_ethereum.token_transfers`
 WHERE
