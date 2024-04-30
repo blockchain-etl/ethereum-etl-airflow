@@ -96,7 +96,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "uniswap",
+        "dataset_name": "pancakeswap",
         "schema": [
             {
                 "description": "",
