@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "beacon",
+                    "type": "address"
+                }
+            ],
+            "name": "BeaconUpgraded",
+            "type": "event"
+        },
+        "contract_address": "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eeth",
+        "schema": [
+            {
+                "description": "",
+                "name": "beacon",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EETHToken_event_BeaconUpgraded"
+    }
+}

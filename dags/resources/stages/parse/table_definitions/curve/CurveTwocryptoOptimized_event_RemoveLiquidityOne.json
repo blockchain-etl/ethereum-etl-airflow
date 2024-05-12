@@ -1,0 +1,81 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "coin_amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "approx_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "packed_price_scale",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidityOne",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('CurveTwocryptoFactory_event_TwocryptoPoolDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coin_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "approx_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "packed_price_scale",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTwocryptoOptimized_event_RemoveLiquidityOne"
+    }
+}

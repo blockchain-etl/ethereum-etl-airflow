@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reserve",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                }
+            ],
+            "name": "ReserveUsedAsCollateralDisabled",
+            "type": "event"
+        },
+        "contract_address": "0xc13e21b648a5ee794902342038ff3adab66be987",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "spark",
+        "schema": [
+            {
+                "description": "",
+                "name": "reserve",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Pool_event_ReserveUsedAsCollateralDisabled"
+    }
+}

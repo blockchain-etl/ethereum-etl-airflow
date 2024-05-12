@@ -1,0 +1,151 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "coins",
+                    "type": "address[2]"
+                },
+                {
+                    "indexed": false,
+                    "name": "A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "mid_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "out_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "allowed_extra_profit",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee_gamma",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "adjustment_step",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "admin_fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "ma_half_time",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "initial_price",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "deployer",
+                    "type": "address"
+                }
+            ],
+            "name": "CryptoPoolDeployed",
+            "type": "event"
+        },
+        "contract_address": "0xf18056bbd320e96a48e3fbf8bc061322531aac99",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coins",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mid_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "out_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "allowed_extra_profit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee_gamma",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "adjustment_step",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "admin_fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ma_half_time",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initial_price",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deployer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LegacyCryptoSwapFactory_event_CryptoPoolDeployed"
+    }
+}

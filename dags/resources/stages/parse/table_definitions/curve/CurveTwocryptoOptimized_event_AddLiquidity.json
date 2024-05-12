@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_amounts",
+                    "type": "uint256[2]"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "token_supply",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "packed_price_scale",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddLiquidity",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('CurveTwocryptoFactory_event_TwocryptoPoolDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "provider",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_amounts",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token_supply",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "packed_price_scale",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTwocryptoOptimized_event_AddLiquidity"
+    }
+}

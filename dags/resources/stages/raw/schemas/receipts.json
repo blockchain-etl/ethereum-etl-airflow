@@ -47,9 +47,18 @@
         "description": "Either 1 (success) or 0 (failure) (post Byzantium)"
     },
     {
-
         "name": "effective_gas_price",
         "type": "INT64",
         "description": "The actual value per gas deducted from the senders account. Replacement of gas_price after EIP-1559"
+    },
+    {
+        "name": "blob_gas_price",
+        "type": "INT64",
+        "description": "Blob gas price"
+    },
+    {
+        "name": "blob_gas_used",
+        "type": "INT64",
+        "description": "Blob gas used"
     }
 ]

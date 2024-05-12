@@ -110,5 +110,26 @@
         "name": "receipt_effective_gas_price",
         "type": "INT64",
         "description": "The actual value per gas deducted from the senders account. Replacement of gas_price after EIP-1559"
+    },
+    {
+        "name": "max_fee_per_blob_gas",
+        "type": "INT64",
+        "description": "The maximum fee a user is willing to pay per blob gas"
+    },
+    {
+        "name": "blob_versioned_hashes",
+        "type": "STRING",
+        "mode": "REPEATED",
+        "description": "A list of hashed outputs from kzg_to_versioned_hash"
+    },
+    {
+        "name": "receipt_blob_gas_price",
+        "type": "INT64",
+        "description": "Blob gas price"
+    },
+    {
+        "name": "receipt_blob_gas_used",
+        "type": "INT64",
+        "description": "Blob gas used"
     }
 ]

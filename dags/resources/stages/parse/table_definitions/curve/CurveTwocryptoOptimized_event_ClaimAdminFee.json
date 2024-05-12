@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "tokens",
+                    "type": "uint256[2]"
+                }
+            ],
+            "name": "ClaimAdminFee",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('CurveTwocryptoFactory_event_TwocryptoPoolDeployed')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "admin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokens",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CurveTwocryptoOptimized_event_ClaimAdminFee"
+    }
+}
