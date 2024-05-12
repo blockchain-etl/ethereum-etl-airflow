@@ -6,82 +6,71 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "owner",
+                    "name": "token0",
                     "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token1",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint24",
+                    "name": "fee",
+                    "type": "uint24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "tickSpacing",
+                    "type": "int24"
                 },
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "pool",
                     "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "int24",
-                    "name": "tickLower",
-                    "type": "int24"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "int24",
-                    "name": "tickUpper",
-                    "type": "int24"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint128",
-                    "name": "amount0",
-                    "type": "uint128"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint128",
-                    "name": "amount1",
-                    "type": "uint128"
                 }
             ],
-            "name": "Collect",
+            "name": "PoolCreated",
             "type": "event"
         },
-        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "contract_address": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",
-                "name": "owner",
+                "name": "token0",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "recipient",
+                "name": "token1",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tickLower",
+                "name": "fee",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tickUpper",
+                "name": "tickSpacing",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount0",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "amount1",
+                "name": "pool",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Pool_event_Collect"
+        "table_name": "UniswapV3Factory_event_PoolCreated"
     }
 }

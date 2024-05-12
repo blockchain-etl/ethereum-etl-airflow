@@ -6,71 +6,82 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "token0",
+                    "name": "sender",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "token1",
+                    "name": "recipient",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "uint24",
-                    "name": "fee",
-                    "type": "uint24"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount0",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "int24",
-                    "name": "tickSpacing",
-                    "type": "int24"
+                    "internalType": "uint256",
+                    "name": "amount1",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "pool",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "paid0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "paid1",
+                    "type": "uint256"
                 }
             ],
-            "name": "PoolCreated",
+            "name": "Flash",
             "type": "event"
         },
-        "contract_address": "0x1f98431c8ad98523631ae4a59f267346ea31f984",
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",
-                "name": "token0",
+                "name": "sender",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "token1",
+                "name": "recipient",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "fee",
+                "name": "amount0",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tickSpacing",
+                "name": "amount1",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "pool",
+                "name": "paid0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "paid1",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Factory_event_PoolCreated"
+        "table_name": "UniswapV3Pool_event_Flash"
     }
 }

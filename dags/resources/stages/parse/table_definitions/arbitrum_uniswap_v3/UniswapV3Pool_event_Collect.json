@@ -4,15 +4,15 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "sender",
-                    "type": "address"
-                },
-                {
                     "indexed": true,
                     "internalType": "address",
                     "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "recipient",
                     "type": "address"
                 },
                 {
@@ -30,23 +30,17 @@
                 {
                     "indexed": false,
                     "internalType": "uint128",
-                    "name": "amount",
+                    "name": "amount0",
                     "type": "uint128"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount0",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
+                    "internalType": "uint128",
                     "name": "amount1",
-                    "type": "uint256"
+                    "type": "uint128"
                 }
             ],
-            "name": "Mint",
+            "name": "Collect",
             "type": "event"
         },
         "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
@@ -54,16 +48,16 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",
-                "name": "sender",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "owner",
+                "name": "recipient",
                 "type": "STRING"
             },
             {
@@ -78,11 +72,6 @@
             },
             {
                 "description": "",
-                "name": "amount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
                 "name": "amount0",
                 "type": "STRING"
             },
@@ -93,6 +82,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Pool_event_Mint"
+        "table_name": "UniswapV3Pool_event_Collect"
     }
 }

@@ -4,7 +4,7 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
                     "name": "sender",
                     "type": "address"
@@ -12,41 +12,41 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "owner",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "int256",
-                    "name": "amount0",
-                    "type": "int256"
+                    "indexed": true,
+                    "internalType": "int24",
+                    "name": "tickLower",
+                    "type": "int24"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "int256",
-                    "name": "amount1",
-                    "type": "int256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint160",
-                    "name": "sqrtPriceX96",
-                    "type": "uint160"
+                    "indexed": true,
+                    "internalType": "int24",
+                    "name": "tickUpper",
+                    "type": "int24"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint128",
-                    "name": "liquidity",
+                    "name": "amount",
                     "type": "uint128"
                 },
                 {
                     "indexed": false,
-                    "internalType": "int24",
-                    "name": "tick",
-                    "type": "int24"
+                    "internalType": "uint256",
+                    "name": "amount0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount1",
+                    "type": "uint256"
                 }
             ],
-            "name": "Swap",
+            "name": "Mint",
             "type": "event"
         },
         "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
@@ -54,7 +54,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",
@@ -63,7 +63,22 @@
             },
             {
                 "description": "",
-                "name": "recipient",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tickLower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tickUpper",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
                 "type": "STRING"
             },
             {
@@ -75,24 +90,9 @@
                 "description": "",
                 "name": "amount1",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "sqrtPriceX96",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "liquidity",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "tick",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Pool_event_Swap"
+        "table_name": "UniswapV3Pool_event_Mint"
     }
 }
