@@ -1,4 +1,4 @@
-{
+D{
     "parser": {
         "abi": {
             "anonymous": false,
@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",

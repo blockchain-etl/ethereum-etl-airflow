@@ -4,31 +4,31 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "sender",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "recipient",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "feeProtocol0Old",
+                    "type": "uint8"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint128",
-                    "name": "amount0",
-                    "type": "uint128"
+                    "internalType": "uint8",
+                    "name": "feeProtocol1Old",
+                    "type": "uint8"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint128",
-                    "name": "amount1",
-                    "type": "uint128"
+                    "internalType": "uint8",
+                    "name": "feeProtocol0New",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "feeProtocol1New",
+                    "type": "uint8"
                 }
             ],
-            "name": "CollectProtocol",
+            "name": "SetFeeProtocol",
             "type": "event"
         },
         "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
@@ -36,30 +36,30 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",
-                "name": "sender",
+                "name": "feeProtocol0Old",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "recipient",
+                "name": "feeProtocol1Old",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount0",
+                "name": "feeProtocol0New",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount1",
+                "name": "feeProtocol1New",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Pool_event_CollectProtocol"
+        "table_name": "UniswapV3Pool_event_SetFeeProtocol"
     }
 }

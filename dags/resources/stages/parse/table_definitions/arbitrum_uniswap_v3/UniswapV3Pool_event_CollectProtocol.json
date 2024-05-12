@@ -17,30 +17,18 @@
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
+                    "internalType": "uint128",
                     "name": "amount0",
-                    "type": "uint256"
+                    "type": "uint128"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
+                    "internalType": "uint128",
                     "name": "amount1",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "paid0",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "paid1",
-                    "type": "uint256"
+                    "type": "uint128"
                 }
             ],
-            "name": "Flash",
+            "name": "CollectProtocol",
             "type": "event"
         },
         "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
@@ -48,7 +36,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "arbitrum_uniswap_v3_open",
+        "dataset_name": "arbitrum_uniswap_v3",
         "schema": [
             {
                 "description": "",
@@ -69,19 +57,9 @@
                 "description": "",
                 "name": "amount1",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "paid0",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "paid1",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UniswapV3Pool_event_Flash"
+        "table_name": "UniswapV3Pool_event_CollectProtocol"
     }
 }
