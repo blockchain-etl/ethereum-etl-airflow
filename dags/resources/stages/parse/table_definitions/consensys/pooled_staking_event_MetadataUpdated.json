@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "metadataIpfsHash",
+                    "type": "string"
+                }
+            ],
+            "name": "MetadataUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x4FEF9D741011476750A243aC70b9789a63dd47Df",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "consensys",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "metadataIpfsHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "pooled_staking_event_MetadataUpdated"
+    }
+}

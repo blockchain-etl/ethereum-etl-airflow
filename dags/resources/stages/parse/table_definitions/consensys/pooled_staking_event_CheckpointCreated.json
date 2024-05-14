@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CheckpointCreated",
+            "type": "event"
+        },
+        "contract_address": "0x4FEF9D741011476750A243aC70b9789a63dd47Df",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "consensys",
+        "schema": [
+            {
+                "description": "",
+                "name": "shares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assets",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "pooled_staking_event_CheckpointCreated"
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "prevPositionTicket",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newPositionTicket",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "withdrawnAssets",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ExitedAssetsClaimed",
+            "type": "event"
+        },
+        "contract_address": "0x4FEF9D741011476750A243aC70b9789a63dd47Df",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "consensys",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "prevPositionTicket",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPositionTicket",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawnAssets",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "pooled_staking_event_ExitedAssetsClaimed"
+    }
+}
