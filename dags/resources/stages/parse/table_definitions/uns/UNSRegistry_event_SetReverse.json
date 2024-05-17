@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "addr",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetReverse",
+            "type": "event"
+        },
+        "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uns",
+        "schema": [
+            {
+                "description": "",
+                "name": "addr",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UNSRegistry_event_SetReverse"
+    }
+}

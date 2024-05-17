@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                }
+            ],
+            "name": "Resolve",
+            "type": "event"
+        },
+        "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cns",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Registry_event_Resolve"
+    }
+}
