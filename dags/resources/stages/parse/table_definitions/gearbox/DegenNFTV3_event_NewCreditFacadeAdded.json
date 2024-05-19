@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "",
+                    "name": "creditFacade",
                     "type": "address"
                 }
             ],
@@ -21,7 +21,7 @@
         "dataset_name": "gearbox",
         "schema": [
             {
-                "description": "",
+                "description": "creditFacade",
                 "name": "",
                 "type": "STRING"
             }

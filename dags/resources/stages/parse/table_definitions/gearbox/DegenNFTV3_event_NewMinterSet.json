@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "",
+                    "name": "minterSet",
                     "type": "address"
                 }
             ],
@@ -22,7 +22,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "",
+                "name": "minterSet",
                 "type": "STRING"
             }
         ],
