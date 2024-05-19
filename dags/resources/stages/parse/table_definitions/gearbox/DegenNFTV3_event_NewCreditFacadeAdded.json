@@ -21,8 +21,8 @@
         "dataset_name": "gearbox",
         "schema": [
             {
-                "description": "creditFacade",
-                "name": "",
+                "description": "",
+                "name": "creditFacade",
                 "type": "STRING"
             }
         ],
