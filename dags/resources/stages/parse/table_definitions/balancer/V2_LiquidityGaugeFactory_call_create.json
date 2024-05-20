@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "relativeWeightCap",
+                    "type": "uint256"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xf1665e19bc105be4edd3739f88315cc699cc5b65",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "relativeWeightCap",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_LiquidityGaugeFactory_call_create"
+    }
+}
