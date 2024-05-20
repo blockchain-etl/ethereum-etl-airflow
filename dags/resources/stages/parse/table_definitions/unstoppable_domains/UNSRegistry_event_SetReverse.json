@@ -5,39 +5,39 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "addr",
+                    "type": "address"
                 },
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
                 }
             ],
-            "name": "Resolve",
+            "name": "SetReverse",
             "type": "event"
         },
-        "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
+        "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "cns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "tokenId",
+                "name": "addr",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "to",
+                "name": "tokenId",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Registry_event_Resolve"
+        "table_name": "UNSRegistry_event_SetReverse"
     }
 }

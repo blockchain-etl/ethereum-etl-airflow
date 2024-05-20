@@ -6,49 +6,49 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "to",
+                    "name": "operator",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
                 }
             ],
-            "name": "Transfer",
+            "name": "ApprovalForAll",
             "type": "event"
         },
-        "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
+        "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "cns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "to",
+                "name": "operator",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tokenId",
+                "name": "approved",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Registry_event_Transfer"
+        "table_name": "UNSRegistry_event_ApprovalForAll"
     }
 }

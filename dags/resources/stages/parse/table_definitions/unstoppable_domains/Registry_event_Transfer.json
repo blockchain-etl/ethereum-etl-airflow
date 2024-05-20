@@ -6,49 +6,49 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "owner",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "operator",
+                    "name": "to",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
                 }
             ],
-            "name": "ApprovalForAll",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
+        "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
         "field_mapping": {},
         "type": "log"
     },
     "table": {
-        "dataset_name": "uns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "owner",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "approved",
+                "name": "tokenId",
                 "type": "STRING"
             }
         ],
-        "table_description": "",
-        "table_name": "UNSRegistry_event_ApprovalForAll"
+        "table_description": "Event emitted by CNS Registry contract",
+        "table_name": "Registry_event_Transfer"
     }
 }

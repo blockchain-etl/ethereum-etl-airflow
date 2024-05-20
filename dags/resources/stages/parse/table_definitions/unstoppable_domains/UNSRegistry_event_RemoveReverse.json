@@ -4,13 +4,13 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "string",
-                    "name": "prefix",
-                    "type": "string"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "addr",
+                    "type": "address"
                 }
             ],
-            "name": "NewURIPrefix",
+            "name": "RemoveReverse",
             "type": "event"
         },
         "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
@@ -18,15 +18,15 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "uns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "prefix",
+                "name": "addr",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UNSRegistry_event_NewURIPrefix"
+        "table_name": "UNSRegistry_event_RemoveReverse"
     }
 }

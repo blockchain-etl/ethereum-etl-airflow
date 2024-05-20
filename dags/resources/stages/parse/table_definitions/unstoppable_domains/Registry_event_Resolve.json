@@ -5,24 +5,18 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "operator",
+                    "name": "to",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "approved",
-                    "type": "bool"
                 }
             ],
-            "name": "ApprovalForAll",
+            "name": "Resolve",
             "type": "event"
         },
         "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
@@ -30,25 +24,20 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "cns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "owner",
+                "name": "tokenId",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "approved",
+                "name": "to",
                 "type": "STRING"
             }
         ],
-        "table_description": "",
-        "table_name": "Registry_event_ApprovalForAll"
+        "table_description": "Event emitted by CNS Registry contract",
+        "table_name": "Registry_event_Resolve"
     }
 }

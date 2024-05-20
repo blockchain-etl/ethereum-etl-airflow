@@ -4,25 +4,19 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "previousAdmin",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "to",
+                    "name": "newAdmin",
                     "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "uint256",
-                    "name": "tokenId",
-                    "type": "uint256"
                 }
             ],
-            "name": "Transfer",
+            "name": "AdminChanged",
             "type": "event"
         },
         "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
@@ -30,25 +24,20 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "uns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "previousAdmin",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "to",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "tokenId",
+                "name": "newAdmin",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UNSRegistry_event_Transfer"
+        "table_name": "UNSRegistry_event_AdminChanged"
     }
 }

@@ -6,14 +6,14 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "resolver",
+                    "name": "owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
-                    "internalType": "uint256",
-                    "name": "updateId",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "approved",
+                    "type": "address"
                 },
                 {
                     "indexed": true,
@@ -22,7 +22,7 @@
                     "type": "uint256"
                 }
             ],
-            "name": "Sync",
+            "name": "Approval",
             "type": "event"
         },
         "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
@@ -30,16 +30,16 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "cns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "resolver",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "updateId",
+                "name": "approved",
                 "type": "STRING"
             },
             {
@@ -48,7 +48,7 @@
                 "type": "STRING"
             }
         ],
-        "table_description": "",
-        "table_name": "Registry_event_Sync"
+        "table_description": "Event emitted by CNS Registry contract",
+        "table_name": "Registry_event_Approval"
     }
 }

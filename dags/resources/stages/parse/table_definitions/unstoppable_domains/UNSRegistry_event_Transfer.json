@@ -6,7 +6,13 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "addr",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
                     "type": "address"
                 },
                 {
@@ -16,7 +22,7 @@
                     "type": "uint256"
                 }
             ],
-            "name": "SetReverse",
+            "name": "Transfer",
             "type": "event"
         },
         "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
@@ -24,11 +30,16 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "uns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
-                "name": "addr",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
                 "type": "STRING"
             },
             {
@@ -38,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "UNSRegistry_event_SetReverse"
+        "table_name": "UNSRegistry_event_Transfer"
     }
 }

@@ -8,15 +8,9 @@
                     "internalType": "uint256",
                     "name": "tokenId",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "string",
-                    "name": "uri",
-                    "type": "string"
                 }
             ],
-            "name": "NewURI",
+            "name": "ResetRecords",
             "type": "event"
         },
         "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
@@ -24,20 +18,15 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "uns",
+        "dataset_name": "unstoppable_domains",
         "schema": [
             {
                 "description": "",
                 "name": "tokenId",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "uri",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "UNSRegistry_event_NewURI"
+        "table_name": "UNSRegistry_event_ResetRecords"
     }
 }
