@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "txHash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "CancelTransaction",
+            "type": "event"
+        },
+        "contract_address": "0xd8ceb2580f22e13d17031740af2e91e9e7a13347",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "txHash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ControllerTimelockV3_event_CancelTransaction"
+    }
+}
