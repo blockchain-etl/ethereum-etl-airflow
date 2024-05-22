@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditAccount",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "onBehalfOf",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "referralCode",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OpenCreditAccount",
+            "type": "event"
+        },
+        "contract_address": "SELECT creditFacade FROM ref('CreditConfiguratorV3_event_SetCreditFacade')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "onBehalfOf",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referralCode",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditFacadeV3_event_OpenCreditAccount"
+    }
+}
