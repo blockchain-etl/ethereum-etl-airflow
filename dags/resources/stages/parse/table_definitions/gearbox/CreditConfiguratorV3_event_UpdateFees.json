@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "feeInterest",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "feeLiquidation",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "liquidationPremium",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "feeLiquidationExpired",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "liquidationPremiumExpired",
+                    "type": "uint16"
+                }
+            ],
+            "name": "UpdateFees",
+            "type": "event"
+        },
+        "contract_address": "SELECT newConfigurator FROM ref('CreditManagerV3_event_SetCreditConfigurator')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeInterest",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeLiquidation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationPremium",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeLiquidationExpired",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationPremiumExpired",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditConfiguratorV3_event_UpdateFees"
+    }
+}
