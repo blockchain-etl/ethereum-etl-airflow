@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "minDebt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxDebt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetBorrowingLimits",
+            "type": "event"
+        },
+        "contract_address": "SELECT newConfigurator FROM ref('CreditManagerV3_event_SetCreditConfigurator')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "minDebt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxDebt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditConfiguratorV3_event_SetBorrowingLimits"
+    }
+}
