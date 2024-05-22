@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "depositAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MultiAssetDeposit",
+            "type": "event"
+        },
+        "contract_address": "0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lqidethfiv1",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "depositAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assets",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "shares",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LQIDETHFIV1Token_event_MultiAssetDeposit"
+    }
+}

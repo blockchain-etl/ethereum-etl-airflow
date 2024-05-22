@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "minterSet",
+                    "type": "address"
+                }
+            ],
+            "name": "NewMinterSet",
+            "type": "event"
+        },
+        "contract_address": "0xb829a5b349b01fc71afe46e50dd6ec0222a6e599",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "minterSet",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DegenNFTV3_event_NewMinterSet"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "position",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PositionRemoved",
+            "type": "event"
+        },
+        "contract_address": "0xea1a6307d9b18f8d1cbf1c3dd6aad8416c06a221",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "lqidethfiv1",
+        "schema": [
+            {
+                "description": "",
+                "name": "position",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LQIDETHFIV1Token_event_PositionRemoved"
+    }
+}
