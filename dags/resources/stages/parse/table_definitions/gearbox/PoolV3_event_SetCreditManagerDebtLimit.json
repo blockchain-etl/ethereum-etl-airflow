@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newLimit",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetCreditManagerDebtLimit",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('ContractsRegisterV3_event_NewPoolAdded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newLimit",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolV3_event_SetCreditManagerDebtLimit"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "liquidationThreshold",
+                    "type": "uint16"
+                }
+            ],
+            "name": "SetTokenLiquidationThreshold",
+            "type": "event"
+        },
+        "contract_address": "SELECT newConfigurator FROM ref('CreditManagerV3_event_SetCreditConfigurator')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationThreshold",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditConfiguratorV3_event_SetTokenLiquidationThreshold"
+    }
+}
