@@ -4,22 +4,22 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "epochLength",
-                    "type": "uint256"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "timestamp",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "EpochLengthUpdated",
+            "name": "VestStarted",
             "type": "event"
         },
-        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
+        "contract_address": "0xb46b912228f69f9ade95a26cdfd5bad8032044cd",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "epochLength",
+                "name": "user",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "timestamp",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_EpochLengthUpdated"
+        "table_name": "BlueberryStaking_event_VestStarted"
     }
 }

@@ -4,28 +4,34 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "user",
+                    "name": "uniswapPool",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "tokensClaimed",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "stableAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "decimals",
+                    "type": "uint8"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "redistributedBLB",
+                    "name": "observationPeriod",
                     "type": "uint256"
                 }
             ],
-            "name": "Accelerated",
+            "name": "UniswapV3PoolUpdated",
             "type": "event"
         },
-        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
+        "contract_address": "0xb46b912228f69f9ade95a26cdfd5bad8032044cd",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +40,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "user",
+                "name": "uniswapPool",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "tokensClaimed",
+                "name": "stableAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "redistributedBLB",
+                "name": "decimals",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "observationPeriod",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_Accelerated"
+        "table_name": "BlueberryStaking_event_UniswapV3PoolUpdated"
     }
 }

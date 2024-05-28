@@ -5,21 +5,21 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "address[]",
-                    "name": "ibTokens",
-                    "type": "address[]"
+                    "internalType": "address",
+                    "name": "ibToken",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "timestamp",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "IbTokensAdded",
+            "name": "IbTokenAdded",
             "type": "event"
         },
-        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
+        "contract_address": "0xb46b912228f69f9ade95a26cdfd5bad8032044cd",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "ibTokens",
+                "name": "ibToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "timestamp",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_IbTokensAdded"
+        "table_name": "BlueberryStaking_event_IbTokenAdded"
     }
 }

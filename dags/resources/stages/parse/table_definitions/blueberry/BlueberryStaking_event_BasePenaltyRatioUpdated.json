@@ -8,18 +8,12 @@
                     "internalType": "uint256",
                     "name": "basePenaltyRatio",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "timestamp",
-                    "type": "uint256"
                 }
             ],
-            "name": "BasePenaltyRatioChanged",
+            "name": "BasePenaltyRatioUpdated",
             "type": "event"
         },
-        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
+        "contract_address": "0xb46b912228f69f9ade95a26cdfd5bad8032044cd",
         "field_mapping": {},
         "type": "log"
     },
@@ -30,14 +24,9 @@
                 "description": "",
                 "name": "basePenaltyRatio",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "timestamp",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_BasePenaltyRatioChanged"
+        "table_name": "BlueberryStaking_event_BasePenaltyRatioUpdated"
     }
 }
