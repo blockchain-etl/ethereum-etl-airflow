@@ -5,18 +5,18 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "address",
-                    "name": "previousOwner",
-                    "type": "address"
+                    "internalType": "address[]",
+                    "name": "ibTokens",
+                    "type": "address[]"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
                 }
             ],
-            "name": "OwnershipTransferred",
+            "name": "IbTokensRemoved",
             "type": "event"
         },
         "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "previousOwner",
+                "name": "ibTokens",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newOwner",
+                "name": "timestamp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_OwnershipTransferred"
+        "table_name": "BlueberryStaking_event_IbTokensRemoved"
     }
 }

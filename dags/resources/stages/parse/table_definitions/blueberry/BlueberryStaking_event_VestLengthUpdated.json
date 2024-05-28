@@ -4,19 +4,19 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "previousOwner",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vestLength",
+                    "type": "uint256"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
                 }
             ],
-            "name": "OwnershipTransferred",
+            "name": "VestLengthUpdated",
             "type": "event"
         },
         "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "previousOwner",
+                "name": "vestLength",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newOwner",
+                "name": "timestamp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_OwnershipTransferred"
+        "table_name": "BlueberryStaking_event_VestLengthUpdated"
     }
 }

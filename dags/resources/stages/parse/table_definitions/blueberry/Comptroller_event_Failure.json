@@ -25,7 +25,7 @@
             "name": "Failure",
             "type": "event"
         },
-        "contract_address": "0x327e45b3444cca9ce1559780cfd44181a175e83c",
+        "contract_address": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
         "field_mapping": {},
         "type": "log"
     },

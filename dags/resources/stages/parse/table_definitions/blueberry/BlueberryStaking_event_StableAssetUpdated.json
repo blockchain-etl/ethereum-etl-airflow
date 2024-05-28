@@ -4,19 +4,25 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "previousOwner",
+                    "name": "asset",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
                 }
             ],
-            "name": "OwnershipTransferred",
+            "name": "StableAssetUpdated",
             "type": "event"
         },
         "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "previousOwner",
+                "name": "asset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newOwner",
+                "name": "decimals",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_OwnershipTransferred"
+        "table_name": "BlueberryStaking_event_StableAssetUpdated"
     }
 }

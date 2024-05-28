@@ -4,22 +4,22 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "user",
+                    "name": "blb",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "timestamp",
                     "type": "uint256"
                 }
             ],
-            "name": "FeeCollected",
+            "name": "BLBUpdated",
             "type": "event"
         },
-        "contract_address": "0xb46b912228f69f9ade95a26cdfd5bad8032044cd",
+        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "user",
+                "name": "blb",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "timestamp",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_FeeCollected"
+        "table_name": "BlueberryStaking_event_BLBUpdated"
     }
 }
