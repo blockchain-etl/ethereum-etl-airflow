@@ -43,7 +43,7 @@
             "name": "NewInterestParams",
             "type": "event"
         },
-        "contract_address": "0x5caafa7bbc32a3de8ada43178385c156c217667c",
+        "contract_address": "0x04c5e346ee1ed50726b8452362a1c8c003abd26e",
         "field_mapping": {},
         "type": "log"
     },
