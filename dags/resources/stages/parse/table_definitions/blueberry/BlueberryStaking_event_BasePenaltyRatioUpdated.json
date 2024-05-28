@@ -5,21 +5,15 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "address",
-                    "name": "blb",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
                     "internalType": "uint256",
-                    "name": "timestamp",
+                    "name": "basePenaltyRatio",
                     "type": "uint256"
                 }
             ],
-            "name": "BLBUpdated",
+            "name": "BasePenaltyRatioUpdated",
             "type": "event"
         },
-        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
+        "contract_address": "0x10831c146ee2e7214c09809f7e6003fe620522eb",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "blb",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "timestamp",
+                "name": "basePenaltyRatio",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_BLBUpdated"
+        "table_name": "BlueberryStaking_event_BasePenaltyRatioUpdated"
     }
 }
