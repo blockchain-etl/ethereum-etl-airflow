@@ -31,7 +31,7 @@
             "name": "Lend",
             "type": "event"
         },
-        "contract_address": "0x9b06ea9fbc912845df1302fe1641bef9639009f7",
+        "contract_address": "0xb96f3016de8265612809c3d4ff2def5d4397f86d",
         "field_mapping": {},
         "type": "log"
     },
