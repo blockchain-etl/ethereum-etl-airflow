@@ -12,20 +12,20 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "tokensClaimed",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "timestamp",
+                    "name": "redistributedBLB",
                     "type": "uint256"
                 }
             ],
-            "name": "Claimed",
+            "name": "VestingAccelerated",
             "type": "event"
         },
-        "contract_address": "0xd1e8ddecf0b8d478ec6fa2a2747d424218e2ac2b",
+        "contract_address": "0x10831c146ee2e7214c09809f7e6003fe620522eb",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "tokensClaimed",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "timestamp",
+                "name": "redistributedBLB",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "BlueberryStaking_event_Claimed"
+        "table_name": "BlueberryStaking_event_VestingAccelerated"
     }
 }
