@@ -12,7 +12,7 @@
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "",
+                    "name": "address",
                     "type": "address"
                 }
             ],
@@ -33,7 +33,7 @@
             },
             {
                 "description": "",
-                "name": "",
+                "name": "address",
                 "type": "STRING"
             }
         ],
