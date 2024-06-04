@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "pooled_staking_event_CheckpointCreated"
+        "table_name": "Pooled_Staking_event_CheckpointCreated"
     }
 }
