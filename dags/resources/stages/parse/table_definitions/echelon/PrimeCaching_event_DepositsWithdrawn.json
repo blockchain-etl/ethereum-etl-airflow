@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "depositIndexes",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "updatedTimestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DepositsWithdrawn",
+            "type": "event"
+        },
+        "contract_address": "0x4a3826bd2e8a31956ad0397a49efde5e0d825238",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_echelon",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "depositIndexes",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "updatedTimestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PrimeCaching_event_DepositsWithdrawn"
+    }
+}
