@@ -1,0 +1,77 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "earningsReceiver",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "delegationApprover",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "stakerOptOutWindowBlocks",
+                            "type": "uint32"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IDelegationManager.OperatorDetails",
+                    "name": "detail",
+                    "type": "tuple"
+                }
+            ],
+            "name": "RegisteredAsOperator",
+            "type": "event"
+        },
+        "contract_address": "0x2093bbb221f1d8c7c932c32ee28be6dee4a37a6a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "etherfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "earningsReceiver",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "delegationApprover",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "stakerOptOutWindowBlocks",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "detail",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AvsOperatorManager_event_RegisteredAsOperator"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "restakingOperator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "slasher",
+                    "type": "address"
+                }
+            ],
+            "name": "RestakingOperatorOptedInSlasher",
+            "type": "event"
+        },
+        "contract_address": "0x9e1e4fcb49931df5743e659ad910d331735c3860",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "restakingOperator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "slasher",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferModuleManager_event_RestakingOperatorOptedInSlasher"
+    }
+}

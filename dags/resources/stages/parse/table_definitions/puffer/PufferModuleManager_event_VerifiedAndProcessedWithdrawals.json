@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "moduleName",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32[][]",
+                    "name": "validatorFields",
+                    "type": "bytes32[][]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32[][]",
+                    "name": "withdrawalFields",
+                    "type": "bytes32[][]"
+                }
+            ],
+            "name": "VerifiedAndProcessedWithdrawals",
+            "type": "event"
+        },
+        "contract_address": "0x9e1e4fcb49931df5743e659ad910d331735c3860",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "moduleName",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "validatorFields",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawalFields",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferModuleManager_event_VerifiedAndProcessedWithdrawals"
+    }
+}
