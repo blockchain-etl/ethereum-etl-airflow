@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldPenalty",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newPenalty",
+                    "type": "uint256"
+                }
+            ],
+            "name": "VTPenaltyChanged",
+            "type": "event"
+        },
+        "contract_address": "0xf7b6b32492c2e13799d921e84202450131bd238b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldPenalty",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPenalty",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferProtocol_event_VTPenaltyChanged"
+    }
+}

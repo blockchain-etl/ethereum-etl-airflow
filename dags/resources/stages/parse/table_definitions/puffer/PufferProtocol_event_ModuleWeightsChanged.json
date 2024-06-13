@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32[]",
+                    "name": "oldWeights",
+                    "type": "bytes32[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32[]",
+                    "name": "newWeights",
+                    "type": "bytes32[]"
+                }
+            ],
+            "name": "ModuleWeightsChanged",
+            "type": "event"
+        },
+        "contract_address": "0xf7b6b32492c2e13799d921e84202450131bd238b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldWeights",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newWeights",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferProtocol_event_ModuleWeightsChanged"
+    }
+}
