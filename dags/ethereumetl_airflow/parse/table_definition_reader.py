@@ -67,7 +67,7 @@ def extract_table_name(file_path):
     return file_path.split('/')[-1].replace('.json', '').replace('.sql', '')
 
 
-# Extracts dependencies and file type from file path and content
+# Extracts dependencies and file type from the file path and content
 def extract_file_dependencies_and_type(file_path, file_content):
     if '.json' in file_path:
         filetype = TableDefinitionFileType.JSON
