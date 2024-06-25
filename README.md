@@ -66,7 +66,7 @@ Check other variables in `dags/ethereumetl_airflow/variables.py`.
 ### Updating package requirements
 Suggested package requirements for Composer are stored in `requirements_airflow.txt`.
 
-You can update the Composer environment using the follow script:
+You can update the Composer environment using the following script:
 ```bash
 ENVIRONMENT_NAME="ethereum-etl-0"
 LOCAL_REQUIREMENTS_PATH="$(mktemp)"
