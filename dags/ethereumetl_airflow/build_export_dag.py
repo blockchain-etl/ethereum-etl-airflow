@@ -20,7 +20,7 @@ from ethereumetl.cli import (
     extract_field,
 )
 
-# When running on Composer, use suggested Data folder for temp storage
+# When running on Composer, use the suggested Data folder for temp storage
 # This is a folder in the Composer Bucket, mounted locally using gcsfuse
 # Overcomes the 10GB ephemerol storage limit on workers (imposed by GKE Autopilot)
 # https://cloud.google.com/composer/docs/composer-2/cloud-storage
