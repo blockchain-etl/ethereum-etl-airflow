@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IRestakingOperator",
+                    "name": "restakingOperator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "avsRegistryCoordinator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "socket",
+                    "type": "string"
+                }
+            ],
+            "name": "RestakingOperatorAVSSocketUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x9e1e4fcb49931df5743e659ad910d331735c3860",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "restakingOperator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "avsRegistryCoordinator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "socket",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferModuleManager_event_RestakingOperatorAVSSocketUpdated"
+    }
+}

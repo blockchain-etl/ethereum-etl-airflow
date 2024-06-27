@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "pubKey",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "pufferModuleIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "moduleName",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "ValidatorSkipped",
+            "type": "event"
+        },
+        "contract_address": "0xf7b6b32492c2e13799d921e84202450131bd238b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "pubKey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pufferModuleIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "moduleName",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferProtocol_event_ValidatorSkipped"
+    }
+}

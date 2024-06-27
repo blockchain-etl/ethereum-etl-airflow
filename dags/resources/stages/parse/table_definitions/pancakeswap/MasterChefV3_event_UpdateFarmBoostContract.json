@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "farmBoostContract",
+                    "type": "address"
+                }
+            ],
+            "name": "UpdateFarmBoostContract",
+            "type": "event"
+        },
+        "contract_address": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pancakeswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "farmBoostContract",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MasterChefV3_event_UpdateFarmBoostContract"
+    }
+}

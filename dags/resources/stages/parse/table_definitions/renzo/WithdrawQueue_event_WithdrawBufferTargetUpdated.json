@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldBufferTarget",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newBufferTarget",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawBufferTargetUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x5efc9d10e42fb517456f4ac41eb5e2ebe42c8918",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldBufferTarget",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBufferTarget",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WithdrawQueue_event_WithdrawBufferTargetUpdated"
+    }
+}
