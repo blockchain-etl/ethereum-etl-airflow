@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "limitIncreaser",
+                    "type": "address"
+                }
+            ],
+            "name": "SetLimitIncreaser",
+            "type": "event"
+        },
+        "contract_address": "0x422f5accc812c396600010f224b320a743695f85",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "limitIncreaser",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DefaultCollateral_wBETH_event_SetLimitIncreaser"
+    }
+}
