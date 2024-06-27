@@ -6,26 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "issuer",
+                    "name": "owner",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "spender",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "debtRepaid",
+                    "name": "value",
                     "type": "uint256"
                 }
             ],
-            "name": "RepayDebt",
+            "name": "Approval",
             "type": "event"
         },
-        "contract_address": "0x5198cb44d7b2e993ebdda9cad3b9a0eaa32769d2",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "issuer",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "recipient",
+                "name": "spender",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "debtRepaid",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_sfrxETH_event_RepayDebt"
+        "table_name": "DefaultCollateral_event_Approval"
     }
 }

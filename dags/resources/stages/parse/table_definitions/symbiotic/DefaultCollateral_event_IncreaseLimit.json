@@ -5,15 +5,15 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "uint64",
-                    "name": "version",
-                    "type": "uint64"
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "Initialized",
+            "name": "IncreaseLimit",
             "type": "event"
         },
-        "contract_address": "0x422f5accc812c396600010f224b320a743695f85",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "version",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_wBETH_event_Initialized"
+        "table_name": "DefaultCollateral_event_IncreaseLimit"
     }
 }

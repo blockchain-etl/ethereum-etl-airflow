@@ -6,7 +6,7 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "issuer",
+                    "name": "withdrawer",
                     "type": "address"
                 },
                 {
@@ -18,14 +18,14 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "debtRepaid",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "RepayDebt",
+            "name": "Withdraw",
             "type": "event"
         },
-        "contract_address": "0x03bf48b8a1b37fbead1ecabcf15b98b924ffa5ac",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,7 +34,7 @@
         "schema": [
             {
                 "description": "",
-                "name": "issuer",
+                "name": "withdrawer",
                 "type": "STRING"
             },
             {
@@ -44,11 +44,11 @@
             },
             {
                 "description": "",
-                "name": "debtRepaid",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_rETH_event_RepayDebt"
+        "table_name": "DefaultCollateral_event_Withdraw"
     }
 }

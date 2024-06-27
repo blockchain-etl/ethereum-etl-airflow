@@ -4,16 +4,16 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "uint64",
-                    "name": "version",
-                    "type": "uint64"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "limitIncreaser",
+                    "type": "address"
                 }
             ],
-            "name": "Initialized",
+            "name": "SetLimitIncreaser",
             "type": "event"
         },
-        "contract_address": "0xe39b5f5638a209c1a6b6cdffe5d37f7ac99fcc84",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "version",
+                "name": "limitIncreaser",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_ENA_event_Initialized"
+        "table_name": "DefaultCollateral_event_SetLimitIncreaser"
     }
 }

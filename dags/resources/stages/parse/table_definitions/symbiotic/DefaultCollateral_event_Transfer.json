@@ -6,26 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "withdrawer",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "recipient",
+                    "name": "to",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "value",
                     "type": "uint256"
                 }
             ],
-            "name": "Withdraw",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "0xc329400492c6ff2438472d4651ad17389fcb843a",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "withdrawer",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "recipient",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_wstETH_event_Withdraw"
+        "table_name": "DefaultCollateral_event_Transfer"
     }
 }

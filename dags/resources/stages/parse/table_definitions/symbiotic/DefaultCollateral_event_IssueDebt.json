@@ -6,26 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "owner",
+                    "name": "issuer",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "spender",
+                    "name": "recipient",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "debtIssued",
                     "type": "uint256"
                 }
             ],
-            "name": "Approval",
+            "name": "IssueDebt",
             "type": "event"
         },
-        "contract_address": "0xbdea8e677f9f7c294a4556005c640ee505be6925",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "owner",
+                "name": "issuer",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "spender",
+                "name": "recipient",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "debtIssued",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_ETHx_event_Approval"
+        "table_name": "DefaultCollateral_event_IssueDebt"
     }
 }

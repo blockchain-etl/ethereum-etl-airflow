@@ -6,26 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "from",
+                    "name": "depositor",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "to",
+                    "name": "recipient",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "value",
+                    "name": "amount",
                     "type": "uint256"
                 }
             ],
-            "name": "Transfer",
+            "name": "Deposit",
             "type": "event"
         },
-        "contract_address": "0x475d3eb031d250070b63fa145f0fcfc5d97c304a",
+        "contract_address": "SELECT entity FROM ref('DefaultCollateralFactory_event_AddEntity')",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "from",
+                "name": "depositor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "to",
+                "name": "recipient",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "value",
+                "name": "amount",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "DefaultCollateral_mETH_event_Transfer"
+        "table_name": "DefaultCollateral_event_Deposit"
     }
 }
