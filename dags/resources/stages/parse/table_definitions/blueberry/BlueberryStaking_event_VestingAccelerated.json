@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "tokensClaimed",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "redistributedBLB",
+                    "type": "uint256"
+                }
+            ],
+            "name": "VestingAccelerated",
+            "type": "event"
+        },
+        "contract_address": "0x10831c146ee2e7214c09809f7e6003fe620522eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blueberry",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokensClaimed",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "redistributedBLB",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlueberryStaking_event_VestingAccelerated"
+    }
+}

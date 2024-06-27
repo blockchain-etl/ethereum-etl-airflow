@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditConfigurator",
+                    "type": "address"
+                }
+            ],
+            "name": "CreditConfiguratorUpgraded",
+            "type": "event"
+        },
+        "contract_address": "SELECT newConfigurator FROM ref('CreditManagerV3_event_SetCreditConfigurator')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditConfigurator",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditConfiguratorV3_event_CreditConfiguratorUpgraded"
+    }
+}

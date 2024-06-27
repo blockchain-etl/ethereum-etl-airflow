@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_account",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "mintWithGasCompensation",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x4591dbff62656e7859afe5e45f6f47d3669fbb28",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "prisma",
+        "schema": [
+            {
+                "description": "",
+                "name": "_account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "mkUSD_call_mintWithGasCompensation"
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "metaMorpho",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "initialOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "initialTimelock",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "salt",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "CreateMetaMorpho",
+            "type": "event"
+        },
+        "contract_address": "0xa9c3d3a366466fa809d1ae982fb2c46e5fc41101",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "metaMorpho",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initialOwner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initialTimelock",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "name",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "symbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "salt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MetaMorphoFactory_event_CreateMetaMorpho"
+    }
+}

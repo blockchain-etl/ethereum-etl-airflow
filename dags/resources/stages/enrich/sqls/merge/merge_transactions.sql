@@ -23,7 +23,11 @@ insert (
     max_fee_per_gas,
     max_priority_fee_per_gas,
     transaction_type,
-    receipt_effective_gas_price
+    receipt_effective_gas_price,
+    max_fee_per_blob_gas,
+    blob_versioned_hashes,
+    receipt_blob_gas_price,
+    receipt_blob_gas_used
 ) values (
     `hash`,
     nonce,
@@ -45,7 +49,11 @@ insert (
     max_fee_per_gas,
     max_priority_fee_per_gas,
     transaction_type,
-    receipt_effective_gas_price
+    receipt_effective_gas_price,
+    max_fee_per_blob_gas,
+    blob_versioned_hashes,
+    receipt_blob_gas_price,
+    receipt_blob_gas_used
 )
 when not matched by source and date(block_timestamp) = '{{ds}}' then
 delete

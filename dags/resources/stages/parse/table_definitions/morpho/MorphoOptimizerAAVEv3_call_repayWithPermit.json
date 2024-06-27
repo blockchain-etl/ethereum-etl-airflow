@@ -1,0 +1,95 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "underlying",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "onBehalf",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "deadline",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint8",
+                            "name": "v",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "r",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "s",
+                            "type": "bytes32"
+                        }
+                    ],
+                    "internalType": "struct Types.Signature",
+                    "name": "signature",
+                    "type": "tuple"
+                }
+            ],
+            "name": "repayWithPermit",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x33333aea097c193e66081e930c33020272b33333",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "underlying",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "onBehalf",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deadline",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoOptimizerAAVEv3_call_repayWithPermit"
+    }
+}

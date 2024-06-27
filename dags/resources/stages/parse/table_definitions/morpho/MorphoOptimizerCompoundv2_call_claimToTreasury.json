@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "_poolTokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "claimToTreasury",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x8888882f8f843896699869179fb6e4f7e3b58888",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_poolTokens",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amounts",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoOptimizerCompoundv2_call_claimToTreasury"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "pubkey",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "signature",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "depositDataRoot",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "stake",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "SELECT eigenPod FROM ref('EigenPodManager_event_PodDeployed')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "pubkey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "signature",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "depositDataRoot",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenPod_call_stake"
+    }
+}

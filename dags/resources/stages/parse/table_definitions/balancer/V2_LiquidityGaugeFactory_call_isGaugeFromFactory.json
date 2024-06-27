@@ -1,0 +1,38 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "gauge",
+                    "type": "address"
+                }
+            ],
+            "name": "isGaugeFromFactory",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0xf1665e19bc105be4edd3739f88315cc699cc5b65",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "gauge",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_LiquidityGaugeFactory_call_isGaugeFromFactory"
+    }
+}

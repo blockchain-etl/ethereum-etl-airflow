@@ -1,0 +1,62 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_poolToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_onBehalf",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_maxGasForMatching",
+                    "type": "uint256"
+                }
+            ],
+            "name": "supply",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x8888882f8f843896699869179fb6e4f7e3b58888",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "_poolToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_onBehalf",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_maxGasForMatching",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MorphoOptimizerCompoundv2_call_supply"
+    }
+}

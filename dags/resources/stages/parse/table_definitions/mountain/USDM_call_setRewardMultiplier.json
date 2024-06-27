@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_rewardMultiplier",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setRewardMultiplier",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "mountain",
+        "schema": [
+            {
+                "description": "",
+                "name": "_rewardMultiplier",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "USDM_call_setRewardMultiplier"
+    }
+}

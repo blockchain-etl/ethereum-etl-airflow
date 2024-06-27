@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "gauge",
+                    "type": "address"
+                }
+            ],
+            "name": "LiquidityGaugeDeployed",
+            "type": "event"
+        },
+        "contract_address": "0x4f8846ae9380b90d2e71d5e3d042dff3e7ebb40d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gauge",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LegacycrvUSD_event_LiquidityGaugeDeployed"
+    }
+}

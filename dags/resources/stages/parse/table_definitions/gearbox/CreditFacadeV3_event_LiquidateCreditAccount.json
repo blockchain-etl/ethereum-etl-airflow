@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditAccount",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "liquidator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "remainingFunds",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LiquidateCreditAccount",
+            "type": "event"
+        },
+        "contract_address": "SELECT creditFacade FROM ref('CreditConfiguratorV3_event_SetCreditFacade')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "remainingFunds",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditFacadeV3_event_LiquidateCreditAccount"
+    }
+}

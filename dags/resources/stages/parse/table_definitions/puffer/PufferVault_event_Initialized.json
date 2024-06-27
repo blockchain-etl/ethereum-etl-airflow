@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint64",
+                    "name": "version",
+                    "type": "uint64"
+                }
+            ],
+            "name": "Initialized",
+            "type": "event"
+        },
+        "contract_address": "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "version",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferVault_event_Initialized"
+    }
+}

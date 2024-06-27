@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "coins",
+                    "type": "address[4]"
+                },
+                {
+                    "indexed": false,
+                    "name": "A",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "deployer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "pool",
+                    "type": "address"
+                }
+            ],
+            "name": "PlainPoolDeployed",
+            "type": "event"
+        },
+        "contract_address": "0x4f8846ae9380b90d2e71d5e3d042dff3e7ebb40d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "curve",
+        "schema": [
+            {
+                "description": "",
+                "name": "coins",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "A",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "deployer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LegacycrvUSD_event_PlainPoolDeployed"
+    }
+}

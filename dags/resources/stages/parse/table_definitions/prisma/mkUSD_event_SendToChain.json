@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "_dstChainId",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "_toAddress",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SendToChain",
+            "type": "event"
+        },
+        "contract_address": "0x4591dbff62656e7859afe5e45f6f47d3669fbb28",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "prisma",
+        "schema": [
+            {
+                "description": "",
+                "name": "_dstChainId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_toAddress",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "mkUSD_event_SendToChain"
+    }
+}

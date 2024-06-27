@@ -1,0 +1,42 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_toWhitelist",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "_state",
+                    "type": "bool"
+                }
+            ],
+            "name": "setWhitelist",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0xbc6da0fe9ad5f3b0d58160288917aa56653660e9",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "alchemix",
+        "schema": [
+            {
+                "description": "",
+                "name": "_toWhitelist",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_state",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "alUSD_call_setWhitelist"
+    }
+}

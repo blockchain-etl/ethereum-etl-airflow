@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                }
+            ],
+            "name": "mint",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "assets",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "SELECT DISTINCT metaMorpho FROM ref('MetaMorphoFactory_event_CreateMetaMorpho')",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "morpho",
+        "schema": [
+            {
+                "description": "",
+                "name": "shares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MetaMorpho_call_mint"
+    }
+}

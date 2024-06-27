@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "addr",
+                    "type": "address"
+                }
+            ],
+            "name": "AccountUnblocked",
+            "type": "event"
+        },
+        "contract_address": "0x59d9356e565ab3a36dd77763fc0d87feaf85508c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "mountain",
+        "schema": [
+            {
+                "description": "",
+                "name": "addr",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "USDM_event_AccountUnblocked"
+    }
+}

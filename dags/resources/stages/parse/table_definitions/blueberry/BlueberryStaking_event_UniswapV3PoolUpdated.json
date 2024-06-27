@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "uniswapPool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "stableAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "decimals",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "observationPeriod",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UniswapV3PoolUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x10831c146ee2e7214c09809f7e6003fe620522eb",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "blueberry",
+        "schema": [
+            {
+                "description": "",
+                "name": "uniswapPool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stableAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "decimals",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "observationPeriod",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BlueberryStaking_event_UniswapV3PoolUpdated"
+    }
+}

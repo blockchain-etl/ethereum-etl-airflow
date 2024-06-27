@@ -37,7 +37,7 @@
             "name": "NewOrder",
             "type": "event"
         },
-        "contract_address": "0x23fbb02e83bce558b890ef94cf7eb09ffcf8fa2d",
+        "contract_address": "0x1ecdb32e59e948c010a189a0798c674a2d0c6603",
         "field_mapping": {},
         "type": "log"
     },

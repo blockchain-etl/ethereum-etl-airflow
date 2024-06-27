@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                }
+            ],
+            "name": "Unpaused",
+            "type": "event"
+        },
+        "contract_address": "0x6ef3d766dfe02dc4bf04aae9122eb9a0ded25615",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "primeeth",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PRIMEETHToken_event_Unpaused"
+    }
+}

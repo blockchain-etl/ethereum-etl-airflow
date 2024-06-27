@@ -1,0 +1,71 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "original_balance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "original_supply",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "working_balance",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "working_supply",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateLiquidityLimit",
+            "type": "event"
+        },
+        "contract_address": "SELECT gauge FROM ref('V2_LiquidityGaugeFactory_event_GaugeCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "original_balance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "original_supply",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "working_balance",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "working_supply",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_LiquidityGaugeV5_event_UpdateLiquidityLimit"
+    }
+}

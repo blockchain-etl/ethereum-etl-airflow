@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "feeProtocol0Old",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "feeProtocol1Old",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "feeProtocol0New",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "feeProtocol1New",
+                    "type": "uint8"
+                }
+            ],
+            "name": "SetFeeProtocol",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum_uniswap_v3",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeProtocol0Old",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeProtocol1Old",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeProtocol0New",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeProtocol1New",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapV3Pool_event_SetFeeProtocol"
+    }
+}

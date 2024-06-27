@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FlashLoan",
+            "type": "event"
+        },
+        "contract_address": "0x60744434d6339a6b27d73d9eda62b6f66a0a04fa",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "maker",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "McdFlash_event_FlashLoan"
+    }
+}

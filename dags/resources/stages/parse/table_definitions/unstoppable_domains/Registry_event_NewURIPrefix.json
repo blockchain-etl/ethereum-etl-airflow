@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "prefix",
+                    "type": "string"
+                }
+            ],
+            "name": "NewURIPrefix",
+            "type": "event"
+        },
+        "contract_address": "0xd1e5b0ff1287aa9f9a268759062e4ab08b9dacbe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "unstoppable_domains",
+        "schema": [
+            {
+                "description": "",
+                "name": "prefix",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "Event emitted by CNS Registry contract",
+        "table_name": "Registry_event_NewURIPrefix"
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "withdrawalRoot",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "withdrawer",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ezETHToBurn",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UserWithdrawStarted",
+            "type": "event"
+        },
+        "contract_address": "0x74a09653a083691711cf8215a6ab074bb4e99ef5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "name": "withdrawalRoot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ezETHToBurn",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RestakeManager_event_UserWithdrawStarted"
+    }
+}
