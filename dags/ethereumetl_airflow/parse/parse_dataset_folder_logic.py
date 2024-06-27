@@ -67,7 +67,7 @@ def parse_dataset_folder(
     ]
 
     # Prevents accidentally running full refresh for many tables caused by bugs
-    max_num_updated_table_definitions = 50
+    max_num_updated_table_definitions = 60
     if len(updated_table_definitions) > max_num_updated_table_definitions:
         raise ValueError(
             f"More than {max_num_updated_table_definitions} will be fully refreshed. Please make sure not more than {max_num_updated_table_definitions} are updated"
