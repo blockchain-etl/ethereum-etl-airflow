@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "order_hash",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "AggregateOrderExecuted",
+            "type": "event"
+        },
+        "contract_address": "0xbeb09000fa59627dc02bb55448ac1893eaa501a5",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_bebop",
+        "schema": [
+            {
+                "description": "",
+                "name": "order_hash",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BebopSettlement_event_AggregateOrderExecuted"
+    }
+}
