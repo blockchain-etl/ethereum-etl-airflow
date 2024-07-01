@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract Authority",
+                    "name": "newAuthority",
+                    "type": "address"
+                }
+            ],
+            "name": "AuthorityUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x917cee801a67f933f2e6b33fc0cd1ed2d5909d88",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "etherfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAuthority",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "liquid_super_symbiotic_event_AuthorityUpdated"
+    }
+}
