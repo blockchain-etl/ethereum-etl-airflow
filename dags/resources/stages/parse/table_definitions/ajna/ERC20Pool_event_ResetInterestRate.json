@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ResetInterestRate",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool_ FROM ref('ERC20PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC20Pool_event_ResetInterestRate"
+    }
+}
