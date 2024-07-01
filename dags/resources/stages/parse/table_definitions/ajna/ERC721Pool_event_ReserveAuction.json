@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "claimableReservesRemaining",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "auctionPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "currentBurnEpoch",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ReserveAuction",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool_ FROM ref('ERC721PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna",
+        "schema": [
+            {
+                "description": "",
+                "name": "claimableReservesRemaining",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "auctionPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "currentBurnEpoch",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC721Pool_event_ReserveAuction"
+    }
+}
