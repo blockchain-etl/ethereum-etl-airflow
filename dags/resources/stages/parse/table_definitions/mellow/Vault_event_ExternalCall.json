@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "success",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "response",
+                    "type": "bytes"
+                }
+            ],
+            "name": "ExternalCall",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('view_mellow_vault_factory_addresses')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "success",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "response",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_event_ExternalCall"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "module",
+                    "type": "address"
+                }
+            ],
+            "name": "TvlModuleAdded",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('view_mellow_vault_factory_addresses')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "module",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_event_TvlModuleAdded"
+    }
+}
