@@ -8,6 +8,12 @@
                     "internalType": "address",
                     "name": "pool_",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "subsetHash_",
+                    "type": "bytes32"
                 }
             ],
             "name": "PoolCreated",
@@ -23,6 +29,11 @@
             {
                 "description": "",
                 "name": "pool_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "subsetHash_",
                 "type": "STRING"
             }
         ],
