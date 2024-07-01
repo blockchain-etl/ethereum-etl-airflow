@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "actor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "collateralMerged",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toIndexLps",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MergeOrRemoveCollateralNFT",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool_ FROM ref('ERC721PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "actor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "collateralMerged",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toIndexLps",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC721Pool_event_MergeOrRemoveCollateralNFT"
+    }
+}
