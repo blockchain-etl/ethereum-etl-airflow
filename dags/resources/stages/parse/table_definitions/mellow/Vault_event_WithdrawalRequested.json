@@ -56,7 +56,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "Mellow",
+        "dataset_name": "mellow",
         "schema": [
             {
                 "description": "",
