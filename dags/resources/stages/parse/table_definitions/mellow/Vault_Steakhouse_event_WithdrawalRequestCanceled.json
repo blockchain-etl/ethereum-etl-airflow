@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "origin",
+                    "type": "address"
+                }
+            ],
+            "name": "WithdrawalRequestCanceled",
+            "type": "event"
+        },
+        "contract_address": "0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "origin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_Steakhouse_event_WithdrawalRequestCanceled"
+    }
+}

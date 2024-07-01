@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "module",
+                    "type": "address"
+                }
+            ],
+            "name": "TvlModuleRemoved",
+            "type": "event"
+        },
+        "contract_address": "0xd6E09a5e6D719d1c881579C9C8670a210437931b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "module",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_ChorusOne_event_TvlModuleRemoved"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "origin",
+                    "type": "address"
+                }
+            ],
+            "name": "WithdrawalRequestCanceled",
+            "type": "event"
+        },
+        "contract_address": "0x49cd586dd9BA227Be9654C735A659a1dB08232a9",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "origin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_InfStones_event_WithdrawalRequestCanceled"
+    }
+}

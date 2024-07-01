@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "origin",
+                    "type": "address"
+                }
+            ],
+            "name": "WithdrawalRequestCanceled",
+            "type": "event"
+        },
+        "contract_address": "0x5fD13359Ba15A84B76f7F87568309040176167cd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "origin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_Amphor_event_WithdrawalRequestCanceled"
+    }
+}

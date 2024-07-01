@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "users",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool[]",
+                    "name": "statuses",
+                    "type": "bool[]"
+                }
+            ],
+            "name": "WithdrawalsProcessed",
+            "type": "event"
+        },
+        "contract_address": "0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "Mellow",
+        "schema": [
+            {
+                "description": "",
+                "name": "users",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "statuses",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Vault_Re7_event_WithdrawalsProcessed"
+    }
+}
