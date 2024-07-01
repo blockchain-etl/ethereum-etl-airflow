@@ -67,7 +67,7 @@ def parse_dataset_folder(
     ]
 
     # Prevents accidentally running full refresh for many tables caused by bugs
-    max_num_updated_table_definitions = 60
+    max_num_updated_table_definitions = 50
     if len(updated_table_definitions) > max_num_updated_table_definitions:
         raise ValueError(
             f"More than {max_num_updated_table_definitions} will be fully refreshed. Please make sure not more than {max_num_updated_table_definitions} are updated"
@@ -97,9 +97,11 @@ def parse_dataset_folder(
                 source_dataset_name,
                 destination_project_id,
                 sqls_folder,
-                parse_all_partitions
-                if parse_all_partitions is not None
-                else table_definition_state.is_updated_or_dependencies_updated,
+                (
+                    parse_all_partitions
+                    if parse_all_partitions is not None
+                    else table_definition_state.is_updated_or_dependencies_updated
+                ),
                 time_func=time_func,
             )
         elif table_definition.filetype == TableDefinitionFileType.SQL:
