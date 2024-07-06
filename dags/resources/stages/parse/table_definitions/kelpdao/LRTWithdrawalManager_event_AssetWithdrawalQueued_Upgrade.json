@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LRTWithdrawalManager_event_AssetWithdrawalQueued"
+        "table_name": "LRTWithdrawalManager_event_AssetWithdrawalQueued_Upgrade"
     }
 }
