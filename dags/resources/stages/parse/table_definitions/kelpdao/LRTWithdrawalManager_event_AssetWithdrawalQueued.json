@@ -50,5 +50,6 @@
         ],
         "table_description": "",
         "table_name": "LRTWithdrawalManager_event_AssetWithdrawalQueued"
-    }
+    },
+    "version": "1"
 }
