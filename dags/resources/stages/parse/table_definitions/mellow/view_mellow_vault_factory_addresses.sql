@@ -1,0 +1,15 @@
+SELECT 'Steakhouse_Re7_Mev_Capital_P2P_Vault' AS vault_name, '0xbeef69ac7870777598a04b2bd4771c71212e6abc' AS vault_address
+UNION ALL
+SELECT 'Re7_Labs_LRT_Vault', '0x84631c0d0081fde56deb72f6de77abbbf6a9f93a'
+UNION ALL
+SELECT 'Amphor_Restaked_ETH_Vault', '0x5fd13359ba15a84b76f7f87568309040176167cd'
+UNION ALL
+SELECT 'Restaking_Vault_ETH', '0x7a4effd87c2f3c55ca251080b1343b605f327e3a'
+UNION ALL
+SELECT 'InfStones_Restaked_ETH_Vault', '0x49cd586dd9ba227be9654c735a659a1db08232a9'
+UNION ALL
+SELECT 'LugaETH_Vault', '0x82dc3260f599f4fc4307209a1122b6eaa007163b'
+UNION ALL
+SELECT 'Chorus_One_Restaking_Vault_ETH', '0xd6e09a5e6d719d1c881579c9c8670a210437931b'
+UNION ALL
+SELECT 'Renzo_Restaked_LST_Vault', '0x8c9532a60e0e7c6bbd2b2c1303f63ace1c3e9811';

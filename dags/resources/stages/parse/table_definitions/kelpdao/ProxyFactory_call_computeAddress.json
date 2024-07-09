@@ -1,0 +1,58 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "proxyAdmin",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "salt",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "computeAddress",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x673a669425457bcabeb247f56552a0fd8141cee2",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "kelpdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "implementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "proxyAdmin",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "salt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ProxyFactory_call_computeAddress"
+    }
+}

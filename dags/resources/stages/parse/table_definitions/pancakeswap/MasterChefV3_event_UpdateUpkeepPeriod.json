@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "periodNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldEndTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newEndTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "remainingCake",
+                    "type": "uint256"
+                }
+            ],
+            "name": "UpdateUpkeepPeriod",
+            "type": "event"
+        },
+        "contract_address": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pancakeswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "periodNumber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldEndTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newEndTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "remainingCake",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MasterChefV3_event_UpdateUpkeepPeriod"
+    }
+}

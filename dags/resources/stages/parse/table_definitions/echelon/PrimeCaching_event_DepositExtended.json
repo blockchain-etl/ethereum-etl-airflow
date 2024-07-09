@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "depositIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "endTimestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "createdTimestamp",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "updatedTimestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DepositExtended",
+            "type": "event"
+        },
+        "contract_address": "0x4a3826bd2e8a31956ad0397a49efde5e0d825238",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "echelon",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "depositIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "endTimestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "createdTimestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "updatedTimestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PrimeCaching_event_DepositExtended"
+    }
+}

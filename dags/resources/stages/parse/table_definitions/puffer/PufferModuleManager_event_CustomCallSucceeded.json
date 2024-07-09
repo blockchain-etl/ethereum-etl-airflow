@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "restakingOperator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "customCalldata",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "response",
+                    "type": "bytes"
+                }
+            ],
+            "name": "CustomCallSucceeded",
+            "type": "event"
+        },
+        "contract_address": "0x9e1e4fcb49931df5743e659ad910d331735c3860",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "restakingOperator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "customCalldata",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "response",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferModuleManager_event_CustomCallSucceeded"
+    }
+}

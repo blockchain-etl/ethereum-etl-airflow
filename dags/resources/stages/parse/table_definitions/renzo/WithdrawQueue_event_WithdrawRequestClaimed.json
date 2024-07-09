@@ -1,0 +1,86 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "collateralToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawRequestID",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amountToRedeem",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "ezETHLocked",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "createdAt",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct WithdrawQueueStorageV1.WithdrawRequest",
+                    "name": "withdrawRequest",
+                    "type": "tuple"
+                }
+            ],
+            "name": "WithdrawRequestClaimed",
+            "type": "event"
+        },
+        "contract_address": "0x5efc9d10e42fb517456f4ac41eb5e2ebe42c8918",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "collateralToken",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "withdrawRequestID",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "amountToRedeem",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "ezETHLocked",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "createdAt",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "withdrawRequest",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WithdrawQueue_event_WithdrawRequestClaimed"
+    }
+}

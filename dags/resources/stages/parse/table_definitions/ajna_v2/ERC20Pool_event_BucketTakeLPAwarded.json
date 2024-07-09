@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "taker",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "kicker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAwardedTaker",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAwardedKicker",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BucketTakeLPAwarded",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool_ FROM ref('ERC20PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "taker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "kicker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpAwardedTaker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpAwardedKicker",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC20Pool_event_BucketTakeLPAwarded"
+    }
+}

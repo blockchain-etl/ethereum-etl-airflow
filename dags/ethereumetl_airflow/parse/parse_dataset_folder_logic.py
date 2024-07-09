@@ -97,9 +97,11 @@ def parse_dataset_folder(
                 source_dataset_name,
                 destination_project_id,
                 sqls_folder,
-                parse_all_partitions
-                if parse_all_partitions is not None
-                else table_definition_state.is_updated_or_dependencies_updated,
+                (
+                    parse_all_partitions
+                    if parse_all_partitions is not None
+                    else table_definition_state.is_updated_or_dependencies_updated
+                ),
                 time_func=time_func,
             )
         elif table_definition.filetype == TableDefinitionFileType.SQL:
