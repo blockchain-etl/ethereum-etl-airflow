@@ -1,12 +1,25 @@
 import json
 import sys
 from datetime import datetime
+from web3 import Web3
+
+def calculate_signature(abi):
+    if isinstance(abi, str):
+        abi = json.loads(abi)
+    
+    if abi['type'] == 'event':
+        return Web3.keccak(text=f"{abi['name']}({','.join([input['type'] for input in abi['inputs']])})").hex()
+    elif abi['type'] == 'function':
+        return Web3.keccak(text=f"{abi['name']}({','.join([input['type'] for input in abi['inputs']])})").hex()[:10]
+    else:
+        raise ValueError("ABI must be for an event or function")
 
 def generate_sql_from_json(json_file_path, date):
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 
     json_string = json.dumps(data).replace("'", "''")
+    signature = calculate_signature(data['parser']['abi'])
 
     sql = f"""
 WITH
@@ -25,7 +38,7 @@ FROM (
 
 details AS (
     SELECT 
-        `nansen-datasets-dev.z_arax.calculateSighash`(REPLACE(abi.abi, "'", '"')) AS sig,
+        '{signature}' AS sig,
         abi.*
     FROM abi
 ),
