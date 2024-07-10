@@ -2,6 +2,15 @@
 
 Read this article: https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-how-we-built-dataset
 
+## Local Development Prerequisites
+
+- direnv
+- pyenv
+
+
+We are using direnv to automatically set up and load the correct python version. We also create a venv in the root folder, 
+that is automatically activated when entering the project folder.
+
 ## Setting up Airflow DAGs using Google Cloud Composer
 
 ### Create BigQuery Datasets
