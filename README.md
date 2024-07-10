@@ -2,6 +2,15 @@
 
 Read this article: https://cloud.google.com/blog/products/data-analytics/ethereum-bigquery-how-we-built-dataset
 
+## Local Development Prerequisites
+
+- direnv
+- pyenv
+
+
+We are using direnv to automatically set up and load the correct python version. We also create a venv in the root folder, 
+that is automatically activated when entering the project folder.
+
 ## Setting up Airflow DAGs using Google Cloud Composer
 
 ### Create BigQuery Datasets
@@ -118,8 +127,27 @@ The instance requires the `CLOUDSDK_CORE_PROJECT` environment variable to be set
 
 Read this article: https://medium.com/@medvedev1088/query-ens-and-0x-events-with-sql-in-google-bigquery-4d197206e644
 
+### Debugging Table Defenition Files
+
+A utility script for debugging and verifying contract parsing in Ethereum data processing pipelines is available. You can simply run 
+
+```
+python3 generate_parse_sql.py <path_to_table_definition_file> <date>
+```
+
+This will output some example SQL that can be used to debug if the generated json files from the contract parser are correct. 
+
+NOTE: certain files may not have the `contract_address` field specified as a valid address [ERC20Pool_event_TransferLP](dags/resources/stages/parse/table_definitions/ajna_v2/ERC20Pool_event_TransferLP.json) but use a select statement on another table instead. For these you can simply pass the contract address yourself like below:
+
+```
+python3 generate_parse_sql.py <path_to_table_definition_file> <date> --contract_address <contract_address>
+```
+
+
+
 ### More Information
 
 You can follow the instructions here for Polygon DAGs https://github.com/blockchain-etl/polygon-etl. The architecture
 there is very similar to Ethereum so in most case substituting `polygon` for `ethereum` will work. Contributions 
 to this README file for porting documentation from Polygon to Ethereum are welcome.
+
