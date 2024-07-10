@@ -1,7 +1,17 @@
 import json
 import sys
+import argparse
 from datetime import datetime
 from web3 import Web3
+
+def validate_and_checksum_address(address):
+    if address is None:
+        return None
+    try:
+        return Web3.toChecksumAddress(address)
+    except ValueError:
+        print(f"Error: Invalid contract address: {address}")
+        sys.exit(1)
 
 def calculate_signature(abi):
     if isinstance(abi, str):
@@ -14,9 +24,21 @@ def calculate_signature(abi):
     else:
         raise ValueError("ABI must be for an event or function")
 
-def generate_sql_from_json(json_file_path, date):
+def generate_sql_from_json(json_file_path, date, override_contract_address=None):
     with open(json_file_path, 'r') as file:
         data = json.load(file)
+
+    # Use the override_contract_address if provided, otherwise use the one from the JSON file
+    contract_address = override_contract_address or data['parser'].get('contract_address')
+
+    # Validate and convert contract address
+    if contract_address:
+        contract_address = validate_and_checksum_address(contract_address)
+        # Update the contract_address in the data
+        data['parser']['contract_address'] = contract_address
+    else:
+        print("Error: No valid contract address provided. Please use --contract_address argument.")
+        sys.exit(1)
 
     json_string = json.dumps(data).replace("'", "''")
     signature = calculate_signature(data['parser']['abi'])
@@ -127,19 +149,19 @@ LIMIT 100
 """
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python generate_parse_sql.py <path_to_json_file> <date>")
-        sys.exit(1)
-
-    json_file_path = sys.argv[1]
-    date_str = sys.argv[2]
+    parser = argparse.ArgumentParser(description="Generate SQL from JSON file")
+    parser.add_argument("json_file_path", help="Path to the JSON file")
+    parser.add_argument("date", help="Date in YYYY-MM-DD format")
+    parser.add_argument("--contract_address", help="Override contract address")
+    
+    args = parser.parse_args()
 
     try:
         # Validate the date format
-        datetime.strptime(date_str, '%Y-%m-%d')
+        datetime.strptime(args.date, '%Y-%m-%d')
     except ValueError:
         print("Error: Date should be in the format YYYY-MM-DD")
         sys.exit(1)
 
-    sql = generate_sql_from_json(json_file_path, date_str)
+    sql = generate_sql_from_json(args.json_file_path, args.date, args.contract_address)
     print(sql)
