@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "supplyPaused",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "transferPaused",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "withdrawPaused",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "absorbPaused",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "buyPaused",
+                    "type": "bool"
+                }
+            ],
+            "name": "PauseAction",
+            "type": "event"
+        },
+        "contract_address": "0x3afdc9bca9213a35503b077a6072f3d0d5ab0840",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "supplyPaused",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "transferPaused",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawPaused",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "absorbPaused",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyPaused",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cUSDTv3_event_PauseAction"
+    }
+}
