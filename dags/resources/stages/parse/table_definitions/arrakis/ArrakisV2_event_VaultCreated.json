@@ -4,22 +4,22 @@
             "anonymous": false,
             "inputs": [
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "fee0",
-                    "type": "uint256"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "manager",
+                    "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "fee1",
-                    "type": "uint256"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
                 }
             ],
-            "name": "LogCollectedFees",
+            "name": "VaultCreated",
             "type": "event"
         },
-        "contract_address": "SELECT vault FROM ref('ArrakisV2_event_VaultCreated')",
+        "contract_address": "0xecb8ffcb2369ef188a082a662f496126f66c8288",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "fee0",
+                "name": "manager",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "fee1",
+                "name": "vault",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "ArrakisV2_event_LogCollectedFees"
+        "table_name": "ArrakisV2_event_VaultCreated"
     }
 }
