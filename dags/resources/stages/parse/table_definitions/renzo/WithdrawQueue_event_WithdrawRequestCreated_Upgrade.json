@@ -38,6 +38,18 @@
                     "internalType": "uint256",
                     "name": "withdrawRequestIndex",
                     "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "queued",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "queueFilled",
+                    "type": "uint256"
                 }
             ],
             "name": "WithdrawRequestCreated",
@@ -79,10 +91,19 @@
                 "description": "",
                 "name": "withdrawRequestIndex",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "queued",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "queueFilled",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "WithdrawQueue_event_WithdrawRequestCreated"
-    },
-    "version": "1"
+        "table_name": "WithdrawQueue_event_WithdrawRequestCreated_Upgrade"
+    }
 }
