@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldMinimum",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newMinimum",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawalRequestMinimumUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x58749c46ffe97e4d79508a2c781c440f4756f064",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldMinimum",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newMinimum",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RswEXIT_event_WithdrawalRequestMinimumUpdated"
+    }
+}
