@@ -11,7 +11,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "renzo",
+        "dataset_name": "swell",
         "schema": [],
         "table_description": "",
         "table_name": "RswEXIT_event_WhitelistDisabled"
