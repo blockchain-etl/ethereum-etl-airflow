@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "oldBaseURI",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "newBaseURI",
+                    "type": "string"
+                }
+            ],
+            "name": "BaseURIUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x58749c46ffe97e4d79508a2c781c440f4756f064",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldBaseURI",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBaseURI",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RswEXIT_event_BaseURIUpdated"
+    }
+}

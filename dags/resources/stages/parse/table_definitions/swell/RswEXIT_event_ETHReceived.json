@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ETHReceived",
+            "type": "event"
+        },
+        "contract_address": "0x58749c46ffe97e4d79508a2c781c440f4756f064",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RswEXIT_event_ETHReceived"
+    }
+}
