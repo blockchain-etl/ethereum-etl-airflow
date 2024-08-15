@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "accountant",
+                    "type": "address"
+                }
+            ],
+            "name": "UpdateAccountant",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('YearnVaultFactory_event_NewVault')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "accountant",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YearnV3Vault_event_UpdateAccountant"
+    }
+}

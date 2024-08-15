@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "strategy",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "change_type",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StrategyChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('YearnVaultFactory_event_NewVault')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "strategy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "change_type",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YearnV3Vault_event_StrategyChanged"
+    }
+}
