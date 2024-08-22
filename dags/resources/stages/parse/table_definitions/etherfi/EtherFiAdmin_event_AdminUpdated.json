@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "_address",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "_isAdmin",
+                    "type": "bool"
+                }
+            ],
+            "name": "AdminUpdated",
+            "type": "event"
+        },
+        "contract_address": "0x0ef8fa4760db8f5cd4d993f3e3416f30f942d705",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "etherfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "_address",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_isAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EtherFiAdmin_event_AdminUpdated"
+    }
+}
