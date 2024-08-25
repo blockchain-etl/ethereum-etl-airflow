@@ -36,6 +36,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "ProxyERC20_event_OwnerChanged"
+        "table_name": "SBTC_event_OwnerChanged"
     }
 }

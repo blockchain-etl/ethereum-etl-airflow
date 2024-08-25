@@ -46,6 +46,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "ProxyERC20_event_Transfer"
+        "table_name": "SBTC_event_Transfer"
     }
 }
