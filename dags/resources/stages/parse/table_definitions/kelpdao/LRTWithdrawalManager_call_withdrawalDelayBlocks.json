@@ -1,0 +1,26 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [],
+            "name": "withdrawalDelayBlocks",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x62de59c08eb5dae4b7e6f7a8cad3006d6965ec16",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "kelpdao",
+        "schema": [],
+        "table_description": "",
+        "table_name": "LRTWithdrawalManager_call_withdrawalDelayBlocks"
+    }
+}
