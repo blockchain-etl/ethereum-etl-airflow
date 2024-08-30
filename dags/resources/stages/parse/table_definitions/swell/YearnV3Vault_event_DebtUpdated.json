@@ -1,0 +1,51 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "strategy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "current_debt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "new_debt",
+                    "type": "uint256"
+                }
+            ],
+            "name": "DebtUpdated",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('YearnVaultFactory_event_NewVault')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "strategy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "current_debt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "new_debt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YearnV3Vault_event_DebtUpdated"
+    }
+}

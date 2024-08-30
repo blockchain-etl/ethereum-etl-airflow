@@ -1,0 +1,91 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "strategy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "name": "gain",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "loss",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "current_debt",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "protocol_fees",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "total_fees",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "name": "total_refunds",
+                    "type": "uint256"
+                }
+            ],
+            "name": "StrategyReported",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('YearnVaultFactory_event_NewVault')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "strategy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gain",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loss",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "current_debt",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "protocol_fees",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "total_fees",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "total_refunds",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YearnV3Vault_event_StrategyReported"
+    }
+}
