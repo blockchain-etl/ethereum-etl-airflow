@@ -48,7 +48,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_eigenpie",
+        "dataset_name": "eigenpie",
         "schema": [
             {
                 "description": "",
