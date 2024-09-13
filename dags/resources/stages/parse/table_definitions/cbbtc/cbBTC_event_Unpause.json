@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Unpause",
+            "type": "event"
+        },
+        "contract_address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cbBTC",
+        "schema": [],
+        "table_description": "",
+        "table_name": "cbBTC_event_Unpause"
+    }
+}
