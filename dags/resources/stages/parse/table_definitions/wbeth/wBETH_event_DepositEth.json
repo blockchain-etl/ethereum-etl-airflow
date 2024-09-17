@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ethAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "wBETHAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "referral",
+                    "type": "address"
+                }
+            ],
+            "name": "DepositEth",
+            "type": "event"
+        },
+        "contract_address": "0xa2e3356610840701bdf5611a53974510ae27e2e1",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "wbeth",
+        "schema": [
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ethAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wBETHAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referral",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "wBETH_event_DepositEth"
+    }
+}
