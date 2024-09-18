@@ -19,7 +19,7 @@
             "name": "Sweep",
             "type": "event"
         },
-        "contract_address": "SELECT * FROM UNNEST(['0x0fb6052cc079a4eec277f73e51e0de3411792ff4', '0x54438cAe8CF263F42E6B868B2AcB1bc38FBF04aa'])",
+        "contract_address": "SELECT * FROM UNNEST(['0x0fb6052cc079a4eec277f73e51e0de3411792ff4', '0x54438cae8cf263f42e6b868b2acb1bc38fbf04aa'])",
         "field_mapping": {},
         "type": "log"
     },
