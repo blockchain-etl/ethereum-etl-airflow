@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "asset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "heartbeat",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "isERC4626",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "contract AggregatorV2V3Interface",
+                            "name": "oracle",
+                            "type": "address"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IAssetRegistry.AssetInformation",
+                    "name": "assetInfo",
+                    "type": "tuple"
+                }
+            ],
+            "name": "AssetAdded",
+            "type": "event"
+        },
+        "contract_address": "SELECT assetRegistry FROM ref('AeraVaultModulesFactory_event_AssetRegistryCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "asset",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "heartbeat",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "isERC4626",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "oracle",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "assetInfo",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultAssetRegistry_event_AssetAdded"
+    }
+}

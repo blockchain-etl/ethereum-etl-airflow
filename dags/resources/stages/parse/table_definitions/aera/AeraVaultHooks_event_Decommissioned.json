@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Decommissioned",
+            "type": "event"
+        },
+        "contract_address": "SELECT hooks FROM ref('AeraVaultModulesFactory_event_HooksCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [],
+        "table_description": "",
+        "table_name": "AeraVaultHooks_event_Decommissioned"
+    }
+}
