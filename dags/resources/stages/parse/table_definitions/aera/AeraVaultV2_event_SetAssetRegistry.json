@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "assetRegistry",
+                    "type": "address"
+                }
+            ],
+            "name": "SetAssetRegistry",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('AeraV2Factory_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "assetRegistry",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultV2_event_SetAssetRegistry"
+    }
+}

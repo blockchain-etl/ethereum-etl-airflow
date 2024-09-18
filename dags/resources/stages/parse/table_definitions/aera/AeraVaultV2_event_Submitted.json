@@ -1,0 +1,60 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "guardian",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "target",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "data",
+                            "type": "bytes"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct Operation[]",
+                    "name": "operations",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "Submitted",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('AeraV2Factory_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "guardian",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operations",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultV2_event_Submitted"
+    }
+}

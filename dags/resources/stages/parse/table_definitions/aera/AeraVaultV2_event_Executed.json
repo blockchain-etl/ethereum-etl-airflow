@@ -1,0 +1,77 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "target",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "data",
+                            "type": "bytes"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct Operation",
+                    "name": "operation",
+                    "type": "tuple"
+                }
+            ],
+            "name": "Executed",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('AeraV2Factory_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "target",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "value",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "data",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "operation",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultV2_event_Executed"
+    }
+}

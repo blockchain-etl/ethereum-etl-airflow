@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "assetRegistry",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "hooks",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "guardian",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "description",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "wrappedNativeToken",
+                    "type": "address"
+                }
+            ],
+            "name": "VaultCreated",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x38896b4ac8420b8a2b768001da44d11109f1797d', '0x9500948c2beeeb2da4cc3aa21cb05bd2e7c27191'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "vault",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assetRegistry",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "hooks",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "guardian",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "description",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wrappedNativeToken",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraV2Factory_event_VaultCreated"
+    }
+}

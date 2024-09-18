@@ -1,0 +1,88 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "hooks",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "minDailyValue",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "target",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes4",
+                            "name": "selector",
+                            "type": "bytes4"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct TargetSighashData[]",
+                    "name": "targetSighashAllowlist",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "HooksCreated",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x0fb6052cc079a4eec277f73e51e0de3411792ff4', '0x54438cAe8CF263F42E6B868B2AcB1bc38FBF04aa'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "hooks",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vault",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minDailyValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "targetSighashAllowlist",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultModulesFactory_event_HooksCreated"
+    }
+}

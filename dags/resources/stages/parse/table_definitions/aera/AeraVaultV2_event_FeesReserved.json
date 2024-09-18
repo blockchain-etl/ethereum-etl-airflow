@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "feeRecipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newFee",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lastFeeCheckpoint",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lastValue",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lastFeeTokenPrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "feeTotal",
+                    "type": "uint256"
+                }
+            ],
+            "name": "FeesReserved",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('AeraV2Factory_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "feeRecipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newFee",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lastFeeCheckpoint",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lastValue",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lastFeeTokenPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeTotal",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultV2_event_FeesReserved"
+    }
+}
