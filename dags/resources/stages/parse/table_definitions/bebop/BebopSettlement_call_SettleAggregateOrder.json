@@ -122,7 +122,7 @@
         "type": "trace"
     },
     "table": {
-        "dataset_name": "ethereum_bebop",
+        "dataset_name": "bebop",
         "schema": [
             {
                 "description": "",
