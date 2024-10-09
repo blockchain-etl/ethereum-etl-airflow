@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isAllowedFrom",
+                    "type": "bool"
+                }
+            ],
+            "name": "SetAllowedFrom",
+            "type": "event"
+        },
+        "contract_address": "0x83e9115d334d248ce39a6f36144aeab5b3456e75",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "from",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isAllowedFrom",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BackingEigen_event_SetAllowedFrom"
+    }
+}

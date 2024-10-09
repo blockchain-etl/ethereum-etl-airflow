@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "oldActivationDelay",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "newActivationDelay",
+                    "type": "uint32"
+                }
+            ],
+            "name": "ActivationDelaySet",
+            "type": "event"
+        },
+        "contract_address": "0xacc1fb458a1317e886db376fc8141540537e68fe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldActivationDelay",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newActivationDelay",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_ActivationDelaySet"
+    }
+}
