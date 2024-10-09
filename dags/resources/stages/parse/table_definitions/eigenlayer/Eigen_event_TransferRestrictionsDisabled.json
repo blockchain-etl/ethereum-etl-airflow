@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "TransferRestrictionsDisabled",
+            "type": "event"
+        },
+        "contract_address": "0xec53bf9167f50cdeb3ae105f56099aaab9061f83",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [],
+        "table_description": "",
+        "table_name": "Eigen_event_TransferRestrictionsDisabled"
+    }
+}

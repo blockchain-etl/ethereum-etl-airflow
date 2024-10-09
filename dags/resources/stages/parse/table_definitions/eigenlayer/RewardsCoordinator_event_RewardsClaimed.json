@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "root",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "earner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "claimer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "claimedAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RewardsClaimed",
+            "type": "event"
+        },
+        "contract_address": "0xacc1fb458a1317e886db376fc8141540537e68fe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "root",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "earner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "claimer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "claimedAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_RewardsClaimed"
+    }
+}

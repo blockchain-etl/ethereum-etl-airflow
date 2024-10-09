@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "earner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldClaimer",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "claimer",
+                    "type": "address"
+                }
+            ],
+            "name": "ClaimerForSet",
+            "type": "event"
+        },
+        "contract_address": "0xacc1fb458a1317e886db376fc8141540537e68fe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "earner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oldClaimer",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "claimer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_ClaimerForSet"
+    }
+}

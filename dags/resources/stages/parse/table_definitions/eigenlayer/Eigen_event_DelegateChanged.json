@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "fromDelegate",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "toDelegate",
+                    "type": "address"
+                }
+            ],
+            "name": "DelegateChanged",
+            "type": "event"
+        },
+        "contract_address": "0xec53bf9167f50cdeb3ae105f56099aaab9061f83",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "delegator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromDelegate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toDelegate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Eigen_event_DelegateChanged"
+    }
+}

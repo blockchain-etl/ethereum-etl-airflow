@@ -1,0 +1,131 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tokenHopper",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "submissionNonce",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "rewardsSubmissionHash",
+                    "type": "bytes32"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "contract IStrategy",
+                                    "name": "strategy",
+                                    "type": "address"
+                                },
+                                {
+                                    "internalType": "uint96",
+                                    "name": "multiplier",
+                                    "type": "uint96"
+                                }
+                            ],
+                            "internalType": "struct IRewardsCoordinator.StrategyAndMultiplier[]",
+                            "name": "strategiesAndMultipliers",
+                            "type": "tuple[]"
+                        },
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "token",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "startTimestamp",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "duration",
+                            "type": "uint32"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IRewardsCoordinator.RewardsSubmission",
+                    "name": "rewardsSubmission",
+                    "type": "tuple"
+                }
+            ],
+            "name": "RewardsSubmissionForAllEarnersCreated",
+            "type": "event"
+        },
+        "contract_address": "0xacc1fb458a1317e886db376fc8141540537e68fe",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenHopper",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "submissionNonce",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rewardsSubmissionHash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "strategiesAndMultipliers",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "token",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "amount",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "startTimestamp",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "duration",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "rewardsSubmission",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_RewardsSubmissionForAllEarnersCreated"
+    }
+}
