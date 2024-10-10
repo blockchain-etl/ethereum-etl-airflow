@@ -25,7 +25,7 @@
             "name": "RewardsForAllSubmitterSet",
             "type": "event"
         },
-        "contract_address": "0xacc1fb458a1317e886db376fc8141540537e68fe",
+        "contract_address": "0x7750d328b314effa365a0402ccfd489b80b0adda",
         "field_mapping": {},
         "type": "log"
     },

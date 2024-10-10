@@ -19,7 +19,7 @@
             "name": "Unpaused",
             "type": "event"
         },
-        "contract_address": "0x9c01252b580efd11a05c00aa42dd3ac1ec52df6d",
+        "contract_address": "0x5e4c39ad7a3e881585e383db9827eb4811f6f647",
         "field_mapping": {},
         "type": "log"
     },
