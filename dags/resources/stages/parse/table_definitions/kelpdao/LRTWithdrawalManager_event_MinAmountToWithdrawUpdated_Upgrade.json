@@ -12,7 +12,7 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "minAmountToWithdraw",
+                    "name": "minRsEthAmountToWithdraw",
                     "type": "uint256"
                 }
             ],
@@ -33,7 +33,7 @@
             },
             {
                 "description": "",
-                "name": "minAmountToWithdraw",
+                "name": "minRsEthAmountToWithdraw",
                 "type": "STRING"
             }
         ],
