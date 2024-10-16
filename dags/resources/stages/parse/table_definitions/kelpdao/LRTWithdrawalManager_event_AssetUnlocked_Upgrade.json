@@ -71,6 +71,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LRTWithdrawalManager_event_AssetUnlocked"
+        "table_name": "LRTWithdrawalManager_event_AssetUnlocked_Upgrade"
     }
 }

@@ -38,6 +38,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "LRTWithdrawalManager_event_MinAmountToWithdrawUpdated"
+        "table_name": "LRTWithdrawalManager_event_MinAmountToWithdrawUpdated_Upgrade"
     }
 }
