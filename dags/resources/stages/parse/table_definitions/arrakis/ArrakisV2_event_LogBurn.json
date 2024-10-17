@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "burnAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount0Out",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount1Out",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogBurn",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('ArrakisV2_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakisv2_event_tables",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "burnAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount0Out",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount1Out",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ArrakisV2_event_LogBurn"
+    }
+}
