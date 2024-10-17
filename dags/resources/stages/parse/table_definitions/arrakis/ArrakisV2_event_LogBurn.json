@@ -36,7 +36,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "arrakisv2_event_tables",
+        "dataset_name": "arrakis",
         "schema": [
             {
                 "description": "",
