@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "mintAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount0In",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount1In",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogMint",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('ArrakisV2_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "mintAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount0In",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount1In",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ArrakisV2_event_LogMint"
+    }
+}
