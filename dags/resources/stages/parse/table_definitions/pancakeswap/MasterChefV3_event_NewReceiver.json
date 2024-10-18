@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                }
+            ],
+            "name": "NewReceiver",
+            "type": "event"
+        },
+        "contract_address": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pancakeswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MasterChefV3_event_NewReceiver"
+    }
+}

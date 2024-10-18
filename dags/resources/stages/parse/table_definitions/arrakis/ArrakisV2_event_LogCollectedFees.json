@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee0",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee1",
+                    "type": "uint256"
+                }
+            ],
+            "name": "LogCollectedFees",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('ArrakisV2_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arrakis",
+        "schema": [
+            {
+                "description": "",
+                "name": "fee0",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee1",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ArrakisV2_event_LogCollectedFees"
+    }
+}

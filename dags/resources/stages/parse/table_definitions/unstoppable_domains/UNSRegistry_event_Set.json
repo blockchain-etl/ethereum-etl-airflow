@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "keyIndex",
+                    "type": "string"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "valueIndex",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "key",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "value",
+                    "type": "string"
+                }
+            ],
+            "name": "Set",
+            "type": "event"
+        },
+        "contract_address": "0x049aba7510f45ba5b64ea9e658e342f904db358d",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "unstoppable_domains",
+        "schema": [
+            {
+                "description": "",
+                "name": "tokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "keyIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "valueIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "key",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UNSRegistry_event_Set"
+    }
+}

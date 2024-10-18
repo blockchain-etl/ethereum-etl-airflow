@@ -3,7 +3,7 @@ SELECT
     traces.transaction_index,
     traces.from_address,
     traces.to_address,
-    traces.value,
+    SAFE_CAST(traces.value AS NUMERIC) AS value,
     traces.input,
     traces.output,
     traces.trace_type,

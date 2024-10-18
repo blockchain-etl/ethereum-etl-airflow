@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "miner",
+                    "type": "address"
+                }
+            ],
+            "name": "AccountMinerChanged",
+            "type": "event"
+        },
+        "contract_address": "0x444cd42baeddeb707eed823f7177b9abcc779c04",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "miner",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AccountFactoryV3_event_AccountMinerChanged"
+    }
+}

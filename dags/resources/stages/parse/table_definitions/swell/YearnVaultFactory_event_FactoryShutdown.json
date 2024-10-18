@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "FactoryShutdown",
+            "type": "event"
+        },
+        "contract_address": "0x981771292052c5f77b14a3bd4df22e43a8b17bb0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [],
+        "table_description": "",
+        "table_name": "YearnVaultFactory_event_FactoryShutdown"
+    }
+}

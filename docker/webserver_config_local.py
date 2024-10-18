@@ -55,7 +55,7 @@ AUTH_ROLE_PUBLIC = "Admin"
 # Will allow user self registration
 # AUTH_USER_REGISTRATION = True
 
-# The recaptcha it's automatically enabled for user self registration is active and the keys are necessary
+# The recaptcha is automatically enabled for user self registration is active and the keys are necessary
 # RECAPTCHA_PRIVATE_KEY = PRIVATE_KEY
 # RECAPTCHA_PUBLIC_KEY = PUBLIC_KEY
 

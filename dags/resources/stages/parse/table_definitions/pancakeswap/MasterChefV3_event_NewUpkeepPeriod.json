@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "periodNumber",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "startTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "endTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cakePerSecond",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cakeAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "NewUpkeepPeriod",
+            "type": "event"
+        },
+        "contract_address": "0x556b9306565093c855aea9ae92a594704c2cd59e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pancakeswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "periodNumber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "startTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "endTime",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cakePerSecond",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cakeAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "MasterChefV3_event_NewUpkeepPeriod"
+    }
+}

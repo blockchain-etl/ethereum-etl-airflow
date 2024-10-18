@@ -19,7 +19,7 @@
             "name": "OwnershipTransferred",
             "type": "event"
         },
-        "contract_address": "0x9b06ea9fbc912845df1302fe1641bef9639009f7",
+        "contract_address": "0xa34f59f634d48e2c3606048f2367326c46a4b5fa",
         "field_mapping": {},
         "type": "log"
     },

@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "yearnGauge",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "coveYearnStrategy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "autoCompoundingGauge",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nonAutoCompoundingGauge",
+                    "type": "address"
+                }
+            ],
+            "name": "CoveGaugesDeployed",
+            "type": "event"
+        },
+        "contract_address": "0x842b22eb2a1c1c54344eddbe6959f787c2d15844",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cove",
+        "schema": [
+            {
+                "description": "",
+                "name": "yearnGauge",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "coveYearnStrategy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "autoCompoundingGauge",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "nonAutoCompoundingGauge",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CoveYearnGaugeFactory_event_CoveGaugesDeployed"
+    }
+}

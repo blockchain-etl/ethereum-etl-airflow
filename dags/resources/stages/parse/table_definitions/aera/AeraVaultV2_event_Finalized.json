@@ -1,0 +1,55 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "asset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "value",
+                            "type": "uint256"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct AssetValue[]",
+                    "name": "withdrawnAmounts",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "Finalized",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault FROM ref('AeraV2Factory_event_VaultCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawnAmounts",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultV2_event_Finalized"
+    }
+}

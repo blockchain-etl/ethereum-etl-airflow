@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oracle",
+                    "type": "address"
+                }
+            ],
+            "name": "SetNewExchangeRateOracle",
+            "type": "event"
+        },
+        "contract_address": "SELECT DISTINCT SY FROM ref('PendleYieldContractFactory_event_CreateYieldContract')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "oracle",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleSYToken_event_SetNewExchangeRateOracle"
+    }
+}

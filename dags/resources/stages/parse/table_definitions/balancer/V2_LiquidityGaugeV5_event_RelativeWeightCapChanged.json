@@ -1,0 +1,31 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "name": "new_relative_weight_cap",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RelativeWeightCapChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT gauge FROM ref('V2_LiquidityGaugeFactory_event_GaugeCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "balancer",
+        "schema": [
+            {
+                "description": "",
+                "name": "new_relative_weight_cap",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "V2_LiquidityGaugeV5_event_RelativeWeightCapChanged"
+    }
+}

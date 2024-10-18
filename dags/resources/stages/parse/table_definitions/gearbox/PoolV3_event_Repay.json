@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditManager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "borrowedAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "profit",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "loss",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Repay",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('ContractsRegisterV3_event_NewPoolAdded')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditManager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrowedAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "profit",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "loss",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolV3_event_Repay"
+    }
+}

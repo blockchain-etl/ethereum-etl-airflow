@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "votingContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum VotingContractStatus",
+                    "name": "status",
+                    "type": "uint8"
+                }
+            ],
+            "name": "SetVotingContractStatus",
+            "type": "event"
+        },
+        "contract_address": "0x2fcbd02d5b1d52fc78d4c02890d7f4f47a459c33",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "votingContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "status",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GearStakingV3_event_SetVotingContractStatus"
+    }
+}

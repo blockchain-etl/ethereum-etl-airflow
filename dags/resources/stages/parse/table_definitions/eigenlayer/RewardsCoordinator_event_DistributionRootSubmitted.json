@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "rootIndex",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "root",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "rewardsCalculationEndTimestamp",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "activatedAt",
+                    "type": "uint32"
+                }
+            ],
+            "name": "DistributionRootSubmitted",
+            "type": "event"
+        },
+        "contract_address": "0x7750d328b314effa365a0402ccfd489b80b0adda",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "rootIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "root",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rewardsCalculationEndTimestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "activatedAt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_DistributionRootSubmitted"
+    }
+}

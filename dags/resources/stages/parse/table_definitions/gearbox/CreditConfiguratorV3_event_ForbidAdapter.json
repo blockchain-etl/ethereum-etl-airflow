@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "targetContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "adapter",
+                    "type": "address"
+                }
+            ],
+            "name": "ForbidAdapter",
+            "type": "event"
+        },
+        "contract_address": "SELECT newConfigurator FROM ref('CreditManagerV3_event_SetCreditConfigurator')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "targetContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "adapter",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditConfiguratorV3_event_ForbidAdapter"
+    }
+}

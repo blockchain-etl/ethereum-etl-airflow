@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "actor",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAwarded",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddCollateral",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool_ FROM ref('ERC20PoolFactory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ajna_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "actor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "index",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lpAwarded",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ERC20Pool_event_AddCollateral"
+    }
+}

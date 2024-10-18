@@ -1,0 +1,53 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                }
+            ],
+            "name": "userAssociatedNonces",
+            "outputs": [
+                {
+                    "internalType": "uint128",
+                    "name": "_begin",
+                    "type": "uint128"
+                },
+                {
+                    "internalType": "uint128",
+                    "name": "_end",
+                    "type": "uint128"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        "contract_address": "0x62de59c08eb5dae4b7e6f7a8cad3006d6965ec16",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "kelpdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LRTWithdrawalManager_call_userAssociatedNonces"
+    }
+}

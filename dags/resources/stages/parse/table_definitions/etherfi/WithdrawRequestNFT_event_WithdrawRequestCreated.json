@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint32",
+                    "name": "requestId",
+                    "type": "uint32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountOfEEth",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "shareOfEEth",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fee",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawRequestCreated",
+            "type": "event"
+        },
+        "contract_address": "0x7d5706f6ef3f89b3951e23e557cdfbc3239d4e2c",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "etherfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "requestId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountOfEEth",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "shareOfEEth",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WithdrawRequestNFT_event_WithdrawRequestCreated"
+    }
+}

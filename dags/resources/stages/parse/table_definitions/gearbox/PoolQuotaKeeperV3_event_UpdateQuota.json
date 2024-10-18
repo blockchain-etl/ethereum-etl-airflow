@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditAccount",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int96",
+                    "name": "quotaChange",
+                    "type": "int96"
+                }
+            ],
+            "name": "UpdateQuota",
+            "type": "event"
+        },
+        "contract_address": "SELECT newPoolQuotaKeeper FROM ref('PoolV3_event_SetPoolQuotaKeeper')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "quotaChange",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolQuotaKeeperV3_event_UpdateQuota"
+    }
+}

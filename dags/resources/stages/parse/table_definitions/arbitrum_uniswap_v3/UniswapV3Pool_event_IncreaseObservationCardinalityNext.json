@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "observationCardinalityNextOld",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "observationCardinalityNextNew",
+                    "type": "uint16"
+                }
+            ],
+            "name": "IncreaseObservationCardinalityNext",
+            "type": "event"
+        },
+        "contract_address": "SELECT pool FROM ref('UniswapV3Factory_event_PoolCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "arbitrum_uniswap_v3",
+        "schema": [
+            {
+                "description": "",
+                "name": "observationCardinalityNextOld",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "observationCardinalityNextNew",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "UniswapV3Pool_event_IncreaseObservationCardinalityNext"
+    }
+}

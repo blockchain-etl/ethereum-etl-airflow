@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "FinishMultiCall",
+            "type": "event"
+        },
+        "contract_address": "SELECT creditFacade FROM ref('CreditConfiguratorV3_event_SetCreditFacade')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [],
+        "table_description": "",
+        "table_name": "CreditFacadeV3_event_FinishMultiCall"
+    }
+}

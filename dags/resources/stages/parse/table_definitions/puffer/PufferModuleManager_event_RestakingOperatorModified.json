@@ -1,0 +1,77 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "restakingOperator",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "earningsReceiver",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "delegationApprover",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "stakerOptOutWindowBlocks",
+                            "type": "uint32"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IDelegationManager.OperatorDetails",
+                    "name": "newOperatorDetails",
+                    "type": "tuple"
+                }
+            ],
+            "name": "RestakingOperatorModified",
+            "type": "event"
+        },
+        "contract_address": "0x9e1e4fcb49931df5743e659ad910d331735c3860",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "restakingOperator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "fields": [
+                    {
+                        "description": "",
+                        "name": "earningsReceiver",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "delegationApprover",
+                        "type": "STRING"
+                    },
+                    {
+                        "description": "",
+                        "name": "stakerOptOutWindowBlocks",
+                        "type": "STRING"
+                    }
+                ],
+                "name": "newOperatorDetails",
+                "type": "RECORD"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferModuleManager_event_RestakingOperatorModified"
+    }
+}

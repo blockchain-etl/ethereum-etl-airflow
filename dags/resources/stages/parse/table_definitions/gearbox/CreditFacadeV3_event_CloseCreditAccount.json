@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "creditAccount",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                }
+            ],
+            "name": "CloseCreditAccount",
+            "type": "event"
+        },
+        "contract_address": "SELECT creditFacade FROM ref('CreditConfiguratorV3_event_SetCreditFacade')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "creditAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "CreditFacadeV3_event_CloseCreditAccount"
+    }
+}

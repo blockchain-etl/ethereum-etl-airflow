@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                }
+            ],
+            "name": "AddQuotaToken",
+            "type": "event"
+        },
+        "contract_address": "SELECT newPoolQuotaKeeper FROM ref('PoolV3_event_SetPoolQuotaKeeper')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolQuotaKeeperV3_event_AddQuotaToken"
+    }
+}

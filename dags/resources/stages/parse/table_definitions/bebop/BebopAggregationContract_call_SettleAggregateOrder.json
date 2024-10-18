@@ -1,0 +1,117 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "expiry",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "taker_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "maker_addresses",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "maker_nonces",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "internalType": "address[][]",
+                            "name": "taker_tokens",
+                            "type": "address[][]"
+                        },
+                        {
+                            "internalType": "address[][]",
+                            "name": "maker_tokens",
+                            "type": "address[][]"
+                        },
+                        {
+                            "internalType": "uint256[][]",
+                            "name": "taker_amounts",
+                            "type": "uint256[][]"
+                        },
+                        {
+                            "internalType": "uint256[][]",
+                            "name": "maker_amounts",
+                            "type": "uint256[][]"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "receiver",
+                            "type": "address"
+                        }
+                    ],
+                    "internalType": "struct AggregateOrder",
+                    "name": "order",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "takerSig",
+                    "type": "bytes"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "enum SignatureType",
+                            "name": "signatureType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signatureBytes",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct Signature[]",
+                    "name": "makerSigs",
+                    "type": "tuple[]"
+                }
+            ],
+            "name": "SettleAggregateOrder",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xbeb09beb09e95e6febf0d6eeb1d0d46d1013cc3c",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "bebop",
+        "schema": [
+            {
+                "description": "",
+                "name": "order",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerSig",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerSigs",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BebopAggregationContract_call_SettleAggregateOrder"
+    }
+}

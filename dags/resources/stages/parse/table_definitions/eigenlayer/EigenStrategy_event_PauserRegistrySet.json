@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IPauserRegistry",
+                    "name": "pauserRegistry",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IPauserRegistry",
+                    "name": "newPauserRegistry",
+                    "type": "address"
+                }
+            ],
+            "name": "PauserRegistrySet",
+            "type": "event"
+        },
+        "contract_address": "0xacb55c530acdb2849e6d4f36992cd8c9d50ed8f7",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "pauserRegistry",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newPauserRegistry",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EigenStrategy_event_PauserRegistrySet"
+    }
+}

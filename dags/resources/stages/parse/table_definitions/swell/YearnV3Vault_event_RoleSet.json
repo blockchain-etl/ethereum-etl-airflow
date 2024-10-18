@@ -1,0 +1,41 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "name": "role",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RoleSet",
+            "type": "event"
+        },
+        "contract_address": "SELECT vault_address FROM ref('YearnVaultFactory_event_NewVault')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "role",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "YearnV3Vault_event_RoleSet"
+    }
+}

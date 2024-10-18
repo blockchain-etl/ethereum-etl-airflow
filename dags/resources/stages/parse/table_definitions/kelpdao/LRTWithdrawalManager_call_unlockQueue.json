@@ -1,0 +1,73 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "firstExcludedIndex",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minimumAssetPrice",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "minimumRsEthPrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "unlockQueue",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "rsETHBurned",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "assetAmountUnlocked",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x62de59c08eb5dae4b7e6f7a8cad3006d6965ec16",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "kelpdao",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "firstExcludedIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minimumAssetPrice",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "minimumRsEthPrice",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "LRTWithdrawalManager_call_unlockQueue"
+    }
+}

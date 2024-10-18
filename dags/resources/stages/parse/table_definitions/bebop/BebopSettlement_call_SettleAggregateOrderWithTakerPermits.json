@@ -1,0 +1,178 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "expiry",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "taker_address",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address[]",
+                            "name": "maker_addresses",
+                            "type": "address[]"
+                        },
+                        {
+                            "internalType": "uint256[]",
+                            "name": "maker_nonces",
+                            "type": "uint256[]"
+                        },
+                        {
+                            "internalType": "address[][]",
+                            "name": "taker_tokens",
+                            "type": "address[][]"
+                        },
+                        {
+                            "internalType": "address[][]",
+                            "name": "maker_tokens",
+                            "type": "address[][]"
+                        },
+                        {
+                            "internalType": "uint256[][]",
+                            "name": "taker_amounts",
+                            "type": "uint256[][]"
+                        },
+                        {
+                            "internalType": "uint256[][]",
+                            "name": "maker_amounts",
+                            "type": "uint256[][]"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "receiver",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "commands",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct Order.Aggregate",
+                    "name": "order",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "enum Signature.Type",
+                            "name": "signatureType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signatureBytes",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct Signature.TypedSignature",
+                    "name": "takerSig",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "enum Signature.Type",
+                                    "name": "signatureType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "bytes",
+                                    "name": "signatureBytes",
+                                    "type": "bytes"
+                                }
+                            ],
+                            "internalType": "struct Signature.TypedSignature",
+                            "name": "signature",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "usingPermit2",
+                            "type": "bool"
+                        }
+                    ],
+                    "internalType": "struct Signature.MakerSignatures[]",
+                    "name": "makerSigs",
+                    "type": "tuple[]"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "bytes[]",
+                            "name": "permitSignatures",
+                            "type": "bytes[]"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "signatureBytesPermit2",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "uint48[]",
+                            "name": "noncesPermit2",
+                            "type": "uint48[]"
+                        },
+                        {
+                            "internalType": "uint48",
+                            "name": "deadline",
+                            "type": "uint48"
+                        }
+                    ],
+                    "internalType": "struct Signature.TakerPermitsInfo",
+                    "name": "takerPermitsInfo",
+                    "type": "tuple"
+                }
+            ],
+            "name": "SettleAggregateOrderWithTakerPermits",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        "contract_address": "0xbeb09000fa59627dc02bb55448ac1893eaa501a5",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "bebop",
+        "schema": [
+            {
+                "description": "",
+                "name": "order",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerSig",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "makerSigs",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "takerPermitsInfo",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BebopSettlement_call_SettleAggregateOrderWithTakerPermits"
+    }
+}

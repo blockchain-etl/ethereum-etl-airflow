@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fromTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "toTokenId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "processedRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "processedExitingETH",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "processedExitedETH",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawalsProcessed",
+            "type": "event"
+        },
+        "contract_address": "0x58749c46ffe97e4d79508a2c781c440f4756f064",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "swell",
+        "schema": [
+            {
+                "description": "",
+                "name": "fromTokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toTokenId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "processedRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "processedExitingETH",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "processedExitedETH",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RswEXIT_event_WithdrawalsProcessed"
+    }
+}

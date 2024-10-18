@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IBeacon",
+                    "name": "previousBeacon",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IBeacon",
+                    "name": "newBeacon",
+                    "type": "address"
+                }
+            ],
+            "name": "StrategyBeaconModified",
+            "type": "event"
+        },
+        "contract_address": "0x5e4c39ad7a3e881585e383db9827eb4811f6f647",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousBeacon",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newBeacon",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyFactory_event_StrategyBeaconModified"
+    }
+}

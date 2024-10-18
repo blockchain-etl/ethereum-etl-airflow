@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousGovernor",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newGovernor",
+                    "type": "address"
+                }
+            ],
+            "name": "GovernorshipTransferred",
+            "type": "event"
+        },
+        "contract_address": "0xdcee70654261af21c44c093c300ed3bb97b78192",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "woeth",
+        "schema": [
+            {
+                "description": "",
+                "name": "previousGovernor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newGovernor",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WOETH_event_GovernorshipTransferred"
+    }
+}

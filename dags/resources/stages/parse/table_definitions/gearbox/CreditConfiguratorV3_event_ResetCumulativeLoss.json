@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "ResetCumulativeLoss",
+            "type": "event"
+        },
+        "contract_address": "SELECT newConfigurator FROM ref('CreditManagerV3_event_SetCreditConfigurator')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "gearbox",
+        "schema": [],
+        "table_description": "",
+        "table_name": "CreditConfiguratorV3_event_ResetCumulativeLoss"
+    }
+}

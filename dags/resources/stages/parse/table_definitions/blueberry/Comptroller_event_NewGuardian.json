@@ -19,7 +19,7 @@
             "name": "NewGuardian",
             "type": "event"
         },
-        "contract_address": "0xffadb0bba4379dfabfb20ca6823f6ec439429ec2",
+        "contract_address": "0xcb0d9ff5bdd34521c6f8cdbeaf15e1a76fa4dd5d",
         "field_mapping": {},
         "type": "log"
     },

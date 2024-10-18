@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes4",
+                    "name": "selector",
+                    "type": "bytes4"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                }
+            ],
+            "name": "ForwardedOperatorCall",
+            "type": "event"
+        },
+        "contract_address": "0x2093bbb221f1d8c7c932c32ee28be6dee4a37a6a",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "etherfi",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "target",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "selector",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AvsOperatorManager_event_ForwardedOperatorCall"
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "withdrawRequestID",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "claimToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountToRedeem",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ezETHAmountLocked",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "withdrawRequestIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "queued",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "queueFilled",
+                    "type": "uint256"
+                }
+            ],
+            "name": "WithdrawRequestCreated",
+            "type": "event"
+        },
+        "contract_address": "0x5efc9d10e42fb517456f4ac41eb5e2ebe42c8918",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "renzo",
+        "schema": [
+            {
+                "description": "",
+                "name": "withdrawRequestID",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "user",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "claimToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountToRedeem",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ezETHAmountLocked",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "withdrawRequestIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "queued",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "queueFilled",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "WithdrawQueue_event_WithdrawRequestCreated_Upgrade"
+    }
+}

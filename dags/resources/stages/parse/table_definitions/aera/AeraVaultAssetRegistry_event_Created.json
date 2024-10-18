@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "contract IERC20",
+                            "name": "asset",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "heartbeat",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "isERC4626",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "contract AggregatorV2V3Interface",
+                            "name": "oracle",
+                            "type": "address"
+                        }
+                    ],
+                    "indexed": false,
+                    "internalType": "struct IAssetRegistry.AssetInformation[]",
+                    "name": "assets",
+                    "type": "tuple[]"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "numeraireToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "feeToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "wrappedNativeToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sequencer",
+                    "type": "address"
+                }
+            ],
+            "name": "Created",
+            "type": "event"
+        },
+        "contract_address": "SELECT assetRegistry FROM ref('AeraVaultModulesFactory_event_AssetRegistryCreated')",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aera",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vault",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "assets",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "numeraireToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "wrappedNativeToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sequencer",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "AeraVaultAssetRegistry_event_Created"
+    }
+}

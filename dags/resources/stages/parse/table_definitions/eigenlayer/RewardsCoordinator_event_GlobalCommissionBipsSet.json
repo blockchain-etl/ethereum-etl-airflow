@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "oldGlobalCommissionBips",
+                    "type": "uint16"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "newGlobalCommissionBips",
+                    "type": "uint16"
+                }
+            ],
+            "name": "GlobalCommissionBipsSet",
+            "type": "event"
+        },
+        "contract_address": "0x7750d328b314effa365a0402ccfd489b80b0adda",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldGlobalCommissionBips",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newGlobalCommissionBips",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_GlobalCommissionBipsSet"
+    }
+}

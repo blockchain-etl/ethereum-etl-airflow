@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "token",
+                    "type": "address"
+                }
+            ],
+            "name": "TokenBlacklisted",
+            "type": "event"
+        },
+        "contract_address": "0x5e4c39ad7a3e881585e383db9827eb4811f6f647",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "token",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StrategyFactory_event_TokenBlacklisted"
+    }
+}

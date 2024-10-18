@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "oldRewardsUpdater",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newRewardsUpdater",
+                    "type": "address"
+                }
+            ],
+            "name": "RewardsUpdaterSet",
+            "type": "event"
+        },
+        "contract_address": "0x7750d328b314effa365a0402ccfd489b80b0adda",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eigenlayer",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldRewardsUpdater",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newRewardsUpdater",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "RewardsCoordinator_event_RewardsUpdaterSet"
+    }
+}
