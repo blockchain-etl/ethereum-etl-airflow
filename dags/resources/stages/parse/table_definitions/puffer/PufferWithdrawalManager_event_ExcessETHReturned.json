@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "batchIndices",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalExcessETH",
+                    "type": "uint256"
+                }
+            ],
+            "name": "ExcessETHReturned",
+            "type": "event"
+        },
+        "contract_address": "0xdda0483184e75a5579ef9635ed14baccf9d50283",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "batchIndices",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalExcessETH",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferWithdrawalManager_event_ExcessETHReturned"
+    }
+}
