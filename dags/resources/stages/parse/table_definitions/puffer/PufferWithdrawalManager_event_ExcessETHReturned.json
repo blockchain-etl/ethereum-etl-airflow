@@ -24,7 +24,7 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "ethereum_puffer",
+        "dataset_name": "puffer",
         "schema": [
             {
                 "description": "",
