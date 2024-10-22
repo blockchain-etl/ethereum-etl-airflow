@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "batchIdx",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "expectedETHAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "actualEthAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "pufETHBurnAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BatchFinalized",
+            "type": "event"
+        },
+        "contract_address": "0xdda0483184e75a5579ef9635ed14baccf9d50283",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "batchIdx",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expectedETHAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "actualEthAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pufETHBurnAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferWithdrawalManager_event_BatchFinalized"
+    }
+}

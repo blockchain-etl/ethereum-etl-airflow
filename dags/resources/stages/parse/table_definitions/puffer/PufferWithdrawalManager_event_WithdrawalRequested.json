@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "withdrawalIdx",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "batchIdx",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "pufETHAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "recipient",
+                    "type": "address"
+                }
+            ],
+            "name": "WithdrawalRequested",
+            "type": "event"
+        },
+        "contract_address": "0xdda0483184e75a5579ef9635ed14baccf9d50283",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "ethereum_puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "withdrawalIdx",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "batchIdx",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pufETHAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "recipient",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferWithdrawalManager_event_WithdrawalRequested"
+    }
+}
