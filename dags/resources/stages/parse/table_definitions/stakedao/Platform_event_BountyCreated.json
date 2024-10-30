@@ -1,0 +1,120 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "gauge",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "manager",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "rewardToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "numberOfPeriods",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxRewardPerVote",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "rewardPerPeriod",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalRewardAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isUpgradeable",
+                    "type": "bool"
+                }
+            ],
+            "name": "BountyCreated",
+            "type": "event"
+        },
+        "contract_address": "0x000000073d065fc33a3050c2d0e19c393a5699ba",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "stakedao",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "gauge",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "manager",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rewardToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "numberOfPeriods",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "maxRewardPerVote",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "rewardPerPeriod",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalRewardAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "isUpgradeable",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Platform_event_BountyCreated"
+    }
+}
