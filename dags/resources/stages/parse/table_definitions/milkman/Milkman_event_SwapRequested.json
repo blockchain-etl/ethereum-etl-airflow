@@ -1,0 +1,109 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "orderContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "orderCreator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountIn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "fromToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "toToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "priceChecker",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "priceCheckerData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "SwapRequested",
+            "type": "event"
+        },
+        "contract_address": "0x11c76ad590abdffcd980afec9ad951b160f02797",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "milkman",
+        "schema": [
+            {
+                "description": "",
+                "name": "orderContract",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "orderCreator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "fromToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "toToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "priceChecker",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "priceCheckerData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Milkman_event_SwapRequested"
+    }
+}
