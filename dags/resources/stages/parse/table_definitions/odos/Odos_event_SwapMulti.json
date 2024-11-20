@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "amountsIn",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "tokensIn",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "amountsOut",
+                    "type": "uint256[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "tokensOut",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "referralCode",
+                    "type": "uint32"
+                }
+            ],
+            "name": "SwapMulti",
+            "type": "event"
+        },
+        "contract_address": "0xcf5540fffcdc3d510b18bfca6d2b9987b0772559",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "odos",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountsIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokensIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountsOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokensOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referralCode",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Odos_event_SwapMulti"
+    }
+}

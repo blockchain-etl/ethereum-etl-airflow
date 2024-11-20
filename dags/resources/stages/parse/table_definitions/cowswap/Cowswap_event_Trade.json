@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "sellToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "contract IERC20",
+                    "name": "buyToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "sellAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "buyAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "feeAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "orderUid",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Trade",
+            "type": "event"
+        },
+        "contract_address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cowswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "owner",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sellToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sellAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "buyAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "feeAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "orderUid",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Cowswap_event_Trade"
+    }
+}
