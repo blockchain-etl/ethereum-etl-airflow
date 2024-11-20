@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "inputAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "inputToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amountOut",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "outputToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "slippage",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint32",
+                    "name": "referralCode",
+                    "type": "uint32"
+                }
+            ],
+            "name": "Swap",
+            "type": "event"
+        },
+        "contract_address": "0xcf5540fffcdc3d510b18bfca6d2b9987b0772559",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "odos",
+        "schema": [
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inputAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "inputToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amountOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "outputToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "slippage",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "referralCode",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Odos_event_Swap"
+    }
+}
