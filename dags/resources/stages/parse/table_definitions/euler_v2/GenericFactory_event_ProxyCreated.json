@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "proxy",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "upgradeable",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "implementation",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "trailingData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "ProxyCreated",
+            "type": "event"
+        },
+        "contract_address": "0x29a56a1b8214d9cf7c5561811750d5cbdb45cc8e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "proxy",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "upgradeable",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "implementation",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "trailingData",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GenericFactory_event_ProxyCreated"
+    }
+}
