@@ -55,7 +55,7 @@
             "name": "CreateMetaMorpho",
             "type": "event"
         },
-        "contract_address": "0xa9c3d3a366466fa809d1ae982fb2c46e5fc41101",
+        "contract_address": "SELECT * FROM UNNEST(['0xa9c3d3a366466fa809d1ae982fb2c46e5fc41101', '0x1897a8997241c1cd4bd0698647e4eb7213535c24'])",
         "field_mapping": {},
         "type": "log"
     },
