@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "Paused",
+            "type": "event"
+        },
+        "contract_address": "0x5F7827FDeb7c20b443265Fc2F40845B715385Ff2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eurcv",
+        "schema": [],
+        "table_description": "",
+        "table_name": "eurcv_event_Paused"
+    }
+}

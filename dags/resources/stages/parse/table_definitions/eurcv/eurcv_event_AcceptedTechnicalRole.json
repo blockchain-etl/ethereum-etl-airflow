@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "technical",
+                    "type": "address"
+                }
+            ],
+            "name": "AcceptedTechnicalRole",
+            "type": "event"
+        },
+        "contract_address": "0x5F7827FDeb7c20b443265Fc2F40845B715385Ff2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eurcv",
+        "schema": [
+            {
+                "description": "",
+                "name": "technical",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "eurcv_event_AcceptedTechnicalRole"
+    }
+}
