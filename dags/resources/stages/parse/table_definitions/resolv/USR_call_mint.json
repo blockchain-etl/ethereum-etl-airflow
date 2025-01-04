@@ -47,6 +47,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "USR_event_mint"
+        "table_name": "USR_call_mint"
     }
 }
