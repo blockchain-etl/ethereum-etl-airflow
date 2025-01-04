@@ -37,6 +37,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "USR_event_burn"
+        "table_name": "USR_call_burn"
     }
 }
