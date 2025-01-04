@@ -43,6 +43,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "USR_event_transfer"
+        "table_name": "USR_call_transfer"
     }
 }
