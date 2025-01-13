@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "oldMaxWithdrawalAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newMaxWithdrawalAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MaxWithdrawalAmountChanged",
+            "type": "event"
+        },
+        "contract_address": "0xdda0483184e75a5579ef9635ed14baccf9d50283",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "puffer",
+        "schema": [
+            {
+                "description": "",
+                "name": "oldMaxWithdrawalAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newMaxWithdrawalAmount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PufferWithdrawalManager_event_MaxWithdrawalAmountChanged"
+    }
+}

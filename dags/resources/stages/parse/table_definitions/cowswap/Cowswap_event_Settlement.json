@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "solver",
+                    "type": "address"
+                }
+            ],
+            "name": "Settlement",
+            "type": "event"
+        },
+        "contract_address": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "cowswap",
+        "schema": [
+            {
+                "description": "",
+                "name": "solver",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "Cowswap_event_Settlement"
+    }
+}

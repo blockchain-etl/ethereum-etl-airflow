@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newUpgradeAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "SetUpgradeAdmin",
+            "type": "event"
+        },
+        "contract_address": "0x29a56a1b8214d9cf7c5561811750d5cbdb45cc8e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "newUpgradeAdmin",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "GenericFactory_event_SetUpgradeAdmin"
+    }
+}
