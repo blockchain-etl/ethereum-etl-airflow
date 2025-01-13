@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "newFee",
+                    "type": "uint16"
+                }
+            ],
+            "name": "GovSetInterestFee",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('GenericFactory_event_ProxyCreated') WHERE implementation = '0x8ff1c814719096b61abf00bb46ead0c9a529dd7d'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "newFee",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EVault_event_GovSetInterestFee"
+    }
+}

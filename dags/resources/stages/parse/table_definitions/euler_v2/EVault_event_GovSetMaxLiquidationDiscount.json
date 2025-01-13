@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint16",
+                    "name": "newDiscount",
+                    "type": "uint16"
+                }
+            ],
+            "name": "GovSetMaxLiquidationDiscount",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('GenericFactory_event_ProxyCreated') WHERE implementation = '0x8ff1c814719096b61abf00bb46ead0c9a529dd7d'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "newDiscount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EVault_event_GovSetMaxLiquidationDiscount"
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalShares",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "totalBorrows",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "accumulatedFees",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "cash",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "interestAccumulator",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "interestRate",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "VaultStatus",
+            "type": "event"
+        },
+        "contract_address": "SELECT proxy FROM ref('GenericFactory_event_ProxyCreated') WHERE implementation = '0x8ff1c814719096b61abf00bb46ead0c9a529dd7d'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "euler_v2",
+        "schema": [
+            {
+                "description": "",
+                "name": "totalShares",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "totalBorrows",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "accumulatedFees",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "cash",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestAccumulator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestRate",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "timestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "EVault_event_VaultStatus"
+    }
+}
