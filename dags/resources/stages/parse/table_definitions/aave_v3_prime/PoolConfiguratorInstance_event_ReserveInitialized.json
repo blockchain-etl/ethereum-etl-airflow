@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "asset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "aToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "stableDebtToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "variableDebtToken",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "interestRateStrategyAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "ReserveInitialized",
+            "type": "event"
+        },
+        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave_v3_prime",
+        "schema": [
+            {
+                "description": "",
+                "name": "asset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "aToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "stableDebtToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "variableDebtToken",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "interestRateStrategyAddress",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolConfiguratorInstance_event_ReserveInitialized"
+    }
+}
