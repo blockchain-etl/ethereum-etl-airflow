@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint8",
+                    "name": "categoryId",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ltv",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidationThreshold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidationBonus",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oracle",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "label",
+                    "type": "string"
+                }
+            ],
+            "name": "EModeCategoryAdded",
+            "type": "event"
+        },
+        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave_v3_prime",
+        "schema": [
+            {
+                "description": "",
+                "name": "categoryId",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "ltv",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationThreshold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationBonus",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "oracle",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "label",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolConfiguratorInstance_event_EModeCategoryAdded"
+    }
+}
