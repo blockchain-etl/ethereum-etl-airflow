@@ -30,7 +30,6 @@
         "type": "log"
     },
     "table": {
-        "dataset_name": "",
         "schema": [
             {
                 "description": "",
