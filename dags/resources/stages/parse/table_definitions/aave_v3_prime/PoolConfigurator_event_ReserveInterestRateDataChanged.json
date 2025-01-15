@@ -12,20 +12,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "proxy",
+                    "name": "strategy",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "implementation",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
                 }
             ],
-            "name": "ATokenUpgraded",
+            "name": "ReserveInterestRateDataChanged",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6CeFC9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "proxy",
+                "name": "strategy",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "implementation",
+                "name": "data",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_ATokenUpgraded"
+        "table_name": "PoolConfigurator_event_ReserveInterestRateDataChanged"
     }
 }

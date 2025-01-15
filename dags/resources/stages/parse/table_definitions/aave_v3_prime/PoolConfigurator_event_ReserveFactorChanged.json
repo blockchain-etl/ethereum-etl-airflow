@@ -12,20 +12,20 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "oldFee",
+                    "name": "oldReserveFactor",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "newFee",
+                    "name": "newReserveFactor",
                     "type": "uint256"
                 }
             ],
-            "name": "LiquidationProtocolFeeChanged",
+            "name": "ReserveFactorChanged",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6CeFC9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "oldFee",
+                "name": "oldReserveFactor",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newFee",
+                "name": "newReserveFactor",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_LiquidationProtocolFeeChanged"
+        "table_name": "PoolConfigurator_event_ReserveFactorChanged"
     }
 }

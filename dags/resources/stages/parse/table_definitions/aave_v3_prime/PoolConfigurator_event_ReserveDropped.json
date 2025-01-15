@@ -8,18 +8,12 @@
                     "internalType": "address",
                     "name": "asset",
                     "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "frozen",
-                    "type": "bool"
                 }
             ],
-            "name": "ReserveFrozen",
+            "name": "ReserveDropped",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6CeFC9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -30,14 +24,9 @@
                 "description": "",
                 "name": "asset",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "frozen",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_ReserveFrozen"
+        "table_name": "PoolConfigurator_event_ReserveDropped"
     }
 }

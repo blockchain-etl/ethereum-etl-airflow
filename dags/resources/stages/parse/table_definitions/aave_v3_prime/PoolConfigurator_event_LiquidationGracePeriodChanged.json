@@ -10,22 +10,16 @@
                     "type": "address"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "proxy",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "implementation",
-                    "type": "address"
+                    "indexed": false,
+                    "internalType": "uint40",
+                    "name": "gracePeriodUntil",
+                    "type": "uint40"
                 }
             ],
-            "name": "VariableDebtTokenUpgraded",
+            "name": "LiquidationGracePeriodChanged",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6CeFC9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +33,11 @@
             },
             {
                 "description": "",
-                "name": "proxy",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "implementation",
+                "name": "gracePeriodUntil",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_VariableDebtTokenUpgraded"
+        "table_name": "PoolConfigurator_event_LiquidationGracePeriodChanged"
     }
 }

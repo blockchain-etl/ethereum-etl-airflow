@@ -12,20 +12,26 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "oldBorrowCap",
+                    "name": "ltv",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "newBorrowCap",
+                    "name": "liquidationThreshold",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "liquidationBonus",
                     "type": "uint256"
                 }
             ],
-            "name": "BorrowCapChanged",
+            "name": "CollateralConfigurationChanged",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6CeFC9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +45,21 @@
             },
             {
                 "description": "",
-                "name": "oldBorrowCap",
+                "name": "ltv",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newBorrowCap",
+                "name": "liquidationThreshold",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidationBonus",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_BorrowCapChanged"
+        "table_name": "PoolConfigurator_event_CollateralConfigurationChanged"
     }
 }
