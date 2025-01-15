@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "underlyingAsset",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "pool",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "incentivesController",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "debtTokenDecimals",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "debtTokenName",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "debtTokenSymbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "params",
+                    "type": "bytes"
+                }
+            ],
+            "name": "Initialized",
+            "type": "event"
+        },
+        "contract_address": "SELECT stableDebtToken FROM ref('PoolConfigurator_event_ReserveInitialized') GROUP BY stableDebtToken",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "aave_v3_prime",
+        "schema": [
+            {
+                "description": "",
+                "name": "underlyingAsset",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "pool",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "incentivesController",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtTokenDecimals",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtTokenName",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "debtTokenSymbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "params",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "StableDebtToken_v3_event_Initialized"
+    }
+}
