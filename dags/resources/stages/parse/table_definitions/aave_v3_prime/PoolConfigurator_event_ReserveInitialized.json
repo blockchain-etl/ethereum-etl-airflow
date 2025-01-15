@@ -6,38 +6,38 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "reserve",
+                    "name": "asset",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "user",
+                    "name": "aToken",
                     "type": "address"
                 },
                 {
-                    "indexed": true,
+                    "indexed": false,
                     "internalType": "address",
-                    "name": "repayer",
+                    "name": "stableDebtToken",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "variableDebtToken",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "bool",
-                    "name": "useATokens",
-                    "type": "bool"
+                    "internalType": "address",
+                    "name": "interestRateStrategyAddress",
+                    "type": "address"
                 }
             ],
-            "name": "Repay",
+            "name": "ReserveInitialized",
             "type": "event"
         },
-        "contract_address": "0x4e033931ad43597d96d6bcc25c280717730b58b1",
+        "contract_address": "0x342631c6cefc9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -46,31 +46,31 @@
         "schema": [
             {
                 "description": "",
-                "name": "reserve",
+                "name": "asset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "user",
+                "name": "aToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "repayer",
+                "name": "stableDebtToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "variableDebtToken",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "useATokens",
+                "name": "interestRateStrategyAddress",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "Pool_v3_event_Repay"
+        "table_name": "PoolConfigurator_event_ReserveInitialized"
     }
 }

@@ -12,32 +12,20 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "aToken",
+                    "name": "proxy",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
+                    "indexed": true,
                     "internalType": "address",
-                    "name": "stableDebtToken",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "variableDebtToken",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "interestRateStrategyAddress",
+                    "name": "implementation",
                     "type": "address"
                 }
             ],
-            "name": "ReserveInitialized",
+            "name": "ATokenUpgraded",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6cefc9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -51,26 +39,16 @@
             },
             {
                 "description": "",
-                "name": "aToken",
+                "name": "proxy",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "stableDebtToken",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "variableDebtToken",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "interestRateStrategyAddress",
+                "name": "implementation",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_ReserveInitialized"
+        "table_name": "PoolConfigurator_event_ATokenUpgraded"
     }
 }
