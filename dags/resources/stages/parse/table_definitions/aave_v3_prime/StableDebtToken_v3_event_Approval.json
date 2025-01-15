@@ -6,20 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "reserve",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "spender",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amountMinted",
+                    "name": "value",
                     "type": "uint256"
                 }
             ],
-            "name": "MintedToTreasury",
+            "name": "Approval",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "SELECT stableDebtToken FROM ref('PoolConfigurator_event_ReserveInitialized') GROUP BY stableDebtToken",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "reserve",
+                "name": "owner",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amountMinted",
+                "name": "spender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_MintedToTreasury"
+        "table_name": "StableDebtToken_v3_event_Approval"
     }
 }

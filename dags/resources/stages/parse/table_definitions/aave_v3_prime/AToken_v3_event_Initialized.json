@@ -6,50 +6,56 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "collateralAsset",
+                    "name": "underlyingAsset",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "debtAsset",
+                    "name": "pool",
                     "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "user",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "debtToCover",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "liquidatedCollateralAmount",
-                    "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "address",
-                    "name": "liquidator",
+                    "name": "treasury",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "bool",
-                    "name": "receiveAToken",
-                    "type": "bool"
+                    "internalType": "address",
+                    "name": "incentivesController",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "aTokenDecimals",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "aTokenName",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "aTokenSymbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "params",
+                    "type": "bytes"
                 }
             ],
-            "name": "LiquidationCall",
+            "name": "Initialized",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "SELECT aToken FROM ref('PoolConfigurator_event_ReserveInitialized') group by aToken",
         "field_mapping": {},
         "type": "log"
     },
@@ -58,41 +64,46 @@
         "schema": [
             {
                 "description": "",
-                "name": "collateralAsset",
+                "name": "underlyingAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "debtAsset",
+                "name": "pool",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "user",
+                "name": "treasury",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "debtToCover",
+                "name": "incentivesController",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "liquidatedCollateralAmount",
+                "name": "aTokenDecimals",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "liquidator",
+                "name": "aTokenName",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "receiveAToken",
+                "name": "aTokenSymbol",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "params",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_LiquidationCall"
+        "table_name": "AToken_v3_event_Initialized"
     }
 }

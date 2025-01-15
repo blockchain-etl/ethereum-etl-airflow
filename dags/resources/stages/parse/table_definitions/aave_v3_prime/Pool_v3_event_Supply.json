@@ -11,36 +11,30 @@
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "liquidityRate",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "onBehalfOf",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "stableBorrowRate",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "variableBorrowRate",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "liquidityIndex",
-                    "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "variableBorrowIndex",
-                    "type": "uint256"
+                    "indexed": true,
+                    "internalType": "uint16",
+                    "name": "referralCode",
+                    "type": "uint16"
                 }
             ],
-            "name": "ReserveDataUpdated",
+            "name": "Supply",
             "type": "event"
         },
         "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
@@ -57,31 +51,26 @@
             },
             {
                 "description": "",
-                "name": "liquidityRate",
+                "name": "user",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "stableBorrowRate",
+                "name": "onBehalfOf",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "variableBorrowRate",
+                "name": "amount",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "liquidityIndex",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "variableBorrowIndex",
+                "name": "referralCode",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_ReserveDataUpdated"
+        "table_name": "Pool_v3_event_Supply"
     }
 }

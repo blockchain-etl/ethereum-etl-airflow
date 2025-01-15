@@ -14,9 +14,21 @@
                     "internalType": "address",
                     "name": "user",
                     "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
                 }
             ],
-            "name": "ReserveUsedAsCollateralDisabled",
+            "name": "Withdraw",
             "type": "event"
         },
         "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
@@ -35,9 +47,19 @@
                 "description": "",
                 "name": "user",
                 "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_ReserveUsedAsCollateralDisabled"
+        "table_name": "Pool_v3_event_Withdraw"
     }
 }

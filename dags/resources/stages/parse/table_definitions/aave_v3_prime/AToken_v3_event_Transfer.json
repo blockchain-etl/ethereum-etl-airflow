@@ -6,20 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "user",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint8",
-                    "name": "categoryId",
-                    "type": "uint8"
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
                 }
             ],
-            "name": "UserEModeSet",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "SELECT aToken FROM ref('PoolConfigurator_event_ReserveInitialized') group by aToken",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "user",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "categoryId",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_UserEModeSet"
+        "table_name": "AToken_v3_event_Transfer"
     }
 }

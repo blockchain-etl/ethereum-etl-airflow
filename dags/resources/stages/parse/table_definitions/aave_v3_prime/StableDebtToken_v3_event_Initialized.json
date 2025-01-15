@@ -6,50 +6,50 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "target",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "initiator",
+                    "name": "underlyingAsset",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "asset",
+                    "name": "pool",
                     "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
+                    "internalType": "address",
+                    "name": "incentivesController",
+                    "type": "address"
                 },
                 {
                     "indexed": false,
-                    "internalType": "enum DataTypes.InterestRateMode",
-                    "name": "interestRateMode",
+                    "internalType": "uint8",
+                    "name": "debtTokenDecimals",
                     "type": "uint8"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint256",
-                    "name": "premium",
-                    "type": "uint256"
+                    "internalType": "string",
+                    "name": "debtTokenName",
+                    "type": "string"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "uint16",
-                    "name": "referralCode",
-                    "type": "uint16"
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "debtTokenSymbol",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes",
+                    "name": "params",
+                    "type": "bytes"
                 }
             ],
-            "name": "FlashLoan",
+            "name": "Initialized",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "SELECT stableDebtToken FROM ref('PoolConfigurator_event_ReserveInitialized') GROUP BY stableDebtToken",
         "field_mapping": {},
         "type": "log"
     },
@@ -58,41 +58,41 @@
         "schema": [
             {
                 "description": "",
-                "name": "target",
+                "name": "underlyingAsset",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "initiator",
+                "name": "pool",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "asset",
+                "name": "incentivesController",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "debtTokenDecimals",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "interestRateMode",
+                "name": "debtTokenName",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "premium",
+                "name": "debtTokenSymbol",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "referralCode",
+                "name": "params",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_FlashLoan"
+        "table_name": "StableDebtToken_v3_event_Initialized"
     }
 }

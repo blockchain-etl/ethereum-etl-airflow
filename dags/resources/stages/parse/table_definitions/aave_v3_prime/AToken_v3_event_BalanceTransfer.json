@@ -6,38 +6,32 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "reserve",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "address",
-                    "name": "user",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "onBehalfOf",
+                    "name": "to",
                     "type": "address"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "value",
                     "type": "uint256"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "uint16",
-                    "name": "referralCode",
-                    "type": "uint16"
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
                 }
             ],
-            "name": "Supply",
+            "name": "BalanceTransfer",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "SELECT aToken FROM ref('PoolConfigurator_event_ReserveInitialized') group by aToken",
         "field_mapping": {},
         "type": "log"
     },
@@ -46,31 +40,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "reserve",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "user",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "onBehalfOf",
+                "name": "value",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "amount",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "referralCode",
+                "name": "index",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_Supply"
+        "table_name": "AToken_v3_event_BalanceTransfer"
     }
 }

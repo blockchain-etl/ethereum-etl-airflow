@@ -6,17 +6,17 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "asset",
+                    "name": "reserve",
                     "type": "address"
                 },
                 {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "totalDebt",
-                    "type": "uint256"
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
                 }
             ],
-            "name": "IsolationModeTotalDebtUpdated",
+            "name": "ReserveUsedAsCollateralEnabled",
             "type": "event"
         },
         "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "asset",
+                "name": "reserve",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "totalDebt",
+                "name": "user",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_IsolationModeTotalDebtUpdated"
+        "table_name": "Pool_v3_event_ReserveUsedAsCollateralEnabled"
     }
 }

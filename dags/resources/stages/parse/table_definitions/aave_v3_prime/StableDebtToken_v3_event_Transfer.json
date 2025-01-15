@@ -6,20 +6,26 @@
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "reserve",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "user",
+                    "name": "to",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
                 }
             ],
-            "name": "ReserveUsedAsCollateralEnabled",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "SELECT stableDebtToken FROM ref('PoolConfigurator_event_ReserveInitialized') GROUP BY stableDebtToken",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "reserve",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "user",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolInstance_event_ReserveUsedAsCollateralEnabled"
+        "table_name": "StableDebtToken_v3_event_Transfer"
     }
 }
