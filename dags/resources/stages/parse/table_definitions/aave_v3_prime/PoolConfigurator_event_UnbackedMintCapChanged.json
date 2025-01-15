@@ -12,20 +12,20 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "oldSupplyCap",
+                    "name": "oldUnbackedMintCap",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "newSupplyCap",
+                    "name": "newUnbackedMintCap",
                     "type": "uint256"
                 }
             ],
-            "name": "SupplyCapChanged",
+            "name": "UnbackedMintCapChanged",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6cefc9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +39,16 @@
             },
             {
                 "description": "",
-                "name": "oldSupplyCap",
+                "name": "oldUnbackedMintCap",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newSupplyCap",
+                "name": "newUnbackedMintCap",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_SupplyCapChanged"
+        "table_name": "PoolConfigurator_event_UnbackedMintCapChanged"
     }
 }

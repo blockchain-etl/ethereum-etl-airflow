@@ -5,21 +5,21 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "uint128",
-                    "name": "oldFlashloanPremiumTotal",
-                    "type": "uint128"
+                    "internalType": "uint256",
+                    "name": "oldBridgeProtocolFee",
+                    "type": "uint256"
                 },
                 {
                     "indexed": false,
-                    "internalType": "uint128",
-                    "name": "newFlashloanPremiumTotal",
-                    "type": "uint128"
+                    "internalType": "uint256",
+                    "name": "newBridgeProtocolFee",
+                    "type": "uint256"
                 }
             ],
-            "name": "FlashloanPremiumTotalUpdated",
+            "name": "BridgeProtocolFeeUpdated",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6cefc9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -28,16 +28,16 @@
         "schema": [
             {
                 "description": "",
-                "name": "oldFlashloanPremiumTotal",
+                "name": "oldBridgeProtocolFee",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "newFlashloanPremiumTotal",
+                "name": "newBridgeProtocolFee",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_FlashloanPremiumTotalUpdated"
+        "table_name": "PoolConfigurator_event_BridgeProtocolFeeUpdated"
     }
 }

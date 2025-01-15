@@ -12,20 +12,14 @@
                 {
                     "indexed": false,
                     "internalType": "bool",
-                    "name": "oldState",
-                    "type": "bool"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "bool",
-                    "name": "newState",
+                    "name": "enabled",
                     "type": "bool"
                 }
             ],
-            "name": "SiloedBorrowingChanged",
+            "name": "ReserveFlashLoaning",
             "type": "event"
         },
-        "contract_address": "0x4816b2c2895f97fb918f1ae7da403750a0ee372e",
+        "contract_address": "0x342631c6cefc9cfbf97b2fe4aa242a236e1fd517",
         "field_mapping": {},
         "type": "log"
     },
@@ -39,16 +33,11 @@
             },
             {
                 "description": "",
-                "name": "oldState",
-                "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "newState",
+                "name": "enabled",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "PoolConfiguratorInstance_event_SiloedBorrowingChanged"
+        "table_name": "PoolConfigurator_event_ReserveFlashLoaning"
     }
 }
