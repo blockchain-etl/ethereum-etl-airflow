@@ -37,7 +37,7 @@
             "name": "Supply",
             "type": "event"
         },
-        "contract_address": "0xf5b4664cb6d13189345119c60a948cdc7785d0fe",
+        "contract_address": "0x4e033931ad43597d96D6bcc25c280717730B58B1",
         "field_mapping": {},
         "type": "log"
     },
