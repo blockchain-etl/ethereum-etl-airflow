@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "entity",
+                    "type": "address"
+                }
+            ],
+            "name": "AddEntity",
+            "type": "event"
+        },
+        "contract_address": "0xad817a6bc954f678451a71363f04150fdd81af9f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "entity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OperatorRegistry_event_AddEntity"
+    }
+}

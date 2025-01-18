@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "entity",
+                    "type": "address"
+                }
+            ],
+            "name": "AddEntity",
+            "type": "event"
+        },
+        "contract_address": "0x290cab97a312164ccf095d75d6175df1c4a0a25f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "entity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DefaultStakerRewardsFactory_event_AddEntity"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "entity",
+                    "type": "address"
+                }
+            ],
+            "name": "AddEntity",
+            "type": "event"
+        },
+        "contract_address": "0x99f2b89fb3c363fbafd8d826e5aa77b28bab70a0",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "entity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "BurnerRouterFactory_event_AddEntity"
+    }
+}

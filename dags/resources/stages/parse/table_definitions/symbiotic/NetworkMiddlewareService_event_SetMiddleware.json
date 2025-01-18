@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "network",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "middleware",
+                    "type": "address"
+                }
+            ],
+            "name": "SetMiddleware",
+            "type": "event"
+        },
+        "contract_address": "0xd7dc9b366c027743d90761f71858bca83c6899ad",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "network",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "middleware",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkMiddlewareService_event_SetMiddleware"
+    }
+}

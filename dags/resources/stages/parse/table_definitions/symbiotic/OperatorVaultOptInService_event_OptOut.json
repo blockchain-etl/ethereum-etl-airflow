@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "who",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "where",
+                    "type": "address"
+                }
+            ],
+            "name": "OptOut",
+            "type": "event"
+        },
+        "contract_address": "0xb361894bc06cbba7ea8098bf0e32eb1906a5f891",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "who",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "where",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "OperatorVaultOptInService_event_OptOut"
+    }
+}
