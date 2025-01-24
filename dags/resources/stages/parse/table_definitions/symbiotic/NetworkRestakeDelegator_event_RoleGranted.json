@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "role",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                }
+            ],
+            "name": "RoleGranted",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x60565109dbe429c51fe2502218938ab61462e5f5', '0xbe52d8c2840078618cdc6977916fda8dfe5187fc', '0x7562437585da000be4815ac4a09430070cf665d1', '0x4366f2a20fe4d6ba4c29fafbf406cd2ae969a77a', '0xc575d92568ef438552b97a24d8923fb6dd6f4c29', '0x05fa4d489fcd58ec45df390955b7c0a0327d25d5', '0xc077e58164f3c3de4bd92db8a155b91ccdd97a06'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "role",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkRestakeDelegator_event_RoleGranted"
+    }
+}
