@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "hook",
+                    "type": "address"
+                }
+            ],
+            "name": "SetHook",
+            "type": "event"
+        },
+        "contract_address": "SELECT * FROM UNNEST(['0x60565109dbe429c51fE2502218938aB61462E5f5', '0xBE52D8C2840078618cDC6977916fDA8DfE5187fc', '0x7562437585DA000bE4815AC4A09430070Cf665D1', '0x4366f2a20Fe4d6ba4C29FAfbF406CD2aE969A77a', '0xC575D92568eF438552b97A24D8923FB6dd6f4C29', '0x05fa4D489fcd58ec45Df390955b7C0A0327D25d5', '0xc077e58164F3c3dE4BD92dB8a155b91cCdd97A06'])",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "hook",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkRestakeDelegator_event_SetHook"
+    }
+}
