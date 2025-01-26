@@ -1,0 +1,90 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint64",
+                            "name": "version",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "vaultParams",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "delegatorIndex",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "delegatorParams",
+                            "type": "bytes"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "withSlasher",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint64",
+                            "name": "slasherIndex",
+                            "type": "uint64"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "slasherParams",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IVaultConfigurator.InitParams",
+                    "name": "params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "vault",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "delegator",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "slasher",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x29300b1d3150b4e2b12fe80be72f365e200441ec",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "params",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultConfigurator_call_create"
+    }
+}
