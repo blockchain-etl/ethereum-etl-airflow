@@ -1,0 +1,52 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "_idempotencyKey",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_account",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "mint",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x66a1e37c9b0eaddca17d3662d6c05f4decf3e110",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "resolv",
+        "schema": [
+            {
+                "description": "",
+                "name": "_idempotencyKey",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_account",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "_amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "USR_call_mint"
+    }
+}
