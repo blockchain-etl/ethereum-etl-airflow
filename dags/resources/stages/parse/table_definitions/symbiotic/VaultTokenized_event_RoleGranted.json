@@ -25,7 +25,7 @@
             "name": "RoleGranted",
             "type": "event"
         },
-        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "contract_address": "SELECT entity FROM ref('VaultFactory_event_AddEntity') a INNER JOIN ref('VaultFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.version = '2'",
         "field_mapping": {},
         "type": "log"
     },
@@ -49,6 +49,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "NetworkRestakeDelegator_event_RoleGranted"
+        "table_name": "VaultTokenized_event_RoleGranted"
     }
 }

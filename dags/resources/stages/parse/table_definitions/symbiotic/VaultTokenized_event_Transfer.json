@@ -5,27 +5,27 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "bytes32",
-                    "name": "role",
-                    "type": "bytes32"
-                },
-                {
-                    "indexed": true,
                     "internalType": "address",
-                    "name": "account",
+                    "name": "from",
                     "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "sender",
+                    "name": "to",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
                 }
             ],
-            "name": "RoleGranted",
+            "name": "Transfer",
             "type": "event"
         },
-        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "contract_address": "SELECT entity FROM ref('VaultFactory_event_AddEntity') a INNER JOIN ref('VaultFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.version = '2'",
         "field_mapping": {},
         "type": "log"
     },
@@ -34,21 +34,21 @@
         "schema": [
             {
                 "description": "",
-                "name": "role",
+                "name": "from",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "account",
+                "name": "to",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "sender",
+                "name": "value",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "NetworkRestakeDelegator_event_RoleGranted"
+        "table_name": "VaultTokenized_event_Transfer"
     }
 }
