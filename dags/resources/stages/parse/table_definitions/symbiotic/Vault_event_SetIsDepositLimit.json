@@ -5,15 +5,15 @@
             "inputs": [
                 {
                     "indexed": false,
-                    "internalType": "uint64",
-                    "name": "version",
-                    "type": "uint64"
+                    "internalType": "bool",
+                    "name": "status",
+                    "type": "bool"
                 }
             ],
-            "name": "Initialized",
+            "name": "SetIsDepositLimit",
             "type": "event"
         },
-        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "contract_address": "SELECT entity FROM ref('VaultFactory_event_AddEntity') a INNER JOIN ref('VaultFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.version = '1'",
         "field_mapping": {},
         "type": "log"
     },
@@ -22,11 +22,11 @@
         "schema": [
             {
                 "description": "",
-                "name": "version",
+                "name": "status",
                 "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "NetworkRestakeDelegator_event_Initialized"
+        "table_name": "Vault_event_SetIsDepositLimit"
     }
 }

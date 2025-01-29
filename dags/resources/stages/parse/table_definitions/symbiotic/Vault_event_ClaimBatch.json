@@ -5,33 +5,33 @@
             "inputs": [
                 {
                     "indexed": true,
-                    "internalType": "bytes32",
-                    "name": "subnetwork",
-                    "type": "bytes32"
+                    "internalType": "address",
+                    "name": "claimer",
+                    "type": "address"
                 },
                 {
                     "indexed": true,
                     "internalType": "address",
-                    "name": "operator",
+                    "name": "recipient",
                     "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "epochs",
+                    "type": "uint256[]"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
                     "name": "amount",
                     "type": "uint256"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint48",
-                    "name": "captureTimestamp",
-                    "type": "uint48"
                 }
             ],
-            "name": "OnSlash",
+            "name": "ClaimBatch",
             "type": "event"
         },
-        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "contract_address": "SELECT entity FROM ref('VaultFactory_event_AddEntity') a INNER JOIN ref('VaultFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.version = '1'",
         "field_mapping": {},
         "type": "log"
     },
@@ -40,26 +40,26 @@
         "schema": [
             {
                 "description": "",
-                "name": "subnetwork",
+                "name": "claimer",
                 "type": "STRING"
             },
             {
                 "description": "",
-                "name": "operator",
+                "name": "recipient",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "epochs",
                 "type": "STRING"
             },
             {
                 "description": "",
                 "name": "amount",
                 "type": "STRING"
-            },
-            {
-                "description": "",
-                "name": "captureTimestamp",
-                "type": "STRING"
             }
         ],
         "table_description": "",
-        "table_name": "NetworkRestakeDelegator_event_OnSlash"
+        "table_name": "Vault_event_ClaimBatch"
     }
 }

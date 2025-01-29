@@ -18,7 +18,7 @@
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "amount",
+                    "name": "slashedAmount",
                     "type": "uint256"
                 },
                 {
@@ -28,10 +28,10 @@
                     "type": "uint48"
                 }
             ],
-            "name": "OnSlash",
+            "name": "Slash",
             "type": "event"
         },
-        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "contract_address": "SELECT entity FROM ref('SlasherFactory_event_AddEntity') a INNER JOIN ref('SlasherFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
         "field_mapping": {},
         "type": "log"
     },
@@ -50,7 +50,7 @@
             },
             {
                 "description": "",
-                "name": "amount",
+                "name": "slashedAmount",
                 "type": "STRING"
             },
             {
@@ -60,6 +60,6 @@
             }
         ],
         "table_description": "",
-        "table_name": "NetworkRestakeDelegator_event_OnSlash"
+        "table_name": "Slasher_event_Slash"
     }
 }
