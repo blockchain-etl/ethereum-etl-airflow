@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transfer",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "usual",
+        "schema": [
+            {
+                "description": "",
+                "name": "to",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "value",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "USD0_call_transfer"
+    }
+}
