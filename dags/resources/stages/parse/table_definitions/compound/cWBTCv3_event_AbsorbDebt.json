@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "absorber",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "borrower",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "basePaidOut",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "usdValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AbsorbDebt",
+            "type": "event"
+        },
+        "contract_address": "0xe85dc543813b8c2cfeaac371517b925a166a9293",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "compound",
+        "schema": [
+            {
+                "description": "",
+                "name": "absorber",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "borrower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "basePaidOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "usdValue",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "cWBTCv3_event_AbsorbDebt"
+    }
+}
