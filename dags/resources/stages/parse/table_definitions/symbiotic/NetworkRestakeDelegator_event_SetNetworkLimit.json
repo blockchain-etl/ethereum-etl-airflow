@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "subnetwork",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetNetworkLimit",
+            "type": "event"
+        },
+        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "subnetwork",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkRestakeDelegator_event_SetNetworkLimit"
+    }
+}

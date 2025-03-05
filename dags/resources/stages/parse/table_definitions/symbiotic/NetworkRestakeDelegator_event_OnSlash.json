@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "subnetwork",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint48",
+                    "name": "captureTimestamp",
+                    "type": "uint48"
+                }
+            ],
+            "name": "OnSlash",
+            "type": "event"
+        },
+        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "subnetwork",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "amount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "captureTimestamp",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkRestakeDelegator_event_OnSlash"
+    }
+}

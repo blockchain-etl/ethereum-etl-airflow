@@ -1,0 +1,19 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [],
+            "name": "EIP712DomainChanged",
+            "type": "event"
+        },
+        "contract_address": "0xb361894bc06cbba7ea8098bf0e32eb1906a5f891",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [],
+        "table_description": "",
+        "table_name": "OperatorVaultOptInService_event_EIP712DomainChanged"
+    }
+}

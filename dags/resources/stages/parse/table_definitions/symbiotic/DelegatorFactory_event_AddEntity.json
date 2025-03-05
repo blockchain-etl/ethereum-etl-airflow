@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "entity",
+                    "type": "address"
+                }
+            ],
+            "name": "AddEntity",
+            "type": "event"
+        },
+        "contract_address": "0x985ed57af9d475f1d83c1c1c8826a0e5a34e8c7b",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "entity",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DelegatorFactory_event_AddEntity"
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "parser": {
+        "abi": {
+            "inputs": [
+                {
+                    "internalType": "uint64",
+                    "name": "type_",
+                    "type": "uint64"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "data",
+                    "type": "bytes"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "entity_",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        "contract_address": "0x985ed57af9d475f1d83c1c1c8826a0e5a34e8c7b",
+        "field_mapping": {},
+        "type": "trace"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "type_",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "data",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "DelegatorFactory_call_create"
+    }
+}

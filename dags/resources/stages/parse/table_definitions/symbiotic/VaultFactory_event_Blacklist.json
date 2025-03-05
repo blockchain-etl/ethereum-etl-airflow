@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint64",
+                    "name": "version",
+                    "type": "uint64"
+                }
+            ],
+            "name": "Blacklist",
+            "type": "event"
+        },
+        "contract_address": "0xaeb6bdd95c502390db8f52c8909f703e9af6a346",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "version",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VaultFactory_event_Blacklist"
+    }
+}

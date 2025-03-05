@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "registrar",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "operations",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "technical",
+                    "type": "address"
+                }
+            ],
+            "name": "NamedNewOperators",
+            "type": "event"
+        },
+        "contract_address": "0x5f7827fdeb7c20b443265fc2f40845b715385ff2",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "eurcv",
+        "schema": [
+            {
+                "description": "",
+                "name": "registrar",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operations",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "technical",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "eurcv_event_NamedNewOperators"
+    }
+}

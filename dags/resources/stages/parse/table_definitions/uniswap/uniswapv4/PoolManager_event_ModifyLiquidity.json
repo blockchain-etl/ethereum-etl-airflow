@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "PoolId",
+                    "name": "id",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "tickLower",
+                    "type": "int24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int24",
+                    "name": "tickUpper",
+                    "type": "int24"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "liquidityDelta",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "salt",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "ModifyLiquidity",
+            "type": "event"
+        },
+        "contract_address": "0x000000000004444c5dc75cb358380d2e3de08a90",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "uniswapv4",
+        "schema": [
+            {
+                "description": "",
+                "name": "id",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "sender",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tickLower",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tickUpper",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "liquidityDelta",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "salt",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PoolManager_event_ModifyLiquidity"
+    }
+}

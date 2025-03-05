@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "role",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "previousAdminRole",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "newAdminRole",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "RoleAdminChanged",
+            "type": "event"
+        },
+        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "role",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "previousAdminRole",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "newAdminRole",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkRestakeDelegator_event_RoleAdminChanged"
+    }
+}

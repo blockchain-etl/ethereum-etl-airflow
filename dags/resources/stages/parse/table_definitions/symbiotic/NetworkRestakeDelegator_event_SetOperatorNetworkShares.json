@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "subnetwork",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "shares",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetOperatorNetworkShares",
+            "type": "event"
+        },
+        "contract_address": "SELECT entity FROM ref('DelegatorFactory_event_AddEntity') a INNER JOIN ref('DelegatorFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '0'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "subnetwork",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "shares",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "NetworkRestakeDelegator_event_SetOperatorNetworkShares"
+    }
+}

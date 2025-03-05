@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "slashIndex",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "bytes32",
+                    "name": "subnetwork",
+                    "type": "bytes32"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "slashAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint48",
+                    "name": "captureTimestamp",
+                    "type": "uint48"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint48",
+                    "name": "vetoDeadline",
+                    "type": "uint48"
+                }
+            ],
+            "name": "RequestSlash",
+            "type": "event"
+        },
+        "contract_address": "SELECT entity FROM ref('SlasherFactory_event_AddEntity') a INNER JOIN ref('SlasherFactory_call_create') b ON a.transaction_hash = b.transaction_hash WHERE b.type_ = '1'",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "symbiotic",
+        "schema": [
+            {
+                "description": "",
+                "name": "slashIndex",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "subnetwork",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "operator",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "slashAmount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "captureTimestamp",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "vetoDeadline",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "VetoSlasher_event_RequestSlash"
+    }
+}
