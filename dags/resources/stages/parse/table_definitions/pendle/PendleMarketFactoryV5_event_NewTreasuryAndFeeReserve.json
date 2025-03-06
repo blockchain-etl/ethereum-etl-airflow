@@ -1,0 +1,43 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "treasury",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint8",
+                    "name": "reserveFeePercent",
+                    "type": "uint8"
+                }
+            ],
+            "name": "NewTreasuryAndFeeReserve",
+            "type": "event"
+        },
+        "contract_address": "0x6fcf753f2c67b83f7b09746bbc4fa0047b35d050",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "treasury",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "reserveFeePercent",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleMarketFactoryV5_event_NewTreasuryAndFeeReserve"
+    }
+}
