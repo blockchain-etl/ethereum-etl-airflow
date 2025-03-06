@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "treasury",
+                    "type": "address"
+                }
+            ],
+            "name": "SetTreasury",
+            "type": "event"
+        },
+        "contract_address": "0x273b4bfa3bb30fe8f32c467b5f0046834557f072",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "treasury",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleYieldContractFactoryV4_event_SetTreasury"
+    }
+}

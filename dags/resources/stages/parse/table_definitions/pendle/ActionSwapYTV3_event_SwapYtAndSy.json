@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "market",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "netYtToAccount",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "netSyToAccount",
+                    "type": "int256"
+                }
+            ],
+            "name": "SwapYtAndSy",
+            "type": "event"
+        },
+        "contract_address": "0x4a03ce0a268951d04e187b1cf48075ee69266e27",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netYtToAccount",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netSyToAccount",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ActionSwapYTV3_event_SwapYtAndSy"
+    }
+}

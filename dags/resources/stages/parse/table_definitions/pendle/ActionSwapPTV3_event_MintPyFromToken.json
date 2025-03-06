@@ -1,0 +1,98 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tokenIn",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "YT",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netTokenIn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netPyOut",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netSyInterm",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MintPyFromToken",
+            "type": "event"
+        },
+        "contract_address": "0xd8d200d9a713a1c71cf1e7f694b14e5f1d948b15",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "YT",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netTokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netPyOut",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netSyInterm",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ActionSwapPTV3_event_MintPyFromToken"
+    }
+}

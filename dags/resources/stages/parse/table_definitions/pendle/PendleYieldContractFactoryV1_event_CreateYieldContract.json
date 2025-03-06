@@ -1,0 +1,65 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "SY",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "expiry",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "PT",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "YT",
+                    "type": "address"
+                }
+            ],
+            "name": "CreateYieldContract",
+            "type": "event"
+        },
+        "contract_address": "0x70ee0a6db4f5a2dc4d9c0b57be97b9987e75bafd",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "SY",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "expiry",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "PT",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "YT",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleYieldContractFactoryV1_event_CreateYieldContract"
+    }
+}
