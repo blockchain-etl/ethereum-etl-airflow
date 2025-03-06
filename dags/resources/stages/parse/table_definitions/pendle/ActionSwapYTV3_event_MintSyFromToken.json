@@ -1,0 +1,87 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "tokenIn",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "SY",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netTokenIn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netSyOut",
+                    "type": "uint256"
+                }
+            ],
+            "name": "MintSyFromToken",
+            "type": "event"
+        },
+        "contract_address": "0x4a03ce0a268951d04e187b1cf48075ee69266e27",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "tokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "SY",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netTokenIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netSyOut",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ActionSwapYTV3_event_MintSyFromToken"
+    }
+}
