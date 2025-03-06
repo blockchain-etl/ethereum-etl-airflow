@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newRewardFeeRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetRewardFeeRate",
+            "type": "event"
+        },
+        "contract_address": "0x35a338522a435d46f77be32c70e215b813d0e3ac",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "newRewardFeeRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleYieldContractFactoryV5_event_SetRewardFeeRate"
+    }
+}

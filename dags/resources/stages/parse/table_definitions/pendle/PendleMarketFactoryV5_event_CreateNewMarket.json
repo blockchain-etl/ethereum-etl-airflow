@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "market",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "PT",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "scalarRoot",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "int256",
+                    "name": "initialAnchor",
+                    "type": "int256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lnFeeRateRoot",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreateNewMarket",
+            "type": "event"
+        },
+        "contract_address": "0x6fcf753f2c67b83f7b09746bbc4fa0047b35d050",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "PT",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "scalarRoot",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "initialAnchor",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lnFeeRateRoot",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleMarketFactoryV5_event_CreateNewMarket"
+    }
+}

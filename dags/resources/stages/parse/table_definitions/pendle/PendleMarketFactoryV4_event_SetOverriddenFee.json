@@ -1,0 +1,54 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "router",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "market",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint80",
+                    "name": "lnFeeRateRoot",
+                    "type": "uint80"
+                }
+            ],
+            "name": "SetOverriddenFee",
+            "type": "event"
+        },
+        "contract_address": "0x3d75bd20c983edb5fd218a1b7e0024f1056c7a2f",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "router",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "market",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "lnFeeRateRoot",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleMarketFactoryV4_event_SetOverriddenFee"
+    }
+}
