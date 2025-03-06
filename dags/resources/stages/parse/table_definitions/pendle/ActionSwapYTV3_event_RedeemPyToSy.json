@@ -1,0 +1,76 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "caller",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "YT",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netPyIn",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "netSyOut",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RedeemPyToSy",
+            "type": "event"
+        },
+        "contract_address": "0x4a03ce0a268951d04e187b1cf48075ee69266e27",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "caller",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "receiver",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "YT",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netPyIn",
+                "type": "STRING"
+            },
+            {
+                "description": "",
+                "name": "netSyOut",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "ActionSwapYTV3_event_RedeemPyToSy"
+    }
+}

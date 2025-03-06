@@ -1,0 +1,32 @@
+{
+    "parser": {
+        "abi": {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "newInterestFeeRate",
+                    "type": "uint256"
+                }
+            ],
+            "name": "SetInterestFeeRate",
+            "type": "event"
+        },
+        "contract_address": "0x273b4bfa3bb30fe8f32c467b5f0046834557f072",
+        "field_mapping": {},
+        "type": "log"
+    },
+    "table": {
+        "dataset_name": "pendle",
+        "schema": [
+            {
+                "description": "",
+                "name": "newInterestFeeRate",
+                "type": "STRING"
+            }
+        ],
+        "table_description": "",
+        "table_name": "PendleYieldContractFactoryV4_event_SetInterestFeeRate"
+    }
+}
