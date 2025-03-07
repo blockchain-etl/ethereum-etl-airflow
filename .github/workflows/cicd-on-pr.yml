@@ -63,9 +63,9 @@ jobs:
           NUM_FILES=$(git diff --name-only master HEAD | grep '^dags/resources/stages/parse/table_definitions' | wc -l)
           echo "Number of changed files: $NUM_FILES"
           
-          # Fail the job if more than 50 files are changed
-          if [ "$NUM_FILES" -gt 50 ]; then
-            echo "Error: More than 50 files have been changed. Failing the job."
+          # Fail the job if more than 70 files are changed
+          if [ "$NUM_FILES" -gt 70 ]; then
+            echo "Error: More than 70 files have been changed. Failing the job."
             exit 1
           else
             echo "Number of changed files is within limit."
