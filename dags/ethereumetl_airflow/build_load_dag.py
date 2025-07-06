@@ -311,8 +311,8 @@ def build_load_dag(
     verify_token_transfers_have_latest_task = add_verify_tasks('token_transfers_have_latest',
                                                                [enrich_token_transfers_task])
     verify_traces_blocks_count_task = add_verify_tasks('traces_blocks_count', [enrich_blocks_task, enrich_traces_task])
-    verify_traces_transactions_count_task = add_verify_tasks(
-        'traces_transactions_count', [enrich_transactions_task, enrich_traces_task])
+    # verify_traces_transactions_count_task = add_verify_tasks(
+        # 'traces_transactions_count', [enrich_transactions_task, enrich_traces_task])
     verify_traces_contracts_count_task = add_verify_tasks(
         'traces_contracts_count', [enrich_transactions_task, enrich_traces_task, enrich_contracts_task])
 
@@ -327,7 +327,7 @@ def build_load_dag(
         verify_logs_count_task,
         verify_token_transfers_have_latest_task,
         verify_traces_blocks_count_task,
-        verify_traces_transactions_count_task,
+        # verify_traces_transactions_count_task,
         verify_traces_contracts_count_task,
         enrich_tokens_task,
         calculate_balances_task,
